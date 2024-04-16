@@ -1176,13 +1176,7 @@ transition: all 0.9s ease;
 <div id="sidebar">
 <div class="titulo">{text:blogtitle}</div>
 <div class="desc">
-anna, i live in california.
-<BR>
-i enjoy old films, coffee & boys.
-<BR>
-<BR>
-<b>my stats:</B> 18k+ followers!
-    
+{description}
 </div>
 <div class="links">
 <a href="{text:Link 1}">{text:Link 1 Title}</a> 
