@@ -1289,7 +1289,7 @@ transition:all 0.5s linear;
        <div class="playy"><i data-feather="play"></i></div>
        <div class="pausee"><i data-feather="pause"></i></div>
    </div>
-   <div class="music-title">PLAY ME!</div>
+   <div class="music-title"></div>
 
    <audio id="audio" src="https://a.tumblr.com/tumblr_mnjmr3vvKJ1s4lxeoo1.mp3" type="audio"></audio>
 </div><!--pasta-->
