@@ -1126,7 +1126,7 @@ transition: all .4s ease;
 <center><div class="sigh"></a></div><a href="/"><img style="margin-top:1px;-webkit-filter:saturate(0%);padding-bottom:0px;opacity:.8;" src="{image:sidebar}" width="200"></a></center></img>
 <div style="margin-top: 0px;color:#868585;  "> <div style="margin-top: 3px;background: #fbfbfb;border-top:1px solid #efefef;border-bottom:1px solid #efefef;padding: 2px;margin-bottom: 3px; "><a href="/" title="refresh ">↺</a> |
 <a href="/ask" title="sext me">ask</a> |
-<a href="{text:link 1 url}">{text:link 1 title}</a>
+<a href="{text:link 1 url}">{text:link 1 title}</a> |
 <a href="{text:link 2 url}">{text:link 2 title}</a>
 </div>
 {description}</div>
