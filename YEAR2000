@@ -1055,12 +1055,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{color:gradie
         margin-top:-25px;
         height:14px;
         margin-left:-6px;
-        width:173px;
+        width:172px;
         padding-bottom:3px;
         padding-top:3px;
         letter-spacing:1px;
         z-index:11;
         display:flex;
+        border-right:1px outset {color:borders};
     }
  
  
