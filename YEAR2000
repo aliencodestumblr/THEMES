@@ -1017,7 +1017,7 @@ z-index:10;
         border:1px outset {color:border};
         left:15%;
         top: 100px;
-        background:{color:sidebar};
+        background:{color:details};
         position:fixed;
         padding:5px;
         {block:ifnotsidebarimage}
