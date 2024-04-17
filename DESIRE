@@ -2,7 +2,7 @@
 <html>  
 <head> 
 
-<title>ᴠᴇxᴇɪᴀ</title> 
+<title>{title}</title> 
 
 <link rel="shortcut icon" href="{Favicon}"> 
  
@@ -30,7 +30,7 @@ attribute:"title"
 <meta name="color:Accent" content="#b9b9b9"/>  
 <meta name="color:Text" content="#b9b9b9" /> 
 <meta name="color:Links" content="#b9b9b9" />  
-<meta name="color:Links Hover" content="#b9b9b9" />
+<meta name="color:Links Hover" content="#FFFFFF" />
 <meta name="color:Scrollbar" content="#b9b9b9" />
 <meta name="color:ask box background" content="#000000"/>
  
@@ -1194,8 +1194,8 @@ span.chats {
     background:;
     position:fixed; 
     bottom:100px; 
-    right:27%;  
-    width:220px;   
+    right:18%;  
+    width:350px;   
     height:80px; 
     padding:55px 15px 15px 15px;
     opacity:1;
