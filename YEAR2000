@@ -949,8 +949,6 @@ display:inline-block;
 .buttons a:hover {
 opacity:1;
 font-style:none;
-background-color:#ddd;
--webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
 }
 
 .entry .wow{
