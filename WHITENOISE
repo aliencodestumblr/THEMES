@@ -982,7 +982,7 @@ border-radius:3px;
 <option value="{text:link 1 url}">{text:link 1 title}</option>
 <option value="{text:link 2 url}">{text:link 2 title}</option>
 <option value="{text:link 3 url}">{text:link 3 title}</option>
-<option value="{text:link 4 url}">{text:link 3 title}</option>
+<option value="{text:link 4 url}">{text:link 4 title}</option>
 <option value="{text:link 5 url}">{text:link 5 title}</option>
 
 
