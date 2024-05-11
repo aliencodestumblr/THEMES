@@ -1477,8 +1477,6 @@ background-color:{color:sidebar background};{block:ifroundedsidebarpicture}borde
 <div id="blogtitle">{title}</div>
 <div id="descrii">
 
-<U><a href="/bio">about</a></U> | <U><a href="/tagged/upl">tags</a></U> | <U><a href="/tagged/film">films</a></U>
-<BR><BR>
 {Description}<br></div>
 
 <div id="linkiiis">
