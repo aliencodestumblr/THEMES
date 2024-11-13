@@ -85,7 +85,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html, body, a, a:hover{cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress !important;}
  
 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -161,7 +161,7 @@ a, a:link, a:active, a:visited {
     transition:.5s;
 }
 a:hover {
-       cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress;
+       cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -196,7 +196,7 @@ blockquote video {
 img {
     -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
 opacity:.8;
-       cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress;
+       cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -257,12 +257,12 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     border-left:0px solid #efefef;
      border-right:0px solid #efefef;
-    margin-top:-6px; 
-    margin-left:100px;  
+    margin-top:15px; 
+    margin-left:50px;  
     width:770px;
     {block:permalinkpage}
     margin-top:60px;   
-    margin-left:116px;  
+    margin-left:0px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -275,7 +275,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:116px; 
+    margin-left:0px; 
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:30px; 
@@ -451,7 +451,7 @@ ol.notes li.note {
     background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
+    border:0px solid {color:borders};
     margin:3px;
 }
 
@@ -852,6 +852,7 @@ span.chats {
     color:{color:text};  
     opacity:1;   
     z-index:9999999999999999999;
+    border:1px solid {color:borders}
 }
 
 #ltop:link, #ltop:visited {  
@@ -1013,8 +1014,8 @@ z-index:10;
         width:165px;
         height:auto;
         border:1px outset {color:border};
-        left:15%;
-        top: 100px;
+        left:8%;
+        top: 170px;
         background:{color:details};
         position:fixed;
         padding:5px;
@@ -1091,7 +1092,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{color:gradie
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fas fa-arrow-up"></i></a> 
+<a href="javascript:;" id="ltop"><BIG><BIG><BIG><i class="fa fa-caret-up"></i></BIG></BIG></BIG></a> 
 
 </head>
 
@@ -1116,7 +1117,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{color:gradie
 <center><select onChange="location.href=this.options[this.selectedIndex].value;" style="font-family:courier new; font-size:12px; color:{color:nav menu text}; border:1px inset {color:nav menu border}; width: 130px; background:{color:nav menu}; ">
     <option value="/">navigation</option>
  
-    <option value="{text:link 1 url}">{text:link 1 title}</option>
+   <option value="{text:link 1 url}">{text:link 1 title}</option>
     {/block:iflink1url}
     {block:iflink2url}
     <option value="{text:link 2 url}">{text:link 2 title}</option>
