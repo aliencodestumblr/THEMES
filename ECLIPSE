@@ -359,7 +359,6 @@ h1, h2, h3, h4, h5, h6 {
 /* notes */ 
 .notsi {     
      background:{color:details};  
-        border:1px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
     margin-right:0px; 
