@@ -267,7 +267,6 @@ h1, h2, h3, h4, h5, h6 {
     width:350px; 
     margin-left:0px; 
     {/block:permalinkpage} 
-        border:1px solid {color:borders};
     margin:22px; 
     padding:10px;    
     overflow:hidden;
