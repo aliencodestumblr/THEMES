@@ -387,7 +387,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .notsi2 {     
      background:{color:details};  
-        border:1px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
     margin-right:0px; 
@@ -438,7 +437,6 @@ ol.notes li.note {
     background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
