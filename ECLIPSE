@@ -867,7 +867,7 @@ header {
 }
  
 .tai {
-   
+    text-transform:lowercase;
     margin-top:10px;
 
     font:bold 1.6em/1em helvetica, arial;
@@ -902,11 +902,12 @@ nav {
 }
  
 nav a {
+    border-bottom:1px solid #fff;
     margin-right:20px;
     counter-increment:link;    
     position:relative;
     line-height:1.2em;
-    display:inline-block;    
+    display:inline-block;   
 }
  
 {block:ifnumberedlinks}
