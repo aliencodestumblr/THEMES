@@ -564,11 +564,11 @@ ol.notes li.note img.avatar {
     color:{color:text}; 
     text-align:justify;
     text-transform:none;   
-    line-height:15px;  
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border:1px solid {color:borders};
+    line-height:15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .asker {
@@ -600,7 +600,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -1038,7 +1037,7 @@ nav a:before {
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}<a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
@@ -1051,7 +1050,7 @@ nav a:before {
 </div>   
 <div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} // <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
