@@ -986,7 +986,7 @@ nav a:before {
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div>  
@@ -997,7 +997,7 @@ nav a:before {
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div>  
@@ -1019,7 +1019,7 @@ nav a:before {
 {/block:Lines}
 </ul>
 </div>   
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div>
@@ -1037,7 +1037,7 @@ nav a:before {
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
@@ -1050,7 +1050,7 @@ nav a:before {
 </div>   
 <div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
@@ -1072,7 +1072,7 @@ nav a:before {
 </font><br>
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div>  
@@ -1085,7 +1085,7 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
@@ -1099,7 +1099,7 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
@@ -1114,7 +1114,7 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount} + <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
 </div>
 {/block:indexpage}
 </div> 
