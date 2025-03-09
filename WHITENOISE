@@ -217,6 +217,10 @@ img:hover {-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition
 
 .spotify_audio_player {height:80px !important;}
 
+html {
+    width:510px;
+}
+
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -240,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:780px;    
+    width:510px;    
     {block:iffourcolumns}
     width:1050px;    
     {/block:iffourcolumns}
@@ -255,11 +259,11 @@ h1, h2, h3, h4, h5, h6 {
     border-left:0px solid #efefef;
      border-right:0px solid #efefef;
     margin-top:-6px; 
-    margin-left:60px;  
-    width:760px;
+    margin-left:375px;  
+    width:510px;
     {block:permalinkpage}
     margin-top:60px;   
-    margin-left:0px;  
+    margin-left:375px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -272,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:0px; 
+    margin-left:375px; 
     {/block:permalinkpage} 
         border:0px solid {color:borders};
     margin:2px; 
@@ -490,7 +494,7 @@ ol.notes li.note {
     background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
+    border:0px solid {color:borders};
     margin:3px;
 }
 
@@ -1009,7 +1013,7 @@ border-radius:3px;
 {block:IndexPage} 
 <div class="notsi">  
 <div class="wow">
-{NoteCountWithLabel}
+<a href="{permalink}" target="_blank">{NoteCountWithLabel}</a>
 </div>
 <div class="re"><a href="{reblogurl}" target="_blank">↻</a></div>
 </div>
