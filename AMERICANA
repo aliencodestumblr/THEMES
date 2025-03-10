@@ -1165,7 +1165,7 @@ span.chats {
  
     width:80px;
  
-    font-size:10px;
+    font-size:9px;
     text-transform:uppercase;
     letter-spacing:1px;
     text-align:right;
@@ -1212,14 +1212,12 @@ span.chats {
  
     background:{color:details};
  
-    font-size:11.3px;
+    font-size:9px;
     text-align:center;
  
     border:1px solid {color:borders};
  
-    -webkit-animation:fadeInDown 3s;
-    -moz-animation:fadeInDown 3s;
-    -ms-animation:fadeInDown 3s;
+ 
 }
  
 .blogtitle{
