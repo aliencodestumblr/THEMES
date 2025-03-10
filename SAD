@@ -273,6 +273,10 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
+html {
+    width:600px;
+}
+
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -296,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:700px;    
+    width:550px;    
     {block:iffourcolumns}
     width:1050px;    
     {/block:iffourcolumns}
@@ -309,11 +313,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:150px;  
-    width:700px;
+    margin-left:498px;  
+    width:550px;
     {block:permalinkpage}
     margin-top:60px;   
-    margin-left:100px;  
+    margin-left:515px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -326,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:100px; 
+    margin-left:515px; 
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:8px; 
@@ -578,7 +582,7 @@ ol.notes li.note {
     background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
+    border:0px solid {color:borders};
     margin:3px;
 }
 
@@ -1249,7 +1253,7 @@ opacity:1;
 margin-left:284px;
 {/block:indexpage}
 {block:permalinkpage}
-margin-left:200px;
+margin-left:284px;
 {/block:permalinkpage}
 {block:ifonecolumn}
 margin-left:300px;
@@ -1334,21 +1338,6 @@ text-decoration:underline;
 </head>
 
 <body>  
-
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
-
-   <audio id="audio" src="https://od.lk/s/MzlfNDA2NjUwMjhf/The%20Equaliser%20%28Not%20Alone%29.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
 
 
 <div id="sidebar">
