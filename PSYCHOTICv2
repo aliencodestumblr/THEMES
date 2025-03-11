@@ -30,7 +30,7 @@ attribute:"title"
 <meta name="color:Accent" content="#b9b9b9"/>  
 <meta name="color:Text" content="#b9b9b9" /> 
 <meta name="color:Links" content="#b9b9b9" />  
-<meta name="color:Links Hover" content="#b9b9b9" />
+<meta name="color:Links Hover" content="#ffffff" />
 <meta name="color:Scrollbar" content="#b9b9b9" />
 <meta name="color:ask box background" content="#000000"/>
  
@@ -142,7 +142,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -212,7 +212,7 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+    cursor:cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
@@ -274,6 +274,10 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
+html {
+    width:700px;
+}
+
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -297,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:700px;    
+    width:655px;    
     {block:iffourcolumns}
     width:1050px;    
     {/block:iffourcolumns}
@@ -312,11 +316,11 @@ h1, h2, h3, h4, h5, h6 {
     border-left:0px solid {color:borders};
      border-right:0px solid {color:borders};
     margin-top:-6px; 
-    margin-left:100px;  
-    width:700px;
+    margin-left:480px;  
+    width:655px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:40px;  
+    margin-top:10px;   
+    margin-left:454px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -329,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:40px; 
+    margin-left:454px; 
     {/block:permalinkpage} 
         border:0px solid {color:borders};
     margin:1px; 
@@ -935,7 +939,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:17px; 
+    font-size:19px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
@@ -1306,26 +1310,11 @@ span.chats {
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-angle-up" aria-hidden="true"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
 </head>
 
 <body>  
-
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
-
-   <audio id="audio" src="https://a.tumblr.com/tumblr_me4hdlp8n61qc9zd2o1.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
 
 
 <div class="sidebar"> 
