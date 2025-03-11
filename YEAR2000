@@ -85,7 +85,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress !important;}
+html, body, a, a:hover{cursor:crosshair;}
  
 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -156,12 +156,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+    cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-       cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress;
+      cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -196,7 +197,7 @@ blockquote video {
 img {
     -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
 opacity:.8;
-       cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur838.cur), progress;
+      cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -219,6 +220,10 @@ img:hover {-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition
 }
 
 .spotify_audio_player {height:80px !important;}
+
+html {
+    width:690px;
+}
 
 body {
     color:{color:text}; 
@@ -243,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:770px;    
+    width:690px;    
     {block:iffourcolumns}
     width:1050px;    
     {/block:iffourcolumns}
@@ -258,11 +263,11 @@ h1, h2, h3, h4, h5, h6 {
     border-left:0px solid #efefef;
      border-right:0px solid #efefef;
     margin-top:15px; 
-    margin-left:50px;  
-    width:770px;
+    margin-left:320px;  
+    width:690px;
     {block:permalinkpage}
     margin-top:60px;   
-    margin-left:0px;  
+    margin-left:285px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -275,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:0px; 
+    margin-left:285px; 
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:30px; 
@@ -371,8 +376,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 .notsi {     
-     background:{color:details};  
-        border:1px solid {color:borders};
+     background:transparent;  
+        border:0px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
     margin-right:0px; 
@@ -387,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 }
  
 .notsi a {    
-    background:{color:background};
+    background:transparent;
     display:inline-block;  
     color:{color:accent};
     font-size:8px;    
@@ -399,8 +404,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notsi2 {     
-     background:{color:details};  
-        border:1px solid {color:borders};
+     background:transparent;  
+        border:0px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
     margin-right:0px; 
@@ -448,7 +453,7 @@ ol.notes {
 } 
 
 ol.notes li.note {  
-    background:{color:details};
+    background:transparent;
     padding:3px 5px 2px 5px;   
     border-radius:5px;
     border:0px solid {color:borders};
@@ -861,7 +866,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:9px; 
+    font-size:18px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
@@ -1022,11 +1027,7 @@ z-index:10;
         {block:ifnotsidebarimage}
         margin-top:200px;
         {/block:ifnotsidebarimage}
-        {block:if250px}
-        {block:ifnottwocolumns}
-        margin-left:180px;
-        {/block:ifnottwocolumns}
-        {/block:if250px}
+     padding-bottom:9px;
     }
  
  
@@ -1092,7 +1093,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{color:gradie
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><BIG><BIG><BIG><i class="fa fa-caret-up"></i></BIG></BIG></BIG></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
 </head>
 
@@ -1109,12 +1110,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{color:gradie
 </div>
  
 <center>
-{block:ifsidebarimage}<img src="{image:sidebar}"></img><p>{/block:ifsidebarimage}
+{block:ifsidebarimage}<P><img src="{image:sidebar}" style="padding-top:5px;"></img><p>{/block:ifsidebarimage}
     {description}
  
     <p></p>
 {block:iflink1url}
-<center><select onChange="location.href=this.options[this.selectedIndex].value;" style="font-family:courier new; font-size:12px; color:{color:nav menu text}; border:1px inset {color:nav menu border}; width: 130px; background:{color:nav menu}; ">
+<center><select onChange="location.href=this.options[this.selectedIndex].value;" style="font-family:courier new; font-size:12px; color:{color:nav menu text}; border:1px inset {color:nav menu border}; width: 155px; background:{color:nav menu}; ">
     <option value="/">navigation</option>
  
    <option value="{text:link 1 url}">{text:link 1 title}</option>
