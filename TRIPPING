@@ -639,7 +639,7 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:#f4f4f4;
+    background:#444444;
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
