@@ -30,7 +30,7 @@ attribute:"title"
 <meta name="color:Accent" content="#b9b9b9"/>  
 <meta name="color:Text" content="#b9b9b9" /> 
 <meta name="color:Links" content="#b9b9b9" />  
-<meta name="color:Links Hover" content="#b9b9b9" />
+<meta name="color:Links Hover" content="#ffffff" />
 <meta name="color:Scrollbar" content="#b9b9b9" />
 <meta name="color:ask box background" content="#000000"/>
  
@@ -296,11 +296,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height:15px;
 }
 
+html {
+    width:265px;
+}
+
 .entry {   
     width:265px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
@@ -312,11 +313,11 @@ h1, h2, h3, h4, h5, h6 {
     border-left:0px solid {color:borders};
      border-right:0px solid {color:borders};
     margin-top:-6px; 
-    margin-left:-69px;  
+    margin-left:515px;  
     width:265px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:40px;  
+    margin-top:20px;   
+    margin-left:515px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -329,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     width:500px; 
-    margin-left:40px; 
+    margin-left:515px; 
     {/block:permalinkpage} 
         border:0px solid {color:borders};
     margin:1px; 
@@ -1219,7 +1220,7 @@ span.chats {
     font-size:31px; 
     font-weight:400;
     text-transform:lowercase;
-    letter-spacing:-2px;
+    letter-spacing:2px;
     border-radius:6px;
     padding:15px 40px 12px 40px;
     box-shadow:0px 3px 4px -3px rgba(0,0,0,0.1); 
