@@ -142,7 +142,9 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html {
+    cursor:crosshair;
+}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -212,7 +214,7 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+  cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
@@ -250,7 +252,7 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+img { cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -1312,22 +1314,6 @@ span.chats {
 </head>
 
 <body>  
-
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
-
-   <audio id="audio" src="https://a.tumblr.com/tumblr_me4hdlp8n61qc9zd2o1.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
-
 
 <div class="sidebar"> 
 <div class="nav">   
