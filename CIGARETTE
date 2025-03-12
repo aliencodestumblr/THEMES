@@ -21,32 +21,33 @@ attribute:"title"
 })(jQuery);
 </script>
 
+<meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background images" content="#ffffff"/>
+<meta name="color:Links image" content="#ffffff" />
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#e5e5e5"/> 
-<meta name="color:Accent" content="#c1c1c1"/>  
-<meta name="color:Text" content="#c1c1c1" /> 
-<meta name="color:Links" content="#c1c1c1" />  
-<meta name="color:Links Hover" content="#c1c1c1" />
-<meta name="color:Scrollbar" content="#c1c1c1" />
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#bbbbbb"/>  
+<meta name="color:Text" content="#bbbbbb" /> 
+<meta name="color:Links" content="#bbbbbb" />  
+<meta name="color:Links Hover" content="#bbbbbb" />
+<meta name="color:Scrollbar" content="#bbbbbb" />
  
-<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="if:Dark Tumblr control" content="0"/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
-<meta name="image:sidebar" content="0"/>
-<meta name="if:show sidebar image" content="0">
-<meta name="text:Custom Link One Title" content= >
-<meta name="text:Custom Link One" content="" />
-<meta name="text:Custom Link Two Title" content= >
-<meta name="text:Custom Link Two" content="" />
-<meta name="text:Custom Link Three Title" content= >
-<meta name="text:Custom Link Three" content="" />
-<meta name="text:Custom Link Four Title" content= >
-<meta name="text:Custom Link Four" content="" />
-<meta name="text:Custom Link Five Title" content=
-><meta name="text:Custom Link Five" content="" />
+<meta name="text:Link 1" content=""/>
+<meta name="text:Link 1 Title" content=""/>
+<meta name="text:Link 2" content=""/>
+<meta name="text:Link 2 Title" content=""/>
+<meta name="text:Link 3" content=""/>
+<meta name="text:Link 3 Title" content=""/>
+<meta name="text:Link 4" content=""/>
+<meta name="text:Link 4 Title" content=""/>
+<meta name="text:Link 5" content=""/>
+<meta name="text:Link 5 Title" content=""/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -62,6 +63,12 @@ $("#panel").slideToggle("fast");
 });
 </script>
 
+<script src="https://static.tumblr.com/id3qcn4/MQ4mwxdyv/dropdown.js">
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
@@ -140,7 +147,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -210,7 +217,7 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+    cursor:cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
@@ -248,7 +255,7 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+img { cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -256,8 +263,6 @@ img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png),
 }
 
 img:hover {
-    margin-top:13px;
--webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;transition: all 0.5s ease-out;
 }
 
 ::-moz-selection {
@@ -277,10 +282,10 @@ img:hover {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 8px Inconsolata;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
-    letter-spacing:1px;
-    text-transform:uppercase;
+    letter-spacing:1.5px;
+    text-transform:lowercase;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
@@ -290,33 +295,34 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:700 10px arial;
+    font:700 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
+html {
+    width:430px;
+}
+
 .entry {   
-    width:700px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
+    width:730px;    
     {block:permalinkpage}  
-    width:590px; 
+    width:540px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    border-left:1px solid {color:borders};
-     border-right:1px solid {color:borders};
-    margin-top:-6px; 
-    margin-left:100px;  
-    width:534px;
+    border-left:0px solid {color:borders};
+     border-right:0px solid {color:borders};
+    margin-top:0px; 
+    margin-left:380px;  
+    width:730px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:0px;  
+     margin-top:10px;   
+   margin-left:370px;   
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -325,16 +331,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:235px;        
+    width:287px;        
     
     {block:permalinkpage}
-    width:500px; 
-    margin-left:0px; 
+    width:540px; 
+   margin-left:370px;  
     {/block:permalinkpage} 
-        border:0px solid {color:borders};
-    margin:16px; 
-    padding:0px;    
-    overflow:hidden;
+        border:1px solid {color:borders};
+    margin:17px; 
+    padding:12px;    
+    overflow:;
     opacity:1;
     transition:1s;  
 }
@@ -422,98 +428,54 @@ h1, h2, h3, h4, h5, h6 {
 /* end pagination */
 
 /* notes */ 
-
- 
- 
-.notsi {
+  
+.nots {
+    margin-top:3px;
+    margin-left:0px;
+    margin-bottom:-10px;
+    display:block;
+    width:auto; 
+    font-size:11px;
+    color:{color:links};     
+    text-transform:lowercase;
+    letter-spacing:2px;
+    text-align:left; 
+    font-style:normal;
     padding:0px;
-    position:absolute;
-    text-align:center;
-    opacity:0;
-    display:inline-block;
-    overflow:hidden;
-    top:0px; 
-    left:0px;
-    width:100%; 
-    height:calc(100% - 0px);   
-    transition:2s; 
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
+    border-top:0px solid {color:borders};
     opacity:1;
+    transition:.3s;
+    z-index:99999999999999;
 }
- 
- 
-.notsi .re { 
-  position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-}
- 
-.posts:hover .notsi .re {    
-    transform: rotate(360deg);
--ms-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
--o-transform: rotate(360deg);
--moz-transform: rotate(360deg);
-opacity: 1;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-} 
 
+.nots a { 
+    color:{color:links};      
+    padding:4px; 
+    font-weight:;
+    margin:-2px;
+    transition:.5s;
+}
 
- 
-.entry .wow{
-position:absolute;
-width:235px;
-border-bottom:1px solid #eee;
-padding:2px;
-background-color:#fff;
-overflow:hidden;
-opacity:0.0;
-letter-spacing:1px;
-font-family:Inconsolata;
-text-align:center;
-font-size:9px;
-text-transform:uppercase;
-top:-5px;
-z-index:8;
--webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
+.nots a:hover {
+    text-decoration:underline;
+    color:{color:links hover}; 
+    transition:.5s;
+}
+
+.float {
+    float:right; 
 }
  
-.entry:hover .wow{
-opacity:1;
-top:0px;
-}
 
 
 /* end notes */
 
 /* permalink */
 .perma {  
-    margin-top:10px;
+    margin-top:0px;
     margin-left:20px;  
     margin-bottom:100px;
-    width:510px;
+    width:540px;
     height:auto; 
     overflow:auto;   
     font-family:'Hind';
@@ -542,7 +504,7 @@ ol.notes li.note {
     background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
+    border:0px solid {color:borders};
     margin:3px;
 }
 
@@ -661,14 +623,14 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:{color:description box};
+    background:#000;
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:#fff; 
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
@@ -707,7 +669,7 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
+    border-top:0px solid {color:borders}
 }
 
 .answer img {
@@ -953,7 +915,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:9px; 
+    font-size:20px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
@@ -964,19 +926,6 @@ span.chats {
     transition:1s;
     z-index:100;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
@@ -1110,7 +1059,7 @@ span.chats {
     padding-left:7px;
     padding-right:7px;
     padding-bottom:4px;
-    font-family:inconsolata;
+    font-family:"Rajdhani", sans-serif;
     font-size:9px;
     line-height:12px;
     background-color:{color:background}; /*background hex color code*/
@@ -1170,7 +1119,7 @@ span.chats {
  
 #click2{
     margin-top:7px;
-     font-family:inconsolata;
+     font-family:"Rajdhani", sans-serif;
     font-size:9px;
     color:{color:text};
     margin-bottom:4px;
@@ -1178,7 +1127,7 @@ span.chats {
     text-transform:uppercase;
     letter-spacing:1px;
     text-align:center;
-    background:{color:background}; /*tab 2 background color*/
+    background:; /*tab 2 background color*/
     border:0px solid #f4f4f4; 
     padding:1px;
     display:block;
@@ -1196,7 +1145,7 @@ span.chats {
 }
  
 #click2:active{
-    background:{color:background}; /*color of tab when clicked*/
+    background:; /*color of tab when clicked*/
 }
  
 #guts2{
@@ -1204,85 +1153,91 @@ span.chats {
     display:none;
 }
 
- 
-.links a:after {
-	position: absolute;
-	top:105%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background:#fff;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	}
- 
-.links a:hover:after,
-.links a:focus:after {
-	opacity: 1;
-	-webkit-transform: translateY(-2px);
-	-moz-transform: translateY(-2px);
-	transform: translateY(-2px);}
-	
 
 
+ .nav{
+    font-family:"Rajdhani", sans-serif;
+    text-align:center;
+    text-transform:lowercase;
+    letter-spacing:1.5px;
+    font-style:italic;
+    font-size:10.5px;
+    padding-top:5px;
+}
+ 
+.nav a{
+    margin:0 2px;
+}
+ 
+.nav a:hover{
+ 
+}
+ 
 
-#sidebar {
-display: block;
-position:fixed;
-padding:7px;
-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
--moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
--webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
-top:120px;
-width:200px;
-letter-spacing:1px;
-border:1px solid #fcfcfc;
-border-radius:3px;
-height:;
-z-index:9;
-text-align:center;
-font-size:8px;
-background-color:#fff;
-opacity:1;
-{block:indexpage}
-margin-left:170px;
-{/block:indexpage}
-{block:permalinkpage}
-margin-left:170px;
-{/block:permalinkpage}
+
+ 
+.sidebar{
+    z-index:100;
+    position:fixed;
+    top:100px;
+    left:125px;
+ 
+    margin:0 0 0 0;
+ 
+    width:200px;
+    padding:10px;
+ 
+    background:{color:details};
+ 
+    font-size:9px;
+    text-align:center;
+ 
+    border:1px solid {color:borders};
+ 
+ 
 }
  
+.blogtitle{
+    margin:0 0 5px;
  
- 
-.title {
-text-transform:uppercase;
-border-bottom:1px dashed #eee;
+    font-family:"Rajdhani", sans-serif;
+    font-size:15px;
+    line-height:100%;
+    letter-spacing:2px;
+    font-style:;
 }
  
- 
- 
-.links a{
-background-color:;
-padding:2px;
-font-style:italic;
-font-size:8px;
-letter-spacing:1px;
-font-family:inconsolata;
-line-height:8px;
-margin-top:5px;
-display:inline;
-text-align:center;
--webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
+.banner img{
+    margin:0 auto 5px;
+    max-width:200px;
 }
  
-.links a:hover{
-border-bottom:1px dashed #eee;
--webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
+.description{
+    padding:3px 0 0;
+}
+ 
+.line{
+    border-top:1px solid #eee;
 }
 
+.buttons{
+    position:relative;
+ 
+    margin:-6px -2px 0 0;
+ display:inline-flex;
+    float:right;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+ 
+.buttons img{
+    opacity:0.3;
+    width:15px;
+    height:15px;
+ 
+    cursor:crosshair;
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1299,49 +1254,115 @@ border-bottom:1px dashed #eee;
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fas fa-arrow-up"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-angle-up" aria-hidden="true"></i></a> 
 
 </head>
 
 <body>  
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
 
-   <audio id="audio" src="https://a.tumblr.com/tumblr_mpv6f4BueH1rzv9hoo1.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
-
-
-
- <div id="sidebar">
-{block:ifshowsidebarimage}
-<center><a href="/"><img style="margin-top:-1px;-webkit-filter:saturate(30%);" src="{image:sidebar}" width="200"></a></center>
-{/block:ifshowsidebarimage}<div style="{block:ifshowsidebarimage}margin-top:5px;{/block:ifshowsidebarimage}">{description}</div><div class="links"><div style="border-top:1px dashed #eee;margin-top:2px;">{block:ifcustomlinkonetitle}<a href="{text:custom link one}">{text:custom link one title}</a>{/block:ifcustomlinkonetitle}
+<div class="sidebar">
  
-{block:ifcustomlinktwotitle} <a href="{text:custom link two}">{text:custom link two title}</a>{/block:ifcustomlinktwotitle}
  
-{block:ifcustomlinkthreetitle} <a href="{text:custom link three}" >{text:custom link three title}</a>{/block:ifcustomlinkthreetitle}
+<div class="buttons">
  
-{block:ifcustomlinkfourtitle} <a href="{text:custom link four}">{text:custom link four title}</a>{/block:ifcustomlinkfourtitle}
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
  
-{block:ifcustomlinkfivetitle} <a href="{text:custom link five}">{text:custom link five title}</a>{/block:ifcustomlinkfivetitle}</div></div>
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+ 
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+ 
 </div>
+ 
+ 
+<BR>
+<div class="blogtitle">
+<a href="/">{Title}</a>
+</div>
+ 
+<div class="line"></div>
 
+ 
 
+<div class="banner">
+<a href="/"><img src="{image:sidebar}"></a>
+</div>
+ 
+<div class="line"></div>
+ 
+ 
+{block:description}
+<div class="description">
+{Description}
+</div>
+{/block:description}
 
+<div class="nav">
+ 
+{block:iflink1title}
+<a href="{text:link 1}" title="{text:link 1 title}">I.</a>
+{/block:iflink1title}
+ 
+&nbsp;&nbsp;
+ 
+{block:iflink2title}
+<a href="{text:link 2}" title="{text:link 2 title}">II.</a>
+{/block:iflink2title}
 
-</div></div></div>
+&nbsp;&nbsp;
+ 
+{block:iflink3title}
+<a href="{text:link 3}" title="{text:link 3 title}">III.</a>
+{/block:iflink3title}
 
+&nbsp;&nbsp;
+ 
+{block:iflink4title}
+<a href="{text:link 4}" title="{text:link 4 title}">IV.</a>
+{/block:iflink4title}
+
+&nbsp;&nbsp;
+ 
+{block:iflink5title}
+<a href="{text:link 5}" title="{text:link 5 title}">V.</a>
+{/block:iflink5title}
+ 
+</div> 
+ 
+ 
+</div>
+ 
 
 
 
@@ -1351,33 +1372,73 @@ border-bottom:1px dashed #eee;
 <div class="posts">
 
 {block:Text}    
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="caption">{Body}</div>
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div>  
 {/block:Text}
 
-{block:Quote}     
+{block:Quote}  
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="quote">{Quote}</div> 
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div>  
 {/block:Quote}
 
-{block:Chat}      
+{block:Chat}     
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="chatitle">
 {Title}
 </div>
@@ -1393,20 +1454,28 @@ border-bottom:1px dashed #eee;
 {/block:Lines}
 </ul>
 </div>   
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
-</div> 
-</div>
-</div>{/block:IndexPage}{/block:date}
 </div>
 {/block:Chat}
 
-{block:Link}     
+{block:Link}   
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="links"> 
 <a href="{URL}" style="font-weight:bold" {Target}  target="_blank">{Name}</a>
 </div>  
@@ -1418,35 +1487,57 @@ border-bottom:1px dashed #eee;
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div> 
 {/block:Link} 
 
-{block:Answer}      
+{block:Answer}  
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="asker">sent by <b>{Asker}</b></div> 
 <div class="ask">  
 {Question} 
 </div>   
 <div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div> 
 {/block:answer}
 
 
 {block:Audio}   
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="album">
 <div class="art">
 <span class="pe-7s-headphones"></span>
@@ -1461,55 +1552,85 @@ border-bottom:1px dashed #eee;
 </font><br>
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
-</div> 
-</div>
-</div>{/block:IndexPage}{/block:date}
 </div>  
 {/block:Audio}
 
-{block:Photo}   
+{block:Photo}  
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-HighRes}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
 {block:ifshowcaption}
 {block:caption}
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div> 
 {/block:Photo}
 
 
 {block:Photoset}   
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div> 
 {block:ifshowcaption}
 {block:caption}
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div> 
 {/block:Photoset}
 
 {block:Video}  
+{block:indexpage}
+<div class="buttons">
+
+<a title="{TimeAgo}">
+<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
+</a>
+ 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
+</a>
+ 
+<a  target="_blank" href="{ReblogURL}" title="Reblog">
+<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
+</a>
+ 
+</div>
+<BR>
+{/block:indexpage}
 <div class="video">
 {Video-250} 
 </div>
@@ -1518,13 +1639,6 @@ border-bottom:1px dashed #eee;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="notsi">  
-<div class="wow">
-{DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
-</div>
-{/block:IndexPage} 
 </div> 
 {/block:Video} 
 
