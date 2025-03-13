@@ -1105,11 +1105,11 @@ margin-left:390px;
 {/block:ifshowsidebarimage}
  
  
-{block:description}
+
 <div class="description">
 {Description}
 </div>
-{/block:description}
+
  
 </div>
  
