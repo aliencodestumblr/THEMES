@@ -32,11 +32,20 @@ attribute:"title"
 <meta name="color:Text" content="#bbbbbb" /> 
 <meta name="color:Links" content="#bbbbbb" />  
 <meta name="color:Links Hover" content="#bbbbbb" />
+<meta name="color:Navigation" content="#ffffff" />
 <meta name="color:Scrollbar" content="#bbbbbb" />
  
 <meta name="if:Dark Tumblr control" content="0"/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+
+<meta name="select:Icon Color" content="cgrey" title="Grey"/>
+<meta name="select:Icon Color" content="cblack" title="Black"/>
+<meta name="select:Icon Color" content="cwhite" title="White"/>
+
+<meta name="text:Home Link Title" content="reload"/>
+<meta name="text:Ask Link Title" content="inbox"/>
+<meta name="text:Archive Link Title" content="grid"/>
 
 <meta name="text:Link 1" content=""/>
 <meta name="text:Link 1 Title" content=""/>
@@ -322,7 +331,7 @@ html {
     width:730px;
     {block:permalinkpage}
      margin-top:10px;   
-   margin-left:370px;   
+   margin-left:380px;   
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -335,7 +344,7 @@ html {
     
     {block:permalinkpage}
     width:540px; 
-   margin-left:370px;  
+   margin-left:380px;  
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:17px; 
@@ -659,7 +668,6 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
-    text-transform:uppercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -1030,147 +1038,78 @@ span.chats {
 }
 
 
-#updatesbar{
-    position:absolute;
-    margin-top:0px;
-    margin-left:-8px;
-    padding:3px;
-    padding-right:5px;
-    text-align:right;
-    width:106px;
-    height:9px;
-    background:{color:background}; /*bar background*/
-    border:0px solid #ebebeb; /*matching border color with #box border        looks best*/
-    /*delete the following for no rounded edges*/
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    }
+
+
+ #flip{
+    display:inline-block;
+    position:relative;
  
-#updates{
-    position:fixed;
-    width:140px;
-    top:25px;
-    right:0px;
-    padding-top:7px;
-    padding-left:7px;
-    padding-right:7px;
-    padding-bottom:4px;
-    font-family:"Rajdhani", sans-serif;
+    width:183.5px;
+ 
+    margin:5px 0 0;
+    padding:5px 5px 5px 10px;
+ 
+    background:{color:navigation};
+    color:{color:text};
     font-size:9px;
     line-height:12px;
-    background-color:{color:background}; /*background hex color code*/
-    border:0px solid #ebebeb; /*change color code for different colored       borders*/
-    color:{color:text}; /*text color, note link colors and styles will change      with the theme you're using*/
-    z-index:999;
-    /*delete the following for no rounded edges*/
-    -webkit-border-bottom-right-radius: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
- 
-#guts,#click{
-    padding:1px;
-    display:inline-block;
-}
- 
-#click{
-    margin-bottom:4px;
-    padding:1px;
+    letter-spacing:2px;
     text-transform:uppercase;
-    letter-spacing:1px;
-    text-align:center;
-    background:{color:background}; /*tab 1 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
-    display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    text-align:left;
+ 
+    border:1px solid {color:borders};
 }
  
-#click:hover{
-    cursor:help;
+#flip:active{
+    box-shadow:none;
 }
  
-#click:active{
-    background:#ffffff; /*color of tab when clicked*/
+#flip:after{
+    position:absolute;
+    content:"";
+ 
+    top:50%;
+    right:10px;
+ 
+    margin:-3px 0 0;
+ 
+    border-width:6px 6px 0 6px;
+    border-style:solid;
+    border-color:{color:borders} transparent;
 }
  
-#guts{
-    padding:1px;
+#panel{
     display:none;
-}
+    position:absolute;
  
-#guts2,#click2{
-    padding:1px;
-    display:inline-block;
-}
+    width:183.5px;
  
-#click2{
-    margin-top:7px;
-     font-family:"Rajdhani", sans-serif;
+    margin:-1px 0 0;
+    padding:0 5px 5px 10px;
+ 
+    background:{color:navigation};
     font-size:9px;
-    color:{color:text};
-    margin-bottom:4px;
-    padding:1px;
-    text-transform:uppercase;
+    line-height:100%;
     letter-spacing:1px;
-    text-align:center;
-    background:; /*tab 2 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
+    text-transform:uppercase;
+    text-align:left;
+ 
+    border:1px solid {color:borders};
+}
+ 
+.links a{
+    color:{color:links};
     display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    opacity:1;
+ 
+    margin:3px 0 0;
+    padding:3px 0;
 }
  
-#click2:hover{
-    cursor:help;
-}
+.links a:hover{
+    padding:3px 0 3px 5px;
  
-#click2:active{
-    background:; /*color of tab when clicked*/
-}
- 
-#guts2{
-    padding:1px;
-    display:none;
-}
-
-
-
- .nav{
-    font-family:"Rajdhani", sans-serif;
-    text-align:center;
-    text-transform:lowercase;
-    letter-spacing:1.5px;
-    font-style:italic;
-    font-size:10.5px;
-    padding-top:5px;
-}
- 
-.nav a{
-    margin:0 2px;
-}
- 
-.nav a:hover{
- 
+    color:{color:Links};
 }
  
 
@@ -1220,24 +1159,36 @@ span.chats {
     border-top:1px solid #eee;
 }
 
-.buttons{
-    position:relative;
+
+
+
  
-    margin:-6px -2px 0 0;
- display:inline-flex;
-    float:right;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+#p {
+    text-align:right;
+    padding-bottom:5px;
 }
  
-.buttons img{
-    opacity:0.3;
-    width:15px;
-    height:15px;
+.cblack .cwhite,
+.cblack .cgrey {display:none;}
  
-    cursor:crosshair;
+.cwhite .cblack,
+.cwhite .cgrey {display:none;}
+ 
+.cgrey .cblack,
+.cgrey .cwhite {display: none;}
+
+
+#blogt {
+    text-align:right;
+    margin-bottom:-10px;
 }
+ 
+#blogt img, #p img {
+    width:10px;
+    margin-left:5px;
+    display:inline-block;
+}    
+
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1285,7 +1236,7 @@ return false;
 </script>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-angle-up" aria-hidden="true"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
 </head>
 
@@ -1295,17 +1246,11 @@ return false;
 <div class="sidebar">
  
  
-<div class="buttons">
- 
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
- 
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
- 
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
- 
+<div id="blogt" class="{select:Icon Color}">
+<div class="cblack"><a href="/archive" title="{text:archive link title}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="/ask" title="{text:ask link title}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="/" title="{text:home link title}"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="/archive" title="{text:archive link title}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="/ask" title="{text:ask link title}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="/" title="{text:home link title}"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="/archive" title="{text:archive link title}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="/ask" title="{text:ask link title}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="/" title="{text:home link title}"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div>
 </div>
- 
- 
 <BR>
 <div class="blogtitle">
 <a href="/">{Title}</a>
@@ -1328,42 +1273,42 @@ return false;
 </div>
 {/block:description}
 
-<div class="nav">
+<div id="flip">Navigation</div>
+ 
+<div id="panel">
+<div class="links">
  
 {block:iflink1title}
-<a href="{text:link 1}" title="{text:link 1 title}">I.</a>
+<a href="{text:link 1}">{text:link 1 title}</a>
 {/block:iflink1title}
  
-&nbsp;&nbsp;
+{block:ifpopupaskbox}
+<a href="#?w=500" rel="01" class="poplight">{text:pop up askbox title}</a>
+{/block:ifpopupaskbox}
  
 {block:iflink2title}
-<a href="{text:link 2}" title="{text:link 2 title}">II.</a>
+<a href="{text:link 2}">{text:link 2 title}</a>
 {/block:iflink2title}
-
-&nbsp;&nbsp;
  
 {block:iflink3title}
-<a href="{text:link 3}" title="{text:link 3 title}">III.</a>
+<a href="{text:link 3}">{text:link 3 title}</a>
 {/block:iflink3title}
-
-&nbsp;&nbsp;
  
 {block:iflink4title}
-<a href="{text:link 4}" title="{text:link 4 title}">IV.</a>
+<a href="{text:link 4}">{text:link 4 title}</a>
 {/block:iflink4title}
-
-&nbsp;&nbsp;
  
 {block:iflink5title}
-<a href="{text:link 5}" title="{text:link 5 title}">V.</a>
+<a href="{text:link 5}">{text:link 5 title}</a>
 {/block:iflink5title}
  
-</div> 
+</div>
+</div>
+ 
+ 
  
  
 </div>
- 
-
 
 
 <div class="entry">    
@@ -1373,22 +1318,9 @@ return false;
 
 {block:Text}    
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="caption">{Body}</div>
 </div>  
@@ -1396,22 +1328,9 @@ return false;
 
 {block:Quote}  
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="quote">{Quote}</div> 
 {block:Source}
@@ -1422,22 +1341,9 @@ return false;
 
 {block:Chat}     
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="chatitle">
 {Title}
@@ -1459,22 +1365,9 @@ return false;
 
 {block:Link}   
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="links"> 
 <a href="{URL}" style="font-weight:bold" {Target}  target="_blank">{Name}</a>
@@ -1492,22 +1385,9 @@ return false;
 
 {block:Answer}  
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="asker">sent by <b>{Asker}</b></div> 
 <div class="ask">  
@@ -1521,22 +1401,9 @@ return false;
 
 {block:Audio}   
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="album">
 <div class="art">
@@ -1557,22 +1424,9 @@ return false;
 
 {block:Photo}  
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-HighRes}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
 {block:ifshowcaption}
@@ -1586,22 +1440,9 @@ return false;
 
 {block:Photoset}   
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div> 
 {block:ifshowcaption}
@@ -1614,22 +1455,9 @@ return false;
 
 {block:Video}  
 {block:indexpage}
-<div class="buttons">
-
-<a title="{TimeAgo}">
-<img src="https://static.tumblr.com/id3qcn4/nhlmwjumo/mini-black.png">
-</a>
- 
-<a href="{Permalink}" title="{NoteCountWithLabel}">
-<img src="https://static.tumblr.com/id3qcn4/mbumwjun0/mini-black-2.png">
-</a>
- 
-<a  target="_blank" href="{ReblogURL}" title="Reblog">
-<img src="https://static.tumblr.com/id3qcn4/SS8mwjuna/mini-black-3.png">
-</a>
- 
-</div>
-<BR>
+<div id="p" class="{select:Icon Color}"><div class="cblack"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
+<div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
+<div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
 <div class="video">
 {Video-250} 
