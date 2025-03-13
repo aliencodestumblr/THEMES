@@ -985,7 +985,7 @@ span.chats {
 }
  
 .line{
-    border-top:1px solid #eee;
+    border-top:1px solid {color:borders};
 }
  
  
