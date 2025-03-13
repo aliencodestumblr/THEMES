@@ -1156,7 +1156,7 @@ span.chats {
 }
  
 .line{
-    border-top:1px solid #eee;
+    border-top:1px solid {color:borders};
 }
 
 
@@ -1256,7 +1256,6 @@ return false;
 <a href="/">{Title}</a>
 </div>
  
-<div class="line"></div>
 
  
 
@@ -1267,11 +1266,11 @@ return false;
 <div class="line"></div>
  
  
-{block:description}
+
 <div class="description">
 {Description}
 </div>
-{/block:description}
+
 
 <div id="flip">Navigation</div>
  
