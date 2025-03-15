@@ -249,9 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry {   
     width:690px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
@@ -260,8 +257,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    border-left:0px solid #efefef;
-     border-right:0px solid #efefef;
     margin-top:15px; 
     margin-left:360px;  
     width:690px;
