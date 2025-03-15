@@ -240,9 +240,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry {   
     width:670px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
