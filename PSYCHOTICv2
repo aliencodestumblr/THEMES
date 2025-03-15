@@ -302,9 +302,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry {   
     width:655px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
@@ -313,8 +310,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    border-left:0px solid {color:borders};
-     border-right:0px solid {color:borders};
     margin-top:-6px; 
     margin-left:480px;  
     width:655px;
