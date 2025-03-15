@@ -324,8 +324,6 @@ html {
 }
 
 #posts {     
-    border-left:0px solid {color:borders};
-     border-right:0px solid {color:borders};
     margin-top:0px; 
     margin-left:380px;  
     width:730px;
