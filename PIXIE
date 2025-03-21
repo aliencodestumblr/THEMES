@@ -50,6 +50,8 @@ attribute:"title"
 <meta name="text:Link 6 Url" content="/" />
 <meta name="text:Link 6 Title" content="link" />
 
+<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
+
 
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
@@ -1264,7 +1266,7 @@ text-align:right;
    </div>
    <div class="music-title"></div>
 
-   <audio id="audio" src="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3" type="audio"></audio>
+   <audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
 </div><!--pasta-->
 </div><!--glenjams-06-->
 <!----end music player---->
