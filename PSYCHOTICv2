@@ -909,7 +909,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:19px; 
+    font-size:22px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
