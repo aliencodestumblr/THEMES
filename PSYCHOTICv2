@@ -466,7 +466,7 @@ transition: all 0.3s ease-in-out;}
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:20px;  
+    margin-left:32px;  
     margin-bottom:100px;
     width:510px;
     height:auto; 
