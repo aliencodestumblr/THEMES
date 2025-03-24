@@ -240,6 +240,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry {   
     width:670px;    
+    {block:iffourcolumns}
+    width:1050px;    
+    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
@@ -915,11 +918,11 @@ color:{color:Text};
 }
  
 #bio{
-width: 146px;     
+width: 136px;     
 color:{color:Text};
 height:auto;
 border:1px solid {color:borders};
-padding:2px;
+padding:7px;
 margin-top:5px;
 opacity:1;
 text-align:center;
