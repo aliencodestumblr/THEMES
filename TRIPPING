@@ -31,6 +31,8 @@ attribute:"title"
 <meta name="color:Links" content="#bebebe" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#bebebe" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/> 
 <meta name="if:Show Sidebar Image" content="0"/>
@@ -465,7 +467,7 @@ transition: all 0.4s linear;
 .entry .wow{
 position:absolute;
 display:block;
-top:10px;
+top:5px;
 right:-50px;
 width:auto;
 color:#aaaaaa;
@@ -485,8 +487,8 @@ transition: all .5s linear;
 }
  
 .entry:hover .wow{
- top:10px;
-    right:10px;
+ top:5px;
+    right:4px;
 opacity: .7;
 -webkit-transition: all .5s linear;
 -moz-transition: all .5s linear;
@@ -648,14 +650,14 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:#444444;
+    background:{color:ask box background};
     margin-top:-5px;
     margin-left:0px;
     margin-right:0px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:{color:asker text}; 
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
