@@ -314,11 +314,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:355px;  
+    margin-left:360px;  
     width:900px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:248px;  
+    margin-left:252px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     width:250px;        
     {block:permalinkpage}
     width:500px; 
-    margin-left:248px; 
+    margin-left:252px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
