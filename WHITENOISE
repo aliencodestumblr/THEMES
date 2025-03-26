@@ -71,13 +71,8 @@ attribute:"title"
 <link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/92822ad00c.js"></script>
 <style type="text/css">
 
 html {
@@ -192,7 +187,7 @@ blockquote video {
 img {
 -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
 opacity:.8;
-        cursor:crosshair;
+    cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -223,7 +218,7 @@ html {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 9px 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-transform:;
@@ -259,7 +254,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:60px;   
     margin-left:375px;  
     {/block:permalinkpage}
-    
     margin-bottom:50px;
     transition:.5s;
 }
@@ -267,7 +261,6 @@ h1, h2, h3, h4, h5, h6 {
 .posts {  
     background:{color:details};   
     width:250px;        
-    
     {block:permalinkpage}
     width:500px; 
     margin-left:375px; 
@@ -366,7 +359,6 @@ h1, h2, h3, h4, h5, h6 {
  
  
 .notsi {
-    ;
     padding:0px;
     position:absolute;
     text-align:center;
@@ -427,13 +419,13 @@ transition: all 0.4s linear;
 position:absolute;
 width:;
 padding:3px;
-font-family: Inconsolata;
+font-family: "Rajdhani", sans-serif;
 background:{color:details};
 overflow:hidden;
 opacity:0.0;
 border-bottom-right-radius:15px;
 border-top-right-radius:0px;
-font-size:8px;
+font-size:7px;
 letter-spacing:1px;
 text-transform:uppercase;
 text-align:center;
@@ -462,7 +454,7 @@ top:0px;
     width:510px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -917,7 +909,7 @@ position:fixed;
 top:120px;
 left:140px;
 border:1px solid {color:borders};
-font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+font-family: "Rajdhani", sans-serif;
 font-size: 9px;
 line-height:13px;
 width:200px;
@@ -957,19 +949,19 @@ z-index:9;
 
 <div id="wee">
 <center><a href="/"><img style="margin-top:-1px;padding-bottom:5px;width:200px;" src="{image:sidebar}"></a></center>
-<div style="margin-top: -5px;">{description}</div>
+<div style="margin-top: -1px;">{description}</div>
 
 
 <select onchange='location=this.options[this.selectedIndex].value;' style=' 
 line-height:90%;
 font-size:11px;
 color:#c5c3c3;
-font-style:;
+letter-spacing:1px;
 width:200px;
 background-color:{color:background};
 border:#ddd 1px solid; 
 height:18px;
-font-family: arial;
+font-family:"Rajdhani", sans-serif;
 margin-top:4px;
 padding:0px; 
 -moz-border-radius:3px;
