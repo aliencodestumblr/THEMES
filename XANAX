@@ -287,7 +287,6 @@ body {
     font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1.5px;
-    text-transform:uppercase;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
