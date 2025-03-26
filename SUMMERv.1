@@ -24,8 +24,6 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Background images" content="#ffffff"/>
-<meta name="color:Links image" content="#ffffff" />
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#bbbbbb"/>  
@@ -311,6 +309,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry {   
     width:670px;    
+    {block:iffourcolumns}
+    width:1050px;    
+    {/block:iffourcolumns}
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -319,6 +320,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
+    border-left:0px solid {color:borders};
+     border-right:0px solid {color:borders};
     margin-top:0px; 
     margin-left:465px;  
     width:670px;
@@ -662,6 +665,7 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
+    text-transform:uppercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -1032,6 +1036,130 @@ span.chats {
    color:var(--Music-Title-Color);
 }
 
+
+#updatesbar{
+    position:absolute;
+    margin-top:0px;
+    margin-left:-8px;
+    padding:3px;
+    padding-right:5px;
+    text-align:right;
+    width:106px;
+    height:9px;
+    background:{color:background}; /*bar background*/
+    border:0px solid #ebebeb; /*matching border color with #box border        looks best*/
+    /*delete the following for no rounded edges*/
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    }
+ 
+#updates{
+    position:fixed;
+    width:140px;
+    top:25px;
+    right:0px;
+    padding-top:7px;
+    padding-left:7px;
+    padding-right:7px;
+    padding-bottom:4px;
+    font-family:"Rajdhani", sans-serif;
+    font-size:9px;
+    line-height:12px;
+    background-color:{color:background}; /*background hex color code*/
+    border:0px solid #ebebeb; /*change color code for different colored       borders*/
+    color:{color:text}; /*text color, note link colors and styles will change      with the theme you're using*/
+    z-index:999;
+    /*delete the following for no rounded edges*/
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+ 
+#guts,#click{
+    padding:1px;
+    display:inline-block;
+}
+ 
+#click{
+    margin-bottom:4px;
+    padding:1px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+    background:{color:background}; /*tab 1 background color*/
+    border:0px solid #f4f4f4; 
+    padding:1px;
+    display:block;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    /*delete the following for no rounded edges*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+ 
+#click:hover{
+    cursor:help;
+}
+ 
+#click:active{
+    background:#ffffff; /*color of tab when clicked*/
+}
+ 
+#guts{
+    padding:1px;
+    display:none;
+}
+ 
+#guts2,#click2{
+    padding:1px;
+    display:inline-block;
+}
+ 
+#click2{
+    margin-top:7px;
+     font-family:"Rajdhani", sans-serif;
+    font-size:9px;
+    color:{color:text};
+    margin-bottom:4px;
+    padding:1px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+    background:; /*tab 2 background color*/
+    border:0px solid #f4f4f4; 
+    padding:1px;
+    display:block;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    /*delete the following for no rounded edges*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+ 
+#click2:hover{
+    cursor:help;
+}
+ 
+#click2:active{
+    background:; /*color of tab when clicked*/
+}
+ 
+#guts2{
+    padding:1px;
+    display:none;
+}
+
 .badge{
     z-index:1;
     overflow:hidden;
@@ -1254,9 +1382,11 @@ return false;
 {/block:ifshowblogtitle}
  
  
+{block:description}
 <div class="description">
 {Description}
 </div>
+{/block:description}
  
 </div>
  
