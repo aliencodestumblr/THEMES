@@ -24,7 +24,6 @@ attribute:"title"
 <meta name="image:sidebar" content="" /> 
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Background images" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#c1c1c1"/>  
@@ -259,13 +258,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts {  
-    background:{color:details};   
     width:250px;        
     {block:permalinkpage}
     width:500px; 
     margin-left:375px; 
     {/block:permalinkpage} 
-        border:0px solid {color:borders};
     margin:2px; 
     padding:0px;    
     overflow:hidden;
@@ -449,12 +446,13 @@ top:0px;
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:20px;  
+    margin-left:0px;  
     margin-bottom:100px;
     width:510px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
+    letter-spacing:1px; 
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -471,7 +469,7 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
@@ -599,14 +597,14 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:#f4f4f4;
+    background:#000;
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:#fff; 
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
@@ -917,7 +915,6 @@ padding:9px;
 height:auto;
 color:{color:text};
 text-align:center;
-background-color:{color:background};
 opacity:7;
 z-index:9;
 
@@ -958,8 +955,7 @@ font-size:11px;
 color:#c5c3c3;
 letter-spacing:1px;
 width:200px;
-background-color:{color:background};
-border:#ddd 1px solid; 
+border:{color:borders} 1px solid; 
 height:18px;
 font-family:"Rajdhani", sans-serif;
 margin-top:4px;
