@@ -279,7 +279,7 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
-html {width:820px;}
+html {width:800px;}
 
 body {
     color:{color:text}; 
@@ -304,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:700px;    
+    width:654px;    
     {block:permalinkpage}  
     width:590px; 
     {/block:permalinkpage} 
@@ -314,11 +314,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:355px;  
-    width:700px;
+    margin-left:335px;  
+    width:654px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:300px;  
+    margin-left:305px;  
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     width:277px;        
     {block:permalinkpage}
     width:500px; 
-    margin-left:300px; 
+    margin-left:305px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
