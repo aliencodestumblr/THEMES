@@ -29,7 +29,7 @@ attribute:"title"
 <meta name="color:Accent" content="#b9b9b9"/>  
 <meta name="color:Text" content="#b9b9b9" /> 
 <meta name="color:Links" content="#b9b9b9" />  
-<meta name="color:Links Hover" content="#b9b9b9" />
+<meta name="color:Links Hover" content="#e1e1e1" />
 <meta name="color:Scrollbar" content="#b9b9b9" />
 <meta name="color:permalink" content="#b9b9b9" />
 <meta name="color:permalink border" content="#eeeeee" />
@@ -458,7 +458,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom:100px;
     width:510px;
     height:auto; 
-    overflow:auto;   
+    overflow:auto; 
+    letter-spacing:1px;
     font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
@@ -467,6 +468,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ol.notes {    
+    letter-spacing:1px;
     margin-top:0px;
     margin-left:0px; 
     margin-right:0px;  
