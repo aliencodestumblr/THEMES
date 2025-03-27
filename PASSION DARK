@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:230px;        
+    width:250px;        
     {block:permalinkpage}
     width:500px; 
     margin-left:240px; 
