@@ -70,29 +70,10 @@ attribute:"title"
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
 
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
- 
-
-
-<link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -101,11 +82,13 @@ attribute:"title"
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
-
-
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style type="text/css">
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
@@ -465,34 +448,28 @@ transition: all 0.4s linear;
  
  
 .entry .wow{
-position:absolute;
-display:block;
-top:5px;
-right:-50px;
-width:auto;
-color:#aaaaaa;
-overflow:hidden;
-height:auto;
-font-family:"Rajdhani", sans-serif;
-font-size:8px;
-text-transform:uppercase;
-letter-spacing:1px;
-text-align:center;
-opacity:0;
-padding:3px 3px 3px 5px;
-background-color:#ffffff;
--webkit-transition: all .5s linear;
--moz-transition: all .5s linear;
-transition: all .5s linear;
+ width:250px;
+    max-height:calc(100% - 20px);
+    bottom:0;
+    left:0;
+    padding:10px;
+    position:absolute;
+    opacity:0;
+    overflow:auto;
+    background:{color:details};
+    color:{color:text};
+    z-index:99;
+    font-family:"Share Tech Mono", monospace;
+    text-align:left;
+    font-weight: 600;
+    font-size:7px;
+    text-transform:uppercase;
 }
  
 .entry:hover .wow{
- top:5px;
-    right:4px;
-opacity: .7;
--webkit-transition: all .5s linear;
--moz-transition: all .5s linear;
-transition: all .5s linear;}
+opacity:1;}
+
+ 
  
 /* end notes */
 
@@ -1175,7 +1152,9 @@ margin-left:390px;
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1188,7 +1167,9 @@ margin-left:390px;
 {/block:Source} 
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1212,7 +1193,9 @@ margin-left:390px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div>
@@ -1232,7 +1215,9 @@ margin-left:390px;
 {/block:Description}  
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage}  
 </div> 
@@ -1247,7 +1232,9 @@ margin-left:390px;
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1271,7 +1258,9 @@ margin-left:390px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1286,7 +1275,9 @@ margin-left:390px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1302,7 +1293,9 @@ margin-left:390px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1319,7 +1312,9 @@ margin-left:390px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">
-<div class="wow"><a href="{Permalink}" title="permalink page">{noteCount} N</font></a> - <a href="{reblogurl}" target="_blank"><font color="" title="reblog">↻</font></a></div>
+<div class="wow">
+<a href="{Permalink}" title="{TimeAgo}" target="_blank">{ShortMonth} {DayOfMonth}</a> / {NoteCount}
+</div>
 </div>
 {/block:IndexPage} 
 </div> 
