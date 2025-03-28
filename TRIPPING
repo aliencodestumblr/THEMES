@@ -631,8 +631,8 @@ ol.notes li.note img.avatar {
 .ask {    
     background:{color:ask box background};
     margin-top:-5px;
-    margin-left:0px;
-    margin-right:0px;
+    margin-left:11px;
+    margin-right:11px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
@@ -665,8 +665,8 @@ ol.notes li.note img.avatar {
 
 .answer { 
     margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:11px;
+    margin-right:11px;
     margin-bottom:20px;
     padding-top:8px;  
     width:auto; 
