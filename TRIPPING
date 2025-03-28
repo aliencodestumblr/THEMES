@@ -964,7 +964,7 @@ span.chats {
 }
  
 .banner img{
-    margin:5px auto 2px;
+    margin:5px auto 5px;
     max-width:200px;
 }
  
