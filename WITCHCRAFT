@@ -380,20 +380,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
   
- 
- 
 .notsi {
-    padding:0px;
-    position:absolute;
-    text-align:center;
-    opacity:0;
-    display:inline-block;
-    overflow:hidden;
-    top:0px; 
-    left:0px;
-    width:100%; 
-    height:calc(100% - 0px);   
-    transition:2s; 
+    padding: 0px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    display: inline-block;
+    overflow: hidden;
+    bottom: 0px; /* Align to the bottom */
+    left: 0px;
+    width: 100%;
+    height: 28px; /* Instead of covering the whole post */
+    transition: 1s;
 }
  
 .posts:hover .notsi { 
