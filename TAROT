@@ -39,6 +39,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:show title" content="1"/>
+<meta name="if:custom scrollbar" content="1">
 
 <meta name="text:Blog Title Size" content="50"/>
 <meta name="text:Link One Title" content=""/>
@@ -277,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
     width:800px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:460px;   
+   margin-left:463px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -289,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
      margin-top:0px;   
     width:540px; 
-   margin-left:460px;  
+   margin-left:463px;  
     {/block:permalinkpage} 
     margin:3px; 
     padding:0px;    
@@ -340,13 +341,25 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-/* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
-/* end scrollbar */
+{if:customscrollbar}
 
+::-webkit-scrollbar-thumb:vertical { 
+background-color:{color:link};
+height:auto;-webkit-border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:horizontal { 
+background-color:{color:link};
+height:6px !important;-webkit-border-radius:20px;
+}
+
+::-webkit-scrollbar { 
+height:6px;
+width:6px; 
+background-color:{color:Background};
+-webkit-border-radius:20px;
+}
+{/if:customscrollbar}
 
 /* pagination */
 .pag {      
@@ -445,11 +458,11 @@ transition: all 0.4s linear;
 .likep img {width: 21px; height: 20px; webkit-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear;}
 .rep {width: 24px; height: 20px; overflow: hidden; z-index: 9999999; display: inline-block;margin-right:3px;}  
 .rep img{width: 24px; height: 20px; line-height: 30px; display: inline;opacity: 0.9;}
-.not { display: inline-block; background: url("https://static.tumblr.com/uiqhh9x/X6Ym17xp2/middle.png"); height: 20px; font-size: 11px; line-height: 20px; color: #fff; padding-left: 4px; padding-right: 4px; -moz-border-radius: 2px; border-radius:  2px; bottom: 6px; position: relative; letter-spacing:0px;}
+.not { display: inline-block; background: url("https://static.tumblr.com/uiqhh9x/X6Ym17xp2/middle.png"); height: 19.5px; font-size: 11px; line-height: 20px; color: #fff; padding-left: 4px; padding-right: 4px; -moz-border-radius: 2px; border-radius:  2px; bottom: 6px; position: relative; letter-spacing:0px;}
 .not a{color: #fff; font-family: helvetica;}
 .entry:hover .not, .entry:hover .rep, .entry:hover .likep {opacity: 0.9; filter: alpha(opacity = 80);}
 .not:hover , .rep:hover, .likep:hover {opacity: 1!important; filter: alpha(opacity = 100)!important;}
-#posts .permalink{z-index:9999991; position:absolute; bottom:13px; right:3px; height:10px; padding:3px; overflow:hidden; font-size:11px; line-height:90%; text-align:center; opacity:0.0; filter: alpha(opacity = 0); }
+#posts .permalink{z-index:9999991; position:absolute; bottom:11px; right:1px; height:10px; padding:3px; overflow:hidden; font-size:11px; line-height:90%; text-align:center; opacity:0.0; filter: alpha(opacity = 0); }
 #posts:hover .permalink{overflow:visible;-webkit-transition: opacity 0.4s linear; opacity: 1; -webkit-transition: all 0.4s linear; opacity: 0.8;-moz-transition: all 0.4s linear; opacity: 0.8; transition: all 0.4s linear; opacity: 0.8; margin-top:5px; }
 
 
@@ -925,7 +938,7 @@ color:{color:link};}
         
         #cole{
 padding-right:5px;
-color:{color:Link};
+color:{color:link};
 }
  
 #cole a {
@@ -933,7 +946,7 @@ padding-left:5px;
 display:relative;
 max-width:400px;
 text-align:right;
-color:{color:Link};
+color:{color:link};
 }
  
 #cole .mohr {
