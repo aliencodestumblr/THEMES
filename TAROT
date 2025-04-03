@@ -106,7 +106,11 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html {cursor:crosshair;}
+body {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
+}
+
+
  
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -177,12 +181,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-    cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -215,7 +220,7 @@ blockquote video {
 }
 
 img {
-    cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     -webkit-transition: opacity 0.8s linear;
 opacity: 0.75;
     border:0;
@@ -240,9 +245,11 @@ opacity: 0.75;
 
 html {
     width:1100px;
+     cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
 }
 
 body {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:text}; 
     background-color:{color:background};
     font:400 9px "Rajdhani", sans-serif;
@@ -344,12 +351,12 @@ h1, h2, h3, h4, h5, h6 {
 {if:customscrollbar}
 
 ::-webkit-scrollbar-thumb:vertical { 
-background-color:{color:link};
+background-color:{color:links};
 height:auto;-webkit-border-radius:20px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal { 
-background-color:{color:link};
+background-color:{color:links};
 height:6px !important;-webkit-border-radius:20px;
 }
 
@@ -458,11 +465,11 @@ transition: all 0.4s linear;
 .likep img {width: 21px; height: 20px; webkit-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear;}
 .rep {width: 24px; height: 20px; overflow: hidden; z-index: 9999999; display: inline-block;margin-right:3px;}  
 .rep img{width: 24px; height: 20px; line-height: 30px; display: inline;opacity: 0.9;}
-.not { display: inline-block; background: url("https://static.tumblr.com/uiqhh9x/X6Ym17xp2/middle.png"); height: 19.5px; font-size: 11px; line-height: 20px; color: #fff; padding-left: 4px; padding-right: 4px; -moz-border-radius: 2px; border-radius:  2px; bottom: 6px; position: relative; letter-spacing:0px;}
+.not { display: inline-block; background: url("https://static.tumblr.com/uiqhh9x/X6Ym17xp2/middle.png"); height: 20px; font-size: 11px; line-height: 20px; color: #fff; padding-left: 4px; padding-right: 4px; -moz-border-radius: 2px; border-radius:  2px; bottom: 6.3px; position: relative; letter-spacing:0px;}
 .not a{color: #fff; font-family: helvetica;}
 .entry:hover .not, .entry:hover .rep, .entry:hover .likep {opacity: 0.9; filter: alpha(opacity = 80);}
 .not:hover , .rep:hover, .likep:hover {opacity: 1!important; filter: alpha(opacity = 100)!important;}
-#posts .permalink{z-index:9999991; position:absolute; bottom:11px; right:1px; height:10px; padding:3px; overflow:hidden; font-size:11px; line-height:90%; text-align:center; opacity:0.0; filter: alpha(opacity = 0); }
+#posts .permalink{z-index:9999991; position:absolute; bottom:10.5px; right:0.5px; height:10px; padding:3px; overflow:hidden; font-size:11px; line-height:90%; text-align:center; opacity:0.0; filter: alpha(opacity = 0); }
 #posts:hover .permalink{overflow:visible;-webkit-transition: opacity 0.4s linear; opacity: 1; -webkit-transition: all 0.4s linear; opacity: 0.8;-moz-transition: all 0.4s linear; opacity: 0.8; transition: all 0.4s linear; opacity: 0.8; margin-top:5px; }
 
 
@@ -933,12 +940,12 @@ text-align: left;
 font-family:"Rajdhani", sans-serif; 
 font-size: {text:Blog title size}px; 
 line-height: 110%; 
-color:{color:link};}
+color:{color:links};}
         
         
         #cole{
 padding-right:5px;
-color:{color:link};
+color:{color:text};
 }
  
 #cole a {
@@ -981,8 +988,8 @@ margin-left:156px;
 }
 
 #sidebar img {
-display: block;
-margin-bottom: 1px;
+display: inline-block;
+margin-bottom:-10px;
 }
 </style> 
 
@@ -1064,9 +1071,12 @@ return false;
     font-family: helvetica;
     font-size: 9px;
     {/block:ifnotpixelfont}
-	text-align:right; padding-left:10px;	line-height: 100%; color:#777; text-transform: none; 
-	width:265px;padding-top:5px;">
+	text-align:center; padding-left:10px;	line-height: 100%; color:#777; text-transform: none; 
+	width:265px;padding-top:0px;">
 
+<img src="https://i.pinimg.com/originals/84/e7/9f/84e79f807eac1c0dad36981fdc9d1df7.gif" width="50px;" />
+<BR>
+<BR>
 {Description}
 
 </div>
