@@ -37,6 +37,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:custom scrollbar" content="1">
 
 <meta name="text:Link One Title" content=""/>
 <meta name="text:Link One" content=""/>
@@ -102,8 +103,10 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html {cursor:crosshair;}
  
+html {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
+} 
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -173,12 +176,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-    cursor:crosshair;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -207,11 +211,12 @@ blockquote img {
 }
 
 blockquote video {
+    margin-bottom:-5px;
     width:100%; 
 }
 
 img {
-    cursor:crosshair;
+     cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     -webkit-transition: opacity 0.8s linear;
 opacity: 0.75;
     border:0;
@@ -234,8 +239,8 @@ opacity: 0.75;
 
 .spotify_audio_player {height:80px !important;}
 
-html {
-    width:1100px;
+body {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
 }
 
 body {
@@ -270,11 +275,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:5px; 
-    margin-left:250px;  
+    margin-left:-110px;  
     width:800px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:390px;   
+   margin-left:185px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -285,8 +290,8 @@ h1, h2, h3, h4, h5, h6 {
     width:250px;        
     {block:permalinkpage}
      margin-top:0px;   
-    width:540px; 
-   margin-left:390px;  
+    width:500px; 
+   margin-left:185px;  
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:5px; 
@@ -339,10 +344,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+{if:customscrollbar}
+
+::-webkit-scrollbar-thumb:vertical { 
+background-color:{color:links};
+height:auto;-webkit-border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:horizontal { 
+background-color:{color:links};
+height:6px !important;-webkit-border-radius:20px;
+}
+
+::-webkit-scrollbar { 
+height:6px;
+width:6px; 
+background-color:{color:Background};
+-webkit-border-radius:20px;
+}
+{/if:customscrollbar}
 /* end scrollbar */
 
 
@@ -456,9 +476,9 @@ transition: all 0.4s linear;
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:20px;  
+    margin-left:10px;  
     margin-bottom:100px;
-    width:540px;
+    width:500px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -934,7 +954,7 @@ top: 140px;
 background:{color:details};
 padding: 2px;
 z-index:99999999999;
-left:8%;
+margin-left:723px;
 box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
 -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
 -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);}
@@ -996,6 +1016,7 @@ return false;
 
 <body>  
 
+<div class="entry">  
 <div id="sidebar">
 <div id="newHeader">
 <img src="{image:sidebar}" width="210"/></a></div>
@@ -1014,8 +1035,6 @@ return false;
 <div style="line-height: 100%; color:#777; text-transform: none; width:200px;padding-top:5px; padding-left:3px; padding-bottom:3px;">{Description}</div></div>
 
 
-
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1108,7 +1127,6 @@ return false;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
