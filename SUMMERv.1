@@ -248,10 +248,11 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
+    margin-bottom:-5px;
     width:100%; 
 }
 
@@ -279,11 +280,6 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
-html { 
-
-width:500px;
-    
-}
 
 body {
     color:{color:text}; 
@@ -318,11 +314,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:0px; 
-    margin-left:465px;  
+    margin-left:80px;  
     width:670px;
     {block:permalinkpage}
-     margin-top:10px;   
-   margin-left:465px;   
+     margin-top:0px;   
+   margin-left:80px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -333,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     width:277px;        
     {block:permalinkpage}
     width:540px; 
-   margin-left:465px;  
+   margin-left:80px;  
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:16px; 
@@ -472,7 +468,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:20px;  
+    margin-left:12px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -659,7 +655,7 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
-    text-transform:uppercase; 
+    text-transform:lowercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -962,9 +958,9 @@ span.chats {
     z-index:100;
     position:fixed;
     top:130px;
-    left:2%;
+    margin-left:-150px;
  
-    margin:0 0 0 200px;
+    
  
     width:180px;
  
@@ -1134,7 +1130,8 @@ return false;
 <body>  
 
 
- <div class="sidebarcontainer">
+<div class="entry">    
+<div class="sidebarcontainer">
 <div class="sidebar">
  
 {block:ifshowsidebarimage}
@@ -1184,14 +1181,10 @@ return false;
  
 </div>
 </div>
- 
- 
 </div>
  
 
 
-
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1278,7 +1271,6 @@ return false;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 </div> 
 {/block:answer}
