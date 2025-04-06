@@ -205,10 +205,11 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
+    margin-bottom:-5px;
     width:100%; 
 }
 
@@ -238,10 +239,6 @@ img:hover {-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition
 }
 
 .spotify_audio_player {height:80px !important;}
-
-html {
-    width:510px;
-}
 
 body {
     color:{color:text}; 
@@ -282,11 +279,11 @@ h1, h2, h3, h4, h5, h6 {
     border-left:1px solid #eee;
      border-right:1px solid #eee;
     margin-top:-50px; 
-    margin-left:380px; 
+    margin-left:80px; 
     width:570px;
     {block:permalinkpage}
     margin-top:-50px;
-    margin-left:380px;  
+    margin-left:80px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -297,9 +294,9 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:250px;        
     {block:permalinkpage}
-    padding-left:30px;
+
     width:520px; 
-    margin-left:380px; 
+    margin-left:80px; 
     {/block:permalinkpage} 
     margin:10px; 
     padding:0px;    
@@ -478,7 +475,7 @@ opacity:1;}
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:20px;  
+    margin-left:10px;  
     margin-bottom:100px;
     width:510px;
     height:auto; 
@@ -936,21 +933,12 @@ span.chats {
     z-index:100;
     position:fixed;
     top:150px;
-    left:6%;
-
-    margin:0 0 0 0px;
-
- 
+    margin-left:-200px;
     width:200px;
     padding:15px;
- 
     background:{color:details}; 
- 
     text-align:right;
- 
     border:1px solid #eee;
- 
- 
 }
  
 .blogtitle{
@@ -980,7 +968,7 @@ span.chats {
  
  
 .nav{
-    margin-left:390px;  
+    margin-left:90px;  
     width:560px;
     margin-top:10px;
     padding:10px;
@@ -1069,7 +1057,7 @@ span.chats {
 
 
 
-
+<div class="entry"> 
 <div class="sidebar">
  
 {block:ifshowblogtitle}
