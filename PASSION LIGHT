@@ -185,10 +185,11 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
+    margin-bottom:-5px;
     width:100%; 
 }
 
@@ -212,10 +213,6 @@ img {
 }
 
 .spotify_audio_player {height:80px !important;}
-
-html {
-    width:700px;
-}
 
 body {
     color:{color:text}; 
@@ -249,11 +246,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:280px;  
+    margin-left:80px;  
     width:670px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:240px;  
+    margin-top:0px;   
+    margin-left:80px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -863,7 +860,7 @@ span.chats {
 }
 
 #sidebar{
-left:100px;
+margin-left:-115px;
 top:240px;
 position:fixed;
 width: 150px; 
@@ -991,6 +988,7 @@ opacity:1;
 <body>  
 
 
+<div class="entry">  
 <div id="sidebar">
 <div id="blogtitle">{text:Blogtitle}</div>
 <img src="{image:Sidebar}">
@@ -1005,7 +1003,6 @@ opacity:1;
 </div>
 
 
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
