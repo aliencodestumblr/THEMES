@@ -279,7 +279,6 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
-html {width:820px;}
 
 body {
     color:{color:text}; 
@@ -313,11 +312,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:360px;  
+    margin-left:80px;  
     width:900px;
     {block:permalinkpage}
-    margin-top:20px;   
-    margin-left:252px;  
+    margin-top:0px;   
+    margin-left:80px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -327,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
     width:250px;        
     {block:permalinkpage}
     width:500px; 
-    margin-left:252px; 
+    margin-left:80px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -616,7 +615,6 @@ ol.notes li.note img.avatar {
     line-height:15px;  
     border-radius: 4px;
     border:1px solid {color:borders};
-    text-transform:uppercase; 
 }
 
 .asker {
@@ -912,7 +910,7 @@ span.chats {
     background:;
     position:fixed; 
     top:-1px; 
-    left:4%;  
+    margin-left:-220px;  
     width:220px;   
     height:80px; 
     padding:55px 15px 15px 15px;
@@ -1015,9 +1013,7 @@ span.chats {
 <body>  
 
 
-
-
-
+<div class="entry">  
 <div class="sidebar"> 
 <div class="nav">   
 <a href="{text:link 1 url}" title="{text:link 1 title}"><CENTER><i class="fa fa-refresh" aria-hidden="true"></i></CENTER></a> 
@@ -1032,7 +1028,6 @@ span.chats {
 </div>
 
 
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1125,7 +1120,6 @@ span.chats {
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
