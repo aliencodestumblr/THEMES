@@ -24,8 +24,6 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Background images" content="#ffffff"/>
-<meta name="color:Links image" content="#ffffff" />
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#bbbbbb"/>  
@@ -310,10 +308,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height:15px;
 }
 
-html {
-    width:430px;
-}
-
 .entry {   
     width:730px;    
     {block:permalinkpage}  
@@ -325,11 +319,11 @@ html {
 
 #posts {     
     margin-top:0px; 
-    margin-left:380px;  
+    margin-left:80px;  
     width:730px;
     {block:permalinkpage}
-     margin-top:10px;   
-   margin-left:380px;   
+     margin-top:0px;   
+   margin-left:80px;   
     {/block:permalinkpage}
     
     margin-bottom:50px;
@@ -342,7 +336,7 @@ html {
     
     {block:permalinkpage}
     width:540px; 
-   margin-left:380px;  
+   margin-left:80px;  
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:17px; 
@@ -480,14 +474,15 @@ html {
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:20px;  
+    margin-left:12px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
+    letter-spacing:1px;
     font-style:normal;   
     padding:0px;    
 }
@@ -502,7 +497,7 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
@@ -1118,21 +1113,13 @@ span.chats {
     z-index:100;
     position:fixed;
     top:100px;
-    left:125px;
- 
-    margin:0 0 0 0;
- 
+    margin-left:-170px;
     width:200px;
     padding:10px;
- 
     background:{color:details};
- 
     font-size:9px;
     text-align:center;
- 
     border:1px solid {color:borders};
- 
- 
 }
  
 .blogtitle{
@@ -1241,10 +1228,8 @@ return false;
 
 <body>  
 
-
+<div class="entry"> 
 <div class="sidebar">
- 
- 
 <div id="blogt" class="{select:Icon Color}">
 <div class="cblack"><a href="/archive" title="{text:archive link title}"><img src="https://static.tumblr.com/sas2ex2/pOynkyiu3/minimize.png"/></a><a href="/ask" title="{text:ask link title}"><img src="https://static.tumblr.com/sas2ex2/a9Nnkyitl/window.png"/></a><a href="/" title="{text:home link title}"><img src="https://static.tumblr.com/sas2ex2/k0mnkyit9/close.png"/></a></div>  
 <div class="cgrey"><a href="/archive" title="{text:archive link title}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="/ask" title="{text:ask link title}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="/" title="{text:home link title}"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
@@ -1302,10 +1287,6 @@ return false;
  
 </div>
 </div>
- 
- 
- 
- 
 </div>
 
 
@@ -1391,7 +1372,6 @@ return false;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 </div> 
 {/block:answer}
