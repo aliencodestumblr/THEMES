@@ -36,6 +36,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content="1"/> 
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1 Url" content="/" />
 <meta name="text:Link 1 Title" content="link" />
@@ -974,6 +975,7 @@ opacity:1;
 text-align:right;
 }
  
+
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
    --Music-Player-Vinyl:#fff;
@@ -1097,6 +1099,7 @@ text-align:right;
 
 <body>  
 
+{block:ifshowmusicplayer}
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <div class="glenjams-06">
 <div class="pasta">
@@ -1111,6 +1114,7 @@ text-align:right;
 </div><!--pasta-->
 </div><!--glenjams-06-->
 <!----end music player---->
+{/block:ifshowmusicplayer}
 
 <div id="sidebar">
 <div id="blogtitle">{text:Blogtitle}</div>
