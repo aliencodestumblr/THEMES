@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
   color:{color:permalink};
     position:relative;
     display:block;
-    font-size:1em;
+    font-size:10px;
     opacity:1;
     right:0;
     text-align:right;
@@ -437,7 +437,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family:"Rajdhani", sans-serif;
     margin:0 0px;
     padding-bottom:1px;
-    border-bottom:1px solid {color:permalink border};
     text-decoration:none;
  }
 
@@ -1038,7 +1037,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1055,7 +1054,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1083,7 +1082,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1107,7 +1106,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1125,7 +1124,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1153,7 +1152,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1172,7 +1171,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1192,7 +1191,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1213,7 +1212,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{Permalink}">{NoteCount}</a> + <a href="{ReblogURL}">reblog</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
