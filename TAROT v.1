@@ -25,7 +25,7 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#ffffff"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -39,7 +39,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:show title" content="1"/>
-<meta name="if:custom scrollbar" content="1">
+<meta name="if:Show custom scrollbar" content="1">
 
 <meta name="text:Blog Title Size" content="50"/>
 <meta name="text:Link One Title" content=""/>
@@ -356,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-{if:customscrollbar}
+{block:ifshowcustomscrollbar}
 
 ::-webkit-scrollbar-thumb:vertical { 
 background-color:{color:links};
@@ -374,7 +374,8 @@ width:6px;
 background-color:{color:Background};
 -webkit-border-radius:20px;
 }
-{/if:customscrollbar}
+
+{/block:ifshowcustomscrollbar}
 
 /* pagination */
 .pag {      
@@ -682,7 +683,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -1076,11 +1076,9 @@ return false;
     font-size: 9px;
     {/block:ifnotpixelfont}
 	text-align:center; padding-left:16px;	line-height: 100%; color:#777; text-transform: none; 
-	width:265px;padding-top:0px;">
+	width:265px;padding-top:5px;">
 	
-	<img src="https://i.pinimg.com/originals/84/e7/9f/84e79f807eac1c0dad36981fdc9d1df7.gif" width="50px;" />
-<BR>
-<BR>
+
 {Description}
 
 </div>
@@ -1113,7 +1111,7 @@ NAVIGATE
 
 </div>
 </div></div>
-                        </div>
+</div>
 
 
   
