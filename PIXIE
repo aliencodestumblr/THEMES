@@ -606,6 +606,7 @@ ol.notes li.note img.avatar {
     line-height:15px;  
     border-radius: 5px;
     border:1px solid {color:borders};
+    text-transform:uppercase; 
 }
 
 .asker {
