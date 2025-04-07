@@ -1015,8 +1015,8 @@ border-radius: 5px;
     font-size: 7px;
 	text-transform:lowercase;
     {/block:ifcustomfont}
-
-    {block:ifnotcustomfont}
+letter-spacing:1px;
+{block:ifnotcustomfont}
     font-family: "Rajdhani", sans-serif;
     font-size: 7px;
     line-height:120%;
