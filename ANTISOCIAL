@@ -22,7 +22,7 @@ attribute:"title"
 </script>
  
 <meta name="image:header" content="https://64.media.tumblr.com/9895097e9214ca7f77f1636a425d905c/5e9fb190bd124ba4-94/s1280x1920/a5353de9b145b98ab61556657e4e3d87816d927b.jpg" />
-<meta name="image:sb" content="https://64.media.tumblr.com/9f06492d8ce4053ad790b563215a5177/84b6faa3c17e068a-90/s1280x1920/a1624484b5eb5ec17fc1a171c040c8aa8fdfcb56.jpg" />
+<meta name="image:sb" content="https://64.media.tumblr.com/3ff98dd464b54d6fafb950838daa029c/e84b0dcac265f230-82/s640x960/e18a0216491c3ce4443d6b5a591f9818dc96ef11.jpg" />
 
 
 <meta name="color:Background" content="#ffffff"/>
@@ -33,6 +33,8 @@ attribute:"title"
 <meta name="color:Links Hover" content="#cecbcb" />
 <meta name="color:Title Shadow" content="#f443ce"/>
 <meta name="color:Scrollbar" content="#222222" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -542,14 +544,14 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:#000;
+    background:{color:ask box background};
     margin-top:-5px;
     margin-left:0px;
     margin-right:0px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:#fff; 
+    color:{color:asker text};
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
@@ -923,10 +925,10 @@ margin-top:20px;
 <div id="tt">{title}</div>
 
 <div class="hopver"> 
-{block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:ifLinkOneTitle} , 
-{block:ifLinkTwoTitle}<a href="{text:Link Two}">{text:Link Two Title}</a>{/block:ifLinkTwoTitle} , 
-{block:ifLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:ifLinkThreeTitle} ,
-{block:ifLinkFourTitle}<a href="{text:Link Four}">{text:Link Four Title}</a>{/block:ifLinkFourTitle} ,
+{block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:ifLinkOneTitle}, 
+{block:ifLinkTwoTitle}<a href="{text:Link Two}">{text:Link Two Title}</a>{/block:ifLinkTwoTitle}, 
+{block:ifLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:ifLinkThreeTitle},
+{block:ifLinkFourTitle}<a href="{text:Link Four}">{text:Link Four Title}</a>{/block:ifLinkFourTitle},
 {block:ifLinkFiveTitle}<a href="{text:Link Five}">{text:Link Five Title}</a>{/block:ifLinkFiveTitle}
 </div>
 
