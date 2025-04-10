@@ -21,14 +21,14 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Header" content=""/>
+<meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Borders" content="#cccccc"/>
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:Permalink" content="#2b0057">
+<meta name="color:Borders" content="#eeeeee"/>
+<meta name="color:Text" content="#444444" /> 
+<meta name="color:Links" content="#5995c6" />  
+<meta name="color:Links Hover" content="#000000" />
+<meta name="color:Permalink" content="#444444">
 <meta name="color:Permalink Background" content="#ffffff">
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
@@ -1041,7 +1041,7 @@ return false;
 <div class="sidebar">
 <div class="butters">
 <Br><Br><a href="/">
-{block:IfHeaderImage}<img src="{image:Header}" width="200">{/block:IfHeaderImage}{block:IfNotHeaderImage}{Title}{/block:IfNotHeaderImage}
+{block:IfSidebarImage}<img src="{image:Sidebar}" width="200">{/block:IfSidebarImage}{block:IfNotSidebarImage}{Title}{/block:IfNotSidebarImage}
 </a></div><Br>
 <div style="max-width:500px;margin-left:auto;margin-right:auto;">
 {Description}<Br><BR>
