@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:300px;    
     {block:permalinkpage}  
-    width:590px; 
+    width:420px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -313,13 +313,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:100px;  
+    margin-left:0px;  
     width:300px;
     {block:permalinkpage}
     margin-top:0px;   
-    margin-left:100px;  
+    margin-left:60px;  
     {/block:permalinkpage}
-    
     margin-bottom:50px;
     transition:.5s;
 }
@@ -328,8 +327,8 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:300px;        
     {block:permalinkpage}
-    width:500px; 
-    margin-left:100px; 
+    width:420px; 
+    margin-left:60px; 
     {/block:permalinkpage} 
     margin:35px; 
     padding:0px;    
@@ -464,10 +463,10 @@ transition: all 0.3s ease-in-out;}
 
 /* permalink */
 .perma {  
-    margin-top:10px;
+    margin-top:-20px;
     margin-left:32px;  
     margin-bottom:100px;
-    width:510px;
+    width:420px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -922,15 +921,18 @@ span.chats {
 }
 
 .sidebar {   
+    {block:permalinkpage}
+    margin-left:-330px;  
+    {/block:permalinkpage}
     position:fixed; 
     top:-1px; 
-    margin-left:-240px;  
+    margin-left:-315px;  
     width:320px;   
     height:80px; 
     padding:55px 15px 15px 15px;
     opacity:1;
     z-index:10;
-    user-select:none!important;   
+    user-select:none!important; 
 } 
  
 /* title */ 
@@ -1065,7 +1067,7 @@ span.chats {
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1078,7 +1080,7 @@ span.chats {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1102,7 +1104,7 @@ span.chats {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div>
@@ -1122,7 +1124,7 @@ span.chats {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1137,7 +1139,7 @@ span.chats {
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1161,7 +1163,7 @@ span.chats {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1176,7 +1178,7 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1192,7 +1194,7 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1209,7 +1211,7 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
+<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}">+{NoteCount}</a></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
