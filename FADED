@@ -972,6 +972,7 @@ li.drawer div ul {text-align: right;-webkit-padding-start: 12px;}
 }
  
 .butters a {
+    font-weight:100;
     font-size:30px;
     color:{color:Links};
     letter-spacing:2px;
