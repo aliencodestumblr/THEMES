@@ -24,16 +24,16 @@ attribute:"title"
 <meta name="image:Sidebar" content""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Accent" content="#6ab8be"/>  
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:scrollbar" content="#6ab8be" />
+<meta name="color:Accent" content="#f47ea9"/>  
+<meta name="color:Text" content="#000000" /> 
+<meta name="color:Links" content="#000000" />  
+<meta name="color:Links Hover" content="#000000" />
+<meta name="color:scrollbar" content="#f47ea9" />
 <meta name="color:scrollbar background" content="#ffffff" />
-<meta name="color:description" content="#aaaaaa" />
-<meta name="color:title" content="#6ab8be" />
+<meta name="color:description" content="#000000" />
+<meta name="color:title" content="#f47ea9" />
 <meta name="color:buttons text" content="#ffffff" />
-<meta name="color:buttons" content="#c0c0c0" />
+<meta name="color:buttons" content="#000000" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 
@@ -46,8 +46,8 @@ attribute:"title"
 <meta name="if:show sidebar image" content=""/>
 <meta name="if:show home link" content="1"/>
 
-<meta name="text:home link title" content="home" />
-<meta name="text:ask link title" content="message" />
+<meta name="text:home link title" content="reload" />
+<meta name="text:ask link title" content="inbox" />
 <meta name="text:link 1 title" content="" />
 <meta name="text:link 1" content="" />
 <meta name="text:link 2 title" content="" />
