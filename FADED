@@ -974,7 +974,7 @@ li.drawer div ul {text-align: right;-webkit-padding-start: 12px;}
 .butters a {
     font-size:30px;
     color:{color:Links};
-    letter-spacing:1px;
+    letter-spacing:2px;
     -webkit-transition-duration:1.5s;
     font-family:"Rajdhani", sans-serif;
     text-transform:lowercase;
