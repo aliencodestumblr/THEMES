@@ -28,7 +28,6 @@ attribute:"title"
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:scrollbar background" content="#ffffff" />
 <meta name="color:Permalink" content="#2b0057">
 <meta name="color:Permalink Background" content="#ffffff">
 <meta name="color:ask box background" content="#000000"/>
