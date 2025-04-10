@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left:375px;  
     width:510px;
     {block:permalinkpage}
-    margin-top:60px;   
+    margin-top:-6px;   
     margin-left:375px;  
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -994,7 +994,7 @@ border-radius:3px;
 {block:IndexPage} 
 <div class="notsi">  
 <div class="wow">
-<a href="{permalink}" target="_blank">{NoteCountWithLabel}</a>
+<a href="{permalink}">{NoteCountWithLabel}</a>
 </div>
 <div class="re"><a href="{reblogurl}" target="_blank">↻</a></div>
 </div>
