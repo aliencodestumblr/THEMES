@@ -944,7 +944,7 @@ span.chats {
     margin-left:40px;
     width:26px;
     height:100%;
-    top:0px;
+    top:10px;
     border-left:1px solid {color:borders};
     border-right:1px solid {color:borders};
     text-align:center;
