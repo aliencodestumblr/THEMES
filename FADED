@@ -24,12 +24,10 @@ attribute:"title"
 <meta name="image:Header" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Accent" content="#6ab8be"/>  
 <meta name="color:Borders" content="#cccccc"/>
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:scrollbar" content="#6ab8be" />
 <meta name="color:scrollbar background" content="#ffffff" />
 <meta name="color:Permalink" content="#2b0057">
 <meta name="color:Permalink Background" content="#ffffff">
@@ -247,6 +245,10 @@ img {
 
 .spotify_audio_player {height:80px !important;}
 
+html {
+    width:900px;
+}
+
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -261,7 +263,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
-    color:{color:accent};
+    color:{color:links};
     font:700 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
@@ -269,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:1050px;
+    width:900px;
     {block:permalinkpage}  
     width:100%; 
     {/block:permalinkpage} 
@@ -280,11 +282,11 @@ h1, h2, h3, h4, h5, h6 {
 #posts {  
     cursor:crosshair;
     margin-top:5px; 
-    margin-left:-155px;  
-    width:1050px;
+    margin-left:280px;  
+    width:900px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:340px;   
+   margin-left:280px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -296,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
      margin-top:0px;   
     width:450px; 
-   margin-left:340px;  
+   margin-left:280px;  
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -388,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size:12px;  
     text-align:center;
     text-transform:uppercase; 
-    color:{color:accent};    
+    color:{color:links};    
     padding:2px 7px 3px 7px;     
     margin:0px; 
     transition:1s;
@@ -397,7 +399,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a:hover{
-    color:{color:accent};
+    color:{color:links};
     font-weight:700; 
     transition:1s;
 }
@@ -618,7 +620,7 @@ ol.notes li.note img.avatar {
     width:18px; 
     padding:6px 11px 6px 8px;
     font-size:21px;
-    color:{color:accent};
+    color:{color:links};
     border-radius:5px;
     text-align:center;      
 }
@@ -657,8 +659,8 @@ ol.notes li.note img.avatar {
 .ask {    
     background:{color:ask box background};
     margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
@@ -745,7 +747,7 @@ ol.notes li.note img.avatar {
     margin-top:0px;  
     margin-left:2px;
     margin-right:5px;    
-    color:{color:accent};
+    color:{color:links};
     content: "━";      
 }
 /* end quotes */
@@ -758,7 +760,7 @@ ol.notes li.note img.avatar {
     margin-left:20px;
     margin-right:20px; 
     width:auto; 
-    color:{color:accent};
+    color:{color:links};
     font-size:9px;
     letter-spacing:1.5px;
     text-transform:uppercase;
@@ -832,7 +834,7 @@ span.chats {
     background:{color:background};
     font-family:'FontAwesome';  
     content:"\f1d8";
-    color:{color:accent};
+    color:{color:links};
     font-size:9px;
     padding:0px 5px 1px 5px;
     border-bottom-left-radius:5px;
@@ -925,7 +927,7 @@ span.chats {
     text-transform:uppercase;  
     font-size:20px; 
     letter-spacing:0px; 
-    color:{color:accent};  
+    color:{color:links};  
     text-align:center;  
     margin:-2px;  
     padding:2px 7px 3px 6px; 
@@ -957,7 +959,7 @@ li.drawer div ul {text-align: right;-webkit-padding-start: 12px;}
 .sidebar {
     width:200px;
     z-index:5;
-    margin-left:-380px;
+    margin-left:60px;
     position:fixed;
     display:block;
     bottom:25px;
@@ -966,7 +968,7 @@ li.drawer div ul {text-align: right;-webkit-padding-start: 12px;}
     padding-right:10px;
     cursor:crosshair;
     {block:permalinkpage}
-    margin-left:108px;   
+    margin-left:60px;   
     {/block:permalinkpage}
 }
  
@@ -1036,8 +1038,6 @@ return false;
 
 <body>  
 
-<div class="entry">  
-
 <div class="karkat">
 <div class="sidebar">
 <div class="butters">
@@ -1090,7 +1090,7 @@ return false;
  
 </div>
 
-
+<div class="entry"> 
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1266,7 +1266,7 @@ Posted on {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}.<br>
 reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originally: <a href="{ReblogRootURL}"><b>{ReblogRootName}</b></a>
 {/block:RebloggedFrom} 
 {block:NotReblog}
-<span class="th th-placeholder-o" style="color:{color:accent}"></span> originally: <a href="{BlogURL}"><b>{Name}</b></a>
+<span class="th th-placeholder-o" style="color:{color:links}"></span> originally: <a href="{BlogURL}"><b>{Name}</b></a>
 {/block:NotReblog}
 <br> 
 <b style="font-size:10px">{NoteCountWithLabel}</b>
