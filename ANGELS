@@ -25,12 +25,12 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#e5e5e5"/> 
-<meta name="color:Accent" content="#c1c1c1"/>  
-<meta name="color:Text" content="#c1c1c1" /> 
-<meta name="color:Links" content="#c1c1c1" />  
-<meta name="color:Links Hover" content="#c1c1c1" />
-<meta name="color:Scrollbar" content="#c1c1c1" />
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#529ecc"/>  
+<meta name="color:Text" content="#444444" /> 
+<meta name="color:Links" content="#529ecc" />  
+<meta name="color:Links Hover" content="##444444" />
+<meta name="color:Scrollbar" content="#529ecc" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
  
