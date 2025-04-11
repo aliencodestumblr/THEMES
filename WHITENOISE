@@ -308,10 +308,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb{ 
+background-color:#9b9bc2;
+border: 2px solid ;
+height:auto;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar { 
+height:auto;
+width:7px; 
+background-color:#fff; 
+}
+
 /* end scrollbar */
 
 
