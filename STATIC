@@ -419,40 +419,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 45px;
     transition: 1s;
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
-    opacity:1;
-}
- 
- 
-.notsi .re { 
-  position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-}
- 
- 
-.entry .wow{
-position:absolute;
-width:;
+    position:absolute;
+width:auto;
+height:auto;
 padding:5px;
 padding-left:10px;
 padding-right:10px;
@@ -471,8 +440,8 @@ z-index:10;
 -webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
 }
  
-.entry:hover .wow{
-opacity:.8;
+.posts:hover .notsi { 
+   opacity:.8;
 -webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
 }
 
@@ -1070,9 +1039,7 @@ return false;
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1085,9 +1052,7 @@ return false;
 {/block:Source} 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1111,9 +1076,7 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div>
@@ -1133,9 +1096,7 @@ return false;
 {/block:Description}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1149,9 +1110,7 @@ return false;
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1175,9 +1134,7 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1192,9 +1149,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1210,9 +1165,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1229,9 +1182,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {ShortMonth} {DayOfMonth},{Year} / <a href="{Permalink}">{NoteCount}</a> / <a href="{ReblogURL}" >reblog</a>
-</div>
 </div>
 {/block:IndexPage}
 </div> 
