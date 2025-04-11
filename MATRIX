@@ -409,38 +409,7 @@ border: 4px solid {color:borders};
     width: 100%;
     height: 37px;
     transition: 1s;
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
-    opacity:1;
-}
- 
- 
-.notsi .re { 
-  position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-}
- 
-.entry .wow{
-border-bottom: 1px solid {color:borders};
+    border-bottom: 1px solid {color:borders};
 color:#777;
 font-size:8px;
 opacity: 0; 
@@ -458,16 +427,17 @@ letter-spacing:1px;
 display:block;
 }
  
-.entry:hover .wow{
-opacity:0.9;
+.posts:hover .notsi { 
+   opacity:0.9;
 z-index:999999;
-padding-top:4px;
-}
+padding-top:4px;}
+
 
 
 /* end notes */
 
 /* permalink */
+
 .perma {  
     margin-top:10px;
     margin-left:10px;  
@@ -1065,9 +1035,7 @@ background:{color:details};
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1080,9 +1048,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:Source} 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1106,9 +1072,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1131,9 +1095,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:Description}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1147,9 +1109,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1173,9 +1133,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1193,9 +1151,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1211,9 +1167,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1230,9 +1184,7 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
