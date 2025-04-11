@@ -21,7 +21,7 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:sidebar" content="0"/>
+<meta name="image:sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
@@ -37,7 +37,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:shadow" content="0"/>
+<meta name="if:shadow" content=""/>
 <meta name="if:show sidebar image" content="0">
 <meta name="if:show title" content="1"/>
 <meta name="if:show description" content="1"/>
