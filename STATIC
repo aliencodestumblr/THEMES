@@ -32,7 +32,7 @@ attribute:"title"
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="if:Dark Tumblr control" content="0"/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
@@ -306,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left:-100px;  
     width:620px;
     {block:permalinkpage}
-     margin-top:0px;   
+     margin-top:20px;   
    margin-left:3px;   
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
     background:#ffffff;   
     width:250px;        
     {block:permalinkpage}
-     margin-top:10px;   
+     margin-top:20px;   
     width:450px; 
    margin-left:3px;  
     {/block:permalinkpage} 
