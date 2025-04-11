@@ -21,44 +21,33 @@ attribute:"title"
 })(jQuery);
 </script>
 
+<meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background" content="#f6f6f6"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#ffffff"/> 
-<meta name="color:Accent" content="#000"/>  
-<meta name="color:Text" content="#000" /> 
-<meta name="color:Links" content="#b9b9b9" />  
-<meta name="color:Links Hover" content="#ffffff" />
-<meta name="color:Scrollbar" content="#000" />
-<meta name="color:ask box background" content="#eee"/>
-<meta name="color:Title" content="#000" />
-<meta name="color:Description" content="#000" />
-<meta name="color:Menu Border" content="#000" />
-<meta name="color:Menu" content="#000" />
-<meta name="color:Menu1" content="#ffe000" />
-<meta name="color:Menu2" content="#fd4c51" />
-<meta name="color:Menu3" content="#27fd90" />
-<meta name="color:Menu4" content="#b557fc" />
-<meta name="color:Infos BG" content="#000" />
-<meta name="color:Notes" content="#ccc" />
-<meta name="color:Reblog" content="#777" />
-<meta name="color:Reblog Hover" content="#fff" />
+<meta name="color:Borders" content="#e5e5e5"/> 
+<meta name="color:Accent" content="#444444"/>  
+<meta name="color:Text" content="#444444" /> 
+<meta name="color:Links" content="#529ecc" />  
+<meta name="color:Links Hover" content="#444444" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:shadow" content="0"/>
 
-<meta name="text:Link 1 Url" content="/" />
-<meta name="text:Link 1 Title" content="reload" />
-<meta name="text:Link 2 Url" content="/" />
-<meta name="text:Link 2 Title" content="inbox" />
-<meta name="text:Link 3 Url" content="/" />
-<meta name="text:Link 3 Title" content="tags" />
-<meta name="text:Link 4 Url" content="/" />
-<meta name="text:Link 4 Title" content="text" />
-<meta name="text:Link 5 Url" content="/" />
-<meta name="text:Link 5 Title" content="dashboard" />
+<meta name="text:Link One Title" content=""/>
+<meta name="text:Link One" content=""/>
+<meta name="text:Link Two Title" content=""/>
+<meta name="text:Link Two" content=""/>
+<meta name="text:Link Three Title" content=""/>
+<meta name="text:Link Three" content=""/>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -108,54 +97,21 @@ $("#panel").slideToggle("fast");
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer06.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click").click(function(){
-    $("#guts").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click2").click(function(){
-    $("#guts2").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click3").click(function(){
-    $("#guts3").slideToggle("fast");
-  });
-});
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <style type="text/css">
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
     max-width: 100%;
     aspect-ratio: 16/9;
     height: auto;
 }
- 
+
 figure iframe.spotify_audio_player,
 iframe.spotify_audio_player {
     max-height: 90px;
     width: 100%;
 }
 
-html {cursor:crosshair;}
+body, a, a:hover {cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -225,13 +181,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -263,14 +219,11 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor:crosshair;
+img { cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     border:0;
     width:calc(100% - 0);
     height:auto;
     display:block;
-}
-
-img:hover {
 }
 
 ::-moz-selection {
@@ -287,16 +240,13 @@ img:hover {
 
 .spotify_audio_player {height:80px !important;}
 
-html {
-    width:700px;
-}
-
 body {
     color:{color:text}; 
     background-color:{color:background};
     font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
-    letter-spacing:1.5px;
+    letter-spacing:1px;
+    text-transform:;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
@@ -306,28 +256,28 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:700 10px arial;
+    font:700 10px  "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:680px;    
+    width:690px;    
     {block:permalinkpage}  
-    width:590px; 
+    width:450px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    margin-top:10px; 
-    margin-left:450px;  
-    width:680px;
+    margin-top:6px; 
+    margin-left:150px;  
+    width:690px;
     {block:permalinkpage}
-    margin-top:10px;   
-    margin-left:410px;  
+    margin-top:6px;   
+    margin-left:30px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -335,16 +285,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:280px;        
+    width:210px;        
     {block:permalinkpage}
-    width:500px; 
-    margin-left:410px; 
+    width:450px; 
+    margin-left:30px; 
     {/block:permalinkpage} 
-    margin:15px; 
-    padding:0px;    
-    overflow:;
+    border:1px solid {color:borders};
+    margin:13px; 
+    padding:6px;    
+    overflow:hidden;
     opacity:1;
-    transition:1s;  
+    transition:1s; 
+    {block:ifshadow}
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    {/block:ifshadow}
 }
 
 {block:IndexPage}
@@ -390,10 +346,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb{ 
+background-color: {color:links};
+border: 2px solid {color:background};
+height:auto;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar { 
+height:auto;
+width:9px; 
+background-color: #999999;
+border: 4px solid {color:borders}; 
+}
 /* end scrollbar */
 
 
@@ -409,7 +375,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
-    background:{color:details};
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -419,7 +384,6 @@ h1, h2, h3, h4, h5, h6 {
     margin:0px; 
     transition:1s;
     border-radius:3px;
-    border:1px solid {color:borders}; 
 }
 
 .pag a:hover{
@@ -431,34 +395,85 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.infos {
-   position:absolute;
-bottom:0px;
-background-color:{color:Infos BG};
-border-radius: 0px 0px 0px 0px;
--moz-border-radius: 10px 0px 0px 0px;
-right:0px;
-color:{color:Notes};letter-spacing:2px;
-padding:5px 10px 5px 10px;
-opacity:0;
-font-size:8px;font-family:"Rajdhani", sans-serif;text-transform:uppercase;
--webkit-transition: opacity 0.7s linear;-webkit-transition: all 0.7s ease-in-out;-moz-transition: all 0.7s ease-in-out;-o-transition: all 0.7s ease-in-out;}
- 
-.posts:hover .infos {
-   opacity:1;
+.notsi {
+    padding: 0px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    display: inline-block;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 37px;
+    transition: 1s;
 }
+ 
+.posts:hover .notsi { 
+    transition:2s;
+    opacity:1;
+}
+ 
+ 
+.notsi .re { 
+  position:absolute;
+left:-4px;
+top:-4px;
+border-radius:100%;
+width:20px;
+height:20px;
+padding:4px;
+overflow:hidden;
+background:{color:details};
+overflow:hidden;
+font-size:20px;
+line-height:20px;
+font-weight:700;
+text-align:center;
+opacity: 0;
+-webkit-transition: all 0.4s linear;
+-webkit-transition: all 0.4s linear;
+-moz-transition: all 0.4s linear;
+transition: all 0.4s linear;
+}
+ 
+.entry .wow{
+border-bottom: 1px solid {color:borders};
+color:#777;
+font-size:8px;
+opacity: 0; 
+-webkit-transition-duration: .75s;top:0px;
+width:222px; 
+height:25px;
+padding-bottom:4px;
+background-color: #fff; 
+position: absolute; 
+margin-top:2px;
+text-align:center;
+text-transform:uppercase;
+font-family:"Rajdhani", sans-serif;
+letter-spacing:1px;
+display:block;
+}
+ 
+.entry:hover .wow{
+opacity:0.9;
+z-index:999999;
+padding-top:4px;
+}
+
 
 /* end notes */
 
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:32px;  
+    margin-left:10px;  
     margin-bottom:100px;
-    width:510px;
+    width:450px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -475,16 +490,14 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
@@ -610,13 +623,12 @@ ol.notes li.note img.avatar {
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:{color:asker text};
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
     border-radius: 4px;
     border:1px solid {color:borders};
-    text-transform:uppercase; 
 }
 
 .asker {
@@ -639,7 +651,6 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
-    text-transform:uppercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -649,7 +660,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -895,7 +905,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:22px; 
+    font-size:18px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
@@ -907,221 +917,99 @@ span.chats {
     z-index:100;
 }
 
+#sidebar {
+    z-index:99999;
+    display: block;
+    text-align:right;
+    top:175px;
+    height:auto;
+    width:175px;
+    margin-left:-65px;
+    position:fixed;
+    padding: 5px;
+    {block:permalinkpage}
+    margin-left:-185px; 
+    {/block:permalinkpage} 
+    }
 
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Music-Player-Vinyl:{color:text};
-   --Vinyl-Icon-Size:19px;
-   --Vinyl-Spin-Speed:3.5s;
-   --Music-Controls:{color:text};
-   --Music-Controls-Size:12px;
-   --Music-Title-Font-Size:11px;
-   --Music-Title-Color:{color:text};
-}
-.glenjams-06 {
-   display:none;
-   position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
-   z-index:99;
-}
-
-.pasta {
-   display:flex;
-   align-items:center;
-}
-
-.vinyl-spin {
-   animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -webkit-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -moz-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -o-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
+#sidebar img {
+ {block:iffadedimages}
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    -webkit-transition: all ease-in 250ms;
+    -moz-transition: all ease-in 250ms;
+    -o-transition: all ease-in 250ms;
+    -ms-transition: all ease-in 250ms;
+    transition: all ease-in 250ms;
+    {/block:iffadedimages}
+    padding-top:5px;
 }
 
-.vinyl-pause {
-   animation-play-state:paused;
-   -webkit-animation-play-state:paused;
-   -moz-animation-play-state:paused;
-   -o-animation-play-state:paused;
+#sidebar:hover img {
+    {block:iffadedimages}
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    -webkit-transition: all ease-in 250ms;
+    -moz-transition: all ease-in 250ms;
+    -o-transition: all ease-in 250ms;
+    -ms-transition: all ease-in 250ms;
+    transition: all ease-in 250ms;
+    {/block:iffadedimages}
+    -webkit-transition: all ease-in 250ms;
+    -moz-transition: all ease-in 250ms;
+    -o-transition: all ease-in 250ms;
+    -ms-transition: all ease-in 250ms;
+    transition: all ease-in 250ms;
 }
 
-@-webkit-keyframes recordspin {
-   from {
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-@keyframes recordspin {
-   from {
-       -ms-transform:rotate(0deg);
-       -moz-transform:rotate(0deg);
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -ms-transform:rotate(360deg);
-       -moz-transform:rotate(360deg);
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-.vinyl, .vinyl svg {
-   width:var(--Vinyl-Icon-Size);
-   height:var(--Vinyl-Icon-Size);
-   line-height:0;
-}
-
-.music-controls {
-   margin-left:10px;
-   width:var(--Music-Controls-Size);
-   overflow:hidden;
-   cursor:pointer;
-}
-
-.music-controls svg {
-   display:block;
-   width:var(--Music-Controls-Size);
-   height:var(--Music-Controls-Size);
-   color:var(--Music-Controls);
-   stroke-width:1.5px;
-   line-height:0;
-}
-
-.pausee {display:none;}
-
-.beff {display:none;}
-.aff {display:block;}
-
-.music-title {
-   margin-left:8px;
-   font-family:work sans;
-   font-size:var(--Music-Title-Font-Size);
-   color:var(--Music-Title-Color);
+.titulo {
+	{block:ifnotnosidebar}
+	margin-bottom:-8px;
+	{/block:ifnotnosidebar}
+	letter-spacing:1px;
+	text-transform:uppercase;
+	font-size:15px;
+	font-family:"Rajdhani", sans-serif;
+	{block:ifnotnosidebar}
+	margin-bottom:-7px;
+	{/block:ifnotnosidebar}
+    padding:0px 0px 0px 13px;
+    line-height:100%;
+    text-align:left;
 }
 
 
-#right {
-font-family: "Rajdhani", sans-serif;
-margin-left:10%;
-width:200px;
-margin-top:20%;
-z-index:999;
-position:fixed;}
- 
-#un {
-float:right;
-border-right:5px solid {color:Menu Border};
-padding:20px 0px 20px 0px;}
- 
-#pic
-{margin:5px;}
- 
-#about
-{width:125px;
-font-size:9px;
-letter-spacing:2px;
-line-height:10px;
-color:{color:Description};
-font-family: "Rajdhani", sans-serif;
-margin:0px 0px 5px 5px;
-font-style:italic;
-text-align:right;
-padding-right:3px;
+.titulo a{
+color:{color:text};
 }
- 
-.nav
-{font-family: "Rajdhani", sans-serif;  font-weight:800;letter-spacing:1px;
-padding-right:5px;
-color:{color:Menu};
-text-align:right;
-}
- 
- 
- 
-#uno
-{border-right:5px solid {color:Menu Border};
--webkit-transition: opacity 0.4s linear;-webkit-transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;
-}
-#due
-{border-right:15px solid {color:Menu2};
-margin-right:-15px;
--webkit-transition: opacity 0.6s linear;-webkit-transition: all 0.6s ease-in-out;-moz-transition: all 0.6s ease-in-out;-o-transition: all 0.6s ease-in-out;
-}
-#tre
-{border-right:20px solid {color:Menu Border};
--webkit-transition: opacity 0.7s linear;-webkit-transition: all 0.7s ease-in-out;-moz-transition: all 0.7s ease-in-out;-o-transition: all 0.7s ease-in-out;
-}
-#quattro
-{
-border-right:10px solid {color:Menu4};
-margin-right:-10px;
--webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;
-}
- 
- 
- 
-#uno:hover
-{border-right:5px solid {color:Menu1};
-margin-right:-5px;}
-#due:hover
-{}
-#tre:hover
-{border-right:20px solid {color:Menu3};
-margin-right:-20px;}
-#quattro:hover
-{}
- 
-#footer
-{position:fixed;
-right:0px;
-bottom:0px;
-width:100%;
-color:{color:Entry Title};
-font-size:9px;
-font-family:trebuchet ms;
-text-transform:uppercase;
-padding:5px 0px 5px 5px;
-letter-spacing:5px;
+
+.links {
 text-align:center;
-background-color:{color:Entry TitleBG};}
- 
-#onglet
-{position:fixed;
-bottom:3px;
-color:{color:Texts};
-width:150px;
-right:0px;
--webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;
+padding-right:0px;
+font-family:"Rajdhani", sans-serif;
+font-size:8px;
+text-transform:uppercase;
+line-height: 115%;
+letter-spacing:1px;
+
 }
- 
-#name
-{width:70px;border-radius:10px 10px 0px 0px;
-margin-right:69px;
-text-align:right;
-background-color:{color:Entry BG};padding:3px 8px 3px 3px;
-font-style:italic;letter-spacing:1px;}
- 
-#content
-{background-color:{color:Entry TitleBG};
-color:{color:Entry Title};padding:3px;}
- 
-#onglet:hover
-{bottom:25px;}
- 
- 
- 
-.pagination {
-display:none;
+
+.des{
+font-family:"Rajdhani", sans-serif;
+font-style:italic;
+border: 1px solid {color:borders};
+text-align:left;
+padding: 5px;
+padding-left:10px;
+letter-spacing:1px;
+font-size:9px;
+text-transform:lowercase;
+background:{color:details};  
+    {block:ifshadow}
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    {/block:ifshadow}
 }
 
 
@@ -1142,42 +1030,44 @@ display:none;
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a>
 
 </head>
 
 <body>  
 
+<div class="entry"> 
+<div id="sidebar">
+		<div id="information">
+	<div class="titulo"><a href="/">{title}</a></div>
+	<div class="des">
+				<center><img src="{image:sidebar}" width="150px" style="margin-left:-5px;"></center>
+	
+			<div style="padding-top:2px; padding-bottom:2px;">{description}</div></div>
+		  <div class="links"><div style="padding-top:2px;">
+                <a href="/">reload</a> 
+                <a href="/ask">inbox</a>  
+				{block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a> {/block:ifLinkOneTitle}
+{block:ifLinkTwoTitle}<a href="{text:Link Two}"> {text:Link Two Title}</a>{/block:ifLinkTwoTitle} 
+{block:ifLinkThreeTitle}<a href="{text:Link Three}"> {text:Link Three Title}</a>{/block:ifLinkThreeTitle} 
+</div>
+</div>
+</div></div>
 
 
-<div id="right">
-<div id="un">
-<div style="margin-right:0px; text-align:right;font-size:16px;margin-top:5px;font-family: "Rajdhani", sans-serif;letter-spacing:4px;color:{color:Title};">{Title}</div>
-<div id="about">
-{Description}</div>
-<div id="menu">
-<a href="{text:link 1 url}"><div class="nav" id="uno">{text:link 1 title}</div></a>
-<a href="{text:link 2 url}"><div class="nav" id="due">{text:link 2 title}</div></a>
-<a href="{text:link 3 url}"><div class="nav" id="tre">{text:link 3 title}</div></a>
-<a href="{text:link 4 url}"><div class="nav" id="quattro">{text:link 4 title}</div></a>
-<a href="{text:link 5 url}"><div class="nav" id="uno">{text:link 5 title}</div></a>
-</div><!--menu-->
-</div><!--un-->
-</div><!--right-->
-
-
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div>  
 {/block:Text}
 
@@ -1186,11 +1076,13 @@ display:none;
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div>  
 {/block:Quote}
 
@@ -1210,11 +1102,16 @@ display:none;
 {/block:Lines}
 </ul>
 </div>   
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
+</div> 
+</div>
+</div>{/block:IndexPage}{/block:date}
 </div>
 {/block:Chat}
 
@@ -1230,11 +1127,13 @@ display:none;
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div> 
 {/block:Link} 
 
@@ -1243,13 +1142,14 @@ display:none;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div> 
 {/block:answer}
 
@@ -1269,11 +1169,16 @@ display:none;
 </font><br>
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
-{block:date}
 {block:IndexPage} 
-<div class="permalinktri">▲</div><div class="permalink"><a href="{Permalink}">{ShortDayofWeek}</a></a> {block:HasTags}<span style="cursor:default;z-index:3;" title="{block:Tags}#{Tag} {/block:Tags}"href="{TagURL}">#</span>{/block:HasTags} <a href="{Permalink}" target="_blank">+{NoteCount}</a></div>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
+</div> 
+</div>
+</div>{/block:IndexPage}{/block:date}
 </div>  
 {/block:Audio}
 
@@ -1284,11 +1189,13 @@ display:none;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div> 
 {/block:Photo}
 
@@ -1300,11 +1207,13 @@ display:none;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div> 
 {/block:Photoset}
 
@@ -1317,11 +1226,13 @@ display:none;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:date}
 {block:IndexPage} 
-<span class="infos"><a href="{ReblogURL}" target="_blank">Reblog</a> . <a href="{Permalink}" id="notes">{NoteCount}</a> </span>
-{/block:IndexPage}
-{/block:date} 
+<div class="notsi">  
+<div class="wow">
+posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
+</div>
+</div>
+{/block:IndexPage} 
 </div> 
 {/block:Video} 
 
