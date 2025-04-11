@@ -827,7 +827,7 @@ span.chats {
     letter-spacing:2px;
     margin-bottom:10px;
     background:{color:sidebar container};
-    border-bottom:1px solid {color:sidebar text};
+    border-bottom:1px solid {color:border};
     color: {color:sidebar text};
 }
  
@@ -859,7 +859,7 @@ span.chats {
 }
  
 .navi{
-    border-top:1px solid {color:sidebar text};
+    border-top:1px solid {color:border};
     padding-top:5px;
     font-size:10px;
     word-spacing:3px;
@@ -916,7 +916,7 @@ span.chats {
 }  
  
 #link{
-    border-top:1px solid {color:sidebar text};
+    border-top:1px solid {color:border};
     padding-top:5px;
     padding-bottom
     font-size:10px;
