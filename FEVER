@@ -384,8 +384,6 @@ border: 4px solid {color:background};
 
 /* notes */ 
 
- 
- 
 .notsi {
     padding: 0px;
     position: absolute;
@@ -398,44 +396,12 @@ border: 4px solid {color:background};
     width: 100%;
     height: 28px;
     transition: 1s;
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
-    opacity:1;
-}
- 
- 
-.notsi .re { 
-position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-}
-
- 
-.entry .wow{
-color:black;
+    color:black;
 font-size:9px;
 opacity: 0; 
 -webkit-transition-duration: .75s;top:0px;
 width:215px; 
-height:10px;
+height:13px;
 padding-bottom:7px;
 padding-top:0px;
 background-color: #fff; 
@@ -448,12 +414,11 @@ letter-spacing:1px;
 display:block;
 }
  
-.entry:hover .wow{
-opacity:0.9;
+.posts:hover .notsi { 
+   opacity:0.9;
 z-index:999999;
 padding-top:10px;
 }
-
 
 /* end notes */
 
@@ -1053,9 +1018,7 @@ letter-spacing:1px;
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1068,9 +1031,7 @@ letter-spacing:1px;
 {/block:Source} 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1094,9 +1055,7 @@ letter-spacing:1px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1119,9 +1078,7 @@ letter-spacing:1px;
 {/block:Description}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1135,9 +1092,7 @@ letter-spacing:1px;
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1161,9 +1116,7 @@ letter-spacing:1px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1181,9 +1134,7 @@ letter-spacing:1px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1199,9 +1150,7 @@ letter-spacing:1px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1218,9 +1167,7 @@ letter-spacing:1px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayOfWeek} , <a href="{Permalink}">{NoteCount}</a> , <a href="{ReblogURL}" >Reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
