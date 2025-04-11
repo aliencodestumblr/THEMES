@@ -37,15 +37,15 @@ attribute:"title"
 <meta name="if:Pagination" content=""/>
 
 <meta name="text:Custom Link One Title" content= >
-<meta name="text:Custom Link One" content="http://" />
+<meta name="text:Custom Link One" content="/" />
 <meta name="text:Custom Link Two Title" content= >
-<meta name="text:Custom Link Two" content="http://" />
+<meta name="text:Custom Link Two" content="/" />
 <meta name="text:Custom Link Three Title" content= >
-<meta name="text:Custom Link Three" content="http://" />
+<meta name="text:Custom Link Three" content="/" />
 <meta name="text:Custom Link Four Title" content= >
-<meta name="text:Custom Link Four" content="http://" />
+<meta name="text:Custom Link Four" content="/" />
 <meta name="text:Custom Link Five Title" content= >
-<meta name="text:Custom Link Five" content="http://" />
+<meta name="text:Custom Link Five" content="/" />
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
