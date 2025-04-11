@@ -332,10 +332,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
+
+::-webkit-scrollbar {
+    width:7px;
+    height:7px;
+    background-color:{color:background};}
+ 
+::-webkit-scrollbar-track {
+    background-color:{color:background};}
+ 
 ::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+    background-color:{color:scrollbar};
+    border:1px solid {color:background};}
+
 /* end scrollbar */
 
 
@@ -422,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:20px;  
+    margin-left:30px;  
     margin-bottom:100px;
     width:510px;
     height:auto; 
@@ -444,7 +453,7 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
