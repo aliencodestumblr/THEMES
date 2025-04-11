@@ -21,30 +21,31 @@ attribute:"title"
 })(jQuery);
 </script>
 
+<meta name="image:sidebar" content="0"/>
 
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Background images" content="#ffffff"/>
-<meta name="color:Links image" content="#ffffff" />
-<meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#ffffff"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#aaaaaa" />
+<meta name="color:Links Hover" content="#000000" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content="0"/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
-<meta name="text:Link 1 Url" content="/" />
-<meta name="text:Link 1 Title" content="link" />
-<meta name="text:Link 2 Url" content="/" />
-<meta name="text:Link 2 Title" content="link" />
-<meta name="text:Link 3 Url" content="/" />
-<meta name="text:Link 3 Title" content="link" /> 
-<meta name="text:Link 4 Url" content="/" />
-<meta name="text:Link 4 Title" content="link" />
+<meta name="text:Custom Link One Title" content= >
+<meta name="text:Custom Link One" content="http://" />
+<meta name="text:Custom Link Two Title" content= >
+<meta name="text:Custom Link Two" content="http://" />
+<meta name="text:Custom Link Three Title" content= >
+<meta name="text:Custom Link Three" content="http://" />
+<meta name="text:Custom Link Four Title" content= >
+<meta name="text:Custom Link Four" content="http://" />
+<meta name="text:Custom Link Five Title" content= >
+<meta name="text:Custom Link Five" content="http://" />
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -140,7 +141,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html, body, a, a:hover{cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -210,13 +211,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+     cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -248,14 +249,11 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+img { cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), auto;
     border:0;
     width:calc(100% - 0);
     height:auto;
     display:block;
-}
-
-img:hover {
 }
 
 ::-moz-selection {
@@ -274,7 +272,7 @@ img:hover {
 
 body {
     color:{color:text}; 
-    background-color:{color:background};
+    background-color:#ffffff;
     font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1.5px;
@@ -295,44 +293,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:100%;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
+    width:620px;    
     {block:permalinkpage}  
-    width:100%; 
+    width:450; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    border-left:0px solid {color:borders};
-     border-right:0px solid {color:borders};
-    margin-top:160px; 
-    margin-left:500px;  
-    width:345px;
+    margin-top:10px; 
+    margin-left:-100px;  
+    width:620px;
     {block:permalinkpage}
-     margin-top:170px;   
-   margin-left:500px;   
+     margin-top:0px;   
+   margin-left:3px;   
     {/block:permalinkpage}
-    
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:{color:details};   
-    width:345px;        
-    
+    background:#ffffff;   
+    width:250px;        
     {block:permalinkpage}
-     margin-top:170px;   
-    width:540px; 
-   margin-left:500px;  
+     margin-top:10px;   
+    width:450px; 
+   margin-left:3px;  
     {/block:permalinkpage} 
-        border:0px solid {color:borders};
-    margin:26px; 
-    padding:5px;    
+    border:1px solid {color:borders};
+    margin:10px; 
+    padding:15px;    
     overflow:;
     opacity:1;
     transition:1s;  
@@ -381,10 +372,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar {width: 8px; height: 4px; background:#fff; }
+ 
+::-webkit-scrollbar-thumb { background-color:{color:links}; border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-left: 1px solid #fff; border-right: 1px solid #fff; }
 /* end scrollbar */
 
 
@@ -400,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
-    background:{color:details};
+    background:#fff;
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -410,7 +400,6 @@ h1, h2, h3, h4, h5, h6 {
     margin:0px; 
     transition:1s;
     border-radius:3px;
-    border:1px solid {color:borders}; 
 }
 
 .pag a:hover{
@@ -422,20 +411,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
   
- 
- 
 .notsi {
-    padding:0px;
-    position:absolute;
-    text-align:center;
-    opacity:0;
-    display:inline-block;
-    overflow:hidden;
-    top:0px; 
-    left:0px;
-    width:100%; 
-    height:calc(100% - 0px);   
-    transition:2s; 
+    padding: 0px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    display: inline-block;
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 45px;
+    transition: 1s;
 }
  
 .posts:hover .notsi { 
@@ -466,20 +453,6 @@ opacity: 0;
 transition: all 0.4s linear;
 }
  
-.posts:hover .notsi .re {    
-    transform: rotate(360deg);
--ms-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
--o-transform: rotate(360deg);
--moz-transform: rotate(360deg);
-opacity: 1;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-} 
- 
- 
  
 .entry .wow{
 position:absolute;
@@ -487,13 +460,13 @@ width:;
 padding:5px;
 padding-left:10px;
 padding-right:10px;
-background-color:#000;
+background-color:#fefefe;
 overflow:hidden;
 opacity:0.0;
 font-family:"Rajdhani", sans-serif;
 font-size:8px;
 color:#999;
-letter-spacing:1.5px;
+letter-spacing:1px;
 text-align:center;
 left:20px;
 text-transform:uppercase;
@@ -503,7 +476,8 @@ z-index:10;
 }
  
 .entry:hover .wow{
-opacity:1;
+opacity:.8;
+-webkit-transition: all 0.6s ease-out;-moz-transition: all 0.6s ease-out;transition: all 0.6s ease-out;
 }
 
 
@@ -517,7 +491,7 @@ opacity:1;
     width:540px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -534,16 +508,14 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
@@ -618,7 +590,7 @@ ol.notes li.note img.avatar {
 
 .art { 
     float:left;
-    background:{color:background};   
+    background:#fff;   
     margin-top:20px;
     margin-left:20px; 
     width:18px; 
@@ -662,20 +634,19 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:{color:description box};
+    background:{color:ask box background};
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:{color:asker text};
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
     border-radius: 4px;
     border:1px solid {color:borders};
-    text-transform:uppercase; 
 }
 
 .asker {
@@ -685,7 +656,7 @@ ol.notes li.note img.avatar {
     margin-bottom:8px;
     width:auto;
     font-size:9px;
-    text-transform:uppercase; 
+    text-transform:; 
     padding:1px;
     text-align:left;
 }
@@ -698,7 +669,6 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
-    text-transform:uppercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -708,7 +678,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -837,7 +806,7 @@ span.chats {
 }
 
 .host a {
-    background:{color:background};   
+    background:#fff;   
     margin-top:20px;
     text-transform:uppercase;
     font-size:8px; 
@@ -854,7 +823,7 @@ span.chats {
     margin-left:20px; 
     margin-right:-1px;
     margin-bottom:15px;
-    background:{color:background};
+    background:#fff;
     font-family:'FontAwesome';  
     content:"\f1d8";
     color:{color:accent};
@@ -893,7 +862,6 @@ span.chats {
 }
  
 .caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
     margin-top:7px;
     margin-bottom:6px; 
     margin-left:-14px;  
@@ -940,7 +908,7 @@ span.chats {
     max-width:300px;
     padding:2px 10px 2px 10px; 
     margin:20px 0px 0px 20px;  
-    background:{color:Details};
+    background:#fff;
     font-size:9px;
     text-transform:uppercase;
     color:{color:text};  
@@ -967,330 +935,78 @@ span.chats {
 }
 
 
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Music-Player-Vinyl:{color:text};
-   --Vinyl-Icon-Size:19px;
-   --Vinyl-Spin-Speed:3.5s;
-   --Music-Controls:{color:text};
-   --Music-Controls-Size:12px;
-   --Music-Title-Font-Size:11px;
-   --Music-Title-Color:{color:text};
-}
-.glenjams-06 {
-   display:none;
-   position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
-   z-index:99;
-}
-
-.pasta {
-   display:flex;
-   align-items:center;
-}
-
-.vinyl-spin {
-   animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -webkit-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -moz-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -o-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-}
-
-.vinyl-pause {
-   animation-play-state:paused;
-   -webkit-animation-play-state:paused;
-   -moz-animation-play-state:paused;
-   -o-animation-play-state:paused;
-}
-
-@-webkit-keyframes recordspin {
-   from {
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-@keyframes recordspin {
-   from {
-       -ms-transform:rotate(0deg);
-       -moz-transform:rotate(0deg);
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -ms-transform:rotate(360deg);
-       -moz-transform:rotate(360deg);
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-.vinyl, .vinyl svg {
-   width:var(--Vinyl-Icon-Size);
-   height:var(--Vinyl-Icon-Size);
-   line-height:0;
-}
-
-.music-controls {
-   margin-left:10px;
-   width:var(--Music-Controls-Size);
-   overflow:hidden;
-   cursor:pointer;
-}
-
-.music-controls svg {
-   display:block;
-   width:var(--Music-Controls-Size);
-   height:var(--Music-Controls-Size);
-   color:var(--Music-Controls);
-   stroke-width:1.5px;
-   line-height:0;
-}
-
-.pausee {display:none;}
-
-.beff {display:none;}
-.aff {display:block;}
-
-.music-title {
-   margin-left:8px;
-   font-family:work sans;
-   font-size:var(--Music-Title-Font-Size);
-   color:var(--Music-Title-Color);
-}
-
-
-#updatesbar{
-    position:absolute;
-    margin-top:0px;
-    margin-left:-8px;
-    padding:3px;
-    padding-right:5px;
-    text-align:right;
-    width:106px;
-    height:9px;
-    background:{color:background}; /*bar background*/
-    border:0px solid #ebebeb; /*matching border color with #box border        looks best*/
-    /*delete the following for no rounded edges*/
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    }
- 
-#updates{
-    position:fixed;
-    width:140px;
-    top:25px;
-    right:0px;
-    padding-top:7px;
-    padding-left:7px;
-    padding-right:7px;
-    padding-bottom:4px;
-    font-family:"Rajdhani", sans-serif;
-    font-size:9px;
-    line-height:12px;
-    background-color:{color:background}; /*background hex color code*/
-    border:0px solid #ebebeb; /*change color code for different colored       borders*/
-    color:{color:text}; /*text color, note link colors and styles will change      with the theme you're using*/
-    z-index:999;
-    /*delete the following for no rounded edges*/
-    -webkit-border-bottom-right-radius: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+.links a {
+color:#999;
 }
  
-#guts,#click{
-    padding:1px;
-    display:inline-block;
+.links {
+font-size:9px;
+border-bottom:0px solid #f4f4f4;
+width:20px;
+padding:3px;
+padding-bottom:1px;
+margin-left:0px;
+margin-top:-2px;
+height:15px;
+color:#999;
+background-color:#f4f4f4;
+font-family:"Rajdhani", sans-serif;
+display:inline;
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 }
  
-#click{
-    margin-bottom:4px;
-    padding:1px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    text-align:center;
-    background:{color:background}; /*tab 1 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
-    display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+ 
+.links:hover {
+opacity:1;
+font-style:none;
+background-color:#fff;
+-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
 }
  
-#click:hover{
-    cursor:help;
+ 
+div #title{
+font-size:10px;
+line-height:15px;
+font-family:georgia;
+padding-left:0px;
+text-transform:uppercase;
+font-family:"Rajdhani", sans-serif;
+padding-right:0px;
+padding-bottom:1px;
+letter-spacing:2.5px;
+color:#666;
 }
  
-#click:active{
-    background:#ffffff; /*color of tab when clicked*/
+ 
+#timber {
+display: block;
+position:fixed;
+top:23px;
+margin-left:500px;
+line-height:13px;
+font-family:"Rajdhani", sans-serif;
+font-size:10px;
+padding:15px;
+width:210px;
+text-align:left;
 }
  
-#guts{
-    padding:1px;
-    display:none;
+#timber a {
+color:#999;
+text-align:left;
 }
  
-#guts2,#click2{
-    padding:1px;
-    display:inline-block;
+#timber img{
+-webkit-filter:saturate(0%);
+-webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 }
  
-#click2{
-    margin-top:7px;
-     font-family:"Rajdhani", sans-serif;
-    font-size:9px;
-    color:{color:text};
-    margin-bottom:4px;
-    padding:1px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    text-align:center;
-    background:; /*tab 2 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
-    display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
- 
-#click2:hover{
-    cursor:help;
-}
- 
-#click2:active{
-    background:; /*color of tab when clicked*/
-}
- 
-#guts2{
-    padding:1px;
-    display:none;
+#timber img:hover{
+-webkit-filter:saturate(100%);-webkit-transition: all 0.9s ease-out;-moz-transition: all 0.9s ease-out;transition: all 0.9s ease-out-webkit-filter: blur(15px);;
 }
 
 
-.sidebar {   
-    background:{color:background};
-    position:fixed; 
-    top:-1px; 
-    margin-left:400px;  
-    width:100%;   
-    height:80px; 
-    padding:55px 15px 15px 15px;
-    opacity:1;
-    z-index:10;
-    user-select:none!important;   
-} 
 
-/* title */ 
-.title {            
-    float:left;
-    margin-top:30px;  
-    margin-left:74px;
-    width:auto; 
-    text-align:left;  
-    z-index:100;
-    transition:0.5s;
-}
-
-.title a {
-    background:{color:details};
-    color:{color:accent};
-    font-size:31px; 
-    font-weight:400;
-    text-transform:lowercase;
-    letter-spacing:-2px;
-    border-radius:6px;
-    padding:15px 40px 12px 40px;
-    box-shadow:0px 3px 4px -3px rgba(0,0,0,0.1); 
-}
-/* end title */ 
-
-/* navigation */
-.nav {  
-    position:fixed;
-    margin-top:-10px;
-    margin-left:0px;
-    transition:1s;  
-}
-
-.nav a {          
-    background:{color:details};
-    width:16px;
-    height:auto;
-    padding:9px;
-    font-size:9px;
-    margin-top:8px;
-    text-transform:uppercase; 
-    display:block;   
-    margin:9px 0px;      
-    transition:1s; 
-    border-radius:10px;
-    box-shadow:3px 0px 2px -2px rgba(0,0,0,0.1);
-    transition:1s; 
-} 
-
-.nav a:hover {
-    background:{color:accent};
-    transition:1s; 
-}
-/* end navigation */ 
-
-/* favicon */  
-.avatar img {  
-    position:absolute;
-    background:{color:details};  
-    margin-top:6px; 
-    margin-left:45px; 
-    width:45px;  
-    height:45px;     
-    padding:8px; 
-    border-radius:50px; 
-    box-shadow:3px 0px 2px -2px rgba(0,0,0,0.1);
-    z-index:1000;
-    transition:1s;
-} 
-/* end favicon */ 
-
-/* description */
-.dscr {                
-    margin-top:15px; 
-    margin-left:20px;  
-    margin-right:55px; 
-    margin-bottom:0px;  
-    width:220px;
-    display:inline-block; 
-    text-align:justify;
-    text-transform:none; 
-    color:{color:text};    
-    line-height:14px;    
-    border-radius:10px; 
-    transition:.8s;    
-}  
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1338,45 +1054,18 @@ return false;
 </script>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-angle-up" aria-hidden="true"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
 </head>
 
 <body>  
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
-
-   <audio id="audio" src="https://a.tumblr.com/tumblr_me4hdlp8n61qc9zd2o1.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
-
-
-<div class="sidebar"> 
-<div class="nav">   
-<a href="{text:link 1 url}" title="{text:link 1 title}"><CENTER><i class="fa fa-refresh" aria-hidden="true"></i></CENTER></a> 
-<a href="{text:link 2 url}" title="{text:link 2 title}"><CENTER><i class="fa fa-comments" aria-hidden="true"></i></CENTER></a> 
-<a href="{text:link 3 url}" title="{text:link 3 title}"><CENTER><i class="fa fa-plus" aria-hidden="true"></i></CENTER></a> 
-<a href="{text:link 4 url}" title="{text:link 4 title}"><CENTER><i class="fa fa-upload" aria-hidden="true"></i></CENTER></a> 
-{block:ifshowlinkfive}
-<a href="{text:link 5 url}" title="{text:link 5 title}"><CENTER><i class="fa fa-refresh" aria-hidden="true"></i></CENTER></a> 
-{/block:ifshowlinkfive}
-</div>      
-<div class="avatar"><img src="{favicon}"/></div> 
-<div class="title"><a href="/">{title}</a></div>  
-<div class="dscr">{description}</div>    
+<div class="entry">  
+<div id="timber"><div style="text-align:right;"><div id="title">{title}</div></div>
+<a href="/"><img style="padding-bottom:5px;border:1px solid #eee; background-color:#f4f4f4;padding:15px;border-bottom:5px solid #eee;" src="{image:sidebar}" width="180"></a>
+<div id="links">{block:ifcustomlinkone}<a href="{text:custom link one}" class="links" title="{text:custom link one title}">01</a>{/block:ifcustomlinkone}{block:ifcustomlinktwo} <a href="{text:custom link two}" class="links" title="{text:custom link two title}">02</a>{/block:ifcustomlinktwo}{block:ifcustomlinkthree} <a href="{text:custom link three}" class="links"title="{text:custom link three title}">03</a>{/block:ifcustomlinkthree}{block:ifcustomlinkfour} <a href="{text:custom link four}" class="links"title="{text:custom link four title}">04</a>{/block:ifcustomlinkfour}{block:ifcustomlinkfive} <a href="{text:custom link five}" class="links" title="{text:custom link five title}">05</a>{/block:ifcustomlinkfive} {description}</div>
 </div>
-
-
-<div class="entry">    
+  
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1461,7 +1150,6 @@ return false;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
