@@ -404,7 +404,7 @@ border: 4px solid {color:background};
 font-size:8px;
 opacity: 0; 
 -webkit-transition-duration: .75s;top:0px;
-width:225px; 
+width:215px; 
 height:14px;
 padding-bottom:4px;
 background-color: #fff; 
@@ -1014,9 +1014,7 @@ margin-top:5px;
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1029,9 +1027,7 @@ margin-top:5px;
 {/block:Source} 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div>  
@@ -1055,9 +1051,7 @@ margin-top:5px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1080,9 +1074,7 @@ margin-top:5px;
 {/block:Description}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1096,9 +1088,7 @@ margin-top:5px;
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1122,9 +1112,7 @@ margin-top:5px;
 </div>   
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1142,9 +1130,7 @@ margin-top:5px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1160,9 +1146,7 @@ margin-top:5px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
@@ -1179,9 +1163,7 @@ margin-top:5px;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="notsi">  
-<div class="wow">
 {DayofWeek} with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
-</div>
 </div>
 {/block:IndexPage} 
 </div> 
