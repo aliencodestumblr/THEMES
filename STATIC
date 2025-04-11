@@ -21,7 +21,7 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:sidebar" content="0"/>
+<meta name="image:sidebar" content=""/>
 
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
@@ -32,7 +32,7 @@ attribute:"title"
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content="0"/>   
+<meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
