@@ -2,7 +2,7 @@
 <html>  
 <head> 
 
-<title>{title}</title>
+<title>{Title}</title>
 
 <link rel="shortcut icon" href="{Favicon}"> 
  
@@ -20,20 +20,19 @@ attribute:"title"
 });
 })(jQuery);
 </script>
-
+ 
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Accent" content="#aaaaaa"/>  
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:Accent" content="#444444"/>  
+<meta name="color:Text" content="#444444" /> 
+<meta name="color:Links" content="#bfbfbf" />  
+<meta name="color:Links Hover" content="#444444" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
-
+ 
 <meta name="if:Show caption" content=""/>   
-<meta name="if:Pagination" content=""/>
+<meta name="if:Pagination" content=""/> 
 
 <meta name="text:Link 1" content=""/>
 <meta name="text:Link 1 Title" content="link"/>
@@ -48,19 +47,9 @@ attribute:"title"
 <meta name="text:Link 6" content=""/>
 <meta name="text:Link 6 Title" content="link"/>
 
-<script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
-</script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script> 
-$(document).readyy(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -75,32 +64,17 @@ $("#panel").slideToggle("fast");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script> 
 
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-
-<script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
+ 
+<link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+
+html {
+    cursor:crosshair;
 }
 
-figure iframe.spotify_audio_player,
-iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
-}
-
-html {cursor:crosshair;}
- 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
@@ -111,6 +85,9 @@ iframe.tmblr-iframe {
     z-index:99999999!important;
     top:5px;!important;
     right:0!important;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
     transform:scale(0.45) rotate(0deg);
     transform-origin:95% 0;
     vertical-align:top right;
@@ -171,7 +148,7 @@ a, a:link, a:active, a:visited {
     transition:.5s;
 }
 a:hover {
-    cursor:crosshair;
+        cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -206,8 +183,6 @@ blockquote video {
 
 img {
     cursor:crosshair;
-    -webkit-transition: opacity 0.8s linear;
-opacity: 0.75;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -231,7 +206,7 @@ opacity: 0.75;
 body {
     color:{color:text}; 
     background-color:#fff;
-    font:400 8px "Rajdhani", sans-serif;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1.5px;
     text-transform:lowercase;
@@ -253,20 +228,19 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:590px;    
     {block:permalinkpage}  
-    width:450; 
+    width:450px; 
     {/block:permalinkpage} 
+    margin:auto;
     height:auto; 
 }
 
-#posts {  
-    z-index: 0;
-   position: relative;
-    margin-top:75px; 
-    margin-left:480px;  
+#posts {     
+    margin-top:75px;
+    margin-left:140px;  
     width:590px;
     {block:permalinkpage}
-     margin-top:20px;   
-   margin-left:485px;   
+    margin-top:24px;   
+    margin-left:70px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -276,13 +250,13 @@ h1, h2, h3, h4, h5, h6 {
     background:#fff;   
     width:238px;        
     {block:permalinkpage}
-     margin-top:20px;   
     width:450px; 
-   margin-left:485px;  
+    margin-top:24px;  
+    margin-left:70px; 
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:6px; 
-    padding:6px;    
+    padding:6px;   
     opacity:1;
     transition:1s;  
 }
@@ -297,6 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
+    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -329,10 +304,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar {width: 8px; height: 4px; background:#fff; }
+ 
+::-webkit-scrollbar-thumb { background-color:{color:links}; border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-left: 1px solid #fff; border-right: 1px solid #fff; }
 /* end scrollbar */
 
 
@@ -348,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
-    background:#fff;
+    background:{color:details};
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -369,8 +343,6 @@ h1, h2, h3, h4, h5, h6 {
 /* end pagination */
 
 /* notes */ 
-  
- 
  
 .notsi {
      padding: 0px;
@@ -384,9 +356,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 45px;
     transition: 1s;
-    position:absolute;
-    
-    position:absolute;
 width:260px;
 height: 15px;
 padding-top:2px;
@@ -453,8 +422,7 @@ opacity: 0;
 -moz-transition: all 0.4s linear;
 transition: all 0.4s linear;
 }
-
-
+ 
 /* end notes */
 
 /* permalink */
@@ -564,7 +532,7 @@ ol.notes li.note img.avatar {
 
 .art { 
     float:left;
-    background:{color:background};   
+    background:#fff;   
     margin-top:20px;
     margin-left:20px; 
     width:18px; 
@@ -630,9 +598,9 @@ ol.notes li.note img.avatar {
     margin-bottom:8px;
     width:auto;
     font-size:9px;
+    text-transform:uppercase; 
     padding:1px;
     text-align:left;
-    text-transform:uppercase; 
 }
 
 .asker a {
@@ -819,7 +787,7 @@ span.chats {
 /* end links */
 
 .caption {
-    margin-top:-2px;
+    margin-top:0px;
     margin-left:0px;
     margin-right:0px;
     margin-bottom:0px; 
@@ -878,7 +846,6 @@ span.chats {
     display:none;
 } 
     
-
 #s-m-t-tooltip {
     max-width:300px;
     padding:2px 10px 2px 10px; 
@@ -908,7 +875,6 @@ span.chats {
     transition:1s;
     z-index:100;
 }
-
 
 .navi1 a{
 float: left;
@@ -948,7 +914,7 @@ padding-bottom:15px;
 #navi {
 float:left;
 width: 516px;
-margin-left:488px;
+margin-left:145px;
 border-bottom:1px solid #eee;
 margin-top: -50px;
 height:30px;
@@ -962,19 +928,21 @@ text-align: right;
 z-index:9999;
 position:fixed;
 top:24px;
-margin-left:250px;
+margin-left:-90px;
 background-color:#eee;
 line-height:12px;
 font-size:9px;
 padding:15px;
 width:180px;
 text-align:center;
+{block:permalinkpage}
+margin-left:-160px;  
+{/block:permalinkpage}
 }
 
 #n a {
 color:#666;
 }
-
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -992,14 +960,13 @@ color:#666;
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a>
 
 </head>
 
 <body>  
 
-<div class="entry">
-
+<div class="entry">    
 <div id="navi"><div class="navi1"><a href="{text:link 1}">{text:link 1 title}</a></div>
 <div class="navi1"><a href="{text:link 2}">{text:link 2 title}</a></div>
 <div class="navi1"><a href="{text:link 3}">{text:link 3 title}</a></div>
@@ -1011,7 +978,7 @@ color:#666;
 <div id="n">
 <a href="/"><img style="padding-bottom:5px;-webkit-filter:saturate(100%);" src="{image:sidebar}" width="180"></a>
 
-<div style="padding-top:3px; padding-bottom:3px;margin-top:2px;text-align:right;"><center> <a href="/">{title}</a>
+<div style="padding-top:3px; padding-bottom:3px;margin-top:2px;text-align:right;"><center> <a href="/"><big>{title}</big></a>
 <center>{description}</div>
 </div>
 
@@ -1323,6 +1290,6 @@ $(document).ready(function(){
    });
 });
 </script> 
-<script>feather.replace()</script>
+
 </body>
 </html>
