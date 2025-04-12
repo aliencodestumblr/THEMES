@@ -58,6 +58,10 @@ attribute:"title"
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
+<script src="https://use.fontawesome.com/92822ad00c.js"></script> 
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
@@ -823,7 +827,7 @@ span.chats {
     font-size:11px;
     text-align:center;
     text-transform:lowercase;
-    font-family:inconsolata;
+    font-family:bitxmap;
     letter-spacing:2px;
     margin-bottom:10px;
     background:{color:sidebar container};
@@ -1112,6 +1116,9 @@ text-decoration:underline;
  
 <div id="description">
     <div id="title">{Title}</div>
+   
+   <CENTER><img src="https://64.media.tumblr.com/45358788a6f66d49b7510caaa28bf00f/6e0e0e9b16d2c1db-e9/s500x750/36cc47b87f0f66e65d893b87ff638e523c0e0735.gif" style="width:45px;" />
+
     {Description}
  
     <div class="navi">
