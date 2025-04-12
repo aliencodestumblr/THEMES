@@ -239,11 +239,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:10px; 
-    margin-left:-120px;  
+    margin-left:20px;  
     width:430px;
     {block:permalinkpage}
     margin-top:10px;   
-    margin-left:-60px;  
+    margin-left:10px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -267,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
     width:400px;        
     {block:permalinkpage}
     width:400px; 
-    margin-left:-60px; 
+    margin-left:10px; 
     {/block:permalinkpage}
     margin-bottom:40px; 
     padding:15px;    
@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:-26px;
-    margin-left:-35px;  
+    margin-left:15px;  
     margin-bottom:100px;
     width:400px;
     height:auto; 
@@ -798,7 +798,7 @@ span.chats {
     width:130px;
     position:fixed;
     background-color: {color:post bg};
-    margin-left:-320px;
+    margin-left:-180px;
     margin-top:0px;
     padding:15px;
     padding-top:5px;
@@ -884,7 +884,7 @@ span.chats {
     width:80px;
     position:fixed;
     background-color: {color:post bg};
-    margin-left:350px;
+    margin-left:490px;
     margin-top:0px;
     padding:15px;
     padding-top:5px;
