@@ -146,13 +146,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
+    cursor: url(https://64.media.tumblr.com/72ff6e188aeb74416f62c436733e96e3/1f508a1ff203a445-69/s75x75_c1/038ccf0bad6ffff52cbb40d054f7b727a46c4a15.pnj), progress;
     color:{color:link};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
+    cursor: url(https://64.media.tumblr.com/72ff6e188aeb74416f62c436733e96e3/1f508a1ff203a445-69/s75x75_c1/038ccf0bad6ffff52cbb40d054f7b727a46c4a15.pnj), progress;
     color:{color:hover}; 
     text-decoration:none;
     transition:.5s;
@@ -189,7 +189,7 @@ blockquote video {
 img {
     -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
 opacity:.8;
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
+    cursor: url(https://64.media.tumblr.com/72ff6e188aeb74416f62c436733e96e3/1f508a1ff203a445-69/s75x75_c1/038ccf0bad6ffff52cbb40d054f7b727a46c4a15.pnj), progress;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -197,6 +197,7 @@ opacity:.8;
 }
 
 img:hover {-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;transition: all 0.5s ease-out;
+cursor: url(https://64.media.tumblr.com/72ff6e188aeb74416f62c436733e96e3/1f508a1ff203a445-69/s75x75_c1/038ccf0bad6ffff52cbb40d054f7b727a46c4a15.pnj), progress;
 }
 
 ::-moz-selection {
@@ -245,11 +246,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:10px; 
-    margin-left:20px;  
+    margin-left:0px;  
     width:430px;
     {block:permalinkpage}
     margin-top:10px;   
-    margin-left:10px;  
+    margin-left:0px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -273,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
     width:400px;        
     {block:permalinkpage}
     width:400px; 
-    margin-left:10px; 
+    margin-left:0px; 
     {/block:permalinkpage}
     margin-bottom:40px; 
     padding:15px;    
@@ -803,16 +804,10 @@ span.chats {
     width:130px;
     position:fixed;
     background-color: {color:post bg};
-    margin-left:-180px;
+    margin-left:-200px;
     margin-top:0px;
     padding:15px;
     padding-top:5px;
-    {block:iftransparentposts}
-    background:transparent;
-    {/block:iftransparentposts}
-    {block:ifsemitransparentposts}
-    background: rgba(255,255,255,.7);
-    {/block:ifsemitransparentposts}
     border:1px solid {color:border};
     {block:ifnopostborders}
     border:0px;
@@ -889,16 +884,10 @@ span.chats {
     width:80px;
     position:fixed;
     background-color: {color:post bg};
-    margin-left:490px;
+    margin-left:470px;
     margin-top:0px;
     padding:15px;
     padding-top:5px;
-    {block:iftransparentposts}
-    background:transparent;
-    {/block:iftransparentposts}
-    {block:ifsemitransparentposts}
-    background: rgba(255,255,255,.7);
-    {/block:ifsemitransparentposts}
     border:1px solid {color:border};
     {block:ifnopostborders}
     border:0px;
