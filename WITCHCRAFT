@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:800px;
     {block:permalinkpage}  
-    width:100%; 
+    width:500px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
     width:800px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:185px;   
+   margin-left:-110px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -289,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
      margin-top:0px;   
     width:500px; 
-   margin-left:185px;  
+   margin-left:-110px;  
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:5px; 
@@ -439,21 +439,7 @@ opacity: 0;
 -moz-transition: all 0.4s linear;
 transition: all 0.4s linear;
 }
- 
-.posts:hover .notsi .re {    
-    transform: rotate(360deg);
--ms-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
--o-transform: rotate(360deg);
--moz-transform: rotate(360deg);
-opacity: 1;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-} 
- 
- 
+
  
 .likep {width: 21px; height: 20px; overflow: hidden; z-index: 9999999; display: inline-block;margin-right:3px;}
 .likep a:hover {background-position: 0px 0px;}
@@ -955,7 +941,12 @@ z-index:99999999999;
 margin-left:723px;
 box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
 -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
--webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);}
+-webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+
+ {block:permalinkpage}
+   margin-left:440px;   
+    {/block:permalinkpage}    
+}
 
 #sidebar img {
 width: 210px;
