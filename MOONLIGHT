@@ -21,19 +21,26 @@ attribute:"title"
 })(jQuery);
 </script>
  
-<meta name="image:Icon" content="" />
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#000000"/>    
-<meta name="color:Borders" content="#000000"/> 
-<meta name="color:Accent" content="#ffffff"/>  
-<meta name="color:Text" content="#ffffff" /> 
-<meta name="color:Links" content="#ffffff" />  
-<meta name="color:Links Hover" content="#ffffff" />
-<meta name="color:Scrollbar" content="#000000" />
+<meta name="image:Sidebar" content=""/>
 
-<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#aaaaaa"/>  
+<meta name="color:Text" content="#aaaaaa" /> 
+<meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Links Hover" content="#aaaaaa" />
+<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
+ 
+
+<meta name="if:Dark Tumblr control" content=""/> 
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:sidebar picture" content="1"/>
+<meta name="if:rounded sidebar picture" content="1"/>
+
 
 <meta name="text:Link 1 Url" content="/" />
 <meta name="text:Link 1 Title" content="link" />
@@ -45,6 +52,11 @@ attribute:"title"
 <meta name="text:Link 4 Title" content="link" /> 
 <meta name="text:Link 5 Url" content="/" />
 <meta name="text:Link 5 Title" content="link" />
+<meta name="text:Link 6 Url" content="/" />
+<meta name="text:Link 6 Title" content="link" />
+
+<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
+
 
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
@@ -66,12 +78,22 @@ attribute:"title"
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
  
 <link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+<script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
+
+
 <style type="text/css">
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html {cursor:crosshair;}
 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -146,7 +168,8 @@ a, a:link, a:active, a:visited {
     transition:.5s;
 }
 a:hover {
-      text-decoration:underline;
+    cursor:crosshair;
+    text-decoration:none;
     color:{color:links hover}; 
     transition:.5s;
 }
@@ -170,10 +193,11 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
+    margin-bottom:-5px;
     width:100%; 
 }
 
@@ -201,7 +225,7 @@ img {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 9px arial;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -213,58 +237,49 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:700 10px 'Rosario', sans-serif;
+    font:700 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:790px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
+    width:356px;    
     {block:permalinkpage}  
-    width:590px; 
-    border:1px solid #000;
+    width:290px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    border-left:0px solid #efefef;
-     border-right:0px solid #efefef;
-    margin-top:-6px; 
+    border-left:1px solid {color:borders};
+    border-right:1px solid {color:borders};
+    margin-top:-8px; 
     margin-left:0px;  
-    width:760px;
+    width:356px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:116px;  
-    border:1px solid #000;
+    margin-top:-8px;   
+    margin-left:-33px;  
     {/block:permalinkpage}
-    
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:{color:details};   
-    width:200px;        
-    
+    background:transparent;   
+    width:295px;
     {block:permalinkpage}
-    width:500px; 
-    margin-left:116px; 
-    border:1px solid #000;
+    width:290px; 
+    margin-left:-33px; 
     {/block:permalinkpage} 
-        border:1px solid {color:borders};
-    margin:30px; 
-    padding:0px;    
-    font-size:8px;
+    border:0px solid {color:borders};
+    margin:1px; 
+    padding:30px;    
     text-transform:uppercase;
-    overflow:hidden;
+    overflow:;
     opacity:1;
-    transition:1s;  
+    transition:1s;   
 }
 
 {block:IndexPage}
@@ -276,11 +291,10 @@ h1, h2, h3, h4, h5, h6 {
 {/block:IndexPage}
 
 .posts img {
+    cursor:crosshair;
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
-     border:1px solid #000;
     {/block:permalinkpage};   
     transition:1s; 
 }
@@ -352,63 +366,71 @@ h1, h2, h3, h4, h5, h6 {
 /* end pagination */
 
 /* notes */ 
-.notsi {    
- 
-     background:{color:details};  
-        border-top:1px solid {color:borders};
-    margin-top:0px; 
-    margin-left:0px; 
-    margin-right:0px; 
-    margin-bottom:0px;
-    width:auto;  
-    text-align:left;    
-    font-size:8px;
-    text-transform:uppercase; 
-    padding:0px; 
-    opacity:1;
-    transition:2s; 
+.notsi {
+    padding:0px;
+    position:absolute;
+    text-align:center;
+    opacity:0;
+    display:inline-block;
+    overflow:hidden;
+    top:17px; 
+    left:-21px;
+    width:50px;
+    height:70px;
+    transition: 1s;
 }
  
-.notsi a {    
-    background:;
-    display:inline-block;  
-    color:{color:accent};
-    font-size:8px;    
+.posts:hover .notsi {
+    width:50px;
+    transition:1s;
+    opacity:1;
+}
+ 
+.notsi .inf {   
+ 
+    top:9px;
+    width:100%;  
+    position:absolute;
+    display:block;
     text-align:center;  
-    padding:0px 2px 0px 2px;  
-    margin:0px 1px;
-    z-index:10;
-    transition:1s; 
-}
-
-.notsi2 {     
-     background:{color:details};  
-        border:1px solid {color:borders};
-    margin-top:5px; 
-    margin-left:0px; 
-    margin-right:0px; 
-    margin-bottom:0px;
-    width:auto;  
-    height:5px;
-    text-align:right;    
-    font-size:8px;
-    text-transform:uppercase; 
+    right:-10px; 
     padding:0px; 
-    opacity:1;
-    transition:2s; 
+    color:{color:links image};   
+    transition:1s;
+    opacity:0;
 }
  
+.notsi .inf a {    
+    background:{color:background};
+    width:10px;
+    height:10px;
+    display:block; 
+    font-size:8px;
+    color:{color:links image};   
+    text-align:center;  
+    text-transform:uppercase;
+    padding:0px;
+    margin:2px;      
+    border-radius:0px;  
+     border:4px double {color:borders}; 
+ }
+ 
+.posts:hover .notsi .inf {   
+    right:-9px; 
+    transition:1s; 
+    opacity:1;
+} 
 /* end notes */
 
 /* permalink */
 .perma {  
     margin-top:10px;
-    margin-left:20px;  
+    margin-left:28px;  
     margin-bottom:100px;
-    width:510px;
+    width:290px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -425,16 +447,14 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
@@ -553,20 +573,18 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:{color:background};
+    background:{color:ask box background};
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:{color:asker text};
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 5px;
     border:1px solid {color:borders};
 }
 
@@ -599,7 +617,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -775,7 +792,7 @@ span.chats {
 }
 
 .caption .tumblr_parent {
-    background:{color:details};
+    background:{color:background};
     position:relative;   
     margin:0px 0px 0px 0px;   
     padding:0px 0px 0px 0px;    
@@ -845,9 +862,9 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:9px; 
+    font-size:19px; 
     letter-spacing:0px; 
-    color:{color:details};  
+    color:{color:accent};  
     text-align:center;  
     margin:-2px;  
     padding:2px 7px 3px 6px; 
@@ -857,48 +874,91 @@ span.chats {
     z-index:100;
 }
 
-#sidebar{border:1px solid;background:#000;
-    width: 110;right:30%;padding: 0 0 5 0;
-    height:auto;text-align:center;position:fixed;
-z-index:999999;top:50px;} 
- 
-#fotosidebar{  width:110px;height:auto;}
-#fotosidebar{margin-left: 0px; margin-top: 0px;}
- 
-#tt{position:relative;font-weight:bold;
-width:110px;
-    text-transform:lowercase;
-    text-align:center;
-    letter-spacing:0px;
-    margin-left: 0px;font-style:italic;
-    font-size:14px;
-top:10px;}
 
-#tt a{color:#ededed;}
-
-
-
-#desc{border-top:0px solid #ddd;
-width:110px;z-index:99999999;color:#ededed;
-margin-left:0px; margin-top:15px;font-size:10;
-text-align:center;}
-
- 
- 
-.hopver {line-height:20px;
-text-align:center;
-margin-left:0px;
-z-index:99999999;
-width:110px;color:#ededed;
-margin-top:10px;letter-spacing:1;
-text-transform:uppercase; 
-font-size:8;
+#sidebar {
+  top: 90px;
+  left: calc(50% + -370px); /* Adjust the offset based on your layout */
+  position: fixed;
 }
-
-.hopver a:hover {text-decoration:line-through}
-
-.hopver a{color:#ededed;;}
-
+ 
+#sbarimg {
+display:block;
+width:180px;
+height:180px;
+background:transparent;
+{block:ifroundedsidebarpicture}border-radius:100%{/block:ifroundedsidebarpicture};{block:iftransparentsidebars}background-color:transparent;border:0px transparent;{/block:iftransparentsidebars};
+}
+ 
+#sbarimg img {
+{block:ifroundedsidebarpicture}border-radius:100%{/block:ifroundedsidebarpicture};{block:iftransparentsidebars}background-color:transparent;border:0px transparent;{/block:iftransparentsidebars};
+width:95px;
+opacity:.9;
+height:95px;
+padding:10px;
+margin-left:47px;
+-webkit-filter:saturate(0%);
+}
+ 
+#blogtitle{
+position:fixed !important;
+font-family:"Rajdhani", sans-serif;
+letter-spacing:2px;
+text-transform:uppercase;
+font-size:17px;
+font-style:;
+margin-top:-70px;
+margin-left:40px;
+padding:10px;
+text-align:Right;
+width:100px;
+letter-spacing:1px;
+border-bottom:0px dashed {color:link};
+height:15px;
+color:{color:blogtitle};
+ 
+}
+#desc{
+width:160px;
+position:fixed !important;
+font-family:"Rajdhani", sans-serif;
+letter-spacing:2px;
+font-size:9px;
+text-transform:lowercase;
+top:220px;
+margin-left:-20px;
+padding:10px;
+text-align:right;
+letter-spacing:1px;
+line-height:10px;
+border-bottom:0px dashed {color:link};
+color:{color:blogtitle};
+ 
+}
+ 
+#okk{
+width:150px;
+top:auto;
+height:12px;
+text-align:right;
+overflow:hidden;
+text-transform:uppercase;
+background-color:transparent;
+font-size:8px;
+letter-spacing:1px;
+line-height:12px;
+z-index:999999999999999999999;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+}
+ 
+ 
+#okk:hover{
+height:100px;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+} 
 
 </style> 
 
@@ -917,27 +977,34 @@ font-size:8;
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fas fa-arrow-up"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a>
 
 </head>
 
 <body>  
 
-
 <div id="sidebar">
-
-<img id="fotosidebar" src="{image:icon}"/></a>
-<div id="tt"><a href="/" title="refresh">{title}</a></div>
-<div id="desc">{description}</div>
-
-<div class="hopver"> 
-<a href="{text:link 1 url}">{text:link 1 title}</a> / 
-<a href="{text:link 2 url}">{text:link 2 title}</a> <BR>
-<a href="{text:link 3 url}">{text:link 3 title}</a> /
-<a href="{text:link 4 url}">{text:link 4 title}</a> <BR>
-<a href="{text:link 5 url}">{text:link 5 title}</a>
+<div id="sbarimg">
+<img src="{image:sidebar}" />
 </div>
-
+ 
+ 
+<div id="blogtitle">{title}</b></div>
+ 
+<div id="desc">
+{description}
+</b></div>
+ 
+ 
+ 
+<div id="okk"> +navigation <br>
+<a href="/archive" title="past">grid</a><br>
+<a href="{text:link 1 url}" title="homepage">{text:link 1 title}</a><BR>
+<a href="{text:link 2 url}" title="ask me things!">{text:link 2 title}</a><BR>
+<a href="{text:link 3 url}" title="use them!">{text:link 3 title}</a><BR>
+<a href="{text:link 4 url}"title="tags" >{text:link 4 title}</a><BR> 
+<a href="{text:link 5 url}"title="past" >{text:link 5 title}</a>
+</div>
 </div>
 
 
@@ -949,9 +1016,19 @@ font-size:8;
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div>  
 {/block:Text}
@@ -962,9 +1039,19 @@ font-size:8;
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div>  
 {/block:Quote}
@@ -986,9 +1073,19 @@ font-size:8;
 </ul>
 </div>   
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div>
 {/block:Chat}
@@ -1006,9 +1103,19 @@ font-size:8;
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div> 
 {/block:Link} 
@@ -1018,12 +1125,21 @@ font-size:8;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>  
 {/block:indexpage}
 </div> 
 {/block:answer}
@@ -1045,9 +1161,19 @@ font-size:8;
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div>  
 {/block:Audio}
@@ -1060,9 +1186,19 @@ font-size:8;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div> 
 {/block:indexpage}
 </div> 
 {/block:Photo}
@@ -1076,8 +1212,18 @@ font-size:8;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
 </div>   
 {/block:indexpage}
 </div> 
@@ -1093,9 +1239,19 @@ font-size:8;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-<div class="notsi">       
-<a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
-</div>   
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{reblogurl}" title="REBLOG" target="_blank">
+&nbsp;
+</a> 
+<a href="{Permalink}" title="{NoteCountWithLabel}">
+&nbsp;
+</a>  
+<a title="{TimeAgo}">
+&nbsp;
+</a>
+</div>  
+</div>
 {/block:indexpage}
 </div> 
 {/block:Video} 
@@ -1251,6 +1407,6 @@ $(document).ready(function(){
    });
 });
 </script> 
-
+<script>feather.replace()</script>
 </body>
 </html>
