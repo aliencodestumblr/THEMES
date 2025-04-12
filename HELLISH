@@ -76,9 +76,7 @@ attribute:"title"
 <style type="text/css">
 @font-face {font-family:"bitxmap"; src: url("https://static.tumblr.com/ofgksh6/md0mkd9yd/bitxmap_font_tfb.ttf")}
 
-html {
-    cursor:crosshair;
-}
+body, a, a:hover {cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;}
 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -148,12 +146,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:link};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-    cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:hover}; 
     text-decoration:none;
     transition:.5s;
@@ -190,7 +189,7 @@ blockquote video {
 img {
     -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
 opacity:.8;
-    cursor:crosshair;
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -215,6 +214,7 @@ img:hover {-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition
 .spotify_audio_player {height:80px !important;}
 
 body {
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:text}; 
     background-color:{color:background};
     font:400 10px bitxmap;
