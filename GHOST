@@ -236,11 +236,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:80px;  
+    margin-left:55px;  
     width:556px;
     {block:permalinkpage}
     margin-top:0px;   
-    margin-left:30px;  
+    margin-left:0px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
     width:220px;        
     {block:permalinkpage}
     width:450px; 
-    margin-left:30px; 
+    margin-left:0px; 
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     border-radius: 3px;
@@ -910,9 +910,9 @@ border-radius:2px;
     display: block;
     height:auto;
 text-align:left;
-margin-left:-65px;
+margin-left:-90px;
 {block:permalinkpage}
-margin-left:-118px;  
+margin-left:-143px;  
 {/block:permalinkpage}
 }
 
