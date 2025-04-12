@@ -881,7 +881,7 @@ span.chats {
 
 #desc{width:100%;margin-top:8px;text-align:justify;}
 
-#linkss{position:fixed;line-height:115%;padding-top:17px;margin-left:-4px;color:{color:links};z-index:999999999999999;}
+#linkss{position:fixed;line-height:115%;padding-top:17px;margin-left:-3px;color:{color:links};z-index:999999999999999;}
 
 #linkss a{margin:0px 4px 0px 4px;color:{color:text};}
 
