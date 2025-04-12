@@ -52,8 +52,7 @@ attribute:"title"
 <meta name="text:Link 4 Title" content="link" /> 
 <meta name="text:Link 5 Url" content="/" />
 <meta name="text:Link 5 Title" content="link" />
-<meta name="text:Link 6 Url" content="/" />
-<meta name="text:Link 6 Title" content="link" />
+
 
 <meta name="text:Link 1 Name" content="link hover title"/>
 <meta name="text:Link 2 Name" content="link hover title"/>
