@@ -895,7 +895,7 @@ background:transparent;
 #sbarimg img {
 {block:ifroundedsidebarpicture}border-radius:100%{/block:ifroundedsidebarpicture};{block:iftransparentsidebars}background-color:transparent;border:0px transparent;{/block:iftransparentsidebars};
 width:95px;
-opacity:.9;
+opacity:1;
 height:95px;
 padding:10px;
 margin-left:47px;
