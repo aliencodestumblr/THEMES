@@ -23,13 +23,13 @@ attribute:"title"
  
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#000000"/>
-<meta name="color:Details" content="#000000"/>    
-<meta name="color:Borders" content="#000000"/> 
-<meta name="color:Accent" content="#cecbcb"/>  
-<meta name="color:Text" content="#cecbcb" /> 
-<meta name="color:Links" content="#cecbcb" />  
-<meta name="color:Links Hover" content="#cecbcb" />
+<meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#444444"/>  
+<meta name="color:Text" content="#444444" /> 
+<meta name="color:Links" content="#e683a8" />  
+<meta name="color:Links Hover" content="#444444" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
  
