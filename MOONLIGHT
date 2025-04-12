@@ -55,6 +55,12 @@ attribute:"title"
 <meta name="text:Link 6 Url" content="/" />
 <meta name="text:Link 6 Title" content="link" />
 
+<meta name="text:Link 1 Name" content="link hover title"/>
+<meta name="text:Link 2 Name" content="link hover title"/>
+<meta name="text:Link 3 Name" content="link hover title"/>
+<meta name="text:Link 4 Name" content="link hover title"/>
+<meta name="text:Link 5 Name" content="link hover title"/>
+
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
 
@@ -276,7 +282,6 @@ h1, h2, h3, h4, h5, h6 {
     border:0px solid {color:borders};
     margin:1px; 
     padding:30px;    
-    text-transform:uppercase;
     overflow:;
     opacity:1;
     transition:1s;   
@@ -987,23 +992,20 @@ height:100px;
 <div id="sbarimg">
 <img src="{image:sidebar}" />
 </div>
- 
- 
+
 <div id="blogtitle">{title}</b></div>
  
 <div id="desc">
 {description}
 </b></div>
- 
- 
- 
+
 <div id="okk"> +navigation <br>
 <a href="/archive" title="past">grid</a><br>
-<a href="{text:link 1 url}" title="homepage">{text:link 1 title}</a><BR>
-<a href="{text:link 2 url}" title="ask me things!">{text:link 2 title}</a><BR>
-<a href="{text:link 3 url}" title="use them!">{text:link 3 title}</a><BR>
-<a href="{text:link 4 url}"title="tags" >{text:link 4 title}</a><BR> 
-<a href="{text:link 5 url}"title="past" >{text:link 5 title}</a>
+<a href="{text:link 1 url}" title="{text:Link 1 Name}">{text:link 1 title}</a><BR>
+<a href="{text:link 2 url}" title="{text:Link 2 Name}">{text:link 2 title}</a><BR>
+<a href="{text:link 3 url}" title="{text:Link 3 Name}">{text:link 3 title}</a><BR>
+<a href="{text:link 4 url}" title="{text:Link 4 Name}" >{text:link 4 title}</a><BR> 
+<a href="{text:link 5 url}" title="{text:Link 5 Name}" >{text:link 5 title}</a>
 </div>
 </div>
 
