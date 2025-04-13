@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     border-right:1px solid {color:borders};
     margin-top:-8px; 
     margin-left:0px;  
-    width:356px;
+    width:356.5px;
     {block:permalinkpage}
     margin-top:-8px;   
     margin-left:-33px;  
@@ -306,7 +306,6 @@ h1, h2, h3, h4, h5, h6 {
     width:100%; 
     {block:permalinkpage}
     width:100%;
-     border:1px solid #000;
     {/block:permalinkpage} 
 }
 
