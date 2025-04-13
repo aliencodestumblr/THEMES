@@ -99,7 +99,7 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -169,13 +169,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+    cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+    cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -207,14 +207,12 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+img { 
+    cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
     display:block;
-}
-
-img:hover {
 }
 
 ::-moz-selection {
@@ -400,7 +398,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nots a:hover {
     text-decoration:underline;
-    color:{color:links hover}; 
+    color:#fff; 
     transition:.5s;
 }
 
@@ -881,11 +879,11 @@ span.chats {
 
 #desc{width:100%;margin-top:8px;text-align:justify;}
 
-#linkss{position:fixed;line-height:115%;padding-top:17px;margin-left:-3px;color:{color:links};z-index:999999999999999;}
+#linkss{width:137px;position:fixed;line-height:115%;padding-top:17px;margin-left:-3px;color:{color:links};z-index:999999999999999;}
 
 #linkss a{margin:0px 4px 0px 4px;color:{color:text};}
 
-#linkss a:hover{color:#ffffff;text-decoration:underline;}
+#linkss a:hover{color:{color:links hover};text-decoration:underline;}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
