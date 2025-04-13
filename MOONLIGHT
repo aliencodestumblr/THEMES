@@ -589,7 +589,7 @@ ol.notes li.note img.avatar {
 }
 
 .asker {
-    margin-top:-5px;
+    margin-top:-4px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:8px;
