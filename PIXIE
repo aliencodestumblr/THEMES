@@ -423,8 +423,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notsi2 {     
-     background:{color:details};  
-        border:1px solid {color:borders};
+    background:{color:details};  
+    border:1px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
     margin-right:0px; 
@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6 {
     width:510px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:arial;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -466,7 +466,7 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
