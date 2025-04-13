@@ -329,12 +329,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar {width: 8px; height: 4px; background:#fff; }
+ 
+::-webkit-scrollbar-thumb { background-color:{color:links}; border-bottom: 1px solid #fff; border-top: 1px solid #fff; border-left: 1px solid #fff; border-right: 1px solid #fff; }
 /* end scrollbar */
-
 
 /* pagination */
 .pag {      
