@@ -877,7 +877,7 @@ span.chats {
 
 #sidebar {
   top: 90px;
-  left: calc(50% + -370px); /* Adjust the offset based on your layout */
+  left: calc(50% + -355px); /* Adjust the offset based on your layout */
   position: fixed;
 }
  
