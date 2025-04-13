@@ -870,7 +870,7 @@ margin-left:-285px;
 
 
 .title {
-margin-left:10px;
+margin-left:1px;
 margin-top:5px; 
 width:140px;
 text-align:left;
@@ -904,7 +904,7 @@ border-bottom:1px solid {color:borders};}
 
 
 .nav {margin-top:0px;
-margin-left:10px;
+margin-left:3px;
 margin-bottom:0px;
 width:164px;
 text-align:left;
