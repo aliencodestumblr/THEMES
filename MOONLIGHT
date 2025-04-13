@@ -994,7 +994,9 @@ height:100px;
 <img src="{image:sidebar}" />
 </div>
 
+{block:ifshowblogtitle}
 <div id="blogtitle">{title}</b></div>
+{/block:ifshowblogtitle}
  
 <div id="desc">
 {description}
