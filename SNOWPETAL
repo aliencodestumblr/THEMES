@@ -918,7 +918,6 @@ margin-top:-5px;
 padding:3px;
 line-height:12px; 
 text-align:left;
-background:#;
 font-family:"Rajdhani", sans-serif;
 font-size:9.5px;
 color:{color:links};
@@ -927,7 +926,7 @@ font-style:normal;
 margin:3px;
 letter-spacing:1px;
 transition:.70s;}
-.nav a:hover {font-weight:normal;color:{color:links hover};}
+.nav a:hover {font-weight:bold;color:{color:links hover};}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
