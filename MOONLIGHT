@@ -26,11 +26,12 @@ attribute:"title"
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Accent" content="#aaaaaa"/>  
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#aaaaaa" />
-<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:Accent" content="#989898"/>  
+<meta name="color:Text" content="#989898" /> 
+<meta name="color:Links" content="#7d8f9d" />  
+<meta name="color:Links Hover" content="#989898" />
+<meta name="color:Links image" content="#cacaca" />
+<meta name="color:Scrollbar" content="#7d8f9d" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
@@ -250,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:356px;    
     {block:permalinkpage}  
-    width:290px; 
+    width:294px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -261,10 +262,10 @@ h1, h2, h3, h4, h5, h6 {
     border-right:1px solid {color:borders};
     margin-top:-8px; 
     margin-left:0px;  
-    width:356.5px;
+    width:348px;
     {block:permalinkpage}
     margin-top:-8px;   
-    margin-left:-33px;  
+    margin-left:-32.5px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -274,12 +275,12 @@ h1, h2, h3, h4, h5, h6 {
     background:transparent;   
     width:295px;
     {block:permalinkpage}
-    width:290px; 
-    margin-left:-33px; 
+    width:294px; 
+    margin-left:-32.5px;
     {/block:permalinkpage} 
     border:0px solid {color:borders};
     margin:1px; 
-    padding:30px;    
+    padding:25px;    
     overflow:;
     opacity:1;
     transition:1s;   
@@ -387,13 +388,12 @@ h1, h2, h3, h4, h5, h6 {
 }
  
 .notsi .inf {   
- 
-    top:9px;
+    top:2.5px;
     width:100%;  
     position:absolute;
     display:block;
     text-align:center;  
-    right:-10px; 
+    right:-8px; 
     padding:0px; 
     color:{color:links image};   
     transition:1s;
@@ -402,21 +402,21 @@ h1, h2, h3, h4, h5, h6 {
  
 .notsi .inf a {    
     background:{color:background};
-    width:10px;
-    height:10px;
+    width:5.5px;
+    height:5.5px;
     display:block; 
     font-size:8px;
     color:{color:links image};   
     text-align:center;  
     text-transform:uppercase;
     padding:0px;
-    margin:2px;      
+    margin:5.5px;
     border-radius:0px;  
-     border:4px double {color:borders}; 
+    border:3px double {color:links image}; 
  }
  
 .posts:hover .notsi .inf {   
-    right:-9px; 
+    right:-8px; 
     transition:1s; 
     opacity:1;
 } 
@@ -424,10 +424,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-15px;
-    margin-left:28px;  
+    margin-top:-20px;
+    margin-left:23px;  
     margin-bottom:100px;
-    width:290px;
+    width:294px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
