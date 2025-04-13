@@ -41,6 +41,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/> 
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Show blog title" content="1">
 <meta name="if:sidebar picture" content="1"/>
 <meta name="if:rounded sidebar picture" content="1"/>
 
@@ -932,7 +933,9 @@ letter-spacing:1px;
 line-height:10px;
 border-bottom:0px dashed {color:link};
 color:{color:blogtitle};
- 
+{block:ifnotshowblogtitle}
+top:200px;
+{/block:ifnotshowblogtitle}
 }
  
 #okk{
@@ -950,6 +953,9 @@ z-index:999999999999999999999;
 -webkit-transition: all 0.4s ease-in-out;
 -moz-transition: all 0.4s ease-in-out;
 -o-transition: all 0.4s ease-in-out;
+{block:ifnotshowblogtitle}
+margin-top:-20px;
+{/block:ifnotshowblogtitle}
 }
  
  
