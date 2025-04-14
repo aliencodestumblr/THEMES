@@ -40,6 +40,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Show sidebar image" content="1">
 
 <meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
@@ -262,6 +263,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
+    {block:ifnotshowsidebarimage}
+    top:-150px;
+    {/block:ifnotshowsidebarimage}
     margin-top:335px; 
     margin-left:0px;  
     width:1210px;
@@ -1031,7 +1035,7 @@ return false;
 <div class="entry">
 <div class="sidebar">
 <BR>
-<center><img src="{image:sidebar}" style="width:200px;border-radius:3px;" />
+<center>{block:ifshowsidebarimage}<img src="{image:sidebar}" style="width:200px;border-radius:3px;" />{/block:ifshowsidebarimage}
 <BR>
 <div class="title"><I>{title}</I></div>
 <div class="inf">{description}</div>
