@@ -860,7 +860,6 @@ position:fixed;
 width:200px;
 height:auto;
 border-left:1px solid {color:borders};
-z-index:9999999999;
 {block:permalinkpage}
 margin-left:-285px; 
 {/block:permalinkpage} 
