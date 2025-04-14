@@ -25,10 +25,11 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#ffffff"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:ask box background" content="#000000"/>
@@ -36,11 +37,11 @@ attribute:"title"
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content="0"/>   
+<meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
-<meta name="text:Link One Title" content="↻"/>
+<meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
 <meta name="text:Link Two Title" content="inbox"/>
 <meta name="text:Link Two" content="/"/>
@@ -177,7 +178,7 @@ a, a:link, a:active, a:visited {
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+    cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -189,7 +190,6 @@ a.read_more {
  text-transform:uppercase; 
  font-weight:bold;
  padding-bottom:3px;
- border-bottom:1px solid {color:borders};
 }
 
 p a {font-weight:700;}
@@ -214,9 +214,6 @@ img { cursor:crosshair;
     width:calc(100% - 0);
     height:auto;
     display:block;
-}
-
-img:hover {
 }
 
 ::-moz-selection {
@@ -301,7 +298,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -363,7 +359,6 @@ h1, h2, h3, h4, h5, h6 {
     margin:0px; 
     transition:1s;
     border-radius:3px;
-    border:1px solid {color:borders}; 
 }
 
 .pag a:hover{
@@ -465,10 +460,8 @@ ol.notes {
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
@@ -551,7 +544,6 @@ ol.notes li.note img.avatar {
     font-size:21px;
     color:{color:accent};
     border-radius:5px;
-    border:1px solid {color:borders};
     text-align:center;      
 }
 
@@ -696,7 +688,6 @@ ol.notes li.note img.avatar {
     text-transform:uppercase;
     text-align:center; 
     font-weight:bold; 
-    border-bottom:1px solid {color:borders}; 
     z-index:9999999999;
 }  
 
@@ -768,7 +759,6 @@ span.chats {
     padding:3px 10px 3px 10px;
     border-bottom-right-radius:5px;
     border-top-right-radius:5px;
-    border:1px solid {color:borders};
 }
 
 .host:before {
@@ -890,15 +880,16 @@ span.chats {
 }
 
 .sidebar {
-margin-left:85px;
+margin-left:75px;
 top:10px;
 position:absolute;
 width:1050px;  
 height:auto;
-background-color:#ffffff;
+background:{color:details};  
 z-index:999999;}
 
-.inf {background:#ffffff;
+.inf {
+background:{color:details};  
 padding:7px;
 width:265px;
 margin-top:75px;
@@ -909,11 +900,12 @@ font-size:9.5px;
 text-align:center;
 font-weight:;
 text-transform:;
-border-bottom:1px solid #eeeeee;
+border-bottom:1px solid {color:borders};
 }
 
-.title {position:absolute;
-background:rgba(0,0,0,.05);
+.title {
+position:absolute;
+background:{color:blog title};  
 margin-left:370px;
 margin-top:10px; 
 width:260px;
@@ -922,14 +914,15 @@ font-size:55px;
 font-family:"Rajdhani", sans-serif;
 text-transform:uppercase;
 color:#000000;
-font-weight:;
 padding:25px;
 padding-top:30px;
 letter-spacing:-2px;
 transition:.8s}
 .title:hover {color:#000000;transition:.8s}
 
-nav {margin-top:0px;background:#ffffff;
+nav {
+margin-top:0px;
+background:background:{color:details}; 
 margin-left:0px;
 margin-bottom:10px;
 width:275px;
@@ -938,13 +931,14 @@ padding:3px;
 opacity:1; 
 color:{color:text};
 transition:.70s;}
-nav a{position:relative;display:inline-block;
+nav a{
+position:relative;
+display:inline-block;
 margin-top:-5px;
 color:{color:text};
 padding:2px;
 line-height:12px; 
 text-align:center;
-background:#;
 font-family:"Rajdhani", sans-serif;
 font-size:10px;
 font-weight:bold;
