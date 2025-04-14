@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
     width:348px;
     {block:permalinkpage}
     margin-top:-8px;   
-    margin-left:-32.5px;  
+    margin-left:-30.5px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
     width:295px;
     {block:permalinkpage}
     width:294px; 
-    margin-left:-32.5px;
+    margin-left:-30.5px; 
     {/block:permalinkpage} 
     border:0px solid {color:borders};
     margin:1px; 
