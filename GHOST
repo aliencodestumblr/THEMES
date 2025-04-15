@@ -36,6 +36,8 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/> 
+<meta name="if:hover permalinks" content="0">
+<meta name="if:bottom permalinks" content="1">
 
 <meta name="text:Link One Title" content=""/>
 <meta name="text:Link One" content=""/>
@@ -355,6 +357,7 @@ border: 4px solid {color:background};
 
 /* notes */ 
  
+{block:ifhoverpermalinks} 
 .notsi {
    padding: 0px;
     position: absolute;
@@ -413,6 +416,33 @@ opacity: 0;
 -moz-transition: all 0.4s linear;
 transition: all 0.4s linear;
 }
+{/block:ifhoverpermalinks}
+
+{block:ifbottompermalinks}
+.perms {
+border: 1px solid {color:borders};
+display: block;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background:{color:permalink background};
+color:{color:text};
+font-size:8px;
+opacity: 1; 
+height:10px;
+padding-top:0px;
+padding-bottom:4px;
+position: relative;
+margin-top:5px;
+text-transform:uppercase;
+font-family:"Rajdhani", sans-serif;
+letter-spacing:1px;
+width:213px;
+float:left; 
+z-index:10; 
+text-align:right;
+padding-right:5px;
+}
+{/block:ifbottompermalinks}
  
 /* end notes */
 
@@ -1014,12 +1044,17 @@ margin-left:-143px;
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
 {/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 </div>  
 {/block:Text}
 
@@ -1029,11 +1064,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div>  
 {/block:Quote}
@@ -1055,11 +1096,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 </ul>
 </div>   
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div>
 {/block:Chat}
@@ -1077,11 +1124,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div> 
 {/block:Link} 
@@ -1093,11 +1146,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 </div>   
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div> 
 {/block:answer}
@@ -1119,11 +1178,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div>  
 {/block:Audio}
@@ -1136,11 +1201,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div> 
 {/block:Photo}
@@ -1154,11 +1225,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div> 
 {/block:Photoset}
@@ -1173,11 +1250,17 @@ posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
+{block:ifhoverpermalinks}
 <div class="notsi">  
 <div class="wow">
 posted at {12Hour}:{Minutes} {AmPm} on {DayOfWeek} <br> with <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a>
 </div>
 </div>
+{/block:ifhoverpermalinks}
+{/block:IndexPage}
+{block:ifbottompermalinks}{block:IndexPage}<div class="perms">
+<span style="padding-left:5px;">{monthnumber}·{dayofmonth}·{shortyear} / <a href="{permalink}">{notecountwithlabel}</a> / <a href="{ReblogURL}" target="_blank">reblog</a></span></div>
+{/block:IndexPage}{/block:ifbottompermalinks}
 {/block:IndexPage}
 </div> 
 {/block:Video} 
