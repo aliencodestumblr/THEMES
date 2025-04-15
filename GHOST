@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 /* scrollbar */
 ::-webkit-scrollbar-thumb{ 
 background-color: {color:links};
-border: 2px solid {color:background};
+border: 3px solid {color:background};
 height:auto;
 -moz-border-radius: 10px;
 border-radius: 10px;
@@ -320,7 +320,7 @@ height:auto;
 width:9px; 
 background-color:{color:borders};
 border: 4px solid {color:background}; 
-}
+} 
 /* end scrollbar */
 
 
