@@ -96,6 +96,9 @@ attribute:"title"
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
+<script src="//static.tumblr.com/gtjt4bo/m8Ypn96yc/glenplayer04.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
 <style type="text/css">
 
@@ -266,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
     width:347px;
     {block:permalinkpage}
     margin-top:-8px;   
-    margin-left:-30.5px;   
+    margin-left:-30.5px; 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -343,6 +346,7 @@ height:auto;
 width:9px; 
 background-color:{color:borders};
 border: 4px solid {color:background}; 
+} 
 /* end scrollbar */
 
 /* pagination */
@@ -595,7 +599,7 @@ ol.notes li.note img.avatar {
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
-    border-radius: 5px;
+    border-radius:5px;
     border:1px solid {color:borders};
 }
 
@@ -858,7 +862,7 @@ span.chats {
 #s-m-t-tooltip {
     max-width:300px;
     padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px;  
+    margin:20px 0px 0px 20px; 
     border-radius:3px;
     background:{color:tooltip background};
     font-size:9px;
@@ -919,10 +923,10 @@ text-transform:uppercase;
 font-size:17px;
 font-style:;
 margin-top:-70px;
-margin-left:40px;
+margin-left:30px;
 padding:10px;
 text-align:Right;
-width:100px;
+width:110px;
 letter-spacing:1px;
 border-bottom:0px dashed {color:link};
 height:15px;
@@ -976,7 +980,6 @@ height:100px;
 -moz-transition: all 0.4s ease-in-out;
 -o-transition: all 0.4s ease-in-out;
 } 
-
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -994,11 +997,11 @@ height:100px;
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><img src="https://64.media.tumblr.com/0c13c5c9659baa4ededecbb3a934b2c0/f93f6dbcc54df16a-0c/s75x75_c1/a3631f59d39e787ccc6defd69ac8d6fb7ad4004f.webp" /></a>
+<a href="javascript:;" id="ltop"><img src="https://64.media.tumblr.com/7a4ade1dd05b2e0963aa2b7afb93bbe6/7dd68ba93ebb19be-50/s75x75_c1/68f057077776dd04abc528ccc1ea795b324de0b9.pnj" /></a>
 
 </head>
-
 <body>  
+
 
 <div id="sidebar">
 <div id="sbarimg">
