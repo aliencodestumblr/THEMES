@@ -622,7 +622,6 @@ ol.notes li.note img.avatar {
     line-height:15px;  
     border-radius: 4px;
     border:1px solid {color:borders};
-    text-transform:; 
 }
 
 .asker {
@@ -632,7 +631,6 @@ ol.notes li.note img.avatar {
     margin-bottom:8px;
     width:auto;
     font-size:9px;
-    text-transform:; 
     padding:1px;
     text-align:left;
     text-transform:uppercase; 
@@ -656,7 +654,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
