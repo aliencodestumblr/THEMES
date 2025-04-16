@@ -215,6 +215,12 @@ img {
     width:calc(100% - 0);
     height:auto;
     display:block;
+    -webkit-transition: opacity 0.5s linear;-webkit-transition: all 0.5s ease-out;-moztransition: all 0.5s ease-out;transition: all 0.5s ease-out;
+opacity:.8;
+}
+
+img:hover {
+-webkit-transition: opacity 0.7s linear;opacity: 1;-webkit-transition: all 0.5s ease-out;-moz-transition: all 0.5s ease-out;transition: all 0.5s ease-out;
 }
 
 ::-moz-selection {
