@@ -32,6 +32,7 @@ attribute:"title"
 <meta name="color:Links Hover" content="#e1e1e1" />
 <meta name="color:Scrollbar" content="#b9b9b9" />
 <meta name="color:permalink" content="#b9b9b9" />
+<meta name="color:permalink border" content="#eeeeee" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
  
@@ -645,6 +646,7 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
+    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -1036,7 +1038,7 @@ span.chats {
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}">+{NoteCount}</a>
+<a href="{ReblogURL}" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" target="_blank">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
