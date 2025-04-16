@@ -39,9 +39,9 @@ attribute:"title"
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#bebebe"/>  
 <meta name="color:Text" content="#bebebe" /> 
-<meta name="color:Links" content="#bebebe" />  
+<meta name="color:Links" content="#8394a5" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#bebebe" />
+<meta name="color:Scrollbar" content="#8394a5"/>
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
@@ -360,10 +360,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb:vertical{
+    width:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar-thumb:horizontal{
+    height:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar{
+    width:11px;
+    height:11px;
+    background:{color:background};
+    background-image:url({image:Background});
+}
 /* end scrollbar */
 
 
