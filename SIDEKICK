@@ -39,7 +39,7 @@ attribute:"title"
 <meta name="color:Borders" content="#e5e5e5"/> 
 <meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
-<meta name="color:Links" content="#ed7baa" />  
+<meta name="color:Links" content="#529ecc" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
@@ -912,12 +912,11 @@ span.chats {
 {block:ifshowsidebarimage}
 margin-top:150px;
 {/block:ifshowsidebarimage}
-
 {block:ifnotshowsidebarimage}
 margin-top: 300px;
 {/block:ifnotshowsidebarimage}
 height:auto;
-width: 220px;
+width: 219px;
 position: fixed;
 background:transparent;
 padding: 2px;
@@ -997,7 +996,7 @@ color:{color:links};
 {/block:ifshowtitle}
 
 {block:ifshowdescription}
-<div style="width:200px; text-align: center;">
+<div style="width:198px; text-align: center;">
 {Description} </div>{/block:ifshowdescription}
 <center>
 
@@ -1006,13 +1005,13 @@ line-height:90%;
 font-size:11px;
 color:{color:text};
 letter-spacing:1px;
-width:200px;
+width:198px;
 border:{color:borders} 1px solid; 
 height:18px;
 font-family:"Rajdhani", sans-serif;
 margin-top:4px;
-background:{color:details};
 padding:0px; 
+background:{color:details};
 -moz-border-radius:3px;
 -webkit-border-radius:3px;
 border-radius:3px;
