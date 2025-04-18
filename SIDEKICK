@@ -949,10 +949,11 @@ padding: 10px;
 }
 
 #titulo {
-font-family:courier;
+font-family:"Rajdhani", sans-serif;
 letter-spacing:3px;
 text-transform:uppercase;
 padding-bottom:7px;
+font-weight:100;
 padding-left:3px;
 font-size:15px;
 line-height: 90%; 
