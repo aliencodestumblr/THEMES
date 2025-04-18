@@ -39,7 +39,7 @@ attribute:"title"
 <meta name="color:Borders" content="#e5e5e5"/> 
 <meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
-<meta name="color:Links" content="#529ecc" />  
+<meta name="color:Links" content="#f087b6" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
@@ -47,10 +47,10 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:show sidebar image" content="0"/>
-<meta name="if:show description" content="0"/>
+<meta name="if:show sidebar image" content="1"/>
+<meta name="if:show description" content="1"/>
 <meta name="if:show title" content="1"/>
-<meta name="if:shadow" content="0"/>
+<meta name="if:shadow" content="1"/>
 
 <meta name="text:Link 1 Url" content="/" />
 <meta name="text:Link 1 Title" content="link" />
