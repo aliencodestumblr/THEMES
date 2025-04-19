@@ -55,9 +55,9 @@ attribute:"title"
 
 <meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
-<meta name="text:Link Two Title" content="inbox"/>
+<meta name="text:Link Two Title" content="message"/>
 <meta name="text:Link Two" content="/"/>
-<meta name="text:Link Three Title" content="tags"/>
+<meta name="text:Link Three Title" content="uploads"/>
 <meta name="text:Link Three" content="/"/>
 <meta name="text:Link Four Title" content="movies"/>
 <meta name="text:Link Four" content="/"/>
