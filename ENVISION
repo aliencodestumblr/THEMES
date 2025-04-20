@@ -921,7 +921,7 @@ color:{color:Text};
  
  
 #second{
-margin-right:160px;
+margin-right:170px;
 text-transform:uppercase;
 padding:15px;
 text-align:center;
