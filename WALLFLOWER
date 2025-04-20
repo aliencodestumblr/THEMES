@@ -32,8 +32,6 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Sidebar" content=""/>
-
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
@@ -969,8 +967,8 @@ text-align:center;
 float:center;
 font-style:italic;
 letter-spacing:3px;
-line-height:55px;
-padding-top:10px;
+line-height:11px;
+padding-top:23px;
 height:auto;
 color:{color:Text};
 }
@@ -1090,7 +1088,7 @@ attribute:"title"
 </div>
 </div>
  
-<div id="photo"><img src="{image:sidebar}"></div> 
+<div id="photo"><img src="{PortraitURL-96}"></div> 
  
 <div id="second">
  
