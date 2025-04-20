@@ -288,11 +288,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:110px; 
-    margin-left:0px;  
+    margin-left:50px;  
     width:700px;
     {block:permalinkpage}
     margin-top:130px;   
-    margin-left:-70px;  
+    margin-left:-20px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -304,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:130px; 
     width:430px; 
-    margin-left:-70px; 
+    margin-left:-20px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -932,7 +932,7 @@ color:{color:Text};
  
  
 #second{
-margin-right:170px;
+margin-right:65px;
 text-transform:uppercase;
 padding:15px;
 text-align:center;
