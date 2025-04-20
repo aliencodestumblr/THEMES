@@ -39,7 +39,8 @@ attribute:"title"
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Links" content="#aaaaaa" />
+<meta name="color:Hover Permalink" content="#aaaaaa" /> 
 <meta name="color:Blog Title" content="#6193cc"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#6193cc" />
@@ -401,20 +402,20 @@ border: 4px solid {color:background};
     opacity: 0;
     display: inline-block;
     overflow: hidden;
-    bottom:-2.5px; /* Align to the bottom */
-    left: 3.3px;
+    bottom:-2.5px; 
+    left: 1.2px;
     width: 100%;
-    height: 47px; /* Instead of covering the whole post */
+    height: 47px; 
     transition: 1s;
     width:auto;
 height:auto;
 line-height:8px;
-font-size:13px;    
+font-size:9px;    
 opacity:0;
 z-index:9;
-background:{color:details};
-bottom:12.5px;    
-padding:10px;
+background:#000;
+bottom:9px;    
+padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
 transition:all .2s ease-out;
@@ -431,21 +432,21 @@ transition:all .2s ease-out;
     opacity: 0;
     display: inline-block;
     overflow: hidden;
-    bottom:-2.5px; /* Align to the bottom */
-    left: 3.3px;
+    bottom:-2.5px; 
+    left: 1.2px;
     width: 100%;
-    height: 47px; /* Instead of covering the whole post */
+    height: 47px; 
     transition: 1s;
     position:absolute;
 width:auto;
 height:auto;
 line-height:8px;
-font-size:13px;    
+font-size:9px;    
 opacity:0;
 z-index:9;
-background:{color:details};
-bottom:12.5px;    
-padding:10px;
+background:#000;
+bottom:9px;    
+padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
 transition:all .2s ease-out;
@@ -462,21 +463,21 @@ transition:all .2s ease-out;
     opacity: 0;
     display: inline-block;
     overflow: hidden;
-    bottom:-2.5px; /* Align to the bottom */
-    left: 3.3px;
+    bottom:-2.5px; 
+    left: 1.2px;
     width: 100%;
-    height: 47px; /* Instead of covering the whole post */
+    height: 47px; 
     transition: 1s;
     position:absolute;
 width:auto;
 height:auto;
 line-height:8px;
-font-size:13px;    
+font-size:9px;    
 opacity:0;
 z-index:9;
-background:{color:details};
-bottom:12.5px;    
-padding:10px;
+background:#000;
+bottom:9px;    
+padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
 transition:all .2s ease-out;
@@ -487,11 +488,11 @@ transition:all .2s ease-out;
 }
  
 .posts:hover .notsi{margin-left:9px;}
-.posts:hover .notsi2 {margin-left:43.5px;}
-.posts:hover .notsi3 {margin-left:81.1px;}
+.posts:hover .notsi2 {margin-left:35px;}
+.posts:hover .notsi3 {margin-left:62.5px;}
 
 
-.posts .notsi a,.entry .notsi2 a,.entry .notsi3 a {color:{color:Link};}
+.posts .notsi a,.entry .notsi2 a,.entry .notsi3 a {color:{color:hover permalink}; }
 
 
 
