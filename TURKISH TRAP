@@ -34,9 +34,9 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#c9c9c9"/> 
+<meta name="color:Background" content="#000000"/>
+<meta name="color:Details" content="#000000"/>    
+<meta name="color:Borders" content="#888888"/> 
 <meta name="color:Accent" content="#888888"/>  
 <meta name="color:Text" content="#888888" /> 
 <meta name="color:Links" content="#909ab1" />
@@ -557,7 +557,7 @@ ol.notes li.note img.avatar {
     text-transform:none;   
     line-height:15px;  
     border-radius: 4px;
-    border:1px solid {color:borders};
+    border:1px dotted {color:borders};
     
 }
 
@@ -847,6 +847,7 @@ span.chats {
 
 .navi {
 opacity:1;
+margin-right:-2px;
 margin-top:4px;
 padding:0px;
 width:100px;
@@ -858,7 +859,6 @@ transition: all 0.4s ease-out;}
 .navi a{
 display:block;
 padding:3px;
- 
 text-align:right;
 color:{color:Link}; 
 -webkit-transition: all 0.4s ease-out;
@@ -909,14 +909,17 @@ margin-top:-30px;
 }
  
 #bio{
+margin-right:-5px;
 margin-top:0px;
 padding:5px;
 color:{color:Text}; 
 height:auto;
 opacity:1;
+margin-left:8px;
 text-align:right;}
  
 .blogname{
+margin-right:-5px;
 margin-top:-65px;
 color:{color:blog title};
 text-align:right;
@@ -946,17 +949,17 @@ display:block;
 width:180px;
 height:180px;
 background:transparent;
-border-radius:100%;
+border-radius:5px;
 }
  
 #sbarimg img {
 border:1px dotted {color:Borders};
-border-radius:100%;
+border-radius:5px;
 width:95px;
 opacity:1;
 height:95px;
 padding:7px;
-margin-left:95px;
+margin-left:89px;
 }
 
 </style> 
