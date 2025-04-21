@@ -282,11 +282,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:235px; 
+    margin-top:200px; 
     margin-left:-50px;  
     width:300px;
     {block:permalinkpage}
-    margin-top:252px;   
+    margin-top:220px;   
     margin-left:-50px;  
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:300px;        
     {block:permalinkpage}
-    margin-top:252px; 
+    margin-top:220px; 
     width:300px; 
     margin-left:-50px; 
     {/block:permalinkpage} 
@@ -884,7 +884,7 @@ span.chats {
 
 #header{
 position:fixed;
-height:190px;
+height:150px;
 padding:0px;
 width:330px;
 top:30px;
@@ -902,7 +902,7 @@ box-shadow:9px 9px rgba(0,0,0,.05);
  
 .why {
 position:fixed;
-height:222px;
+height:191px;
 padding:0px;
 width:100%;
 top:0px;
@@ -918,7 +918,7 @@ margin-top:0px;
 #photo img{
 width:80px;
 height:80px;
-transform: translateY(-40px);
+transform: translateY(-26px);
 margin-left:calc(50% - 45px);
 padding:6px;
 background:{color:details}; 
@@ -957,7 +957,7 @@ float:center;
 font-style:italic;
 letter-spacing:3px;
 line-height:11px;
-padding-top:23px;
+padding-top:43px;
 height:auto;
 color:{color:Text};
 }
