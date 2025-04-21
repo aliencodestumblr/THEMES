@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:1100px;    
     {block:permalinkpage}  
-    width:430px; 
+    width:450px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
     width:1100px;
     {block:permalinkpage}
     margin-top:130px;   
-    margin-left:-20px;  
+    margin-left:-100px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -280,8 +280,8 @@ h1, h2, h3, h4, h5, h6 {
     width:250px;        
     {block:permalinkpage}
     margin-top:130px; 
-    width:430px; 
-    margin-left:-20px; 
+    width:450px; 
+    margin-left:-100px; 
     {/block:permalinkpage} 
     margin:54px; 
     padding:0px;    
@@ -411,10 +411,10 @@ color:{color:Link};
 
 /* permalink */
 .perma {  
-    margin-top:-17px;
-    margin-left:20px;  
+    margin-top:-35px;
+    margin-left:50px;  
     margin-bottom:100px;
-    width:430px;
+    width:450px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
