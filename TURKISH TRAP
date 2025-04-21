@@ -1051,7 +1051,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div>  
@@ -1074,7 +1074,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div>  
@@ -1108,7 +1108,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div>
@@ -1138,7 +1138,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div> 
@@ -1162,7 +1162,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div> 
@@ -1196,7 +1196,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div>  
@@ -1221,7 +1221,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div> 
@@ -1246,7 +1246,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div> 
@@ -1273,7 +1273,7 @@ return false;
 </a>
  
 <a href="{permalink}">
-<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {MonthNumberWithZero}-{DayOfMonthWithZero}</div>
 </a></div>
 {/block:IndexPage}
 </div> 
