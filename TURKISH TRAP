@@ -48,7 +48,7 @@ attribute:"title"
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="if:Dark Tumblr control" content="1"/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
@@ -1043,7 +1043,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1066,7 +1066,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1100,7 +1100,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1130,7 +1130,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1154,7 +1154,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1188,7 +1188,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1213,7 +1213,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1238,7 +1238,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
@@ -1265,7 +1265,7 @@ return false;
 <div id="second">
  
 <a href="{Permalink}">
-<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> notes<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
 </a>
  
 <a href="{Reblogurl}">
