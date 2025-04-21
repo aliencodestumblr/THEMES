@@ -1,3 +1,14 @@
+<!---
+
+      design by @aliencodes
+
+      [ credits ]
+      base scroll to top by @fragilehelp           
+      infinite scroll, lightboxes, pxu photoset + minimal 
+      soundcloud player by @shythemes
+      [ all rights reserved ] ©
+      
+--->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -23,36 +34,53 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="text:blogtitle" content="heroine"/>
-
-<meta name="color:Background" content="#0000000"/>
-<meta name="color:Background images" content="#ffffff"/>
-<meta name="color:Details" content="#000000"/>    
-<meta name="color:Borders" content="#ffffff"/> 
-<meta name="color:Accent" content="#ffffff"/>  
-<meta name="color:Text" content="#ffffff" /> 
-<meta name="color:Links" content="#ffffff" />  
-<meta name="color:Links Hover" content="#ffffff" />
-<meta name="color:Scrollbar" content="#ffffff" />
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:Borders" content="#c9c9c9"/> 
+<meta name="color:Accent" content="#888888"/>  
+<meta name="color:Text" content="#888888" /> 
+<meta name="color:Links" content="#909ab1" />
+<meta name="color:Blog Title" content="#909ab1"/> 
+<meta name="color:Links Hover" content="#888888" />
+<meta name="color:Scrollbar" content="#909ab1" />
+<meta name="color:ask box background" content="#000000"/>
+<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:tooltip background" content="#000000"/>
+<meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
-<meta name="if:Pagination" content=""/> 
+<meta name="if:Pagination" content=""/>
 
-<meta name="text:Link 1 Title" content="home" />
-<meta name="text:Link 1" content="/" />
-<meta name="text:Link 2 Title" content="message"/>
-<meta name="text:Link 2" content="/ask" />
-<meta name="text:Link 3 Title" content="more" />
-<meta name="text:Link 3" content="/" />
-<meta name="text:Link 4 Title" content="archive" />
-<meta name="text:Link 4" content="/archive" />
-<meta name="text:Link 5 Title" content="blogroll" />
-<meta name="text:Link 5" content="/" />
+<meta name="text:Link 1 Url" content="/"/>
+<meta name="text:Link 2 URL" content="/"/>
+<meta name="text:Link 3 URL" content="/"/>
+<meta name="text:Link 4 URL" content="/"/>
+ 
+<meta name="text:Link 1 Name" content="reload"/>
+<meta name="text:Link 2 Name" content="inbox"/>
+<meta name="text:Link 3 Name" content="uploads"/>
+<meta name="text:Link 4 Name" content="explore"/>
+ 
+<meta name="text:Blogname" content="turkish trap"/>
 
+<script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
+</script>
+<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script> 
+$(document).readyy(function(){
+$("#flip").click(function(){
+$("#panel").slideToggle("fast");
+});
+});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -66,58 +94,31 @@ attribute:"title"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script> 
 
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
  
 <link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 <link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer06.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click").click(function(){
-    $("#guts").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click2").click(function(){
-    $("#guts2").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click3").click(function(){
-    $("#guts3").slideToggle("fast");
-  });
-});
-</script>
 <style type="text/css">
+article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+}
 
-html, body, a, a:hover{cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;}
+figure iframe.spotify_audio_player,
+iframe.spotify_audio_player {
+    max-height: 90px;
+    width: 100%;
+}
+
+html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
@@ -187,13 +188,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+   cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+    cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -205,7 +206,6 @@ a.read_more {
  text-transform:uppercase; 
  font-weight:bold;
  padding-bottom:3px;
- border-bottom:1px solid {color:borders};
 }
 
 p a {font-weight:700;}
@@ -225,14 +225,11 @@ blockquote video {
     width:100%; 
 }
 
-img { cursor: url(https://static.tumblr.com/zlim8hm/29yn6561z/force-cursor.png), progress !important;
+img { cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
     display:block;
-}
-
-img:hover {
 }
 
 ::-moz-selection {
@@ -252,10 +249,10 @@ img:hover {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 8px Inconsolata;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
-    letter-spacing:1px;
-    text-transform:uppercase;
+    letter-spacing:1.5px;
+    text-transform:lowercase;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
@@ -265,51 +262,45 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:700 10px arial;
+    font:700 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:265px;    
-    {block:iffourcolumns}
-    width:1050px;    
-    {/block:iffourcolumns}
+    width:705px;   
     {block:permalinkpage}  
-    width:590px; 
+    width:540px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    border-left:0px solid #efefef;
-     border-right:0px solid #efefef;
-    margin-top:-6px; 
-    margin-left:-200px;  
-    width:265px;
+    margin-top:0px; 
+    margin-left:0px;  
+    width:705px;
     {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:-220px;  
+     margin-top:0px;   
+   margin-left:-79px;   
+   width:540px; 
     {/block:permalinkpage}
-    
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
     background:{color:details};   
-    width:265px;        
-    
+    width:250px;        
     {block:permalinkpage}
-    width:500px; 
-    margin-left:-220px; 
+     margin-top:0px;   
+    width:540px; 
+   margin-left:-79px;  
     {/block:permalinkpage} 
-        border:1px solid {color:borders};
-    margin:22px; 
-    padding:0px;    
-    overflow:hidden;
+    border:1px dotted {color:Borders};
+    margin:40px; 
+    padding:10px; 
     opacity:1;
     transition:1s;  
 }
@@ -324,7 +315,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -357,10 +347,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb{ 
+background-color: {color:links};
+border: 3px solid {color:background};
+height:auto;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar { 
+height:auto;
+width:9px; 
+background-color:{color:borders};
+border: 4px solid {color:background}; 
+} 
 /* end scrollbar */
 
 
@@ -386,7 +386,6 @@ h1, h2, h3, h4, h5, h6 {
     margin:0px; 
     transition:1s;
     border-radius:3px;
-    border:1px solid {color:borders}; 
 }
 
 .pag a:hover{
@@ -396,97 +395,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* end pagination */
 
-/* notes */ 
-
-.notsi {
-    background:;
-    padding:0px;
-    position:absolute;
-    text-align:center;
-    opacity:0;
-    display:inline-block;
-    overflow:hidden;
-    top:0px; 
-    left:0px;
-    width:100%; 
-    height:calc(30px - 0px);   
-    transition:2s; 
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
-    opacity:1;
-}
- 
-.notsi .inf { 
-    background:rgba({RGBcolor:Background images},0.9);
-    top:-50px;
-    left:0px; 
-    width:100%;  
-    position:absolute;
-    display:block;
-    text-align:left;   
-    font-size:9px;
-    color:{color:links};   
-    text-transform:uppercase;
-    letter-spacing:2px;
-    padding:7px;   
-    border-bottom:1px solid {color:borders};
-    transition:1s;
-    opacity:0;
-}
- 
-.posts:hover .notsi .inf {   
-    top:0px; 
-    transition:1s; 
-    opacity:1;
-} 
- 
-.notsi .inf2 {  
-    top:-90px;
-    left:-2px; 
-    width:100%;  
-    position:absolute;
-    display:inline-block;
-    text-align:center;    
-    padding:4px;    
-    transition:1s;
-    opacity:0;
-}
- 
-.notsi .inf2 a {     
-    background:rgba({RGBcolor:Background images},0.800);
-    width:70px;
-    height:auto;
-    text-align:center;   
-    font-size:9px;
-    color:{color:links};   
-    text-transform:uppercase;
-    letter-spacing:1px;
-    display:inline-block;  
-    padding:5px;      
-    border:1px solid {color:borders};
-    margin:3px;
- }
- 
-.posts:hover .notsi .inf2 {    
-    top:35%;
-    transition:1s; 
-    opacity:1;
-} 
- 
-
-/* end notes */
-
 /* permalink */
 .perma {  
-    margin-top:10px;
-    margin-left:20px;  
+    margin-top:-15px;
+    margin-left:36px;  
     margin-bottom:100px;
-    width:510px;
+    width:540px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -503,16 +420,14 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
-    border:1px solid {color:borders};
     margin:3px;
 }
 
@@ -595,7 +510,6 @@ ol.notes li.note img.avatar {
     font-size:21px;
     color:{color:accent};
     border-radius:5px;
-    border:1px solid {color:borders};
     text-align:center;      
 }
 
@@ -631,26 +545,24 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {    
-    background:{color:background};
+    background:{color:ask box background};
     margin-top:-5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
-    color:{color:text}; 
+    color:{color:asker text};
     text-align:justify;
     text-transform:none;   
     line-height:15px;  
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 4px;
     border:1px solid {color:borders};
-    text-transform:uppercase; 
+    
 }
 
 .asker {
-    margin-top:15px;
+    margin-top:5px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:8px;
@@ -669,7 +581,6 @@ ol.notes li.note img.avatar {
 }
 
 .answer { 
-    text-transform:uppercase; 
     margin-top:5px;
     margin-left:15px;
     margin-right:15px;
@@ -679,7 +590,6 @@ ol.notes li.note img.avatar {
     color:{color:text};
     text-align:justify; 
     line-height:15px;  
-    border-top:1px solid {color:borders}
 }
 
 .answer img {
@@ -744,7 +654,6 @@ ol.notes li.note img.avatar {
     text-transform:uppercase;
     text-align:center; 
     font-weight:bold; 
-    border-bottom:1px solid {color:borders}; 
     z-index:9999999999;
 }  
 
@@ -816,7 +725,6 @@ span.chats {
     padding:3px 10px 3px 10px;
     border-bottom-right-radius:5px;
     border-top-right-radius:5px;
-    border:1px solid {color:borders};
 }
 
 .host:before {
@@ -906,15 +814,15 @@ span.chats {
     display:none;
 } 
     
-
 #s-m-t-tooltip {
     max-width:300px;
-    padding:2px 10px 2px 10px; 
+    padding:2px 4.3px 1px 5px; 
     margin:20px 0px 0px 20px;  
-    background:{color:Details};
+    background:{color:tooltip background};
     font-size:9px;
+    border-radius:3px;
     text-transform:uppercase;
-    color:{color:text};  
+    color:{color:tooltip text};  
     opacity:1;   
     z-index:9999999999999999999;
 }
@@ -925,7 +833,7 @@ span.chats {
     bottom:24px;
     right:24px; 
     text-transform:uppercase;  
-    font-size:9px; 
+    font-size:17px; 
     letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
@@ -937,354 +845,120 @@ span.chats {
     z-index:100;
 }
 
- 
-#sidebar {
-position:fixed;
-padding:15px;
-z-index:999;
-width:185px;
-top:199px;
-left:53%;
-z-index:999;
-color:#000;
-height:auto;
--o-transition-transition:0.4s;
--webkit-transition-duration:0.4s;
--moz-transition-duration:0.4s;{block:ifboxshadow}
-box-shadow:9px 9px rgba(0, 0, 0, 0.9);
-{/block:ifboxshadow}
-}
- 
-  #sidebar img {
-    width:180px;
-   height:auto;
-   border-top:1px solid {color:borders};
-   border-right:1px solid {color:borders};
-   border-left:1px solid {color:borders};
-   padding:0px;
-     }
- 
- 
-   .desc {
-      background:{color:background};
-    margin-top:0px;
-    margin-left:0px;
-    font-family:Inconsolata;
-    font-size:8px;
-    z-index:999999;
-    text-align:left;
-    width:160px;
-    border:1px solid {color:borders};
-    padding:10px;
-    height:42px;
-    color:{color:text};
-    line-height:14px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    overflow-y:scroll;
-   }
- 
- 
- 
-.links{
-width:170px;
-height:19px;
-padding:5px;
-border:1px solid {color:borders};
-z-index:-9999999999999;
-margin-top:-2px;
-margin-left:0px;
+.navi {
 opacity:1;
-background:{color:background};
-transition:0.4s;
--webkit-transition:all 0.6s ease-out;
--moz-transition:all 0.6s ease-out;
-transition:all 0.6s ease-out;
-}
+margin-top:4px;
+padding:0px;
+width:100px;
+float:right;
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;}
  
-#sidebar:hover .links{
--moz-transition: all 1s ease-out;
--o-transition: all 1s ease-out;
--webkit-transition: all 1s ease-out;
-transition: all 1s ease-out;
-    opacity:1;
-}
-.links a{
-text-shadow:10px 0px transparent, -10px 0px transparent;
-position:relative;
-font-family:Inconsolata;
-font-size:8px;
-letter-spacing:1.5px;
+.navi a{
+display:block;
+padding:3px;
+ 
+text-align:right;
+color:{color:Link}; 
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;}
+ 
+.navi:hover a{opacity:.4;}
+ 
+.navi a:hover{
+text-decoration:underline;
+opacity:1;
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;}
+ 
+#second{
+margin-bottom:-10px;
+margin-left:3px;
 text-transform:uppercase;
-color:{color:text};
-margin-top:-3px;
-display:inline-block;
-margin-left:1px;
 padding:5px;
-padding-bottom:8px;
--webkit-transition:All 0.5s ease-in-out;
--moz-transition:All 0.5s ease-in-out;
--ms-transition:All 0.5s ease-in-out;
--o-transition:All 0.5s ease-in-out;
-transition:All 0.5s ease-in-out;
-outline:1px solid transparent;
-outline-offset:-5px;
+font-size:10px;
+text-align:center;
+height:auto;
+margin-top:4px;
+opacity:1;
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;} 
+ 
+#second a{
+display:inline-block;
+color:{color:Link};
+padding:5px;
+overflow:hidden;
+text-align:center;
+height:12px;
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;}
+ 
+.bae{
+-webkit-transition: all 0.4s ease-out;
+-moz-transition: all 0.4s ease-out;
+transition: all 0.4s ease-out;}
+ 
+#second a:hover .bae{ 
+margin-top:-30px;
 }
  
-.links a:hover {
-color:{color:text};
-text-shadow:0px 0px transparent, 0px 0px transparent;
-transition: all 0.9s ease;
--o-transition-transition: all 0.9s ease;
--webkit-transition: all 0.9s ease;
--moz-transition: all 0.9s ease;
-}
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Music-Player-Vinyl:#fff;
-   --Vinyl-Icon-Size:17px;
-   --Vinyl-Spin-Speed:3.5s;
-   --Music-Controls:#fff;
-   --Music-Controls-Size:12px;
-   --Music-Title-Font-Size:11px;
-   --Music-Title-Color:#fff;
-}
-.glenjams-06 {
-   display:none;
-   position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
-   z-index:99;
-}
-
-.pasta {
-   display:flex;
-   align-items:center;
-}
-
-.vinyl-spin {
-   animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -webkit-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -moz-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-   -o-animation:recordspin var(--Vinyl-Spin-Speed) linear infinite;
-}
-
-.vinyl-pause {
-   animation-play-state:paused;
-   -webkit-animation-play-state:paused;
-   -moz-animation-play-state:paused;
-   -o-animation-play-state:paused;
-}
-
-@-webkit-keyframes recordspin {
-   from {
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-@keyframes recordspin {
-   from {
-       -ms-transform:rotate(0deg);
-       -moz-transform:rotate(0deg);
-       -webkit-transform:rotate(0deg);
-       -o-transform:rotate(0deg);
-       transform:rotate(0deg);
-   }
-   to {
-       -ms-transform:rotate(360deg);
-       -moz-transform:rotate(360deg);
-       -webkit-transform:rotate(360deg);
-       -o-transform:rotate(360deg);
-       transform:rotate(360deg);
-   }
-}
-
-.vinyl, .vinyl svg {
-   width:var(--Vinyl-Icon-Size);
-   height:var(--Vinyl-Icon-Size);
-   line-height:0;
-}
-
-.music-controls {
-   margin-left:10px;
-   width:var(--Music-Controls-Size);
-   overflow:hidden;
-   cursor:pointer;
-}
-
-.music-controls svg {
-   display:block;
-   width:var(--Music-Controls-Size);
-   height:var(--Music-Controls-Size);
-   color:var(--Music-Controls);
-   stroke-width:1.5px;
-   line-height:0;
-}
-
-.pausee {display:none;}
-
-.beff {display:none;}
-.aff {display:block;}
-
-.music-title {
-   margin-left:8px;
-   font-family:work sans;
-   font-size:var(--Music-Title-Font-Size);
-   color:var(--Music-Title-Color);
-}
-
-
-#updatesbar{
-    position:absolute;
-    margin-top:0px;
-    margin-left:-8px;
-    padding:3px;
-    padding-right:5px;
-    text-align:right;
-    width:106px;
-    height:9px;
-    background:{color:background}; /*bar background*/
-    border:0px solid #ebebeb; /*matching border color with #box border        looks best*/
-    /*delete the following for no rounded edges*/
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    }
+#bio{
+margin-top:0px;
+padding:5px;
+color:{color:Text}; 
+height:auto;
+opacity:1;
+text-align:right;}
  
-#updates{
-    position:fixed;
-    width:140px;
-    top:25px;
-    right:0px;
-    padding-top:7px;
-    padding-left:7px;
-    padding-right:7px;
-    padding-bottom:4px;
-    font-family:inconsolata;
-    font-size:9px;
-    line-height:12px;
-    background-color:{color:background}; /*background hex color code*/
-    border:0px solid #ebebeb; /*change color code for different colored       borders*/
-    color:{color:text}; /*text color, note link colors and styles will change      with the theme you're using*/
-    z-index:999;
-    /*delete the following for no rounded edges*/
-    -webkit-border-bottom-right-radius: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -moz-border-radius-bottomleft: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+.blogname{
+margin-top:-65px;
+color:{color:blog title};
+text-align:right;
+padding:5px;
+font-size:17px;
+font-weight:100;
+}
+
+#header{
+border:0px dotted {color:Borders};   
+margin-left:-246px;
+top:260px;
+position:fixed;
+margin-right:auto;
+width: 200px; 
+text-align:center;
+height:auto;
+padding:10px;
+z-index:999;
+{block:permalinkpage}
+margin-left:-321px;   
+{/block:permalinkpage}    
+}
+
+#sbarimg {
+display:block;
+width:180px;
+height:180px;
+background:transparent;
+border-radius:100%;
 }
  
-#guts,#click{
-    padding:1px;
-    display:inline-block;
-}
- 
-#click{
-    margin-bottom:4px;
-    padding:1px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    text-align:center;
-    background:{color:background}; /*tab 1 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
-    display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
- 
-#click:hover{
-    cursor:help;
-}
- 
-#click:active{
-    background:#ffffff; /*color of tab when clicked*/
-}
- 
-#guts{
-    padding:1px;
-    display:none;
-}
- 
-#guts2,#click2{
-    padding:1px;
-    display:inline-block;
-}
- 
-#click2{
-    margin-top:7px;
-     font-family:inconsolata;
-    font-size:9px;
-    color:{color:text};
-    margin-bottom:4px;
-    padding:1px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    text-align:center;
-    background:{color:background}; /*tab 2 background color*/
-    border:0px solid #f4f4f4; 
-    padding:1px;
-    display:block;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
-    transition: all 0.1s ease;
-    /*delete the following for no rounded edges*/
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
- 
-#click2:hover{
-    cursor:help;
-}
- 
-#click2:active{
-    background:{color:background}; /*color of tab when clicked*/
-}
- 
-#guts2{
-    padding:1px;
-    display:none;
+#sbarimg img {
+border:1px dotted {color:Borders};
+border-radius:100%;
+width:95px;
+opacity:1;
+height:95px;
+padding:7px;
+margin-left:95px;
 }
 
- 
-.links a:after {
-	position: absolute;
-	top:105%;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background:#fff;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	}
- 
-.links a:hover:after,
-.links a:focus:after {
-	opacity: 1;
-	-webkit-transform: translateY(-2px);
-	-moz-transform: translateY(-2px);
-	transform: translateY(-2px);}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1301,46 +975,61 @@ transition: all 0.9s ease;
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fas fa-arrow-up"></i></a> 
+<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
 </head>
 
-<body>  
+<body>   
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div class="glenjams-06">
-<div class="pasta">
-   <div class="vinyl"></div>
-   <div class="music-controls">
-       <div class="playy"><i data-feather="play"></i></div>
-       <div class="pausee"><i data-feather="pause"></i></div>
-   </div>
-   <div class="music-title"> </div>
+<div class="entry">
 
-   <audio id="audio" src="https://a.tumblr.com/tumblr_me4hdlp8n61qc9zd2o1.mp3" type="audio"></audio>
-</div><!--pasta-->
-</div><!--glenjams-06-->
-<!----end music player---->
+<div id="header">
 
-<div id="sidebar">
-<div id="sidebarimage"><img src="{image:sidebar}"></div>
-<div class="desc">{description}</div>
-<div class="links">
-<a title="{text:Link 1 Title}" href="{text:Link 1}">.01</a>
-<a title="{text:Link 2 Title}" href="{text:Link 2}">.02</a>
-<a title="{text:Link 3 Title}" href="{text:Link 3}">.03</a>
-<a title="{text:Link 4 Title}" href="{text:Link 4}">.04</a>
-<a title="{text:Link 5 Title}" href="{text:Link 5}">.05</a>
-<a title="dashboard" href="/dashboard">.06</a>
+<div id="sbarimg">
+<img src="{image:sidebar}" />
 </div>
  
+<div class="blogname">{text:Blogname}</div>
+<div id="bio">{description} </div>
+<div class="navi">
+<a href="{text:Link 1 Url}"><i class="fa fa-home"></i> {text:Link 1 Name}</a>
+<a href="{text:Link 2 Url}"><i class="fa  fa-comments"></i> {text:Link 2 Name}</a>
+<a href="{text:Link 3 Url}"><i class="fa fa-cogs"></i> {text:Link 3 Name}</a>
+<a href="{text:Link 4 Url}"><i class="fa  fa-code"></i> {text:Link 4 Name}</a>
 </div>
-</div>  
 </div>
 
-
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1348,12 +1037,20 @@ transition: all 0.9s ease;
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div>  
 {/block:Text}
 
@@ -1363,12 +1060,20 @@ transition: all 0.9s ease;
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div>  
 {/block:Quote}
 
@@ -1389,12 +1094,20 @@ transition: all 0.9s ease;
 </ul>
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div>
 {/block:Chat}
 
@@ -1411,12 +1124,20 @@ transition: all 0.9s ease;
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage}  
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div> 
 {/block:Link} 
 
@@ -1425,15 +1146,22 @@ transition: all 0.9s ease;
 <div class="ask">  
 {Question} 
 </div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div> 
 {/block:answer}
 
@@ -1454,12 +1182,20 @@ transition: all 0.9s ease;
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div>  
 {/block:Audio}
 
@@ -1471,15 +1207,22 @@ transition: all 0.9s ease;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div> 
 {/block:Photo}
-
 
 {block:Photoset}   
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div> 
@@ -1489,12 +1232,20 @@ transition: all 0.9s ease;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div> 
 {/block:Photoset}
 
@@ -1508,12 +1259,20 @@ transition: all 0.9s ease;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="inf">
-<a href="{reblogurl}" target="_blank">Reblog</a> <div style="float:right;margin-right:15px;">{12hour}:{Minutes}{AmPm}</div>
-</div>
-</div>
-{/block:IndexPage} 
+<div id="second">
+ 
+<a href="{Permalink}">
+<div class="bae"><i class="fa fa-folder-open" aria-hidden="true"></i> permalink<br><br> <i class="fa fa-folder-open" aria-hidden="true"></i> {notecount}</div>
+</a>
+ 
+<a href="{Reblogurl}">
+<div class="bae"><i class="fa fa-plane" aria-hidden="true"></i> reblog<br><br> <i class="fa fa-plane" aria-hidden="true"></i> {12hour}:{minutes}</div>
+</a>
+ 
+<a href="{permalink}">
+<div class="bae"><i class="fa fa-clock-o" aria-hidden="true"></i> {Month}<br><br> <i class="fa fa-clock-o" aria-hidden="true"></i> {DayOfWeek}</div>
+</a></div>
+{/block:IndexPage}
 </div> 
 {/block:Video} 
 
