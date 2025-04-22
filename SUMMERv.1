@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     width:670px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:80px;   
+   margin-left:15px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -340,13 +340,12 @@ h1, h2, h3, h4, h5, h6 {
     width:277px;        
     {block:permalinkpage}
     width:540px; 
-   margin-left:80px;  
+   margin-left:15px;  
     {/block:permalinkpage} 
         border:1px solid {color:borders};
     margin:16px; 
     padding:12px; 
     padding-top:34px;
-    overflow:;
     opacity:1;
     transition:1s;  
 }
@@ -980,10 +979,11 @@ span.chats {
 .sidebar{
     width:180px;
     padding:10px 10px 5px;
- 
     background:{color:details};
- 
     border:1px solid {color:borders};
+    {block:permalinkpage}
+    margin-left:-65px;   
+    {/block:permalinkpage}
 }
  
 .blogtitle{
@@ -1017,21 +1017,19 @@ span.chats {
  #flip{
     display:inline-block;
     position:relative;
- 
     width:185px;
- 
     margin:5px 0 0;
     padding:5px 5px 5px 10px;
- 
     background:{color:details};
- 
     font-size:9px;
     line-height:12px;
     letter-spacing:1px;
     text-transform:uppercase;
     text-align:left;
- 
     border:1px solid {color:borders};
+    {block:permalinkpage}
+    margin-left:-108px;   
+    {/block:permalinkpage}
 }
  
 #flip:active{
@@ -1049,27 +1047,25 @@ span.chats {
  
     border-width:6px 6px 0 6px;
     border-style:solid;
-    border-color:{color:borders} transparent;
+    border-color:{color:text} transparent;
 }
  
 #panel{
     display:none;
     position:absolute;
- 
     width:185px;
- 
     margin:-1px 0 0;
     padding:0 5px 5px 10px;
- 
     background:{color:details};
- 
     font-size:9px;
     line-height:100%;
     letter-spacing:1px;
     text-transform:uppercase;
     text-align:left;
- 
     border:1px solid {color:borders};
+    {block:permalinkpage}
+    margin-left:-65px;   
+    {/block:permalinkpage}
 }
  
 .links a{
