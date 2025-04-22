@@ -859,7 +859,7 @@ text-align:right;}
  
  
 .blogname{
-color:{color:Text}; 
+color:{color:Blogtitle}; 
 text-align:right;
 padding:5px;
 text-transform:uppercase;
@@ -877,7 +877,6 @@ border:1px solid {color:Borders};
 height:auto;
 padding:10px;
 z-index:999;
--webkit-filter: grayscale(70%);
 {block:permalinkpage}
 margin-left:-213px;  
 {/block:permalinkpage} 
@@ -1031,7 +1030,7 @@ return false;
 <a href="{text:Link 2 Url}"><i class="fa  fa-comments"></i> {text:Link 2 Name}</a>
 <a href="{text:Link 3 Url}"><i class="fa fa-cogs"></i> {text:Link 3 Name}</a>
 <a href="{text:Link 4 Url}"><i class="fa  fa-code"></i> {text:Link 4 Name}</a>
-<a href="http://hazythemes.tumblr.com"> <i class="fa fa-exclamation"></i> theme</a>
+<a href="http://aliencodes.tumblr.com"> <i class="fa fa-exclamation"></i> theme</a>
 </div>
 </div>
 
