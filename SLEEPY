@@ -48,10 +48,10 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
-<meta name="text:Link One Title" content="reload"/>
+<meta name="text:Link One Title" content="link"/>
 <meta name="text:Link One" content="/"/>
-<meta name="text:Link Two Title" content="inbox"/>
-<meta name="text:Link Two" content="/ask"/>
+<meta name="text:Link Two Title" content="link"/>
+<meta name="text:Link Two" content="/"/>
 <meta name="text:Link Three Title" content="link"/>
 <meta name="text:Link Three" content="/"/>
 <meta name="text:Link Four Title" content="link"/>
