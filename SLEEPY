@@ -940,7 +940,7 @@ margin-top:20px;
 
 <div id="sidebar">
 
-<div id="tt"><a href="/" title="refresh">{title}</a></div>
+<div id="tt"><a href="/" title="reload">{title}</a></div>
 
 <div class="hopver"> 
 {block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:ifLinkOneTitle}, 
