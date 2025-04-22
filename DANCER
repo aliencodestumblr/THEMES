@@ -301,6 +301,7 @@ h1, h2, h3, h4, h5, h6 {
     {/block:permalinkpage} 
     border:1px solid {color:Borders};
     margin:30px; 
+    margin-bottom:60px;
     padding:10px; 
     opacity:1;
     transition:1s;  
@@ -936,6 +937,7 @@ color:{color:Link};
 font-size:9px;
 padding:2px;
 overflow:hidden;
+padding-top:3px;
 height:12px;
 -webkit-transition: all 0.4s ease-out;
 -moz-transition: all 0.4s ease-out;
