@@ -35,13 +35,13 @@ attribute:"title"
 <meta name="image:Icon" content="" />
 
 <meta name="color:Background" content="#ffffff"/> 
-<meta name="color:Borders" content="#ededed"/>
-<meta name="color:Title" content="a5a5a5" />
+<meta name="color:Borders" content="#f8f7f7"/>
+<meta name="color:Title" content="#7a88e2" />
 <meta name="color:Text" content="#a5a5a5" />
 <meta name="color:Description" content="#a5a5a5" />
 <meta name="color:Links" content="#a5a5a5" /> 
 <meta name="color:Links Hover" content="#cccccc" />
-<meta name="color:Scrollbar" content="#6a7ae3" />
+<meta name="color:Scrollbar" content="#7a88e2" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
