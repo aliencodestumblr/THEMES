@@ -42,8 +42,6 @@ attribute:"title"
 <meta name="color:Links" content="#a5a5a5" /> 
 <meta name="color:Links Hover" content="#cccccc" />
 <meta name="color:Scrollbar" content="#7a88e2" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
