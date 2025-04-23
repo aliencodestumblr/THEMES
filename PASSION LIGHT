@@ -41,6 +41,8 @@ attribute:"title"
 <meta name="color:Links" content="#cccccc" />  
 <meta name="color:Links Hover" content="#cccccc" />
 <meta name="color:Scrollbar" content="#cccccc" />
+<meta name="color:tooltip background" content="#000000"/>
+<meta name="color:tooltip text" content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -840,12 +842,12 @@ span.chats {
     
 #s-m-t-tooltip {
     max-width:300px;
-    padding:2px 10px 2px 10px; 
-    margin:20px 0px 0px 20px;  
-    background:{color:Details};
+    padding:2px 4.3px 1px 5px; 
+    margin:20px 0px 0px 20px; 
+    background:{color:tooltip background};
     font-size:9px;
     text-transform:uppercase;
-    color:{color:text};  
+    color:{color:tooltip text};  
     opacity:1;   
     z-index:9999999999999999999;
 }
