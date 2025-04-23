@@ -123,29 +123,18 @@ html, body, a, a:hover{cursor:crosshair;}
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
 iframe.tmblr-iframe {
-    z-index:99999999999999!important;  
-    top:5px!important; 
-    right:5px!important; 
-    {block:ifdarktumblrcontrol}
-    filter:invert(1) contrast(100%);
-    -webkit-filter:invert(1) contrast(100%);
-    -o-filter:invert(1) contrast(100%);
-    -moz-filter:invert(1) contrast(100%);
-    -ms-filter:invert(1) contrast(100%); 
-    {/block:ifdarktumblrcontrol}
-    transform:scale(0.60);
-    transform-origin:100% 0;
-    -webkit-transform:scale(0.60);
-    -webkit-transform-origin:100% 0;
-    -o-transform:scale(0.60);
-    -o-transform-origin:100% 0;
-    -moz-transform:scale(0.60);
-    -moz-transform-origin:100% 0;
-    -ms-transform:scale(0.60);
-    -ms-transform-origin:100% 0;
+    position:fixed!important;
+    z-index:99999999!important;
+    top:5px;!important;
+    right:0!important;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
+    transform:scale(0.45) rotate(0deg);
+    transform-origin:95% 0;
+    vertical-align:top right;
     opacity:0.5;
-    transition:.5s;
-}
+} 
 
 .tmblr-iframe--app-cta-button {
     display: none!important;
