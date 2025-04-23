@@ -1047,8 +1047,8 @@ span.chats {
 .icon img { 
     margin-top:25px;
     margin-left:0px;
-    width:80px;
-    height:80px;
+    width:96px;
+    height:96px;
     border-radius:4px;  
     z-index:999999;  
     transition:.3s;
@@ -1224,7 +1224,7 @@ return false;
 </div> 
 </center>
 
-<a href="javascript:;" id="ltop">back to top <span class="lnr lnr-chevron-up" style="float:right"></span></a>
+<a href="javascript:;" id="ltop">back to top <span class="lnr lnr-chevron-up" style="float:right;padding-top:3px;"></span></a>
 </div>  
 
 <div class="bar-top"></div>
