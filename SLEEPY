@@ -902,7 +902,7 @@ margin-top:15px;}
  img{opacity:0.8;} 
 
 .hopver a{
-border-bottom:1px solid ;padding:0px 5px 5px 2px;
+border-bottom:1px solid ;padding:1px 1px 5px 2px;
 color:{color:link};width:150px;
 margin-top:-5px;}
 
