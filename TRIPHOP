@@ -933,7 +933,7 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:12.5px;
+    bottom:13px;
     right:42px; 
     font-size:20px; 
     color:{color:accent};  
@@ -945,7 +945,6 @@ span.chats {
     transition:1s;
     z-index:100;
 }
-
  
 #header{
 position:fixed;
@@ -1047,7 +1046,7 @@ margin-left:116px;
 }
 
 .credit img {
-  width: 30px; 
+  width: 25px; 
   height: auto;
 }
 </style> 
