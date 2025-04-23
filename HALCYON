@@ -852,7 +852,7 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:12.5px;
+    bottom:13px;
     right:42px; 
     font-size:20px; 
     color:{color:accent};  
@@ -981,7 +981,7 @@ text-align:center;
 }
 
 .credit img {
-  width: 30px; 
+  width: 25px; 
   height: auto;
 }
 </style> 
