@@ -505,7 +505,7 @@ transition:all .2s ease-out;
 /* permalink */
 .perma {  
     margin-top:-15px;
-    margin-left:17px;  
+    margin-left:15px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
