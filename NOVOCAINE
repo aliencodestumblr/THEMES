@@ -1045,10 +1045,10 @@ span.chats {
 
 
 .icon img { 
-    margin-top:25px;
+    margin-top:19px;
     margin-left:0px;
-    width:96px;
-    height:96px;
+    width:85px;
+    height:85px;
     border-radius:4px;  
     z-index:999999;  
     transition:.3s;
