@@ -840,11 +840,9 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:19px; 
-    letter-spacing:0px; 
+    bottom:12.5px;
+    right:42px; 
+    font-size:20px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -854,8 +852,6 @@ span.chats {
     transition:1s;
     z-index:100;
 }
-
-
 
 #sidebar{
 width: 790px;
@@ -907,6 +903,19 @@ line-height:17px;
 margin-top:20px;
 ;}
 
+.credit {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.credit img {
+  width: 30px; 
+  height: auto;
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -925,6 +934,8 @@ margin-top:20px;
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+
+<a href="https://aliencodes.tumblr.com" target="_blank" class="credit" title="designed by @aliencodes!"><img src="https://i.postimg.cc/j5phLdS2/transparentalien-copy.png" alt="credit"></a>
 
 </head>
 
