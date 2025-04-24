@@ -384,11 +384,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.mhreblog {position:absolute; display:block; z-index:3;top:5px; right:5px; width:30px;height:30px;border-radius:0px; opacity:0;background:url('https://static.tumblr.com/h7yjwkn/v1dnxzmuy/reblog1.png') 0 no-repeat;transition:all .7s ease;}
+.mhreblog {position:absolute; display:block; z-index:3;top:5px; right:5px; width:30px;height:30px;border-radius:0px; opacity:0;background:url('https://static.tumblr.com/h7yjwkn/rkZnysqvy/reblg.png') 0 no-repeat;transition:all .7s ease;}
 
 .posts:hover .mhreblog {opacity:1; -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg);}
 
-.mhpermalink {position:absolute; display:block; z-index:3; top:5px; right:35px; width:30px;height:30px;border-radius:0px; opacity:0; background:url('https://static.tumblr.com/h7yjwkn/jS9nxzmv5/perma.png') 0 no-repeat; transition:all .7s ease;}
+.mhpermalink {position:absolute; display:block; z-index:3; top:5px; right:35px; width:30px;height:30px;border-radius:0px; opacity:0; background:url('https://static.tumblr.com/h7yjwkn/oCRnysqw5/perm.png') 0 no-repeat; transition:all .7s ease;}
 
 .posts:hover .mhpermalink {opacity:1; top:5px; -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg);}
 
