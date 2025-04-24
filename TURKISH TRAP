@@ -37,11 +37,11 @@ attribute:"title"
 <meta name="color:Background" content="#000000"/>
 <meta name="color:Details" content="#000000"/>    
 <meta name="color:Borders" content="#888888"/> 
-<meta name="color:Accent" content="#888888"/>  
-<meta name="color:Text" content="#888888" /> 
+<meta name="color:Accent" content="#ffffff"/>  
+<meta name="color:Text" content="#ffffff" /> 
 <meta name="color:Links" content="#909ab1" />
 <meta name="color:Blog Title" content="#909ab1"/> 
-<meta name="color:Links Hover" content="#888888" />
+<meta name="color:Links Hover" content="#ffffff" />
 <meta name="color:Scrollbar" content="#909ab1" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
