@@ -111,6 +111,7 @@ iframe.spotify_audio_player {
     max-height: 90px;
     width: 100%;
 }
+
 html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -265,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:700px;    
     {block:permalinkpage}  
-    width:430px; 
+    width:450px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -273,11 +274,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:20px; 
-    margin-left:50px;  
+    margin-left:130px;  
     width:700px;
     {block:permalinkpage}
-    margin-top:130px;   
-    margin-left:-20px;  
+    margin-top:20px;   
+    margin-left:0px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -287,9 +288,9 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:250px;        
     {block:permalinkpage}
-    margin-top:130px; 
-    width:430px; 
-    margin-left:-20px; 
+    margin-top:20px; 
+    width:450px; 
+    margin-left:0px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -382,8 +383,11 @@ h1, h2, h3, h4, h5, h6 {
 /* notes */ 
 
 .notes{font-family:"Rajdhani", sans-serif;text-transform:uppercase; letter-spacing:0.7px; background:#; padding: 3px; width:246px;margin-left:0px;margin-top:1.5px;margin-bottom:-8px;color:{color:text};text-align:right;opacity:1;transition:.5s;}
+
 .notes a {background:#;color:{color:text};font-size:13px; text-transform:uppercase;transition:.5s;margin:-2px;}
+
 .notes a:hover {color:#ccc;text-transform:uppercase;transition:.8s;}
+
 .posts:hover .notes {opacity:1;margin-top:1.5px;transition:.5s;}
 
 .time {margin-top:-2px;float:left;background:#;margin-bottom:-8px;padding:1px;font-family:"Rajdhani", sans-serif;font-size:10.5px;margin-left:-4px;}
@@ -395,9 +399,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:-17px;
     margin-left:20px;  
     margin-bottom:100px;
-    width:430px;
-    height:auto; 
-    overflow:auto;   
+    width:450px;
+    height:100%;
+    font-size:9px;  
     font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
@@ -431,6 +435,7 @@ li.note {
 }
 
 ol.notes li a { 
+    font-size:9px;
     font-weight:700;
 } 
 
@@ -855,7 +860,11 @@ span.chats {
   height: auto;
 }
 
-.side{position:fixed;top:200px;margin-left:-120px;width:150px; height:auto;transition:all .8s;background:{color:details};border:0px solid #eeeeee;z-index:999999999;}
+.side{position:fixed;top:200px;margin-left:-50px;width:150px; height:auto;transition:all .8s;background:{color:details};border:0px solid #eeeeee;z-index:999999999;
+ {block:permalinkpage}
+    margin-left:-175px;  
+    {/block:permalinkpage}
+}
 
 .foto img{width:140px;height:auto;margin-top:0px;margin-left:-15px;padding:15px;background:#;border:0px solid #eeeeee;transition:.80s;}
 
@@ -899,10 +908,17 @@ span.chats {
 <div class="balao"></div><div class="descri">{description}</div>
 <div class="titulo">{text:Blogtitle}</div>
 <div class="links">
+
 <a href="{text:Link 1}"class="link">{text:Link 1 Title}</a>
+
+
 <a href="{text:Link 2}"class="link">{text:Link 2 Title}</a>
+
+
 <a href="{text:Link 3}"class="link">{text:Link 3 Title}</a>
+
 <a href="{text:Link 4}"class="link">{text:Link 4 Title}</a>
+
 </div></div>
 
 <div id="posts">
@@ -1027,9 +1043,6 @@ span.chats {
 </div>
 {/block:indexpage}
 </div> 
-</div>
-</div>{/block:IndexPage}{/block:date}
-</div>  
 {/block:Audio}
 
 {block:Photo}   
