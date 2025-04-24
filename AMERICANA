@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:700px;    
+    width:625px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -276,8 +276,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:20px; 
-    margin-left:170px;  
-    width:700px;
+    margin-left:135px;  
+    width:625px;
     {block:permalinkpage}
     margin-top:20px;   
     margin-left:46px;  
@@ -891,7 +891,7 @@ span.chats {
 }
 
 .sidebar {
-margin-left:-150px;
+margin-left:-180px;
 top:150px;
 position:fixed;
 width:290px;
@@ -899,7 +899,7 @@ height:auto;
 background-color:{color:details};
 z-index:9999999999;
 {block:permalinkpage}
-margin-left:-275px;  
+margin-left:-268px;  
 {/block:permalinkpage}    
 }
 
