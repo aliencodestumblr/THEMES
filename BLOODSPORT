@@ -982,7 +982,7 @@ text-transform:uppercase;
 color:{color:text};
 font-weight:bold;
 padding:5px;
-letter-spacing:2px;
+letter-spacing:3.5px;
 transition:.8s}
 
 .photo img{
