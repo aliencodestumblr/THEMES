@@ -911,7 +911,7 @@ border-radius:0%;
 margin-top:0px;
 margin-left:0px;
 padding:20px;
-background:#fff;
+background:{color:details};
 border:1px solid {color:borders};
 -webkit-transition-duration: .90s;filter: alpha(opacity=100);
 moz-opacity:0.90;
