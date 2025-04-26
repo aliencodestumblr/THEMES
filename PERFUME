@@ -47,10 +47,11 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
-<meta name="text:Link 1 Url" content="/"/>
-<meta name="text:Link 2 URL" content="/"/>
-<meta name="text:Link 3 URL" content="/"/>
-<meta name="text:Link 4 URL" content="/"/>
+<meta name="text:Link One Url" content="/"/>
+<meta name="text:Link Two URL" content="/"/>
+<meta name="text:Link Three URL" content="/"/>
+<meta name="text:Link Four URL" content="/"/>
+<meta name="text:Link Five URL" content="/"/>
  
 <meta name="text:Blogname" content="perfume"/>
 
