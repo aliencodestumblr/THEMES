@@ -948,7 +948,7 @@ span.chats {
 }
 
 .titulo {
-    padding:0px 5px 0px 5px;
+    padding:2px 5px 5px 5px;
     font-size:17px;
     line-height:100%;
     font-family:"Rajdhani", sans-serif;
