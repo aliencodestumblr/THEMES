@@ -940,8 +940,8 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:20px;
-    right:20px; 
+    bottom:13px;
+    right:42px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
