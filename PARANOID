@@ -420,7 +420,7 @@ line-height:8px;
 font-size:9px;    
 opacity:0;
 z-index:9;
-background:#000;
+background:#fff;
 bottom:9px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
@@ -451,7 +451,7 @@ line-height:8px;
 font-size:9px;    
 opacity:0;
 z-index:9;
-background:#000;
+background:#fff;
 bottom:9px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
@@ -482,7 +482,7 @@ line-height:8px;
 font-size:9px;    
 opacity:0;
 z-index:9;
-background:#000;
+background:#fff;
 bottom:9px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
@@ -940,8 +940,8 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:13px;
-    right:42px; 
+    bottom:20px;
+    right:20px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -978,7 +978,7 @@ span.chats {
 }
  
 .banner img{
-    margin:10px auto 5px;
+    margin:10px auto 10px;
     max-width:200px;
 }
  
@@ -1025,6 +1025,7 @@ span.chats {
 }
 
 .credit {
+  display:none;
   position: fixed;
   bottom: 20px;
   right: 20px;
