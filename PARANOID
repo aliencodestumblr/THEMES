@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:540px;   
+    width:580px;   
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -280,10 +280,10 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:0px; 
     margin-left:105px;  
-    width:540px;
+    width:580px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:106x;   
+   margin-left:87px;   
    width:540px; 
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -292,11 +292,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:220px;        
+    width:250px;        
     {block:permalinkpage}
      margin-top:0px;   
     width:540px; 
-   margin-left:106px;  
+   margin-left:87px;  
     {/block:permalinkpage} 
     margin:20px; 
     padding:0px;    
@@ -410,7 +410,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     overflow: hidden;
     bottom:2.5px; 
-    left: 1.2px;
+    left:-9px;
     width: 100%;
     height: 47px; 
     transition: 1s;
@@ -421,7 +421,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:11px;    
+bottom:0px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -440,7 +440,7 @@ transition:all .2s ease-out;
     display: inline-block;
     overflow: hidden;
     bottom:-2.5px; 
-    left: 1.2px;
+    left:-9px;
     width: 100%;
     height: 47px; 
     transition: 1s;
@@ -452,7 +452,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:11px;    
+bottom:0px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -471,7 +471,7 @@ transition:all .2s ease-out;
     display: inline-block;
     overflow: hidden;
     bottom:-2.5px; 
-    left: 1.2px;
+    left:-9px;
     width: 100%;
     height: 47px; 
     transition: 1s;
@@ -483,7 +483,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:11px;    
+bottom:0px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -959,7 +959,7 @@ span.chats {
     position:fixed;
     top:0px;
     left:49.8%;
-    margin:0 0 0 -400px;
+    margin:0 0 0 -420px;
     width:200px;
     padding:10px;
     height:120%;
