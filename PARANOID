@@ -409,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     display: inline-block;
     overflow: hidden;
-    bottom:-2.5px; 
+    bottom:2.5px; 
     left: 1.2px;
     width: 100%;
     height: 47px; 
@@ -421,7 +421,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:9px;    
+bottom:11px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -452,7 +452,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:9px;    
+bottom:11px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -483,7 +483,7 @@ font-size:9px;
 opacity:0;
 z-index:9;
 background:#fff;
-bottom:9px;    
+bottom:11px;    
 padding:8px;
 -webkit-transition:all .2s ease-out;
 -moz-transition:all .2s ease-out;
@@ -940,8 +940,8 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:13px;
-    right:42px; 
+    bottom:20px;
+    right:20px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -987,8 +987,8 @@ span.chats {
 }
  
 .line{
-    width:208px;
- 
+    width:215px;
+ margin-left:-7px;
     border:1px solid {color:borders};
 }
  
@@ -1022,19 +1022,6 @@ span.chats {
     font-size:9px;
     font-style:italic;
     text-transform:lowercase;
-}
-
-.credit {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  transition: opacity 0.3s ease;
-}
-
-.credit img {
-  width: 25px; 
-  height: auto;
 }
 </style> 
 
@@ -1084,8 +1071,6 @@ return false;
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
-
-<a href="https://aliencodes.tumblr.com" target="_blank" class="credit" title="designed by @aliencodes!"><img src="https://i.postimg.cc/j5phLdS2/transparentalien-copy.png" alt="credit"></a>
 
 </head>
 
