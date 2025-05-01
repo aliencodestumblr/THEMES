@@ -50,7 +50,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:shadow" content="0"/>
-
+<meta name="if:show title" content="0">
 <meta name="image:sidebar" content="0"/>
 <meta name="if:show sidebar image" content="0">
 
@@ -992,8 +992,8 @@ color:{color:text};
 <div class="entry"> 
 <div id="sidebar">
         	<a href="/"><img src="{image:sidebar}" width="180px"></a>
-		
-            
+		 {block:ifshowtitle}<div class="titulo"><a href="/">{title}</a></div>{/block:ifshowtitle}
+
            <div class="description">{description} </div> 
 			<div style="text-align:right;{block:ifnotshowdescription} {block:ifnotshowtitle}
 	padding-top:3px;
