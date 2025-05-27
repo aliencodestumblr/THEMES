@@ -922,8 +922,8 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:13px;
-    right:42px; 
+    bottom:20px;
+    right:20px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -1075,20 +1075,6 @@ span.chats {
     margin-left:5px;
     display:inline-block;
 }    
-
-.credit {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
-
-.credit img {
-  width: 25px; 
-  height: auto;
-}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1137,8 +1123,6 @@ return false;
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
-
-<a href="https://aliencodes.tumblr.com" target="_blank" class="credit" title="designed by @aliencodes!"><img src="https://i.postimg.cc/j5phLdS2/transparentalien-copy.png" alt="credit"></a>
 
 </head>
 
