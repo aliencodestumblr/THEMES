@@ -32,9 +32,7 @@ attribute:"title"
 })(jQuery);
 </script>
  
-<meta name="image:Sidebar" content=""/>
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#ffffff"/>    
+<meta name="image:Sidebar" content=""/>  
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#cccccc"/>  
 <meta name="color:Text" content="#cccccc" /> 
@@ -43,8 +41,7 @@ attribute:"title"
 <meta name="color:Scrollbar" content="#cccccc" />
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
-
-<meta name="if:Dark Tumblr control" content=""/>   
+   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
@@ -229,7 +226,7 @@ img {
 
 body {
     color:{color:text}; 
-    background-color:{color:background};
+    background-color:#ffffff;
     font:400 9px "Rajdhani", serif;
     transition:1.3s;  
     letter-spacing:1.5px;
@@ -270,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts {  
-    background:{color:details};   
+    background:#ffffff;   
     width:250px;        
     {block:permalinkpage}
     width:500px; 
@@ -370,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
 /* notes */ 
 .notsi {    
  
-     background:{color:details};  
+     background:#ffffff;  
         border-top:1px solid {color:borders};
     margin-top:0px; 
     margin-left:0px; 
@@ -398,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notsi2 {     
-     background:{color:details};  
+     background:#ffffff;  
         border:1px solid {color:borders};
     margin-top:5px; 
     margin-left:0px; 
@@ -742,7 +739,7 @@ span.chats {
 }
 
 .host a {
-    background:{color:background};   
+    background:#ffffff;   
     margin-top:20px;
     text-transform:uppercase;
     font-size:8px; 
@@ -759,7 +756,7 @@ span.chats {
     margin-left:20px; 
     margin-right:-1px;
     margin-bottom:15px;
-    background:{color:background};
+    background:#ffffff;
     font-family:'FontAwesome';  
     content:"\f1d8";
     color:{color:accent};
@@ -789,7 +786,7 @@ span.chats {
 }
 
 .caption .tumblr_parent {
-    background:{color:details};
+    background:#ffffff;
     position:relative;   
     margin:0px 0px 0px 0px;   
     padding:0px 0px 0px 0px;    
@@ -798,7 +795,7 @@ span.chats {
 }
  
 .caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
+    background:#ffffff;
     margin-top:7px;
     margin-bottom:6px; 
     margin-left:-14px;  
@@ -855,8 +852,8 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:13px;
-    right:42px; 
+    bottom:20px;
+    right:20px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -883,7 +880,7 @@ border:0px solid {color:Border};}
     width:calc(100% - 20px);
     padding:10px;
     outline-offset:-20px;
-    background:{color:Background};
+    background:#ffffff;
     border:1px solid {color:borders};
 }
  
@@ -940,8 +937,6 @@ opacity:1;
 text-align:right;
 }
 
-
- 
 .jazmyn{
 position:absolute;
 padding:7px;
@@ -970,20 +965,7 @@ color:{color:Link};
 .entry:hover .jazmyn{
 opacity:1;
  }
- 
-.credit {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-}
 
-.credit img {
-  width: 25px; 
-  height: auto;
-}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1003,7 +985,6 @@ opacity:1;
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
 
-<a href="https://aliencodes.tumblr.com" target="_blank" class="credit" title="designed by @aliencodes!"><img src="https://i.postimg.cc/j5phLdS2/transparentalien-copy.png" alt="credit"></a>
 </head>
 
 <body>  
