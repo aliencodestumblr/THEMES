@@ -201,11 +201,12 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
     width:100%; 
+margin-bottom:-5px;
 }
 
 img {
