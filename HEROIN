@@ -436,7 +436,7 @@ border: 4px solid {color:background};
 }
 
 .nots a:hover {
-    color:#fff; 
+    color:{color:links hover};
     transition:.5s;
 }
 
