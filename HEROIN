@@ -436,7 +436,6 @@ border: 4px solid {color:background};
 }
 
 .nots a:hover {
-    text-decoration:underline;
     color:#fff; 
     transition:.5s;
 }
