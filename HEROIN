@@ -915,7 +915,7 @@ span.chats {
 .links a{font-size:7px;letter-spacing:1.8px;text-transform:uppercase;}
 .reg, .lh {margin:0px 0px;}
 .lb{padding:0px;line-height:180%;}
-.lb a{display:block;letter-spacing:0.5px;}
+.lb a{display:block;letter-spacing:1.5px;}
 
 .photo img{
 width:159px;
