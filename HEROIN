@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
     width:890px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:0px;  
+    margin-left:-111px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:20px; 
     width:450px; 
-    margin-left:0px; 
+    margin-left:-111px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -906,7 +906,7 @@ span.chats {
     margin:-95px;
     top:300px;
      {block:permalinkpage}
-    margin-left:-205px; 
+    margin-left:-315px; 
     {/block:permalinkpage} 
 }
  
