@@ -912,7 +912,7 @@ span.chats {
  
 .desc{padding:8px 0px;text-align:;line-height:150%;}
 .links{border-top:1px solid {color:borders};padding-top:5px;}
-.links a{font-size:7px;letter-spacing:1px;text-transform:uppercase;}
+.links a{font-size:7px;letter-spacing:1.8px;text-transform:uppercase;}
 .reg, .lh {margin:0px 0px;}
 .lb{padding:0px;line-height:180%;}
 .lb a{display:block;letter-spacing:0.5px;}
