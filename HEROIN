@@ -154,7 +154,6 @@ iframe.tmblr-iframe {
 .vignette, #vignette {
     opacity:0;
 }
-
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
     border-radius:{text:border radius}px !important;
@@ -994,9 +993,9 @@ transition:.8s}
 <div class="caption">{Body}</div>
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
 </div> 
 {/block:indexpage}
@@ -1010,11 +1009,11 @@ transition:.8s}
 {/block:Source} 
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div>  
 {/block:Quote}
@@ -1037,11 +1036,11 @@ transition:.8s}
 </div>   
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 </div>
@@ -1063,11 +1062,11 @@ transition:.8s}
 {/block:Description}  
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:Link} 
@@ -1080,11 +1079,11 @@ transition:.8s}
 <div class="answer">{Answer}</div> 
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:answer}
@@ -1107,11 +1106,11 @@ transition:.8s}
 </div>   
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:Audio}
@@ -1125,11 +1124,11 @@ transition:.8s}
 {/block:ifshowcaption}  
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:Photo}
@@ -1144,11 +1143,11 @@ transition:.8s}
 {/block:ifshowcaption}  
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:Photoset}
@@ -1164,11 +1163,11 @@ transition:.8s}
 {/block:ifshowcaption}  
 {block:indexpage}  
 <div class="nots">
-<a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
+<a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
 <div class="float"> 
-<a href="{Permalink}"><i class="fa fa-files-o"></i> {NoteCount}</a>
+<a href="{Permalink}" title="{TimeAgo}"><i class="fa fa-files-o"></i> {NoteCount}</a>
 </div>
-</div> 
+</div>
 {/block:indexpage}
 </div> 
 {/block:Video} 
