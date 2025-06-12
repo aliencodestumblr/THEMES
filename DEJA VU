@@ -397,38 +397,30 @@ border: 4px solid {color:background};
 
 /* notes */ 
 
-.permalinks {
-text-align:left;
-border-bottom:1px solid {color:Borders};
-color:{color:Link};
-margin-top:0px;
-letter-spacing:0px;
-font-size:10px;
-text-transform:uppercase;
-display:block;
-padding:7px;
+.notsi .inf {   
+  color:{color:permalink};
+    position:relative;
+    display:block;
+    font-size:10px;
+    opacity:1;
+    right:0;
+    text-align:right;
+    margin:5px 0 2px 0;
+    text-transform:uppercase;
 }
- 
-ha{float:left;text-align:left;}
-na{float:right;text-align:right;}
- 
-.permalinks a{
-color:{color:Link};
-background:{color:background};
-padding:4px;
-}
- 
-.permalink {
-text-align:right;
-color:{color:Link};
-margin-top:5px;
-padding:5px;
-}
- 
-.permalink a{
-color:{color:Link};
-}
- 
+
+.notsi .inf a {    
+    color:{color:permalink};
+    font-family:"Rajdhani", sans-serif;
+    margin:0 0px;
+    padding-bottom:1px;
+    text-decoration:none;
+ }
+
+.posts:hover .notsi .inf {   
+  text-decoration:none;
+} 
+
 
 /* end notes */
 
@@ -921,10 +913,10 @@ margin-left:-139px;
 
 <div id="sidebar">
 <div class="icon">
-<a title="reload" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#c2c2c2" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></a>
-<a title="message" href="/ask"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#c2c2c2" d="M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9l.3-.5z"/></svg></a>
-<a title="archive" href="/archive"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="11.25" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#c2c2c2" d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"/></svg></a>
-<a title="back to dashboard" href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="8.75" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#c2c2c2" d="M64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM200 344l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg></a>
+<a title="reload" href="/"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:links}" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></a>
+<a title="message" href="/ask"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:links}" d="M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9l.3-.5z"/></svg></a>
+<a title="archive" href="/archive"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="11.25" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:links}" d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"/></svg></a>
+<a title="back to dashboard" href="/dashboard"><svg xmlns="http://www.w3.org/2000/svg" height="10" width="10" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:links}" d="M64 128l177.6 0c-1 5.2-1.6 10.5-1.6 16l0 16-32 0L64 160c-8.8 0-16-7.2-16-16s7.2-16 16-16zm224 16c0-17.7 14.3-32 32-32c0 0 0 0 0 0l24 0c66.3 0 120 53.7 120 120l0 48c0 52.5-33.7 97.1-80.7 113.4c.5-3.1 .7-6.2 .7-9.4c0-20-9.2-37.9-23.6-49.7c4.9-9 7.6-19.4 7.6-30.3c0-15.1-5.3-29-14-40c8.8-11 14-24.9 14-40l0-40c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 40c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-40 0-40zm32-80s0 0 0 0c-18 0-34.6 6-48 16L64 80C28.7 80 0 108.7 0 144s28.7 64 64 64l82 0c-1.3 5.1-2 10.5-2 16c0 25.3 14.7 47.2 36 57.6c-2.6 7-4 14.5-4 22.4c0 20 9.2 37.9 23.6 49.7c-4.9 9-7.6 19.4-7.6 30.3c0 35.3 28.7 64 64 64l64 0 24 0c92.8 0 168-75.2 168-168l0-48c0-92.8-75.2-168-168-168l-24 0zM256 400c-8.8 0-16-7.2-16-16s7.2-16 16-16l48 0 16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0zM240 224c0 5.5 .7 10.9 2 16l-2 0-32 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l32 0 0 16zm24 64l40 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0-16 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l24 0z"/></svg></a>
 </div>
  
 {block:ifImage}<div class="img">
@@ -951,9 +943,15 @@ margin-left:-139px;
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div>  
 {/block:Text}
 
@@ -962,9 +960,15 @@ margin-left:-139px;
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div>  
 {/block:Quote}
 
@@ -984,12 +988,15 @@ margin-left:-139px;
 {/block:Lines}
 </ul>
 </div>   
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
-</div> 
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
 </div>
-</div>{/block:IndexPage}{/block:date}
+{/block:IndexPage}
+{/block:date} 
 </div>
 {/block:Chat}
 
@@ -1005,9 +1012,15 @@ margin-left:-139px;
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:Link} 
 
@@ -1017,9 +1030,15 @@ margin-left:-139px;
 {Question} 
 </div>   
 <div class="answer">{Answer}</div> 
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:answer}
 
@@ -1039,9 +1058,15 @@ margin-left:-139px;
 </font><br>
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:Audio}
 
@@ -1052,9 +1077,15 @@ margin-left:-139px;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:Photo}
 
@@ -1066,9 +1097,15 @@ margin-left:-139px;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:Photoset}
 
@@ -1081,9 +1118,15 @@ margin-left:-139px;
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}  
-<div class="permalinks"><ha><a href="{ReblogURL}" title="reblog">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount} N</a></na></div>
-{/block:indexpage}
+{block:date}
+{block:IndexPage} 
+<div class="notsi"> 
+<div class="inf"> 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+</div>  
+</div>
+{/block:IndexPage}
+{/block:date} 
 </div> 
 {/block:Video} 
 
