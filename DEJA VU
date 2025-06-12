@@ -947,7 +947,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -964,7 +964,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -992,7 +992,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1016,7 +1016,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1034,7 +1034,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1062,7 +1062,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1081,7 +1081,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1101,7 +1101,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
@@ -1122,7 +1122,7 @@ margin-left:-139px;
 {block:IndexPage} 
 <div class="notsi"> 
 <div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" target="_blank">+{NoteCount}</a>
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
 </div>  
 </div>
 {/block:IndexPage}
