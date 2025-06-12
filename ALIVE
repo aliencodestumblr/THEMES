@@ -489,8 +489,8 @@ ol.notes li.note img.avatar {display:none!important;}
 
 /* permalink */
 .perma {  
-    margin-top:-17px;
-    margin-left:20px;  
+    margin-top:-10px;
+    margin-left:14px;  
     margin-bottom:100px;
     width:450px;
     height:100%;
