@@ -880,7 +880,7 @@ span.chats {
 
 #sidebar{position:fixed;width:120px;top:290px;margin:-60px;text-align:center;    
 {block:permalinkpage}
-margin-left:-139px;
+margin-left:-135px;
 {/block:permalinkpage}}
 .img img{max-width:100%;}
 .img{padding:5px;border:1px solid {color:borders};}
