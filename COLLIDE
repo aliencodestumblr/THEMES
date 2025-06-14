@@ -34,9 +34,9 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#eeeeee"/>
+<meta name="color:Background" content="#ffffff"/>
 <meta name="color:links background" content="#ffffff"/>
-<meta name="color:Borders" content="#e0e0e0"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#9a9a9a" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -905,9 +905,9 @@ span.chats {
 }
  
 .desc{padding:10px;border-right:1px solid {color:Borders};
-    border-left:1px solid {color:Borders};}
+    border-left:1px solid {color:Borders};border-top:1px solid {color:Borders};}
 .img img{width:100%;}
-.img {border-bottom:1px solid {color:Borders};}
+.img {border-bottom:0px solid {color:Borders};}
 .links a:hover {padding-left:10px;}
 .links a {
     display:block;
