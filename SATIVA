@@ -963,7 +963,7 @@ h3 {font-weight:400;margin:10px 0px;}
     <a href="/">index</a>
     <a href="/ask">enquire</a>
     {block:ifDropLinks}
-    <a href="#" class="lh">navigate</a>
+    <a href="#" class="lh">+navi</a>
     <div class="lb">
     {/block:ifDropLinks}
         {block:ifLink1}
@@ -976,7 +976,7 @@ h3 {font-weight:400;margin:10px 0px;}
         <a href="{text:Link 4}">{text:Link 4 Title}</a>
         {/block:ifLink4}        
     {block:ifDropLinks}</div>{/block:ifDropLinks}
-        <a href="/archive">history</a>
+        <a href="/archive">ex files</a>
 </div>
 </div>
 
