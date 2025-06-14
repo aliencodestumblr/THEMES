@@ -941,9 +941,9 @@ span.chats {
 
 .foto img{width:140px;height:auto;margin-top:20px;margin-left:20px;padding:0px;background:{color:details};}
 
-.descri {background:{color:background};border:1px solid {color:borders};padding:10px;width:140px;height:20px;overflow:auto;margin-top:15px;margin-left:10px;color:{color:text};font-size:10px;text-align:left;text-transform:normal;}
+.descri {background:{color:background};border:1px solid {color:borders};padding:10px;width:118px;height:20px;overflow:auto;margin-top:15px;margin-left:20px;color:{color:text};font-size:10px;text-align:left;text-transform:normal;}
 
-.links_list {margin-top:15px;margin-left:28px; width:140px;padding-bottom:15px;}
+.links_list {margin-top:15px;margin-left:33.8px; width:127px;padding-bottom:15px;}
 .links_head {position:relative;background:{color:background};margin-left:-14px;margin-top:4px;font-family:"Rajdhani", sans-serif;font-size:8.5px;color:{color:links};text-align:left;letter-spacing:1px;text-transform:uppercase;padding:4px;border:1px solid {color:borders};padding-left:10px;}
 .links_body {display:inline-block;background:#;margin-top:0px;margin-left:-10px;margin-bottom:-5px;text-align:left;width:170px;}
 .links_body a {display:block;margin-left:0px;background:{color:details};width:100px;text-align:left;color:{color:links};font-size:10px;font-family:"Rajdhani", sans-serif;padding:5px;transition:.5s;margin:-7px;border-radius:8%;transition:.8s;text-transform:uppercase;}
