@@ -69,6 +69,7 @@ attribute:"title"
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -983,15 +984,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
 {/block:Text}
-
+ 
 {block:Quote}     
 <div class="quote">{Quote}</div> 
 {block:Source}
@@ -1000,15 +1001,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
 {/block:Quote}
-
+ 
 {block:Chat}      
 <div class="chatitle">
 {Title}
@@ -1028,15 +1029,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div>
 {/block:Chat}
-
+ 
 {block:Link}     
 <div class="links"> 
 <a href="{URL}" style="font-weight:bold" {Target}  target="_blank">{Name}</a>
@@ -1052,15 +1053,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
 {/block:Link} 
-
+ 
 {block:Answer}      
 <div class="asker">sent by <b>{Asker}</b></div> 
 <div class="ask">  
@@ -1070,16 +1071,16 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
 {/block:answer}
-
-
+ 
+ 
 {block:Audio}   
 <div class="album">
 <div class="art">
@@ -1098,15 +1099,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
 {/block:Audio}
-
+ 
 {block:Photo}   
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-HighRes}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
 {block:ifshowcaption}
@@ -1117,16 +1118,16 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
 {/block:Photo}
-
-
+ 
+ 
 {block:Photoset}   
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div> 
 {block:ifshowcaption}
@@ -1137,15 +1138,15 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
 {/block:Photoset}
-
+ 
 {block:Video}  
 <div class="video">
 {Video-250} 
@@ -1158,9 +1159,9 @@ span.chats {
 {block:date}
 {block:IndexPage} 
 <div class="beach">
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-retweet"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><i class="fa fa-eye"></i></a> &middot;
-<a href="{Permalink}" title="{TimeAgo}"><B>+{NoteCount}N</b></a>
+<a href="{Permalink}" title="{TimeAgo}"><B>{NoteCount}N</b></a> &middot; 
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
