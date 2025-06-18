@@ -448,8 +448,8 @@ opacity:1;
 
 /* permalink */
 .perma {  
-    margin-top:-17px;
-    margin-left:20px;  
+    margin-top:-16px;
+    margin-left:26px; 
     margin-bottom:100px;
     width:450px;
     height:100%;
