@@ -1040,7 +1040,7 @@ h3 {font-weight:400;margin:10px 0px;}
    text-transform:uppercase;
    font-weight:bold;
    letter-spacing:1.5px;
-   color:var(--Song-Name-Color);
+   color:{color:text};
 }
 
 .artist-name {
@@ -1048,7 +1048,7 @@ h3 {font-weight:400;margin:10px 0px;}
    font-family:"Rajdhani", sans-serif;
    font-size:var(--Artist-Name-Font-Size);
    letter-spacing:1px;
-   color:var(--Artist-Name-Color);
+   color:{color:text};
 }
 </style> 
 
