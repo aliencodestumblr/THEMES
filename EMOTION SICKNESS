@@ -984,8 +984,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1001,8 +1001,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1029,8 +1029,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1053,8 +1053,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1071,8 +1071,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1099,8 +1099,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1118,8 +1118,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1138,8 +1138,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1159,8 +1159,8 @@ span.chats {
 {block:IndexPage} 
 <div class="beach">
 <a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a> &middot;
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-info"></i></a></a>
+<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
+<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
 </div>
 {/block:IndexPage}
 {/block:date} 
