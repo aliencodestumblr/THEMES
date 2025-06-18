@@ -52,7 +52,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Drop Links" content=""/>
+<meta name="if:Drop Links" content="1"/>
 <meta name="if:Image" content=""/>
 <meta name="if:Show music player" content="1">
 
