@@ -913,15 +913,26 @@ margin-left:-287px;
 {/block:permalinkpage}}
  
 .desc {padding:10px;line-height:150%;text-align:right;}
-.links a {margin:0px 4px;}
 .links {
-    padding:10px;
-    font-size:7px;
-    line-height:180%;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:justify; 
+    padding: 10px;
+    font-size: 7px;
+    line-height: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     background:{color:Nav Background};
-    border:1px solid {color:borders};
+    border: 1px solid {color:borders}; 
+    gap: 3px 8px; 
+}
+
+.links a {
+    margin: 0;
+    padding: 2px 4px;
+    text-decoration: none;
+    white-space: nowrap; 
+    font-size: 7px;
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
