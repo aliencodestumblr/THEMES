@@ -56,15 +56,13 @@ attribute:"title"
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="tags"/>
+<meta name="text:Link 1 Title" content="uploads"/>
 <meta name="text:Link 2" content="/" />
-<meta name="text:Link 2 Title" content="archive"/>
+<meta name="text:Link 2 Title" content="text"/>
 <meta name="text:Link 3" content="/" />
-<meta name="text:Link 3 Title" content="blogroll"/>
+<meta name="text:Link 3 Title" content="music"/>
 <meta name="text:Link 4" content="/" />
-<meta name="text:Link 4 Title" content="about"/>
-<meta name="text:Link 5" content="/" />
-<meta name="text:Link 5 Title" content="links"/>
+<meta name="text:Link 4 Title" content="answered"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -314,11 +312,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:0px; 
-    margin-left:100px;  
+    margin-left:80px;  
     width:864px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:-107px;  
+    margin-left:-127px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -330,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:20px; 
     width:450px; 
-    margin-left:-107px; 
+    margin-left:-127px; 
     {/block:permalinkpage} 
     margin:19px; 
     padding:0px;    
@@ -908,10 +906,10 @@ span.chats {
 #sidebar{position:fixed;
 width:140px;
 top:240px;
-margin-left:-70px;
+margin-left:-80px;
 text-align:center;    
 {block:permalinkpage}
-margin-left:-277px;  
+margin-left:-287px;  
 {/block:permalinkpage}}
  
 .desc {padding:10px;line-height:150%;text-align:right;}
@@ -1092,8 +1090,8 @@ margin-left:-277px;
  
 {block:ifImage}<a href="/"><img src="{image:Sidebar}"/></a>{/block:ifImage}
 <div class="links">
-    <a href="/">index</a>
-    <a href="/ask">mssg</a>
+    <a href="/">reload</a>
+    <a href="/ask">inbox</a>
     {block:ifLink1}
     <a href="{text:Link 1}">{text:Link 1 Title}</a>
     {/block:ifLink1}{block:ifLink2}
@@ -1103,7 +1101,7 @@ margin-left:-277px;
     {/block:ifLink3}{block:ifLink4}
     <a href="{text:Link 4}">{text:Link 4 Title}</a>
     {/block:ifLink4}
-    <a href="/archive">history</a>
+    <a href="/archive">ex files</a>
 </div>
  
 <div class="desc">{Description}</div>
