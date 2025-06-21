@@ -953,9 +953,31 @@ span.chats {
 .img {border:1px solid {color:borders};}
 .links {margin:10px 0px;}
 .pag a{color:{color:Title};}
-.lb {text-transform:uppercase;text-align:justify;letter-spacing:1px;display:inline-block;font-size:7px;}
-.lb a{margin:0px 2px;}
-.lb a:hover {text-decoration:none;}
+.lb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  text-transform: uppercase;
+  text-align: justify;
+  letter-spacing: 1px;
+  font-size: 7px;
+  line-height: 0px;
+  vertical-align: top;
+  margin-bottom: 2px;
+  padding: 5px;
+  border-bottom: 1px solid {color:borders};
+}
+
+.lb a {
+  text-decoration: none;
+  font-size: 7px;
+  padding: 2px 5px;
+  display: inline-block;
+}
+
+.lb a:hover {
+  text-decoration: none;
+}
 .lb, .db {line-height:150%;border-bottom:1px solid {color:borders};}
 .db{text-align:justify;max-height:100px;overflow:auto;}
 .reg, .lh, .dh, .lb, .db{padding:5px;}
