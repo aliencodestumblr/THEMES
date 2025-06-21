@@ -80,15 +80,15 @@ $(document).ready(function(){
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="about"/>
+<meta name="text:Link 1 Title" content="uploads"/>
 <meta name="text:Link 2" content="/" />
-<meta name="text:Link 2 Title" content="tags"/>
+<meta name="text:Link 2 Title" content="text"/>
 <meta name="text:Link 3" content="/" />
-<meta name="text:Link 3 Title" content="self"/>
+<meta name="text:Link 3 Title" content="movies"/>
 <meta name="text:Link 4" content="/" />
-<meta name="text:Link 4 Title" content="blogroll"/>
+<meta name="text:Link 4 Title" content="goals"/>
 <meta name="text:Link 5" content="/" />
-<meta name="text:Link 5 Title" content="twitter"/>
+<meta name="text:Link 5 Title" content="answered"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
