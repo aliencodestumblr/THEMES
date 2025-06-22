@@ -65,7 +65,6 @@ $(document).ready(function(){
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Navigation" content="#222"/>
 <meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
