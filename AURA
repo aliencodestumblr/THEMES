@@ -70,9 +70,6 @@ $(document).ready(function(){
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
-
-<meta name="select:Navigation" content="header" title="Header">
-<meta name="select:Navigation" content="sidebar" title="Sidebar">
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -1122,7 +1119,7 @@ margin-left:-287px;
     <a href="#" class="lh">+navi</a>
 </div>
 {block:ifImage}<div class="img"><a href="/"><img src="{image:Sidebar}"></a></div>{/block:ifImage}
-{block:Description}<div class="desc">{Description}</div>{/block:Description}
+<div class="desc">{Description}</div>
 <div class="lb">
     {block:ifLink1}
     <a href="{text:Link 1}">{text:Link 1 Title}</a>
