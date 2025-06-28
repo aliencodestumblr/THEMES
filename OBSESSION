@@ -539,8 +539,8 @@ footer a > span > span {
     width:1.25em;    
     display:inline-block;
     vertical-align:middle;
-    color:{color:link hover};
-    border:1px solid {color:links hover};
+    color:{color:text};
+    border:1px solid {color:links};
     border-radius:100%;
     webkit-border-radius:100%;
 }
