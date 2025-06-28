@@ -540,16 +540,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* pagination */
 footer {
+  position:relative;
+  width: 500px;
+  margin: 50px 0 100px calc(50% - 250px - 173px);
+  text-align: right; 
   {block:ifinfinitescroll}
-      display: none;
+  display: none;
   {/block:ifinfinitescroll}
-  width: 505px;
-  margin: 50px auto 100px 586px; 
-  text-align: right;            
-  position: relative;
-  clear: both;                  
 }
- 
+
+
 footer:before {
     content:'';
     position:absolute;
@@ -2014,6 +2014,8 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 </div>
 </div>
 
+{block:Pagination}<footer><div id="pagination">{block:PreviousPage}<a href="{PreviousPage}" class="footerp"><span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></span>prev page</span></a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="footern"><span>next page<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span></span></a>{/block:NextPage}</div></footer>{/block:Pagination}
+
 {block:IndexPage} 
 <script src="https://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script> 
 <script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script> 
@@ -2089,8 +2091,7 @@ resizeVideos();
 {/block:IndexPage}
 });
 </script>
-  
-{block:Pagination}<footer><div id="pagination">{block:PreviousPage}<a href="{PreviousPage}" class="footerp"><span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg></span>prev page</span></a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="footern"><span>next page<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg></span></span></a>{/block:NextPage}</div></footer>{/block:Pagination}
+
 
 </div> 
 </div> 
