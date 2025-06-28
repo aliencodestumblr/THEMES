@@ -253,14 +253,10 @@ iframe.tmblr-iframe {
     position: fixed;
     width: 0;
     padding-right: 60px;
-    filter: contrast(150%) invert(100%);
-    -webkit-filter: contrast(150%) invert(100%);
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
     transform-origin: 100% 0;
     -webkit-transform-origin: 100% 0;
-    
-    /* Add transition for smoother fade-in */
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
 }
