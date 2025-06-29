@@ -1568,7 +1568,7 @@ nav {
     white-space:nowrap;
     width:0;
     z-index:2;
-    background:linear-gradient(to left, #fd5949 0%,#d6249f 60%,#285aeb 90%);    
+    background:radial-gradient(circle at 30% 107%, #72f2df 0%,#7b64f0 60%,#72f2df 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
 }
