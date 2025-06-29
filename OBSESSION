@@ -585,7 +585,7 @@ article .when:nth-of-type(n-1) {padding-bottom:15px;}
     margin-right:10px;
     line-height:17px;
     height:17px;
-    color:{color:accent};
+    color:{color:links};
     position:relative;
     display:inline-block;
 }
@@ -636,7 +636,7 @@ article .when:nth-of-type(n-1) {padding-bottom:15px;}
     margin-left:5px;
     line-height:18px;
     font-weight:500;
-    color:{color:accent};
+    color:{color:links};
 }
  
 .foot, .ago {padding:0px 20px;}
