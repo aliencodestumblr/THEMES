@@ -62,7 +62,7 @@ $(document).ready(function(){
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:blogtitle" content="#fff"/>
+<meta name="color:blogtitle" content="#444444"/>
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
