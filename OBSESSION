@@ -638,7 +638,11 @@ article .when:nth-of-type(n-1) {padding-bottom:15px;}
     font-weight:500;
     color:{color:links};
 }
- 
+
+.no:hover {
+  color:{color:links hover};
+}
+
 .foot, .ago {padding:0px 20px;}
  
 .foot .time-ago, .ago {
