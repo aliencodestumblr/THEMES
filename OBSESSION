@@ -632,15 +632,12 @@ article .when:nth-of-type(n-1) {padding-bottom:15px;}
 }
  
 .no {
+    pointer-events: none;
     display:inline-block;
     margin-left:5px;
     line-height:18px;
     font-weight:500;
     color:{color:links};
-}
-
-.no:hover {
-  color:{color:links hover};
 }
 
 .foot, .ago {padding:0px 20px;}
