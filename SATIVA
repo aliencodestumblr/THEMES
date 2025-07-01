@@ -369,20 +369,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb{ 
-background-color: {color:scrollbar};
-border: 3px solid {color:background};
-height:auto;
--moz-border-radius: 10px;
-border-radius: 10px;
+::-webkit-scrollbar-thumb:vertical{
+    width:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
 }
-
-::-webkit-scrollbar { 
-height:auto;
-width:9px; 
-background-color:{color:borders};
-border: 4px solid {color:background}; 
-} 
+ 
+::-webkit-scrollbar-thumb:horizontal{
+    height:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar{
+    width:11px;
+    height:11px;
+    background:{color:background};
+    background-image:url({image:Background});
+}
 /* end scrollbar */
 
 
@@ -424,7 +430,9 @@ border: 4px solid {color:background};
     font-size:8px;
     text-align:right;
     color:{color:links};
-    padding:3px 0px;
+    padding:3px;
+    padding-right:0px;
+    margin-right:-1.7px;
     font-family: "Rajdhani", sans-serif;
     letter-spacing:2px;
 }
