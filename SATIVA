@@ -52,7 +52,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Drop Links" content="1"/>
+<meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
 <meta name="if:Show music player" content="1">
 
@@ -369,26 +369,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb:vertical{
-    width:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+::-webkit-scrollbar-thumb{ 
+background-color: {color:scrollbar};
+border: 3px solid {color:background};
+height:auto;
+-moz-border-radius: 10px;
+border-radius: 10px;
 }
- 
-::-webkit-scrollbar-thumb:horizontal{
-    height:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
-}
- 
-::-webkit-scrollbar{
-    width:11px;
-    height:11px;
-    background:{color:background};
-    background-image:url({image:Background});
-}
+
+::-webkit-scrollbar { 
+height:auto;
+width:9px; 
+background-color:{color:borders};
+border: 4px solid {color:background}; 
+} 
 /* end scrollbar */
 
 
@@ -426,32 +420,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.notsi .inf {   
-  color:{color:permalink};
-    position:relative;
-    display:block;
-    font-size:10px;
-    opacity:1;
-    right:0;
+.other_perma {
+    font-size:8px;
     text-align:right;
-    margin:5px 0 2px 0;
-    text-transform:uppercase;
+    color:{color:links};
+    padding:3px 0px;
+    font-family: "Rajdhani", sans-serif;
+    letter-spacing:2px;
 }
-
-.notsi .inf a {    
-    color:{color:permalink};
-    font-family:"Rajdhani", sans-serif;
-    margin:0 0px;
-    padding-bottom:1px;
-    text-decoration:none;
- }
-
-.posts:hover .notsi .inf {   
-  text-decoration:none;
-} 
-
-.reblog-icon {
-  font-size:7.5px; 
+.other_perma a {
+    color:{color:links};
+    border:none;
+}
+.other_perma a:hover {
+    color:{color:links hover};
 }
 
 /* end notes */
@@ -954,7 +936,7 @@ h3 {font-weight:400;margin:10px 0px;}
    --Circle-Size:38px;
    --Progress-Border-Size:2px;
    --Progress-Empty:{color:borders};
-   --Progress-Fill:{color:text};
+   --Progress-Fill:#333;
    --Player-Background:{color:player background};
    --Play-Pause-Buttons-Size:14px;
    --Play-Pause-Buttons-Color:{color:text};
@@ -1142,10 +1124,8 @@ h3 {font-weight:400;margin:10px 0px;}
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1159,10 +1139,8 @@ h3 {font-weight:400;margin:10px 0px;}
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}" >+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1187,10 +1165,8 @@ h3 {font-weight:400;margin:10px 0px;}
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1211,10 +1187,8 @@ h3 {font-weight:400;margin:10px 0px;}
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1229,10 +1203,8 @@ h3 {font-weight:400;margin:10px 0px;}
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1257,10 +1229,8 @@ h3 {font-weight:400;margin:10px 0px;}
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1276,10 +1246,8 @@ h3 {font-weight:400;margin:10px 0px;}
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1296,10 +1264,8 @@ h3 {font-weight:400;margin:10px 0px;}
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1317,10 +1283,8 @@ h3 {font-weight:400;margin:10px 0px;}
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="notsi"> 
-<div class="inf"> 
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa fa-refresh reblog-icon"></i></a>&nbsp;/&nbsp;<a href="{Permalink}" title="{TimeAgo}">+{NoteCount}</a>
-</div>  
+<div class="other_perma">
+<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
 </div>
 {/block:IndexPage}
 {/block:date} 
