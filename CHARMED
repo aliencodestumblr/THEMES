@@ -402,7 +402,7 @@ h1, h2, h3, h4, h5, h6 {
 footer {
   position:relative;
   width: 460px;
-  margin: 50px 0 100px calc(50% - 250px - 67px);
+  margin: 50px 0 100px calc(50% - 250px - 66px);
   text-align: right; 
   {block:ifinfinitescroll}
   display: none;
@@ -497,8 +497,8 @@ footer a > span > span {
 
 /* permalink */
 .perma {  
-    margin-top:-13px;
-    margin-left:44px; 
+    margin-top:-34px;
+    margin-left:46px; 
     margin-bottom:100px;
     width:500px;
     height:100%;
@@ -1234,7 +1234,7 @@ input[type=text]:focus {
 <div class="entry"> 
 <div id="posts" class="{select:sidebar position}">
 <aside>{block:ificonimage}<a href="/"><img src="{image:icon}" class="{select:photos}" /></a>{/block:ificonimage}<nav>{block:iflinkone}<a href="{text:link one url}">{text:link one}</a>{/block:iflinkone}{block:iflinktwo}<a href="{text:link two url}">{text:link two}</a>{/block:iflinktwo}{block:iflinkthree}<a href="{text:link three url}">{text:link three}</a>{/block:iflinkthree}</nav>{block:ifsearch}<form action="/search" method="get"><input type="text" name="q" value="" placeholder="Search" autocomplete="off" /></form>{/block:ifsearch}</aside>
-<header><nav>&nbsp;&nbsp;<a href="/">index</a><a href="/ask">message</a><a href="/archive">archive</a> &nbsp;&nbsp;&nbsp;&nbsp;{Description}</nav></header>
+<header><nav>&nbsp;&nbsp;<a href="/">reload</a><a href="/ask">dm</a><a href="/archive">ex files</a> &nbsp;//&nbsp;&nbsp;&nbsp;&nbsp; {Description}</nav></header>
 
 <div id="posts">
 {block:posts}
