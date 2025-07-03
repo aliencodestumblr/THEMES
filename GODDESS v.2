@@ -1532,21 +1532,16 @@ resizeVideos();
 {/block:IndexPage}
 {/block:ifnotpagination} 
 
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
+{block:ifPagination}
 <div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+    {block:PreviousPage}
+        <a href="{PreviousPage}" class="prev">back</a>
+    {/block:PreviousPage} 
+    {block:NextPage}
+        <a href="{NextPage}" class="next">next</a>
+    {/block:NextPage}
 </div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
+{/block:ifPagination}
 </div> 
 </div> 
  
