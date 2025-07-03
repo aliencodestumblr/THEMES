@@ -63,6 +63,8 @@ attribute:"title"
 <meta name="text:Link 3 Title" content="uploads"/>
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="extra link"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="extra link"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -393,82 +395,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-footer {
-  position:relative;
-  width: 500px;
-  margin: 50px 0 100px calc(50% - 250px - 173px);
-  text-align: right; 
-  {block:ifinfinitescroll}
-  display: none;
-  {/block:ifinfinitescroll}
-}
-
-
-footer:before {
-    content:'';
-    position:absolute;
-    width:100%;
-    height:1px;
-    left:0;
-    top:50%;
-    background:{color:borders};
-    z-index:-1;
-}
- 
-{block:ifinfinitescroll}
-#pagination {display:none;}
-{/block:ifinfinitescroll}
- 
-footer a {
-    display:inline-block;
-    width:50%;
-    font-weight:500;
-}
- 
-footer a svg {
-    height:1.25em;
-    width:1.25em;
-    display:inline-block;
-    vertical-align:top;
-}
- 
-footer a > span:first-of-type {
-    display:inline-block;
-    background:{color:background};    
-}
- 
-footer a > span > span {
-    padding:2px;
-    height:1.25em;
-    width:1.25em;    
-    display:inline-block;
-    vertical-align:middle;
-    color:{color:text};
-    border:1px solid {color:links};
-    border-radius:100%;
-    webkit-border-radius:100%;
-}
- 
-#infscr-loading {display:none!important;}
- 
-.footerp {text-align:left;}
- 
-.footerp > span {padding-right:15px;}
- 
-.footerp > span > span {margin-right:10px;}
- 
-.footern > span {padding-left:15px;}
- 
-.footern > span > span {margin-left:10px;}
- 
-#pagination .footerp:last-child {margin-right:50%;}
- 
-.nice {
-    position:fixed;
-    right:15px;
-    bottom:15px;
-    font-size:8px;
-}
+.cp {font-weight:600;}
+.cp,.jp,.pag a{font-size:20px;font-weight:bold;width:525px;display:inline-block;vertical-align:middle;margin:40px 10px;}
+.pag a i,.top{font-size:20px;}
+.pag {position:relative;margin-left:200px;}
+.load {cursor:pointer;display:block;}
+.c,.top,.pag,.load {text-align:center;}
+.c,.pag,.load {font-size:9px;letter-spacing:1px;text-transform:uppercase;}
 /* end pagination */
 
 /* notes */ 
