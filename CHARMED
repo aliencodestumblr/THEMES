@@ -35,10 +35,10 @@ attribute:"title"
 
 <meta name="image:icon" content="" />
 
-<meta name="color:Background" content="#eeeeee"/>
+<meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/> 
 <meta name="color:player background" content="#fff"/>
-<meta name="color:Borders" content="#ffffff"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#a17575" />  
@@ -55,23 +55,11 @@ attribute:"title"
 <meta name="if:Show music player" content="1">
 <meta name="if:search" content="1" />
 
-<meta name="select:sidebar position" content="left" title="left" />
-<meta name="select:sidebar position" content="right" title="right" />
-<meta name="select:sidebar align" content="left" title="left" />
-<meta name="select:sidebar align" content="center" title="center" />
-<meta name="select:sidebar align" content="right" title="right" />
-
-<meta name="select:sidebar width" content="100" title="100px" />
-<meta name="select:sidebar width" content="110" title="110px" />
-<meta name="select:sidebar width" content="120" title="120px" />
-<meta name="select:sidebar width" content="130" title="130px" />
-<meta name="select:sidebar width" content="140" title="140px" />
-
-<meta name="text:link one" content="one" />
+<meta name="text:link one" content="tags" />
 <meta name="text:link one url" content="" />
-<meta name="text:link two" content="two" />
+<meta name="text:link two" content="songs" />
 <meta name="text:link two url" content="" />
-<meta name="text:link three" content="three" />
+<meta name="text:link three" content="answered" />
 <meta name="text:link three url" content="" />
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
@@ -1076,7 +1064,7 @@ header {
     border-right:1px solid {color:borders};
     padding:15px 20px;
     {block:ifhoverdescription}display:none;{/block:ifhoverdescription}
-    margin-left:calc({select:sidebar width}px + 55px);
+    margin-left:calc(140px + 55px);
 }
  
 .right #desc {
@@ -1108,17 +1096,11 @@ header nav a:hover {
  
 /* sidebar */
  
-.left aside {
-    position:fixed;
-    margin-top:50px;
-    width:{select:sidebar width}px;
-}
- 
 .right aside {
     position:fixed;
     margin-top:50px;
     margin-left:563px;
-    width:{select:sidebar width}px;
+    width:140px;
         {block:permalinkpage}
         margin-top:0px;
     margin-left:493px;  
@@ -1126,16 +1108,16 @@ header nav a:hover {
 }
  
 aside img {
-    width:{select:sidebar width}px;
+    width:140px;
 }
  
 aside nav a {
     display:block;
     border:1px solid {color:borders};
     padding:7px 10px;
-    line-height:{select:font size};
+    line-height:9px;
     margin-bottom:3px;
-    text-align:{select:sidebar align};
+    text-align:right;
     text-transform:uppercase;
     font-size:80%;
     letter-spacing:1px;
@@ -1147,13 +1129,12 @@ aside nav a:hover {
 }
  
 {block:ifsearch}input[type=text] {
-    width:calc({select:sidebar width}px - 22px);
+    width:calc(140px - 22px);
     border:1px solid {color:borders};
     padding:7px 10px;
-    line-height:{select:font size};
-    text-align:{select:sidebar align};
+    line-height:9px;
+    text-align:right;
     text-transform:uppercase;
-    font-family:{select:font};
     font-size:80%;
     color:{color:text};
     letter-spacing:1px;
@@ -1232,7 +1213,7 @@ input[type=text]:focus {
 {/block:ifshowmusicplayer}   
 
 <div class="entry"> 
-<div id="posts" class="{select:sidebar position}">
+<div id="posts" class="right">
 <aside>{block:ificonimage}<a href="/"><img src="{image:icon}" class="{select:photos}" /></a>{/block:ificonimage}<nav>{block:iflinkone}<a href="{text:link one url}">{text:link one}</a>{/block:iflinkone}{block:iflinktwo}<a href="{text:link two url}">{text:link two}</a>{/block:iflinktwo}{block:iflinkthree}<a href="{text:link three url}">{text:link three}</a>{/block:iflinkthree}</nav>{block:ifsearch}<form action="/search" method="get"><input type="text" name="q" value="" placeholder="Search" autocomplete="off" /></form>{/block:ifsearch}</aside>
 <header><nav>&nbsp;&nbsp;<a href="/">reload</a><a href="/ask">dm</a><a href="/archive">ex files</a> &nbsp;//&nbsp;&nbsp;&nbsp;&nbsp; {Description}</nav></header>
 
