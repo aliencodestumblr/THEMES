@@ -32,6 +32,8 @@ attribute:"title"
 })(jQuery);
 </script>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#eeeeee"/>
@@ -52,6 +54,7 @@ attribute:"title"
 <meta name="if:Pagination" content=""/>
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
+<meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="tags"/>
@@ -61,6 +64,10 @@ attribute:"title"
 <meta name="text:Link 3 Title" content="text"/>
 <meta name="text:Link 4" content="/" />
 <meta name="text:Link 4 Title" content="movies"/>
+
+<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
+
+<meta name="text:Track Title" content="Track Title"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -123,6 +130,9 @@ $(document).ready(function(){
         });
     });
 </script>
+
+<!-------MUSIC PLAYER BY GLENTHEMES------->
+<script src="//static.tumblr.com/gtjt4bo/m8Ypn96yc/glenplayer04.js"></script>
 
 <style type="text/css">
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
@@ -361,20 +371,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb{ 
-background-color: {color:scrollbar};
-border: 3px solid {color:background};
-height:auto;
--moz-border-radius: 10px;
-border-radius: 10px;
+::-webkit-scrollbar-thumb:vertical{
+    width:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
 }
-
-::-webkit-scrollbar { 
-height:auto;
-width:9px; 
-background-color:{color:borders};
-border: 4px solid {color:background}; 
-} 
+ 
+::-webkit-scrollbar-thumb:horizontal{
+    height:10px;
+    background:{color:scrollbar};
+    border-radius:5px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar{
+    width:11px;
+    height:11px;
+    background:{color:background};
+    background-image:url({image:Background});
+}
 /* end scrollbar */
 
 
@@ -925,6 +941,89 @@ span.chats {
     padding:0px;
       border-top:1px solid {color:Borders};
 }
+
+/*-------MUSIC PLAYER BY GLENTHEMES-------*/
+#glenplayer04 {
+   position:fixed;
+   bottom:0;margin-bottom:25px;
+   left:0;margin-left:25px;
+   z-index:99;
+}
+#gt-player {
+   display:flex;
+   padding:15px;
+   background:{color:background};
+   border-radius:3px 3px 0 0;
+}
+
+#gt-player > div {
+  align-self:center;
+  -webkit-align-self:center;
+}
+
+#music-controls {
+   user-select:none;
+   -webkit-user-select:none;
+   width:12px;
+   font-size:12px;
+   cursor:pointer;
+   color:{color:text}; 
+}
+
+.pausee {display:none;}
+
+#gt-barwrap {
+   margin-left:15px;
+   padding:5px 0;
+   cursor:pointer;
+}
+
+#gt-musicbar {
+   min-width:100px;
+   height:2px;
+   background:{color:text}; 
+   border-radius:4px;
+   display:flex;
+}
+
+#gt-musictrack {
+   height:inherit;
+   background:{color:text}; 
+   border-radius:4px;
+   width:0;
+}
+
+#gt-blob {
+   align-self:center;
+   -webkit-align-self:center;
+   margin-left:-4px;
+   width:8px;
+   height:8px;
+   border-radius:100%;
+   background:{color:text}; 
+}
+
+#music-duration {
+   margin-left:15px;
+   font-family:consolas-alt;
+   font-size:10px;
+   letter-spacing:0.5px;
+   color:{color:text}; 
+}
+
+#gt-songtext {
+   margin-top:0px;
+   padding:10px 15px;
+   background:{color:borders}; 
+   border-radius:0 0 3px 3px;
+   font-family:consolas-alt;
+   font-size:10px;
+   line-height:1em;
+   color:{color:text}; 
+   overflow:hidden;
+}
+
+@font-face { font-family: "consolas-alt"; src: url('//glen-assets.github.io/fonts/consolas.TTF'); }
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -946,6 +1045,30 @@ span.chats {
 
 </head>
 <body>  
+
+{block:ifshowmusicplayer}
+<!-------MUSIC PLAYER BY GLENTHEMES------->
+<div id="glenplayer04">
+<div id="gt-player">
+   <div id="music-controls">
+       <div class="playy">►</div>
+       <div class="pausee">❚❚</div>
+   </div>
+   <div id="gt-barwrap">
+   <div id="gt-musicbar">
+   <div id="gt-musictrack"></div>
+   <div id="gt-blob"></div>
+   </div></div>
+
+   <div id="music-duration"></div>
+</div>
+
+<div id="gt-songtext">{text:Track Title}</div>
+</div>
+
+<audio id="symphonia" src="https://rhizo.gitlab.io/m/Ringing_Bloom.mp3" type="audio"></audio>
+<!----end music player---->
+{/block:ifshowmusicplayer} 
 
 <div class="entry"> 
 
