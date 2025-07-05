@@ -51,6 +51,7 @@ attribute:"title"
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
+<meta name="if:Tags" content="1"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
@@ -66,8 +67,6 @@ attribute:"title"
 <meta name="text:Link 4 Title" content="movies"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
-
-<meta name="text:Track Title" content="Track Title"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -293,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:915px;    
+    width:930px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -304,10 +303,10 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:0px; 
     margin-left:90px;  
-    width:915px;
+    width:930px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:-137px;  
+    margin-left:-150px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -319,11 +318,10 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:20px; 
     width:450px; 
-    margin-left:-137px; 
+    margin-left:-150px; 
     {/block:permalinkpage}
-    border:1px solid {color:borders};
-    margin:15px; 
-    padding:11px;    
+    margin:30px; 
+    padding:0px;    
     opacity:1;
     transition:1s;  
 }
@@ -428,37 +426,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-
-.beach{
-position:absolute;
-padding:7px;
-line-height:10px;
-background-color:{color:Background};
-overflow:visible;
-text-align:right;
-opacity:1;
-padding-top:3px;
-padding-bottom:3px;
-text-transform:uppercase;
-bottom:-9px;
-width:auto;
-margin-bottom:0px;
-right:15px;
-z-index:100;
-font-weight:570;
-color:{color:Link};
--webkit-transition: all 0.4s ease-out;
--moz-transition: all 0.4s ease-out;
-transition: all 0.4s ease-out;
+.p a{margin:0px 3px;}
+.tags a{margin:0px 4px;}
+.tags {margin-top:4px;text-transform:uppercase;}
+.p {
+    font-size:7px;
+    padding:0px 0px;
+    text-align:right;
+    position:absolute;
+    width:calc(250px + 10px);
+    margin:4px -4.5px;
+    text-transform:uppercase;
+    letter-spacing:2.5px;
 }
- 
-.beach a{
-color:{color:Link};
-}
- 
-.entry:hover .beach{
-opacity:1;
- }
 
 /* end notes */
 
@@ -900,9 +880,9 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:20px;
-    right:20px; 
-    font-size:20px; 
+    bottom:32px;
+    right:32px; 
+    font-size:19px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -917,10 +897,10 @@ span.chats {
     position:fixed;
     width:155px;
     margin-left:-90px;
-    top:200px;
+    top:240px;
     border:1px solid {color:Borders};
     {block:permalinkpage}
-    margin-left:-322px;  
+    margin-left:-330px;  
     {/block:permalinkpage}
 }
  
@@ -1020,7 +1000,6 @@ span.chats {
    font-family:consolas-alt;
    font-size:10px;
    line-height:1em;
-   text-transform:uppercase;
    color:{color:text}; 
    overflow:hidden;
 }
@@ -1063,9 +1042,9 @@ span.chats {
    </div></div>
 
    <div id="music-duration"></div>
-</div>
 
-<div id="gt-songtext">{text:Track Title}</div>
+   <div id="gt-songtext">{text:Track Title}</div>
+   </div>
 </div>
 
 <audio id="symphonia" src="{text:Audio MP3 Source}" type="audio"></audio>
@@ -1105,10 +1084,13 @@ span.chats {
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1122,10 +1104,13 @@ span.chats {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1150,10 +1135,13 @@ span.chats {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1174,10 +1162,13 @@ span.chats {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1192,10 +1183,13 @@ span.chats {
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1220,10 +1214,13 @@ span.chats {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1239,10 +1236,13 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1259,10 +1259,13 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1280,10 +1283,13 @@ span.chats {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
+<div class="p">
+<a href="{Permalink}">{NoteCount}N</a> , 
+<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
+<a href="{ReblogURL}">rblg</a>
+{block:ifTags}{block:HasTags}<div class="tags">
+{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
+</div>{/block:HasTags}{/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
