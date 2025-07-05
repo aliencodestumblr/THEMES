@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left:-15px; 
     {/block:permalinkpage}
     margin:25px; 
-    margin-bottom:38px;
+    margin-bottom:37px;
     padding:0px;    
     opacity:1;
     transition:1s;  
