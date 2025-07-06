@@ -299,11 +299,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:0px; 
-    margin-left:90px;  
+    margin-left:110px;  
     width:660px;
     {block:permalinkpage}
     margin-top:20px;   
-    margin-left:-15px;  
+    margin-left:5px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -315,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:20px; 
     width:450px; 
-    margin-left:-15px; 
+    margin-left:5px; 
     {/block:permalinkpage}
     margin:25px; 
     margin-bottom:37px;
@@ -894,11 +894,11 @@ span.chats {
 .sidebar{
     position:fixed;
     width:155px;
-    margin-left:-100px;
+    margin-left:-75px;
     top:200px;
     border:1px solid {color:Borders};
     {block:permalinkpage}
-    margin-left:-205px;  
+    margin-left:-180px;  
     {/block:permalinkpage}
 }
  
