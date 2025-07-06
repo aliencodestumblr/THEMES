@@ -130,6 +130,11 @@ $(document).ready(function(){
     });
 </script>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<!-------MUSIC PLAYER BY GLENTHEMES------->
+<script src="//static.tumblr.com/gtjt4bo/m8Ypn96yc/glenplayer04.js"></script>
+
 <style type="text/css">
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
     max-width: 100%;
