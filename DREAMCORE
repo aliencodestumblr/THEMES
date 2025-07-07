@@ -53,6 +53,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
+<meta name="if:Side Links" content=""/>
 <meta name="if:Tags" content=""/>
 
 <meta name="text:Link 1" content="/"/>
@@ -475,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-17px;
+    margin-top:-5px;
     margin-left:20px;  
     margin-bottom:100px;
     width:450px;
@@ -1592,7 +1593,12 @@ resizeVideos();
 </div> 
 </div> 
 
+
 <script>
+
+ 
+ 
+// drop links & post notes
 $(document).ready(function(){
     $(".pn").hide();
         $(".pnh").show();$('.pnh').toggle(function(){
@@ -1607,6 +1613,11 @@ $(document).ready(function(){
             $(".lb").slideUp(function(){});
         });
     });
+ 
+ 
+
+ 
+
 </script>
  
 
