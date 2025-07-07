@@ -52,8 +52,8 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:rounded sidebar picture" content=""/>
 <meta name="if:Show music player" content="1">
-<meta name="if:Side Links" content=""/>
 <meta name="if:Tags" content=""/>
 
 <meta name="text:Link 1" content="/"/>
@@ -928,22 +928,23 @@ span.chats {
 aside {
     font-size:0;
     position:fixed;
-    width:160px;
-    margin-left:-100px;
+    width:170px;
+    margin-left:-110px;
     top:140px;
     {block:permalinkpage}
     margin-left:-175px; 
     {/block:permalinkpage} 
 }
  
-.sidehold {padding:20px;padding-top:30px;margin-top:15px;}
+.sidehold {padding:20px;padding-top:50px;margin-top:-4px;}
 .sidehold,.img{background:{color:Sidebar Background};border:1px solid {color:borders};}
 .img {
     display:inline-block;
     margin:0 20px -45px;
     width:46%;
     padding:4px;
-    border-radius:100%;
+    border-radius:5px;
+    {block:ifroundedsidebarpicture}border-radius:100%;{/block:ifroundedsidebarpicture};
 }
  
 .desc {font-size:9px;margin:10px 0;}
@@ -1593,7 +1594,12 @@ resizeVideos();
 </div> 
 </div> 
 
+
 <script>
+
+ 
+ 
+// drop links & post notes
 $(document).ready(function(){
     $(".pn").hide();
         $(".pnh").show();$('.pnh').toggle(function(){
@@ -1608,6 +1614,11 @@ $(document).ready(function(){
             $(".lb").slideUp(function(){});
         });
     });
+ 
+ 
+
+ 
+
 </script>
  
 
