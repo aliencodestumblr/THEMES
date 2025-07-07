@@ -53,7 +53,6 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
-<meta name="if:Side Links" content=""/>
 <meta name="if:Tags" content=""/>
 
 <meta name="text:Link 1" content="/"/>
@@ -936,11 +935,11 @@ aside {
     {/block:permalinkpage} 
 }
  
-.sidehold {padding:20px;}
+.sidehold {padding:20px;padding-top:30px;margin-top:15px;}
 .sidehold,.img{background:{color:Sidebar Background};border:1px solid {color:borders};}
 .img {
     display:inline-block;
-    margin:0 20px -35px;
+    margin:0 20px -45px;
     width:46%;
     padding:4px;
     border-radius:100%;
@@ -1160,7 +1159,7 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 {/block:ifSidebarImage}
  
 <div class="sidehold">
-<h1><a href="/">{Title}</a></h1>
+<h1 style="letter-spacing: 2px;"><a href="/">{Title}</a></h1>
 <div class="desc">{Description}</div>
  
 <nav>
@@ -1593,12 +1592,7 @@ resizeVideos();
 </div> 
 </div> 
 
-
 <script>
-
- 
- 
-// drop links & post notes
 $(document).ready(function(){
     $(".pn").hide();
         $(".pnh").show();$('.pnh').toggle(function(){
@@ -1613,11 +1607,6 @@ $(document).ready(function(){
             $(".lb").slideUp(function(){});
         });
     });
- 
- 
-
- 
-
 </script>
  
 
