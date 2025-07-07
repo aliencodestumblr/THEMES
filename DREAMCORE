@@ -1594,12 +1594,7 @@ resizeVideos();
 </div> 
 </div> 
 
-
 <script>
-
- 
- 
-// drop links & post notes
 $(document).ready(function(){
     $(".pn").hide();
         $(".pnh").show();$('.pnh').toggle(function(){
@@ -1614,14 +1609,8 @@ $(document).ready(function(){
             $(".lb").slideUp(function(){});
         });
     });
- 
- 
-
- 
-
 </script>
  
-
 <script>
 // minimal soundcloud player © shythemes.tumblr
 $(document).ready(function(){
