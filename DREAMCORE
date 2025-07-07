@@ -932,7 +932,7 @@ aside {
     margin-left:-110px;
     top:140px;
     {block:permalinkpage}
-    margin-left:-175px; 
+    margin-left:-185px; 
     {/block:permalinkpage} 
 }
  
