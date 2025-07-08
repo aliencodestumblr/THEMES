@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
     width:670px;
     {block:permalinkpage}
     margin-top:0px;   
-    margin-left:80px;  
+    margin-left:-45px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -337,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
     width:265px;        
     {block:permalinkpage}
     width:420px; 
-    margin-left:80px; 
+    margin-left:-45px; 
     {/block:permalinkpage} 
     margin:35px; 
     padding:0px;    
@@ -914,6 +914,9 @@ span.chats {
     opacity:1;
     z-index:10;
     user-select:none!important;   
+    {block:permalinkpage}
+    margin-left:-365px;  
+    {/block:permalinkpage}
 } 
  
 /* title */ 
