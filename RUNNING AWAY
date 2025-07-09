@@ -874,7 +874,7 @@ span.chats {
 .descri {background:{color:side background};border-top:1px solid {color:borders};border-bottom:1px solid {color:borders};padding:10px;width:150px;margin-top:10px;margin-left:10px;color:{color:text};font-size:8.5px;text-align:right;text-transform:normal;border-radius:3%;box-shadow:inset 0px 0px 0px 5px #fff;}
 
 .links {background:#;width:160px;height:auto;margin-left:13px;margin-top:-13px;padding:10px;text-align:left;transition:.80s;opacity:1;z-index:9999} 
-.links a {display:inline-block;background:{color:background};width:20px;text-align:center;color:{color:links};font-size:8.5px;font-family:"Rajdhani", sans-serif;text-transform:uppercase;padding:4px;border-bottom:1px solid {color:borders};letter-spacing:1px;transition:.5s;margin:3px;}
+.links a {display:inline-block;background:{color:background};width:20px;text-align:center;color:{color:links};font-size:8.5px;font-family:"Rajdhani", sans-serif;text-transform:uppercase;padding:4px;border-bottom:1px solid {color:borders};letter-spacing:1px;transition:.5s;margin:4.1px;}
 .links a:hover{color:{color:links hover};}
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
