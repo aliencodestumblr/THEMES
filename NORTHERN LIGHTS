@@ -6,6 +6,7 @@
       base scroll to top by @fragilehelp           
       infinite scroll, lightboxes, pxu photoset + minimal 
       soundcloud player by @shythemes
+      blog music player by @glenthemes
       [ all rights reserved ] ©
       
 --->
@@ -299,11 +300,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:85px; 
-    margin-left:110px;  
+    margin-left:115px;  
     width:660px;
     {block:permalinkpage}
     margin-top:105px;   
-    margin-left:4px;  
+    margin-left:9px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -315,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:105px; 
     width:450px; 
-    margin-left:4px; 
+    margin-left:9px; 
     {/block:permalinkpage}
     margin:25px; 
     margin-bottom:37px;
@@ -974,7 +975,7 @@ nav a {
   line-height: 12px; 
   text-align: left;
   font-family: "Rajdhani", sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   text-transform: lowercase;
   margin: 3px;
   letter-spacing: 3px;
