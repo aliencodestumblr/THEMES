@@ -37,12 +37,12 @@ attribute:"title"
 <meta name="color:Background" content="#f6f6f6"/>
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Shadow Color" content="#000000">
-<meta name="color:Accent" content="#aaaaaa"/>  
+<meta name="color:Shadow Color" content="#ccc5c5">
+<meta name="color:Accent" content="#ccc5c5"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:Scrollbar" content="#ccc5c5" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
