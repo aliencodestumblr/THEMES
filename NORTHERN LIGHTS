@@ -898,7 +898,6 @@ margin-left:-200px;
 width:280px; 
 height:auto;
 transition:all .8s;
-z-index:999999999;
 {block:permalinkpage}
 margin-left:-305px; 
 {/block:permalinkpage}
