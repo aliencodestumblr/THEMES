@@ -868,7 +868,7 @@ span.chats {
     z-index:100;
 }
 
-.side{position:fixed;top:300px;margin-left:-85px;width:170px; height:auto;transition:all .8s;z-index:999999999;{block:permalinkpage}margin-left:-190px;{/block:permalinkpage}}
+.side{position:fixed;top:300px;margin-left:-85px;width:170px; height:auto;transition:all .8s;{block:permalinkpage}margin-left:-190px;{/block:permalinkpage}}
 
 .foto img{width:145px;height:145px;margin-top:0px;margin-left:-15px;padding:0px;background:#;border-radius:3%;transition:.50s;}
 
