@@ -525,6 +525,7 @@ na {
     padding-left:4px;
     width:100%;
     height:100%;
+    cursor:crosshair;
 }
 /* end notes */
 
@@ -1001,7 +1002,7 @@ aside {
 .asideimg {
   margin-top:-50px;
   margin-left:30px;
-  margin-bottom:24px;
+  margin-bottom:29px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -1079,7 +1080,8 @@ transition:.70s;}
     margin:0;
     outline:none;
     font-family:inherit;
-    font-size:11px;
+    font-size:10px;
+    letter-spacing:1px;
     line-height:100%;
 }
  
@@ -1133,7 +1135,7 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 </div>
  
 <div class="sidehold">
-<h1 style="letter-spacing: 2px;"><a href="/">{Title}</a></h1>
+<h1 style="letter-spacing: 2px;"><a href="/">{text:Blogtitle}</a></h1>
 <div class="desc">{Description}</div>
  
 <nav class="cl-effect-11">
@@ -1144,7 +1146,7 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 </nav>
  
 <form class="srch" action="/search" method="get">
-<input type="text" name="q" placeholder="search this blog..." value="{SearchQuery}"/>
+<input type="text" name="q" placeholder="search this blog xx" value="{SearchQuery}"/>
 </form>
  
 </div>
@@ -1441,7 +1443,6 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 <script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script> 
 {/block:IndexPage}
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
-
 <script>
 $(document).ready(function(){
 $('.photo-slideshow').pxuPhotoset({
@@ -1544,7 +1545,6 @@ resizeVideos();
 {/block:ifpagination} 
 </div> 
 </div> 
- 
 
 <script>
 // minimal soundcloud player © shythemes.tumblr
@@ -1556,52 +1556,5 @@ $(document).ready(function(){
 });
 </script> 
 <script>feather.replace()</script>
-
-<script>
-// Wait for Tumblr's JS to load
-document.addEventListener('tumblr:ready', function() {
-  document.querySelectorAll('.custom-like-button').forEach(button => {
-    // Set initial state
-    const post = button.closest('.post');
-    if (post && post.classList.contains('liked')) {
-      button.classList.add('liked');
-    }
-    
-    button.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Ignore if already processing
-      if (button.classList.contains('loading')) return;
-      
-      button.classList.add('loading');
-      
-      // Use Tumblr's native function
-      if (typeof Tumblr !== 'undefined' && Tumblr.LikeButton) {
-        const post = button.closest('.post');
-        if (post) {
-          // Toggle like and update UI after
-          Tumblr.LikeButton.toggleLike(post);
-          
-          setTimeout(() => {
-            button.classList.toggle('liked');
-            button.classList.remove('loading');
-            
-            // Update note count
-            const noteCount = post.querySelector('.note_count_current');
-            if (noteCount) {
-              const current = parseInt(noteCount.textContent) || 0;
-              noteCount.textContent = button.classList.contains('liked') ? current + 1 : current - 1;
-            }
-          }, 300);
-        }
-      } else {
-        // Fallback for when Tumblr JS isn't available
-        button.classList.remove('loading');
-        console.error("Tumblr Like API not available");
-      }
-    });
-  });
-});
-</script>
 </body>
 </html>
