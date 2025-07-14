@@ -1076,13 +1076,13 @@ input:focus:-moz-placeholder {color: transparent;}
 input:focus::-moz-placeholder {color: transparent;}
 input:focus:-ms-input-placeholder { color: transparent;}
 .requiro input {
-    margin-top:-6px; 
+    margin-top:-4.7px; 
     margin-left:40px;  
     background:{color:details}; 
     outline:none;
     border:0;
-    width:130px; 
-    padding:8px 14px 8px 14px;     
+    width:132px; 
+    padding:7px 14px 7px 14px;     
     border-radius:0px;
     box-shadow: 1px 1px 1px {color:Shadow};
 }
