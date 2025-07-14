@@ -39,7 +39,7 @@ attribute:"title"
 <meta name="color:box shadow" content="#e3e3e3" />
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Moon Shadow" content="#6f7284"/>
-<meta name="color:Shadow Color" content="#ccc5c5">
+<meta name="color:Shadow" content="#e3e3e3">
 <meta name="color:Accent" content="#ccc5c5"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -1022,7 +1022,7 @@ nav {
 margin-top:-2px;
 padding-top:0px;
 margin-left:0px;
-margin-bottom:15px;
+margin-bottom:10px;
 width:230px;
 text-align:center;
 padding:0px;
@@ -1071,33 +1071,41 @@ transition:.70s;}
 .cl-effect-11 a:hover::before,
 .cl-effect-11 a:focus::before {max-width:100px;}
  
-.srch {display:block;margin-top:5px;}
-.srch input{
-    width:100%;
-    background:inherit;
-    padding:0;
-    border:0;
-    margin:0;
+input:focus::-webkit-input-placeholder {color:transparent;}
+input:focus:-moz-placeholder {color: transparent;}
+input:focus::-moz-placeholder {color: transparent;}
+input:focus:-ms-input-placeholder { color: transparent;}
+.requiro input {
+    margin-top:-6px; 
+    margin-left:40px;  
+    background:{color:details}; 
     outline:none;
-    font-family:inherit;
-    font-size:10px;
-    letter-spacing:1px;
-    line-height:100%;
+    border:0;
+    width:130px; 
+    padding:8px 14px 8px 14px;     
+    border-radius:4px;
+    box-shadow: 1px 1px 1px {color:Shadow};
 }
- 
-.srch,.srch input[type=text] {color:{color:Accent};}    
-input::-webkit-input-placeholder {color:{color:Accent};}
-input::-moz-placeholder {color:{color:Accent};}
-input:-moz-placeholder {color:{color:Accent};}
-input:-ms-input-placeholder {color:{color:Accent};}
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance:none;}
- 
-/* Titles */
- 
-h1,h2 {letter-spacing:-0.25px;}
-h1 {margin:0;font-size:15px;line-height:100%;}
-h2 {margin:0 0 10px;font-size:14px;line-height:100%;}
-h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
+
+.requiro{ 
+    padding:0; 
+}
+.requiro input[type=text]{
+    text-transform:uppercase;
+    text-align:left;
+    color:{color:text};
+    font:400 9px "Rajdhani", sans-serif;
+    letter-spacing:1.3px;
+} 
+
+input::-webkit-input-placeholder{
+    color:{color:text};}
+input::-moz-placeholder{
+    color:{color:text};}
+input:-moz-placeholder{
+    color:{color:text};}
+input:-ms-input-placeholder{
+    color:{color:text};}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1145,9 +1153,7 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 <a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a>
 </nav>
  
-<form class="srch" action="/search" method="get">
-<input type="text" name="q" placeholder="search this blog xx" value="{SearchQuery}"/>
-</form>
+<div style="margin-top:10px;margin-bottom:-21px;float:left;background:{color:details};padding:5px 8px 4px 8px;border-radius:4px;box-shadow: 1px 1px 1px {color:Shadow};font-size:11.5px;color:{color:accent};"><i class="fas fa-keyboard"></i></div><form class="requiro" action="/search" method="get"><input type="text" name="q" placeholder="search keywords" value=""/></form>
  
 </div>
 </aside>
@@ -1545,6 +1551,7 @@ resizeVideos();
 {/block:ifpagination} 
 </div> 
 </div> 
+ 
 
 <script>
 // minimal soundcloud player © shythemes.tumblr
