@@ -138,8 +138,8 @@ html, body, a, a:hover{cursor:crosshair;}
     width: 35px;
     height: 35px;
     background: {color:details};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
+    box-shadow: 0 4px 10px {color:Shadow};
+    border-radius: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -978,8 +978,7 @@ span.chats {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-    border-radius: 5px; 
+    box-shadow: 0 4px 10px {color:Shadow};
     padding: 0; 
 }
 
@@ -1002,7 +1001,7 @@ aside {
 .asideimg {
   margin-top:-50px;
   margin-left:30px;
-  margin-bottom:22px;
+  margin-bottom:20px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -1180,7 +1179,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1203,7 +1202,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1237,7 +1236,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1270,7 +1269,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1294,7 +1293,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1328,7 +1327,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1353,7 +1352,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1379,7 +1378,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
@@ -1406,7 +1405,7 @@ input:-ms-input-placeholder{
     </a>
   </ha>
   <na>
-    <a href="{Permalink}">{NoteCount} N</a>
+    <a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a>
   </na>
 </div>
 {/block:indexpage}
