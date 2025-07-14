@@ -1002,7 +1002,7 @@ aside {
 .asideimg {
   margin-top:-50px;
   margin-left:30px;
-  margin-bottom:29px;
+  margin-bottom:22px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -1011,9 +1011,10 @@ aside {
   box-shadow: -15px 0 20px {color:Moon Shadow};
 }
 
-.desc {font-size:9px;
+.desc {
+font-size:9px;
 margin:10px 0;
-border:1px solid {color:borders}; 
+box-shadow: 1px 1px 1px {color:Shadow};
 padding:7px;
 
 }
@@ -1083,7 +1084,7 @@ input:focus:-ms-input-placeholder { color: transparent;}
     border:0;
     width:130px; 
     padding:8px 14px 8px 14px;     
-    border-radius:4px;
+    border-radius:0px;
     box-shadow: 1px 1px 1px {color:Shadow};
 }
 
@@ -1139,7 +1140,7 @@ input:-ms-input-placeholder{
 <div class="entry"> 
 <aside>
 <div class="moon-wrapper">
-  <a href="/"><img class="asideimg" src="{image:Sidebar}"/></a>
+  <a href="/"><img class="asideimg" src="{image:Sidebar}" title="{title}" /></a>
 </div>
  
 <div class="sidehold">
@@ -1153,7 +1154,7 @@ input:-ms-input-placeholder{
 <a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a>
 </nav>
  
-<div style="margin-top:10px;margin-bottom:-21px;float:left;background:{color:details};padding:5px 8px 4px 8px;border-radius:4px;box-shadow: 1px 1px 1px {color:Shadow};font-size:11.5px;color:{color:accent};"><i class="fas fa-keyboard"></i></div><form class="requiro" action="/search" method="get"><input type="text" name="q" placeholder="search keywords" value=""/></form>
+<div style="margin-top:10px;margin-bottom:-21px;float:left;background:{color:details};padding:5px 8px 4px 8px;border-radius:0px;box-shadow: 1px 1px 1px {color:Shadow};font-size:11.5px;color:{color:accent};"><i class="fas fa-keyboard"></i></div><form class="requiro" action="/search" method="get"><input type="text" name="q" placeholder="search keywords" value=""/></form>
  
 </div>
 </aside>
