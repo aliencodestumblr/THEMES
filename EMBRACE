@@ -58,13 +58,11 @@ attribute:"title"
 <meta name="text:Link 2 URL" content="/"/>
 <meta name="text:Link 3 URL" content="/"/>
 <meta name="text:Link 4 URL" content="/"/>
-<meta name="text:Link 5 URL" content="/"/>
  
 <meta name="text:Link 1 Name" content="reload"/>
 <meta name="text:Link 2 Name" content="inbox"/>
 <meta name="text:Link 3 Name" content="uploads"/>
 <meta name="text:Link 4 Name" content="movies"/>
-<meta name="text:Link 5 Name" content="replied"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
