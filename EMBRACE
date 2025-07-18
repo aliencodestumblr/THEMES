@@ -1,14 +1,3 @@
-<!---
-
-      design by @aliencodes
-
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -39,7 +28,7 @@ attribute:"title"
 <meta name="color:box shadow" content="#e3e3e3" />
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Moon Shadow" content="#6f7284"/>
-<meta name="color:Shadow" content="#e3e3e3">
+<meta name="color:Shadow Color" content="#ccc5c5">
 <meta name="color:Accent" content="#ccc5c5"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -134,8 +123,7 @@ html, body, a, a:hover{cursor:crosshair;}
     width: 35px;
     height: 35px;
     background: {color:details};
-    box-shadow: 0 4px 10px {color:Shadow};
-    border-radius: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +145,7 @@ html, body, a, a:hover{cursor:crosshair;}
      
 iframe.tmblr-iframe {
     z-index: 999;
-    right: 24px;
+    right: 27px;
     top: 21px;
     opacity: 0;
     position: fixed;
@@ -521,7 +509,6 @@ na {
     padding-left:4px;
     width:100%;
     height:100%;
-    cursor:crosshair;
 }
 /* end notes */
 
@@ -974,7 +961,7 @@ span.chats {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 0 4px 10px {color:Shadow};
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
     padding: 0; 
 }
 
@@ -997,7 +984,7 @@ aside {
 .asideimg {
   margin-top:-50px;
   margin-left:30px;
-  margin-bottom:20px;
+  margin-bottom:24px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -1006,10 +993,9 @@ aside {
   box-shadow: -15px 0 20px {color:Moon Shadow};
 }
 
-.desc {
-font-size:9px;
+.desc {font-size:9px;
 margin:10px 0;
-box-shadow: 1px 1px 1px {color:Shadow};
+border:1px solid {color:borders}; 
 padding:7px;
 
 }
@@ -1017,8 +1003,8 @@ padding:7px;
 nav {
 margin-top:-2px;
 padding-top:0px;
-margin-left:0px;
-margin-bottom:10px;
+margin-left:0.5px;
+margin-bottom:0px;
 width:230px;
 text-align:center;
 padding:0px;
@@ -1066,42 +1052,6 @@ transition:.70s;}
 
 .cl-effect-11 a:hover::before,
 .cl-effect-11 a:focus::before {max-width:100px;}
- 
-input:focus::-webkit-input-placeholder {color:transparent;}
-input:focus:-moz-placeholder {color: transparent;}
-input:focus::-moz-placeholder {color: transparent;}
-input:focus:-ms-input-placeholder { color: transparent;}
-.requiro input {
-    margin-top:-4.7px; 
-    margin-left:40px;  
-    background:{color:details}; 
-    outline:none;
-    border:0;
-    width:132px; 
-    padding:7px 14px 7px 14px;     
-    border-radius:0px;
-    box-shadow: 1px 1px 1px {color:Shadow};
-}
-
-.requiro{ 
-    padding:0; 
-}
-.requiro input[type=text]{
-    text-transform:uppercase;
-    text-align:left;
-    color:{color:text};
-    font:400 9px "Rajdhani", sans-serif;
-    letter-spacing:1.3px;
-} 
-
-input::-webkit-input-placeholder{
-    color:{color:text};}
-input::-moz-placeholder{
-    color:{color:text};}
-input:-moz-placeholder{
-    color:{color:text};}
-input:-ms-input-placeholder{
-    color:{color:text};}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1139,7 +1089,6 @@ input:-ms-input-placeholder{
 </div>
  
 <div class="sidehold">
-<h1 style="letter-spacing: 2px;"><a href="/">{text:Blogtitle}</a></h1>
 <div class="desc">{Description}</div>
  
 <nav class="cl-effect-11">
@@ -1148,13 +1097,10 @@ input:-ms-input-placeholder{
 <a href="{text:Link 3 Url}" title="{text:Link 3 Name}">.003</a>
 <a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a>
 </nav>
- 
-<div style="margin-top:10px;margin-bottom:-21px;float:left;background:{color:details};padding:5px 8px 4px 8px;border-radius:0px;box-shadow: 1px 1px 1px {color:Shadow};font-size:11.5px;color:{color:accent};"><i class="fas fa-keyboard"></i></div><form class="requiro" action="/search" method="get"><input type="text" name="q" placeholder="search keywords" value=""/></form>
- 
 </div>
 </aside>
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z"/></svg></div>
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></div>
 
 
 <div id="posts">
@@ -1445,6 +1391,7 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 <script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script> 
 {/block:IndexPage}
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+
 <script>
 $(document).ready(function(){
 $('.photo-slideshow').pxuPhotoset({
