@@ -25,13 +25,13 @@ attribute:"title"
 
 <meta name="color:Background" content="#f6f6f6"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Shadow Color" content="#ccc5c5">
-<meta name="color:Accent" content="#ccc5c5"/>  
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Borders" content="#e1e5ec"/> 
+<meta name="color:Shadow Color" content="#c3c7cd">
+<meta name="color:Accent" content="#7d8793"/>  
+<meta name="color:Text" content="#7d8793" /> 
+<meta name="color:Links" content="#7d8793" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#ccc5c5" />
+<meta name="color:Scrollbar" content="#7d8793" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
@@ -53,7 +53,7 @@ attribute:"title"
 <meta name="text:Link 4 Name" content="movies"/>
 <meta name="text:Link 5 Name" content="replied"/>
 
-<meta name="text:Blogtitle" content="angel"/>
+<meta name="text:Blogtitle" content="777"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -945,8 +945,8 @@ background: #fff;
 
 .title {
 background:{color:side background};
-margin-left:70px;
-margin-top:-42px;
+margin-left:60px;
+margin-top:-37px;
 width:207px;
 font-weight:500;
 text-align:left;
@@ -986,9 +986,9 @@ border-radius:3px;
  
 #sbarimg img {
 border-radius:3px;
-width:55px;
+width:44px;
 opacity:1;
-height:55px;
+height:44px;
 padding:0px;
 margin-left:0px;
 }
