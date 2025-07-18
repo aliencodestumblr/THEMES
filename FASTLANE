@@ -35,7 +35,6 @@ attribute:"title"
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
@@ -153,9 +152,6 @@ iframe.tmblr-iframe {
     -webkit-transform-origin: 100% 0;
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
 }
 
 .tmblr-iframe:hover {
