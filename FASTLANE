@@ -926,7 +926,7 @@ span.chats {
 }
 
 .sidebar { 
-top:75px;
+top:76px;
 position:fixed;
 background:#f6f6f6; 
 border-radius:3px;
