@@ -39,9 +39,8 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:sidebar image" content="1" /> 
 
-<meta name="text:sidebar title" content="">  
+<meta name="text:sidebar title" content="FASTLANE">  
 <meta name="text:link 1 title" content="reload"> 
 <meta name="text:link 1 url" content=""> 
 <meta name="text:link 2 title" content="message"> 
@@ -122,7 +121,7 @@ html, body, a, a:hover{cursor:crosshair;}
     height: 35px;
     background: {color:details};
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -924,7 +923,7 @@ span.chats {
     transition: 1s;
     z-index: 100;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-    border-radius: 5px; 
+    border-radius: 4px; 
     padding: 0; 
 }
 
@@ -968,7 +967,7 @@ display:none;
 .sidebarwrap { 
 padding: 20px; 
 background: {color:details}; 
-border-radius: 5px;
+border-radius: 4px;
 overflow: hidden; 
 box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.12);
 transition: box-shadow 0.3s ease, transform 0.3s ease;
