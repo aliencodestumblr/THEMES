@@ -39,16 +39,15 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:sidebar image" content="1" /> 
 
-<meta name="text:sidebar title" content="">  
+<meta name="text:sidebar title" content="FASTLANE v.2">  
 <meta name="text:link 1 title" content="reload"> 
 <meta name="text:link 1 url" content=""> 
 <meta name="text:link 2 title" content="message"> 
 <meta name="text:link 2 url" content=""> 
 <meta name="text:link 3 title" content="tags"> 
 <meta name="text:link 3 url" content=""> 
-<meta name="text:link 4 title" content="music"> 
+<meta name="text:link 4 title" content="answered"> 
 <meta name="text:link 4 url" content=""> 
 <meta name="text:link 5 title" content="dash"> 
 <meta name="text:link 5 url" content=""> 
@@ -121,8 +120,9 @@ html, body, a, a:hover{cursor:crosshair;}
     width: 35px;
     height: 35px;
     background: {color:details};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -923,9 +923,9 @@ span.chats {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-    border-radius: 5px; 
-    padding: 0; 
+   box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .sidebar { 
@@ -948,7 +948,7 @@ margin-left:-295px;
   border-radius: 50%; 
   overflow: visible; 
   position: relative; 
-  margin-left:-157px; 
+  margin-left:-166px; 
   top:0px;
 }
 
@@ -980,7 +980,7 @@ transform: translateY(-2px);
 cursor: crosshair;
 }
 
-.sidebartitle { margin-top:-30px;margin-bottom:30px;margin-left:40px; }
+.sidebartitle { margin-top:-30px;margin-bottom:30px;margin-left:28px; }
 
 .sidebartitle a { 
 font-size:14px; 
