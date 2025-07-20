@@ -446,7 +446,7 @@ letter-spacing:1px;
 font-size:10px;
 text-transform:uppercase;
 display:block;
-font-weight:500;
+font-weight:600;
 padding:7px;
 }
  
@@ -1015,7 +1015,7 @@ line-height:12px;
 text-align:left;
 font-family:"Rajdhani", sans-serif;
 font-size:10px;
-font-weight:500;
+font-weight:600;
 text-transform:uppercase;
 margin:5px 25px 5px 0px;
 letter-spacing:1.5px;
