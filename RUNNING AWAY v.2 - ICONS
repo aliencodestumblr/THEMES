@@ -1158,7 +1158,7 @@ span.chats {
 <div class="foto"><img src="{image:Sidebar}" title="{title}"></div>
 <div class="descri">{description}</div>
 <div class="links">
-<a href="/link1" title="link 1">
+<a href="{text:Link 1 Url}" title="{text:Link 1 Name}">
    <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
        viewBox="0 0 24 24" 
        stroke-width="1.5" 
@@ -1166,7 +1166,6 @@ span.chats {
        class="icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
-
 </a>
 
 <a href="{text:Link 2 Url}" title="{text:Link 2 Name}">
