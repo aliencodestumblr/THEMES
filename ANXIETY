@@ -1,14 +1,3 @@
-<!---
-
-      design by @aliencodes
-
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -47,8 +36,6 @@ attribute:"title"
 <meta name="color:buttons" content="#000000" />
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -425,6 +412,7 @@ background-color:{color:scrollbar background};}
     transition:1s;
     opacity:1;
 }
+
  
 #bperma {z-index:999999999999999999999; position:absolute; opacity:0; margin-top:7px; font-size:{text:navigation size}px; width:inherit; border:0px solid transparent; text-align:center; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
 #posts:hover #bperma {opacity:1; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
@@ -778,71 +766,36 @@ span.chats {
 }
 /* end links */
 
-.caption {
-    margin-top:-2px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px; 
-    overflow:hidden;
+.caption,
+.caption p {
+  margin-top: 0px !important;
+  line-height: 1.3 !important;
 }
 
-.caption .tumblr_parent {
-    background:;
-    position:relative;   
-    margin:0px 0px 0px 0px;   
-    padding:0px 0px 0px 0px;    
-    color:{color:text};   
-    border-left:0px solid {color:borders};
-}
- 
-.caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
-    margin-top:7px;
-    margin-bottom:0px; 
-    margin-left:-14px;  
-    color:{color:text};
-    font-size:8px; 
-    text-transform:uppercase; 
-    padding:2px 15px 1px 15px;
-    text-align:center;
-    letter-spacing:1px;
-    font-weight:bold;  
-    display:none;     
-    border-radius:0px 5px 5px 0px;
-} 
-
-.caption .tumblr_parent img,figure,video {
-    margin-top:1px;
+p > a.tumblr_blog {
+  display: none !important;
 }
 
-.caption .tumblr_parent > p:first-of-type {
-    display:block;
-    margin:0 auto 5px;
-} 
- 
-.caption h2 {
-    margin:3px 0px 5px 0px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:8.5px;
-    text-align:justify;
-    line-height:13px; 
-    padding-bottom:0px;
+p > a.tumblr_blog::after {
+  content: none !important;
 }
 
-.tumblr_parent .tumblr_avatar { 
-    display:none;
-} 
-    
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}  
+
 #s-m-t-tooltip {
     max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
+    padding:2px 10px 2px 10px; 
+    margin:20px 0px 0px 20px;  
+    background:{color:Details};
     font-size:9px;
     text-transform:uppercase;
-    color:{color:tooltip text};  
+    color:{color:text};  
     opacity:1;   
     z-index:9999999999999999999;
 }
@@ -850,9 +803,11 @@ span.chats {
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:20px;
-    right:20px; 
+    bottom:24px;
+    right:24px; 
+    text-transform:uppercase;  
     font-size:20px; 
+    letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -940,7 +895,7 @@ border-width:0px;}
 -o-transition: all 0.5s ease-in-out;
 -ms-transition: all 0.5s ease-in-out;
 transition: all 0.5s ease-in-out;}
-
+ 
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -989,6 +944,7 @@ return false;
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+
 </head>
 
 <body>  
