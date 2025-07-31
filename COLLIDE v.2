@@ -809,16 +809,27 @@ span.chats {
 }
 /* end links */
 
-a.tumblr_blog {
-  display: none !important;
-}
-
 .caption,
 .caption p {
-  margin-top: 6px !important;
+  margin-top: 0px !important;
   line-height: 1.3 !important;
 }
 
+p > a.tumblr_blog {
+  display: none !important;
+}
+
+p > a.tumblr_blog::after {
+  content: none !important;
+}
+
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}
 
 #s-m-t-tooltip {
     max-width:300px;
