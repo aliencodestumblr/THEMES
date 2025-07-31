@@ -438,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 .ple {font-weight:700;padding:0 0 1px;}
 .ple,.pri {display:inline-block;vertical-align:middle;width:250px;}
 .ple,.tags a {font-size:11px;letter-spacing:2px;line-height:100%;}
-.pri {text-align:right;margin-top:-25px;}
+.pri {text-align:right;margin-top:-27.5px;}
 .fa-refresh {margin-left:6px;}
  
 .custom-like-button *{cursor:pointer!important;}
@@ -836,65 +836,27 @@ span.chats {
 }
 /* end links */
 
-.caption {
-    margin-top:-2px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px; 
-    overflow:hidden;
+.caption,
+.caption p {
+  margin-top: 0px !important;
+  line-height: 1.3 !important;
 }
 
-.caption .tumblr_parent {
-    background:;
-    position:relative;   
-    margin:0px 0px 0px 0px;   
-    padding:0px 0px 0px 0px;    
-    color:{color:text};   
-    border-left:0px solid {color:borders};
-}
- 
-.caption .tumblr_parent > a:first-of-type {   
-    background:transparent;
-    margin-top:7px;
-    margin-bottom:6px; 
-    margin-left:-14px;  
-    color:{color:text};
-    font-size:8px; 
-    text-transform:uppercase; 
-    padding:2px 15px 1px 15px;
-    text-align:center;
-    letter-spacing:1px;
-    font-weight:bold;  
-    display:none;     
-    border-bottom:1px solid {color:borders};
-    border-top:1px solid {color:borders};
-    border-right:2px solid {color:borders};
-    border-radius:0px 5px 5px 0px;
-} 
-
-.caption .tumblr_parent img,figure,video {
-    margin-top:1px;
+p > a.tumblr_blog {
+  display: none !important;
 }
 
-.caption .tumblr_parent > p:first-of-type {
-    display:block;
-    margin:0 auto 5px;
-} 
- 
-.caption h2 {
-    margin:3px 0px 5px 0px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:8.5px;
-    text-align:justify;
-    line-height:13px; 
-    padding-bottom:5px;
-    border-bottom:1px solid {color:borders}; 
+p > a.tumblr_blog::after {
+  content: none !important;
 }
 
-.tumblr_parent .tumblr_avatar { 
-    display:none;
-} 
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}
     
 #s-m-t-tooltip {
     max-width:300px;
@@ -1594,7 +1556,12 @@ resizeVideos();
 </div> 
 </div> 
 
+
 <script>
+
+ 
+ 
+// drop links & post notes
 $(document).ready(function(){
     $(".pn").hide();
         $(".pnh").show();$('.pnh').toggle(function(){
@@ -1609,8 +1576,14 @@ $(document).ready(function(){
             $(".lb").slideUp(function(){});
         });
     });
+ 
+ 
+
+ 
+
 </script>
  
+
 <script>
 // minimal soundcloud player © shythemes.tumblr
 $(document).ready(function(){
