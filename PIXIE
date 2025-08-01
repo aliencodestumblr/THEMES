@@ -362,10 +362,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb:vertical{
+    width:10px;
+    background:{color:scrollbar};
+    border-radius:0px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar-thumb:horizontal{
+    height:10px;
+    background:{color:scrollbar};
+    border-radius:0px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar{
+    width:11px;
+    height:11px;
+    background:{color:background};
+    background-image:url({image:Background});
+}
 /* end scrollbar */
 
 
