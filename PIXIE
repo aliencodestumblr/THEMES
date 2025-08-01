@@ -980,7 +980,7 @@ text-align:right;
    --Circle-Size:38px;
    --Progress-Border-Size:2px;
    --Progress-Empty:{color:borders};
-   --Progress-Fill:{color:text};
+   --Progress-Fill:{color:background};
    --Player-Background:{color:player background};
    --Play-Pause-Buttons-Size:14px;
    --Play-Pause-Buttons-Color:{color:text};
