@@ -311,10 +311,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:60px; 
-    margin-left:150px;  
+    margin-left:170px;  
     width:760px;
     {block:permalinkpage}
-    margin-left:-5px;  
+    margin-left:15px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     width:280px;        
     {block:permalinkpage}
     width:450px; 
-    margin-left:-5px; 
+    margin-left:15px; 
     {/block:permalinkpage} 
     margin:20px; 
     padding:20px;      
@@ -906,7 +906,7 @@ a.tumblr_blog {
 #sidebar {
   position: fixed;
   top: 180px;
-  margin-left: -140px;
+  margin-left: -110px;
   transform: translateY(-50%);
   width: 230px;
   font-family:"Rajdhani", sans-serif;
@@ -919,7 +919,7 @@ a.tumblr_blog {
   opacity: 1;
   transition: 1s;
   {block:permalinkpage}
-  margin-left: -295px;
+  margin-left: -265px;
   {/block:permalinkpage}
 }
 
@@ -1024,7 +1024,7 @@ a.tumblr_blog {
 #searchbar-container {
   position: fixed;
   top: calc(180px + 71px); 
-  margin-left: -140px;
+  margin-left: -110px;
   display: flex;
   align-items: center;
   z-index: 100;
