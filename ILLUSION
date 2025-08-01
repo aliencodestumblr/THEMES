@@ -996,7 +996,7 @@ a.tumblr_blog {
   height: 23px;
   stroke: {color:links};
   vertical-align: middle;
-  margin-right: 6px;
+  margin-right: 0px;
   display: inline-block;
   position: relative;
   top: -1.5px; 
