@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:760px;    
+    width:735px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -312,9 +312,9 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:60px; 
     margin-left:170px;  
-    width:760px;
+    width:735px;
     {block:permalinkpage}
-    margin-left:15px;  
+    margin-left:27px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -322,13 +322,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:280px;        
+    width:287px;        
     {block:permalinkpage}
     width:450px; 
-    margin-left:15px; 
+    margin-left:27px; 
     {/block:permalinkpage} 
-    margin:20px; 
-    padding:20px;      
+    margin:25px; 
+    padding:15px;      
     border-radius:4px;
     overflow:hidden;
     opacity:1;
@@ -906,7 +906,7 @@ a.tumblr_blog {
 #sidebar {
   position: fixed;
   top: 180px;
-  margin-left: -110px;
+  margin-left: -125px;
   transform: translateY(-50%);
   width: 230px;
   font-family:"Rajdhani", sans-serif;
@@ -919,7 +919,7 @@ a.tumblr_blog {
   opacity: 1;
   transition: 1s;
   {block:permalinkpage}
-  margin-left: -265px;
+  margin-left: -267px;
   {/block:permalinkpage}
 }
 
@@ -972,7 +972,7 @@ a.tumblr_blog {
 
 #sidebar > img {
   float: left;
-  width: 65px;
+  width: 55px;
   height: auto;
   border-radius: 4px;
   margin: 0 10px 0 0;
@@ -985,11 +985,10 @@ a.tumblr_blog {
   line-height: 1.2;
   margin: 0;
   font-family: "Iceland", sans-serif;
-  padding-top: 24px;
+  padding-top: 18px;
   overflow: hidden;
   color: {color:text};
 }
-
 
 .sidebar-title .verified-checkmark {
   width: 23px;
@@ -1024,12 +1023,12 @@ a.tumblr_blog {
 #searchbar-container {
   position: fixed;
   top: calc(180px + 71px); 
-  margin-left: -110px;
+  margin-left: -125px;
   display: flex;
   align-items: center;
   z-index: 100;
   {block:permalinkpage}
-  margin-left: -295px; 
+  margin-left: -267px; 
   {/block:permalinkpage}
 }
 
