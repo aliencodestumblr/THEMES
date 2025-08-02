@@ -937,7 +937,7 @@ a.tumblr_blog {
 
 #sidebar .nav {
   position: absolute;
-  top: 22px;
+  top: 15px;
   margin-left: -40px;
   display: flex;
   flex-direction: column;
