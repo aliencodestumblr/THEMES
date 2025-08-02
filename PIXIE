@@ -292,11 +292,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:-6px; 
-    margin-left:0px;  
+    margin-left:80px;  
     width:360px;
     {block:permalinkpage}
     margin-top:0px;   
-    margin-left:30px;  
+    margin-left:110px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
     width:290px;        
     {block:permalinkpage}
     width:350px; 
-    margin-left:30px; 
+    margin-left:110px; 
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:30px; 
@@ -898,8 +898,7 @@ a.tumblr_blog {
 
 #sidebar{
 background:{color:Background};
-left:51%;
-margin-left:-390px;
+margin-left:-135px;
 top:100px;
 position:fixed;
 margin-right:auto;
@@ -909,6 +908,9 @@ height:auto;
 padding:0px;
 z-index:999;
 border:0px solid {color:Borders};
+{block:permalinkpage}
+margin-left:-105px;  
+{/block:permalinkpage}
 }
  
 #sidebar img{
@@ -1139,6 +1141,7 @@ text-align:right;
 <!----end music player---->
 {/block:ifshowmusicplayer} 
 
+<div class="entry">   
 <div id="sidebar">
 <div id="blogtitle">{text:Blogtitle}</div>
 <img src="{image:Sidebar}">
@@ -1155,8 +1158,6 @@ text-align:right;
 </div>
 </div></style>
 
-
-<div class="entry">    
 <div id="posts">
 {block:posts}
 <div class="posts">
