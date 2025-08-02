@@ -36,7 +36,6 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/> 
-<meta name="color:Shadow" content="#000000"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#828a93"/>  
 <meta name="color:Text" content="#828a93" /> 
