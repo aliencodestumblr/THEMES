@@ -1064,6 +1064,7 @@ a.tumblr_blog {
   font: 400 10px "Rajdhani", sans-serif;
   color: {color:text};
   text-transform: uppercase;
+  letter-spacing:1px;
   text-align: left;
   box-sizing: border-box;
   border-radius: 4px;
