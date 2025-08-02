@@ -1155,7 +1155,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1179,7 +1179,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1214,7 +1214,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1248,7 +1248,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1273,7 +1273,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1308,7 +1308,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1334,7 +1334,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1361,7 +1361,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
@@ -1389,7 +1389,7 @@ a.tumblr_blog {
 </div>
 <div style="font-size:9px; text-transform:uppercase; text-align:center;margin-top:4px;">
   {block:RebloggedFrom}  
-    source: <b><a href="{ReblogRootURL}">{ReblogRootName}</a></b>
+    via: <b><a href="{ReblogParentURL}">{ReblogParentName}</a></b>
   {/block:RebloggedFrom} 
   {block:NotReblog}  
     Original by <b>{Name}</b> 
