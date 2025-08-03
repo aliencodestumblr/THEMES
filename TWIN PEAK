@@ -48,7 +48,7 @@ attribute:"title"
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
-<meta name="if:Pagination" content=""/>
+<meta name="if:Pagination" content="1"/>
 
 <meta name="text:description" content="this is where your description goes. it will look great no matter how long x"/>
 
