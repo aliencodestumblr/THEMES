@@ -403,9 +403,10 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.page-navigation {
+page-navigation {
   position: absolute;
   top: ;
+  text-transform:uppercase;
   left: calc(50% + 31px); 
   width: 368px;
   display: flex;
@@ -419,6 +420,7 @@ h1, h2, h3, h4, h5, h6 {
 .pages {
     display: flex;
     gap: 1em;
+    margin-top:-3px;
 }
 
 .pages a,
