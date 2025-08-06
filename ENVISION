@@ -149,7 +149,6 @@ html, body, a, a:hover{cursor:crosshair;}
     fill: {color:text};
 }
 
-     
 iframe.tmblr-iframe {
   z-index: 999;
   right: 20px;
@@ -340,12 +339,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:80px; 
+    margin-top:30px; 
     margin-left:30px;  
     width:700px;
     {block:permalinkpage}
     margin-top:130px;   
-    margin-left:-30px;  
+    margin-left:-25px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -356,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:130px; 
     width:540px;
-    margin-left:-30px; 
+    margin-left:-25px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -968,28 +967,17 @@ padding:17px;
 border-right:1px solid #eee;
 border-bottom:1px solid transparent;
 }
- 
-#bio{
-padding:5px;
-text-align:right;
-float:center;
-line-height:18px;
-margin-top:60px;
-height:auto;
-color:{color:Text};
+
+#second {
+  width: 550px; 
+  margin: 0 auto; 
+  text-transform: uppercase;
+  padding: 15.5px;
+  text-align: center;
+  background: transparent;
+  opacity: 1;
+  font-weight: 600;
 }
- 
- 
-#second{
-margin-right:117px;
-text-transform:uppercase;
-padding:15.5px;
-text-align:center;
-height:auto;
-background:transparent;
-opacity:1;
-font-weight:600;
-} 
  
 #second a{
 display:inline-block;
@@ -1025,42 +1013,46 @@ margin-top:-30px;
     filter: blur(0px);}
     
 #desc-container {
-  width:550px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  column-gap: 10px;
-  position: relative;
-  margin-top: 100px; 
-  margin-bottom: -50px;
-  margin-left:55px;
+  width: 550px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 107px;
+  margin-left: 55px;
   padding: 19px;
-  flex-wrap: wrap;
   border: 1px solid #eee;
   border-top-color: #f8f8f8;
   border-left-color: #f8f8f8;
   background: #fff;
   {block:permalinkpage}
   display:none;
-  {/block:permalinkpage}
+  {/block:permalinkpage};  
+}
+
+#sidebar-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#desc-text {
+  font-size: 12px;
+  line-height: 1.6;
+  opacity: 0.85;
+  word-break: break-word;
+  margin: 0;
 }
 
 #desc-title {
   font-size: 11px;
   text-transform: lowercase;
   font-weight: 700;
-  margin-top:2.5px;
   letter-spacing: 1px;
   opacity: 0.6;
-  text-align: right;
-   border-bottom: 1px solid {color:Link}; 
-}
-
-#desc-text {
-  font-size: 12px;
-  line-height: 1.6;
-  max-width: 500px;
-  opacity: 0.85;
+  border-bottom: 1px solid {color:Link};
+  padding-bottom: 1px;
+  margin-right: 5px;
 }
 
 .verified-checkmark {
@@ -1255,8 +1247,8 @@ margin-top:-30px;
 </div>
 
 <div id="desc-container">
-  <div id="desc-title">description:</div>
-  <div id="desc-text">{Description}</div>
+  <img id="sidebar-icon" src="{image:sidebar}" alt="Sidebar Icon">
+  <p id="desc-text"><span id="desc-title">description:</span> {description}</p>
 </div>
 
 <div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
