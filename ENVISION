@@ -1025,7 +1025,7 @@ margin-top:-30px;
     filter: blur(0px);}
     
 #desc-container {
-  width:548px;
+  width:550px;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
