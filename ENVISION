@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:700px;    
     {block:permalinkpage}  
-    width:511px;
+    width:540px;
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -341,22 +341,22 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:80px; 
-    margin-left:50px;  
+    margin-left:30px;  
     width:700px;
     {block:permalinkpage}
     margin-top:130px;   
-    margin-left:-15px;  
+    margin-left:-30px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:250px;        
+    width:270px;        
     {block:permalinkpage}
     margin-top:130px; 
-    width:511px;
-    margin-left:-15px; 
+    width:540px;
+    margin-left:-30px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -979,6 +979,7 @@ height:auto;
 color:{color:Text};
 }
  
+ 
 #second{
 margin-right:117px;
 text-transform:uppercase;
@@ -1024,7 +1025,7 @@ margin-top:-30px;
     filter: blur(0px);}
     
 #desc-container {
-  width:509.7px;
+  width:548px;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
@@ -1032,7 +1033,7 @@ margin-top:-30px;
   position: relative;
   margin-top: 100px; 
   margin-bottom: -50px;
-  margin-left:74px;
+  margin-left:55px;
   padding: 19px;
   flex-wrap: wrap;
   border: 1px solid #eee;
