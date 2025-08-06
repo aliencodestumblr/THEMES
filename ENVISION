@@ -413,35 +413,49 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pagination {
+  width: 550px;
+  margin: 50px auto 80px auto; /* center + breathing room */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.85;
 }
 
-.pag a{ 
-    background:#fff;
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid #eee;
+.pagination a,
+.pagination span {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #eee;
+  background: #fff;
+  color: {color:Link};
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.pagination a:hover {
+  background: {color:Link};
+  color: #fff;
+  border-color: {color:Link};
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
+
+.pagination .current_page {
+  background: {color:Link};
+  color: {color:Text};
+  border-color: {color:Link};
+}
+
 /* end pagination */
 
 /* notes */ 
@@ -1248,7 +1262,7 @@ margin-top:-30px;
 
 <div id="desc-container">
   <img id="sidebar-icon" src="{image:sidebar}" alt="Sidebar Icon">
-  <p id="desc-text"><span id="desc-title">description:</span> {description}</p>
+  <p id="desc-text"><span id="desc-title">description:</span> just passing through this world, leaving behind glitter, static + unfinished conversations</p>
 </div>
 
 <div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
@@ -1524,15 +1538,25 @@ resizeVideos();
 {block:ifpagination} 
 {block:IndexPage}
 {block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
+<div class="pagination">
+    {block:PreviousPage}
+        <a href="{PreviousPage}">←</a>
+    {/block:PreviousPage}
 
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+    {block:JumpPagination length="5"}
+        {block:CurrentPage}
+            <span class="current_page">{PageNumber}</span>
+        {/block:CurrentPage}
+        {block:JumpPage}
+            <a href="{URL}">{PageNumber}</a>
+        {/block:JumpPage}
+    {/block:JumpPagination}
+
+    {block:NextPage}
+        <a href="{NextPage}">→</a>
+    {/block:NextPage}
 </div>
+
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifpagination} 
