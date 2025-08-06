@@ -44,8 +44,7 @@ attribute:"title"
 <meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
- 
-<meta name="if:Dark Tumblr control" content=""/>   
+    
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
