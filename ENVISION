@@ -484,7 +484,7 @@ color:{color:Link};
 
 /* permalink */
 .perma {  
-    margin-top:-17px;
+    margin-top:-21px;
     margin-left:20px;  
     margin-bottom:100px;
     width:511px;
@@ -979,9 +979,8 @@ height:auto;
 color:{color:Text};
 }
  
- 
 #second{
-margin-right:120px;
+margin-right:117px;
 text-transform:uppercase;
 padding:15.5px;
 text-align:center;
