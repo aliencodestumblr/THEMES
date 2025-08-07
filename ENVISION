@@ -478,7 +478,7 @@ na{float:right;text-align:right;}
  
 .permalinks a{
 color:{color:Link};
-background:{color:details};
+background:#fff;
 padding:4px;
 }
  
