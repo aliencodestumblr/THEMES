@@ -46,30 +46,20 @@ attribute:"title"
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
-<script> 
-$(document).readyy(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
@@ -78,56 +68,14 @@ $("#panel").slideToggle("fast");
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
- 
-<link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer06.js"></script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click").click(function(){
-    $("#guts").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click2").click(function(){
-    $("#guts2").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click3").click(function(){
-    $("#guts3").slideToggle("fast");
-  });
-});
-</script>
+
 <style type="text/css">
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
     max-width: 100%;
@@ -141,7 +89,6 @@ iframe.spotify_audio_player {
     width: 100%;
 }
 
- 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
@@ -240,11 +187,45 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
     width:100%; 
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img {
@@ -305,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
     width:620px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:80px;   
+   margin-left:-5px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -314,11 +295,10 @@ h1, h2, h3, h4, h5, h6 {
 .posts {  
     background:{color:details};   
     width:250px;        
-    
     {block:permalinkpage}
      margin-top:5px;   
     width:450px; 
-   margin-left:80px;  
+   margin-left:-5px;  
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:10px; 
@@ -338,7 +318,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -379,34 +358,47 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pagination {
+  width: 700px;
+  margin: 50px auto 60px auto; /* center + breathing room */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.85;
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+.pagination a,
+.pagination span {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid #eee;
+  background: #fff;
+  color: {color:Link};
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.pagination a:hover {
+  background: {color:Link};
+  color: #fff;
+  border-color: {color:Link};
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pagination .current_page {
+  background: {color:Link};
+  color: {color:Text};
+  border-color: {color:Link};
 }
 /* end pagination */
 
@@ -430,8 +422,7 @@ h1, h2, h3, h4, h5, h6 {
     transition:2s;
     opacity:1;
 }
- 
- 
+
 .notsi .re { 
   position:absolute;
 left:-4px;
@@ -645,7 +636,7 @@ ol.notes li.note img.avatar {
 }
 
 .asker {
-    margin-top:15px;
+    margin-top:0px;
     margin-left:15px;
     margin-right:15px;
     margin-bottom:8px;
@@ -840,66 +831,27 @@ span.chats {
 }
 /* end links */
 
-.caption {
-    margin-top:-2px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px; 
-    overflow:hidden;
+.caption,
+.caption p {
+  margin-top: 0px !important;
+  line-height: 1.3 !important;
 }
 
-.caption .tumblr_parent {
-    background:;
-    position:relative;   
-    margin:0px 0px 0px 0px;   
-    padding:0px 0px 0px 0px;    
-    color:{color:text};   
-    border-left:0px solid {color:borders};
-}
- 
-.caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
-    margin-top:7px;
-    margin-bottom:6px; 
-    margin-left:-14px;  
-    color:{color:text};
-    font-size:8px; 
-    text-transform:uppercase; 
-    padding:2px 15px 1px 15px;
-    text-align:center;
-    letter-spacing:1px;
-    font-weight:bold;  
-    display:none;     
-    border-bottom:1px solid {color:borders};
-    border-top:1px solid {color:borders};
-    border-right:2px solid {color:borders};
-    border-radius:0px 5px 5px 0px;
-} 
-
-.caption .tumblr_parent img,figure,video {
-    margin-top:1px;
+p > a.tumblr_blog {
+  display: none !important;
 }
 
-.caption .tumblr_parent > p:first-of-type {
-    display:block;
-    margin:0 auto 5px;
-} 
- 
-.caption h2 {
-    margin:3px 0px 5px 0px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:8.5px;
-    text-align:justify;
-    line-height:13px; 
-    padding-bottom:5px;
-    border-bottom:1px solid {color:borders}; 
+p > a.tumblr_blog::after {
+  content: none !important;
 }
 
-.tumblr_parent .tumblr_avatar { 
-    display:none;
-} 
-    
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}
 
 #s-m-t-tooltip {
     max-width:300px;
@@ -937,22 +889,22 @@ span.chats {
 }
  
 #side {
-    {block:permalinkpage}
-    margin-left:0px;   
-    {/block:permalinkpage}
     position:fixed;
     margin-left:40px;
     width:26px;
     height:100%;
-    top:10px;
+    top:0px;
     border-left:1px solid {color:borders};
     border-right:1px solid {color:borders};
     text-align:center;
     background:{color:details};
+    {block:permalinkpage}
+    margin-left:-45px;   
+    {/block:permalinkpage}
 }
  
 .icons {
-    margin-top:175px;
+    margin-top:185px;
 }
  
 .icon {
@@ -969,15 +921,15 @@ span.chats {
 }
  
 #desc {
-    {block:permalinkpage}
-    margin-left:-170px;   
-    {/block:permalinkpage}
     position:fixed;
     margin-left:-100px;
     width:125px;
     top:195px;
     height:50px;
     text-align:right;
+    {block:permalinkpage}
+    margin-left:-185px;   
+    {/block:permalinkpage}
 }
  
 .title {
@@ -1383,14 +1335,23 @@ resizeVideos();
 {block:ifpagination} 
 {block:IndexPage}
 {block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
+<div class="pagination">
+    {block:PreviousPage}
+        <a href="{PreviousPage}">←</a>
+    {/block:PreviousPage}
 
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+    {block:JumpPagination length="5"}
+        {block:CurrentPage}
+            <span class="current_page">{PageNumber}</span>
+        {/block:CurrentPage}
+        {block:JumpPage}
+            <a href="{URL}">{PageNumber}</a>
+        {/block:JumpPage}
+    {/block:JumpPagination}
+
+    {block:NextPage}
+        <a href="{NextPage}">→</a>
+    {/block:NextPage}
 </div>
 {/block:Pagination}
 {/block:IndexPage}
