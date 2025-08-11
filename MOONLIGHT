@@ -350,11 +350,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:25px; 
-    margin-left:90px;  
+    margin-left:110px;  
     width:340px;
     {block:permalinkpage}
-    margin-top:30px;   
-    margin-left:45px;  
+    margin-top:25px;   
+    margin-left:65px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -364,9 +364,9 @@ h1, h2, h3, h4, h5, h6 {
     background:transparent;   
     width:340px;        
     {block:permalinkpage}
-    margin-top:30px; 
+    margin-top:25px; 
     width:340px; 
-    margin-left:45px; 
+    margin-left:65px; 
     {/block:permalinkpage} 
     padding:25px;
     margin:1px; 
@@ -1091,7 +1091,7 @@ a.tumblr_blog {
     top: 0;
     height: 100%;
     width: 6px; 
-    margin-left: 90px;
+    margin-left: 110px;
     pointer-events: none;
     background: transparent;
     box-shadow: inset 2px 0 4px rgba(0,0,0,0.05);
@@ -1103,7 +1103,7 @@ a.tumblr_blog {
     mask-size: 100% 100%;
     
     {block:permalinkpage}
-    margin-left: 45px; 
+    margin-left: 65px; 
     {/block:permalinkpage}
 }
 
@@ -1112,7 +1112,7 @@ a.tumblr_blog {
     top: 0;
     height: 100%;
     width: 6px; 
-    margin-left: 475px; 
+    margin-left: 496px; 
     pointer-events: none;
     background: transparent;
     box-shadow: inset -2px 0 4px rgba(0,0,0,0.05);
@@ -1124,7 +1124,7 @@ a.tumblr_blog {
     mask-size: 100% 100%;
     
       {block:permalinkpage}
-    margin-left: 430px; 
+    margin-left: 450px; 
     {/block:permalinkpage}
 }
 
@@ -1132,6 +1132,7 @@ a.tumblr_blog {
     top: 90px;
     left: calc(50% - 330px); 
     position: fixed;
+    width:140px;
     display: flex;
     flex-direction: column;
     align-items: center;
