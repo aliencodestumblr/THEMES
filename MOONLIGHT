@@ -1086,12 +1086,11 @@ a.tumblr_blog {
    color:{color:text};
 }      
 
-/* Left border shadow */
 #bl {
     position: fixed;
     top: 0;
     height: 100%;
-    width: 6px; /* feather space */
+    width: 6px; 
     margin-left: 90px;
     pointer-events: none;
     background: transparent;
@@ -1108,13 +1107,12 @@ a.tumblr_blog {
     {/block:permalinkpage}
 }
 
-/* Right border shadow */
 #br {
     position: fixed;
     top: 0;
     height: 100%;
-    width: 6px; /* feather space */
-    margin-left: 475px; /* adjust for your post layout */
+    width: 6px; 
+    margin-left: 475px; 
     pointer-events: none;
     background: transparent;
     box-shadow: inset -2px 0 4px rgba(0,0,0,0.05);
@@ -1132,26 +1130,19 @@ a.tumblr_blog {
 
 #sidebar {
     top: 90px;
-    left: calc(50% - 330px); /* Keeps it aligned with your posts */
+    left: calc(50% - 330px); 
     position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.85); /* Subtle glassy background */
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    background:{color:background};
+    border-radius: 6px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#sidebar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-/* Sidebar image wrapper */
 #sbarimg {
     display: flex;
     justify-content: center;
@@ -1175,7 +1166,6 @@ a.tumblr_blog {
     transform: scale(1.05);
 }
 
-/* Blog title */
 #blogtitle {
     font-family: "Rajdhani", sans-serif;
     text-transform: uppercase;
@@ -1187,7 +1177,6 @@ a.tumblr_blog {
     margin: 0;
 }
 
-/* Description */
 #desc {
     font-family: "Rajdhani", sans-serif;
     text-transform: none;
@@ -1199,7 +1188,6 @@ a.tumblr_blog {
     max-width: 140px;
 }
 
-/* Dropdown nav */
 #okk {
     width: 100%;
     text-align: center;
@@ -1281,15 +1269,12 @@ a.tumblr_blog {
 <div id="sbarimg">
 <img src="{image:sidebar}" />
 </div>
-
 {block:ifshowblogtitle}
 <div id="blogtitle">{title}</b></div>
 {/block:ifshowblogtitle}
- 
 <div id="desc">
 {description}
 </b></div>
-
 <div id="okk"> +navigation <br>
 <a href="/archive" title="past">ex files</a><br>
 <a href="{text:link 1 url}" title="{text:Link 1 Name}">{text:link 1 title}</a><BR>
