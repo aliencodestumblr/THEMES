@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:430px;    
     {block:permalinkpage}  
-    width:430px; 
+    width:340px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -314,10 +314,10 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:25px; 
     margin-left:90px;  
-    width:430px;
+    width:340px;
     {block:permalinkpage}
-    margin-top:50px;   
-    margin-left:70px;  
+    margin-top:30px;   
+    margin-left:45px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -327,9 +327,9 @@ h1, h2, h3, h4, h5, h6 {
     background:transparent;   
     width:340px;        
     {block:permalinkpage}
-    margin-top:50px; 
-    width:430px; 
-    margin-left:70px; 
+    margin-top:30px; 
+    width:340px; 
+    margin-left:45px; 
     {/block:permalinkpage} 
     padding:25px;
     margin:1px; 
@@ -531,7 +531,7 @@ footer a > span > span {
     margin-top:-13px;
     margin-left:23px; 
     margin-bottom:100px;
-    width:500px;
+    width:340px;
     height:100%;
     font-size:9px;  
     font-family:"Rajdhani", sans-serif;
@@ -1064,6 +1064,10 @@ a.tumblr_blog {
     mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
+    
+    {block:permalinkpage}
+    margin-left: 45px; 
+    {/block:permalinkpage}
 }
 
 /* Right border shadow */
@@ -1082,6 +1086,10 @@ a.tumblr_blog {
     mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
+    
+      {block:permalinkpage}
+    margin-left: 430px; 
+    {/block:permalinkpage}
 }
 
 #sidebar {
@@ -1177,7 +1185,7 @@ a.tumblr_blog {
 }
 
 #okk.show {
-    height: 70px;
+    height: 85px;
 }
 </style> 
 
