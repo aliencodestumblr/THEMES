@@ -307,16 +307,17 @@ img {
 .spotify_audio_player {height:80px !important;}
 
 body {
-    color:{color:text}; 
-    background-color:{color:background};
-    font:400 11.5px "Rajdhani", sans-serif;
-    transition:1.3s;  
-    letter-spacing:1px;
-    text-align:justify;    
-    line-height:15px; 
-    word-wrap:break-word;
-    -webkit-animation-name:fadeIn;animation-name:fadeIn;
+
+  background-color:{color:background};
+  color:{color:text};
+  font: 400 11.5px "Rajdhani", sans-serif;
+  transition: 1.3s;
+  letter-spacing: 1px;
+  text-align: justify;
+  line-height: 15px;
+  word-wrap: break-word;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     font:"Rajdhani", sans-serif;
@@ -325,9 +326,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:450px;    
+    width:710px;    
     {block:permalinkpage}  
-    width:450px; 
+    width:500px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -335,11 +336,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:60px; 
-    margin-left:-160px;  
-    width:450px;
+    margin-left:-125px;  
+    width:710px;
     {block:permalinkpage}
      margin-top:88px; 
-    margin-left:-160px;  
+    margin-left:-90px;  
+    width:500px; 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -347,10 +349,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
   background: {color:details};   
-  width: 450px;   
+  width: 290px;   
   {block:permalinkpage}
    margin-top:88px; 
-   margin-left:-160px;  
+   margin-left:-90px;  
+   width:500px; 
   {/block:permalinkpage}
   margin: 25px; 
   padding: 5px;      
@@ -480,7 +483,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-top-bar {
   position: relative;
-  width:460px;
+  width:300px;
   height: 15px;
   margin-top:-5px;
   margin-left:-5px;
@@ -943,9 +946,10 @@ a.tumblr_blog {
     height:auto;
     min-height:100px;
     margin-top:11px;
-    margin-left:400px;
+    margin-left:605px;
     {block:permalinkpage}
-    margin-top:-8px; 
+    margin-top:-17px;
+    margin-left:500px; 
     {/block:permalinkpage}
     z-index:9999;
 }
