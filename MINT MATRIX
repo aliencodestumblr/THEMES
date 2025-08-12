@@ -353,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
    margin-left:-160px;  
   {/block:permalinkpage}
   margin: 25px; 
-  padding: 0px;      
+  padding: 5px;      
   overflow: hidden;
   opacity: 1;
   transition: 1s;  
@@ -361,8 +361,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative; 
   {block:ifShadows}
   box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),  
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3); 
+    4px 4px 6px rgba(0, 0, 0, 0.15);
   {/block:ifShadows}
 }
 
@@ -481,17 +480,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-top-bar {
   position: relative;
-  width: 100%;
+  width:460px;
   height: 15px;
+  margin-top:-5px;
+  margin-left:-5px;
   border-bottom: 1px solid {color:borders};
   background: {color:details};
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .post-icons {
   position: absolute;
   top: 2px;
-  right: 4px;
+  right: 5.5px;
   display: flex;
   gap: 3px;
   z-index: 10;
@@ -941,8 +942,11 @@ a.tumblr_blog {
     width:180px;
     height:auto;
     min-height:100px;
-    margin-top:20px;
+    margin-top:11px;
     margin-left:400px;
+    {block:permalinkpage}
+    margin-top:-8px; 
+    {/block:permalinkpage}
     z-index:9999;
 }
  
@@ -955,8 +959,7 @@ a.tumblr_blog {
     margin-top:15px;
     {block:ifShadows}
     box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),  
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3); 
+    4px 4px 6px rgba(0, 0, 0, 0.15);  
     {/block:ifShadows}
 }
  
@@ -969,8 +972,7 @@ a.tumblr_blog {
     margin-top:15px;
     {block:ifShadows}
     box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),  
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3); 
+    4px 4px 6px rgba(0, 0, 0, 0.15);
     {/block:ifShadows}
 }
  
@@ -983,8 +985,7 @@ a.tumblr_blog {
     margin-top:15px;
     {block:ifShadows}
     box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),  
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3);
+    4px 4px 6px rgba(0, 0, 0, 0.15);
     {/block:ifShadows}
 }
  
@@ -997,8 +998,7 @@ a.tumblr_blog {
     margin-top:15px;
     {block:ifShadows}
    box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),  
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3); 
+    4px 4px 6px rgba(0, 0, 0, 0.15);
     {/block:ifShadows}
 }
  
@@ -1011,11 +1011,13 @@ a.tumblr_blog {
     margin-top:15px;
     {block:ifShadows}
     box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15),   
-    inset 0 0 8px 2px rgba(135, 206, 250, 0.3); 
+    4px 4px 6px rgba(0, 0, 0, 0.15);
     {/block:ifShadows}
 }
  
+
+
+
 .heading {
     width:184px;
     height:15px;
