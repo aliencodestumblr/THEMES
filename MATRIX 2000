@@ -125,8 +125,9 @@ html, body, a, a:hover{cursor:crosshair;}
     height: 35px;
     background:{color:details};
     border-radius:4px;
-    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.1), 
-            1px 2px 4px rgba(0, 0, 0, 0.06);
+    {block:ifShadows}
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    {/block:ifShadows}
     display: flex;
     align-items: center;
     justify-content: center;
@@ -437,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pagination {
   width:584px;
-  margin: 50px auto 80px auto; /* center + breathing room */
+  margin: 50px auto 80px auto; 
   display: flex;
   justify-content: right;
   align-items: right;
@@ -460,7 +461,9 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.3s ease;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+    {block:ifShadows}
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    {/block:ifShadows}
 }
 
 .pagination a:hover {
@@ -468,7 +471,9 @@ h1, h2, h3, h4, h5, h6 {
   color:{color:links hover};
   border-color: {color:Link};
   transform: translateY(-2px);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+    {block:ifShadows}
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    {/block:ifShadows}
 }
 
 .pagination .current_page {
@@ -937,7 +942,9 @@ a.tumblr_blog {
     transition: 1s;
     z-index: 100;
     border-radius:4px;
-   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+    {block:ifShadows}
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    {/block:ifShadows}
 }
 
 #sidebar,
@@ -947,7 +954,7 @@ a.tumblr_blog {
 
 #sidebar {
     position: fixed;
-    width: 186px; 
+    width: 186px;
     margin-top: 11px;
     margin-left: 605px;
     z-index: 9999;
@@ -971,62 +978,151 @@ a.tumblr_blog {
     {/block:ifShadows}
 }
 
+/* Headings */
 .heading {
     width: 100%;
     height: 15px;
     border: 1px solid {color:borders};
-    margin-bottom: 0px;
+    padding-bottom: -5px;
+    {block:ifnottransparentsidebar}
     background-color: {color:top bar};
+    {/block:ifnottransparentsidebar}
+    {block:iftransparentsidebar}
+    background-color: transparent;
+    {/block:iftransparentsidebar}
     opacity: .9;
+    box-sizing: border-box;
 }
 
+/* Title */
 #blogtitle {
+    width: 100%;
+    height: auto;
+    padding: 2px;
+    margin-top: -6px;
+    line-height: 110%;
+    border: 1px solid {color:borders};
+    font-family: "Rajdhani", sans-serif;
+    color: {color:accent};
     text-align: center;
     font-size: 20px;
-    padding: 6px;
-    width: 100%;
-    border: 1px solid {color:borders};
+    {block:ifnottransparentsidebar}
     background-color: {color:details};
+    {/block:ifnottransparentsidebar}
+    {block:iftransparentsidebar}
+    background-color: transparent;
+    {/block:iftransparentsidebar}
     opacity: .9;
+    box-sizing: border-box;
 }
 
+/* Image box with 5px padding, stays aligned */
 #picture {
-    padding: 5px; 
+    padding: 5px;
     width: 100%;
-    border: 1px solid {color:borders};
-    background-color: {color:sidebar};
+    box-sizing: border-box;
 }
-
 #picture img {
-    width: 100%; 
+    width: 100%;
     height: auto;
     display: block;
+    border: 1px solid {color:borders};
 }
 
+/* Description */
 #description {
     width: 100%;
     padding: 5px;
-    border: 1px solid {color:borders};
-    background-color: {color:sidebar};
-    opacity: .9;
-    text-align: center;
-    font-size: 10px;
     line-height: 120%;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 10px;
+    color: black;
+    {block:ifnottransparentsidebar}
+    background-color: {color:sidebar};
+    {/block:ifnottransparentsidebar}
+    {block:iftransparentsidebar}
+    background-color: transparent;
+    {/block:iftransparentsidebar}
+    border: 1px solid {color:borders};
+    opacity: .9;
+    box-sizing: border-box;
 }
 
+/* Links container */
 #links {
     width: 100%;
     padding: 2px;
+    text-align: center;
     border: 1px solid {color:borders};
+    {block:ifnottransparentsidebar}
     background-color: {color:sidebar};
+    {/block:ifnottransparentsidebar}
+    {block:iftransparentsidebar}
+    background-color: transparent;
+    {/block:iftransparentsidebar}
     opacity: .9;
+    box-sizing: border-box;
 }
 
-#pages {
-    width: 100%;
-    border: 1px solid {color:borders};
-    background-color: {color:sidebar};
+/* Cube links (if enabled) */
+{block:ifcubelinks}
+.links {
+    font-size: 15px;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    padding: 0;
+    display: inline-block;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background: linear-gradient(145deg, #a89bff, #c5b3ff, #8de6d1);
+    background-size: 300% 300%;
+    box-shadow:
+        1.5px 1.5px 6px rgba(168, 155, 255, 0.5),
+        inset 0 0 6px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-align: center;
+    line-height: 12px;
+    transition: background-position 1.5s ease infinite,
+                box-shadow 0.3s ease,
+                transform 0.2s ease;
 }
+.links:hover {
+    background-position: 100% 0%;
+    box-shadow:
+        0 0 12px rgba(141, 230, 209, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.9);
+    transform: scale(1.3);
+}
+{/block:ifcubelinks}
+
+/* Regular link buttons (if cube disabled) */
+{block:ifnotcubelinks}
+.linkss {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0px;
+    border: 1px solid {color:borders};
+    background: linear-gradient(145deg, #fafafa, #eaeaea);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    color: {color:links};
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease,
+                color 0.3s ease, transform 0.2s ease;
+}
+.linkss:hover {
+    background: linear-gradient(145deg, {color:hover}, #c1c1c1);
+    color: white;
+    box-shadow: 0 0 8px {color:hover};
+    transform: scale(1.05);
+    border-color: {color:hover};
+}
+{/block:ifnotcubelinks}
+
 
 .iconyy1 img{
     position:fixed;
