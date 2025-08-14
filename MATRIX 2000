@@ -247,7 +247,6 @@ blockquote img {
 }
 
 blockquote video {
-    border-radius: 4px;
     width:100%; 
 }
 
