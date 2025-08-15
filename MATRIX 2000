@@ -36,7 +36,7 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/> 
-<meta name="color:Shadows" content="#888888"/>
+<meta name="color:Shadows" content="#eeeeee"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#828a93"/>  
 <meta name="color:Text" content="#828a93" /> 
@@ -126,7 +126,7 @@ html, body, a, a:hover{cursor:crosshair;}
     background:{color:details};
     border-radius:4px;
     {block:ifShadows}
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 6px {color:shadows};
     {/block:ifShadows}
     display: flex;
     align-items: center;
@@ -355,15 +355,15 @@ h1, h2, h3, h4, h5, h6 {
    width:500px; 
   {/block:permalinkpage}
   margin: 25px; 
-  padding: 5px;      
+  padding: 6px;      
   overflow: hidden;
   opacity: 1;
   transition: 1s;  
-  border: 1px solid #eee;
+  border: 1px solid {color:borders};
   position: relative; 
   {block:ifShadows}
   box-shadow: 
-    4px 4px 6px rgba(0, 0, 0, 0.15);
+    4px 4px 6px {color:shadows};
   {/block:ifShadows}
 }
 
@@ -941,7 +941,7 @@ a.tumblr_blog {
     z-index: 100;
     border-radius:4px;
     {block:ifShadows}
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 6px {color:shadows};
     {/block:ifShadows}
 }
 
@@ -972,7 +972,7 @@ a.tumblr_blog {
     padding: 0;
     height: auto;
     {block:ifShadows}
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 6px {color:shadows};
     {/block:ifShadows}
 }
 
