@@ -345,11 +345,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:100px; 
+    margin-top:105px; 
     margin-left:150px;  
     width:810px;
     {block:permalinkpage}
-    margin-top:125px;   
+    margin-top:130px;   
     margin-left:-30px;  
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
 .posts {  
     width:340px;        
     {block:permalinkpage}
-    margin-top:125px; 
+    margin-top:130px; 
     width:450px; 
     margin-left:-30px; 
     {/block:permalinkpage} 
