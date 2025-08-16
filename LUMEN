@@ -407,34 +407,55 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+#pagination {
+  width: 360px;          
+  margin-left: 566px;    
+  margin-top: 40px;
+  margin-bottom: 70px;
+  text-align: right;
+  clear: both;
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+#pagination a,
+#pagination span {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 8px 16.3px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  color: {color:link};
+  background: {color:background};
+  transition: all 0.3s ease;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+#pagination a::before,
+#pagination span::before {
+  content: "";
+  position: absolute;
+  top: 0px;   
+  left: 0px;  
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: 3px 3px 10px {color:shadow};
+  z-index: -1;
+  pointer-events: none;
+}
+
+#pagination a:hover {
+  color: {color:text};
+  background: {color:link};
+}
+
+#pagination span {
+  font-weight: bold;
+  color: {color:text};
+  background: {color:link};
 }
 /* end pagination */
 
@@ -1198,7 +1219,6 @@ transition:.70s;}
 .sidebar-button-box a:hover {
   color: {color:Accent}; 
 }
-
 </style> 
 
 <svg height="0" width="0" style="position:absolute; width:0px; height:0px;"><defs><clipPath id="blob" clipPathUnits="objectBoundingBox"><path d="M0.5,0.053c0.266,-0.074 0.242,0.198 0.44,0.447c0.161,0.204 -0.209,0.435 -0.44,0.455c-0.275,0.023 -0.516,-0.183 -0.471,-0.455c0.037,-0.217 0.235,-0.382 0.471,-0.447Z"></path></clipPath></defs></svg>
@@ -1606,6 +1626,40 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:ifpagination} 
+{block:IndexPage}
+{block:Pagination}
+<div id="pagination">
+  
+  <!-- Back button always visible -->
+  {block:PreviousPage}
+    <a href="{PreviousPage}">&larr;</a>
+  {/block:PreviousPage}
+  {block:NoPreviousPage}
+    <a href="{CurrentPageURL}">&larr;</a>
+  {/block:NoPreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span>{PageNumber}</span>
+    {/block:CurrentPage}
+    {block:JumpPage}
+      <a href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  <!-- Next button always visible -->
+  {block:NextPage}
+    <a href="{NextPage}">&rarr;</a>
+  {/block:NextPage}
+  {block:NoNextPage}
+    <a href="{CurrentPageURL}">&rarr;</a>
+  {/block:NoNextPage}
+
+</div>
+{/block:Pagination}
+{/block:IndexPage}
+{/block:ifpagination} 
 </div>
 
 {block:IndexPage} 
@@ -1698,22 +1752,6 @@ resizeVideos();
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifnotpagination} 
-
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
  
@@ -1728,5 +1766,29 @@ $(document).ready(function(){
 });
 </script> 
 <script>feather.replace()</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const prev = document.getElementById("prev-page");
+  const next = document.getElementById("next-page");
+
+  // Get Tumblr’s built-in links if they exist
+  const prevLink = document.querySelector(".pagination a[href*='page=']") || null;
+  const nextLink = document.querySelector(".pagination a[href*='page=']") || null;
+
+  if(prevLink) {
+    prev.href = prevLink.href;
+  } else {
+    prev.href = window.location.href; // first page
+  }
+
+  if(nextLink) {
+    next.href = nextLink.href;
+  } else {
+    next.href = window.location.href; // last page
+  }
+});
+</script>
+
 </body>
 </html>
