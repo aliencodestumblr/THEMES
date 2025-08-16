@@ -320,7 +320,7 @@ img {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 10px "Rajdhani", sans-serif;
+    font:400 11px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -330,10 +330,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 13px "Rajdhani", sans-serif;
-    text-transform:uppercase;
+    font:"Rajdhani", sans-serif;
     text-align:justify; 
     line-height:15px;
 }
