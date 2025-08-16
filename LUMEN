@@ -132,7 +132,7 @@ html, body, a, a:hover{cursor:crosshair;}
     width: 35px;
     height: 35px;
     background: {color:details};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px {color:shadow};
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -250,14 +250,49 @@ blockquote {
 }
 
 blockquote img {
+    border-radius: 3px; 
     width:calc(100% - 0);
     height:auto;
     margin-bottom:0px;
 }
 
 blockquote video {
-    margin-bottom:-10px;
+    border-radius: 3px; 
     width:100%; 
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { 
@@ -331,11 +366,12 @@ h1, h2, h3, h4, h5, h6 {
     width:450px; 
     margin-left:-30px; 
     {/block:permalinkpage} 
-    margin:17px; 
+    margin:30px; 
     opacity:1;
-    transition:1s; 
+    display: block;
     border-radius: 3px; 
-    padding: 15px;   
+    transition:1s; 
+    padding: 0px;  
 }
 
 {block:IndexPage}
@@ -923,65 +959,27 @@ span.chats {
 }
 /* end links */
 
-.caption {
-    margin-top:-2px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px; 
-    overflow:hidden;
+.caption,
+.caption p {
+  margin-top: 0px !important;
+  line-height: 1.3 !important;
 }
 
-.caption .tumblr_parent {
-    background:;
-    position:relative;   
-    margin:0px 0px 0px 0px;   
-    padding:0px 0px 0px 0px;    
-    color:{color:text};   
-    border-left:0px solid {color:borders};
-}
- 
-.caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
-    margin-top:7px;
-    margin-bottom:6px; 
-    margin-left:-14px;  
-    color:{color:text};
-    font-size:8px; 
-    text-transform:uppercase; 
-    padding:2px 15px 1px 15px;
-    text-align:center;
-    letter-spacing:1px;
-    font-weight:bold;  
-    display:none;     
-    border-bottom:1px solid {color:borders};
-    border-top:1px solid {color:borders};
-    border-right:2px solid {color:borders};
-    border-radius:0px 5px 5px 0px;
-} 
-
-.caption .tumblr_parent img,figure,video {
-    margin-top:1px;
+p > a.tumblr_blog {
+  display: none !important;
 }
 
-.caption .tumblr_parent > p:first-of-type {
-    display:block;
-    margin:0 auto 5px;
-} 
- 
-.caption h2 {
-    margin:3px 0px 5px 0px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:8.5px;
-    text-align:justify;
-    line-height:13px; 
-    padding-bottom:5px;
-    border-bottom:1px solid {color:borders}; 
+p > a.tumblr_blog::after {
+  content: none !important;
 }
 
-.tumblr_parent .tumblr_avatar { 
-    display:none;
-} 
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}
     
 #s-m-t-tooltip {
     max-width:300px;
