@@ -511,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px outset {color:borders};
   box-sizing: border-box;
   padding: 0;
-  cursor: pointer;
+  cursor: crosshair;
   transition: border 0.2s ease;
 }
 
