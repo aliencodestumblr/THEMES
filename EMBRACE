@@ -34,18 +34,17 @@ attribute:"title"
 
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Background" content="#fcfcfc"/>
 <meta name="color:Details" content="#ffffff"/>  
-<meta name="color:box shadow" content="#e3e3e3" />
-<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:box shadow" content="#f4f4f4" />
+<meta name="color:Borders" content="#ededed"/> 
 <meta name="color:Moon Shadow" content="#6f7284"/>
-<meta name="color:Shadow Color" content="#ccc5c5">
-<meta name="color:Accent" content="#ccc5c5"/>  
-<meta name="color:Text" content="#aaaaaa" /> 
-<meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Accent" content="#686868"/>  
+<meta name="color:Text" content="#686868" /> 
+<meta name="color:Links" content="#686868" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#6f7284" />
-<meta name="color:ask box background" content="#6f7284"/>
+<meta name="color:Scrollbar" content="#686868" />
+<meta name="color:ask box background" content="#686868"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
@@ -130,11 +129,11 @@ html, body, a, a:hover{cursor:crosshair;}
     z-index: 100;
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 25px;
     width: 35px;
     height: 35px;
     background: {color:details};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 6px 6px 0 2px {color:box shadow};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -288,7 +287,7 @@ img {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 9px "Rajdhani", sans-serif;
+    font:400 11px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -298,10 +297,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
+    font:"Rajdhani", sans-serif;
     text-align:justify; 
     line-height:15px;
 }
@@ -421,9 +417,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 6px 6px 0 2px {color:box shadow};
     margin-bottom:100px;
     text-align:left;
-    {block:permalinkpage}
-    display:none;
-    {/block:permalinkpage}
 }
 
 #pagination a {
@@ -986,8 +979,8 @@ a.tumblr_blog {
 #ltop:link, #ltop:visited {   
     position: fixed;
     background: {color:details}; 
-    bottom: 20px;
-    right: 20px; 
+    bottom: 28px;
+    right: 25px; 
     width: 35px;
     height: 35px;
     font-size: 14px;
@@ -998,7 +991,7 @@ a.tumblr_blog {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    box-shadow: 6px 6px 0 2px {color:box shadow};
     padding: 0; 
 }
 
@@ -1030,7 +1023,7 @@ aside {
   box-shadow: -15px 0 20px {color:Moon Shadow};
 }
 
-.desc {font-size:9px;
+.desc {font-size:11px;
 margin:10px 0;
 border:1px solid {color:borders}; 
 padding:7px;
@@ -1058,10 +1051,10 @@ padding-left:0px;
 line-height:12px; 
 text-align:left;
 font-family:"Rajdhani", sans-serif;
-font-size:10px;
+font-size:11px;
 font-weight:500;
 text-transform:uppercase;
-margin:0px 30px 0px 0px;
+margin:0px 28px 0px 0px;
 letter-spacing:2.5px;
 margin-bottom:0px;
 transition:.70s;}
