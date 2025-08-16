@@ -1,14 +1,3 @@
-<!---
-
-      design by @aliencodes
-
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -36,8 +25,8 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
-<meta name="color:Borders" content="#e1e5ec"/> 
-<meta name="color:Shadow" content="#c3c7cd">
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Shadow" content="#eeeeee">
 <meta name="color:Accent" content="#7d8793"/>  
 <meta name="color:Text" content="#7d8793" /> 
 <meta name="color:Links" content="#7d8793" />  
@@ -58,11 +47,11 @@ attribute:"title"
 <meta name="text:Link 4 URL" content="/"/>
 <meta name="text:Link 5 URL" content="/"/>
  
-<meta name="text:Link 1 Name" content="reload"/>
-<meta name="text:Link 2 Name" content="message"/>
-<meta name="text:Link 3 Name" content="uploads"/>
-<meta name="text:Link 4 Name" content="about"/>
-<meta name="text:Link 5 Name" content="tags"/>
+<meta name="text:Link 1 Name" content="uploads"/>
+<meta name="text:Link 2 Name" content="tags"/>
+<meta name="text:Link 3 Name" content="spotify"/>
+<meta name="text:Link 4 Name" content="answered"/>
+<meta name="text:Link 5 Name" content="dashboard"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
