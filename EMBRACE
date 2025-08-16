@@ -256,10 +256,41 @@ blockquote img {
 }
 
 blockquote video {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-bottom:-5px;
     width:100%; 
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { 
@@ -941,6 +972,7 @@ span.chats {
     border-top:1px solid {color:borders};
 }
 /* end links */
+
 .caption,
 .caption p {
   margin-top: 0px !important;
