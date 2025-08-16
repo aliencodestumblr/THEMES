@@ -124,7 +124,6 @@ html, body, a, a:hover{cursor:crosshair;}
     width: 35px;
     height: 35px;
     background:{color:details};
-    border-radius:4px;
     {block:ifShadows}
     box-shadow: 4px 4px 6px {color:shadows};
     {/block:ifShadows}
@@ -457,10 +456,10 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   color: {color:Link};
   text-decoration: none;
-  border-radius: 6px;
   transition: all 0.3s ease;
     {block:ifShadows}
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 
+    4px 4px 6px {color:shadows};
     {/block:ifShadows}
 }
 
@@ -470,7 +469,8 @@ h1, h2, h3, h4, h5, h6 {
   border-color: {color:Link};
   transform: translateY(-2px);
     {block:ifShadows}
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.15);
+   box-shadow: 
+    4px 4px 6px {color:shadows};
     {/block:ifShadows}
 }
 
@@ -511,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px outset {color:borders};
   box-sizing: border-box;
   padding: 0;
-  cursor: crosshair;
+  cursor:crosshair;
   transition: border 0.2s ease;
 }
 
@@ -939,7 +939,6 @@ a.tumblr_blog {
     display: none;   
     transition: 1s;
     z-index: 100;
-    border-radius:4px;
     {block:ifShadows}
     box-shadow: 4px 4px 6px {color:shadows};
     {/block:ifShadows}
