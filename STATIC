@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
     width:650px;
     {block:permalinkpage}
      margin-top:20px;   
-   margin-left:20px;   
+   margin-left:25px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
      margin-top:20px;   
     width:450px; 
-   margin-left:20px;  
+   margin-left:25px;  
     {/block:permalinkpage} 
     margin:10px; 
     padding:10px;    
@@ -649,8 +649,8 @@ ol.notes li.note img.avatar {
 .ask {    
     background:{color:ask box background};
     margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
@@ -663,9 +663,9 @@ ol.notes li.note img.avatar {
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-top:-5px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:8px;
     width:auto;
     font-size:9px;
@@ -683,9 +683,9 @@ ol.notes li.note img.avatar {
 
 .answer { 
     margin-top:5px;
-    margin-left:15px;
+    margin-left:0px;
     margin-right:15px;
-    margin-bottom:20px;
+    margin-bottom:0px;
     padding-top:8px;  
     width:auto; 
     color:{color:text};
