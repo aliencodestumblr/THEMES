@@ -471,7 +471,7 @@ background-color:#fff;}
 /* notes */ 
 
 .post-permalink {
-  font-family:"Rajdhani", sans-serif;
+  font-family:"Roboto Mono", monospace;
   font-size: 10px;
   color:{color:links};
   text-transform: uppercase;
