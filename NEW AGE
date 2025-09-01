@@ -1064,7 +1064,7 @@ a.tumblr_blog {
 #linkest a {
     padding:0px;
     padding-right:0px;
-    padding-bottom:11px; 
+    padding-bottom:10px; 
     color:{color:links};
 }
  
