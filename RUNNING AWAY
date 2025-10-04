@@ -37,8 +37,6 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:side background" content="#eeeeee"/>
-<meta name="color:Gradient 1" content="#eeeeee"/>
-<meta name="color:Gradient 2" content="#eeeeee"/>
 <meta name="color:player background" content="#f6f6f6"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
@@ -46,9 +44,9 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
+<meta name="color:Gradient 1" content="#eeeeee"/>
+<meta name="color:Gradient 2" content="#eeeeee"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
