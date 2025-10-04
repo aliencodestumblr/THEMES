@@ -1,15 +1,13 @@
-<!---
+<!--
+  [ aliencodes theme ]
 
-      design by @aliencodes
+  add-ons:
+    ↳ scroll to top — @fragilehelp
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ blog music — @glenthemes
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  © all rights reserved
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
