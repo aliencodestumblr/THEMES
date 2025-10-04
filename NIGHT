@@ -1,15 +1,13 @@
-<!---
+<!--
+  [ aliencodes theme ]
 
-      design by @aliencodes
+  add-ons:
+    ↳ scroll to top — @fragilehelp
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ blog music — @glenthemes
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  © all rights reserved
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -100,6 +98,10 @@ attribute:"title"
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
     max-width: 100%;
     aspect-ratio: 16/9;
