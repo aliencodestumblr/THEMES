@@ -1,3 +1,13 @@
+<!--
+  [ aliencodes theme ]
+
+  add-ons:
+    ↳ scroll to top — @fragilehelp
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ blog music — @glenthemes
+
+  © all rights reserved
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -28,11 +38,11 @@ attribute:"title"
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#a6a6a6" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:asker text" content="#444444"/>
  
 <meta name="if:Show caption" content=""/>   
-<meta name="if:Pagination" content=""/> 
+<meta name="if:Pagination" content=""/>
+<meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content=""/>
 <meta name="text:Link 1 Title" content="link"/>
@@ -46,6 +56,11 @@ attribute:"title"
 <meta name="text:Link 5 Title" content="link"/>
 <meta name="text:Link 6" content=""/>
 <meta name="text:Link 6 Title" content="link"/>
+
+<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
+
+<meta name="text:Song Title" content="Song Title"/>
+<meta name="text:Artist Name" content="Artist Name"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,10 +84,20 @@ attribute:"title"
  
 <link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
 
-<style type="text/css">
+<!-------MUSIC PLAYER BY GLENTHEMES------->
+<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 
-html {
-    cursor:crosshair;
+<style type="text/css">
+article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+}
+
+figure iframe.spotify_audio_player,
+iframe.spotify_audio_player {
+    max-height: 90px;
+    width: 100%;
 }
 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -174,8 +199,42 @@ blockquote img {
 }
 
 blockquote video {
-    margin-bottom:-5px;
+    border-radius: 5px;
     width:100%; 
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img {
@@ -184,6 +243,7 @@ img {
     width:calc(100% - 0);
     height:auto;
     display:block;
+    border-radius: 5px;
 }
 
 ::-moz-selection {
@@ -225,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
 .entry {   
     width:590px;    
     {block:permalinkpage}  
-    width:450px; 
+    width:601px;
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -233,29 +293,33 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:75px;
-    margin-left:140px;  
-    width:590px;
+    margin-left:100px;  
+    width:644px;
     {block:permalinkpage}
-    margin-top:24px;   
-    margin-left:70px;  
+    margin-top:75px;   
+    margin-left:105px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:#fff;   
-    width:238px;        
-    {block:permalinkpage}
-    width:450px; 
-    margin-top:24px;  
-    margin-left:70px; 
-    {/block:permalinkpage} 
-    border:1px solid {color:borders};
-    margin:6px; 
-    padding:6px;   
-    opacity:1;
-    transition:1s;  
+  background: #fff;
+  width: 280px;
+  {block:permalinkpage}
+  width:601px;
+  margin-top: 75px;  
+  margin-left: 105px; 
+  {/block:permalinkpage}
+  border-radius: 5px;
+  border: none;
+  box-shadow:
+    3px 3px 10px rgba(0, 0, 0, 0.12),   
+    0 0 2px rgba(0, 0, 0, 0.05);        
+  margin: 14px; 
+  padding: 6px;   
+  opacity: 1;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 {block:IndexPage}
@@ -268,7 +332,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
+    border-radius: 5px;
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -340,84 +404,72 @@ h1, h2, h3, h4, h5, h6 {
 /* end pagination */
 
 /* notes */ 
- 
-.notsi {
-     padding: 0px;
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    display: inline-block;
-    overflow: hidden;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 45px;
-    transition: 1s;
-width:260px;
-height: 15px;
-padding-top:2px;
-padding-bottom: 2px;
-background-color: #fff;
-margin-left: 0px; 
-overflow:hidden;
-letter-spacing: 0;
-top: 15px;
-font-family:"Rajdhani", sans-serif;
-text-transform: uppercase;
-font-size: 8px;
-line-height:16px;
-text-align:center;
-opacity:0.0;
-border-bottom-right-radius:0px;
-border-top-right-radius:0px;
-border-top-left-radius:0px;
-border-bottom-left-radius:0px;
--webkit-transition: all 0.6s linear;
--moz-transition: all 0.6s linear;
-transition: all 0.6s linear;
+
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 3px;
+
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 7;
 }
- 
-.posts:hover .notsi { 
-   overflow:visible;
--webkit-transition: opacity 0.5s linear; opacity: 0.6; 
-transition: all 0.4s linear;
-margin-left: 0px; 
-width: 260px;
-height: 15px;
-top: 15px;
-padding-top: 2px;
-padding-bottom: 2px;
-opacity: 0.7;
-border-bottom-right-radius:0px;
-border-top-right-radius:0px;
-border-top-left-radius:0px;
-border-bottom-left-radius:0px;
--webkit-transition: all 0.6s linear;
--moz-transition: all 0.6s linear;
-transition: all 0.6s linear;
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
- 
- 
-.notsi .re { 
-  position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 4px;
+
+  background: rgba(10,10,10,.85);
+  color: #8b8b8b;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.6);
+
+  font: 600 8px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: .95;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.permalink-hover a:hover {
+  background: rgba(22,22,22,.9);
+  color: #b0b0b0;
+  border-color: rgba(255,255,255,.12);
+  opacity: 1;
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
 }
  
 /* end notes */
@@ -427,7 +479,7 @@ transition: all 0.4s linear;
     margin-top:0px;
     margin-left:10px;  
     margin-bottom:100px;
-    width:450px;
+    width:601px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -572,60 +624,89 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 4px;
-    border:1px solid {color:borders};
-}
-
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: {color:asker text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:links};
+    font-weight: 600;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.asker a:hover {
+    color: {color:links hover};
+}
+
+/* question bubble */
+/* Asker info */
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:asker text};
+}
+
+.asker a {
+    color: {color:asker text};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:asker text};
+}
+
+.asker a {
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+    position: relative;
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
+    padding: 14px 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-left: 4px solid #bbbbbb; 
+    transition: transform 0.2s ease;
+    color:{color:asker text};
+}
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 /* end asks */
 
@@ -835,73 +916,226 @@ a.tumblr_blog {
     z-index:100;
 }
 
-.navi1 a{
-float: left;
-width: 70px;
-height: 5px;
-background:#eee;
-color: ;
-margin-left: 0px;
-margin-top: 0px;
-margin-bottom: 15px;
-padding-top: 5px;
-padding-left: 8px;
-text-align: center;
-padding-right: 8px;
-padding-bottom: 5px;
-font-family:;
-letter-spacing: 1px;
-line-height: 33px;
-font-size: 8px;
-text-transform:uppercase;
--webkit-transition: all 0.5s ease-out;
--moz-transition: all 0.5s ease-out;
--o-transition: all 0.5s ease-out;
-}
-
-.navi1 a:hover{
-background:#000;
-color:#fff;
-line-height: 19px;
-padding-bottom:15px;
--webkit-transition: all 0.5s ease-out;
--moz-transition: all 0.5s ease-out;
--o-transition: all 0.5s ease-out;
-}
-
-    
 #navi {
-float:left;
-width: 516px;
-margin-left:145px;
-border-bottom:1px solid #eee;
-margin-top: -50px;
-height:30px;
-position:relative;
-z-index: 9999;
-text-align: right;
+  float: left;
+  width: 612px;
+  margin-left: 110px;
+  margin-top: -50px;
+  border-bottom: 0px solid #eee;
+  position: relative;
+  z-index: 9999;
+ display: flex;
+  justify-content: space-evenly;
+  gap: 6px;
+  padding: 0 4px;  
+  {block:permalinkpage}  
+  width: 612px;
+  margin-left:115px;
+  {/block:permalinkpage} 
 }
 
+#navi .navi1 {
+  flex: 1;
+}
+
+#navi .navi1 a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  background: linear-gradient(to bottom, #f7f7f7, #e0e0e0);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  transition: all .25s ease;
+}
+
+#navi .navi1 a:hover {
+  background: linear-gradient(to bottom, #000, #222);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,.2);
+}
 
 #n {
-z-index:9999;
-position:fixed;
-top:24px;
-margin-left:-90px;
-background-color:#eee;
-line-height:12px;
-font-size:9px;
-padding:15px;
-width:180px;
-text-align:center;
-{block:permalinkpage}
-margin-left:-160px;  
-{/block:permalinkpage}
+  z-index: 9999;
+  position: fixed;
+  top: 24px;
+  margin-left: -130px;
+
+  width: 180px;
+  padding: 15px;
+  text-align: center;
+
+  background-color: #eee;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  font-size: 9.5px;
+  line-height: 1.4;
+  color: #555;
+  transition: all 0.3s ease;
+
+  {block:permalinkpage}
+  margin-left: -125px;
+  {/block:permalinkpage}
+}
+
+#n:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+#n img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  -webkit-filter: saturate(105%);
+  transition: all 0.3s ease;
+}
+
+#n img:hover {
+  -webkit-filter: saturate(125%) brightness(1.05);
 }
 
 #n a {
-color:#666;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+#n a:hover {
+  color: #333;
+}
+
+#n .title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  color: #444;
+}
+
+#n .description {
+  font-size: 9.5px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/*-------MUSIC PLAYER BY GLENTHEMES-------*/
+:root {
+   --Circle-Size:38px;
+   --Progress-Border-Size:2px;
+   --Progress-Empty:#eee;
+   --Progress-Fill:{color:text};
+   --Player-Background:#ffffff;
+   --Play-Pause-Buttons-Size:14px;
+   --Play-Pause-Buttons-Color:{color:text};
+   --Player-Text-Margin:16px;
+
+   --Song-Name-Font-Size:10px;
+   --Song-Name-Color:{color:text}; 
+
+   --Artist-Name-Font-Size:11px;
+   --Artist-Name-Color:{color:text};
+}
+
+#glenplayer07 {
+   position:fixed;
+   bottom:0;margin-bottom:30px;
+   left:0;margin-left:30px;
+   z-index:99;
+}
+
+.flamingo {
+   display:flex;
+   align-items:center;
+}
+
+.circleofdeath {
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+   border-radius:100%;
+   overflow:hidden;
+}
+
+.tinfoil {
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+   background:var(--Progress-Empty);
+   border-radius:100%;
+}
+
+.oven {
+   background:var(--Progress-Fill);
+}
+
+.oliveoil {
+   width:100%;
+   height:100%;
+}
+
+.crust {
+   position:absolute;
+   top:0;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   width:var(--Circle-Size);
+   height:var(--Circle-Size);
+}
+
+.cherry {
+   display:flex;
+   align-items:center;
+   justify-content:center;
+   width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+   height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
+   background:var(--Player-Background);
+   border-radius:100%;
+   cursor:pointer;
+   z-index:1;
+}
+
+.music-controls {display:flex;align-items:center}
+
+.music-controls .material-icons {
+   font-size:var(--Play-Pause-Buttons-Size);
+   color:var(--Play-Pause-Buttons-Color);
+}
+
+.pausee {display:none;}
+
+.beff {display:none;}
+.aff {display:block;}
+
+.music-info {
+   margin-left:var(--Player-Text-Margin);
+   line-height:1em;
+}
+
+.song-name {
+   font-family:m"Rajdhani", sans-serif;
+   font-size:var(--Song-Name-Font-Size);
+   text-transform:uppercase;
+   font-weight:bold;
+   letter-spacing:1.5px;
+   color:{color:text};
+}
+
+.artist-name {
+   margin-top:3px;
+   font-family:"Rajdhani", sans-serif;
+   font-size:var(--Artist-Name-Font-Size);
+   letter-spacing:1px;
+   color:{color:text};
+}  
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -922,23 +1156,59 @@ color:#666;
 <a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a>
 
 </head>
-
 <body>  
 
+{block:ifshowmusicplayer}
+<!-------MUSIC PLAYER BY GLENTHEMES------->
+<div id="glenplayer07">
+   <div class="flamingo">
+       <div class="circleofdeath">
+           <div class="tinfoil">
+               <div class="oliveoil"></div>
+           </div>
+          <div class="crust">
+               <div class="cherry">
+                   <div class="music-controls">
+                       <i class="material-icons playy">play_arrow</i>
+                       <i class="material-icons pausee">pause</i>
+                   </div>
+               </div><!--cherry-->
+           </div><!--crust-->
+       </div><!--circleofdeath-->
+
+       <div class="music-info">
+           <div class="song-name">{text:Song Title}</div>
+           <div class="artist-name">{text:Artist Name}</div>
+       </div><!--music-info-->
+   </div><!--flamingo-->
+</div><!--glenplayer07-->
+
+<audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
+<!----end music player---->
+{/block:ifshowmusicplayer} 
+
 <div class="entry">    
-<div id="navi"><div class="navi1"><a href="{text:link 1}">{text:link 1 title}</a></div>
-<div class="navi1"><a href="{text:link 2}">{text:link 2 title}</a></div>
-<div class="navi1"><a href="{text:link 3}">{text:link 3 title}</a></div>
-<div class="navi1"><a href="{text:link 4}">{text:link 4 title}</a></div>
-<div class="navi1"><a href="{text:link 5}">{text:link 5 title}</a> </div>
-<div class="navi1"><a href="{text:link 6}">{text:link 6 title}</a></div>
+<div id="navi">
+  <div class="navi1"><a href="{text:link 1}">{text:link 1 title}</a></div>
+  <div class="navi1"><a href="{text:link 2}">{text:link 2 title}</a></div>
+  <div class="navi1"><a href="{text:link 3}">{text:link 3 title}</a></div>
+  <div class="navi1"><a href="{text:link 4}">{text:link 4 title}</a></div>
+  <div class="navi1"><a href="{text:link 5}">{text:link 5 title}</a></div>
+  <div class="navi1"><a href="{text:link 6}">{text:link 6 title}</a></div>
 </div>
 
 <div id="n">
-<a href="/"><img style="padding-bottom:5px;-webkit-filter:saturate(100%);" src="{image:sidebar}" width="180"></a>
+  <a href="/">
+    <img src="{image:Sidebar}" alt="{title}">
+  </a>
 
-<div style="padding-top:3px; padding-bottom:3px;margin-top:2px;text-align:right;"><center> <a href="/"><big>{title}</big></a>
-<center>{description}</div>
+  <div class="title">
+    <a href="/">{Title}</a>
+  </div>
+
+  <div class="description">
+    {Description}
+  </div>
 </div>
 
 <div id="posts">
@@ -948,9 +1218,13 @@ color:#666;
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Text}
@@ -961,9 +1235,13 @@ color:#666;
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Quote}
@@ -985,9 +1263,13 @@ color:#666;
 </ul>
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>
 {/block:Chat}
@@ -1005,23 +1287,29 @@ color:#666;
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+  <div class="ask">{Question}</div>
+  <div class="answer">{Answer}</div>
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:answer}
@@ -1043,9 +1331,13 @@ color:#666;
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Audio}
@@ -1058,9 +1350,13 @@ color:#666;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Photo}
@@ -1074,9 +1370,13 @@ color:#666;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Photoset}
@@ -1091,9 +1391,13 @@ color:#666;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="lol"><a href="{Permalink}">{NoteCountWithLabel}</a> &#8226; {timeago} &#8226; <a href="{ReblogURL}">reblog</a></center></div>
-</div>
+<div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Video} 
