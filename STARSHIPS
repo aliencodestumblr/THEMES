@@ -1015,14 +1015,13 @@ a.tumblr_blog {
     z-index:100;
 }
 
-/* ——— Slimmer stacked sidebar ——— */
 #sidebar {
   position: fixed;
   width: 100%;
-  max-width: 232px;               /* narrower (was 248px) */
+  max-width: 232px;              
   padding: 11px;
   top: 125px;
-  margin-left: -150px;            /* rebalanced offset */
+  margin-left: -150px;          
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1041,7 +1040,7 @@ a.tumblr_blog {
   font-weight: 900;
   text-transform: lowercase;
   letter-spacing: 3px;
-  font-size: 14.5px;              /* slightly smaller for balance */
+  font-size: 14.5px;              
   line-height: 1.05;
   color: {color:Text};
   display: inline-flex;
@@ -1054,10 +1053,9 @@ a.tumblr_blog {
   opacity: .95;
 }
 
-/* Square image — smaller but still prominent */
 #sidebar-image {
   display: block;
-  width: 90%;                     /* proportionally smaller */
+  width: 90%;                   
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin: 0 auto;
@@ -1079,7 +1077,6 @@ a.tumblr_blog {
   transform: scale(1.02);
 }
 
-/* Description */
 #desc-text {
   margin: 0;
   color: {color:Text};
@@ -1089,7 +1086,6 @@ a.tumblr_blog {
   word-break: break-word;
 }
 
-/* ——— Stacked nav links ——— */
 :root {
   --nav-text: {color:links};
   --nav-text-hover: {color:links hover};
