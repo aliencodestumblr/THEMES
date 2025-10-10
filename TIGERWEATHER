@@ -1188,7 +1188,7 @@ a.tumblr_blog {
 #glenplayer07 {
    position:fixed;
    bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
+   left:0;margin-left:20px;
    z-index:99;
 }
 
