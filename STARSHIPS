@@ -31,17 +31,14 @@ attribute:"title"
 
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#fff"/>
+<meta name="color:Background" content="#ffffff"/>
 <meta name="color:player background" content="#fff"/>
-<meta name="color:Gradient 1" content="#444444"/> 
-<meta name="color:Gradient 2" content="#444444"/> 
+<meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
+<meta name="color:ask Gradient 2" content="#222222"/> 
 <meta name="color:Accent" content="#444444"/> 
-<meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#444444" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#444444" />
-<meta name="color:ask box background" content="#444444"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#444444"/>
  
@@ -727,7 +724,7 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {
-    background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.05) 100%);
+    background: linear-gradient(135deg, {color:Ask Gradient 1} 0%, rgba({RGBcolor:Ask Gradient 2},0.05) 100%);
     margin: 12px 0;
     padding: 20px;
     color: {color:asker text};
