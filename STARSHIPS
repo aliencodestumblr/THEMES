@@ -433,22 +433,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* a bit wider to account for border */
+  width: 12px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff; /* matches page background */
+  background:{color:background}; 
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #888888, #cccccc); /* gray → light gray */
+  background: linear-gradient(to bottom, #888888, #cccccc);
   border-radius: 2px;
-  border: 2px solid #ffffff; /* white border creates spacing effect */
+  border: 2px solid {color:background}; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #777777, #bbbbbb); /* darker on hover */
+  background: linear-gradient(to bottom, #777777, #bbbbbb); 
 }
 /* end scrollbar */
 
@@ -573,7 +573,6 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: auto !important;
   }
 }
-
 
 /* end notes */
 
@@ -1014,13 +1013,13 @@ a.tumblr_blog {
 #sidebar {
   position: fixed;
   width: 100%;
-  max-width: 208px;              /* was 232px */
-  padding: 10px;                 /* slightly tighter */
+  max-width: 208px;             
+  padding: 10px;                
   top: 125px;
-  margin-left: -138px;           /* adjusted for narrower width */
+  margin-left: -138px;           
   display: flex;
   flex-direction: column;
-  gap: 10px;                     /* slightly reduced spacing */
+  gap: 10px;                    
   user-select: none;
   border-radius: 4px;
   box-shadow: 2px 2px 6px rgba(0,0,0,.04);
@@ -1036,7 +1035,7 @@ a.tumblr_blog {
   font-weight: 900;
   text-transform: lowercase;
   letter-spacing: 2.8px;
-  font-size: 14px;               /* slightly smaller to fit proportionally */
+  font-size: 14px;              
   line-height: 1.05;
   color: {color:Text};
   display: inline-flex;
@@ -1054,7 +1053,7 @@ a.tumblr_blog {
 /* Sidebar image — slightly smaller but still bold */
 #sidebar-image {
   display: block;
-  width: 86%;                    /* was 90% */
+  width: 86%;                  
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin: 0 auto;
@@ -1081,7 +1080,7 @@ a.tumblr_blog {
 #desc-text {
   margin: 0;
   color: {color:Text};
-  font-size: 10.1px;             /* slightly smaller */
+  font-size: 10.1px;            
   line-height: 1.55;
   opacity: .92;
   word-break: break-word;
@@ -1099,7 +1098,7 @@ a.tumblr_blog {
 #nav-links {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;                      /* slightly less spacing between links */
+  gap: 6px;                      
   width: 100%;
   font-size: 10.9px;
   text-transform: capitalize;
@@ -1111,7 +1110,7 @@ a.tumblr_blog {
   display: block;
   color: var(--nav-text);
   text-decoration: none;
-  padding: 6px 8px;              /* slightly smaller buttons */
+  padding: 6px 8px;              
   border: 1px solid var(--nav-border);
   border-radius: 6px;
   background: var(--nav-bg);
@@ -1128,7 +1127,6 @@ a.tumblr_blog {
 @media (prefers-reduced-motion: reduce){
   #nav-links a { transition: none !important; }
 }
-
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
