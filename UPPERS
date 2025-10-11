@@ -4,6 +4,7 @@
   add-ons:
     ↳ scroll to top — @fragilehelp
     ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ blog music — @glenthemes
 
   © all rights reserved
 -->
@@ -40,7 +41,7 @@ attribute:"title"
 <meta name="color:Text" content="#9a9a9a" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Gradient 1" content="#eeeeee"/> 
+<meta name="color:Gradient 1" content="#000000"/> 
 <meta name="color:Gradient 2" content="#eeeeee"/> 
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
@@ -309,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
     border:1px solid {color:borders};
     margin:130px; 
     margin-bottom:-40px; 
-    padding:11px;    
+    padding:7px;    
     opacity:1;
     transition:1s;  
 }
@@ -420,38 +421,78 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
+.posts { position: relative; }
 
-.beach{
-position:absolute;
-padding:7px;
-font-size:9.5px;
-line-height:10px;
-background-color:{color:Background};
-overflow:visible;
-text-align:right;
-opacity:1;
-padding-top:3px;
-padding-bottom:3px;
-text-transform:uppercase;
-bottom:-9px;
-width:auto;
-margin-bottom:0px;
-right:15px;
-z-index:100;
-font-weight:570;
-color:{color:Link};
--webkit-transition: all 0.4s ease-out;
--moz-transition: all 0.4s ease-out;
-transition: all 0.4s ease-out;
+/* hover cluster bottom-right */
+.permalink-hover {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 3px;
+
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 7;
 }
- 
-.beach a{
-color:{color:Link};
+
+/* reveal when hovering a post */
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
- 
-.entry:hover .beach{
-opacity:1;
- }
+
+/* button style – light mode */
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 4px;
+
+  background: rgba(255,255,255,0.9);
+  color: #444;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.08);
+
+  font: 600 8px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: .96;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+/* hover state – subtle gray lift */
+.permalink-hover a:hover {
+  background: rgba(255,255,255,1);
+  color: #111;
+  border-color: rgba(0,0,0,0.18);
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.12);
+  opacity: 1;
+}
+
+/* permalink page + mobile = always visible */
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
 
 /* end notes */
 
@@ -1059,11 +1100,13 @@ html, body { overflow-x: clip; }
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1076,11 +1119,13 @@ html, body { overflow-x: clip; }
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1104,11 +1149,13 @@ html, body { overflow-x: clip; }
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div>
@@ -1128,11 +1175,13 @@ html, body { overflow-x: clip; }
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1144,11 +1193,13 @@ html, body { overflow-x: clip; }
 <div class="answer">{Answer}</div>
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1172,11 +1223,13 @@ html, body { overflow-x: clip; }
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1191,11 +1244,13 @@ html, body { overflow-x: clip; }
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1211,11 +1266,13 @@ html, body { overflow-x: clip; }
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1232,11 +1289,13 @@ html, body { overflow-x: clip; }
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="beach">
-<a href="{Permalink}" title="{TimeAgo}"><big>{NoteCount}N</big></b></a> &middot; 
-<a href="{ReblogParentURL}" title="reblogged from"><a href="{ReblogParentURL}" title="reblogged from"><i class="fa-solid fa-barcode"></i></a></a> &middot;
-<a href="{ReblogURL}" title="reblog" target="_blank"><i class="fa-regular fa-share-from-square"></i></a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
