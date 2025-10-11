@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
     width:720px;
     {block:permalinkpage}
     margin-top:120px;   
-    margin-left:-70px;  
+    margin-left:-120px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:120px; 
     width:540px;
-    margin-left:-70px; 
+    margin-left:-120px; 
     {/block:permalinkpage} 
     margin:20px; 
     padding:10px;      
@@ -1056,7 +1056,7 @@ a.tumblr_blog {
   box-shadow: 2px 2px 6px rgba(0,0,0,.04);
   overflow: visible;
   {block:permalinkpage}
-  margin-left: 560px;
+  margin-left: 520px;
   {/block:permalinkpage}
 }
 
