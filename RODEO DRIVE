@@ -1073,7 +1073,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 
 #blogtitle {
-  margin: 0 2px 6px 2px;
+  margin: 0 2px 6px 0px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1127,6 +1127,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   object-fit: cover;
   margin: 0 auto 10px auto;
   border-radius: 6px;
+  margin-bottom:20px;
   background: #191a1a;
   box-shadow:
     -4px 4px 10px rgba(0,0,0,.25),
@@ -1151,13 +1152,13 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   --nav-bg-hover: rgba(255,255,255,.06);
   --nav-border: rgba(255,255,255,.10);
   --nav-border-hover: rgba(255,255,255,.18);
-  --nav-shadow: 2px 2px 6px rgba(0,0,0,.04); /* matches your theme */
+  --nav-shadow: 2px 2px 6px rgba(0,0,0,.04); 
 }
 
 #nav-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 8px;                               /* even spacing between boxes */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 8px;                               
   width: 100%;
 }
 
@@ -1166,9 +1167,9 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   align-items: center;
   justify-content: center;
 
-  min-height: 40px;                       /* tactile button height */
+  min-height: 40px;                       
   padding: 8px 10px;
-  border-radius: 6px;                      /* keep your radius */
+  border-radius: 6px;                     
   border: 1px solid var(--nav-border);
   background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
@@ -1189,10 +1190,9 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     box-shadow .22s ease;
 }
 
-/* label handling for longer titles (2-line clamp) */
 #nav-links a .nav-label {
   display: -webkit-box;
-  -webkit-line-clamp: 2;      /* clamp to 2 lines */
+  -webkit-line-clamp: 2;   
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.15;
@@ -1204,7 +1204,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   border-color: var(--nav-border-hover);
   color: var(--nav-text-hover);
   transform: translateY(-1px);
-  box-shadow: 2px 3px 8px rgba(0,0,0,.08); /* slightly deeper on hover */
+  box-shadow: 2px 3px 8px rgba(0,0,0,.08); 
 }
 
 #nav-links a:active {
@@ -1212,17 +1212,14 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   box-shadow: inset 2px 2px 4px rgba(0,0,0,.08);
 }
 
-/* Focus ring for accessibility */
 #nav-links a:focus-visible {
   outline: 2px solid {color:Links};
   outline-offset: 2px;
 }
 
-/* Optional: collapse to single column if your sidebar ever gets narrower */
 @media (max-width: 360px){
   #nav-links { grid-template-columns: 1fr; }
 }
-
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
