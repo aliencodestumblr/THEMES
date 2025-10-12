@@ -31,18 +31,23 @@ attribute:"title"
 
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background" content="#fff"/>
 <meta name="color:player background" content="#fff"/>
-<meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
-<meta name="color:ask Gradient 2" content="#222222"/> 
+<meta name="color:Gradient 1" content="#444444"/> 
+<meta name="color:Gradient 2" content="#444444"/> 
 <meta name="color:Accent" content="#444444"/> 
+<meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#444444" />  
 <meta name="color:Links Hover" content="#444444" />
+<meta name="color:Scrollbar" content="#444444" />
+<meta name="color:ask box background" content="#444444"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#444444"/>
  
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/> 
+<meta name="if:Light Shadow" content="1"/>
+<meta name="if:Dark Shadow" content="0"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
@@ -384,7 +389,12 @@ h1, h2, h3, h4, h5, h6 {
     overflow:hidden;
     opacity:1;
     transition:1s;  
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.04);
+    {block:IfLightShadow}
+box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
 }
 
 {block:IndexPage}
@@ -434,14 +444,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background:{color:background}; 
+  background:{color:Background}; 
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #888888, #cccccc);
+  background: linear-gradient(to bottom, #888888, #cccccc); 
   border-radius: 2px;
-  border: 2px solid {color:background}; 
+  border: 2px solid {color:Background};
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -570,6 +580,7 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: auto !important;
   }
 }
+
 
 /* end notes */
 
@@ -724,7 +735,7 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1} 0%, rgba({RGBcolor:Ask Gradient 2},0.05) 100%);
+    background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.05) 100%);
     margin: 12px 0;
     padding: 20px;
     color: {color:asker text};
@@ -1006,33 +1017,35 @@ a.tumblr_blog {
     z-index:100;
 }
 
-/* ——— Compact Sidebar ——— */
 #sidebar {
   position: fixed;
   width: 100%;
-  max-width: 208px;             
-  padding: 10px;                
+  max-width: 208px;           
+  padding: 10px;           
   top: 125px;
-  margin-left: -138px;           
+  margin-left: -138px;        
   display: flex;
   flex-direction: column;
   gap: 10px;                    
   user-select: none;
   border-radius: 4px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,.04);
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
   overflow: visible;
   {block:permalinkpage}
   margin-left: -228px;
   {/block:permalinkpage}
 }
 
-/* Title */
 #blogtitle {
   margin: 0;
   font-weight: 900;
   text-transform: lowercase;
   letter-spacing: 2.8px;
-  font-size: 14px;              
+  font-size: 14px;               
   line-height: 1.05;
   color: {color:Text};
   display: inline-flex;
@@ -1047,7 +1060,6 @@ a.tumblr_blog {
   opacity: .95;
 }
 
-/* Sidebar image — slightly smaller but still bold */
 #sidebar-image {
   display: block;
   width: 86%;                  
@@ -1073,7 +1085,6 @@ a.tumblr_blog {
   transform: scale(1.02);
 }
 
-/* Description */
 #desc-text {
   margin: 0;
   color: {color:Text};
@@ -1095,7 +1106,7 @@ a.tumblr_blog {
 #nav-links {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;                      
+  gap: 6px;         
   width: 100%;
   font-size: 10.9px;
   text-transform: capitalize;
@@ -1107,7 +1118,7 @@ a.tumblr_blog {
   display: block;
   color: var(--nav-text);
   text-decoration: none;
-  padding: 6px 8px;              
+  padding: 6px 8px;          
   border: 1px solid var(--nav-border);
   border-radius: 6px;
   background: var(--nav-bg);
@@ -1124,6 +1135,7 @@ a.tumblr_blog {
 @media (prefers-reduced-motion: reduce){
   #nav-links a { transition: none !important; }
 }
+
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
