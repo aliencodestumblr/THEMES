@@ -42,7 +42,9 @@ attribute:"title"
 <meta name="color:Ask Gradient 2" content="#444444"/> 
 <meta name="color:tooltip text" content="#444444"/>
  
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/>  
+<meta name="if:Light Shadow" content="1"/>
+<meta name="if:Dark Shadow" content="0"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
@@ -384,7 +386,12 @@ h1, h2, h3, h4, h5, h6 {
     overflow:hidden;
     opacity:1;
     transition:1s;  
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.04);
+    {block:IfLightShadow}
+box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
 }
 
 {block:IndexPage}
@@ -1053,7 +1060,12 @@ a.tumblr_blog {
   gap: 10px;                    
   user-select: none;
   border-radius: 4px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,.04);
+  {block:IfLightShadow}
+box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
   overflow: visible;
   {block:permalinkpage}
   margin-left: 520px;
