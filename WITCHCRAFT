@@ -38,7 +38,6 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:custom scrollbar" content="1">
 
 <meta name="text:Link One Title" content=""/>
 <meta name="text:Link One" content=""/>
@@ -92,6 +91,10 @@ $("#panel").slideToggle("fast");
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
 :root{
   --sp-scale: 0.80;   
   --sp-base-height: 152px;  
@@ -296,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
     width:810px;
     {block:permalinkpage}
      margin-top:0px;   
-   margin-left:-110px;   
+   margin-left:16px;   
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -308,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:0px;   
     width:500px; 
-    margin-left:-110px;  
+    margin-left:16px;  
     {/block:permalinkpage} 
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
     -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
@@ -678,24 +681,18 @@ ol.notes li.note img.avatar {
     font-family:"Rajdhani", sans-serif;
 }
 
-.ask:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba({RGBcolor:Shadow}, 0.12);
-    background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.1) 100%);
-}
-
 .asker {
-    margin: 0 0 12px 0;
+    margin: 0 0 -6px 0;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: {color:links};
+    color: {color:text};
     opacity: 0.85;
 }
 
 .answer {
-    margin: 0;
+    margin: -8px 0 0 0;
     padding-left: 0px;
     color: {color:text};
     line-height: 1.7;
@@ -903,7 +900,7 @@ a.tumblr_blog {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:tooltip text}; 
+  color: #fff; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
@@ -924,14 +921,17 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
+#ltop {
+  color: {color:text};
+}
+
+
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
+    bottom:30px;
+    right:10px; 
     font-size:20px; 
-    letter-spacing:0px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -948,13 +948,13 @@ a.tumblr_blog {
   top: 140px;
   background: {color:details};
   padding: 3px;
-  z-index: 99999999999;
+  z-index: 9999;
   margin-left: 723px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
   {block:permalinkpage}
-  margin-left: 440px;
+  margin-left: 568px;
   {/block:permalinkpage}
 }
 
@@ -1053,8 +1053,12 @@ return false;
 });
 </script>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
 
@@ -1075,7 +1079,6 @@ return false;
     {block:IfLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:IfLinkThreeTitle}
     {block:IfLinkFourTitle}<a href="{text:Link Four}">{text:Link Four Title}</a>{/block:IfLinkFourTitle}
     {block:IfLinkFiveTitle}<a href="{text:Link Five}">{text:Link Five Title}</a>{/block:IfLinkFiveTitle}
-    {block:HasPages}{block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
   </div>
 
   <div class="sidebar-desc">
