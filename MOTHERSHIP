@@ -965,7 +965,7 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    background:{color:details};
+    background:{color:background};
     bottom: 20px;
     right: 20px; 
     width: 45px;
