@@ -427,7 +427,7 @@ background-color:{color:Background};
 /* end pagination */
 
 /* notes */ 
-  
+
 .posts { position: relative; }
 
 /* container */
@@ -451,7 +451,6 @@ background-color:{color:Background};
   pointer-events: auto;
 }
 
-/* shared button style */
 .permalink-hover a {
   display: inline-flex;
   align-items: center;
@@ -474,13 +473,11 @@ background-color:{color:Background};
   transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
 
-/* hover */
 .permalink-hover a:hover {
   color: #fff;
   box-shadow: 0 0 8px rgba(255,255,255,.15);
 }
 
-/* svg icons */
 .permalink-hover svg {
   width: 10px;
   height: 10px;
@@ -490,7 +487,6 @@ background-color:{color:Background};
   pointer-events: none;
 }
 
-/* link + note count combined button */
 .permalink-hover a.linkcount {
   display: inline-flex;
   align-items: center;
@@ -499,12 +495,10 @@ background-color:{color:Background};
   padding: 0 7px;
 }
 
-/* make note number align better */
 .permalink-hover a.linkcount span {
   transform: translateY(0.5px);
 }
 
-/* always visible on permalink page */
 {block:PermalinkPage}
 .permalink-hover {
   opacity: 1 !important;
@@ -513,7 +507,6 @@ background-color:{color:Background};
 }
 {/block:PermalinkPage}
 
-/* mobile fallback */
 @media (hover: none) {
   .permalink-hover {
     opacity: 1 !important;
@@ -527,7 +520,7 @@ background-color:{color:Background};
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:10px;  
+    margin-left:4px;  
     margin-bottom:100px;
     width:500px;
     height:auto; 
@@ -934,14 +927,16 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
+#ltop {
+  color: {color:text};
+}
+
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:20px; 
-    letter-spacing:0px; 
+    bottom:30px;
+    right:20px; 
+    font-size:30px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -1063,8 +1058,12 @@ return false;
 });
 </script>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="21" height="21">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
 
@@ -1113,16 +1112,7 @@ return false;
     <span>{NoteCount}</span>
   </a>
 
-  <!-- 2) middle icon -->
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-  </a>
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
   <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
@@ -1149,6 +1139,7 @@ return false;
 {/block:Source} 
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1158,27 +1149,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1202,7 +1188,9 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1210,27 +1198,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div>
@@ -1250,6 +1233,7 @@ return false;
 {/block:Description}  
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1259,27 +1243,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1291,6 +1270,7 @@ return false;
 <div class="answer">{Answer}</div>
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1300,27 +1280,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1344,6 +1319,7 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1353,27 +1329,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1388,6 +1359,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1397,27 +1369,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1433,6 +1400,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1442,27 +1410,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1479,6 +1442,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
+  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1488,27 +1452,22 @@ return false;
     </svg>
     <span>{NoteCount}</span>
   </a>
-  <a href="{Permalink}" title="{TimeAgo}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 5v6a3 3 0 0 0 3 3h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="15" cy="14" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <circle cx="18" cy="5" r="2" stroke="currentColor" stroke-width="1.6" fill="none" />
-      <path d="M8 5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
   </a>
-<a href="{ReblogURL}" title="Reblog post">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path
-      d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-      stroke="currentColor"
-      stroke-width="1.6"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </svg>
-</a>
 </div>
 {/block:IndexPage}
 </div> 
