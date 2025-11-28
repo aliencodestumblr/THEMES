@@ -341,23 +341,21 @@ h1, h2, h3, h4, h5, h6 {
     {block:ifnotshowsidebarimage}
     top:-150px;
     {/block:ifnotshowsidebarimage}
-
     margin-top:320px; 
-    margin-bottom:50px;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    transition:.5s;
-
+    margin-left:8px;
+    margin-right:0px;
+    width: calc(100% - 0px); 
+    max-width:none;
     {block:permalinkpage}
     margin-top:355px;   
     width:540px;
-    max-width:540px;
     margin-left:auto;
     margin-right:auto;
     {/block:permalinkpage}
+    margin-bottom:50px;
+    transition:.5s;
 }
+
 
 .posts {  
     width:{select:Post Columns};
@@ -383,6 +381,7 @@ h1, h2, h3, h4, h5, h6 {
    z-index:-1;
 }
 {/block:IndexPage}
+
 
 .posts img {
     width:100%;    
@@ -965,21 +964,13 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    background:{color:background};
-    bottom: 20px;
-    right: 20px; 
+    bottom: 25px;
+    right: 25px; 
     width: 45px;
     height: 45px;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: {color:text};
-    line-height: 55px; 
-    text-align: center;
     display: none;   
     transition: 1s;
     z-index: 100;
-    border-radius:4px;
-    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 
 .sidebar {
@@ -1123,13 +1114,8 @@ return false;
 </script>
 
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
-<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
-     fill="none" viewBox="0 0 24 24" 
-     stroke-width="2.25" stroke="currentColor" 
-     width="18" height="18">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-</svg>
+<a href="javascript:;" id="ltop">
+<img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
 
 </head>
@@ -1585,74 +1571,86 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 <script>
 $(document).ready(function(){
-$('.photo-slideshow').pxuPhotoset({
-lightbox: true,
-rounded: false,
-gutter: '1px',
-photoset: '.photo-slideshow',
-photoWrap: '.photo-data',
-photo: '.pxu-photo'
-});
-$(function(){ $('.posts').unnest({ 
-yourCaption:".caption",
-wrapName:".tumblr_parent",
-newCaptionUsername:true,
-originalPostCaptionUsername:true, 
-tumblrAvatars:false,  
-tumblrAvatarsName:".tumblr_avatar",  
-usernameColon:false 
-});}) 
-{block:IndexPage}
-var $container = $('#posts');
-$container.masonry({
-  itemSelector: '.posts',
-  isFitWidth: true
-});
-$container.imagesLoaded(function(){
-$container.masonry();
-$container.find('.posts').animate({ opacity: 1, zIndex: 1 });
-}); 
-$container.infinitescroll({
-itemSelector: '.posts',
-navSelector: '#pagination',
-nextSelector: '#next',
-loadingImg: '',
-loadingText: '<em></em>',
-bufferPx: 1000
-},
-function(newElements) {
-var $newElems = $( newElements ).css({ opacity: 0 });
-$newElems.unnest({
-yourCaption:".caption",
-wrapName:".tumblr_parent",
-newCaptionUsername:true,
-originalPostCaptionUsername:true, 
-tumblrAvatars:false,
-tumblrAvatarsName:".tumblr_avatar",  
-usernameColon:false });
-var $newElemsIDs = $newElems.map(function(){
-return this.id;
-}).get();
-Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-var $newElems = $( newElements );
-$newElems.find('.photo-slideshow').pxuPhotoset({
-lightbox: true,
-rounded: false,
-gutter: '1px',
-photoset: '.photo-slideshow',
-photoWrap: '.photo-data',
-photo: '.pxu-photo'
-},
-function(){
-$container.masonry();
-});
-$newElems.imagesLoaded(function(){
-$container.masonry( 'appended', $newElems );
-$newElems.animate({ opacity: 1, zIndex: 1 });
-resizeVideos();
-});
-}); 
-{/block:IndexPage}
+  $('.photo-slideshow').pxuPhotoset({
+    lightbox: true,
+    rounded: false,
+    gutter: '1px',
+    photoset: '.photo-slideshow',
+    photoWrap: '.photo-data',
+    photo: '.pxu-photo'
+  });
+
+  $(function(){ 
+    $('.posts').unnest({ 
+      yourCaption:".caption",
+      wrapName:".tumblr_parent",
+      newCaptionUsername:true,
+      originalPostCaptionUsername:true, 
+      tumblrAvatars:false,  
+      tumblrAvatarsName:".tumblr_avatar",  
+      usernameColon:false 
+    });
+  });
+
+  {block:IndexPage}
+  var $container = $('#posts');
+
+  // ORIGINAL Masonry init
+  $container.masonry({ itemSelector: '.posts' });
+
+  $container.imagesLoaded(function(){
+    $container.masonry();
+    $container.find('.posts').animate({ opacity: 1, zIndex: 1 });
+  }); 
+
+  $container.infinitescroll({
+      itemSelector: '.posts',
+      navSelector: '#pagination',
+      nextSelector: '#next',
+      loadingImg: '',
+      loadingText: '<em></em>',
+      bufferPx: 1000
+    },
+    function(newElements) {
+      var $newElems = $( newElements ).css({ opacity: 0 });
+
+      $newElems.unnest({
+        yourCaption:".caption",
+        wrapName:".tumblr_parent",
+        newCaptionUsername:true,
+        originalPostCaptionUsername:true, 
+        tumblrAvatars:false,
+        tumblrAvatarsName:".tumblr_avatar",  
+        usernameColon:false 
+      });
+
+      var $newElemsIDs = $newElems.map(function(){
+        return this.id;
+      }).get();
+      Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+
+      var $newElems = $( newElements );
+      $newElems.find('.photo-slideshow').pxuPhotoset({
+          lightbox: true,
+          rounded: false,
+          gutter: '1px',
+          photoset: '.photo-slideshow',
+          photoWrap: '.photo-data',
+          photo: '.pxu-photo'
+        },
+        function(){
+          $container.masonry();
+        }
+      );
+
+      $newElems.imagesLoaded(function(){
+        $container.masonry( 'appended', $newElems );
+        $newElems.animate({ opacity: 1, zIndex: 1 });
+        resizeVideos();
+      });
+    }
+  ); 
+  {/block:IndexPage}
 });
 </script>
   
