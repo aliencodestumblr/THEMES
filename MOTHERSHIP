@@ -981,14 +981,14 @@ a.tumblr_blog {
 
   width: 100%;
   max-width: 1290px; 
-  background: {color:details};
+  background:{color:background};
   z-index: 999999;
 
   text-align: center;
 }
 
 .inf {
-  background:{color:details};  
+  background:{color:background}; 
   padding:7px;
   width: 100%; 
   margin-top:10px;
@@ -1028,7 +1028,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 
-  background: {color:details};
+  background:{color:background};
   text-align: center;
   padding: 3px;
   color: {color:text};
