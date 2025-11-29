@@ -38,8 +38,8 @@ attribute:"title"
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Scrollbar 1" content="#ffffff"/> 
-<meta name="color:Scrollbar 2" content="#ffffff"/> 
+<meta name="color:Scrollbar 1" content="#cccccc"/> 
+<meta name="color:Scrollbar 2" content="#444444"/> 
 <meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Asker Text" content="#ffffff"/>
@@ -54,7 +54,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show sidebar image" content="1">
+<meta name="if:Show sidebar image" content="">
 
 <meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
