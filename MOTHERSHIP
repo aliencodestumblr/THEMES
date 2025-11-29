@@ -47,9 +47,9 @@ attribute:"title"
 <meta name="color:Ask Gradient 2" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
 
-<meta name="select:Post Columns" content="32%" title="3 columns"/>
-<meta name="select:Post Columns" content="24%" title="4 columns"/>
-<meta name="select:Post Columns" content="19%" title="5 columns"/>
+<meta name="select:Post Columns" content="3" title="3 columns"/>
+<meta name="select:Post Columns" content="4" title="4 columns"/>
+<meta name="select:Post Columns" content="5" title="5 columns"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -339,48 +339,53 @@ h1, h2, h3, h4, h5, h6 {
     {block:ifnotshowsidebarimage}
     top:-150px;
     {/block:ifnotshowsidebarimage}
-    margin-top:320px; 
-    margin-left: 20px;
-    margin-right: 0;
-    width: calc(100% - 0);
-    max-width: 100%;
+
+    top:320px;
+
+    margin-left:0;
+    margin-right:0;
+    padding:0 5px;
+
+    width:100%;
+    max-width:none;
+    box-sizing:border-box;
 
     {block:permalinkpage}
     margin-top:355px;   
     width:540px;
+    max-width:100%;
     margin-left:auto;
     margin-right:auto;
+    padding:0;
     {/block:permalinkpage}
 
     margin-bottom:50px;
     transition:.5s;
 }
 
+
 .posts {  
-    width:{select:Post Columns};
-    {block:permalinkpage}
-    margin-top:355px;   
-    width:540px; 
-    margin-left:-20px;  
-    {/block:permalinkpage} 
-    margin:5px; 
-    padding:0px;    
-    opacity:1;
+  float: left;
+  box-sizing: border-box;
 
-    transition:
-      transform .28s ease,
-      box-shadow .28s ease,
-      filter .28s ease,
-      opacity .30s ease;
+  width: calc(100% / {select:Post Columns});
+  padding: 0 5px;
+  margin-bottom: 10px;
+  opacity: 1;
+
+  {block:permalinkpage}
+    float: none;
+    margin-top: 355px;   
+    width: 540px; 
+    margin-left: -20px;  
+  {/block:permalinkpage}
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    filter .28s ease,
+    opacity .30s ease;
 }
-
-{block:IndexPage}
-.posts {
-   opacity:0;
-   z-index:-1;
-}
-{/block:IndexPage}
-
 
 .posts img {
     width:100%;    
@@ -472,11 +477,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts { position: relative; }
 
-/* container */
 .permalink-hover {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: 3px;
+  right: 8px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1066,6 +1070,7 @@ nav a::after {
 nav a:hover::after {
   transform: scaleX(1);
 }
+
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1116,6 +1121,7 @@ return false;
 <a href="javascript:;" id="ltop">
 <img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
+
 
 </head>
 
@@ -1196,9 +1202,7 @@ return false;
 {/block:Source} 
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1209,7 +1213,6 @@ return false;
 
   <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1245,9 +1248,7 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1258,7 +1259,6 @@ return false;
 
 <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1290,7 +1290,6 @@ return false;
 {/block:Description}  
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -1303,7 +1302,6 @@ return false;
   
 <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1327,9 +1325,7 @@ return false;
 <div class="answer">{Answer}</div>
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1340,7 +1336,6 @@ return false;
 
 <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1376,9 +1371,7 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1389,7 +1382,6 @@ return false;
 
 <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1416,9 +1408,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1429,7 +1419,6 @@ return false;
 
   <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1457,9 +1446,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1470,7 +1457,6 @@ return false;
 
   <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1499,9 +1485,7 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="permalink-hover">
-  <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
       <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -1512,7 +1496,6 @@ return false;
 
   <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
 
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
   <a href="{ReblogURL}" title="Reblog post">
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
@@ -1569,7 +1552,59 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 
 <script>
-$(document).ready(function(){
+function setupNarniaGrid() {
+  var $window    = $(window);
+  var $container = $('#posts');
+  var $items     = $container.find('.posts');
+
+  if (!$container.length || !$items.length) return;
+
+  // 3 / 4 / 5 from your Tumblr select
+  var numColumns = {select:Post Columns};
+  var gutter     = 10; // px gap between columns
+
+  // total width we use for the grid = viewport minus 10px left & right
+  var viewportWidth = $window.width();
+  var available     = Math.max(0, viewportWidth - 20); // safety
+
+  // column width so N columns + gutters exactly fill "available"
+  var columnWidth = Math.floor(
+    (available - gutter * (numColumns - 1)) / numColumns
+  );
+
+  // final grid width is exactly "available"
+  var gridWidth = available;
+
+  $container.css({
+    width:  gridWidth + 'px',
+    margin: '0 auto'
+  });
+
+  $items.css({
+    width:        columnWidth + 'px',
+    marginBottom: gutter + 'px'
+  });
+
+  // save numbers for later (used when new posts load)
+  $container.data('narniaColumnWidth', columnWidth);
+  $container.data('narniaGutter', gutter);
+
+  // reset Masonry if it already exists
+  if ($container.data('masonry')) {
+    $container.masonry('destroy');
+  }
+
+  $container.masonry({
+    itemSelector:    '.posts',
+    columnWidth:     columnWidth,
+    gutter:          gutter,
+    isFitWidth:      true,
+    percentPosition: false
+  });
+}
+
+$(document).ready(function () {
+  // photosets
   $('.photo-slideshow').pxuPhotoset({
     lightbox: true,
     rounded: false,
@@ -1579,29 +1614,32 @@ $(document).ready(function(){
     photo: '.pxu-photo'
   });
 
-  $(function(){ 
-    $('.posts').unnest({ 
-      yourCaption:".caption",
-      wrapName:".tumblr_parent",
-      newCaptionUsername:true,
-      originalPostCaptionUsername:true, 
-      tumblrAvatars:false,  
-      tumblrAvatarsName:".tumblr_avatar",  
-      usernameColon:false 
-    });
+  // unnest captions
+  $('.posts').unnest({
+    yourCaption: ".caption",
+    wrapName: ".tumblr_parent",
+    newCaptionUsername: true,
+    originalPostCaptionUsername: true,
+    tumblrAvatars: false,
+    tumblrAvatarsName: ".tumblr_avatar",
+    usernameColon: false
   });
 
   {block:IndexPage}
   var $container = $('#posts');
 
-  // ORIGINAL Masonry init
-  $container.masonry({ itemSelector: '.posts' });
-
-  $container.imagesLoaded(function(){
-    $container.masonry();
+  // initial layout when images are loaded
+  $container.imagesLoaded(function () {
+    setupNarniaGrid();
     $container.find('.posts').animate({ opacity: 1, zIndex: 1 });
-  }); 
+  });
 
+  // re-layout on resize
+  $(window).on('resize', function () {
+    setupNarniaGrid();
+  });
+
+  // infinite scroll
   $container.infinitescroll({
       itemSelector: '.posts',
       navSelector: '#pagination',
@@ -1610,48 +1648,65 @@ $(document).ready(function(){
       loadingText: '<em></em>',
       bufferPx: 1000
     },
-    function(newElements) {
-      var $newElems = $( newElements ).css({ opacity: 0 });
+    function (newElements) {
+      var $newElems = $(newElements).css({ opacity: 0 });
 
+      // unnest captions for new posts
       $newElems.unnest({
-        yourCaption:".caption",
-        wrapName:".tumblr_parent",
-        newCaptionUsername:true,
-        originalPostCaptionUsername:true, 
-        tumblrAvatars:false,
-        tumblrAvatarsName:".tumblr_avatar",  
-        usernameColon:false 
+        yourCaption: ".caption",
+        wrapName: ".tumblr_parent",
+        newCaptionUsername: true,
+        originalPostCaptionUsername: true,
+        tumblrAvatars: false,
+        tumblrAvatarsName: ".tumblr_avatar",
+        usernameColon: false
       });
 
-      var $newElemsIDs = $newElems.map(function(){
+      // update like buttons
+      var $newElemsIDs = $newElems.map(function () {
         return this.id;
       }).get();
-      Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+      if (Tumblr && Tumblr.LikeButton && Tumblr.LikeButton.get_status_by_post_ids) {
+        Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+      }
 
-      var $newElems = $( newElements );
+      // photosets inside new posts
       $newElems.find('.photo-slideshow').pxuPhotoset({
-          lightbox: true,
-          rounded: false,
-          gutter: '1px',
-          photoset: '.photo-slideshow',
-          photoWrap: '.photo-data',
-          photo: '.pxu-photo'
-        },
-        function(){
-          $container.masonry();
-        }
-      );
+        lightbox: true,
+        rounded: false,
+        gutter: '1px',
+        photoset: '.photo-slideshow',
+        photoWrap: '.photo-data',
+        photo: '.pxu-photo'
+      });
 
-      $newElems.imagesLoaded(function(){
-        $container.masonry( 'appended', $newElems );
+      // once new images are loaded, append then relayout grid
+      $newElems.imagesLoaded(function () {
+        // use the same width/gutter as existing columns
+        var columnWidth = $container.data('narniaColumnWidth') || $container.find('.posts').outerWidth();
+        var gutter      = $container.data('narniaGutter') || 10;
+
+        $newElems.css({
+          width:        columnWidth + 'px',
+          marginBottom: gutter + 'px'
+        });
+
+        // append + tell Masonry about the new items (no destroy)
+        $container.append($newElems);
+        $container.masonry('appended', $newElems);
+
         $newElems.animate({ opacity: 1, zIndex: 1 });
-        resizeVideos();
+
+        if (typeof resizeVideos === 'function') {
+          resizeVideos();
+        }
       });
     }
-  ); 
+  );
   {/block:IndexPage}
 });
 </script>
+
   
 {block:ifnotpagination} 
 {block:IndexPage}
