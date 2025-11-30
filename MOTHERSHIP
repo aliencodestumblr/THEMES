@@ -38,8 +38,8 @@ attribute:"title"
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Scrollbar 1" content="#cccccc"/> 
-<meta name="color:Scrollbar 2" content="#444444"/> 
+<meta name="color:Scrollbar 1" content="#ffffff"/> 
+<meta name="color:Scrollbar 2" content="#ffffff"/> 
 <meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Asker Text" content="#ffffff"/>
@@ -54,7 +54,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show sidebar image" content="">
+<meta name="if:Show sidebar image" content="1">
 
 <meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
@@ -181,7 +181,7 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:details}!important;
+    border:5px solid {color:background}!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    {block:IfNotShowSidebarImage}
+     {block:IfNotShowSidebarImage}
     top:170px;
     {/block:IfNotShowSidebarImage}
     
@@ -364,6 +364,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom:50px;
     transition:.5s;
 }
+
 
 .posts {  
   float: left;
@@ -455,7 +456,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
-    background:{color:details};
+    background:{color:background};
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -985,14 +986,13 @@ a.tumblr_blog {
 
   width: 100%;
   max-width: 1290px; 
-  background: {color:details};
+  background: {color:background};
   z-index: 999999;
 
   text-align: center;
 }
 
 .inf {
-  background:{color:details};  
   padding:7px;
   width:100%;
   margin-top:10px;
@@ -1031,8 +1031,6 @@ nav {
   width:100%;
   margin-left: auto;
   margin-right: auto;
-
-  background: {color:details};
   text-align: center;
   padding: 3px;
   color: {color:text};
