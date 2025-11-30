@@ -38,8 +38,8 @@ attribute:"title"
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Scrollbar 1" content="#ffffff"/> 
-<meta name="color:Scrollbar 2" content="#ffffff"/> 
+<meta name="color:Scrollbar 1" content="#cccccc"/> 
+<meta name="color:Scrollbar 2" content="#666666"/> 
 <meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Asker Text" content="#ffffff"/>
@@ -54,7 +54,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show sidebar image" content="1">
+<meta name="if:Show sidebar image" content="">
 
 <meta name="text:Link One Title" content="reload"/>
 <meta name="text:Link One" content="/"/>
@@ -308,7 +308,7 @@ body {
     margin-right:0px;
     color:{color:text}; 
     background-color:{color:background};
-    font:400 9px "Rajdhani", sans-serif;
+    font:400 11px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1.5px;
     text-transform:lowercase;
@@ -320,10 +320,6 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
