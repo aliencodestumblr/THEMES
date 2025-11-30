@@ -35,6 +35,7 @@ attribute:"title"
 <meta name="color:player background" content="#fff"/>
 <meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
 <meta name="color:ask Gradient 2" content="#222222"/> 
+<meta name="color:Heart Monitor" content="#d57db8"/>
 <meta name="color:Accent" content="#444444"/> 
 <meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
@@ -175,7 +176,7 @@ html, body, a, a:hover{cursor:crosshair;}
 
 .cc svg path {
     stroke: {color:text};
-    fill: none; /* make sure no fill */
+    fill: none; 
 }
 
 iframe.tmblr-iframe {
@@ -515,7 +516,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 .posts { position: relative; }
 
-/* hover cluster bottom-left */
 .permalink-hover {
   position: absolute;
   bottom: 15px;
@@ -530,14 +530,12 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   z-index: 7;
 }
 
-/* reveal when hovering a post */
 .posts:hover .permalink-hover {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* button style (slightly smaller) */
 .permalink-hover a {
   display: inline-flex;
   align-items: center;
@@ -560,7 +558,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
 }
 
-/* hover state */
 .permalink-hover a:hover {
   background: rgba(22,22,22,.9);
   color: #b0b0b0;
@@ -568,7 +565,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   opacity: 1;
 }
 
-/* permalink page + mobile = always visible */
 {block:PermalinkPage}
 .permalink-hover {
   opacity: 1 !important;
@@ -588,8 +584,8 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 /* permalink */
 .perma {  
-    margin-top:-20px;
-    margin-left:25px;  
+    margin-top:-10px;
+    margin-left:15px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -1179,6 +1175,61 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 {/block:IfLightNavigation}
 
+:root{
+  --ecg-pink:{color:Heart Monitor};
+  --ecg-pink-ink:{color:Heart Monitor};
+  --ecg-height: 18px;   
+  --ecg-gap: 0px;
+  --ecg-window: 110px;
+  --ecg-speed: 3.8s;    
+}
+
+.ecg-divider{
+  width:100%;
+  height:var(--ecg-height);
+  margin:calc(var(--ecg-gap) + -6px) 0 var(--ecg-gap) 0;
+  user-select:none; -webkit-user-drag:none; pointer-events:none;
+  opacity:.98;
+}
+
+.ecg{ width:100%; height:100%; display:block; }
+
+.ecg-grid path{
+  stroke:url(#grid-stroke);
+  stroke-width:1;
+  shape-rendering:crispEdges;
+  opacity:.25;
+}
+
+.ecg-trace--base{
+  fill:none;
+  stroke:transparent;
+  stroke-width:2.1;
+}
+.ecg-trace--masked{
+  fill:none;
+  stroke:var(--ecg-pink);
+  stroke-width:2.1;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 0 3px rgba(255,79,163,.45));
+}
+
+#sidebar:hover .ecg-trace--masked{ stroke:var(--ecg-pink-ink); }
+
+.ecg-scan-rect{
+  width:110px; height:60px;
+  transform:translateX(-120px);
+  animation:ecg-scan var(--ecg-speed) linear infinite;
+  fill:url(#scan-fade);
+}
+
+@keyframes ecg-scan{ to { transform:translateX(600px); } }
+
+@media (prefers-reduced-motion: reduce){
+  .ecg-scan-rect{ animation:none !important; }
+}
+
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
    --Circle-Size:38px;
@@ -1339,13 +1390,11 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 </div><!--glenplayer07-->
 
 <audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
-<!----end music player---->
 {/block:ifshowmusicplayer} 
 
 <div class="entry"> 
 
 <aside id="sidebar" aria-label="Sidebar">
-  <!-- 1) Title -->
   <h1 id="blogtitle">
     {Name}
     <svg class="badge" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -1356,13 +1405,67 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     </svg>
   </h1>
 
-  <!-- 2) Image -->
+ <div class="ecg-divider" aria-hidden="true">
+    <svg class="ecg" viewBox="0 0 600 60" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="grid-stroke" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="currentColor" stop-opacity=".06"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity=".02"/>
+        </linearGradient>
+
+        <filter id="ecg-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <linearGradient id="scan-fade" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%"   stop-color="black"/>
+          <stop offset="25%"  stop-color="white"/>
+          <stop offset="75%"  stop-color="white"/>
+          <stop offset="100%" stop-color="black"/>
+        </linearGradient>
+
+        <mask id="scan-mask" maskUnits="userSpaceOnUse">
+          <rect class="ecg-scan-rect" x="-120" y="0"/>
+        </mask>
+      </defs>
+
+      <g class="ecg-grid">
+        <path d="M0 30H600 M0 10H600 M0 50H600" />
+      </g>
+
+      <path class="ecg-trace--base"
+        d="M0,30 L60,30 L80,30
+           L95,15 L110,45 L125,30
+           L220,30 L235,30
+           L250,20 L260,40 L270,30
+           L360,30 L380,30
+           L395,10 L410,50 L425,30
+           L520,30 L540,30
+           L555,18 L570,42 L585,30
+           L600,30" />
+
+      <g mask="url(#scan-mask)">
+        <path class="ecg-trace--masked" filter="url(#ecg-glow)"
+          d="M0,30 L60,30 L80,30
+             L95,15 L110,45 L125,30
+             L220,30 L235,30
+             L250,20 L260,40 L270,30
+             L360,30 L380,30
+             L395,10 L410,50 L425,30
+             L520,30 L540,30
+             L555,18 L570,42 L585,30
+             L600,30" />
+      </g>
+    </svg>
+  </div>
+
   <img id="sidebar-image" src="{image:Sidebar}" alt="{Name} sidebar image">
 
-  <!-- 3) Description -->
+  {block:IfShowDescription}
   <p id="desc-text">{Description}</p>
+  {/block:IfShowDescription}
 
-  <!-- 4) Nav -->
   <nav id="nav-links" aria-label="Primary">
     {block:IfLink1Title}
       <a href="{text:Link 1}">{text:Link 1 Title}</a>
