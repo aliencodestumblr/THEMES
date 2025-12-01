@@ -983,7 +983,6 @@ a.tumblr_blog {
   transform: translateX(-50%);
 
   width: 100%;
-  max-width: 1290px; 
   background: {color:background};
   z-index: 999999;
 
