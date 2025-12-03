@@ -43,6 +43,9 @@ attribute:"title"
 <meta name="color:Text" content="#bbbbbb" /> 
 <meta name="color:Links" content="#bbbbbb" />  
 <meta name="color:Links Hover" content="#bbbbbb" />
+<meta name="color:Asker Text" content="#ffffff"/> 
+<meta name="color:Ask Gradient 1" content="#eeeeee"/> 
+<meta name="color:Ask Gradient 2" content="#333333"/> 
 <meta name="color:Navigation" content="#ffffff" />
 <meta name="color:Scrollbar" content="#bbbbbb" />
 <meta name="color:tooltip background" content="#000000"/>
@@ -163,16 +166,35 @@ $(document).ready(function(){
 });
 </script>
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 152px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html {cursor:crosshair;}
@@ -713,61 +735,48 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:#000;
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:#fff; 
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
-    border-top:0px solid {color:borders}
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.03);
 }
 /* end asks */
 
@@ -1435,11 +1444,9 @@ return false;
 <div class="cgrey"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/3iznkyivh/minigray.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/crtnkyiv4/windowgray.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/7J9nkyiuk/closegray.png"/></a></div>
 <div class="cwhite"><a href="{permalink}" title="{timeago}"><img src="https://static.tumblr.com/sas2ex2/kETnkyiwv/miniwhite.png"/></a><a href="{permalink}" title="{notecountwithlabel}"><img src="https://static.tumblr.com/sas2ex2/shsnkyiwm/windowwhite.png"/></a><a href="{ReblogURL}" target="_blank" title="reblog"><img src="https://static.tumblr.com/sas2ex2/skAnkyiw0/closewhite.png"/></a></div></div>
 {/block:indexpage}
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 </div> 
 {/block:answer}
 
