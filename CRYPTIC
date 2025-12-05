@@ -35,7 +35,7 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Header Text" content="#FFFFFF"/>
-<meta name="color:Header Background" content="#292929"/>
+<meta name="color:Header Background" content="#000000"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -55,13 +55,10 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show sidebar image" content="">
 <meta name="if:Show Blog Title" content="1"/>
 <meta name="if:Drop Down Ask Box" content="1"/>
-<meta name="if:Header Fixed" content="0"/>
-<meta name="if:Link Dividers A" content="0"/>
-<meta name="if:Link Dividers B" content="0"/>
-<meta name="if:Link Dividers C" content="0"/>
+<meta name="if:Header Fixed" content="1"/>
+<meta name="if:Light Post Hovers" content="1">
 
 <meta name="text:Ask Title" content="Message"/>
 <meta name="text:Link One" content=""/>
@@ -88,7 +85,7 @@ attribute:"title"
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script> 
-$(document).readyy(function(){
+$(document).ready(function(){
 $("#flip").click(function(){
 $("#panel").slideToggle("fast");
 });
@@ -121,6 +118,7 @@ $("#panel").slideToggle("fast");
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
 <style type="text/css">
+
 body { overflow-x: hidden; }
 
 :root{
@@ -163,9 +161,9 @@ html, body, a, a:hover{cursor:crosshair;}
      
 iframe.tmblr-iframe {
     position:fixed!important;
-    z-index:99999999!important;
-    top:5px;!important;
-    right:0!important;
+    z-index:9999999999999999999999999999!important;
+    top: 5px !important;
+    right: 0 !important;
     {block:IfDarkTumblrControl}
     filter:invert(1);
     {/block:IfDarkTumblrControl}
@@ -427,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
+::-webkit-scrollbar {width:0px;height:0px;}
 ::-webkit-scrollbar-thumb {
     border:0px solid {color:background};
     background-color:{color:scrollbar};}
@@ -495,6 +493,94 @@ h1, h2, h3, h4, h5, h6 {
   height: 18px;
   padding: 0 6px;
   border-radius: 3px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  text-decoration: none;
+  font: 700 8.5px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  opacity: .95;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.permalink-hover a:hover {
+  color: #000;
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
+}
+
+.permalink-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
+
+.permalink-hover a.linkcount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  padding: 0 7px;
+}
+
+.permalink-hover a.linkcount span {
+  transform: translateY(0.5px);
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
+
+{/block:IfLightPostHovers}
+
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 3px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9;
+}
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
   background: rgba(0,0,0,.65);
   border: 1px solid rgba(255,255,255,.08);
   backdrop-filter: blur(4px);
@@ -508,11 +594,26 @@ h1, h2, h3, h4, h5, h6 {
     inset 0 0 4px rgba(255,255,255,.04),
     0 0 3px rgba(0,0,0,.35);
   transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  {block:IfLightPostHovers}
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+  {/block:IfLightPostHovers}
 }
 
 .permalink-hover a:hover {
   color: #fff;
   box-shadow: 0 0 8px rgba(255,255,255,.15);
+  {block:IfLightPostHovers}
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
+  color: {color:links};
+  {/block:IfLightPostHovers}
 }
 
 .permalink-hover svg {
@@ -700,56 +801,6 @@ ol.notes li.note img.avatar {
     text-transform:lowercase;
 }
 /* end audios */ 
-
-
-/* asks */
-
-.ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color: {color:asker text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
-}
-
-.asker {
-    margin: 0 0 -6px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:text};
-    opacity: 0.85;
-}
-
-.answer {
-    margin: -8px 0 0 0;
-    padding-left: 0px;
-    color: {color:text};
-    line-height: 1.7;
-    font-size: 10.5px;
-}
-
-.answer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.answer img:hover {
-    transform: scale(1.03);
-}
-
-/* end asks */
-
 
 /* quote */
 .quote {    
@@ -967,6 +1018,21 @@ a.tumblr_blog {
     z-index: 100;
 }
 
+#top{    
+{block:ifHeaderFixed}position:fixed;{/block:ifHeaderFixed}
+{block:ifnotHeaderFixed}position:absolute;{/block:ifnotHeaderFixed}
+top:0px;
+width:100%;
+left:0px;
+text-align:left;
+padding:10px;
+padding-right:10px;
+padding: 10px 15px 10px 15px;
+background-color:{color:Header Background};
+z-index:999999999999999999999999999999;-webkit-transition: all 0.4s linear;
+-webkit-transition: all 0.4s linear;
+-moz-transition: all 0.4s linear;}
+
 .blogtitle{
   font-size:30px;
   letter-spacing:1px;
@@ -979,7 +1045,6 @@ a.tumblr_blog {
   vertical-align:middle;
 }
 
- 
 .blogtitle a{color:{color:Blog Title};text-transfrom:uppercase;}
 
 .title-icon{
@@ -995,22 +1060,6 @@ a.tumblr_blog {
   border-radius:4px;
   display:block;
 }
-
-
-#top{    
-{block:ifHeaderFixed}position:fixed;{/block:ifHeaderFixed}
-{block:ifnotHeaderFixed}position:absolute;{/block:ifnotHeaderFixed}
-top:0px;
-width:100%;
-left:0px;
-text-align:left;
-padding:10px;
-padding-right:10px;
-padding: 10px 15px 10px 15px;
-background-color:{color:Header Background};
-z-index:999999999999999999999999999999;-webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;}
 
 #navback{
 opacity:.8;
@@ -1032,11 +1081,11 @@ font-size:11px;
 line-height:0px;
 position:absolute;
 text-transform:uppercase;
-letter-spacing:1px;
+letter-spacing:0px;
 text-align:left;}
 
 .nav a{
-padding:1px;
+padding:0px;
 border-top:2px solid transparent;
 color:{color:header text};
 margin-left:10px;
@@ -1054,9 +1103,6 @@ border-top:2px solid {color:Header Link};
 -moz-transition: all 0s linear;
 transition: all 0s linear;
 }
-
-.misc_title{text-align:center;color:{color:header text};font-weight:300;text-transform:uppercase;display:block;padding-top:105px;color:{color:header text};}
-.misc_title a{color:{color:header text};font-weight:500;}
 
 #plus{
 color:{color:header text};
@@ -1133,8 +1179,6 @@ line-height:14px;
 
 <script src ="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
-
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet"> 
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
@@ -1174,7 +1218,6 @@ return false;
 <img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
 
-
 </head>
 
 <body>   
@@ -1185,12 +1228,15 @@ return false;
 <div class="title-icon">
   <a href="/"><img src="{image:Header Icon}"></a>
 </div>
+
 <div class="blogtitle">
 {block:ifShowBlogTitle}<a href="/">{title}</a>{/block:ifShowBlogTitle}
 {block:ifnotShowBlogTitle}&nbsp;{/block:ifnotShowBlogTitle}
 </div>
+
 <div class="description">
-<div style="padding-right:5%;">{description}</div></div>
+<div style="padding-right:5%;">{description}</div>
+</div>
 
 <div class="message">
 <!-- <p><div class="asktitle"><a href="/ask">{AskLabel}</a></p></a></div> -->
@@ -1200,6 +1246,7 @@ return false;
 <span class="ask_form">
 <b>X</b> CLOSE</span>
 </div>
+
 <span class="nav">
 <div id="plus" onclick="ShowMenu();changeText();" style="cursor:help; margin-left:0px;">+</div>
 
@@ -1208,9 +1255,7 @@ return false;
 <!--END FIRST CHILD SPACER -->
 <a href="/">Home</a>
 
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<div style="display:inline;">|</div>
 
 {block:AskEnabled}
 {block:ifDropDownAskbox}
@@ -1219,59 +1264,35 @@ return false;
 {block:ifnotDropDownAskbox}
 <a href="/ask">{text:Ask Title}</a>
 {/block:ifnotDropDownAskbox}
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<div style="display:inline;">|</div>
 {/block:AskEnabled}
 
 {block:ifLinkOneTitle}
 <a href="{text:Link One}">{text:Link One Title}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<div style="display:inline;">|</div>
 {/block:ifLinkOneTitle}
 
 {block:ifLinkTwoTitle}
 <a href="{text:Link Two}">{text:Link Two Title}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
-{/block:ifLinkTwoTitle}
+<div style="display:inline;">|</div>
 {block:ifLinkThreeTitle}
 
 <a href="{text:Link Three}">{text:Link Three Title}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<div style="display:inline;">|</div>
 {/block:ifLinkThreeTitle}
 
 {block:ifLinkFourTitle}
-<a href="{text:Link Four}">{text:Link Four Title}</a>{block:ifLinkDividersA}<div style="display:inline;">☯</div>
-{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<a href="{text:Link Four}">{text:Link Four Title}</a>
+<div style="display:inline;">|</div>
 {/block:ifLinkFourTitle}
 
 {block:ifLinkFiveTitle}
 <a href="{text:Link Five}">{text:Link Five Title}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
+<div style="display:inline;">|</div>
 {/block:ifLinkFiveTitle}
 {block:ifLinkSixTitle}
 <a href="{text:Link Six}">{text:Link Six Title}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
 {/block:ifLinkSixTitle}
-
-{block:HasPages}{block:Pages}<a href="{URL}">{Label}</a>
-{block:ifLinkDividersA}<div style="display:inline;">☯</div>{/block:ifLinkDividersA}
-{block:ifLinkDividersB}<div style="display:inline;">|</div>{/block:ifLinkDividersB}
-{block:ifLinkDividersC}<div style="display:inline;">/</div>{/block:ifLinkDividersC}
-{/block:Pages}{/block:HasPages}
-
-<a href="/archive">Archive</a>
 </div>
 </span>
 </div>
@@ -1302,7 +1323,6 @@ IsOpen="no";
 }
 }
 </script>
-
 
 <div id="posts">
 {block:posts}
@@ -1468,9 +1488,10 @@ IsOpen="no";
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
+<b>Q</b>: {Question} 
+<div style="margin-top:5px;"></div>
+{Answer} 
+<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
 {block:IndexPage} 
 <div class="permalink-hover">
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
