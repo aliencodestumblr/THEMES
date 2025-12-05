@@ -159,19 +159,20 @@ html, body, a, a:hover{cursor:crosshair;}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
+/* Force Tumblr controls iframe to sit on top and be clickable */
 iframe.tmblr-iframe {
-    position:fixed!important;
-    z-index:9999999999999999999999999999!important;
-    top: 5px !important;
-    right: 0 !important;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
-    transform:scale(0.45) rotate(0deg);
-    transform-origin:95% 0;
-    vertical-align:top right;
-    opacity:0.5;
-} 
+  position: fixed !important;
+  top: 5px !important;              
+  right: 0px !important;    
+  {block:IfDarkTumblrControl}
+  filter:invert(1);
+  {/block:IfDarkTumblrControl}
+  transform: scale(0.45) !important;
+  transform-origin: 95% 0 !important;
+  opacity: 0.95 !important;
+  pointer-events: auto !important;  
+  z-index: 2147483647 !important;  
+}
 
 .tmblr-iframe--app-cta-button {
     display: none!important;
@@ -1029,7 +1030,8 @@ padding:10px;
 padding-right:10px;
 padding: 10px 15px 10px 15px;
 background-color:{color:Header Background};
-z-index:999999999999999999999999999999;-webkit-transition: all 0.4s linear;
+z-index:100;
+-webkit-transition: all 0.4s linear;
 -webkit-transition: all 0.4s linear;
 -moz-transition: all 0.4s linear;}
 
@@ -1226,7 +1228,7 @@ return false;
 
 <div id="top">
 <div class="title-icon">
-  <a href="/"><img src="{image:Header Icon}"></a>
+<a href="/"><img src="{image:Header Icon}"></a>
 </div>
 
 <div class="blogtitle">
@@ -1253,7 +1255,7 @@ return false;
 <!--FIRST CHILD SPACER -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <!--END FIRST CHILD SPACER -->
-<a href="/">Home</a>
+<a href="/">Reload</a>
 
 <div style="display:inline;">|</div>
 
