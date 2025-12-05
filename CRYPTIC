@@ -73,10 +73,6 @@ attribute:"title"
 <meta name="text:link Five Title" content=""/>
 <meta name="text:link Six" content=""/>
 <meta name="text:link Six Title" content=""/>
-<meta name="text:link Seven" content=""/>
-<meta name="text:link Seven Title" content=""/>
-<meta name="text:link Eight" content=""/>
-<meta name="text:link Eight Title" content=""/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -343,7 +339,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    top:100px;
+    top:105px;
     
     margin-left:0;
     margin-right:0;
@@ -354,11 +350,8 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing:border-box;
 
     {block:permalinkpage}
-    margin-top:170px;
-    {block:IfShowSidebarImage}
-    margin-top:320px;  
-    {/block:IfShowSidebarImage}
-    width:540px;
+    margin-top:100px;
+    width:840px;
     max-width:100%;
     margin-left:auto;
     margin-right:auto;
@@ -369,19 +362,17 @@ h1, h2, h3, h4, h5, h6 {
     transition:.5s;
 }
 
-
 .posts {  
   float: left;
   box-sizing: border-box;
 
   width: calc(100% / {select:Post Columns});
-  padding: 0 5px;
-  margin-bottom: 10px;
+  padding: 0 15px 20px;
   opacity: 1;
 
   {block:permalinkpage}
     float: none;
-    width: 540px; 
+    width: 840px; 
     margin-left: 0px; 
   {/block:permalinkpage}
 
@@ -390,6 +381,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow .28s ease,
     filter .28s ease,
     opacity .30s ease;
+    
+    margin-bottom:15px;
 }
 
 .posts img {
@@ -469,8 +462,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .permalink-hover {
   position: absolute;
-  bottom: 3px;
-  right: 8px;
+  bottom: 23px;
+  right: 18px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -557,8 +550,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .permalink-hover {
   position: absolute;
-  bottom: 3px;
-  right: 8px;
+  bottom: 23px;
+  right: 18px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -659,7 +652,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:0px;  
+    margin-left:10px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
