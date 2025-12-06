@@ -31,7 +31,7 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Sidebar" content=""/>
+<meta name="image:Header Icon" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
@@ -54,6 +54,8 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Left Header" content="">
+<meta name="if:Fixed header" content="">
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Light Icon Shadow" content="">
 
@@ -1021,9 +1023,12 @@ a.tumblr_blog {
     z-index: 100;
 }
 
-.sidebar {
+.header {
   position: absolute;
-  top: 10px;
+  {block:IfFixedHeader}
+  position: fixed;
+  {block:IfFixedHeader}
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -1034,12 +1039,22 @@ a.tumblr_blog {
 
 .header-wrap {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 22px;
   margin-top: 20px;
   width: 100%;
+  padding-bottom: 45px;
+  justify-content: center;
 }
+
+{block:IfLeftHeader}
+.header-wrap {
+  justify-content: flex-start;
+  padding-left: 31px;
+}
+{/block:IfLeftHeader}
+
+
 
 .header-icon {
   width: 190px;
@@ -1082,7 +1097,7 @@ a.tumblr_blog {
   letter-spacing: 3.5px;
 }
 
-.inf {
+.info {
   padding:3px;
   width:100%;
   font-family:"Rajdhani", sans-serif;
@@ -1193,17 +1208,17 @@ return false;
 <body>   
 
 <div class="entry">
-<div class="sidebar">
+<div class="header">
 
   <div class="header-wrap">
 
-      <img src="{image:Sidebar}" class="header-icon" />
+      <img src="{image:Header Icon}" style="margin-top:10px;" class="header-icon" />
 
     <div class="header-text">
 
       <div class="title">{Title}</div>
 
-      <div class="inf">{Description}</div>
+      <div class="info">{Description}</div>
 
       <nav class="cl-effect-1">
         {block:IfLinkOneTitle}<a href="{text:Link One}" data-text="Your Link Text">{text:Link One Title}</a>{/block:IfLinkOneTitle}
