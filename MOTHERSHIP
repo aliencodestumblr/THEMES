@@ -1235,13 +1235,13 @@ return false;
 <br>
 
 <center>
-  {block:IfShowSidebarImage}
+  {block:IfShowHeaderIcon}
     <img src="{image:Header Icon}" style="margin-top:10px;width:190px;border-radius:100%;" />
-  {/block:IfShowSidebarImage}
+  {/block:IfShowHeaderIcon}
 
-  {block:IfNotShowSidebarImage}
+  {block:IfNotShowHeaderIcon}
     <div class="title">{Title}</div>
-  {/block:IfNotShowSidebarImage}
+  {/block:IfNotShowHeaderIcon}
 </center>
 
 <br>
