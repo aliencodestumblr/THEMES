@@ -334,13 +334,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-     {block:IfNotShowSidebarImage}
+     {block:IfNotShowHeaderIcon}
     top:170px;
-    {/block:IfNotShowSidebarImage}
+    {/block:IfNotShowHeaderIcon}
     
-    {block:IfShowSidebarImage}
+    {block:IfShowHeaderIcon}
     top:320px;
-    {block:IfShowSidebarImage}
+    {/block:IfShowHeaderIcon}
     
     margin-left:0;
     margin-right:0;
@@ -1082,12 +1082,13 @@ a.tumblr_blog {
 }
 
 .header {
-   position: absolute;
+  position: absolute;
   {block:IfFixedHeader}
   position: fixed;
   {block:IfFixedHeader}
   top: 0px;
   left: 50%;
+  padding-bottom:10px;
   transform: translateX(-50%);
 
   width: 100%;
