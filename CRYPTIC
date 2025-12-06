@@ -1324,9 +1324,9 @@ IsOpen="no";
 <div class="posts">
 
 {block:Text}    
-<div class="caption">{Body}</div>
+<div class="caption">{Body}</div> 
 {block:IndexPage} 
-<div class="permalink-hover">
+<div class="permalink-hover"> 
   <!-- 1) link + note count -->
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
     <!-- simple chain -->
@@ -1483,9 +1483,13 @@ IsOpen="no";
 {/block:Link} 
 
 {block:Answer}      
-<b>Q</b>: {Question} 
+<div style="display:flex; gap:6px;">
+  <b>Q:</b>
+  <span>{Question}</span>
+</div>
+
 <div style="margin-top:5px;"></div>
-{Answer} 
+{Answer}
 <div style="margin-top:5px;"><i>asked by {Asker}</i></div>
 {block:IndexPage} 
 <div class="permalink-hover">
