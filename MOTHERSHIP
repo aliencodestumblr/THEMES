@@ -352,9 +352,9 @@ h1, h2, h3, h4, h5, h6 {
 
     {block:permalinkpage}
     margin-top:170px;
-    {block:IfShowSidebarImage}
+    {block:IfShowHeaderIcon}
     margin-top:320px;  
-    {/block:IfShowSidebarImage}
+    {/block:IfShowHeaderIcon}
     width:540px;
     max-width:100%;
     margin-left:auto;
