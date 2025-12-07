@@ -1100,7 +1100,7 @@ a.tumblr_blog {
 
 .info {
   padding:7px;
-  width:100%;
+  width:auto;
   margin-top:10px;
   margin-left:auto;
   margin-right:auto;
@@ -1114,7 +1114,7 @@ a.tumblr_blog {
 .title {
   display: inline-block;
   margin-top: 10px;
-  width: 100%; 
+  width:auto;
   text-align: center;
 
   font-family: "Rajdhani", sans-serif;
@@ -1134,7 +1134,7 @@ nav {
   margin-top: 0px;
   margin-bottom: 10px;
 
-  width:100%;
+  width:auto;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -1225,8 +1225,6 @@ return false;
 <a href="javascript:;" id="ltop">
 <img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
-
-
 </head>
 
 <body>   
@@ -1258,7 +1256,6 @@ return false;
 
 <div class="info">{Description}</div>
 </div>
-
 
 <div id="posts">
 {block:posts}
@@ -1855,6 +1852,45 @@ $(document).ready(function(){
    });
 });
 </script> 
-<script>feather.replace()</script>
+<script>
+(function($){
+  function syncPostsSpacing(){
+    var $header = $('.header').first();
+    var $posts  = $('#posts').first();
+    if (!$header.length || !$posts.length) return;
+
+    var comp = window.getComputedStyle($header[0]);
+    // if header is fixed, give #posts a margin-top equal to header height; otherwise remove it
+    if (comp.position === 'fixed') {
+      var h = Math.ceil($header.outerHeight());
+      $posts.css('margin-top', h + 'px');
+    } else {
+      // leave it in normal flow if header isn't fixed
+      $posts.css('margin-top', '');
+    }
+  }
+
+  $(window).on('load resize orientationchange', function(){
+    // small delay to allow fonts/images to settle
+    setTimeout(syncPostsSpacing, 30);
+  });
+
+  // also run after images load inside header or posts (masonry)
+  $(document).ready(function(){
+    syncPostsSpacing();
+
+    // also recalc when new images finish loading
+    $('#posts').imagesLoaded ? $('#posts').imagesLoaded(function(){ syncPostsSpacing(); }) : null;
+
+    // For theme editors that toggle the Fixed header via markup (changing style blocks),
+    // we observe attribute/style changes on the header and re-run.
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(function(){ syncPostsSpacing(); });
+      obs.observe(document.querySelector('.header') || document.body, { attributes: true, childList: true, subtree: false });
+    }
+  });
+})(jQuery);
+</script>
+
 </body>
 </html>
