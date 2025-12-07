@@ -475,63 +475,44 @@ body {
 
 /* notes */ 
 
-.permalinks {
-  text-align: left;
-  border-bottom: 1px solid {color:Borders};
-  color: {color:Link};
-  letter-spacing: 1px;
-  font-size: 11px;
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+  font-size: 10.5px;
   text-transform: uppercase;
-  display: block;
-  padding: 10.5px 0;  
-  font-weight: normal; 
+  padding: 6px 0; 
 }
 
-ha {
-  float: left;
-  text-align: left;
-  padding-bottom: 0px; 
+.post-footer::before {
+  content: "";
+  position: absolute;
+  top: 50%; 
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: {color:Borders}; 
+  transform: translateY(-50%);
+  z-index: 0; 
 }
 
-na {
-  float: right;
-  text-align: right;
-  padding-bottom: 0px; 
+.left-time a,
+.right-links a {
+  position: relative;
+  background: #fff; 
+  padding: 0 6px; 
+  text-decoration: none;
+  margin-left:-6px;
+  margin-right:-6px;
+  color: {color:Link};
+  font-weight: normal;
+  z-index: 1;
 }
 
-.permalinks a { 
-    color: {color:Links}; 
-    background: #ffffff; 
-    padding: 4px; 
-     font-size: 11px;
-    display: inline-flex; 
-    align-items: center; 
-    gap: 5px; 
-    font-weight: normal;
-    }
-
-.permalink {
-  text-align: right;
-  color: {color:Links};
-  padding: 5px;
-}
-
-.permalink a {
-  color: {color:Links};
-  font-weight: normal; 
-}
-
-.permalink a:hover,
-.permalinks a:hover {
-  color: {color:Links Hover};
-}
-
-.permalinks a i {
-  font-size: 9px !important; 
-  line-height: 0;             
-  margin-top: -2px;
-  vertical-align: middle;     
-  color: inherit;
+.right-links {
+  display: inline-flex;
+  gap: 8px;
 }
 
 /* end notes */
@@ -1294,17 +1275,16 @@ a.tumblr_blog {
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-share-from-square"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div>  
@@ -1316,17 +1296,16 @@ a.tumblr_blog {
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div>  
@@ -1349,17 +1328,16 @@ a.tumblr_blog {
 </ul>
 </div>   
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1381,17 +1359,16 @@ a.tumblr_blog {
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1402,17 +1379,16 @@ a.tumblr_blog {
 <div class="ask">{Question}</div>
 <div class="answer">{Answer}</div>
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1435,17 +1411,16 @@ a.tumblr_blog {
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1459,17 +1434,16 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1484,17 +1458,16 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
@@ -1510,17 +1483,16 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalinks">
-  <ha>
-    <a href="{ReblogURL}" title="reblog post">
-      <i class="fas fa-sync-alt"></i> rblg
-    </a>
-  </ha>
-  <na>
-    <a href="{Permalink}" title="{timeago}">
-      <i class="fas fa-barcode"></i> {Notecount} N
-    </a>
-  </na>
+<div class="permalink-wrapper">
+  <div class="post-footer">
+    <div class="left-time">
+      <a href="{Permalink}">{TimeAgo}</a>
+    </div>
+    <div class="right-links">
+      <a href="{ReblogURL}">rblg</a>&nbsp;
+      <a href="{Permalink}">{NoteCount}N</a>
+    </div>
+  </div>
 </div>
 {/block:indexpage}
 </div> 
