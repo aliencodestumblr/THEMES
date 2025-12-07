@@ -1240,7 +1240,7 @@ a.tumblr_blog {
     </div>
     <div class="sidebar-text">
      <h1 class="sidebar-title">
-  everclear
+ {Name}
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
     stroke-width="1.5" stroke="currentColor" class="verified-checkmark" aria-label="Verified">
     <path stroke-linecap="round" stroke-linejoin="round" 
