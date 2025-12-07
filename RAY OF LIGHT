@@ -43,14 +43,23 @@ attribute:"title"
 <meta name="color:Title Background" content="#000000"/>
 <meta name="color:Title" content="#ffffff"/>
 <meta name="color:Links Hover" content="#888888" />
-<meta name="color:Scrollbar" content="#909ab1" />
+<meta name="color:Scrollbar 1" content="#bbc6e1"/> 
+<meta name="color:Scrollbar 2" content="#7a8bb1"/> 
 <meta name="color:Ask Gradient 1" content="#000000"/>
 <meta name="color:Ask Gradient 2" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
+<meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Light Shadow" content="1"/>
+<meta name="if:Dark Shadow" content=""/>
+
+<meta name="text:Link 1" content=""/>
+<meta name="text:Link 1 Title" content=""/>
+<meta name="text:Link 2" content=""/>
+<meta name="text:Link 2 Title" content=""/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -140,7 +149,10 @@ iframe.tmblr-iframe {
     position:fixed!important;
     z-index:99999999!important;
     top:5px;!important;
-    right:0!important;
+    right:0px;!important;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
     transform:scale(0.45) rotate(0deg);
     transform-origin:95% 0;
     vertical-align:top right;
@@ -339,10 +351,15 @@ h1, h2, h3, h4, h5, h6 {
     width:540px; 
    margin-left:-100px;  
     {/block:permalinkpage} 
-    border:1px solid {color:Borders};
     margin:15px; 
     margin-bottom:15px;
     padding:10px; 
+    {block:IfLightShadow}
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+    {/block:IfLightShadow}
+    {block:IfDarkShadow}
+    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+    {/block:IfDarkShadow}
     opacity:1;
     transition:1s;  
 }
@@ -395,17 +412,17 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-track {
   background:{color:background}; 
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #888888, #cccccc); 
-  border-radius: 1px;
+  background: linear-gradient(to bottom, {color:Scrollbar 1}, {color:Scrollbar 2}); 
+  border-radius: 2px;
   border: 2px solid {color:background}; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #777777, #bbbbbb); 
+  background: linear-gradient(to bottom, {color:Scrollbar 1}, {color:Scrollbar 2}); 
 }
 /* end scrollbar */
 
@@ -511,8 +528,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-20px;
-    margin-left:23px;  
+    margin-top:-10px;
+    margin-left:22px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -952,14 +969,16 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
+#ltop {
+  color: {color:text};
+}
+
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:17px; 
-    letter-spacing:0px; 
+    top:36px;
+    right:10px; 
+    font-size:20px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -972,7 +991,7 @@ a.tumblr_blog {
 
 #sidebar {
 margin-left:550px;
-bottom:33px;
+bottom:40px;
 position:fixed;
 z-index:999;
 text-align:center;
@@ -995,7 +1014,13 @@ margin-left:497px;
 #image {
 -webkit-filter:saturate(80%);
 -webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
-padding:10px;border:1px solid {color:borders};margin-top:10px;background-color:{color:details};
+padding:10px;margin-top:10px;background-color:{color:details};
+{block:IfLightShadow}
+box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
 }
 
 #title {
@@ -1084,8 +1109,12 @@ return false;
 });
 </script>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
 
@@ -1098,16 +1127,40 @@ return false;
 
 <div id="image"><img src="{image:sidebar}" style="width:138px" /></div>
 
-<div style="padding:10px;border:1px solid {color:borders};margin-top:10px;background-color:{color:details};">{description}</div>
+<div style="padding:10px;
+{block:IfLightShadow}
+box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
+margin-top:10px;
+background-color:{color:details};">{description}</div>
 
 <div style="text-align:center;position:fixed;margin-left:10px;margin-top:-11px;"><div class="navigation">
 
-<a href="/" title="home"><span style="padding:0px;padding-left:3px;padding-right:3px;padding-top:1px;padding-bottom:1px;">
+<a href="/" title="reload"><span style="padding:0px;padding-left:3px;padding-right:3px;padding-top:1px;padding-bottom:1px;">
 <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></span></a>
 
 <a href="/ask" title="message"><span style="padding:0px;padding-left:3px;padding-right:3px;padding-top:1px;padding-bottom:1px;"><i class="fa fa-envelope" aria-hidden="true"></i></span></a>
 
 <a href="/archive" title="archive"><span style="padding:0px;padding-left:3px;padding-right:3px;padding-top:1px;padding-bottom:1px;"><i class="fa fa-calendar-o"></i></span></a>
+
+{block:IfLink1}
+<a href="{text:Link 1}" title="{text:Link 1 Title}">
+  <span style="padding:0px;padding-left:3px;padding-right:3px;padding-top:1px;padding-bottom:1px;">
+    <i class="fa fa-plus"></i>
+  </span>
+</a>
+{/block:IfLink1}
+
+{block:IfLink2}
+<a href="{text:Link 2}" title="{text:Link 2 Title}">
+  <span style="padding:0px;padding-left:2px;padding-right:3px;padding-top:1.5px;padding-bottom:1px;">
+    <i class="fa fa-power-off"></i>
+  </span>
+</a>
+{/block:IfLink2}
 </div>
 </div></div>
 
