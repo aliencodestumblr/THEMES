@@ -333,15 +333,6 @@ body {
     -webkit-animation-name:fadeIn;animation-name:fadeIn;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
-    text-align:justify; 
-    line-height:15px;
-}
-
 .entry {   
     width:760px;    
     {block:permalinkpage}  
