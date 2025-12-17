@@ -1167,7 +1167,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   align-items: center;
   justify-content: center;
 
-  min-height: 40px;                       
+  min-height: 20px;                       
   padding: 8px 10px;
   border-radius: 6px;                     
   border: 1px solid var(--nav-border);
