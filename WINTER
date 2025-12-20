@@ -46,13 +46,15 @@ attribute:"title"
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="reload"/>
+<meta name="text:Link 1 Title" content="homepage"/>
 <meta name="text:Link 2" content="/"/>
-<meta name="text:Link 2 Title" content="inbox"/>
+<meta name="text:Link 2 Title" content="dm"/>
 <meta name="text:Link 3" content="/"/>
-<meta name="text:Link 3 Title" content="uploads"/>
+<meta name="text:Link 3 Title" content="tags"/>
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="spotify"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="uploaded"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -1641,6 +1643,7 @@ box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
       {block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title}
       {block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}
       {block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}
+       {block:IfLink5Title}<a href="{text:Link 5}">{text:Link 5 Title}</a>{/block:IfLink5Title}
     </nav>
 
     <div class="sb-desc">{Description}</div>
