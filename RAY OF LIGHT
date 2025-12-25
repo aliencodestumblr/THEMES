@@ -312,7 +312,7 @@ img:hover {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 8.5px "Rajdhani", sans-serif;
+    font:400 10px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -341,11 +341,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:25px; 
-    margin-left:-90px;  
+    margin-left:-120px;  
     width:450px;
     {block:permalinkpage}
     margin-top:25px;   
-    margin-left:-150px;  
+    margin-left:-175px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:25px; 
     width:450px; 
-    margin-left:-150px; 
+    margin-left:-175px; 
     {/block:permalinkpage} 
     {block:IfLightShadow}
 box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
@@ -1108,8 +1108,8 @@ a.tumblr_blog {
 }      
 
 #sidebar {
-margin-left:340px;
-bottom:40px;
+margin-left:300px;
+bottom:50px;
 position:fixed;
 z-index:999;
 text-align:center;
@@ -1125,11 +1125,11 @@ width:160px;
 -moz-animation:fadeIn 3s;
 -ms-animation:fadeIn 3s;
 {block:permalinkpage}
-margin-left:395px;
+margin-left:355px;
 {/block:permalinkpage}
 }
 
-#image {
+#icon {
 -webkit-filter:saturate(80%);
 -webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 padding:10px;margin-top:10px;background-color:{color:background};
@@ -1150,13 +1150,12 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
   padding: 3px 4px 3px 6px;
 
   font-family: "Rajdhani", sans-serif;
-  font-size: 8px;
+  font-size: 9.5px;
   line-height: 9px;
   color: {color:Title};
 
   background-color: {color:Background};
 
-  /* match sidebar image + description shadows */
   {block:IfLightShadow}
   box-shadow:
     -0.5px -0.5px 3px rgba(0,0,0,0.04),
@@ -1254,7 +1253,7 @@ border-bottom:1px dotted {color:links};
 <div id="sidebar">
 <div id="title">{title}</div>    
 
-<div id="image"><img src="{image:sidebar}" style="width:138px" /></div>
+<div id="icon"><img src="{image:sidebar}" style="width:138px" /></div>
 
 <div style="padding:10px;
 {block:IfLightShadow}
