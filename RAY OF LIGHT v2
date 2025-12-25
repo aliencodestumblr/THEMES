@@ -312,7 +312,7 @@ img:hover {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 8.5px "Rajdhani", sans-serif;
+    font:400 10px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -324,7 +324,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:400 9.5px "Rajdhani", sans-serif;
+    font:400 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
@@ -1128,7 +1128,7 @@ margin-left:485px;
 {/block:permalinkpage}
 }
 
-#image {
+#icon {
 -webkit-filter:saturate(80%);
 -webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 padding:10px;margin-top:10px;background-color:{color:background};
@@ -1146,10 +1146,10 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
   text-align: center;
 
   letter-spacing: 3px;
-  padding: 3px 4px 3px 6px;
+  padding: 3px 4px 3px 4px;
 
   font-family: "Rajdhani", sans-serif;
-  font-size: 8px;
+  font-size: 9.5px;
   line-height: 9px;
   color: {color:Title};
 
@@ -1170,7 +1170,6 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
 
   border-bottom: none;
 }
-
 
 .navigation a{
 text-align:center;
@@ -1253,7 +1252,7 @@ border-bottom:1px dotted {color:links};
 <div id="sidebar">
 <div id="title">{title}</div>    
 
-<div id="image"><img src="{image:sidebar}" style="width:138px" /></div>
+<div id="icon"><img src="{image:sidebar}" style="width:138px" /></div>
 
 <div style="padding:10px;
 {block:IfLightShadow}
