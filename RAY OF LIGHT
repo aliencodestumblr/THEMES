@@ -39,7 +39,6 @@ attribute:"title"
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#a17575" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Title Background" content="#000000"/>
 <meta name="color:Title" content="#ffffff"/>
 <meta name="color:Scrollbar" content="#a17575" />
 <meta name="color:Ask Gradient 1" content="#2f3336"/>
@@ -131,6 +130,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
 
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
 article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
     max-width: 100%;
     aspect-ratio: 16/9;
@@ -1306,14 +1309,8 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
         <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
-
+ 
       <span class="dash">—</span>
     </div>
   </div>
@@ -1340,13 +1337,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1385,13 +1376,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1425,14 +1410,8 @@ background-color:{color:background};">{description}</div>
       <span class="dash">—</span>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
-
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+      
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1459,13 +1438,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1504,13 +1477,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1540,13 +1507,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
@@ -1577,14 +1538,8 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
-
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
+ 
       <span class="dash">—</span>
     </div>
   </div>
@@ -1615,13 +1570,7 @@ background-color:{color:background};">{description}</div>
       <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
       <span class="dash">—</span>
 
-      {block:RebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:RebloggedFrom}
-
-      {block:NotRebloggedFrom}
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-      {/block:NotRebloggedFrom}
+ <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
 
       <span class="dash">—</span>
     </div>
