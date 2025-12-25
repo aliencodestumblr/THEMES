@@ -964,7 +964,7 @@ a.tumblr_blog {
   padding: 4px 5px 4px 6px;
   margin-top: 14px;
   border-radius: 6px;
-  background: {color:Background}; 
+  background: rgba(25, 26, 26, 0.95); 
   font-family: "Rajdhani", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
