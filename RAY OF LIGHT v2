@@ -1065,7 +1065,7 @@ a.tumblr_blog {
 
 #sidebar {
 margin-left:610px;
-bottom:40px;
+bottom:50px;
 position:fixed;
 z-index:999;
 text-align:center;
