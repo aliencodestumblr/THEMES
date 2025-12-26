@@ -1255,21 +1255,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
-        <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
- 
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1283,21 +1271,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1322,21 +1298,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>
@@ -1357,21 +1321,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-      
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1389,21 +1341,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1428,21 +1368,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date}  
 </div> 
@@ -1458,21 +1386,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1489,21 +1405,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
- 
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1521,21 +1425,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-
-  <div class="bp-bar">
-    <div class="bp-text">
-      <span class="dash">—</span>
-      {ShortMonth} {DayOfMonth},{Year}
-      <span class="dash">—</span>
-      <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a>
-      <span class="dash">—</span>
-
- <a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a>
-
-      <span class="dash">—</span>
-    </div>
-  </div>
-</div>
+<div class="bp-bar">
+<div class="bp-text">
+<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
