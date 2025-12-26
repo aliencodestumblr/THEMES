@@ -41,9 +41,6 @@ attribute:"title"
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Title" content="#ffffff"/>
 <meta name="color:Scrollbar" content="#a17575" />
-<meta name="color:Ask Gradient 1" content="#2f3336"/>
-<meta name="color:Ask Gradient 2" content="#191b1d"/>
-<meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
@@ -734,56 +731,6 @@ ol.notes li.note img.avatar {
 }
 /* end audios */ 
 
-
-/* asks */
-
-.ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color: {color:asker text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
-}
-
-.asker {
-    margin: 0 0 -6px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:text};
-    opacity: 0.85;
-}
-
-.answer {
-    margin: -8px 0 0 0;
-    padding-left: 0px;
-    color: {color:text};
-    line-height: 1.7;
-    font-size: 10.5px;
-}
-
-.answer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.answer img:hover {
-    transform: scale(1.03);
-}
-
-/* end asks */
-
-
 /* quote */
 .quote {    
     text-align:justify;
@@ -1432,9 +1379,14 @@ background-color:{color:background};">{description}</div>
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
+<div style="display:flex; gap:6px;">
+  <b>Q:</b>
+  <span>{Question}</span>
+</div>
+
+<div style="margin-top:5px;"></div>
+{Answer}
+<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
