@@ -422,8 +422,8 @@ html, body, a, a:hover{cursor:url("https://64.media.tumblr.com/6019c6f0805e909ad
 
 /* scrollbar */
 ::-webkit-scrollbar {
-    width:12px;
-    height:12px;
+    width:10px;
+    height:10px;
     background-color:{color:background};
 }
  
