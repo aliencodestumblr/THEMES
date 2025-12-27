@@ -42,7 +42,6 @@ attribute:"title"
 <meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
 <meta name="color:ask Gradient 2" content="#222222"/> 
 <meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#444444"/>
  
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Light Shadow" content="1"/>
