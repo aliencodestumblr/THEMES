@@ -181,7 +181,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2.5px !important;
     max-width:none;
 }
  
@@ -366,6 +366,7 @@ box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
 {block:IfDarkShadow}
 box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,255,0.06);
 {/block:IfDarkShadow}
+    border-radius:2px;
     padding:18px;
     margin:15px; 
     opacity:1;
@@ -388,6 +389,7 @@ html, body, a, a:hover{cursor:url("https://64.media.tumblr.com/6019c6f0805e909ad
 {/block:IndexPage}
 
 .posts img {
+    border-radius:2.5px;
     width:100%;    
     {block:permalinkpage}
     width:100%;
@@ -521,30 +523,50 @@ footer a > span > span {
   margin-top: 14px;
 }
 
+.bp-bar + .bp-bar{
+  margin-top: 0;
+}
+
+.bp-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
 .bp-bar{
   background: transparent;
   height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  box-shadow: none;
+  border-radius:2.5px;
+}
+
+.bp-wrap{
+  border-radius: 2px; 
+  overflow: hidden;   
+  box-shadow:
+    0 0 0.5px rgba(255,255,255,0.10),
+    0 1px 3px rgba(255,255,255,0.06);
 }
 
 .bp-bar + .bp-bar{
-  margin-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .bp-text{
-  font: 400 8px "Rajdhani", sans-serif;
-  letter-spacing: 2.5px;
+  font: 400 8.5px "Rajdhani", sans-serif;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
   line-height: 1;
   color: {color:text};
-  white-space: nowrap;
 }
 
 .bp-text .dash{
   opacity: .85;
-  padding: 0 6px;
+  padding: 0 0px;
 }
 
 .bp-text a{
@@ -554,29 +576,6 @@ footer a > span > span {
 
 .bp-text a:hover{
   color: {color:links};
-}
-
-.bp-bar{
-  box-shadow: none;
-}
-
-.bp-bar{
-  background: transparent;
-  height: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow:
-    0 0 0.5px rgba(255,255,255,0.10),
-    0 1px 3px rgba(255,255,255,0.06);
-
-  border-radius: 1px;
-}
-
-.bp-bar + .bp-bar{
-  margin-top: 6px;
 }
 
 /* end notes */
@@ -1086,6 +1085,7 @@ margin-left:485px;
 }
 
 #icon {
+border-radius:3px;
 -webkit-filter:saturate(80%);
 -webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 padding:10px;margin-top:10px;background-color:{color:background};
@@ -1101,7 +1101,7 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
   display: block;
   text-transform: uppercase;
   text-align: center;
-
+  border-radius:3px;
   letter-spacing: 3px;
   padding: 3px 4px 3px 4px;
 
@@ -1109,7 +1109,6 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
   font-size: 9.5px;
   line-height: 9px;
   color: {color:Title};
-
   background-color: {color:Background};
 
   /* match sidebar image + description shadows */
@@ -1209,9 +1208,9 @@ border-bottom:1px dotted {color:links};
 <div id="sidebar">
 <div id="title">{title}</div>    
 
-<div id="icon"><img src="{image:sidebar}" style="width:138px" /></div>
+<div id="icon"><img src="{image:sidebar}" style="width:138px;border-radius:3px;" /></div>
 
-<div style="padding:10px;
+<div style="border-radius:3px;padding:10px;
 {block:IfLightShadow}
 box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
 {/block:IfLightShadow}
@@ -1255,9 +1254,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1271,9 +1270,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>  
@@ -1298,9 +1297,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div>
@@ -1321,9 +1320,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1341,9 +1340,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1368,9 +1367,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date}  
 </div> 
@@ -1386,9 +1385,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1405,9 +1404,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
@@ -1425,9 +1424,9 @@ background-color:{color:background};">{description}</div>
 {block:date}
 {block:IndexPage} 
 <div class="bp-wrap">
-<div class="bp-bar">
-<div class="bp-text">
-<span class="dash">—</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
+  <div class="bp-bar">
+    <div class="bp-text">
+      <span class="dash">——</span>{ShortMonth} {DayOfMonth},{Year}<span class="dash">—–</span><a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCountWithLabel}</a><span class="dash">—</span><a href="{ReblogURL}" target="_blank" title="Reblog">reblog</a><span class="dash">—</span></div></div></div>
 {/block:IndexPage}
 {/block:date} 
 </div> 
