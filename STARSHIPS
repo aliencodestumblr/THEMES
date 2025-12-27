@@ -42,7 +42,8 @@ attribute:"title"
 <meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
 <meta name="color:ask Gradient 2" content="#222222"/> 
 <meta name="color:asker text" content="#ffffff"/>
- 
+
+<meta name="if:Dark Tumblr control" content=""/> 
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Light Shadow" content="1"/>
 <meta name="if:Dark Shadow" content="0"/>
@@ -180,7 +181,9 @@ iframe.tmblr-iframe {
   top: 18px;
   opacity: 0;
   position: fixed;
+  {block:IfDarkTumblrControl}
   filter:invert(1);
+  {/block:IfDarkTumblrControl}
   width: 0;
   padding-right: 60px;
   transform: scale(0.55); 
