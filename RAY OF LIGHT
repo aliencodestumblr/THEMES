@@ -181,7 +181,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2.5px !important;
     max-width:none;
 }
  
@@ -353,6 +353,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts {  
+    border-radius:2px;
     background:transparent;   
     width:340px;        
     {block:permalinkpage}
@@ -389,6 +390,7 @@ html, body, a, a:hover{cursor:url("https://64.media.tumblr.com/6019c6f0805e909ad
 {/block:IndexPage}
 
 .posts img {
+    border-radius:2.5px;
     width:100%;    
     {block:permalinkpage}
     width:100%;
@@ -528,6 +530,7 @@ footer a > span > span {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius:2.5px;
 }
 
 .bp-bar + .bp-bar{
@@ -573,7 +576,7 @@ footer a > span > span {
     0 0 0.5px rgba(255,255,255,0.10),
     0 1px 3px rgba(255,255,255,0.06);
 
-  border-radius: 1px;
+  border-radius:2.5px;
 }
 
 .bp-bar + .bp-bar{
@@ -1087,6 +1090,7 @@ margin-left:355px;
 }
 
 #icon {
+border-radius:3px;
 -webkit-filter:saturate(80%);
 -webkit-transition: all .9s ease-out;-moz-transition: all .9s ease-out;transition: all .9s ease-out;
 padding:10px;margin-top:10px;background-color:{color:background};
@@ -1099,6 +1103,7 @@ box-shadow: -0.5px -0.5px 3px rgba(255,255,255,0.06), 2px 2px 6px rgba(255,255,2
 }
 
 #title{
+  border-radius:3px;
   display: block;
   text-transform: uppercase;
   text-align: center;
@@ -1210,9 +1215,9 @@ border-bottom:1px dotted {color:links};
 <div id="sidebar">
 <div id="title">{title}</div>    
 
-<div id="icon"><img src="{image:sidebar}" style="width:138px" /></div>
+<div id="icon"><img src="{image:sidebar}" style="width:138px;border-radius:3px;" /></div>
 
-<div style="padding:10px;
+<div style="border-radius:3px;padding:10px;
 {block:IfLightShadow}
 box-shadow: -0.5px -0.5px 3px rgba(0,0,0,0.04), 2px 2px 6px rgba(0,0,0,0.04);
 {/block:IfLightShadow}
