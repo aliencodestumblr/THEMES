@@ -523,8 +523,8 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 .permalink-hover {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px;
+  left: 14px;
 
   display: flex;
   align-items: center;
@@ -614,8 +614,8 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 .permalink-hover {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px;
+  left: 14px;
 
   display: flex;
   align-items: center;
