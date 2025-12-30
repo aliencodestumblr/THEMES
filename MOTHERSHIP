@@ -54,7 +54,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show header icon" content="">
+<meta name="if:Header Icon" content="">
 <meta name="if:Fixed header" content="">
 <meta name="if:Light Post Hovers" content="1">
 
@@ -334,13 +334,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-     {block:IfNotShowHeaderIcon}
-    top:170px;
-    {/block:IfNotShowHeaderIcon}
+    top:150px;
     
-    {block:IfShowHeaderIcon}
+    {block:IfHeaderIcon}
     top:320px;
-    {/block:IfShowHeaderIcon}
+    {/block:IfHeaderIcon}
+     
     
     margin-left:0;
     margin-right:0;
@@ -351,10 +350,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing:border-box;
 
     {block:permalinkpage}
-    margin-top:170px;
-    {block:IfShowHeaderIcon}
-    margin-top:320px;  
-    {/block:IfShowHeaderIcon}
+    margin-top:280px;
     width:540px;
     max-width:100%;
     margin-left:auto;
@@ -815,56 +811,6 @@ ol.notes li.note img.avatar {
 }
 /* end audios */ 
 
-
-/* asks */
-
-.ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color: {color:asker text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
-}
-
-.asker {
-    margin: 0 0 -6px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:text};
-    opacity: 0.85;
-}
-
-.answer {
-    margin: -8px 0 0 0;
-    padding-left: 0px;
-    color: {color:text};
-    line-height: 1.7;
-    font-size: 10.5px;
-}
-
-.answer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.answer img:hover {
-    transform: scale(1.03);
-}
-
-/* end asks */
-
-
 /* quote */
 .quote {    
     text-align:justify;
@@ -1225,6 +1171,8 @@ return false;
 <a href="javascript:;" id="ltop">
 <img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
+
+
 </head>
 
 <body>   
@@ -1234,13 +1182,13 @@ return false;
 <br>
 
 <center>
-  {block:IfShowHeaderIcon}
+  {block:IfHeaderIcon}
     <img src="{image:Header Icon}" style="margin-top:10px;width:190px;border-radius:100%;" />
-  {/block:IfShowHeaderIcon}
+  {/block:IfHeaderIcon}
 
-  {block:IfNotShowHeaderIcon}
+  {block:IfNotHeaderIcon}
     <div class="title">{Title}</div>
-  {/block:IfNotShowHeaderIcon}
+  {/block:IfNotHeaderIcon}
 </center>
 
 <br>
@@ -1256,6 +1204,8 @@ return false;
 
 <div class="info">{Description}</div>
 </div>
+
+
 
 <div id="posts">
 {block:posts}
@@ -1421,9 +1371,14 @@ return false;
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
+<div style="display:flex; gap:6px;">
+  <b>Q:</b>
+  <span>{Question}</span>
+</div>
+
+<div style="margin-top:5px;"></div>
+{Answer}
+<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
 {block:IndexPage} 
 <div class="permalink-hover">
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
@@ -1852,45 +1807,6 @@ $(document).ready(function(){
    });
 });
 </script> 
-<script>
-(function($){
-  function syncPostsSpacing(){
-    var $header = $('.header').first();
-    var $posts  = $('#posts').first();
-    if (!$header.length || !$posts.length) return;
-
-    var comp = window.getComputedStyle($header[0]);
-    // if header is fixed, give #posts a margin-top equal to header height; otherwise remove it
-    if (comp.position === 'fixed') {
-      var h = Math.ceil($header.outerHeight());
-      $posts.css('margin-top', h + 'px');
-    } else {
-      // leave it in normal flow if header isn't fixed
-      $posts.css('margin-top', '');
-    }
-  }
-
-  $(window).on('load resize orientationchange', function(){
-    // small delay to allow fonts/images to settle
-    setTimeout(syncPostsSpacing, 30);
-  });
-
-  // also run after images load inside header or posts (masonry)
-  $(document).ready(function(){
-    syncPostsSpacing();
-
-    // also recalc when new images finish loading
-    $('#posts').imagesLoaded ? $('#posts').imagesLoaded(function(){ syncPostsSpacing(); }) : null;
-
-    // For theme editors that toggle the Fixed header via markup (changing style blocks),
-    // we observe attribute/style changes on the header and re-run.
-    if (window.MutationObserver) {
-      var obs = new MutationObserver(function(){ syncPostsSpacing(); });
-      obs.observe(document.querySelector('.header') || document.body, { attributes: true, childList: true, subtree: false });
-    }
-  });
-})(jQuery);
-</script>
-
+<script>feather.replace()</script>
 </body>
 </html>
