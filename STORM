@@ -1261,7 +1261,7 @@ box-shadow: 0 6px 16px rgba(0,0,0,.12);
   justify-content: center;
 
   width: 10px;
-  height: 10px;
+  height: 16px;
 
   font: 900 12px "Rajdhani", sans-serif;
   letter-spacing: 0;
