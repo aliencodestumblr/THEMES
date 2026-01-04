@@ -897,7 +897,7 @@ a.tumblr_blog {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:tooltip text}; 
+  color:#ffffff; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
