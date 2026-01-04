@@ -35,8 +35,12 @@ attribute:"title"
 <meta name="color:Accent" content="#a5a5a5"/> 
 <meta name="color:Text" content="#a5a5a5" /> 
 <meta name="color:Links" content="#a5a5a5" />  
+<meta name="color:Cursor Plus" content="#ffffff" />
+<meta name="color:Cursor Sparkle 1" content="#FFD2E1" />
+<meta name="color:Cursor Sparkle 2" content="#FFEBF0" />
 <meta name="color:Links Hover" content="#dcdcdc" />
-<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:Bio Background" content="#F7F7F7"/>
+<meta name="color:Asker Text" content="#ffffff"/>
 <meta name="color:Ask Gradient 1" content="#d7d7d7"/> 
 <meta name="color:Ask Gradient 2" content="#444444"/> 
 <meta name="color:tooltip text" content="#444444"/>
@@ -1190,7 +1194,7 @@ box-shadow: 0 6px 16px rgba(0,0,0,.12);
   color: {color:text};
   opacity: .92;
 
-  background: rgba(0,0,0,.035);
+  background:{color:Bio Background};
   border-radius: 6px;
 
   word-break: break-word;
@@ -1931,9 +1935,9 @@ $(document).ready(function(){
 
   // soft fairy palette (white + blush pink)
   var COLORS = [
-    "rgba(255,255,255,0.95)",   // white
-    "rgba(255,210,225,0.95)",   // light pink
-    "rgba(255,235,240,0.95)"    // very pale blush
+    "{color:Cursor Plus}",   
+    "{color:Cursor Sparkle 1}",   
+    "{color:Cursor Sparkle 2}"    
   ];
 
   function pick(arr){
