@@ -437,7 +437,7 @@ background-color:{color:Background};
   right: 4px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   opacity: 0;
   transform: translateY(3px);
   pointer-events: none;
