@@ -48,13 +48,13 @@ attribute:"title"
 <meta name="if:Pagination" content=""/>
 
 <meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="reload"/>
+<meta name="text:Link 1 Title" content="uploads"/>
 <meta name="text:Link 2" content="/"/>
-<meta name="text:Link 2 Title" content="inbox"/>
+<meta name="text:Link 2 Title" content="spotify"/>
 <meta name="text:Link 3" content="/"/>
-<meta name="text:Link 3 Title" content="uploads"/>
+<meta name="text:Link 3 Title" content="answered"/>
 <meta name="text:Link 4" content="/"/>
-<meta name="text:Link 4 Title" content="spotify"/>
+<meta name="text:Link 4 Title" content="dashboard"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
