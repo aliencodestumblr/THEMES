@@ -1,14 +1,12 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -41,10 +39,11 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Ask Gradient 1" content="#474849"/>
+<meta name="color:Ask Gradient 2" content="#aeb2b8"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Background" content="#000000"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -670,61 +669,51 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:0px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:0px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
 }
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
 /* end asks */
 
 
@@ -904,16 +893,35 @@ a.tumblr_blog {
 } 
 
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
 #ltop:link, #ltop:visited {   
@@ -1249,11 +1257,9 @@ video {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:indexpage}  
 <div class="permalinks">
   <ha>
