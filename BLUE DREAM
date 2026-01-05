@@ -52,6 +52,8 @@ attribute:"title"
 <meta name="if:Light Navigation" content="1"/>
 <meta name="if:Dark Navigation" content="0"/>
 <meta name="if:Pagination" content=""/>
+<meta name="if:Dark Post Hovers" content="0"/>
+<meta name="if:Light Post Hovers" content="1">
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content=""/>
@@ -548,24 +550,25 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   height: 18px;
   padding: 0 4px;
 
-  background: rgba(10,10,10,.85);
-  color:{color:links};
-  border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,0.9);
+  color:#999;
+  border: 1px solid rgba(0,0,0,0.1);
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.6);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.08);
 
   font: 600 8px "Rajdhani", sans-serif;
   letter-spacing: .4px;
   text-transform: uppercase;
   text-decoration: none;
-  opacity: .95;
-  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  opacity: .96;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
 .permalink-hover a:hover {
-  background: rgba(22,22,22,.9);
-  color: #b0b0b0;
-  border-color: rgba(255,255,255,.12);
+  background: rgba(255,255,255,1);
+  color: #111;
+  border-color: rgba(0,0,0,0.18);
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.12);
   opacity: 1;
 }
 
@@ -584,6 +587,100 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     pointer-events: auto !important;
   }
 }
+
+{block:IfDarkPostHovers}
+/* --- DARK PERMALINK HOVER --- */
+
+.posts { 
+  position: relative; 
+}
+
+.permalink-hover {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 3px;
+
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 7;
+}
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 4px;
+
+  background: rgba(0,0,0,0.65);
+  color: #d6d6d6;
+
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 3px;
+
+  box-shadow:
+    0 0 0 0.5px rgba(255,255,255,0.08),
+    0 4px 12px rgba(0,0,0,0.6);
+
+  font: 600 8px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  opacity: .94;
+  backdrop-filter: blur(4px);
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.permalink-hover a:hover {
+  background: rgba(20,20,20,0.9);
+  color: #ffffff;
+
+  border-color: rgba(255,255,255,0.28);
+
+  box-shadow:
+    0 0 0 0.5px rgba(255,255,255,0.18),
+    0 6px 18px rgba(0,0,0,0.75);
+
+  opacity: 1;
+}
+
+/* Always visible on permalink pages */
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+/* Touch devices */
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
+{/block:IfDarkPostHovers}
+
 /* end notes */
 
 /* permalink */
