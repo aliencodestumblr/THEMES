@@ -922,7 +922,7 @@ a.tumblr_blog {
 }
 
 .title{
-  background:{color:side background};
+  background:{color:Bar Background};
   margin-left:92px;
   margin-top:16px;
   width:185px;
@@ -1067,7 +1067,7 @@ a.tumblr_blog {
    --Progress-Border-Size:2px;
    --Progress-Empty:{color:borders};
    --Progress-Fill:{color:text};
-   --Player-Background:#ffffff;
+   --Player-Background:{color:Bar Background};
    --Play-Pause-Buttons-Size:14px;
    --Play-Pause-Buttons-Color:{color:text};
    --Player-Text-Margin:16px;
