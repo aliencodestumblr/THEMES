@@ -1085,17 +1085,6 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
-#s-m-t-tooltip::after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 14px;
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent rgba(25,26,26,0.95) transparent;
-  filter: drop-shadow(0 -2px 2px rgba(0,0,0,0.35));
-}
-
 #ltop {
   color: {color:text};
 }
