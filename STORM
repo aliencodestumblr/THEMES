@@ -1357,6 +1357,25 @@ box-shadow: 0 6px 16px rgba(0,0,0,.12);
   display: block;
 }
 
+#nav-links .nav-dd{
+  position: relative;
+}
+
+#nav-links .nav-dd:after{
+  content:"";
+  position:absolute;
+  right: 0;
+  top: 100%;
+  width: 180px;     
+  height: 12px;    
+}
+
+#nav-links .nav-dd:hover .nav-panel{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 #sidebar::after{
   content:"";
   position: absolute;
