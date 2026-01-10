@@ -42,7 +42,7 @@ attribute:"title"
 <meta name="color:Links Hover" content="#111315"/>
 <meta name="color:Search Background" content="#ffffff"/>
 <meta name="color:Accent"      content="#aaaaaa"/>
-<meta name="color:Tooltip Text"      content="#aaaaaa"/>
+<meta name="color:Tooltip Text"      content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>  
