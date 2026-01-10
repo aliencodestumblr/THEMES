@@ -33,8 +33,8 @@ attribute:"title"
 
 <meta name="image:Icon" content="" />
 
-<meta name="color:Gradient 1" content="#ffffff"/>
-<meta name="color:Gradient 2" content="#ffffff"/>
+<meta name="color:Gradient 1" content="#8f9faa"/>
+<meta name="color:Gradient 2" content="#c0ccd4"/>
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Text"        content="#3a3b3d"/>
