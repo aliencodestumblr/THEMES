@@ -159,11 +159,19 @@ html, body, a, a:hover{cursor:crosshair;}
 .cc {
     z-index: 100;
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     width: 35px;
     height: 35px;
-    border-radius:4px;
+    background:{color:background};
+    {block:IfLightShadow}
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+    {/block:IfLightShadow}
+    {block:IfDarkShadow}
+    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+    {/block:IfDarkShadow}
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,33 +181,33 @@ html, body, a, a:hover{cursor:crosshair;}
 
 .cc svg {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     overflow: visible;
 }
 
 .cc svg path {
-    stroke: {color:text};
-    fill: none; 
+    fill: {color:accent};
 }
-
+   
+     
 iframe.tmblr-iframe {
-  z-index: 999;
-  right: 13px;
-  top: 18px;
-  opacity: 0;
-  position: fixed;
-  {block:IfDarkTumblrControl}
-  filter:invert(1);
-  {/block:IfDarkTumblrControl}
-  width: 0;
-  padding-right: 60px;
-  transform: scale(0.55); 
-  -webkit-transform: scale(0.55);
-  transform-origin: 100% 0;
-  -webkit-transform-origin: 100% 0;
-  transition: opacity 0.4s ease;
-  -webkit-transition: opacity 0.4s ease;
+    z-index: 999;
+    right: 28px;
+    top: 21px;
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
+    padding-right: 60px;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
 }
 
 .tmblr-iframe:hover {
@@ -517,6 +525,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 
 /* end pagination */
+
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
+}
 
 /* notes */ 
 
@@ -1085,23 +1105,29 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
-#ltop {
-  color: {color:text};
-}
-
-#ltop:link, #ltop:visited {  
-    position:fixed;
-    top:55px;
-    right:20px; 
-    font-size:20px; 
-    color:{color:accent};  
-    text-align:center;  
-    margin:-2px;  
-    padding:2px 7px 3px 6px; 
-    border-radius:100%;
-    display:none;       
-    transition:1s;
-    z-index:100;
+#ltop:link, #ltop:visited {   
+    position: fixed;
+    background:{color:background}; 
+    bottom: 20px;
+    right: 20px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
+    display: none;   
+    transition: 1s;
+    z-index: 100;
+ {block:IfLightShadow}
+box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #sidebar {
@@ -1445,12 +1471,14 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<a href="javascript:;" id="ltop" style="color:{color:text};">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
-    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
-  </svg>
-</a>
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg></a> 
 
 </head>
 <body>  
@@ -1576,14 +1604,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   </nav>
 </aside>
 
-
-<div class="cc">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
-       viewBox="0 0 24 24" stroke-width="2.3" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
-  </svg>
-</div>
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
@@ -1695,7 +1716,10 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1933,16 +1957,44 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
