@@ -1042,93 +1042,159 @@ a.tumblr_blog {
     padding: 0; 
 }
 
-#sidebar {
-    position: fixed;
-    width: 120px;
-    top: 100px;
-    margin-left: calc(40px + -100px);
-    {block:permalinkpage}
-    margin-left: calc(-135px + -100px);
-    {/block:permalinkpage}
+#sidebar{
+  position: fixed;
+  width: 120px;
+  top: 100px;
+
+  margin-left: calc(40px + -100px);
+  {block:permalinkpage}
+  margin-left: calc(-135px + -100px);
+  {/block:permalinkpage}
+
+  z-index: 9999;
 }
 
-.image img {
-    width: 100%;
-    display: block;
+#sidebar .image img{
+  width: 100%;
+  display: block;
 }
 
-.desc {
-    line-height: 10px;
-    padding: 10px;
-    margin: 12px 0;
-    background: {color:side background};
-    border: 1px solid {color:borders};
+#sidebar .stitle{
+  margin: 10px 0 0;
+  padding: 8px 10px;
+
+  background: {color:side background};
+  border: 1px solid {color:borders};
+
+  font: 900 10px "Rajdhani", sans-serif;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: {color:text};
+  line-height: 1.1;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* ultra-tight nav layout */
-.links a {
-    margin-left:2px;
-    width: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3px;
-    margin-bottom: 2px;
-    padding: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: {color:text};
-    transition: all 0.2s ease;
-    line-height: 1.1;
+#sidebar .stitle .dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: .35;
+  flex: 0 0 6px;
 }
 
-.links a i {
-    font-size: 11px;
-    opacity: 0.7;
-    transform: translateY(1px);
-    transition: all 0.2s ease;
+#sidebar .desc{
+  margin: 10px 0;
+  padding: 10px;
+
+  background: {color:side background};
+  border: 1px solid {color:borders};
+
+  color: {color:text};
+  font: 500 10px "Rajdhani", sans-serif;
+  letter-spacing: .2px;
+  line-height: 1.25;
 }
 
-.links a:hover {
-    color: {color:links hover};
-    transform: translateX(1px);
+#sidebar .links{
+  margin-left: 2px; 
 }
 
-.links a:hover i {
-    opacity: 1;
-    color: {color:links hover};
-    transform: translateY(0);
+#sidebar .links a,
+#sidebar .links button{
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 6px;                 
+  margin: 0 0 2px;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  font: 800 10px "Rajdhani", sans-serif;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  line-height: 1.1;
+
+  color: {color:text};
+  transition: transform .2s ease, color .2s ease, opacity .2s ease;
 }
 
-.lh:hover,
-.sh:hover {
-    cursor: help;
+#sidebar .links svg{
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  display: block;
+
+  opacity: .75;
+  transform: translateY(.5px);
+  transition: transform .2s ease, opacity .2s ease;
 }
 
-.lb {
-    display: none;
-    padding-left: 8px;
-    margin-bottom: 4px;
-    border-left: 1px solid {color:borders};
+#sidebar .links a:hover,
+#sidebar .links button:hover{
+  color: {color:links hover};
+  transform: translateX(1px);
 }
 
-.lb a {
-    border: 0;
-    padding: 0;
-    margin: 6px 0;
-    display: block;
-    font-size: 10px;
-    opacity: 0.75;
-    transition: all 0.2s ease;
-    line-height: 1.1;
+#sidebar .links a:hover svg,
+#sidebar .links button:hover svg{
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.lb a:hover {
-    padding-left: 4px;
-    opacity: 1;
-    border: 0;
+#sidebar .navbtn{
+  position: relative;
 }
 
+#sidebar .navbtn .chev{
+  margin-left: auto;
+  opacity: .55;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+#sidebar .navbtn.is-open .chev{
+  transform: rotate(180deg);
+  opacity: .9;
+}
+
+#sidebar .lb{
+  display: block;               
+  overflow: hidden;
+
+  max-height: 0;                
+  opacity: 0;
+  transform: translateY(-3px);
+
+  padding-left: 8px;
+  margin: 6px 0 4px;
+  border-left: 1px solid {color:borders};
+
+  transition:
+    max-height .32s ease,
+    opacity .22s ease,
+    transform .22s ease;
+}
+
+#sidebar .lb.is-open{
+  max-height: 220px; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#sidebar .navbtn.is-open{
+  color: {color:links hover};
+}
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 :root {
@@ -1150,8 +1216,8 @@ a.tumblr_blog {
 
 #glenplayer07 {
    position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
+   bottom:0;margin-bottom:25px;
+   left:0;margin-left:25px;
    z-index:99;
 }
 
@@ -1298,7 +1364,84 @@ a.tumblr_blog {
 
 <div class="entry"> 
 
-<div id="sidebar">{block:ifImage}<div class="image"><img src="{image:sidebar}"/></div></a>{block:ifImage}<div class="desc">{description}</div><div class="links"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" height="6.5" width="6.5" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:text}" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg>&nbsp;&nbsp;INDEX</a><br><a href="/ask"><svg xmlns="http://www.w3.org/2000/svg" height="7.5" width="7.5" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:text}" d="M88.2 309.1c9.8-18.3 6.8-40.8-7.5-55.8C59.4 230.9 48 204 48 176c0-63.5 63.8-128 160-128s160 64.5 160 128s-63.8 128-160 128c-13.1 0-25.8-1.3-37.8-3.6c-10.4-2-21.2-.6-30.7 4.2c-4.1 2.1-8.3 4.1-12.6 6c-16 7.2-32.9 13.5-49.9 18c2.8-4.6 5.4-9.1 7.9-13.6c1.1-1.9 2.2-3.9 3.2-5.9zM208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 41.8 17.2 80.1 45.9 110.3c-.9 1.7-1.9 3.5-2.8 5.1c-10.3 18.4-22.3 36.5-36.6 52.1c-6.6 7-8.3 17.2-4.6 25.9C5.8 378.3 14.4 384 24 384c43 0 86.5-13.3 122.7-29.7c4.8-2.2 9.6-4.5 14.2-6.8c15.1 3 30.9 4.5 47.1 4.5zM432 480c16.2 0 31.9-1.6 47.1-4.5c4.6 2.3 9.4 4.6 14.2 6.8C529.5 498.7 573 512 616 512c9.6 0 18.2-5.7 22-14.5c3.8-8.8 2-19-4.6-25.9c-14.2-15.6-26.2-33.7-36.6-52.1c-.9-1.7-1.9-3.4-2.8-5.1C622.8 384.1 640 345.8 640 304c0-94.4-87.9-171.5-198.2-175.8c4.1 15.2 6.2 31.2 6.2 47.8l0 .6c87.2 6.7 144 67.5 144 127.4c0 28-11.4 54.9-32.7 77.2c-14.3 15-17.3 37.6-7.5 55.8c1.1 2 2.2 4 3.2 5.9c2.5 4.5 5.2 9 7.9 13.6c-17-4.5-33.9-10.7-49.9-18c-4.3-1.9-8.5-3.9-12.6-6c-9.5-4.8-20.3-6.2-30.7-4.2c-12.1 2.4-24.8 3.6-37.8 3.6c-61.7 0-110-26.5-136.8-62.3c-16 5.4-32.8 9.4-50 11.8C279 439.8 350 480 432 480z"/></svg>&nbsp;&nbsp;MSSG</a><br><a href="#" class="lh"><svg xmlns="http://www.w3.org/2000/svg" height="6.5" width="6.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="{color:text}" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>&nbsp;&nbsp;NAVIGATE</a><br><div class="lb"><a href="{text:Link 1 Url}" title="{text:Link 1 Name}">.001</a><a href="{text:Link 2 Url}" title="{text:Link 2 Name}">.002</a><a href="{text:Link 3 Url}" title="{text:Link 3 Name}">.003</a><a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a></div></div></div>
+<div id="sidebar">
+
+  {block:IfImage}
+  <div class="image">
+    <img src="{image:Sidebar}" alt=""/>
+  </div>
+  {/block:IfImage}
+
+  <div class="stitle">
+    <span class="dot" aria-hidden="true"></span>
+    <span>{Title}</span>
+  </div>
+
+  <div class="desc">{Description}</div>
+
+  <div class="links">
+
+    <a href="/">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21a9 9 0 1 1 0-18a9 9 0 0 1 0 18Z"
+              fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 8.2a3.8 3.8 0 1 0 0 7.6a3.8 3.8 0 0 0 0-7.6Z"
+              fill="currentColor"/>
+      </svg>
+      INDEX
+    </a>
+
+    <a href="/ask">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.5 6.5h11A2.5 2.5 0 0 1 20 9v6a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 3v-3H6.5A2.5 2.5 0 0 1 4 15V9A2.5 2.5 0 0 1 6.5 6.5Z"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      MSSG
+    </a>
+
+    <button type="button" class="navbtn lh" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5v14M5 12h14"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7.2 7.2l1 .4.4 1-.4 1-1 .4-1-.4-.4-1 .4-1 1-.4Z"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      NAVIGATE
+
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 10l5 5 5-5"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="lb" aria-hidden="true">
+      <a href="{text:Link 1 Url}" title="{text:Link 1 Name}">.001</a>
+      <a href="{text:Link 2 Url}" title="{text:Link 2 Name}">.002</a>
+      <a href="{text:Link 3 Url}" title="{text:Link 3 Name}">.003</a>
+      <a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function(){
+    var btn = document.querySelector('#sidebar .navbtn');
+    var box = document.querySelector('#sidebar .lb');
+    if(!btn || !box) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+
+      var open = box.classList.toggle('is-open');
+      btn.classList.toggle('is-open', open);
+
+      btn.setAttribute('aria-expanded', String(open));
+      box.setAttribute('aria-hidden', String(!open));
+    });
+  })();
+</script>
 
 <div id="posts">
 {block:posts}
@@ -1309,21 +1452,17 @@ a.tumblr_blog {
 {block:indexpage}
   {block:date}
     <div class="when">
-      <!-- date/permalink -->
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1333,7 +1472,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1352,22 +1490,18 @@ a.tumblr_blog {
 {/block:Source} 
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+       <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1377,7 +1511,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1408,22 +1541,18 @@ a.tumblr_blog {
 </div>   
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+        <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1433,7 +1562,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1460,22 +1588,18 @@ a.tumblr_blog {
 {/block:Description}  
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+      <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1485,7 +1609,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1506,22 +1629,18 @@ a.tumblr_blog {
 <div class="answer">{Answer}</div> 
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+       <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1531,7 +1650,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1562,22 +1680,18 @@ a.tumblr_blog {
 </div>   
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+       <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1587,7 +1701,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1609,22 +1722,18 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+       <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1634,7 +1743,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1657,22 +1765,18 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+      <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1682,7 +1786,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1706,22 +1809,18 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <!-- date/permalink -->
+       <div class="when">
       <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
         {Month} {DayOfMonth}{DayOfMonthSuffix}
       </a>
 
       <span class="sep">•</span>
 
-      <!-- reblog button (keeps your FA icon if loaded) -->
       <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
         <i class="fa fa-retweet" aria-hidden="true"></i>
       </a>
 
-      <!-- notes pill -->
       <span class="note-badge" title="{NoteCountWithLabel}">
-        <!-- minimalist bubble icon via currentColor -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
         </svg>
@@ -1731,7 +1830,6 @@ a.tumblr_blog {
 
     {block:HasTags}
       <div class="tags">
-        <!-- tag icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
           <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
         </svg>
@@ -1884,16 +1982,44 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
