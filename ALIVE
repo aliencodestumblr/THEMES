@@ -50,6 +50,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:Image" content="1"/>
+<meta name="if:Blog Title" content="1"/>
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1 Url" content="/"/>
@@ -464,117 +465,102 @@ body {
 
 /* notes */ 
 
-/* PERMALINK BAR — compact + right-aligned */
-.when {
-    color: {color:Perma};
-    margin-top: 4px;
-    text-transform: uppercase;
-    text-align: right;
+.nots {
+  margin-top: 0px;
+  padding: 8px 0 0;
 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 6px;
-    line-height: 1.1;
-    font-size: 11px;
-    letter-spacing: 0.3px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+
+
+  font: 800 9px "Rajdhani", sans-serif;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+
+  color: var(--site-links);
+  position: relative;
 }
 
-/* date/permalink link */
-.when .perma-link {
-    color: {color:text};
-    border-bottom: 1px solid transparent;
-    transition: border-color .2s ease, color .2s ease, opacity .2s ease;
-    opacity: 0.9;
-}
-.when .perma-link:hover {
-    color: {color:links hover};
-    border-color: {color:links hover};
-    opacity: 1;
+.nots a{
+  color: var(--site-links);
+  text-decoration: none;
+  transition: color .2s ease;
 }
 
-/* tiny separator */
-.when .sep { opacity: .4; margin: 0 2px; }
-
-/* reblog icon — keep FA if you’re loading it; otherwise it’ll just hide */
-.when .reblog-link {
-    color: {color:text};
-    opacity: .65;
-    transition: opacity .2s ease, transform .2s ease, color .2s ease;
-}
-.when .reblog-link:hover {
-    color: {color:links hover};
-    opacity: 1;
-    transform: translateX(1px);
+.nots a:hover{
+  color: var(--site-links-hover);
+  animation: notsGlitch .18s linear 2;
 }
 
-/* minimal SVG sizing if you use inline svgs */
-.when svg {
-    height: 1.05em;
-    display: inline-block;
-    vertical-align: middle;
-    fill: currentColor;
+@keyframes notsGlitch{
+  0%{ transform: translateX(0); }
+  25%{ transform: translateX(-1px); }
+  50%{ transform: translateX(1px); }
+  100%{ transform: translateX(0); }
 }
 
-/* notes pill */
-.when .note-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 1px 6px;
-    border: 1px solid {color:borders};
-    border-radius: 999px;
-    color: {color:text};
-    opacity: .85;
-    transition: border-color .2s ease, color .2s ease, opacity .2s ease;
-    line-height: 1;
-}
-.when .note-badge b { font-weight: 700; }
-.when .note-badge:hover {
-    color: {color:links hover};
-    border-color: {color:links hover};
-    opacity: 1;
+.nots .sep{
+  opacity: .35;
+  user-select: none;
 }
 
-/* TAGS — slimmer, cleaner, sits right under the bar */
-.tags {
-    {block:indexpage}{block:ifhidetags}display:none;{/block:ifhidetags}{/block:indexpage}
-    margin-top: 3px;
-    text-align: right;
-    line-height: 1.15;
-    font-size: 11px;
+.nots .timeago{
+  margin-left: auto;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .6;
+  color: var(--site-text);
+
+  position: relative;
+  top: -3px;  
+  right:-2px;
 }
 
-/* tag icon */
-.tags svg {
-    height: 0.95em;
-    vertical-align: middle;
-    fill: {color:Perma};
-    margin: -1px 4px 0 0;
+
+.nots.is-centered .timeago{
+  margin-left: 0;
 }
 
-/* tag links */
-.tags a {
-    color: {color:text};
-    display: inline;
-    margin-right: 2px;
-    transition: color .2s ease, opacity .2s ease;
-    opacity: .9;
+/* Mobile */
+@media (max-width: 720px){
+  .nots{
+    gap: 10px;
+  }
+  .nots .timeago{
+    width: 100%;
+    margin-left: 0;
+    opacity: .55;
+  }
 }
-.tags a:hover { color: {color:links hover}; opacity: 1; }
 
-/* separators: thin commas with micro-space */
-.tags a:after { content: ",\2009"; }
-.tags a:last-of-type { margin-right: 0; }
-.tags a:last-of-type::after { display: none; }
+.nots-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-/* OPTIONAL: clamp long tag rows on index for super long tag clouds */
-/*
-{block:indexpage}
-.tags { max-height: 2.2em; overflow: hidden; }
-.tags:hover { max-height: none; }
-{/block:indexpage}
-*/
+  line-height: 1;
+  opacity: .85;
+  transition: opacity .2s ease, transform .18s ease, color .2s ease;
+}
+
+.nots-icon svg{
+  display: block;
+}
+
+.nots-icon:hover{
+  opacity: 1;
+  color: var(--site-links-hover);
+  transform: translateY(-1px);
+  animation: notsGlitch .18s linear 2;
+}
+
+.nots .sep{
+  margin: 0 2px;
+}
 
 /* end notes */
 
@@ -1119,9 +1105,9 @@ a.tumblr_blog {
   border: 0;
 
   text-decoration: none;
-  cursor: pointer;
+  cursor: crosshair;
 
-  font: 800 10px "Rajdhani", sans-serif;
+  font: 500 10px "Rajdhani", sans-serif;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   line-height: 1.1;
@@ -1154,6 +1140,7 @@ a.tumblr_blog {
 }
 
 #sidebar .navbtn{
+  cursor:crosshair;
   position: relative;
 }
 
@@ -1372,11 +1359,13 @@ a.tumblr_blog {
   </div>
   {/block:IfImage}
 
+  {block:IfBlogTitle}
   <div class="stitle">
     <span class="dot" aria-hidden="true"></span>
     <span>{Title}</span>
   </div>
-
+  {/block:IfBlogTitle}
+  
   <div class="desc">{Description}</div>
 
   <div class="links">
@@ -1451,33 +1440,47 @@ a.tumblr_blog {
 <div class="caption">{Body}</div>
 {block:indexpage}
   {block:date}
-    <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 </div>  
@@ -1490,33 +1493,47 @@ a.tumblr_blog {
 {/block:Source} 
 {block:indexpage}
   {block:date}
-       <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1541,33 +1558,47 @@ a.tumblr_blog {
 </div>   
 {block:indexpage}
   {block:date}
-        <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1588,33 +1619,47 @@ a.tumblr_blog {
 {/block:Description}  
 {block:indexpage}
   {block:date}
-      <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+ <div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1629,33 +1674,47 @@ a.tumblr_blog {
 <div class="answer">{Answer}</div> 
 {block:indexpage}
   {block:date}
-       <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1680,33 +1739,47 @@ a.tumblr_blog {
 </div>   
 {block:indexpage}
   {block:date}
-       <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+  <div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1722,33 +1795,47 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-       <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1765,33 +1852,47 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-      <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+  <div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
@@ -1809,33 +1910,47 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:indexpage}
   {block:date}
-       <div class="when">
-      <a class="perma-link" href="{Permalink}" title="{TimeAgo}">
-        {Month} {DayOfMonth}{DayOfMonthSuffix}
-      </a>
+ <div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+     
+    <!-- Info / activity icon -->
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
 
-      <span class="sep">•</span>
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+     
+    <!-- Reblog / paper-plane symbol -->
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
 
-      <a class="reblog-link" href="{ReblogURL}" title="Reblog" target="_blank" rel="noopener">
-        <i class="fa fa-retweet" aria-hidden="true"></i>
-      </a>
-
-      <span class="note-badge" title="{NoteCountWithLabel}">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 0 0-2 2v9.5A2.5 2.5 0 0 0 4.5 18H7l3.6 3.2c.6.5 1.4.1 1.4-.6V18h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-        </svg>
-        <b>{NoteCount}</b>
-      </span>
-    </div>
-
-    {block:HasTags}
-      <div class="tags">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
-          <path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"/>
-        </svg>
-        {block:Tags}<a href="{TagUrl}">#{Tag}</a>{/block:Tags}
-      </div>
-    {/block:HasTags}
+  <div class="timeago">{TimeAgo}</div>
+</div>
   {/block:date}
 {/block:indexpage}
 
