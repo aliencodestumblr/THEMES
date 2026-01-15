@@ -49,6 +49,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:2 columns" content=""/>
 <meta name="if:Image" content="1"/>
 <meta name="if:Blog Title" content="1"/>
 <meta name="if:Show music player" content="1">
@@ -331,7 +332,10 @@ body {
 }
 
 .entry {   
-    width:890px;    
+    width:890px; 
+    {block:If2Columns}
+    width:600px;    
+    {/block:If2Columns}
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -340,12 +344,18 @@ body {
 }
 
 #posts {     
-    margin-top:0px; 
+    margin-top:20px; 
     margin-left:100px;  
     width:876px;
+    {block:If2Columns}
+    width:600px;    
+    {/block:If2Columns}
     {block:permalinkpage}
-    margin-top:20px;   
+    margin-top:37px;   
     margin-left:-75px; 
+    {block:If2Columns}
+    margin-left:70px;  
+    {/block:If2Columns}
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -355,9 +365,12 @@ body {
     background:transparent;   
     width:255px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    margin-top:37px; 
     width:540px; 
     margin-left:-75px;  
+    {block:If2Columns}
+    margin-left:70px;  
+    {/block:If2Columns}    
     {/block:permalinkpage} 
     margin:18px; 
     padding:0px;    
@@ -1036,6 +1049,9 @@ a.tumblr_blog {
   margin-left: calc(40px + -100px);
   {block:permalinkpage}
   margin-left: calc(-135px + -100px);
+  {block:If2Columns}
+  margin-left:-90px;  
+  {/block:If2Columns}
   {/block:permalinkpage}
 
   z-index: 9999;
