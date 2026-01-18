@@ -45,7 +45,7 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:Fixed header" content=""/>
-<meta name="if:Dark Icon Shadow" content="1">
+<meta name="if:Dark Icon Shadow" content="">
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Show music player" content="1">
 
@@ -1584,32 +1584,62 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <body>  
 
 {block:ifshowmusicplayer}
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div id="glenplayer07">
-   <div class="flamingo">
-       <div class="circleofdeath">
-           <div class="tinfoil">
-               <div class="oliveoil"></div>
-           </div>
-          <div class="crust">
-               <div class="cherry">
-                   <div class="music-controls">
-                       <i class="material-icons playy">play_arrow</i>
-                       <i class="material-icons pausee">pause</i>
-                   </div>
-               </div><!--cherry-->
-           </div><!--crust-->
-       </div><!--circleofdeath-->
+<!----- 【 MUSIC PLAYER #01 by @glenthemes 】 ----->
+<link href="//glen-players.gitlab.io/01/x.css" rel="stylesheet">
+<script src="//glen-players.gitlab.io/01/y.js"></script>
 
-       <div class="music-info">
-           <div class="song-name">{text:Song Title}</div>
-           <div class="artist-name">{text:Artist Name}</div>
-       </div><!--music-info-->
-   </div><!--flamingo-->
-</div><!--glenplayer07-->
+<div glenplayer01 position="bottom" shadow="yes">
+    <div top-text uppercase>{text:Song Title}</div>
+    <div bottom-text uppercase>{text:Artist Name}</div>
 
-<audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
-<!----end music player---->
+    <audio src="https://file.garden/ZRt8jW_MomIqlrfn/music/Fleeting_Words_Family.mp3" volume="85%"></audio>
+</div>
+
+<style element="glenplayer01">
+[glenplayer01]{
+
+    z-index:99; 
+    
+    --MusicPlayer-Screen-Edge-Offset:30px;
+    
+    --MusicPlayer-Frame-Thickness:12px;
+    --MusicPlayer-Frame-Color:#fff;
+    --MusicPlayer-Frame-Transparency:40%;
+    --MusicPlayer-Frame-Blur:0px;
+    
+    --MusicPlayer-Shadow-Strength:10%;
+    
+    --MusicPlayer-Text-Background:#fff;
+    --MusicPlayer-Text-Background-Transparency:50%;
+    --MusicPlayer-Text-Padding:12px;
+    --MusicPlayer-Text-Align:right;
+    --MusicPlayer-Text-Row-Spacing:5px;
+    
+    --MusicPlayer-Text-TOP-Font:"tenon light";
+    --MusicPlayer-Text-TOP-Size:11px;
+    --MusicPlayer-Text-TOP-Color:#999;
+    
+    --MusicPlayer-Text-BOTTOM-Font:"tenon light";
+    --MusicPlayer-Text-BOTTOM-Size:11px;
+    --MusicPlayer-Text-BOTTOM-Color:#222;
+    
+    --MusicPlayer-Circle-Size:50px;
+    --MusicPlayer-Circle-Background:#fff;
+    --MusicPlayer-Circle-Transparency:30%;
+    
+    --MusicPlayer-PlayButton-Size:10px;
+    --MusicPlayer-PlayButton-Color:#222;
+    
+    --MusicPlayer-Bar-Thickness:2px;
+    --MusicPlayer-Bar-Spacing:2px;
+    --MusicPlayer-Bar-Color:#222;
+    
+    --MusicPlayer-SlideIn-Speed:0.69s;
+    --MusicPlayer-SlideOut-Speed:1s;
+
+}
+</style>
+<!--- END MUSIC PLAYER --->
 {/block:ifshowmusicplayer} 
 
 <div class="entry"> 
