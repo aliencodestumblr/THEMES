@@ -31,18 +31,15 @@ attribute:"title"
 
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#fff"/>
-<meta name="color:player background" content="#fff"/>
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:player background" content="#ffffff"/>
 <meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
 <meta name="color:ask Gradient 2" content="#222222"/> 
-<meta name="color:Heart Monitor" content="#579ad0"/>
-<meta name="color:Accent" content="#444444"/> 
-<meta name="color:Accent" content="#444444"/>  
-<meta name="color:Text" content="#444444" /> 
-<meta name="color:Links" content="#444444" />  
+<meta name="color:Accent" content="#bababa"/> 
+<meta name="color:Text" content="#bababa" /> 
+<meta name="color:Links" content="#bababa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#444444"/>
 
 <meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>   
@@ -390,14 +387,14 @@ h1, h2, h3, h4, h5, h6 {
     width:810px;
     {/block:if2columns}  
     margin-top:40px; 
-    margin-left:100px;  
+    margin-left:120px;  
     width:910px;
     {block:if2columns}
     margin-left:230px;  
     {/block:if2columns}
     {block:permalinkpage}
     margin-top:50px;   
-    margin-left:-85px;  
+    margin-left:-65px;  
     {block:if2columns}
     margin-left:45px; 
     {/block:if2columns}  
@@ -414,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:50px; 
     width:540px;
-    margin-left:-85px; 
+    margin-left:-65px; 
     {block:if2columns}
     margin-left:45px; 
     {/block:if2columns} 
@@ -1146,7 +1143,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   max-width: 175px;
   padding: 12px;
   top: 220px;
-  margin-left: -120px;
+  margin-left: -110px;
   
   {block:if2columns}
   margin-left: 0px;
@@ -1169,7 +1166,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   overflow: visible;
 
   {block:permalinkpage}
-  margin-left: -305px;
+  margin-left: -295px;
     {block:if2columns}
   margin-left: -185px;
   {/block:if2columns} 
