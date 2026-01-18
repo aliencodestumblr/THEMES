@@ -1,15 +1,3 @@
-<!---
-
-      design by @aliencodes
-
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -40,7 +28,7 @@ attribute:"title"
 <meta name="color:Details" content="#ffffff"/>  
 <meta name="color:box shadow" content="#e3e3e3" />
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:permalink" content="#afa5a5"/>
+<meta name="color:postinfo" content="#afa5a5"/>
 <meta name="color:Shadow Color" content="#ccc5c5">
 <meta name="color:Accent" content="#afa5a5"/>  
 <meta name="color:Text" content="#afa5a5" /> 
@@ -51,7 +39,6 @@ attribute:"title"
 <meta name="color:tags" content="#afa5a5"/>
 <meta name="color:Scrollbar" content="#9a8080" />
 <meta name="color:asker text" content="#444444"/>
-<meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
@@ -333,7 +320,17 @@ img {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
+}
 
 body {
     color:{color:text}; 
@@ -491,7 +488,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
  
-#perma {
+#postinfo {
     width:calc(290px + 20px);
     color:{color:text};
     margin:10px 0px 0px 0px;
@@ -503,18 +500,16 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:bold;
 }
  
-#perma a {
+#postinfo a {
     margin-left:0px;
     color:{color:permalink};
     padding:0px 0px 10px 0px;
 }
  
- 
-#perma a:hover {
+#postinfo a:hover {
     color:{color:link};
     border-bottom: 3px solid {color:links hover};
 }
- 
  
 #tags {
     margin:1px -15px 0px -15px;
@@ -529,7 +524,6 @@ h1, h2, h3, h4, h5, h6 {
     word-wrap:break-word;
 }
  
- 
 #tags a { 
     color:{color:tags};
     margin-right:7px;
@@ -540,14 +534,11 @@ h1, h2, h3, h4, h5, h6 {
     color:{color:links};
 }
  
- 
 {block:ifnotshowtags}
 {block:indexpage}
 #tags { display:none; }
 {/block:indexpage}
 {/block:ifnotshowtags}
-
- 
 
 /* end notes */
 
@@ -929,18 +920,36 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
 }
 
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
+}
 #ltop:link, #ltop:visited {  
     border-radius: 4px;
     position: fixed;
@@ -964,8 +973,8 @@ a.tumblr_blog {
 #sidebar {
     background-color:{color:details}; 
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.06), 
-              5px 10px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+    5px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
     top:150px; 
     width:235px; 
     text-align:left; 
@@ -978,13 +987,12 @@ a.tumblr_blog {
     background-repeat:100%;
     background-size:cover;
     background-position:;
-        {block:permalinkpage}
+    {block:permalinkpage}
     margin-left:-295px;  
     {/block:permalinkpage}
 }
  
- 
-#desc {
+#description {
     color:{color:text}; 
     margin-left: -15px; 
     margin-top:12px; 
@@ -997,13 +1005,11 @@ a.tumblr_blog {
     font-size:11px;
 }
  
- 
-#desc a { 
+#description a { 
     line-height:16px;
     text-decoration:none;
     background-color:transparent;
 }
- 
  
 #icon {
     float:left; 
@@ -1017,8 +1023,7 @@ a.tumblr_blog {
     border-radius:4px;
 }
  
- 
-#btitle {
+#title {
     font-family: "Rajdhani", sans-serif;
     color: {color:permalink};
     text-align: left;
@@ -1028,12 +1033,12 @@ a.tumblr_blog {
     font-size: 17px;
 }
 
-#btitle a { color: {color:title}; }
+#title a { color: {color:title}; }
 
-#btitle a:hover { color: {color:hover}; }
+#title a:hover { color: {color:hover}; }
 
 #subtitle {
-    font-size: 11px; /* slightly bigger */
+    font-size: 11px; 
     color: {color:permalink};
     margin-left: 0px;
     line-height: 14px;
@@ -1041,7 +1046,7 @@ a.tumblr_blog {
     margin-bottom: -15px;
     text-align: justify;
     display: flex;
-    align-items: center; /* centers text + checkmark nicely */
+    align-items: center; 
 }
 
 #subtitle .verified-checkmark {
@@ -1053,7 +1058,7 @@ a.tumblr_blog {
     top: -1px;
 }
 
-#linkest {
+#nav {
     margin-left:6px; 
     margin-top:37px; 
     font-weight:bold; 
@@ -1061,22 +1066,22 @@ a.tumblr_blog {
     color:{color:links};
 }
 
-#linkest a {
+#nav a {
     padding:0px;
     padding-right:0px;
     padding-bottom:10px; 
     color:{color:links};
 }
  
-#linkest a:hover {
+#nav a:hover {
     color:{color:links hover};
     border-bottom: 3px solid {color:links hover};
 }
  
 {block:ifnotdescription}
-#desc { display:none; }
+#description { display:none; }
 #sidebar { padding-bottom:13px; }
-#linkus a:hover { border-bottom:none; }
+#nav a:hover { border-bottom:none; }
 {/block:ifnotdescription}
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
@@ -1249,7 +1254,7 @@ a.tumblr_blog {
 <div class="entry"> 
 <div id="sidebar">
 <div id="icon"><img src="{image:icon}" style="position:fixed; top:{text:description top}px; margin-top:-5px; margin-left:-5px; background-color:transparent; padding:5px;width:64px; border-radius:8px;height:64px;{block:ifborders}margin-top:-5px;{/block:ifborders}"></a></div>
-<div id="btitle">
+<div id="title">
   <a href="/">{Title}</a>
   {block:ifshowsubtitle}
   <div id="subtitle">
@@ -1267,13 +1272,13 @@ a.tumblr_blog {
   </div>
   {/block:ifshowsubtitle}
 </div>
-<div id="linkest">
+<div id="nav">
 <a href="{text:link 1 url}" title="{text:link 1 title}">.001</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{text:link 2 url}" title="{text:link 2 title}">.002</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{text:link 3 url}" title="{text:link 3 title}">.003</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{text:link 4 url}" title="{text:link 4 title}">.004</a>
 </div>
-<div id="desc">{description}</div>
+<div id="description">{description}</div>
 </div>
 
 <div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></div>
@@ -1287,7 +1292,7 @@ a.tumblr_blog {
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div>  
@@ -1299,7 +1304,7 @@ a.tumblr_blog {
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div>  
@@ -1322,7 +1327,7 @@ a.tumblr_blog {
 </ul>
 </div>   
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1344,7 +1349,7 @@ a.tumblr_blog {
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1355,7 +1360,7 @@ a.tumblr_blog {
 <div class="ask">{Question}</div>
 <div class="answer">{Answer}</div>
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1365,7 +1370,10 @@ a.tumblr_blog {
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1378,7 +1386,7 @@ a.tumblr_blog {
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1392,7 +1400,7 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1407,7 +1415,7 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1423,7 +1431,7 @@ a.tumblr_blog {
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage} 
-<div id="perma"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
+<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
 {block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
@@ -1570,16 +1578,44 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
