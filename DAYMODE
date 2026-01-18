@@ -31,12 +31,14 @@ attribute:"title"
 
 <meta name="image:sidebar" content=""/>
 
-<meta name="color:Background" content="#fff"/>
-<meta name="color:player background" content="#fff"/>
-<meta name="color:Ask Gradient 1" content="#aaaaaa"/> 
-<meta name="color:ask Gradient 2" content="#222222"/> 
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:player background" content="#ffffff"/>
+<meta name="color:Time Ago Background" content="#000000"/> 
+<meta name="color:Time Ago Text" content="#fff"/>
+<meta name="color:Gradient 1" content="#aaaaaa"/> 
+<meta name="color:Gradient 2" content="#222222"/> 
+<meta name="color:Border" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/> 
-<meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#444444" />  
 <meta name="color:Links Hover" content="#444444" />
@@ -463,13 +465,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #888888, #cccccc);
+  background: linear-gradient(to bottom, {color:Gradient 2}, {color:Gradient 1});
   border-radius: 2px;
   border: 2px solid {color:background}; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #777777, #bbbbbb); 
 }
 /* end scrollbar */
 
@@ -597,12 +595,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1.4px;
   text-transform: uppercase;
 
-  color: var(--site-text);
-  background: rgba(0,0,0,.035);
-  border: 1px solid rgba(0,0,0,.07);
+  color:{color:Time Ago Text};
+  background:{color:Time Ago Background};
+  border: 1px solid {color:Border};
   border-radius: 2px;      
 
-  opacity: .65;
+  opacity: .95;
   transform: translateY(-.5px);
 
   transition:
@@ -614,7 +612,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nots.nots-hud3 .hud-time:hover{
   opacity: .9;
-  background: rgba(0,0,0,.055);
+  background:{color:background};
   border-color: rgba(0,0,0,.12);
   transform: translateY(-1px);
 }
@@ -797,7 +795,7 @@ ol.notes li.note img.avatar {
 
 /* asks */
 .ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1} 0%, rgba({RGBcolor:Ask Gradient 2},0.05) 100%);
+    background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.05) 100%);
     margin: 12px 0;
     padding: 20px;
     color: {color:asker text};
