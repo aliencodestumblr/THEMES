@@ -1,3 +1,13 @@
+<!--
+
+  [ aliencodes theme ]
+
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -28,7 +38,7 @@ attribute:"title"
 <meta name="color:Details" content="#ffffff"/>  
 <meta name="color:box shadow" content="#e3e3e3" />
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:postinfo" content="#afa5a5"/>
+<meta name="color:Post Info" content="#afa5a5"/>
 <meta name="color:Shadow Color" content="#ccc5c5">
 <meta name="color:Accent" content="#afa5a5"/>  
 <meta name="color:Text" content="#afa5a5" /> 
@@ -37,8 +47,11 @@ attribute:"title"
 <meta name="color:title" content="#afa5a5"/>
 <meta name="color:subtitle" content="#afa5a5"/>
 <meta name="color:tags" content="#afa5a5"/>
+<meta name="color:Ask Gradient 1" content="#eeeeee"/>  
+<meta name="color:Ask Gradient 2" content="#111111"/>  
 <meta name="color:Scrollbar" content="#9a8080" />
 <meta name="color:asker text" content="#444444"/>
+<meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
@@ -82,7 +95,6 @@ $("#panel").slideToggle("fast");
 <link rel="stylesheet" href="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -112,17 +124,41 @@ $("#panel").slideToggle("fast");
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 152px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
 }
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
+}
+
 html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -502,7 +538,7 @@ h1, h2, h3, h4, h5, h6 {
  
 #postinfo a {
     margin-left:0px;
-    color:{color:permalink};
+    color:{color:post info};
     padding:0px 0px 10px 0px;
 }
  
@@ -692,41 +728,36 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
+
 .ask {
-    background: linear-gradient(135deg, {color:borders} 0%, rgba({RGBcolor:Box Shadow},0.05) 100%);
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
     margin: 12px 0;
     padding: 20px;
     color: {color:asker text};
     text-align: left;
     line-height: 1.7;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Box Shadow}, 0.08);
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     font-family:"Rajdhani", sans-serif;
 }
 
-.ask:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba({RGBcolor:Box Shadow}, 0.12);
-    background: linear-gradient(135deg, {color:borders} 0%, rgba({RGBcolor:Shadow},0.1) 100%);
-}
-
 .asker {
-    margin: 0 0 12px 0;
+    margin: 0 0 -6px 0;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: {color:links};
+    color: {color:text};
     opacity: 0.85;
 }
 
 .answer {
-    margin: 0;
+    margin: -8px 0 0 0;
     padding-left: 0px;
     color: {color:text};
     line-height: 1.7;
-    font-size: 12px;
+    font-size: 10.5px;
 }
 
 .answer img {
@@ -741,6 +772,7 @@ ol.notes li.note img.avatar {
 .answer img:hover {
     transform: scale(1.03);
 }
+
 /* end asks */
 
 
@@ -1035,11 +1067,11 @@ a.tumblr_blog {
 
 #title a { color: {color:title}; }
 
-#title a:hover { color: {color:hover}; }
+#title a:hover { color: {color:links hover}; }
 
 #subtitle {
     font-size: 11px; 
-    color: {color:permalink};
+    color: {color:post info};
     margin-left: 0px;
     line-height: 14px;
     margin-top: 3px;
@@ -1055,7 +1087,7 @@ a.tumblr_blog {
     stroke: {color:permalink};
     margin-left: 4px;
     position: relative;
-    top: -1px;
+    top: -0.2px;
 }
 
 #nav {
