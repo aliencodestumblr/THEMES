@@ -317,7 +317,7 @@ box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
 box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {/block:IfDarkShadow}
     margin:130px; 
-    margin-bottom:-40px; 
+    margin-bottom:-70px; 
     padding:7px;    
     opacity:1;
     transition:1s;  
@@ -366,7 +366,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;                 
+  width: 13px;                 
   background: {color:Background}; 
 }
 
@@ -433,8 +433,8 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 .permalink-hover {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   gap: 3px;
 
@@ -1019,7 +1019,7 @@ a.tumblr_blog {
   z-index: 100;
   position: fixed;
   top: 320px;
-  margin-left: 705px;
+  margin-left: 703px;
   transform: translateX(-50%);
   width: 200px;
   height: auto;
