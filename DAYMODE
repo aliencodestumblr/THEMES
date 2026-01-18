@@ -46,16 +46,16 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Show Description" content="1"/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show music player" content="1">
+<meta name="if:Show music player" content="">
 
 <meta name="text:Link 1" content=""/>
-<meta name="text:Link 1 Title" content=""/>
+<meta name="text:Link 1 Title" content="reload"/>
 <meta name="text:Link 2" content=""/>
-<meta name="text:Link 2 Title" content=""/>
+<meta name="text:Link 2 Title" content="inbox"/>
 <meta name="text:Link 3" content=""/>
-<meta name="text:Link 3 Title" content=""/>
+<meta name="text:Link 3 Title" content="ex files"/>
 <meta name="text:Link 4" content=""/>
-<meta name="text:Link 4 Title" content=""/>
+<meta name="text:Link 4 Title" content="uploads"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
