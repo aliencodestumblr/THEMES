@@ -1,15 +1,13 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -41,7 +39,8 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
+<meta name="color:Ask Gradient 1" content="#cccccc"/>
+<meta name="color:Ask Gradient 2" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
@@ -413,50 +412,48 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pagination {
-  width: 550px;
-  margin: 50px auto 80px auto; /* center + breathing room */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600;
-  opacity: 0.85;
+.pag {      
+    bottom:40px;
+    margin-left:0px;
+    margin-bottom:20px; 
+    width:100%;
+    height:auto;  
+    text-align:center;   
+    z-index:100;
 }
 
-.pagination a,
-.pagination span {
-  display: inline-block;
-  min-width: 32px;
-  height: 32px;
-  line-height: 32px;
-  text-align: center;
-  border: 1px solid #eee;
-  background: #fff;
-  color: {color:Link};
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.pag a{ 
+    background:#fff;
+    width:auto; 
+    font-size:12px;  
+    text-align:center;
+    text-transform:uppercase; 
+    color:{color:accent};    
+    padding:2px 7px 3px 7px;     
+    margin:0px; 
+    transition:1s;
+    border-radius:3px;
+    border:1px solid #eee;
 }
 
-.pagination a:hover {
-  background: {color:Link};
-  color: #fff;
-  border-color: {color:Link};
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+.pag a:hover{
+    color:{color:accent};
+    font-weight:700; 
+    transition:1s;
 }
-
-.pagination .current_page {
-  background: {color:Link};
-  color: {color:Text};
-  border-color: {color:Link};
-}
-
 /* end pagination */
+
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
+}
 
 /* notes */ 
 
@@ -478,7 +475,7 @@ na{float:right;text-align:right;}
  
 .permalinks a{
 color:{color:Link};
-background:#fff;
+background:{color:details};
 padding:4px;
 }
  
@@ -645,60 +642,51 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:0px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
 }
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
 /* end asks */
 
 /* quote */
@@ -876,58 +864,36 @@ a.tumblr_blog {
   display: none !important;
 } 
 
-@keyframes tooltipSlideUp {
-  0% {
-    transform: translateY(6px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes blinkCursor {
-  0%, 49% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-
 #s-m-t-tooltip {
-  max-width: 280px;
-  padding: 5px 8px;
-  margin: 20px 0 0 20px;
-  border-radius: 4px;
-  background: #000;
-  font-size: 10px;
-  font-family: 'Consolas', monospace;
-  text-transform: uppercase;
-  color:{color:tooltip text}; 
-  backdrop-filter: blur(2px);
-  box-shadow: 0 0 6px rgba(0, 255, 255, 0.08);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: all 0.25s ease;
-  animation: tooltipSlideUp 0.25s ease forwards;
   position: absolute;
-  z-index: 999999999999999;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
   pointer-events: none;
-  line-height: 1.4;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
 }
 
-#s-m-t-tooltip::after {
-  content: "▌";
-  animation: blinkCursor 1s step-start infinite;
-  display: inline-block;
-  margin-left: 2px;
-  margin-top:-2px;
-  color:{color:tooltip text};  
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
 #ltop {
@@ -1100,7 +1066,7 @@ margin-top:-30px;
 
 #glenplayer07 {
    position:fixed;
-   bottom:0;margin-bottom:30px;
+   bottom:0;margin-bottom:20px;
    left:0;margin-left:20px;
    z-index:99;
 }
@@ -1246,10 +1212,9 @@ margin-top:-30px;
 <div class="entry"> 
 <div id="header">
 <div id="blogtitle">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="verified-checkmark" aria-label="Verified">
+{Name} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="verified-checkmark" aria-label="Verified">
     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
   </svg>
-  {Name}
 </div>
 <div id="second">
 <a href="{text:Link 1 Url}">
@@ -1262,7 +1227,7 @@ margin-top:-30px;
 
 <div id="desc-container">
   <img id="sidebar-icon" src="{image:sidebar}" alt="Sidebar Icon">
-  <p id="desc-text"><span id="desc-title">description:</span> just passing through this world, leaving behind glitter, static + unfinished conversations</p>
+  <p id="desc-text">{description}</p>
 </div>
 
 <div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
@@ -1334,11 +1299,9 @@ margin-top:-30px;
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:indexpage}  
 <div class="permalinks"><ha><a href="{ReblogURL}" title="reblog post">rblg</a></ha><na><a href="{Permalink}" title="{TimeAgo}">{Notecount}N</a></na></div>
 {/block:indexpage}
@@ -1349,7 +1312,10 @@ margin-top:-30px;
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1538,41 +1504,58 @@ resizeVideos();
 {block:ifpagination} 
 {block:IndexPage}
 {block:Pagination}
-<div class="pagination">
-    {block:PreviousPage}
-        <a href="{PreviousPage}">←</a>
-    {/block:PreviousPage}
+<div class="pag">
+{block:PreviousPage}
+<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
+{/block:PreviousPage}	
 
-    {block:JumpPagination length="5"}
-        {block:CurrentPage}
-            <span class="current_page">{PageNumber}</span>
-        {/block:CurrentPage}
-        {block:JumpPage}
-            <a href="{URL}">{PageNumber}</a>
-        {/block:JumpPage}
-    {/block:JumpPagination}
-
-    {block:NextPage}
-        <a href="{NextPage}">→</a>
-    {/block:NextPage}
+{block:NextPage}
+<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
+{/block:NextPage}
 </div>
-
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifpagination} 
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
 <script>feather.replace()</script>
 </body>
 </html>
