@@ -2,7 +2,7 @@
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top,  minimal sc — @aliencodes original code
+    ↳ scroll to top, minimal sc — @aliencodes original code
     ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
     ↳ blog music — @glenthemes
 -->
@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:990px;    
+    width:960px;    
     {block:permalinkpage}  
     width:540px;
     {/block:permalinkpage} 
@@ -380,23 +380,23 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:40px; 
     margin-left:140px;  
-    width:990px;
+    width:960px;
     {block:permalinkpage}
-    margin-top:50px;   
-    margin-left:-85px;  
+    margin-top:65px;   
+    margin-left:-70px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:280px;        
+    width:265px;        
     {block:permalinkpage}
-    margin-top:50px; 
+    margin-top:65px; 
     width:540px;
-    margin-left:-85px; 
+    margin-left:-70px; 
     {/block:permalinkpage} 
-    margin:20px; 
+    margin:25px; 
     padding:0px;      
     overflow:hidden;
     opacity:1;
@@ -1080,7 +1080,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   border-radius: 0 !important;
 
   {block:permalinkpage}
-  margin-left: -315px;
+  margin-left: -300px;
   {/block:permalinkpage}
 }
 
@@ -1110,6 +1110,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   height: 16px;
   stroke: {color:Link};
   opacity: .95;
+  margin-top:-1px;
 }
 
 .sb-desc{
@@ -1121,119 +1122,62 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 
 .sb-iconlist{
-  display: grid;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sb-iconlist .sb-item{
-  position: relative;
-  display: grid;
-  grid-template-columns: 12px 1fr;
-  align-items: center;
-  column-gap: 8px;
-
-  padding: 2px 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 2px;
 
   color: {color:links};
   text-decoration: none;
 
   font-family: "Rajdhani", sans-serif;
   font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 1.8px;
-  text-transform: lowercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
-  transition: color .18s ease, transform .22s ease;
+  border-bottom: 1px solid {color:Border};
+
+  opacity: .8;
+  transition:
+    opacity .2s ease,
+    letter-spacing .25s ease,
+    transform .25s ease,
+    color .2s ease;
+}
+
+.sb-iconlist .sb-item:last-child{
+  border-bottom: none;
 }
 
 .sb-iconlist .sb-ico{
-  width: 12px;
-  height: 12px;
-  display: block;
-  opacity: .55;
-  transition: opacity .18s ease, transform .22s ease;
-  align-self: center;
-  margin-top: -2px;
+  width: 11px;
+  height: 11px;
+  opacity: .7;
+  color: {color:Accent};
+  transition: opacity .2s ease;
+  position: relative;
+  top: 1.5px; 
 }
 
 .sb-iconlist .sb-txt{
-  line-height: 14px; 
-  position: relative;
-  display: inline-block;
-  text-transform:uppercase;
-}
-
-.sb-iconlist .sb-txt::after{
-  content:"";
-  position: absolute;
-  left: -6px;
-  right: -6px;
-  top: 50%;
-  height: 1.5px;
-  transform: translateY(-50%) scaleX(0);
-  transform-origin: left;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    {color:Accent},
-    transparent
-  );
-
-  opacity: 0;
-  transition:
-    transform .36s cubic-bezier(.4,0,.2,1),
-    opacity .18s ease;
-}
-
-.sb-iconlist .sb-item::before{
-  content:"";
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: {color:Accent};
-  transform: translateY(-50%) scale(0);
-  opacity: 0;
-  transition: transform .28s cubic-bezier(.2,1,.2,1), opacity .18s ease;
+  line-height: 2;
 }
 
 .sb-iconlist .sb-item:hover{
-  color: {color:links hover};
+  opacity: 1;
+  letter-spacing: 2.4px;
   transform: translateX(1px);
+  color: {color:links hover};
 }
 
 .sb-iconlist .sb-item:hover .sb-ico{
-  opacity: .95;
-  transform: translateX(1px);
-}
-
-.sb-iconlist .sb-item:hover .sb-txt::after{
-  opacity: .9;
-  transform: translateY(-50%) scaleX(1);
-}
-
-.sb-iconlist .sb-item:hover::before{
-  opacity: .9;
-  transform: translateY(-50%) scale(1);
-}
-
-.sb-iconlist .sb-item::before{
-  content: none !important;
-}
-
-.sb-img{
-  display:block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 5px;
-  overflow:hidden;
-  background:#111;
-
-  box-shadow: 0 14px 30px rgba(0,0,0,.20);
-  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  opacity: 1;
 }
 
 .sb-img img{
