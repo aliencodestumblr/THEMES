@@ -3,8 +3,8 @@
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ scroll to top, minimal sc — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -104,7 +104,7 @@ $("#panel").slideToggle("fast");
 <style type="text/css">
 :root{
   --sp-scale: 0.80;   
-  --sp-base-height: 152px;  
+  --sp-base-height: 80px;  
 }
 
 article iframe[src*="spotify.com"],
