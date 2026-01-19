@@ -42,8 +42,8 @@ attribute:"title"
 <meta name="color:Text" content="#828a93" /> 
 <meta name="color:Links" content="#828a93" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Ask Gradient 1" content="#eeeeee"/> 
-<meta name="color:Ask Gradient 2" content="#ffffff"/> 
+<meta name="color:Ask Gradient 1" content="#c7cbd0"/> 
+<meta name="color:Ask Gradient 2" content="#42474e"/> 
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
