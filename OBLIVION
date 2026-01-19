@@ -110,7 +110,7 @@ body { overflow-y: scroll; }
 
 :root{
   --sp-scale: 0.80;   
-  --sp-base-height: 152px;  
+  --sp-base-height: 80px;  
 }
 
 article iframe[src*="spotify.com"],
