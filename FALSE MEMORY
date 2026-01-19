@@ -983,7 +983,6 @@ a.tumblr_blog {
   gap: 20px;
   transition: all 0.4s ease;
   {block:permalinkpage}
-  /* Adjust if permalink page needs different styling */
   {/block:permalinkpage}
   {block:ifTransparentHeader}
   background: transparent;
@@ -1016,7 +1015,7 @@ a.tumblr_blog {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top:9px;
+  margin-top:10.5px;
 }
 
 .header-title .verified-checkmark {
