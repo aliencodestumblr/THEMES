@@ -1,15 +1,11 @@
-<!---
+<!--
+  [ aliencodes theme ]
 
-      design by @aliencodes
-
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ blog music — @glenthemes
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -35,16 +31,17 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#eeeeee"/>
+<meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/> 
-<meta name="color:player background" content="#fff"/>
-<meta name="color:Borders" content="#ffffff"/> 
+<meta name="color:player background" content="#ffffff"/>
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/>  
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#a17575" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#a17575" />
-<meta name="color:ask box background" content="#eeeeee"/>
+<meta name="color:Ask Gradient 1" content="#999999"/>
+<meta name="color:Ask Gradient 2" content="#444444"/>
 <meta name="color:asker text" content="#444444"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
@@ -54,7 +51,7 @@ attribute:"title"
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
-<meta name="text:Blogtitle" content="goddess v.1"/>
+<meta name="text:Blogtitle" content="goddess"/>
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="reload"/>
 <meta name="text:Link 2" content="/ask"/>
@@ -63,6 +60,8 @@ attribute:"title"
 <meta name="text:Link 3 Title" content="uploads"/>
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="extra link"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="extra link"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -118,20 +117,42 @@ $(document).ready(function(){
 </script>
 
 <!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
-            
+<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>  
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html, body, a, a:hover{cursor:crosshair;}
@@ -141,29 +162,50 @@ html, body, a, a:hover{cursor:crosshair;}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
-.cc svg {
-    display:block;
-    width:12px;
-    height:auto;
-    overflow:visible;
-}
- 
-.cc svg path {fill:{color:text};}
- 
 .cc {
-    z-index:15;
-    position:fixed;
-    top:15px;
-    right:15px;
-}     
-     
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    background:{color:background};
+    {block:IfLightShadow}
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+    {/block:IfLightShadow}
+    {block:IfDarkShadow}
+    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+    {/block:IfDarkShadow}
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
+}
+
+.cc svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    overflow: visible;
+}
+
+.cc svg path {
+    fill: {color:accent};
+}
+   
 iframe.tmblr-iframe {
     z-index: 999;
-    right: -5px;
-    top: 5px;
+    right: 24px;
+    top: 21px;
     opacity: 0;
     position: fixed;
     width: 0;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
     padding-right: 60px;
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
@@ -171,9 +213,6 @@ iframe.tmblr-iframe {
     -webkit-transform-origin: 100% 0;
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
 }
 
 .tmblr-iframe:hover {
@@ -223,6 +262,7 @@ a, a:link, a:active, a:visited {
     text-decoration:none;
     transition:.5s;
 }
+
 a:hover {
     cursor:crosshair;
     color:{color:links hover}; 
@@ -240,7 +280,9 @@ a.read_more {
 }
 
 p a {font-weight:700;}
+
 p {margin-top:0px;} 
+
 blockquote {  
     display:block; 
     margin:0px;
@@ -254,7 +296,40 @@ blockquote img {
 
 blockquote video {
     width:100%; 
-    margin-bottom:-5px;
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { 
@@ -473,24 +548,100 @@ footer a > span > span {
 
 /* notes */ 
 
-.other_perma {
-    font-size:8px;
-    text-align:right;
-    color:{color:links};
-    padding:3px;
-    padding-right:0px;
-    margin-right:-1.7px;
-    font-family: "Rajdhani", sans-serif;
-    letter-spacing:2px;
-}
-.other_perma a {
-    color:{color:links};
-    border:none;
-}
-.other_perma a:hover {
-    color:{color:links hover};
+.nots {
+  margin-top: 0px;
+  padding: 8px 0 0;
+
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+
+
+  font: 800 9px "Rajdhani", sans-serif;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+
+  color: var(--site-links);
+  position: relative;
 }
 
+.nots a{
+  color: var(--site-links);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.nots a:hover{
+  color: var(--site-links-hover);
+  animation: notsGlitch .18s linear 2;
+}
+
+@keyframes notsGlitch{
+  0%{ transform: translateX(0); }
+  25%{ transform: translateX(-1px); }
+  50%{ transform: translateX(1px); }
+  100%{ transform: translateX(0); }
+}
+
+.nots .sep{
+  opacity: .35;
+  user-select: none;
+}
+
+.nots .timeago{
+  margin-left: auto;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .6;
+  color: var(--site-text);
+
+  position: relative;
+  top: -3px;  
+  right:-2px;
+}
+
+.nots.is-centered .timeago{
+  margin-left: 0;
+}
+
+@media (max-width: 720px){
+  .nots{
+    gap: 10px;
+  }
+  .nots .timeago{
+    width: 100%;
+    margin-left: 0;
+    opacity: .55;
+  }
+}
+
+.nots-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+  opacity: .85;
+  transition: opacity .2s ease, transform .18s ease, color .2s ease;
+}
+
+.nots-icon svg{
+  display: block;
+}
+
+.nots-icon:hover{
+  opacity: 1;
+  color: var(--site-links-hover);
+  transform: translateY(-1px);
+  animation: notsGlitch .18s linear 2;
+}
+
+.nots .sep{
+  margin: 0 2px;
+}
 /* end notes */
 
 /* permalink */
@@ -595,8 +746,16 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
 }
 
 .art { 
@@ -644,61 +803,50 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
 }
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
 /* end asks */
 
 
@@ -878,32 +1026,60 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 6px 10px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color:#fff; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
 }
 
-#ltop:link, #ltop:visited {  
-    position:fixed;
-    background:;  
-    bottom:20px;
-    right:10px; 
-    font-size:20px; 
-    color:{color:accent};  
-    text-align:center;  
-    margin:-2px;  
-    padding:2px 7px 3px 6px; 
-    border-radius:100%;
-    display:none;       
-    transition:1s;
-    z-index:100;
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
+}
+
+#ltop:link, #ltop:visited {   
+    position: fixed;
+    background:{color:background}; 
+    bottom: 20px;
+    right: 20px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
+    display: none;   
+    transition: 1s;
+    z-index: 100;
+ {block:IfLightShadow}
+box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
+{/block:IfLightShadow}
+{block:IfDarkShadow}
+box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+{/block:IfDarkShadow}
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
@@ -1015,7 +1191,7 @@ a.tumblr_blog {
    color:{color:text};
 }      
 
-#tle{
+#blogtittle{
     margin-top:0px;
     margin-left:0px;
     border-bottom:1px solid {color:borders};
@@ -1032,8 +1208,6 @@ a.tumblr_blog {
     color:{color:text};
 }
  
- 
- 
 #br{
    background:{color:borders};
    height:100%;
@@ -1044,7 +1218,7 @@ a.tumblr_blog {
 }
  
  
-#about {
+#bio {
     position: fixed;
     top:0px;
     margin-left:-200px;
@@ -1053,7 +1227,7 @@ a.tumblr_blog {
     border-right:1px solid {color:borders};
     color:white;}
  
-#about .description{
+#bio .description{
    margin-top:5px;
    margin-left:1px;
    width:200px;
@@ -1151,7 +1325,7 @@ a.tumblr_blog {
 	max-width: 100%;
 }
 
-#sbarimg {
+#icon {
 display:block;
 width:180px;
 height:180px;
@@ -1161,7 +1335,7 @@ margin-bottom:-70px;
 margin-top:40px;
 }
  
-#sbarimg img {
+#icon img {
 border-radius:100%;
 width:95px;
 opacity:1;
@@ -1186,8 +1360,14 @@ margin-left:120px;
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg></a> 
 
 </head>
 <body>  
@@ -1221,20 +1401,18 @@ margin-left:120px;
 <!----end music player---->
 {/block:ifshowmusicplayer}   
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"viewBox="0 0 438.317 438.317" style="enable-background:new 0 0 438.317 438.317;" xml:space="preserve"><g><g><path d="M31.167,266.192l20.4,9.35c8.5,3.967,12.467,13.6,9.35,22.383l-7.933,20.967c-5.95,16.15-3.967,33.433,5.95,47.317c9.633,14.167,25.5,22.383,42.5,22.383c6.233,0,12.467-1.133,18.417-3.4l20.967-7.933c1.983-0.85,3.967-1.133,6.233-1.133c6.8,0,13.317,3.967,16.15,10.483l9.35,20.4c8.5,18.7,26.633,30.317,47.033,30.317s38.533-11.617,47.033-30.317l9.35-20.4c2.833-6.233,9.067-10.483,16.15-10.483c1.983,0,4.25,0.283,6.233,1.133l20.967,8.217c5.95,2.267,12.183,3.683,18.417,3.683l0,0c16.717,0,32.583-8.783,42.5-22.667c9.633-14.167,11.9-31.45,5.95-47.6l-7.933-20.967c-3.117-8.783,0.85-18.417,9.35-22.383l20.4-9.35c18.7-8.5,30.317-26.633,30.317-47.033S426.7,180.625,408,172.125l-20.4-9.35c-8.5-3.967-12.467-13.6-9.35-22.383l7.933-20.967c5.95-16.15,3.967-33.433-5.95-47.317c-9.633-14.167-25.5-22.383-42.5-22.383c-6.233,0-12.467,1.133-18.417,3.4l-20.967,7.933c-1.983,0.85-3.967,1.133-6.233,1.133c-6.8,0-13.317-3.967-16.15-10.483l-9.35-20.4c-8.5-18.7-26.633-30.317-47.033-30.317s-39.383,11.9-47.883,30.6l-9.35,20.4c-2.833,6.233-9.067,10.483-16.15,10.483c-1.983,0-4.25-0.283-6.233-1.133L119,53.408c-5.95-2.267-12.183-3.4-18.417-3.4c-16.717,0-32.583,8.5-42.5,22.383c-9.633,14.167-11.9,31.45-5.95,47.317l7.933,20.967c3.117,8.783-0.85,18.417-9.35,22.383l-20.4,9.35C11.617,180.908,0,199.042,0,219.442S12.467,257.692,31.167,266.192z M45.05,203.008l20.4-9.35c24.65-11.333,36.55-39.95,26.917-65.167l-7.933-20.967c-2.833-7.65,0-13.317,1.983-16.15c4.533-6.8,13.033-9.633,20.967-6.517l20.967,7.933c5.95,2.267,11.9,3.4,18.133,3.4l0,0c20.117,0,38.533-11.9,47.033-30.317l9.35-20.4c4.25-9.633,13.317-10.483,16.15-10.483c2.833,0,11.617,0.85,16.15,10.483l9.35,20.4c8.5,18.417,26.917,30.317,47.033,30.317c6.233,0,12.183-1.133,18.133-3.4l20.967-7.933c7.933-2.833,16.15,0,20.967,6.517c1.983,2.833,4.817,8.5,1.983,16.15l-7.933,20.967c-9.35,25.217,2.267,53.833,26.917,65.167l20.4,9.35c9.633,4.25,10.483,13.317,10.483,16.15c0,2.833-0.85,11.617-10.483,16.15l-20.4,9.35c-24.65,11.333-36.55,39.95-26.917,65.167l7.933,20.967c2.833,7.65,0,13.317-1.983,16.15c-4.533,6.8-13.033,9.633-20.967,6.517l-20.967-7.933c-5.95-2.267-11.9-3.4-18.133-3.4c-20.117,0-38.533,11.9-47.033,30.317l-9.35,20.4c-4.25,9.633-13.317,10.483-16.15,10.483c-2.833,0-11.617-0.85-16.15-10.483l-9.35-20.4c-8.5-18.417-26.917-30.317-47.033-30.317c-6.233,0-12.183,1.133-18.133,3.4l-20.967,7.933c-7.933,2.833-16.15,0-20.967-6.517c-1.983-2.833-4.817-8.5-1.983-16.15l7.933-20.967c9.35-25.217-2.267-53.833-26.917-65.167l-20.4-9.35c-9.633-4.25-10.483-13.317-10.483-16.15C34.567,216.325,35.417,207.542,45.05,203.008z"/><path d="M218.733,292.825c40.517,0,73.667-33.15,73.667-73.667s-33.15-73.667-73.667-73.667s-73.667,33.15-73.667,73.667S177.933,292.825,218.733,292.825z M218.733,179.492c21.817,0,39.667,17.85,39.667,39.667s-17.85,39.667-39.667,39.667s-39.667-17.85-39.667-39.667S196.917,179.492,218.733,179.492z"/></g></g></svg></div>
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div class="entry"> 
 
 <div id="br"></div>
  
-<div id="about">
-
-<div id="sbarimg">
+<div id="bio">
+<div id="icon">
 <img src="{image:sidebar}" />
 </div>
  
-<div id="tle">
-
+<div id="blogtittle">
 {text:Blogtitle}
 </div>
  
@@ -1245,7 +1423,6 @@ margin-left:120px;
 <div id="navigation">
  
 <div id="click">+navigation</div>
- 
  
 <div id="links">
 <nav class="cl-effect-11">
@@ -1266,8 +1443,44 @@ margin-left:120px;
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1281,8 +1494,44 @@ margin-left:120px;
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1307,8 +1556,44 @@ margin-left:120px;
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1329,8 +1614,44 @@ margin-left:120px;
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1338,15 +1659,49 @@ margin-left:120px;
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1357,7 +1712,10 @@ margin-left:120px;
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1371,8 +1729,44 @@ margin-left:120px;
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date}  
@@ -1388,8 +1782,44 @@ margin-left:120px;
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1406,8 +1836,44 @@ margin-left:120px;
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1425,8 +1891,44 @@ margin-left:120px;
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="other_perma">
-<a href="{Permalink}" title="{TimeAgo}">{NoteCount} N</a> &nbsp;,&nbsp; <a href="{ReblogURL}">RBLG</a>
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1575,16 +2077,43 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
 <script>feather.replace()</script>
 </body>
 </html>
