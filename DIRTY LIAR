@@ -1,14 +1,13 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -50,7 +49,8 @@ attribute:"title"
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/> 
+<meta name="if:Light Post Hovers" content="1">
 <meta name="if:Pagination" content=""/>
 
 <meta name="text:Link One Title" content="reload"/>
@@ -102,16 +102,39 @@ $("#panel").slideToggle("fast");
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html, body, a, a:hover{cursor:crosshair;}
@@ -221,6 +244,40 @@ blockquote video {
     width:100%; 
 }
 
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
 img { cursor:crosshair;
     border:0;
     width:calc(100% - 0);
@@ -239,8 +296,6 @@ img { cursor:crosshair;
 .tumblrAutoPager_page_separator, .tumblrAutoPager_page_info {
      display:none;
 }
-
-.spotify_audio_player {height:80px !important;}
 
 body {
     color:{color:text}; 
@@ -278,9 +333,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-left:0px;  
     width:1210px;
     {block:permalinkpage}
-     margin-top:320px;   
-   margin-left:-30px;   
-   width:540px; 
+    margin-top:320px;   
+    margin-left:-30px;   
+    width:540px; 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -288,14 +343,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:240px;        
+    width:250px;        
     {block:permalinkpage}
-     margin-top:320px;   
+    margin-top:320px;   
     width:540px; 
-   margin-left:-30px;  
+    margin-left:-30px;  
     {/block:permalinkpage} 
     margin:26px; 
-    padding:5px;    
+    padding:0px;    
     opacity:1;
     transition:1s;  
 }
@@ -383,105 +438,194 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.notsi {
-    padding: 0px;
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    display: inline-block;
-    overflow: hidden;
-    bottom:-2.5px; 
-    left: 1.2px;
-    width: 100%;
-    height: 47px; 
-    transition: 1s;
-    width:auto;
-height:auto;
-line-height:8px;
-font-size:9px;    
-opacity:0;
-z-index:9;
-background:#000;
-bottom:10px;    
-padding:8px;
--webkit-transition:all .2s ease-out;
--moz-transition:all .2s ease-out;
-transition:all .2s ease-out;
-}
- 
-.posts:hover .notsi {
-    opacity:1;
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px !important;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9;
 }
 
-.notsi2 {
-    padding: 0px;
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    display: inline-block;
-    overflow: hidden;
-    bottom:-2.5px; 
-    left: 1.2px;
-    width: 100%;
-    height: 47px; 
-    transition: 1s;
-    position:absolute;
-width:auto;
-height:auto;
-line-height:8px;
-font-size:9px;    
-opacity:0;
-z-index:9;
-background:#000;
-bottom:10px;    
-padding:8px;
--webkit-transition:all .2s ease-out;
--moz-transition:all .2s ease-out;
-transition:all .2s ease-out;
-}
- 
-.posts:hover .notsi2 { 
-    opacity:1;
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.notsi3 {
-    padding: 0px;
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    display: inline-block;
-    overflow: hidden;
-    bottom:-2.5px; 
-    left: 1.2px;
-    width: 100%;
-    height: 47px; 
-    transition: 1s;
-    position:absolute;
-width:auto;
-height:auto;
-line-height:8px;
-font-size:9px;    
-opacity:0;
-z-index:9;
-background:#000;
-bottom:10px;    
-padding:8px;
--webkit-transition:all .2s ease-out;
--moz-transition:all .2s ease-out;
-transition:all .2s ease-out;
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  text-decoration: none;
+  font: 700 8.5px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  opacity: .95;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
- 
-.posts:hover .notsi3 { 
-    opacity:1;
+
+.permalink-hover a:hover {
+  color: #000;
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
 }
- 
-.posts:hover .notsi{margin-left:9px;}
-.posts:hover .notsi2 {margin-left:35px;}
-.posts:hover .notsi3 {margin-left:62.5px;}
 
+.permalink-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
 
-.posts .notsi a,.entry .notsi2 a,.entry .notsi3 a {color:{color:hover permalink}; }
+.permalink-hover a.linkcount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  padding: 0 7px;
+}
 
+.permalink-hover a.linkcount span {
+  transform: translateY(0.5px);
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
+
+{/block:IfLightPostHovers}
+
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px !important;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9;
+}
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  text-decoration: none;
+  font: 700 8.5px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  opacity: .95;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.04),
+    0 0 3px rgba(0,0,0,.35);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  {block:IfLightPostHovers}
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+  {/block:IfLightPostHovers}
+}
+
+.permalink-hover a:hover {
+  color: #fff;
+  box-shadow: 0 0 8px rgba(255,255,255,.15);
+  {block:IfLightPostHovers}
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
+  color: {color:links};
+  {/block:IfLightPostHovers}
+}
+
+.permalink-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
+
+.permalink-hover a.linkcount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  padding: 0 7px;
+}
+
+.permalink-hover a.linkcount span {
+  transform: translateY(0.5px);
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
 
 /* end notes */
 
@@ -586,8 +730,16 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
 }
 
 .art { 
@@ -637,8 +789,8 @@ ol.notes li.note img.avatar {
 .ask {    
     background:{color:ask box background};
     margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:0px;
     padding:15px;
     width:auto; 
@@ -653,8 +805,8 @@ ol.notes li.note img.avatar {
 
 .asker {
     margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:8px;
     width:auto;
     font-size:9px;
@@ -672,8 +824,8 @@ ol.notes li.note img.avatar {
 
 .answer { 
     margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
+    margin-left:0px;
+    margin-right:0px;
     margin-bottom:20px;
     padding-top:8px;  
     width:auto; 
@@ -867,26 +1019,47 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px;  
-    background:{color:tooltip background};
-    font-size:9px;
-    border-radius:3px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
+}
+
+#ltop {
+  color: {color:text};
 }
 
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:17px; 
-    letter-spacing:0px; 
+    bottom:30px;
+    right:30px; 
+    font-size:20px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -906,9 +1079,6 @@ height:auto;
 background:{color:details}; 
 z-index:3;}
 
-
-
-
 .photo img{
 border:1px solid {color:Borders};
 width:100px;
@@ -919,8 +1089,6 @@ padding:6px;
 background:{color:details}; 
 border-radius:100%;
 transition:.8s}
-
-
 
 .title {
 background:{color:details};
@@ -938,8 +1106,7 @@ letter-spacing:1px;
 font-weight:100;
 transition:.8s}
 
-
-.descri {
+.description {
 background:{color:detials};
 padding:10px;
 width:500px;
@@ -958,8 +1125,7 @@ letter-spacing:1px;
 line-height:15px;
 text-transform:none;}
 
-
-.nav {
+.navigation {
 background:transparent;
 margin-top:0px;
 margin-left:0px;
@@ -970,7 +1136,8 @@ text-align:center;
 padding:10px;
 border-top:1px solid {color:borders};
 border-bottom:1px solid {color:borders};}
-.nav a {
+
+.navigation a {
 width:90px;
 color:#999;
 font-size:9px;
@@ -981,7 +1148,8 @@ margin:3px;
 padding:8px 5px 8px 5px;
 position:relative;
 transition: all 0.5s ease;}
-.nav a:hover {
+
+.navigation a:hover {
 color:#fff;
 background:{color:nav hover background}; 
 transition: all 0.5s ease;}
@@ -1032,27 +1200,28 @@ return false;
 });
 </script>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
-
 <body>   
 
 <div class="entry">
-
 <center><div class="sidebar">
 <div class="photo"><img src="{image:sidebar}"></div>
 <div class="title">{title}</div>
-<div class="descri">{description}</div>
-<div class="nav">
+<div class="description">{description}</div>
+<div class="navigation">
 {block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a> {/block:ifLinkOneTitle}
 {block:ifLinkTwoTitle}<a href="{text:Link Two}">{text:Link Two Title}</a>{/block:ifLinkTwoTitle} 
 {block:ifLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:ifLinkThreeTitle}
 {block:ifLinkFourTitle}<a href="{text:Link Four}">{text:Link Four Title}</a>{/block:ifLinkFourTitle}
 </div>
 </div></center>
-
 
 <div id="posts">
 {block:posts}
@@ -1061,9 +1230,31 @@ return false;
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div>  
 {/block:Text}
@@ -1074,9 +1265,31 @@ return false;
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div>  
 {/block:Quote}
@@ -1098,9 +1311,31 @@ return false;
 </ul>
 </div>   
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div>
 {/block:Chat}
@@ -1118,9 +1353,31 @@ return false;
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div> 
 {/block:Link} 
@@ -1132,9 +1389,31 @@ return false;
 </div>   
 <div class="answer">{Answer}</div> 
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div> 
 {/block:answer}
@@ -1143,7 +1422,10 @@ return false;
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1156,9 +1438,31 @@ return false;
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div>  
 {/block:Audio}
@@ -1171,9 +1475,31 @@ return false;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div> 
 {/block:Photo}
@@ -1186,9 +1512,31 @@ return false;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div> 
 {/block:Photoset}
@@ -1203,9 +1551,31 @@ return false;
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi"><a href="{Permalink}"><i class="fa fa-search"></i></a></div>
-<div class="notsi2"><a href="{ReblogURL}"><i class="fa fa-retweet"></i></a></div>
-<div class="notsi3"><a href="{ReblogParentURL}"><i class="fa fa-share"></i></a></div>
+<div class="permalink-hover">
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
+</div>
 {/block:IndexPage}
 </div> 
 {/block:Video} 
@@ -1351,16 +1721,43 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
 <script>feather.replace()</script>
 </body>
 </html>
