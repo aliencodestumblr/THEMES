@@ -1,15 +1,13 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -44,7 +42,8 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
+<meta name="color:Gradient 1" content="#dddddd"/>
+<meta name="color:Gradient 2" content="#333333"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
@@ -124,9 +123,13 @@ $(document).ready(function(){
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
 :root{
   --sp-scale: 0.80;   
-  --sp-base-height: 152px;  
+  --sp-base-height: 80px;  
 }
 
 article iframe[src*="spotify.com"],
@@ -154,6 +157,7 @@ iframe.spotify_audio_player {
   margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
   display: block;
 }
+
 html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
@@ -288,7 +292,7 @@ img {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 10px "Rajdhani", sans-serif;
+    font:400 8.5px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -316,12 +320,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:0px; 
-    margin-left:110px;  
+    margin-top:40px; 
+    margin-left:120px;  
     width:890px;
     {block:permalinkpage}
-    margin-top:20px;   
-    margin-left:-110px;  
+    margin-top:65px;   
+    margin-left:-100px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -331,9 +335,9 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:240px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    margin-top:65px; 
     width:450px; 
-    margin-left:-110px; 
+    margin-left:-100px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -384,39 +388,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb:vertical{
-    width:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+::-webkit-scrollbar {
+  width: 12px; 
 }
- 
-::-webkit-scrollbar-thumb:horizontal{
-    height:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+
+::-webkit-scrollbar-track {
+  background:{color:background};
+  border-radius: 2px;
 }
- 
-::-webkit-scrollbar{
-    width:11px;
-    height:11px;
-    background:{color:background};
-    background-image:url({image:Background});
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2});
+  border-radius: 2px;
+  border: 2px solid {color:background};
 }
 /* end scrollbar */
 
-.album .art{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.headphones-ico{
-  width: 16px;
-  height: 16px;
-  display:block;
-}
 
 /* pagination */
 .pag {      
@@ -594,8 +581,16 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
 }
 
 .art { 
@@ -640,6 +635,55 @@ ol.notes li.note img.avatar {
     text-transform:lowercase;
 }
 /* end audios */ 
+
+
+/* asks */
+.ask {
+    background: linear-gradient(135deg, {color:Gradient 1}, rgba({RGBcolor:Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
+}
+
+.asker {
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
+}
+
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
+}
+
+.answer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
+/* end asks */
+
 
 /* quote */
 .quote {    
@@ -852,11 +896,12 @@ a.tumblr_blog {
   color: {color:text};
 }
 
+
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:20px;
-    right:20px; 
+    bottom:30px;
+    right:30px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -874,16 +919,16 @@ a.tumblr_blog {
     border-right:1px solid {color:borders};
     text-align:right;
     padding:10px;
-    margin:-95px;
+    margin:-85px;
     top:300px;
      {block:permalinkpage}
-    margin-left:-315px; 
+    margin-left:-305px; 
     {/block:permalinkpage} 
 }
  
-.desc{padding:8px 0px;text-align:;line-height:150%;}
-.links{border-top:1px solid {color:borders};padding-top:5px;}
-.links a{font-size:7px;letter-spacing:1px;text-transform:uppercase;}
+.info{padding:8px 0px;text-align:;line-height:150%;}
+.navigation{border-top:1px solid {color:borders};padding-top:5px;}
+.navigation a{font-size:7px;letter-spacing:1px;text-transform:uppercase;}
 .reg, .lh {margin:0px 0px;}
 .lb{padding:0px;line-height:180%;}
 .lb a{display:block;letter-spacing:0.5px;}
@@ -1076,12 +1121,11 @@ transition:.8s}
 {/block:ifshowmusicplayer}   
 
 <div class="entry"> 
-
 <div id="sidebar">
 <div class="title">{text:Blogtitle}</div>
 <div class="photo"><img src="{image:sidebar}"></div>
-<div class="desc">{Description}</div>
-<div class="links">
+<div class="info">{Description}</div>
+<div class="navigation">
     <a class="reg" href="/">reload</a>&nbsp;&nbsp;
     <a class="reg" href="/ask">inbox</a>&nbsp;&nbsp;
     <a href="#" class="lh">+navi</a>
@@ -1192,14 +1236,9 @@ transition:.8s}
 {/block:Link} 
 
 {block:Answer}      
-<div style="display:flex; gap:6px;">
-  <b>Q:</b>
-  <span>{Question}</span>
-</div>
-
-<div style="margin-top:5px;"></div>
-{Answer}
-<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:indexpage}  
 <div class="nots">
 <a href="{reblogurl}" title="reblog" target="_blank"><i class="fa fa-retweet"></i> rblg</a>&nbsp;
@@ -1219,6 +1258,7 @@ transition:.8s}
   <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
         fill="currentColor"/>
 </svg>
+
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
