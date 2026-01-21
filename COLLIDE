@@ -31,12 +31,14 @@ attribute:"title"
 })(jQuery);
 </script>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background" content="#eeeeee"/>
 <meta name="color:links background" content="#ffffff"/>
-<meta name="color:player background" content="#fff"/>
-<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:player background" content="#ffffff"/>
+<meta name="color:Borders" content="#e0e0e0"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#9a9a9a" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -49,7 +51,7 @@ attribute:"title"
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
-<meta name="if:Show caption" content=""/>  
+<meta name="if:Show caption" content=""/>   
 <meta name="if:Tags" content="1"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Drop Links" content=""/>
@@ -66,7 +68,6 @@ attribute:"title"
 <meta name="text:Link 4 Title" content="movies"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
-
 <meta name="text:Song Title" content="Song Title"/>
 <meta name="text:Artist Name" content="Artist Name"/>
 
@@ -132,15 +133,13 @@ $(document).ready(function(){
     });
 </script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 
 <style type="text/css">
 html { scrollbar-gutter: stable both-edges; }
 
-body { overflow-y: scroll; } 
+body { overflow-y: scroll; }  
 
 :root{
   --sp-scale: 0.80;   
@@ -272,40 +271,7 @@ blockquote img {
 
 blockquote video {
     width:100%; 
-}
-
-video {
-  display: block;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-
-.npf_video,
-.npf_video_container,
-.tmblr-full,
-figure.tmblr-full,
-figure,
-.npf_inst {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 1 !important;
-}
-
-.npf_video::after,
-.npf_video_container::after,
-figure::after,
-.tmblr-full::after {
-  content: none !important;
-  display: none !important;
-  height: 0 !important;
-}
-
-.npf_video + .post-notes,
-.npf_video + .bottom,
-video + .post-notes,
-video + .permalink {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+    margin-bottom:-5px;
 }
 
 img { 
@@ -352,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:660px;    
+    width:900px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -361,12 +327,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:0px; 
+    margin-top:40px; 
     margin-left:110px;  
-    width:660px;
+    width:900px;
     {block:permalinkpage}
-    margin-top:20px;   
-    margin-left:5px;  
+    margin-top:65px;   
+    margin-left:-115px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -374,11 +340,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:transparent;   
-    width:270px;        
+    width:250px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    margin-top:65px; 
     width:450px; 
-    margin-left:5px; 
+    margin-left:-115px; 
     {/block:permalinkpage}
     margin:25px; 
     margin-bottom:37px;
@@ -502,7 +468,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing:2.4px;
   text-transform:uppercase;
 
-  opacity:.4;
+  opacity:.8;
   transition:opacity .3s ease, transform .3s ease;
 }
 
@@ -547,8 +513,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-16px;
-    margin-left:20px;  
+    margin-top:-25px;
+    margin-left:20px; 
     margin-bottom:100px;
     width:450px;
     height:100%;
@@ -704,60 +670,48 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.03);
 }
 /* end asks */
 
@@ -938,16 +892,35 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
 #ltop {
@@ -977,7 +950,7 @@ a.tumblr_blog {
     top:200px;
     border:1px solid {color:Borders};
     {block:permalinkpage}
-    margin-left:-180px;  
+    margin-left:-300px;  
     {/block:permalinkpage}
 }
  
@@ -1004,7 +977,7 @@ a.tumblr_blog {
    --Circle-Size:38px;
    --Progress-Border-Size:2px;
    --Progress-Empty:{color:borders};
-   --Progress-Fill:{color:text};
+   --Progress-Fill:#333;
    --Player-Background:{color:player background};
    --Play-Pause-Buttons-Size:14px;
    --Play-Pause-Buttons-Color:{color:text};
@@ -1106,7 +1079,7 @@ a.tumblr_blog {
    font-size:var(--Artist-Name-Font-Size);
    letter-spacing:1px;
    color:{color:text};
-}  
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1160,12 +1133,12 @@ a.tumblr_blog {
 
 <audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
 <!----end music player---->
-{/block:ifshowmusicplayer} 
+{/block:ifshowmusicplayer}  
 
 <div class="entry"> 
 
 <div class="sidebar">
-{block:ifImage}<div class="img"><a href="/"><img src="{image:Sidebar}"/></a></div>{/block:ifImage}
+{block:ifImage}<div class="img"><a href="/"><img src="{image:Sidebar}" title="{title}"/></a></div>{/block:ifImage}
 <div class="desc">{Description}</div>
 <div class="links">
     <a href="/">index</a>
@@ -1307,11 +1280,9 @@ a.tumblr_blog {
 {/block:Link} 
  
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:date}
 {block:IndexPage} 
 <div class="p">
@@ -1340,7 +1311,6 @@ a.tumblr_blog {
   <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
         fill="currentColor"/>
 </svg>
-
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1634,6 +1604,7 @@ $(document).ready(function(){
 });
 
 </script>
+
 <script>feather.replace()</script>
 </body>
 </html>
