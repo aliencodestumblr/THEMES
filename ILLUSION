@@ -1052,7 +1052,7 @@ a.tumblr_blog {
 
 #sidebar > img {
   float: left;
-  width: 55px;
+  width: 40px;
   height: auto;
   border-radius: 4px;
   margin: 0 10px 0 0;
@@ -1065,7 +1065,7 @@ a.tumblr_blog {
   line-height: 1.2;
   margin: 0;
   font-family: "Iceland", sans-serif;
-  padding-top: 18px;
+  padding-top: 10px;
   overflow: hidden;
   color: {color:text};
 }
