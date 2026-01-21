@@ -1,14 +1,13 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -32,10 +31,7 @@ attribute:"title"
 })(jQuery);
 </script>
 
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
 
 <meta name="image:Sidebar" content=""/>
 
@@ -46,7 +42,8 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
+<meta name="color:Ask Gradient 1" content="#000000"/>
+<meta name="color:Ask Gradient 2" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
@@ -56,6 +53,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:3 columns" content=""/>
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Side Title" content=""/>
 
@@ -130,16 +128,39 @@ $(document).ready(function(){
 </script>
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html, body, a, a:hover{cursor:crosshair;}
@@ -241,7 +262,40 @@ blockquote img {
 
 blockquote video {
     width:100%; 
-    margin-bottom:-5px;
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { 
@@ -297,12 +351,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:0px; 
-    margin-left:90px;  
+    margin-top:40px; 
+    margin-left:110px;  
     width:650px;
+    {block:if3columns}
+    width:975px;
+    {/block:if3columns}  
+    {block:if3columns}
+    margin-left:-50px;  
+    {/block:if3columns}
     {block:permalinkpage}
-    margin-top:20px;   
+    margin-top:65px;   
     margin-left:-10px;  
+    {block:if3columns}
+    margin-left:-150px; 
+    {/block:if3columns}  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -312,9 +375,12 @@ h1, h2, h3, h4, h5, h6 {
     background:transparent;   
     width:250px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    margin-top:65px; 
     width:450px; 
     margin-left:-10px; 
+    {block:if3columns}
+    margin-left:-150px; 
+    {/block:if3columns} 
     {/block:permalinkpage}
     border:1px solid {color:borders};
     margin:25px; 
@@ -553,8 +619,16 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
 }
 
 .art { 
@@ -602,61 +676,50 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
 }
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
 /* end asks */
 
 
@@ -836,23 +899,46 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
+}
+
+#ltop {
+  color: {color:text};
 }
 
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:20px;
-    right:20px; 
+    bottom:30px;
+    right:30px; 
     font-size:20px; 
     color:{color:accent};  
     text-align:center;  
@@ -868,11 +954,17 @@ a.tumblr_blog {
     position:fixed;
     width:140px;
     padding:10px;
-    margin-left:-100px;
+    margin-left:-80px;
     top:240px;
     border:1px solid {color:Borders};
+    {block:if3columns}
+    margin-left:-230px;  
+    {/block:if3columns}
     {block:permalinkpage}
-    margin-left:-200px;  
+    margin-left:-200px; 
+    {block:if3columns}
+    margin-left:-330px;  
+    {/block:if3columns}
     {/block:permalinkpage}
 }
  
@@ -901,8 +993,12 @@ a.tumblr_blog {
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
 <body>  
@@ -1024,10 +1120,8 @@ a.tumblr_blog {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
@@ -1045,7 +1139,10 @@ a.tumblr_blog {
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1270,16 +1367,44 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
