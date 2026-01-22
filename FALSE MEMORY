@@ -1023,7 +1023,7 @@ a.tumblr_blog {
   height: 18px;
   stroke: {color:links};
   position: relative;
-  top: -1px;
+  top: 0px;
 }
 
 .header-description {
