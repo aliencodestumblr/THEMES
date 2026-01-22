@@ -42,11 +42,13 @@ attribute:"title"
 <meta name="color:Links Hover" content="#bbbbbb" />
 <meta name="color:Gradient 1" content="#e7e7e7" /> 
 <meta name="color:Gradient 2" content="#bbbbbb" /> 
-<meta name="color:Asker Text" content="#ffffff" /> 
+<meta name="color:Scrollbar" content="#bbbbbb" />
+<meta name="color:Asker Text" content="#ffffff" />
  
 <meta name="if:Dark Tumblr control" content="0"/> 
 <meta name="if:Show Blog Title" content="1"/>
 <meta name="if:Show Sidebar Image" content="0"/>
+<meta name="if:2 Columns" content=""/>
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 
@@ -339,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:670px;    
+    width:930px;    
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -349,11 +351,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:40px; 
-    margin-left:100px;  
-    width:670px;
+    margin-left:120px;  
+    width:930px;
+    
+    {block:If2Columns}
+    margin-left:270px;  
+    {/block:If2Columns}
+    
+    {block:If2Columns}
+    width:620px;
+    {/block:If2Columns}
+    
     {block:permalinkpage}
     margin-top:50px;   
-    margin-left:35px;   
+    margin-left:-75px;   
+    {block:If2Columns}
+    margin-left:75px;  
+    {/block:If2Columns} 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -361,11 +375,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:277px;        
+    width:250px;        
     {block:permalinkpage}
-    margin-top:50px; 
+    margin-top:50px;   
     width:540px; 
-    margin-left:35px;  
+    margin-left:-75px; 
+    {block:If2Columns}
+    margin-left:75px;  
+    {/block:If2Columns} 
     {/block:permalinkpage} 
     border:1px solid {color:borders};
     margin:16px; 
@@ -419,10 +436,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar-thumb:vertical{
+    width:10px;
+    background:{color:scrollbar};
+    border-radius:0px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar-thumb:horizontal{
+    height:10px;
+    background:{color:scrollbar};
+    border-radius:0px;
+    border:2px solid {color:background};
+}
+ 
+::-webkit-scrollbar{
+    width:11px;
+    height:11px;
+    background:{color:background};
+    background-image:url({image:Background});
+}
 /* end scrollbar */
 
 
@@ -881,8 +914,8 @@ p:has(> a.tumblr_blog) {
 
 a.tumblr_blog {
   display: none !important;
-} 
-
+}
+    
 #s-m-t-tooltip {
     border:1px solid {color:borders};
     max-width:300px;
@@ -925,7 +958,7 @@ a.tumblr_blog {
     top:-1px;
     right:-1px;
  
-    width:281px;
+    width:254px;
     height:20px;
  
     padding:0 10px;
@@ -951,16 +984,18 @@ a.tumblr_blog {
     z-index:100;
     position:fixed;
     top:130px;
-    margin-left:-120px;
-
+    margin-left:-100px;
     width:180px;
- 
     text-align:center;
-    
+    {block:If2Columns}
+    margin-left:50px;  
+    {/block:If2Columns}
     {block:permalinkpage}  
-    margin-left:-185px;
+    margin-left:-295px;
+    {block:If2Columns}
+    margin-left:-145px;  
+    {/block:If2Columns} 
     {/block:permalinkpage} 
-
 }
  
 .sidebar{
@@ -1127,7 +1162,7 @@ return false;
 </head>
 <body>  
 
-<div class="entry">    
+<div class="entry">   
 <div class="sidebarcontainer">
 <div class="sidebar">
  
@@ -1143,10 +1178,13 @@ return false;
 </div>
 {/block:ifshowblogtitle}
  
+
 <div class="description">
 {Description}
 </div>
+ 
 </div>
+ 
  
 <div id="navi">Navigation</div>
  
@@ -1523,7 +1561,6 @@ $(document).ready(function(){
 });
 
 </script>
- 
 <script>feather.replace()</script>
 </body>
 </html>
