@@ -49,7 +49,8 @@ attribute:"title"
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/>  
+<meta name="if:2 columns" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
@@ -323,9 +324,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:40px; 
     margin-left:120px;  
     width:890px;
+    
+    {block:if2columns}
+    width:590px;
+    {/block:if2columns}
+    
+    {block:if2columns}
+    margin-left:250px; 
+    {/block:if2columns}
+    
     {block:permalinkpage}
     margin-top:65px;   
     margin-left:-100px;  
+    {block:if2columns}
+    margin-left:30px; 
+    {/block:if2columns}
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -338,6 +351,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:65px; 
     width:450px; 
     margin-left:-100px; 
+    {block:if2columns}
+    margin-left:30px; 
+    {/block:if2columns}
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -921,8 +937,14 @@ a.tumblr_blog {
     padding:10px;
     margin:-85px;
     top:300px;
+    {block:if2columns}
+    margin-left:50px;
+    {/block:if2columns}
      {block:permalinkpage}
     margin-left:-305px; 
+    {block:if2columns}
+    margin-left:-170px; 
+    {/block:if2columns}
     {/block:permalinkpage} 
 }
  
