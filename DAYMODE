@@ -2,8 +2,8 @@
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top, minimal sc — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
+    ↳ scroll to top — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
     ↳ blog music — @glenthemes
 -->
 <!DOCTYPE html>
@@ -45,7 +45,8 @@ attribute:"title"
 <meta name="color:asker text" content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>  
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/> 
+<meta name="if:2 columns" content=""/>
 <meta name="if:Show Description" content="1"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
@@ -391,9 +392,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:40px; 
     margin-left:140px;  
     width:990px;
+    
+    {block:if2columns}
+    width:640px;
+    {/block:if2columns} 
+    
+    {block:if2columns}
+    margin-left:300px;  
+    {/block:if2columns} 
+    
     {block:permalinkpage}
     margin-top:50px;   
     margin-left:-85px;  
+    {block:if2columns}
+    margin-left:75px;  
+    {/block:if2columns} 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -405,6 +418,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:50px; 
     width:540px;
     margin-left:-85px; 
+    {block:if2columns}
+    margin-left:75px;  
+    {/block:if2columns} 
     {/block:permalinkpage} 
     margin:20px; 
     padding:0px;      
@@ -1089,8 +1105,15 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   box-shadow: none !important;
   border-radius: 0 !important;
 
+  {block:if2columns}
+  margin-left:70px;  
+  {/block:if2columns} 
+
   {block:permalinkpage}
   margin-left: -315px;
+  {block:if2columns}
+  margin-left:-155px;  
+  {/block:if2columns}
   {/block:permalinkpage}
 }
 
