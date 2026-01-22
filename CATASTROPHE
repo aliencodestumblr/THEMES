@@ -44,6 +44,7 @@ attribute:"title"
 <meta name="color:Ask Gradient 1" content="#eeeeee"/>
 <meta name="color:Ask Gradient 2" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
