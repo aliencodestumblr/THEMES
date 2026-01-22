@@ -1,12 +1,10 @@
 <!--
-
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ scroll to top, minimal sc — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
     ↳ blog music — @glenthemes
-
 -->
 <!DOCTYPE html>
 <html>  
@@ -34,6 +32,7 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Player Background" content="#ffffff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#828a93"/>  
 <meta name="color:Text" content="#828a93" /> 
@@ -45,7 +44,8 @@ attribute:"title"
 <meta name="color:asker text" content="#ffffff"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/>  
+<meta name="if:1 column" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
 
@@ -336,7 +336,7 @@ body {
 .entry {   
     width:760px;    
     {block:permalinkpage}  
-    width:540px; 
+    width:440px; 
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
@@ -346,9 +346,21 @@ body {
     margin-top:100px; 
     margin-left:180px;  
     width:760px;
+    
+    {block:if1column}
+    width:500px;
+    {/block:if1column}  
+    
+    {block:if1column}
+    margin-left:290px;  
+    {/block:if1column}  
+    
     {block:permalinkpage}
     margin-top:125px;   
-    margin-left:70px;  
+    margin-left:70px; 
+    {block:if1column}
+    margin-left:130px;  
+    {/block:if1column} 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -356,12 +368,18 @@ body {
 
 .posts {  
     background:#ffffff;   
-    width:300px;        
+    width:300px;  
+    {block:if1column}
+    width:440px;
+    {/block:if1column}  
     {block:permalinkpage}
     margin-top:125px; 
-    width:540px; 
+    width:440px; 
     margin-left:70px; 
     padding-bottom:30px;
+    {block:if1column}
+    margin-left:130px;  
+    {/block:if1column} 
     {/block:permalinkpage} 
     margin:25px; 
     padding:15px;  
@@ -618,10 +636,17 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
+}
 .art { 
     float:left;
     background:#f6f6f6;   
@@ -952,8 +977,14 @@ a.tumblr_blog {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
   padding-bottom:0px;
+  {block:if1column}
+  margin-left: -60px;
+  {/block:if1column}  
   {block:permalinkpage}
   margin-left:-280px;  
+  {block:if1column}
+  margin-left: -220px;
+  {/block:if1column}  
   {/block:permalinkpage}
 }
 
@@ -1071,7 +1102,7 @@ a.tumblr_blog {
    --Progress-Border-Size:2px;
    --Progress-Empty:#eee;
    --Progress-Fill:{color:text};
-   --Player-Background:{color:player background};
+   --Player-Background:{color:Player Background};
    --Play-Pause-Buttons-Size:14px;
    --Play-Pause-Buttons-Color:{color:text};
    --Player-Text-Margin:16px;
@@ -1085,7 +1116,7 @@ a.tumblr_blog {
 
 #glenplayer07 {
    position:fixed;
-   bottom:0;margin-bottom:30px;
+   bottom:0;margin-bottom:20px;
    left:0;margin-left:20px;
    z-index:99;
 }
@@ -1240,7 +1271,7 @@ a.tumblr_blog {
     </div>
     <div class="sidebar-text">
      <h1 class="sidebar-title">
- {Name}
+  everclear
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
     stroke-width="1.5" stroke="currentColor" class="verified-checkmark" aria-label="Verified">
     <path stroke-linecap="round" stroke-linejoin="round" 
@@ -1398,7 +1429,10 @@ a.tumblr_blog {
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1639,16 +1673,44 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+ 
 <script>feather.replace()</script>
 </body>
 </html>
