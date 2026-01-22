@@ -52,6 +52,7 @@ attribute:"title"
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
+<meta name="if:2 columns" content=""/>
 <meta name="if:Tags" content="1"/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Drop Links" content=""/>
@@ -330,9 +331,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:40px; 
     margin-left:110px;  
     width:900px;
+    
+    {block:if2columns}
+    width:640px;
+    {/block:if2columns}
+    
+    {block:if2columns}
+    margin-left:240px; 
+    {/block:if2columns}
+    
     {block:permalinkpage}
     margin-top:65px;   
     margin-left:-115px;  
+    {block:if2columns}
+    margin-left:15px; 
+    {/block:if2columns}
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -340,11 +353,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:transparent;   
-    width:250px;        
+    width:250px; 
+    
+    {block:if2columns}
+    width:270px;  
+    {/block:if2columns}
+    
     {block:permalinkpage}
     margin-top:65px; 
     width:450px; 
     margin-left:-115px; 
+    {block:if2columns}
+    margin-left:15px; 
+    {/block:if2columns}
     {/block:permalinkpage}
     margin:25px; 
     margin-bottom:37px;
@@ -949,15 +970,27 @@ a.tumblr_blog {
     margin-left:-75px;
     top:200px;
     border:1px solid {color:Borders};
+    
+    {block:if2columns}
+    margin-left:50px; 
+    {/block:if2columns}
+    
     {block:permalinkpage}
-    margin-left:-300px;  
+    margin-left:-300px; 
+    {block:if2columns}
+    margin-left:-175px; 
+    {/block:if2columns}
     {/block:permalinkpage}
 }
  
-.desc{padding:10px;}
-.img img{width:100%;}
-.img {border-bottom:1px solid {color:Borders};}
+.info {padding:10px;}
+
+.icon img{width:100%;}
+
+.icon {border-bottom:1px solid {color:Borders};}
+
 .links a:hover {padding-left:10px;}
+
 .links a {
     display:block;
     padding:5px;
@@ -966,6 +999,7 @@ a.tumblr_blog {
 }
  
 .lb a{background:;border:0px;}
+
 .lb{
     display:none;
     padding:0px;
@@ -1136,10 +1170,9 @@ a.tumblr_blog {
 {/block:ifshowmusicplayer}  
 
 <div class="entry"> 
-
 <div class="sidebar">
-{block:ifImage}<div class="img"><a href="/"><img src="{image:Sidebar}" title="{title}"/></a></div>{/block:ifImage}
-<div class="desc">{Description}</div>
+{block:ifImage}<div class="icon"><a href="/"><img src="{image:Sidebar}" title="{title}"/></a></div>{/block:ifImage}
+<div class="info">{Description}</div>
 <div class="links">
     <a href="/">index</a>
     <a href="/ask">contact</a>
