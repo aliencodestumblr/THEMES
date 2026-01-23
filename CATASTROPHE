@@ -49,6 +49,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Left Sidebar" content=""/>
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:custom scrollbar" content="1">
 
@@ -310,9 +311,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:5px; 
     margin-left:-110px;  
     width:810px;
+    
+    {block:ifLeftsidebar}
+    margin-left:140px;  
+    {/block:ifLeftsidebar} 
+    
     {block:permalinkpage}
-     margin-top:0px;   
-   margin-left:-110px;   
+    margin-top:0px;   
+    margin-left:-110px;   
+    {block:ifLeftsidebar}
+    margin-left:-15px;  
+    {/block:ifLeftsidebar} 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -325,6 +334,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:0px;   
     width:500px; 
     margin-left:-110px;  
+    {block:ifLeftsidebar}
+    margin-left:-15px;  
+    {/block:ifLeftsidebar} 
     {/block:permalinkpage} 
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
     -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
@@ -1066,8 +1078,16 @@ a.tumblr_blog {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
   -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+      
+  {block:ifLeftsidebar}
+  margin-left:-120px;  
+  {/block:ifLeftsidebar} 
+    
   {block:permalinkpage}
   margin-left: 440px;
+  {block:ifLeftsidebar}
+  margin-left:-275px;  
+  {/block:ifLeftsidebar} 
   {/block:permalinkpage}
 }
 
