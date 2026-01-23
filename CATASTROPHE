@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     margin-top:0px;   
-    margin-left:-110px;   
+    margin-left:17px;   
     {block:ifLeftsidebar}
     margin-left:-15px;  
     {/block:ifLeftsidebar} 
@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:0px;   
     width:500px; 
-    margin-left:-110px;  
+    margin-left:17px;  
     {block:ifLeftsidebar}
     margin-left:-15px;  
     {/block:ifLeftsidebar} 
@@ -1084,7 +1084,7 @@ a.tumblr_blog {
   {/block:ifLeftsidebar} 
     
   {block:permalinkpage}
-  margin-left: 440px;
+  margin-left: 568px;
   {block:ifLeftsidebar}
   margin-left:-275px;  
   {/block:ifLeftsidebar} 
