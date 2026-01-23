@@ -3,8 +3,8 @@
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top, minimal sc — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -158,7 +158,7 @@ html, body, a, a:hover{cursor:crosshair;}
 /* Force Tumblr controls iframe to sit on top and be clickable */
 iframe.tmblr-iframe {
   position: fixed !important;
-  top: 5px !important;              
+  top: 20px !important;              
   right: 0px !important;    
   {block:IfDarkTumblrControl}
   filter:invert(1);
@@ -466,7 +466,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 18px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px !important;
   opacity: 0;
   transform: translateY(3px);
   pointer-events: none;
@@ -554,7 +554,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 18px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px !important;
   opacity: 0;
   transform: translateY(3px);
   pointer-events: none;
@@ -1234,7 +1234,7 @@ return false;
 </div>
 
 <div class="message">
-<!-- <p><div class="asktitle"><a href="/ask">{AskLabel}</a></p></a></div> -->
+<p><div class="asktitle"><a href="/ask">{AskLabel}</a></p></a></div>
 <iframe frameborder="0" height="200px" id="" scrolling="no" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" width="500px;" overflow="hidden" "></iframe>  
 <p>
 <div style="display:block;margin-left:0px;margin-top:5px;"></div>
@@ -1245,9 +1245,8 @@ return false;
 <span class="nav">
 <div id="plus" onclick="ShowMenu();changeText();" style="cursor:help; margin-left:0px;">+</div>
 
-<!--FIRST CHILD SPACER -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<!--END FIRST CHILD SPACER -->
+
 <a href="/">Reload</a>
 
 <div style="display:inline;">|</div>
@@ -1909,16 +1908,44 @@ $(document).ready(function () {
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
