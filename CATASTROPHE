@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
     {/block:ifLeftsidebar} 
     
     {block:permalinkpage}
-    margin-top:0px;   
+    margin-top:12.5px;   
     margin-left:17px;   
     {block:ifLeftsidebar}
     margin-left:-15px;  
@@ -331,7 +331,7 @@ h1, h2, h3, h4, h5, h6 {
     background:{color:details};   
     width:250px;        
     {block:permalinkpage}
-    margin-top:0px;   
+    margin-top:12.5px;   
     width:500px; 
     margin-left:17px;  
     {block:ifLeftsidebar}
