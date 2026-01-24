@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 22px;
   text-transform: lowercase;
   font-weight: 300;
-  letter-spacing: 1.6px;
+  letter-spacing: 0.5px;
   position: relative;
 }
 
