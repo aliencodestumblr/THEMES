@@ -34,8 +34,7 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:player background" content="#fff"/>
-<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:player background" content="#ffffff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -44,7 +43,6 @@ attribute:"title"
 <meta name="color:Gradient 1" content="#dddddd"/>
 <meta name="color:Gradient 2" content="#333333"/>
 <meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
@@ -58,8 +56,6 @@ attribute:"title"
 <meta name="text:Link Two" content="/"/>
 <meta name="text:Link Three Title" content="dashboard"/>
 <meta name="text:Link Three" content="/"/>
-
-<meta name="text:Blogtitle" content="heroin"/>
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -162,7 +158,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -171,7 +167,6 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:details}!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -291,26 +286,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:40px; 
-    margin-left:130px; 
+    margin-top:90px; 
+    margin-left:60px; 
     
     width:700px;
     
     {block:permalinkpage}
-    margin-top:65px;   
-    margin-left:30px;  
+    margin-top:115px;   
+    margin-left:-40px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:{color:details};   
     width:300px;        
     {block:permalinkpage}
-    margin-top:65px; 
+    margin-top:115px; 
     width:500px; 
-    margin-left:30px; 
+    margin-left:-40px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -390,7 +384,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
-    background:{color:details};
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -902,13 +895,13 @@ a.tumblr_blog {
 
 #left-sidebar {
   position: fixed;
-  top: 120px;
-  margin-left: -130px;
+  top: 115px;
+  margin-left: -240px;
   width: 260px;
   height: auto;
   z-index: 1000;
   {block:permalinkpage}
-  margin-left: -230px; 
+  margin-left: -340px; 
   {/block:permalinkpage}
 }
 
@@ -1249,10 +1242,6 @@ a.tumblr_blog {
   </div>
 </div>
 {/block:indexpage}
-</div> 
-</div>
-</div>{/block:IndexPage}{/block:date}
-</div>
 {/block:Chat}
 
 {block:Link}     
