@@ -35,10 +35,10 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background" content="#eeeeee"/>
 <meta name="color:links background" content="#ffffff"/>
 <meta name="color:player background" content="#ffffff"/>
-<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Borders" content="#e0e0e0"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#9a9a9a" /> 
 <meta name="color:Links" content="#aaaaaa" />  
@@ -570,26 +570,6 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-.reblog-button i.fa-retweet {
-  font-size: 11px;
-  margin-left: 4px;
-  color: inherit;
-
-  opacity: 0.5;
-  filter: brightness(110%);
-
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
-}
-
-.reblog-button:hover i.fa-retweet,
-.reblog-button:focus i.fa-retweet {
-  opacity: 1;
-  filter: brightness(100%);
-  transform: scale(1);
-  outline: none;
-}
-
 /* end notes */
 
 /* permalink */
@@ -708,7 +688,6 @@ ol.notes li.note img.avatar {
 
 .art { 
     float:left;
-    background:{color:background};   
     margin-top:20px;
     margin-left:20px; 
     width:18px; 
@@ -716,7 +695,6 @@ ol.notes li.note img.avatar {
     font-size:21px;
     color:{color:accent};
     border-radius:5px;
-    border:1px solid {color:borders};
     text-align:center;      
 }
 
@@ -1343,8 +1321,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1374,8 +1368,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1416,8 +1426,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1454,8 +1480,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1484,8 +1526,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1529,8 +1587,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1562,8 +1636,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1596,8 +1686,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
@@ -1631,8 +1737,24 @@ border: 1px solid rgba(0,0,0,0.06);
   <div class="perm-links">
     <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog-button" title="Reblog" target="_blank" aria-label="Reblog post" role="img" style="display: inline-flex; align-items: center;">
-  <i class="fa fa-retweet" aria-hidden="true"></i>
+    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="11" height="11" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    aria-hidden="true"
+    style="vertical-align: middle;"
+  >
+    <polyline points="17 1 21 5 17 9"></polyline>
+    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
+    <polyline points="7 23 3 19 7 15"></polyline>
+    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
+  </svg>
 </a>
   </div>
 
