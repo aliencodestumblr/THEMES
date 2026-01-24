@@ -34,7 +34,8 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:player background" content="#ffffff"/>
+<meta name="color:player background" content="#fff"/>
+<meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -42,8 +43,9 @@ attribute:"title"
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Gradient 1" content="#dddddd"/>
 <meta name="color:Gradient 2" content="#333333"/>
-<meta name="color:Asker Text" content="#ffffff"/>
-<meta name="color:Tooltip Text" content="#ffffff"/>
+<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:tooltip background" content="#000000"/>
+<meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>  
@@ -68,16 +70,6 @@ attribute:"title"
 </script>
 <script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script> 
-$(document).readyy(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -100,17 +92,6 @@ $("#panel").slideToggle("fast");
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
-
-<script>
-$(document).ready(function(){
-    $(".lb").hide();
-        $(".lh").show();$('.lh').toggle(function(){
-            $(".lb").slideDown(function(){});
-                },function(){
-            $(".lb").slideUp(function(){});
-        });
-    });
-</script>
 
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
@@ -190,6 +171,7 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
+    border:5px solid {color:details}!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -300,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:890px;    
+    width:700px;    
     {block:permalinkpage}  
     width:500px; 
     {/block:permalinkpage} 
@@ -310,24 +292,25 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:40px; 
-    margin-left:190px; 
+    margin-left:130px; 
     
-    width:680px;
+    width:700px;
     
     {block:permalinkpage}
     margin-top:65px;   
-    margin-left:-5px;  
+    margin-left:30px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:290px;        
+    background:{color:details};   
+    width:300px;        
     {block:permalinkpage}
     margin-top:65px; 
     width:500px; 
-    margin-left:-5px; 
+    margin-left:30px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -407,6 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pag a{ 
+    background:{color:details};
     width:auto; 
     font-size:12px;  
     text-align:center;
@@ -431,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 .nots {
     margin-top: 8px;
     margin-bottom: -6px;
-    width: 292px;
+    width: 302px;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: lowercase;
@@ -919,12 +903,12 @@ a.tumblr_blog {
 #left-sidebar {
   position: fixed;
   top: 120px;
-  margin-left: -60px;
+  margin-left: -130px;
   width: 260px;
   height: auto;
   z-index: 1000;
   {block:permalinkpage}
-  margin-left: -255px; 
+  margin-left: -230px; 
   {/block:permalinkpage}
 }
 
@@ -1180,7 +1164,7 @@ a.tumblr_blog {
       </div>
     </div>
 
-    <div class="sb-desc">{Description}</div>
+    <div class="sb-desc">{Description} | +5k</div>
 
     <nav class="sb-nav">
       <a href="/">reload</a>
