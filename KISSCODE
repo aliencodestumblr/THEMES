@@ -43,7 +43,8 @@ attribute:"title"
 <meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:tooltip text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content="1"/>   
+<meta name="if:Dark Tumblr control" content="1"/>  
+<meta name="if:2 columns" content=""/>
 <meta name="if:Show caption" content=""/>  
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
@@ -310,6 +311,11 @@ body {
 
 .entry {   
     width:930px;    
+    
+    {block:if2columns}
+    width:640px;
+    {/block:if2columns} 
+    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -321,21 +327,34 @@ body {
     margin-top:5px; 
     margin-left:110px;  
     width:930px;
+    
+    {block:if2columns}
+    width:640px;
+    {/block:if2columns} 
+    
     {block:permalinkpage}
     margin-top:33px;   
-    margin-left:-130px;  
+    margin-left:-130px; 
+    {block:if2columns}
+    margin-left:15px; 
+    {/block:if2columns} 
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:transparent;   
+    {block:if2columns}
+    width:270px;
+    {/block:if2columns} 
     width:260px;        
     {block:permalinkpage}
     margin-top:33px; 
     width:450px; 
     margin-left:-130px; 
+    {block:if2columns}
+    margin-left:15px; 
+    {/block:if2columns} 
     {/block:permalinkpage}
     margin:25px; 
     border-radius:3px;
@@ -981,10 +1000,13 @@ a.tumblr_blog {
   font-family:"Rajdhani", sans-serif;
   {block:permalinkpage}  
   margin-left:-320px;
+  {block:if2columns}
+  margin-left:-175px;
+  {/block:if2columns} 
   {/block:permalinkpage} 
 }
 
-.sidebar-title {
+.blogtitle {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 15px;
@@ -1007,13 +1029,13 @@ a.tumblr_blog {
   100% { background-position: 0% 50%; }
 }
 
-.sidebar-image img {
+.icon img {
   max-width: 100%;
   margin-bottom: 15px;
   border-radius: 3px;
 }
 
-.sidebar-links {
+.navi {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1021,7 +1043,7 @@ a.tumblr_blog {
   margin-bottom: 15px;
 }
 
-.sidebar-links a {
+.navi a {
   font-size: 11px;
   font-weight: 550;
   text-decoration: none;
@@ -1033,7 +1055,7 @@ a.tumblr_blog {
   transition: color 0.3s ease;
 }
 
-.sidebar-links a::after {
+.navi a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1044,11 +1066,11 @@ a.tumblr_blog {
   transition: width 0.3s ease;
 }
 
-.sidebar-links a:hover::after {
+.navi a:hover::after {
   width: 100%;
 }
 
-.sidebar-desc {
+.info {
   font-size: 11px;
   line-height: 1.5;
   color: #ccc;
@@ -1110,16 +1132,14 @@ a.tumblr_blog {
 {/block:ifshowmusicplayer}  
 
 <div class="entry"> 
-<!-- SIDEBAR -->
 <div id="sidebar">
-<h1 class="sidebar-title">{Title}</h1>
+<h1 class="blogtitle">{Title}</h1>
 
-  
-  <div class="sidebar-image">
-    <img src="{image:Sidebar}" alt="sidebar image">
+  <div class="icon">
+    <img src="{image:Sidebar}" alt="icon">
   </div>
   
-  <nav class="sidebar-links">
+  <nav class="navi">
     {block:iflink1title}
 <a href="{text:link 1}">{text:link 1 title}</a>
 {/block:iflink1title}
@@ -1141,12 +1161,10 @@ a.tumblr_blog {
 {/block:iflink5title}
   </nav>
   
-  <p class="sidebar-desc">
+  <p class="info">
     {description}
   </p>
 </div>
-
-
 
 <div id="posts">
 {block:posts}
