@@ -54,7 +54,6 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Left Header" content="">
 <meta name="if:Fixed header" content="">
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Light Icon Shadow" content="">
@@ -357,7 +356,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom:50px;
     transition:.5s;
 }
-
 
 .posts {  
   float: left;
@@ -1052,15 +1050,6 @@ a.tumblr_blog {
   padding-bottom: 45px;
   justify-content: center;
 }
-
-{block:IfLeftHeader}
-.header-wrap {
-  justify-content: flex-start;
-  padding-left: 31px;
-}
-{/block:IfLeftHeader}
-
-
 
 .header-icon {
   width: 190px;
