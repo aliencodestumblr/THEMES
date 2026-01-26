@@ -42,8 +42,8 @@ attribute:"title"
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Gradient 1" content="#dddddd"/>
 <meta name="color:Gradient 2" content="#333333"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>  
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:700px;    
+    width:740px;    
     {block:permalinkpage}  
     width:500px; 
     {/block:permalinkpage} 
@@ -289,22 +289,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:90px; 
     margin-left:60px; 
     
-    width:700px;
+    width:740px;
     
     {block:permalinkpage}
     margin-top:115px;   
-    margin-left:-40px;  
+    margin-left:-60px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:300px;        
+    width:320px;        
     {block:permalinkpage}
     margin-top:115px; 
     width:500px; 
-    margin-left:-40px; 
+    margin-left:-60px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:0px;    
@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 .nots {
     margin-top: 8px;
     margin-bottom: -6px;
-    width: 302px;
+    width: 322px;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: lowercase;
@@ -901,7 +901,7 @@ a.tumblr_blog {
   height: auto;
   z-index: 1000;
   {block:permalinkpage}
-  margin-left: -340px; 
+  margin-left: -360px; 
   {/block:permalinkpage}
 }
 
