@@ -110,7 +110,6 @@ attribute:"title"
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
-
  
 <script>
 $(document).ready(function(){
@@ -423,14 +422,14 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:vertical{
     width:10px;
     background:{color:scrollbar};
-    border-radius:2px;
+    border-radius:5px;
     border:2px solid {color:background};
 }
  
 ::-webkit-scrollbar-thumb:horizontal{
     height:10px;
     background:{color:scrollbar};
-    border-radius:2px;
+    border-radius:5px;
     border:2px solid {color:background};
 }
  
@@ -482,9 +481,9 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: flex-end;
   margin-top: 8px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-size: 11px;
-  color: rgba(0,0,0,0.6);
+  color:{color:text};
   user-select: none;
 }
 
@@ -498,7 +497,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .perm-links a {
-  color: rgba(0,0,0,0.55);
+  color:{color:text};
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
@@ -514,7 +513,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 125%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(50, 50, 50, 0.85);
+  background:{color:text};
   color: #fff;
   padding: 4px 8px;
   border-radius: 4px;
@@ -533,8 +532,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .perm-links a:hover,
 .perm-links a:focus {
-  border-bottom-color: rgba(0,0,0,0.3);
-  color: rgba(0,0,0,0.8);
+  border-bottom-color:{color:Links Hover};
+  color:{color:text};
   outline: none;
 }
 
