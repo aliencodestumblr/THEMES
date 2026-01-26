@@ -32,7 +32,7 @@ attribute:"title"
 </script>
  
 <meta name="image:header" content="https://64.media.tumblr.com/9895097e9214ca7f77f1636a425d905c/5e9fb190bd124ba4-94/s1280x1920/a5353de9b145b98ab61556657e4e3d87816d927b.jpg" />
-<meta name="image:sb" content="https://64.media.tumblr.com/3ff98dd464b54d6fafb950838daa029c/e84b0dcac265f230-82/s640x960/e18a0216491c3ce4443d6b5a591f9818dc96ef11.jpg" />
+<meta name="image:sb" content="" />
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>    
@@ -331,16 +331,19 @@ h1, h2, h3, h4, h5, h6 {
 /* pagination */
 #pagination {
     margin-top:40px;
-  width:170px;
-  margin-left:calc(50% - 415px + 15px);
+    width:170px;
+    margin-left:calc(50% - 415px + 15px);
     font-size:12.5px;
     padding:15px;
     background:{color:details};
     border-radius:4px;
     box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  margin-bottom:100px;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom:100px;
+    {block:permalinkpage}  
+    display:none;
+    {/block:permalinkpage} 
 }
 
 #pagination a {
@@ -419,7 +422,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
 }
 
-
 /* end pagination */
 
 /* notes */ 
@@ -462,7 +464,6 @@ h1, h2, h3, h4, h5, h6 {
 .float {
     float:right; 
 }
- 
  
 /* end notes */
 
@@ -622,59 +623,43 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 3px;
+.ask-inline {
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-bottom: 6px;
+  white-space: normal;
+}
+
+.ask-label {
+  font-weight: 700;
+  margin-right: 6px;
+  opacity: 0.4;
+}
+
+.ask-question {
+  font-style: italic;
 }
 
 .asker {
-    margin-top:0px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-left: 6px;
+  opacity: 0.45;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+.ask-answer {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+  color: {color:text};
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
-}
-
-.answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+.ask-answer img {
+  width: 100%;
+  margin-top: 12px;
+  display: block;
 }
 /* end asks */
 
@@ -940,6 +925,15 @@ a.tumblr_blog {
   margin-bottom:5px;
 }
 
+#profile-title {
+  font-size: 15px;
+  color:{color:text};
+  margin-top: 10px;
+  font-weight: 100;
+  text-align: left;
+  font-family:"Rajdhani", sans-serif;
+}
+
 #info {
   width:140px;
   padding:6px;
@@ -949,7 +943,7 @@ a.tumblr_blog {
 }
 
 #scroll-nav {
-  width:148.5px;
+  width:147.5px;
   opacity:0;
   transition:opacity .3s ease;
   margin-top:12px;
@@ -1016,6 +1010,10 @@ a.tumblr_blog {
   <div id="info">
     {Description}
   </div>
+
+<div id="profile-title">
+  @{Name}
+</div>
 
   <div id="scroll-nav">
     {block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:IfLinkOneTitle}
@@ -1112,11 +1110,17 @@ a.tumblr_blog {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="ask-inline">
+
+  <span class="ask-label">Q</span>
+  <span class="ask-question">{Question}</span>
+  <span class="asker">— {Asker}</span>
+
+</div>
+
+<div class="ask-answer">
+  {Answer}
+</div>
 {block:indexpage}  
 <div class="nots">
 <a href="{reblogurl}" target="_blank"><i class="fa fa-retweet"></i> Reblog</a>
