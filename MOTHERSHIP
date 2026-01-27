@@ -3,8 +3,8 @@
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top, minimal sc — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
+    ↳ scroll to top — @aliencodes original code
+    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -54,7 +54,7 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Header Icon" content="">
+<meta name="if:Show header icon" content="">
 <meta name="if:Fixed header" content="">
 <meta name="if:Light Post Hovers" content="1">
 
@@ -334,23 +334,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    top:150px;
+     {block:IfNotShowHeaderIcon}
+    top:170px;
+    {/block:IfNotShowHeaderIcon}
     
-    {block:IfHeaderIcon}
+    {block:IfShowHeaderIcon}
     top:320px;
-    {/block:IfHeaderIcon}
-     
+    {/block:IfShowHeaderIcon}
     
     margin-left:0;
     margin-right:0;
-    padding:0 5px;
+    padding:0 0px;
 
     width:100%;
     max-width:none;
     box-sizing:border-box;
 
     {block:permalinkpage}
-    margin-top:280px;
+    margin-top:170px;
+    {block:IfShowHeaderIcon}
+    margin-top:320px;  
+    {/block:IfShowHeaderIcon}
     width:540px;
     max-width:100%;
     margin-left:auto;
@@ -765,8 +769,16 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album {
-    padding:0px; 
+.album .art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.headphones-ico{
+  width: 16px;
+  height: 16px;
+  display:block;
 }
 
 .art { 
@@ -810,6 +822,56 @@ ol.notes li.note img.avatar {
     text-transform:lowercase;
 }
 /* end audios */ 
+
+
+/* asks */
+
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
+}
+
+.asker {
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
+}
+
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
+}
+
+.answer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.03);
+}
+
+/* end asks */
+
 
 /* quote */
 .quote {    
@@ -1171,8 +1233,6 @@ return false;
 <a href="javascript:;" id="ltop">
 <img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
 </a> 
-
-
 </head>
 
 <body>   
@@ -1182,13 +1242,13 @@ return false;
 <br>
 
 <center>
-  {block:IfHeaderIcon}
+  {block:IfShowHeaderIcon}
     <img src="{image:Header Icon}" style="margin-top:10px;width:190px;border-radius:100%;" />
-  {/block:IfHeaderIcon}
+  {/block:IfShowHeaderIcon}
 
-  {block:IfNotHeaderIcon}
+  {block:IfNotShowHeaderIcon}
     <div class="title">{Title}</div>
-  {/block:IfNotHeaderIcon}
+  {/block:IfNotShowHeaderIcon}
 </center>
 
 <br>
@@ -1204,8 +1264,6 @@ return false;
 
 <div class="info">{Description}</div>
 </div>
-
-
 
 <div id="posts">
 {block:posts}
@@ -1371,14 +1429,9 @@ return false;
 {/block:Link} 
 
 {block:Answer}      
-<div style="display:flex; gap:6px;">
-  <b>Q:</b>
-  <span>{Question}</span>
-</div>
-
-<div style="margin-top:5px;"></div>
-{Answer}
-<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:IndexPage} 
 <div class="permalink-hover">
   <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
@@ -1413,7 +1466,10 @@ return false;
 {block:Audio}   
 <div class="album">
 <div class="art">
-<span class="pe-7s-headphones"></span>
+<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
+        fill="currentColor"/>
+</svg>
 </div>
 {block:AudioPlayer}
 <div class="player">{AudioPlayerGrey}</div>
@@ -1797,16 +1853,83 @@ $(document).ready(function () {
 </div> 
 </div> 
  
+<script>
+
+$(document).ready(function(){
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
+});
+
+</script>
 
 <script>
-// minimal soundcloud player © shythemes.tumblr
-$(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
-});
-</script> 
-<script>feather.replace()</script>
+(function($){
+  function syncPostsSpacing(){
+    var $header = $('.header').first();
+    var $posts  = $('#posts').first();
+    if (!$header.length || !$posts.length) return;
+
+    var comp = window.getComputedStyle($header[0]);
+    // if header is fixed, give #posts a margin-top equal to header height; otherwise remove it
+    if (comp.position === 'fixed') {
+      var h = Math.ceil($header.outerHeight());
+      $posts.css('margin-top', h + 'px');
+    } else {
+      // leave it in normal flow if header isn't fixed
+      $posts.css('margin-top', '');
+    }
+  }
+
+  $(window).on('load resize orientationchange', function(){
+    // small delay to allow fonts/images to settle
+    setTimeout(syncPostsSpacing, 30);
+  });
+
+  // also run after images load inside header or posts (masonry)
+  $(document).ready(function(){
+    syncPostsSpacing();
+
+    // also recalc when new images finish loading
+    $('#posts').imagesLoaded ? $('#posts').imagesLoaded(function(){ syncPostsSpacing(); }) : null;
+
+    // For theme editors that toggle the Fixed header via markup (changing style blocks),
+    // we observe attribute/style changes on the header and re-run.
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(function(){ syncPostsSpacing(); });
+      obs.observe(document.querySelector('.header') || document.body, { attributes: true, childList: true, subtree: false });
+    }
+  });
+})(jQuery);
+</script>
+
 </body>
 </html>
