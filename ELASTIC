@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:800px;
+    width:770px;
     margin-left: 0;
     margin-right: auto;
     {block:permalinkpage}  
@@ -329,7 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:5px; 
     left: 44%;  
-    width:800px;
+    width:770px;
     
     {block:permalinkpage}
     margin-top:12.5px;   
@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
     width:500px; 
     left:44%;  
     {/block:permalinkpage} 
-    margin:5px; 
+    margin:3px; 
     padding:0px;    
     overflow:;
     opacity:1;
@@ -1214,7 +1214,7 @@ a.tumblr_blog {
   font-style: italic;
   color: {color:text};
   opacity: .85;
-  padding: 6px 4px 0;
+  padding: 6px 3px 0 0px;
   word-break: break-word;
 }
 
@@ -1224,7 +1224,6 @@ a.tumblr_blog {
   align-items: center;
   justify-content: center;
   gap: 5px;
-
   font-weight: 900;
   text-transform: lowercase;
   letter-spacing: 3px;
