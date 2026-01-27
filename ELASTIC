@@ -1249,7 +1249,7 @@ a.tumblr_blog {
   stroke: {color:Link};
   opacity: .85;
   flex: 0 0 auto;
-  margin-top: -1px;
+  margin-top: 0px;
 }
 
 </style> 
