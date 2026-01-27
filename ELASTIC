@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:810px;
+    width:800px;
     margin-left: 0;
     margin-right: auto;
     {block:permalinkpage}  
@@ -328,12 +328,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:5px; 
-    left: 40%;  
-    width:810px;
+    left: 44%;  
+    width:800px;
     
     {block:permalinkpage}
     margin-top:12.5px;   
-    left:40%;  
+    left:44%;  
     {/block:permalinkpage}
 
     margin-bottom:50px;
@@ -345,19 +345,13 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:12.5px;   
     width:500px; 
-    left:40%;  
+    left:44%;  
     {/block:permalinkpage} 
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
-    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
-    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
     margin:5px; 
-    padding:3px;    
+    padding:0px;    
     overflow:;
     opacity:1;
     transition:1s;  
-    {block:IfDarkModeshadows}
-    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
-    {/block:IfDarkModeShadows}
 }
 
 {block:IndexPage}
@@ -710,7 +704,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:40.5%;  
+    margin-left:44%;  
     margin-bottom:100px;
     width:500px;
     height:auto; 
