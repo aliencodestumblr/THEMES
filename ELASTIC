@@ -1,3 +1,13 @@
+<!--
+
+  [ aliencodes theme ]
+
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -31,27 +41,23 @@ attribute:"title"
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:Ask Gradient 1" content="#eeeeee"/>
+<meta name="color:Ask Gradient 2" content="#000000"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
 
-<meta name="if:Dark Tumblr control" content=""/> 
-<meta name="if:show sidebar image" content="0"/>
+<meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:show title" content="1"/>
-<meta name="if:Show custom scrollbar" content="1">
+<meta name="if:Darkmode Shadows" content="">
+<meta name="if:Light Post Hovers" content="1">
 
-<meta name="text:Blog Title Size" content="50"/>
 <meta name="text:Link One Title" content=""/>
 <meta name="text:Link One" content=""/>
 <meta name="text:Link Two Title" content=""/>
 <meta name="text:Link Two" content=""/>
 <meta name="text:Link Three Title" content=""/>
 <meta name="text:Link Three" content=""/>
-<meta name="text:Link Four Title" content=""/>
-<meta name="text:Link Four" content=""/>
-<meta name="text:Link Five Title" content=""/>
-<meta name="text:Link Five" content=""/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -69,14 +75,11 @@ $("#panel").slideToggle("fast");
 
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
@@ -94,51 +97,59 @@ $("#panel").slideToggle("fast");
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
 }
 
-body {
-    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
 }
 
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
+}
+ 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
 iframe.tmblr-iframe {
-    z-index:99999999999999!important;  
-    top:5px!important; 
-    right:5px!important; 
-    {block:ifdarktumblrcontrol}
-    filter:invert(1) contrast(100%);
-    -webkit-filter:invert(1) contrast(100%);
-    -o-filter:invert(1) contrast(100%);
-    -moz-filter:invert(1) contrast(100%);
-    -ms-filter:invert(1) contrast(100%); 
-    {/block:ifdarktumblrcontrol}
-    transform:scale(0.60);
-    transform-origin:100% 0;
-    -webkit-transform:scale(0.60);
-    -webkit-transform-origin:100% 0;
-    -o-transform:scale(0.60);
-    -o-transform-origin:100% 0;
-    -moz-transform:scale(0.60);
-    -moz-transform-origin:100% 0;
-    -ms-transform:scale(0.60);
-    -ms-transform-origin:100% 0;
+    position:fixed!important;
+    z-index:99999999!important;
+    top:5px;!important;
+    right:0!important;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
+    transform:scale(0.45) rotate(0deg);
+    transform-origin:95% 0;
+    vertical-align:top right;
     opacity:0.5;
-    transition:.5s;
-}
+} 
 
 .tmblr-iframe--app-cta-button {
     display: none!important;
@@ -189,13 +200,11 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -220,7 +229,7 @@ blockquote {
 blockquote img {
     width:100%;
     height:auto;
-    margin-bottom:-5px;
+    margin-bottom:0px;
 }
 
 blockquote video {
@@ -229,7 +238,7 @@ blockquote video {
 }
 
 img {
-    cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur817.cur), progress;
+    border:0;
     width:calc(100% - 0);
     height:auto;
     display:block;
@@ -247,17 +256,10 @@ img {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
-* {
-  cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
-}
-
 body {
-    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
     color:{color:text}; 
     background-color:{color:background};
-    font:400 9px "Rajdhani", sans-serif;
+    font:400 10px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1.5px;
     text-align:justify;    
@@ -275,45 +277,50 @@ h1, h2, h3, h4, h5, h6 {
     line-height:15px;
 }
 
-.entry {    
-
-     cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur817.cur'), auto;
-
-    width:845px;  
-
-    
-    {block:permalinkpage} 
-    width:845px;  
-    {/block:permalinkpage}
-
-    margin:auto;
+.entry {   
+    width:810px;
+    margin-left: 0;
+    margin-right: auto;
+    {block:permalinkpage}  
+    width:500px; 
+    {/block:permalinkpage} 
     height:auto; 
 }
 
 #posts {     
-    width:845px;
-    margin-top:0px;   
-    margin-left:-89px;
+    margin-top:5px; 
+    left: 40%;  
+    width:810px;
+    
     {block:permalinkpage}
-    margin-top:0px;
-    margin-left:170px;
+    margin-top:12.5px;   
+    left:40%;  
     {/block:permalinkpage}
+
+    margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:{color:details};
-    width:250px;  
+    width:250px;        
     {block:permalinkpage}
+    margin-top:12.5px;   
     width:500px; 
-    margin-left:170px;
+    left:40%;  
     {/block:permalinkpage} 
-    margin:2px; 
-    padding:0px;      
-    overflow:hidden;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
+    margin:5px; 
+    padding:3px;    
+    overflow:;
     opacity:1;
     transition:1s;  
-} 
+    {block:IfDarkModeshadows}
+    box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
+    {/block:IfDarkModeShadows}
+}
+
 {block:IndexPage}
 .posts {
    opacity:0;
@@ -332,7 +339,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .video { 
     width:100%; 
-    margin-bottom:-5px;
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage} 
@@ -356,140 +362,317 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-{block:ifshowcustomscrollbar}
-
-::-webkit-scrollbar-thumb:vertical { 
-background-color:{color:links};
-height:auto;-webkit-border-radius:20px;
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px; 
 }
 
-::-webkit-scrollbar-thumb:horizontal { 
-background-color:{color:links};
-height:6px !important;-webkit-border-radius:20px;
+::-webkit-scrollbar-track {
+  background:{color:background};
+  border-radius: 2px;
 }
 
-::-webkit-scrollbar { 
-height:6px;
-width:6px; 
-background-color:{color:Background};
--webkit-border-radius:20px;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, {color:Ask Gradient 1}, {color:Ask Gradient 2});
+  border-radius: 2px;
+  border: 2px solid {color:background};
 }
+/* end scrollbar */
 
-{/block:ifshowcustomscrollbar}
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
-}
-
-.pag a{ 
+#pagination {
+    margin-top:40px;
+    width:190px;
+    margin-left:77px;
+    font-size:12.5px;
+    padding:15px;
     background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+    border-radius:4px;
+    box-shadow:
+    0 2px 6px rgba(0,0,0,0.10),
+    0 1px 2px rgba(0,0,0,0.06);
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    margin-bottom:100px;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+#pagination a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: {color:text};
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#pagination a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: {color:accent};
+  opacity: 0.3;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+#pagination a:hover {
+  color: {color:Links hover};
+}
+
+#pagination a:hover::after {
+  transform: scaleY(1);
+}
+
+
+#pagination div{
+    padding:15px;
+    margin:15px -15px -15px;
+}
+
+{block:daypage}
+    #pagination div{
+        margin:0;
+        padding:0;
+    }
+{block:daypage}
+
+#pagination a:hover{color:{color:Links hover};
+}
+
+#pagination a + a::before{
+    content:'/';
+    margin:0 10px;
+    pointer-events:none;
+    color:rgba(var(--Text),.3);
+}
+ 
+#pagination span{
+    height:1.4em;
+    font-weight:700;
+    display:inline-block;
+    color:{color:text};
+    border-bottom:1px solid {color:borders};
+}
+
+#pagination .current_page + div{border-top:1px solid {color:borders};}
+
+#pagination.infinite-scroll {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 /* end pagination */
 
 /* notes */ 
-  
-.notsi {
-    padding: 0px;
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    display: inline-block;
-    overflow: hidden;
-    bottom: 0px; /* Align to the bottom */
-    left: 0px;
-    width: 100%;
-    height: 28px; /* Instead of covering the whole post */
-    transition: 1s;
-}
- 
-.posts:hover .notsi { 
-    transition:2s;
-    opacity:1;
-}
- 
- 
-.notsi .re { 
-  position:absolute;
-left:-4px;
-top:-4px;
-border-radius:100%;
-width:20px;
-height:20px;
-padding:4px;
-overflow:hidden;
-background:{color:details};
-overflow:hidden;
-font-size:20px;
-line-height:20px;
-font-weight:700;
-text-align:center;
-opacity: 0;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-}
- 
-.posts:hover .notsi .re {    
-    transform: rotate(360deg);
--ms-transform: rotate(360deg);
--webkit-transform: rotate(360deg);
--o-transform: rotate(360deg);
--moz-transform: rotate(360deg);
-opacity: 1;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;
-transition: all 0.4s linear;
-} 
- 
- 
- 
-.likep {width: 21px; height: 20px; overflow: hidden; z-index: 9999999; display: inline-block;margin-right:3px;}
-.likep a:hover {background-position: 0px 0px;}
-.likep a {background-image: url("https://static.tumblr.com/uiqhh9x/BPnlzww8v/like.png"); background-position: 0px 0px; display: block; z-index: 9999999; webkit-transition: all 0s linear; -webkit-transition: all 0s linear; -moz-transition: all 0s linear; transition: all 0s linear;}
-.likep img {width: 21px; height: 20px; webkit-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; transition: all 0.2s linear;}
-.rep {width: 24px; height: 20px; overflow: hidden; z-index: 9999999; display: inline-block;margin-right:3px;}  
-.rep img{width: 24px; height: 20px; line-height: 30px; display: inline;opacity: 0.9;}
-.not { display: inline-block; background: url("https://static.tumblr.com/uiqhh9x/X6Ym17xp2/middle.png"); height: 20px; font-size: 11px; line-height: 20px; color: #fff; padding-left: 4px; padding-right: 4px; -moz-border-radius: 2px; border-radius:  2px; bottom: 6.3px; position: relative; letter-spacing:0px;}
-.not a{color: #fff; font-family: helvetica;}
-.entry:hover .not, .entry:hover .rep, .entry:hover .likep {opacity: 0.9; filter: alpha(opacity = 80);}
-.not:hover , .rep:hover, .likep:hover {opacity: 1!important; filter: alpha(opacity = 100)!important;}
-#posts .permalink{z-index:9999991; position:absolute; bottom:10.5px; right:0.5px; height:10px; padding:3px; overflow:hidden; font-size:11px; line-height:90%; text-align:center; opacity:0.0; filter: alpha(opacity = 0); }
-#posts:hover .permalink{overflow:visible;-webkit-transition: opacity 0.4s linear; opacity: 1; -webkit-transition: all 0.4s linear; opacity: 0.8;-moz-transition: all 0.4s linear; opacity: 0.8; transition: all 0.4s linear; opacity: 0.8; margin-top:5px; }
 
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px !important;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9;
+}
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  text-decoration: none;
+  font: 700 8.5px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  opacity: .95;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.permalink-hover a:hover {
+  color: #000;
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
+}
+
+.permalink-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
+
+.permalink-hover a.linkcount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  padding: 0 7px;
+}
+
+.permalink-hover a.linkcount span {
+  transform: translateY(0.5px);
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
+
+{/block:IfLightPostHovers}
+
+.posts { position: relative; }
+
+.permalink-hover {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 3px !important;
+  opacity: 0;
+  transform: translateY(3px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9;
+}
+
+.posts:hover .permalink-hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.permalink-hover a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 3px;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  text-decoration: none;
+  font: 700 8.5px "Rajdhani", sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  opacity: .95;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.04),
+    0 0 3px rgba(0,0,0,.35);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+  {block:IfLightPostHovers}
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+  color: #000;
+  box-shadow:
+    inset 0 0 4px rgba(255,255,255,.6),
+    0 0 3px rgba(0,0,0,.18);
+  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+  {/block:IfLightPostHovers}
+}
+
+.permalink-hover a:hover {
+  color: #fff;
+  box-shadow: 0 0 8px rgba(255,255,255,.15);
+  {block:IfLightPostHovers}
+  box-shadow: 0 0 8px rgba(0,0,0,.18);
+  color: {color:links};
+  {/block:IfLightPostHovers}
+}
+
+.permalink-hover svg {
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
+
+.permalink-hover a.linkcount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  padding: 0 7px;
+}
+
+.permalink-hover a.linkcount span {
+  transform: translateY(0.5px);
+}
+
+{block:PermalinkPage}
+.permalink-hover {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+
+@media (hover: none) {
+  .permalink-hover {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+}
 
 /* end notes */
 
 /* permalink */
 .perma {  
     margin-top:0px;
-    margin-left:0px;  
+    margin-left:40.5%;  
     margin-bottom:100px;
-    width:540px;
+    width:500px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -635,63 +818,48 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
+.ask {
+    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
+    margin: 12px 0;
+    padding: 20px;
+    color: {color:asker text};
+    text-align: left;
+    line-height: 1.7;
     border-radius: 4px;
-    border:1px solid {color:borders};
-    text-transform:; 
+    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    font-family:"Rajdhani", sans-serif;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:; 
-    padding:1px;
-    text-align:left;
-    text-transform:uppercase; 
+    margin: 0 0 -6px 0;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    opacity: 0.85;
 }
 
-.asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.answer { 
-    text-transform:; 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.answer {
+    margin: -8px 0 0 0;
+    padding-left: 0px;
+    color: {color:text};
+    line-height: 1.7;
+    font-size: 10.5px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.answer img:hover {
+    transform: scale(1.03);
 }
 /* end asks */
 
@@ -872,25 +1040,47 @@ a.tumblr_blog {
 }  
 
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 10px 2px 10px; 
-    margin:20px 0px 0px 20px;  
-    background:{color:Details};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
+}
+
+#ltop {
+  color: {color:text};
 }
 
 #ltop:link, #ltop:visited {  
     position:fixed;
     background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:20px; 
-    letter-spacing:0px; 
+    bottom:30px;
+    right:20px; 
+    font-size:30px; 
     color:{color:accent};  
     text-align:center;  
     margin:-2px;  
@@ -900,67 +1090,118 @@ a.tumblr_blog {
     transition:1s;
     z-index:100;
 }
-
-#titulo {
-text-transform:uppercase;
-padding-bottom: 2px;
-padding-left: 5px;
-text-align: left;
-font-family:"Rajdhani", sans-serif; 
-font-size: {text:Blog title size}px; 
-line-height: 110%; 
-color:{color:link};}
         
-        
-        #cole{
-padding-right:5px;
-color:{color:link};
-}
- 
-#cole a {
-padding-right:5px;
-display:relative;
-max-width:400px;
-text-align:left;
-color:{color:link};
-}
- 
-#cole .mohr {
-padding-left:10px;
-margin-top:-10px;
-filter: alpha(opacity = 0);
-opacity:0;
--webkit-transition: all 1s ease-out;
--moz-transition: all 1s ease-out;transition: all 1s ease-out;
-text-align:left;text-transform:lowercase;
-}
- 
-#cole:hover .mohr {
-margin-top:5px;
-padding-left:10px;
--webkit-transition: all 1s ease-out;
--moz-transition: all 1s ease-out;transition: all 1s ease-out;
-filter: alpha(opacity = 80);
-filter: alpha(opacity = 100);
-opacity:100;
-}
-
-
 #sidebar {
-height:100%;
-width: 300px;
-top:0px;
-position: fixed;
-background:{color:posts};
-margin-left:677px;
-    padding:0px;  
-    z-index:100;
+  width: 210px;
+  position: fixed;
+  top: 140px;
+  left: 70px;
+  padding: 14px 12px 16px;
+  z-index: 999999;
+  border-radius: 6px;
+  text-align: center;
+  {block:permalinkpage}
+  left: 70px;
+  {/block:permalinkpage}
 }
 
-#sidebar img {
-display: inline-block;
-margin-bottom:-10px;
+.sidebar-img {
+  padding: 10px;
+  background: {color:details};
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.10),
+    0 1px 2px rgba(0,0,0,0.06);
+    
+ {block:ifDarkModeShadows}
+ box-shadow:
+  0 1px 2px rgba(255,255,255,0.06),
+  0 4px 12px rgba(255,255,255,0.04);
+ {/block:ifDarkModeShadows}
 }
+
+.sidebar-img img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
+/* subtle index line */
+.sidebar-index {
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: lowercase;
+  color: {color:text};
+  opacity: .6;
+  margin-bottom: 10px;
+}
+
+.sidebar-nav {
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: lowercase;
+  color: {color:text};
+  opacity: .65;
+  margin-bottom: 12px;
+}
+
+.sidebar-nav a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+
+.sidebar-nav a:hover {
+  opacity: 1;
+}
+
+.sidebar-nav a::after {
+  content: " /";
+}
+
+.sidebar-nav a:last-child::after {
+  content: "";
+}
+
+.sidebar-desc {
+  font-size: 11px;
+  line-height: 1.45;
+  font-style: italic;
+  color: {color:text};
+  opacity: .85;
+  padding: 6px 4px 0;
+  word-break: break-word;
+}
+
+#blogtitle {
+  margin: 6px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-weight: 900;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  font-size: 15px;
+  line-height: 1;
+  color: {color:Text};
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#blogtitle .badge {
+  width: 16px;
+  height: 16px;
+  stroke: {color:Link};
+  opacity: .85;
+  flex: 0 0 auto;
+  margin-top: -1px;
+}
+
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -977,38 +1218,12 @@ margin-bottom:-10px;
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script>
-$(document).ready(function() {
-//
-$('a.poplight[href^=#]').click(function() {
-var popID = $(this).attr('rel'); //Get Popup Name
-var popURL = $(this).attr('href'); //Get Popup href to define size
-var query= popURL.split('?');
-var dim= query[1].split('&');
-var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
-var popMargTop = ($('#' + popID).height() + 80) / 2;
-var popMargLeft = ($('#' + popID).width() + 80) / 2;
-//Apply Margin to Popup
-$('#' + popID).css({
-'margin-top' : -popMargTop,
-'margin-left' : -popMargLeft
-});
-$('body').append('<div id="fade"></div>');
-$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
-return false;
-});
-$('a.close, #fade').live('click', function() {
-$('#fade , .popup_block').fadeOut(function() {
-$('#fade, a.close').remove(); //fade them both out
-});
-return false;
-});
-});
-</script>
-
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<a href="javascript:;" id="ltop" style="color:{color:text};">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="21" height="21">
+    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
+  </svg>
+</a>
 
 </head>
 
@@ -1016,71 +1231,36 @@ return false;
 
 <div class="entry">  
 <div id="sidebar">
-<div style="		
-		{block:ifshowsidebarimage}
-		padding-top:100px;
-		{/block:ifshowsidebarimage}
-		{block:ifnotshowsidebarimage}
-		padding-top:200px;
-		{/block:ifnotshowsidebarimage}">
-<div style="border-left: 1px solid {color:borders};">
-<div id="titulo">
-			
-{block:ifshowsidebarimage}<a href="/"><img src="{image:sidebar}" width="290"/></a>{/block:ifshowsidebarimage}
-{block:ifshowtitle}<a href="/">{title}</a><br>{/block:ifshowtitle}
-                        </div>
 
-<div style="
-{block:ifpixelfont}
-    font-family: pixie;
-    font-size: 8px;
-    letter-spacing:-1px;
-    {/block:ifpixelfont}
+  <div class="sidebar-img">
+    <img src="{image:sidebar}" alt="{Name}">
+  </div>
 
-    {block:ifnotpixelfont}
-    font-family: helvetica;
-    font-size: 9px;
-    {/block:ifnotpixelfont}
-	text-align:center; padding-left:16px;	line-height: 100%; color:{color:text}; text-transform: none; 
-	width:265px;padding-top:5px;">
-	
-
-{Description}
-
-</div>
-
-<br>
-<div style="{block:ifpixelfont}
-    font-family: pixie;
-    font-size: 8px;
-    letter-spacing:-1px;
-    {/block:ifpixelfont}
-
-    {block:ifnotpixelfont}
-    font-family: helvetica;
-    font-size: 9px;
-	text-transform:uppercase; 
-    {/block:ifnotpixelfont} text-align:right; border-top: 1px solid {color:borders};padding-right:0px; padding-top:3px; padding-bottom:3px;">
-<div id="cole">
-NAVIGATE
-<div class="mohr">
-
-<a href="/">reload</a> &nbsp;
-{block:AskEnabled}<a href="/ask">inbox</a> &nbsp;{/block:AskEnabled}
-{block:IfLinkOneTitle}<a href="{text:Link One}"> {text:Link One Title} </a> &nbsp; {/block:ifLinkOneTitle}
-{block:ifLinkTwoTitle}<a href="{text:Link Two}"> {text:Link Two Title} </a> &nbsp;{/block:ifLinkTwoTitle} 
-{block:ifLinkThreeTitle}<a href="{text:Link Three}"> {text:Link Three Title} </a> &nbsp;{/block:ifLinkThreeTitle} 
-{block:ifLinkFourTitle}<a href="{text:Link Four}">{text:Link Four Title} </a> &nbsp;{/block:ifLinkFourTitle}
-{block:ifLinkFiveTitle}<a href="{text:Link Five}"> {text:Link Five Title} </a> &nbsp;{/block:ifLinkFiveTitle}
-</div>
-</div>
-
-</div>
-</div></div>
-</div>
-
-
+  <div class="sidebar-nav">
+    <a href="/">index</a> 
+    {block:AskEnabled}<a href="/ask">dm</a> {/block:AskEnabled}
+    {block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:IfLinkOneTitle}
+    {block:IfLinkTwoTitle}<a href="{text:Link Two}">{text:Link Two Title}</a>{/block:IfLinkTwoTitle}
+    {block:IfLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:IfLinkThreeTitle}
+  </div>
   
+  <h1 id="blogtitle">
+  {Name}
+  <svg class="badge" xmlns="http://www.w3.org/2000/svg" fill="none"
+       viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"
+       aria-label="Verified">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
+  </svg>
+</h1>
+
+
+  <div class="sidebar-desc">
+    {Description}
+  </div>
+
+</div>
+
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1088,12 +1268,33 @@ NAVIGATE
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1105,12 +1306,33 @@ NAVIGATE
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1133,12 +1355,33 @@ NAVIGATE
 </ul>
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div>
@@ -1157,30 +1400,70 @@ NAVIGATE
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b>{Asker}</b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1203,12 +1486,33 @@ NAVIGATE
 {block:TrackName}{TrackName}{/block:TrackName} 
 </div>   
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div>  
@@ -1222,12 +1526,33 @@ NAVIGATE
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1242,12 +1567,33 @@ NAVIGATE
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1263,12 +1609,33 @@ NAVIGATE
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="notsi">  
-<div class="permalink">
-<div class="likep">
-<a id="like{PostID}" href="javascript:likelink('{PostID}','{Permalink}');"><img src="https://static.tumblr.com/lba83dv/OUUltd958/spacer.gif" width="21" height="20" alt="Like this post" id="likeimage{PostID}"/></a></div>
-<div class="rep"><a href="{reblogurl}" target="_blank"><img src="https://static.tumblr.com/uiqhh9x/OAClzwwao/reblog.png" width="30"/></a></div>
-<div class="not"><a id="notes{PostID}" href="{Permalink}">{NoteCount}</a></div></div>
+<div class="permalink-hover">
+  <!-- 1) link + note count -->
+  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
+    <!-- simple chain -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </svg>
+    <span>{NoteCount}</span>
+  </a>
+
+<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+
+  <!-- 3) reblog / reshare (simpler two-arrow) -->
+  <a href="{ReblogURL}" title="Reblog post">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
+  </a>
 </div>
 {/block:IndexPage}
 </div> 
@@ -1382,49 +1749,85 @@ resizeVideos();
 });
 </script>
   
-{block:ifnotpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div id="pagination">
-{block:NextPage}
-<a id="next" href="{NextPage}"></a>
-{/block:NextPage}
-{block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
-{/block:PreviousPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifnotpagination} 
+{block:ifnotpagination}
+  <div id="pagination" class="infinite-scroll">
+    {block:NextPage}
+      <a id="next" href="{NextPage}"></a>
+    {/block:NextPage}
+  </div>
+{/block:ifnotpagination}
 
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
+{block:ifPagination}
+	<nav id="pagination">
+        <span class="current_page">page {CurrentPage} of {totalpages}</span>
+        
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+	</nav>
+{/block:ifPagination}
 
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
+{block:DayPagination}
+    <nav id="pagination">
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+        
+	</nav>
+{/block:DayPagination}
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
+
 <script>feather.replace()</script>
 </body>
 </html>
