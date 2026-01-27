@@ -976,7 +976,6 @@ a.tumblr_blog {
 
 .sb-nav a:hover {
   opacity: 1;
-  transform: translateX(5px);
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
