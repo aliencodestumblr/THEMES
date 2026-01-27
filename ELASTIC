@@ -1214,7 +1214,7 @@ a.tumblr_blog {
   font-style: italic;
   color: {color:text};
   opacity: .85;
-  padding: 6px 3px 0 0px;
+  padding: 6px 4px 0 0px;
   word-break: break-word;
 }
 
