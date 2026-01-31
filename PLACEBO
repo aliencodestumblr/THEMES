@@ -1,10 +1,11 @@
 <!--
+
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ scroll to top + minimal sc — @aliencodes original
     ↳ blog music — @glenthemes
+
 -->
 <!DOCTYPE html>
 <html>  
