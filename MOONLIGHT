@@ -4,7 +4,6 @@
 
   add-ons:
     ↳ scroll to top + minimal sc — @aliencodes original
-    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -43,10 +42,10 @@ attribute:"title"
 <meta name="color:Links" content="#a17575" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#a17575" />
-<meta name="color:ask box background" content="#eeeeee"/>
-<meta name="color:asker text" content="#444444"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Ask Gradient 1" content="#eeeeee"/>
+<meta name="color:Ask Gradient 2" content="#222222"/>
+<meta name="color:Tsker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -92,8 +91,6 @@ attribute:"title"
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
-<script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -123,7 +120,6 @@ attribute:"title"
 document.addEventListener("DOMContentLoaded", function() {
     const nav = document.getElementById("okk");
 
-    // Hover for desktop
     nav.addEventListener("mouseenter", () => {
         nav.classList.add("show");
     });
@@ -131,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
         nav.classList.remove("show");
     });
 
-    // Touch/click for mobile
     nav.addEventListener("click", () => {
         nav.classList.toggle("show");
     });
@@ -516,7 +511,7 @@ footer a > span > span {
 .notsi {
     position: absolute;
     top: 25px;
-    left: -25px; /* Adjust to align perfectly with your left border */
+    left: -25px; 
     width: 50px;
     height: 70px;
     display: flex;
@@ -666,117 +661,89 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album .art{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.headphones-ico{
-  width: 16px;
-  height: 16px;
-  display:block;
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid {color:borders};
-    text-align:center;      
+.album {
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 4px;
-    border:1px solid {color:borders};
-}
-
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:text};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
     color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+}
+
+.asker a {
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+  position: relative;
+  background: linear-gradient(135deg, {color:Ask Gradient 1}, {color:Ask Gradient 2});
+  padding: 14px 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 4px solid #bbbbbb;
+  transition: transform 0.2s ease;
+  color: {color:Asker Text};
+}
+
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
+    margin-bottom:-10px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 /* end asks */
 
@@ -957,16 +924,35 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:Tooltip Text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
+}
+
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
 #ltop:link, #ltop:visited {  
@@ -1153,7 +1139,7 @@ a.tumblr_blog {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#sbarimg {
+#icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1165,13 +1151,13 @@ a.tumblr_blog {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#sbarimg img {
+#icon img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#sbarimg:hover img {
+#icon:hover img {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
@@ -1187,7 +1173,7 @@ a.tumblr_blog {
     margin: 0;
 }
 
-#desc {
+#info {
     font-family: "Rajdhani", sans-serif;
     text-transform: none;
     font-size: 11px;
@@ -1198,7 +1184,7 @@ a.tumblr_blog {
     max-width: 140px;
 }
 
-#okk {
+#navi {
     width: 100%;
     text-align: center;
     overflow: hidden;
@@ -1210,17 +1196,17 @@ a.tumblr_blog {
     transition: height 0.3s ease;
 }
 
-#okk:hover {
+#navi:hover {
     height: 100px;
 }
 
-#okk {
+#navi {
     height: 12px;
     overflow: hidden;
     transition: height 0.3s ease;
 }
 
-#okk.show {
+#navi.show {
     height: 85px;
 }
 </style> 
@@ -1276,16 +1262,16 @@ a.tumblr_blog {
 
 <div class="entry"> 
 <div id="sidebar">
-<div id="sbarimg">
+<div id="icon">
 <img src="{image:sidebar}" />
 </div>
 {block:ifshowblogtitle}
 <div id="blogtitle">{title}</b></div>
 {/block:ifshowblogtitle}
-<div id="desc">
+<div id="info">
 {description}
 </b></div>
-<div id="okk"> +navigation <br>
+<div id="navi"> +navigation <br>
 <a href="/archive" title="past">ex files</a><br>
 <a href="{text:link 1 url}" title="{text:Link 1 Name}">{text:link 1 title}</a><BR>
 <a href="{text:link 2 url}" title="{text:Link 2 Name}">{text:link 2 title}</a><BR>
@@ -1446,22 +1432,10 @@ a.tumblr_blog {
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
-  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
-        fill="currentColor"/>
-</svg>
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
 </div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
 {block:date}
 {block:IndexPage} 
 <div class="notsi"> 
