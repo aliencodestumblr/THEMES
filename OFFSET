@@ -1797,34 +1797,41 @@ resizeVideos();
 </div>
 
 <script>
-(function () {
-  var toggle = document.getElementById("menu-toggle");
-  var dropdown = document.getElementById("header-dropdown");
 
-  if (!toggle || !dropdown) return;
+$(document).ready(function(){
 
-  toggle.addEventListener("click", function (e) {
-    e.stopPropagation();
-    dropdown.classList.toggle("is-open");
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
   });
 
-  document.addEventListener("click", function () {
-    dropdown.classList.remove("is-open");
-  });
-
-  dropdown.addEventListener("click", function (e) {
-    e.stopPropagation();
-  });
-})();
-</script>
-
-<script>
-const descToggle = document.getElementById("header-desc-toggle");
-const descDropdown = document.getElementById("desc-dropdown");
-
-descToggle.addEventListener("click", () => {
-  descDropdown.classList.toggle("is-open");
 });
+
 </script>
 <script>feather.replace()</script>
 </body>
