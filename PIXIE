@@ -1,15 +1,12 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      music player by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -66,7 +63,6 @@ attribute:"title"
 <meta name="text:Song Title" content="Song Title"/>
 <meta name="text:Artist Name" content="Artist Name"/>
 
-
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
@@ -76,7 +72,6 @@ attribute:"title"
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
@@ -93,33 +88,6 @@ attribute:"title"
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click").click(function(){
-    $("#guts").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click2").click(function(){
-    $("#guts2").slideToggle("fast");
-  });
-});
-</script>
- 
-<script src="jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $("#click3").click(function(){
-    $("#guts3").slideToggle("fast");
-  });
-});
-</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
@@ -128,7 +96,42 @@ $(document).ready(function(){
 
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
+
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
+}
 
 html {cursor:crosshair;}
 
@@ -160,7 +163,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -232,7 +235,6 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
 }
 
 blockquote video {
@@ -402,13 +404,13 @@ body::-webkit-scrollbar {
 
 html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
-  background: #000; /* track color */
+  background: #000; 
 }
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ccc, #444); /* gradient thumb */
-  border-radius: 0; /* sharp edges */
+  background: linear-gradient(180deg, #ccc, #444); 
+  border-radius: 0;
 }
 
 html::-webkit-scrollbar-thumb:hover,
@@ -477,7 +479,6 @@ body::-webkit-scrollbar-thumb:hover {
     z-index: 10;
     transition: 1s;
 
-    /* gradient text */
     background: linear-gradient(90deg, #ccc, #444);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -608,49 +609,18 @@ ol.notes li.note img.avatar {
 
 /* audios */
 .album {
-    padding:0px; 
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid {color:borders};
-    text-align:center;      
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
@@ -1152,7 +1122,6 @@ margin-right:auto;
 </a>
 
 </head>
-
 <body>  
 
 {block:ifshowmusicplayer}
@@ -1193,7 +1162,6 @@ margin-right:auto;
     <img src="{image:Sidebar}" alt="">
   </div>
 
-  <!-- NAV LINKS (no <U> or pipes needed) -->
   <nav class="navi sb-nav">
     <a href="{text:link 1 url}">{text:link 1 title}</a>
     <a href="{text:link 2 url}">{text:link 2 title}</a>
@@ -1298,25 +1266,15 @@ margin-right:auto;
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<span class="pe-7s-headphones"></span>
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
 </div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
 {block:indexpage}
 <div class="notsi">       
 <a href="{Permalink}">{NoteCountWithLabel}</a> + <a href="{reblogurl}" target="_blank">Reblog</a>
 </div>   
 {/block:indexpage}
-</div>  
 {/block:Audio}
 
 {block:Photo}   
@@ -1508,16 +1466,43 @@ resizeVideos();
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
+
 $(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
 });
-</script> 
+
+</script>
 <script>feather.replace()</script>
 </body>
 </html>
