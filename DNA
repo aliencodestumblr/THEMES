@@ -1,10 +1,11 @@
 <!--
+
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top, minimal sc — @aliencodes original code
-    ↳ infinite scroll, lightboxes, pxu photoset — @shythemes
+    ↳ scroll to top + minimal sc — @aliencodes original
     ↳ blog music — @glenthemes
+
 -->
 <!DOCTYPE html>
 <html>  
@@ -39,7 +40,7 @@ attribute:"title"
 <meta name="color:Text" content="#bababa" /> 
 <meta name="color:Links" content="#bababa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:asker text" content="#ffffff"/>
+<meta name="color:Asker Text" content="#ffffff"/>
 
 <meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>   
@@ -114,7 +115,6 @@ $("#panel").slideToggle("fast");
 html { scrollbar-gutter: stable both-edges; }
 
 body { overflow-y: scroll; }  
-
 
 :root{
   --sp-scale: 0.80;   
@@ -812,49 +812,18 @@ ol.notes li.note img.avatar {
 
 /* audios */
 .album {
-    padding:0px; 
-}
-
-.art { 
-    float:left;
-    background:#fff;   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid #eee;
-    text-align:center;      
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
@@ -864,7 +833,7 @@ ol.notes li.note img.avatar {
     background: linear-gradient(135deg, {color:Ask Gradient 1} 0%, rgba({RGBcolor:Ask Gradient 2},0.05) 100%);
     margin: 12px 0;
     padding: 20px;
-    color: {color:asker text};
+    color: {color:Asker Text};
     text-align: left;
     line-height: 1.7;
     border-radius: 4px;
@@ -1790,22 +1759,10 @@ box-shadow:
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
-  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
-        fill="currentColor"/>
-</svg>
-</div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
+</div> 
 {block:indexpage}  
   <div class="permalink-hover">
     <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
