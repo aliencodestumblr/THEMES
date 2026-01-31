@@ -1,11 +1,11 @@
 <!--
+
   [ aliencodes theme ]
 
   add-ons:
-    ↳ scroll to top — @fragilehelp
-    ↳ infinite scroll, lightboxes, pxu photoset, minimal sc — @shythemes
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ blog music — @glenthemes
 
-  © all rights reserved
 -->
 <!DOCTYPE html>
 <html>  
@@ -42,8 +42,8 @@ attribute:"title"
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Gradient 1" content="#000000"/> 
 <meta name="color:Gradient 2" content="#eeeeee"/> 
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Light Shadow" content="1"/>
@@ -64,7 +64,6 @@ attribute:"title"
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
@@ -498,7 +497,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 
 {block:IfDarkPostHovers}
-/* --- DARK PERMALINK HOVER --- */
 
 .posts { 
   position: relative; 
@@ -571,7 +569,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   opacity: 1;
 }
 
-/* Always visible on permalink pages */
 {block:PermalinkPage}
 .permalink-hover {
   opacity: 1 !important;
@@ -580,7 +577,6 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 }
 {/block:PermalinkPage}
 
-/* Touch devices */
 @media (hover: none) {
   .permalink-hover {
     opacity: 1 !important;
@@ -696,49 +692,18 @@ ol.notes li.note img.avatar {
 
 /* audios */
 .album {
-    padding:0px; 
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid {color:borders};
-    text-align:center;      
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
@@ -748,7 +713,7 @@ ol.notes li.note img.avatar {
     background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.05) 100%);
     margin: 12px 0;
     padding: 20px;
-    color: {color:asker text};
+    color: {color:Asker Text};
     text-align: left;
     line-height: 1.7;
     border-radius: 4px;
@@ -976,7 +941,7 @@ a.tumblr_blog {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:tooltip text}; 
+  color: {color:Tooltip Text}; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
@@ -1347,19 +1312,10 @@ html, body { overflow-x: clip; }
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<span class="pe-7s-headphones"></span>
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
 </div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
 {block:date}
 {block:IndexPage} 
   <div class="permalink-hover">
@@ -1581,16 +1537,36 @@ resizeVideos();
 </div> 
 </div> 
  
+<script>
+(function () {
+  var toggle = document.getElementById("menu-toggle");
+  var dropdown = document.getElementById("header-dropdown");
+
+  if (!toggle || !dropdown) return;
+
+  toggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdown.classList.toggle("is-open");
+  });
+
+  document.addEventListener("click", function () {
+    dropdown.classList.remove("is-open");
+  });
+
+  dropdown.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+})();
+</script>
 
 <script>
-// minimal soundcloud player © shythemes.tumblr
-$(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
+const descToggle = document.getElementById("header-desc-toggle");
+const descDropdown = document.getElementById("desc-dropdown");
+
+descToggle.addEventListener("click", () => {
+  descDropdown.classList.toggle("is-open");
 });
-</script> 
+</script>
 <script>feather.replace()</script>
 </body>
 </html>
