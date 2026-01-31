@@ -30,7 +30,7 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Header Icon" content=""/>
+<meta name="image:Icon" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:player background" content="#ffffff"/>
@@ -1280,7 +1280,7 @@ a.tumblr_blog {
 
   <div class="index-wrap">
 
-    <img src="{PortraitURL-128}" class="index-icon" alt="">
+    <img src="{image:Icon}" class="index-icon" alt="">
 
     <div class="index-main">
 
