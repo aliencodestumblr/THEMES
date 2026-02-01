@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .18em;
   text-transform: lowercase;
   color: {color:links};
-  opacity: .65;
+  opacity: .9;
 }
 
 .meta-actions {
@@ -566,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .meta-source {
-  opacity: .4;
+  opacity: .9;
   text-align: center;
 }
 
