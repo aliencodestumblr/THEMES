@@ -1058,7 +1058,21 @@ a.tumblr_blog {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 3px;
+
+  padding-left: 3px !important;
+  margin-left: 0 !important;
+  width: 100%;
+}
+
+.sidebar {
+  padding-left: 0 !important;
+}
+
+.title-handle .title,
+.title-handle .handle {
+  text-align: left;
 }
 
 .title-handle .title {
@@ -1079,7 +1093,7 @@ a.tumblr_blog {
 
 .description {
   background: {color:details};
-  padding: 12px 13px;
+  padding: 12px 10px;
   border-radius: 6px;
   box-shadow: 1px 1px 1px rgba({RGBcolor:Shadow}, .12);
   font-size: 11px;
