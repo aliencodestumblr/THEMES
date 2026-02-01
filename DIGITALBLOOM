@@ -1152,7 +1152,7 @@ a.tumblr_blog {
   border: none;
   background: transparent;
   color: {color:text};
-  font-size: 13px;
+  font-size: 12px;
   padding: 6px 8px;
   outline: none;
   font-family: inherit;
@@ -1161,7 +1161,7 @@ a.tumblr_blog {
 
 .sidebar .search-bar input::placeholder {
   color: rgba({RGBcolor:Shadow}, 0.4);
-  font-style: italic;
+  font-style: none;
 }
 
 .sidebar .pagination {
