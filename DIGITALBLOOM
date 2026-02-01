@@ -1097,7 +1097,7 @@ a.tumblr_blog {
 }
 
 .nav {
-  margin-top: 12px;
+  margin-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
