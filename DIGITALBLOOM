@@ -60,6 +60,8 @@ attribute:"title"
 <meta name="text:link 3 url" content=""> 
 <meta name="text:link 4 title" content="answered"> 
 <meta name="text:link 4 url" content=""> 
+<meta name="text:link 5 title" content="exit"> 
+<meta name="text:link 5 url" content=""> 
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -585,7 +587,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:-17px;
-    margin-left:20px;  
+    margin-left:25px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -1026,8 +1028,9 @@ a.tumblr_blog {
 .header-section {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 6px 2px;
+  gap: 35px;
+  padding: 0px 6px 2px;
+  flex-direction: row-reverse;
 }
 
 .sidebar .avatar {
@@ -1087,7 +1090,8 @@ a.tumblr_blog {
 
 .description-header {
   margin: -12px -13px 5px;
-  padding: 6px 10px 0px 13px;
+  padding: 0px 10px 0px 13px;
+  margin-top:-25px;
   font-size: 9px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1097,39 +1101,47 @@ a.tumblr_blog {
 }
 
 .nav {
-  margin-top: 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top:0px;
+  margin-left:0;
+  margin-bottom:-14px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  width:100%;
+  z-index:1;
 }
 
-.nav-ico {
-  width: 30px;       
-  height: 30px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: {color:accent};
-  background: transparent;
-  opacity: .65;
-  box-shadow: 0 1px 3px rgba(0,0,0,.08); 
-  transition: opacity .25s ease, transform .25s ease;
+.nav-ico {        
+  background:{color:details};
+  width:12px;
+  height:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:{color:links};
+  padding:6px;
+  margin:1px;
+  border-radius:100%;
+  opacity:1.0;
+  box-shadow:1px 1px 1px rgba({RGBcolor:Shadow},.1);
+  transition:opacity .4s ease;
 }
 
-.nav-ico:hover {
-  opacity: 1;
-  transform: translateY(-1px);
+.nav-ico:hover { 
+  opacity:1;
 }
 
 .nav-ico svg {
-  width: 16px;               
-  height: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width:12px;
+  height:12px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.5;
+}
+
+.nav-ico.credit {
+  float:right;
+  font-size:10px;
 }
 
 .sidebar .search-bar {
@@ -1186,6 +1198,10 @@ a.tumblr_blog {
   color: white;
 }
 
+.nav-end {
+  margin-left: auto;
+}
+
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1218,6 +1234,54 @@ a.tumblr_blog {
 <div class="entry"> 
 <aside class="sidebar">
 
+<nav class="nav" aria-label="Primary navigation">
+
+  <a href="{text:link 1 url}" title="{text:link 1 title}" class="nav-ico" style="color:{color:accent}">
+    <svg viewBox="0 0 24 24">
+      <path d="M3 12L12 3l9 9v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-8z"/>
+      <path d="M9 21v-6h6v6"/>
+    </svg>
+  </a>
+
+  <a href="{text:link 2 url}" title="{text:link 2 title}" class="nav-ico">
+    <svg viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/>
+    </svg>
+  </a>
+
+<a href="{text:link 3 url}" title="{text:link 3 title}" class="nav-ico">
+  <svg viewBox="0 0 24 24">
+    <rect x="4" y="4" width="6" height="6" rx="1"/>
+    <rect x="14" y="4" width="6" height="6" rx="1"/>
+    <rect x="4" y="14" width="6" height="6" rx="1"/>
+    <rect x="14" y="14" width="6" height="6" rx="1"/>
+  </svg>
+</a>
+
+<a href="{text:link 4 url}" title="{text:link 4 title}" class="nav-ico">
+  <svg viewBox="0 0 24 24">
+    <line x1="4" y1="6" x2="20" y2="6"/>
+    <circle cx="9" cy="6" r="2"/>
+
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <circle cx="15" cy="12" r="2"/>
+
+    <line x1="4" y1="18" x2="20" y2="18"/>
+    <circle cx="11" cy="18" r="2"/>
+  </svg>
+</a>
+
+<a href="{text:link 5 url}" title="{text:link 5 title}" class="nav-ico nav-end">
+  <svg viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M8 12h8"/>
+    <path d="M12 8v8"/>
+  </svg>
+</a>
+
+
+</nav>
+
   <div class="header-section">
     <div class="avatar">
       <img src="{image:Icon}" alt="Avatar" />
@@ -1237,39 +1301,6 @@ a.tumblr_blog {
     <i class="fas fa-search"></i>
     <input type="search" name="q" placeholder="search keywords" aria-label="Search keywords" />
   </form>
-
-<nav class="nav" aria-label="Primary navigation">
-
-  <a href="{text:link 1 url}" title="{text:link 1 title}" aria-label="Home" class="nav-ico">
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-      <path d="M3 12L12 3l9 9v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-8z"/>
-      <path d="M9 21v-6h6v6"/>
-    </svg>
-  </a>
-
-  <a href="{text:link 2 url}" title="{text:link 2 title}" aria-label="Chat" class="nav-ico">
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/>
-    </svg>
-  </a>
-
-<a href="{text:link 3 url}" title="{text:link 3 title}" aria-label="Hashtag" class="nav-ico">
-  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-    <line x1="4" y1="9" x2="20" y2="9"/>
-    <line x1="4" y1="15" x2="20" y2="15"/>
-    <line x1="10" y1="3" x2="8" y2="21"/>
-    <line x1="16" y1="3" x2="14" y2="21"/>
-  </svg>
-</a>
-
-  <a href="{text:link 4 url}" title="{text:link 4 title}" aria-label="Settings" class="nav-ico">
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
-      <circle cx="12" cy="12" r="3"/>
-      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-    </svg>
-  </a>
-
-</nav>
 
   {block:ifpagination}
   {block:IndexPage}
