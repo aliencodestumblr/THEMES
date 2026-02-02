@@ -579,7 +579,7 @@ body .pagination {
 }
 
 .permalink-hover a:hover {
-  color: #fff;
+  color:#eaeaea;
 }
 
 /* end notes */
