@@ -453,17 +453,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* pagination */
 .pagination {
-  width: 550px;
-  margin: 50px auto 80px auto; 
+  width: 700px;
+  max-width: 100%;
+  margin: 50px auto 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
   opacity: 0.85;
 }
+
 
 .pagination a,
 .pagination span {
@@ -493,6 +495,27 @@ h1, h2, h3, h4, h5, h6 {
   background: {color:Link};
   color: {color:Text};
   border-color: {color:Link};
+}
+
+body .pagination {
+  margin-left: 60%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+.pagination .prev,
+.pagination .disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
+}
+
+.pagination .prev span,
+.pagination .disabled span {
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  color: {color:Link};
 }
 
 /* end pagination */
