@@ -41,7 +41,7 @@ attribute:"title"
 <meta name="color:Asker Text" content="#ffffff"/>
 
 <meta name="if:Show caption" content=""/>   
-<meta name="if:3 columns" content="1"/>
+<meta name="if:3 columns" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
 
