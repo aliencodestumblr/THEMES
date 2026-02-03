@@ -34,13 +34,13 @@ attribute:"title"
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/> 
-<meta name="color:player background" content="#fff"/>
+<meta name="color:player background" content="#ffffff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Accent" content="#444444"/>  
-<meta name="color:Text" content="#444444" /> 
-<meta name="color:Links" content="#a17575" />  
-<meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#a17575" />
+<meta name="color:Accent" content="#9198a2"/>  
+<meta name="color:Text" content="#9198a2" /> 
+<meta name="color:Links" content="#9198a2" />  
+<meta name="color:Links Hover" content="#515c6b" />
+<meta name="color:Scrollbar" content="#9198a2" />
 <meta name="color:Ask Gradient 1" content="#eeeeee"/>
 <meta name="color:Ask Gradient 2" content="#222222"/>
 <meta name="color:Asker Text" content="#444444"/>
@@ -49,15 +49,15 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show music player" content="1">
+<meta name="if:Show music player" content="">
 <meta name="if:search" content="1" />
 
 <meta name="text:link one" content="tags" />
-<meta name="text:link one url" content="" />
-<meta name="text:link two" content="songs" />
-<meta name="text:link two url" content="" />
-<meta name="text:link three" content="answered" />
-<meta name="text:link three url" content="" />
+<meta name="text:link one url" content="/" />
+<meta name="text:link two" content="spotify" />
+<meta name="text:link two url" content="/" />
+<meta name="text:link three" content="uploads" />
+<meta name="text:link three url" content="/" />
 
 <meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
 
@@ -309,8 +309,6 @@ img {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -324,10 +322,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px muli, helvetica, arial, sans-serif;
-    text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
@@ -347,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
     width:460px;
     {block:permalinkpage}
     margin-top:150px;   
-    margin-left:-65px;  
+    margin-left:-67.5px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -359,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:150px; 
     width:460px; 
-    margin-left:-65px; 
+    margin-left:-67.5px; 
     {/block:permalinkpage} 
     padding:0px;
     background:{color:Details};
@@ -418,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
  
 ::-webkit-scrollbar-thumb {
     background-clip:padding-box;
-    border-radius:6px;
+    border-radius:2px;
     background-color:{color:scrollbar};
     border:3px solid transparent;
 }
@@ -506,18 +500,100 @@ footer a > span > span {
 
 /* notes */ 
 
-.p a{margin:0px 3px;}
-.tags a{margin:0px 4px;}
-.tags {margin-top:4px;text-transform:none;}
-.p {
-    font-size:10px;
-    padding:0px 0px;
-    text-align:right;
-    position:absolute;
-    width:calc(460px + 10px);
-    margin:4px -4.5px;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
+.nots {
+  margin-top: 0px;
+  padding: 8px 0 0;
+
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+
+
+  font: 800 9px "Rajdhani", sans-serif;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+
+  color: var(--site-links);
+  position: relative;
+}
+
+.nots a{
+  color: var(--site-links);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.nots a:hover{
+  color: var(--site-links-hover);
+  animation: notsGlitch .18s linear 2;
+}
+
+@keyframes notsGlitch{
+  0%{ transform: translateX(0); }
+  25%{ transform: translateX(-1px); }
+  50%{ transform: translateX(1px); }
+  100%{ transform: translateX(0); }
+}
+
+.nots .sep{
+  opacity: .35;
+  user-select: none;
+}
+
+.nots .timeago{
+  margin-left: auto;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .6;
+  color: var(--site-text);
+
+  position: relative;
+  top: -3px;  
+  right:-2px;
+}
+
+
+.nots.is-centered .timeago{
+  margin-left: 0;
+}
+
+@media (max-width: 720px){
+  .nots{
+    gap: 10px;
+  }
+  .nots .timeago{
+    width: 100%;
+    margin-left: 0;
+    opacity: .55;
+  }
+}
+
+.nots-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+  opacity: .85;
+  transition: opacity .2s ease, transform .18s ease, color .2s ease;
+}
+
+.nots-icon svg{
+  display: block;
+}
+
+.nots-icon:hover{
+  opacity: 1;
+  color: var(--site-links-hover);
+  transform: translateY(-1px);
+  animation: notsGlitch .18s linear 2;
+}
+
+.nots .sep{
+  margin: 0 2px;
 }
 
 /* end notes */
@@ -1102,7 +1178,7 @@ header nav a:hover {
     width:140px;
         {block:permalinkpage}
         margin-top:0px;
-    margin-left:493px;  
+    margin-left:496px;  
     {/block:permalinkpage}
 }
  
@@ -1128,6 +1204,7 @@ aside nav a:hover {
 }
  
 {block:ifsearch}input[type=text] {
+    font-family:"Rajdhani", sans-serif;
     width:calc(140px - 22px);
     border:1px solid {color:borders};
     padding:7px 10px;
@@ -1232,13 +1309,44 @@ input[type=text]:focus {
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1252,13 +1360,44 @@ input[type=text]:focus {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1283,13 +1422,44 @@ input[type=text]:focus {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1310,13 +1480,44 @@ input[type=text]:focus {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1331,13 +1532,44 @@ input[type=text]:focus {
 <div class="answer">{Answer}</div> 
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1353,13 +1585,44 @@ input[type=text]:focus {
 </div>
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1375,13 +1638,44 @@ input[type=text]:focus {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1398,13 +1692,44 @@ input[type=text]:focus {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1422,13 +1747,44 @@ input[type=text]:focus {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="p">
-<a href="{Permalink}">{NoteCount}N</a> , 
-<a title="{TimeAgo}" href="{Permalink}">{DayofWeek}</a> , 
-<a href="{ReblogURL}">rblg</a>
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+<div class="nots">
+  <a class="nots-icon info"
+     href="{Permalink}"
+     title="{NoteCountWithLabel}">
+
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="2.5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"/>
+</svg>
+  </a>
+
+  <a class="nots-icon reblog"
+     href="{ReblogURL}"
+     title="Reblog">
+
+    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+  <path d="M7 7h10l-2-2M17 17H7l2 2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+</svg>
+  </a>
+
+  <div class="timeago">{TimeAgo}</div>
 </div>
 {/block:IndexPage}
 {/block:date} 
