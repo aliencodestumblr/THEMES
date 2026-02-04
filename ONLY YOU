@@ -46,6 +46,12 @@ attribute:"title"
 <meta name="text:Link 4 URL" content="/"/>
 <meta name="text:Link 5 URL" content="/"/>
 
+<meta name="text:Link 1 Name" content="reload"/>
+<meta name="text:Link 2 Name" content="inbox"/>
+<meta name="text:Link 3 Name" content="uploads"/>
+<meta name="text:Link 4 Name" content="movies"/>
+<meta name="text:Link 5 Name" content="replied"/>
+
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
 
@@ -338,7 +344,7 @@ h1, h2, h3, h4, h5, h6 {
     width:760px;
     {block:permalinkpage}
     margin-top:125px;   
-    margin-left:10px;  
+    margin-left:15px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -350,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:125px; 
     width:450px; 
-    margin-left:10px; 
+    margin-left:15px; 
     {/block:permalinkpage} 
     margin:25px; 
     padding:15px;    
@@ -722,7 +728,7 @@ ol.notes li.note img.avatar {
 
 .ask {
   position: relative;
-  background: linear-gradient(135deg, {color:Ask Gradient 1}, {color:Ask Gradient 2});
+  background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2});
   padding: 14px 16px;
   border-radius: 10px;
   line-height: 1.5;
@@ -1023,7 +1029,7 @@ height:auto;
 transition:all .8s;
 z-index:999999999;
 {block:permalinkpage}
-margin-left:-300px; 
+margin-left:-295px; 
 {/block:permalinkpage}
 box-shadow: 0 4px 10px {color:Shadow Color};
 border-radius: 5px; 
@@ -1190,11 +1196,11 @@ max-width:100%;
 </div>
 <div class="info">{description}</div>
 <nav class="cl-effect-11">
-<a href="{text:Link 1 Url}" title="{text:Link 1 Name}">.001</a>&nbsp;
-<a href="{text:Link 2 Url}" title="{text:Link 2 Name}">.002</a>&nbsp;
-<a href="{text:Link 3 Url}" title="{text:Link 3 Name}">.003</a>&nbsp;
-<a href="{text:Link 4 Url}" title="{text:Link 4 Name}">.004</a>&nbsp;
-<a href="{text:Link 5 Url}" title="{text:Link 5 Name}">.005</a>
+<a href="{text:Link 1 Url}" title="{text:Link 1 Name}">reload</a>&nbsp;
+<a href="{text:Link 2 Url}" title="{text:Link 2 Name}">inbox</a>&nbsp;
+<a href="{text:Link 3 Url}" title="{text:Link 3 Name}">ex files</a>&nbsp;
+<a href="{text:Link 4 Url}" title="{text:Link 4 Name}">tags</a>&nbsp;
+<a href="{text:Link 5 Url}" title="{text:Link 5 Name}">exit</a>
 </nav>
 </div>
 
