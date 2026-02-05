@@ -1122,7 +1122,7 @@ a.tumblr_blog {
 
   {block:IfSidebarImage}
   <div class="sidebar-card sidebar-img">
-    <a href="/"><img src="{image:Sidebar}"></a>
+    <a href="/"><img src="{image:Sidebar}" title="{title}"></a>
   </div>
   {/block:IfSidebarImage}
 
