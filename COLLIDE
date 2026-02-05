@@ -46,8 +46,8 @@ attribute:"title"
 <meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:Ask Gradient 1" content="#000000"/>
 <meta name="color:Ask Gradient 2" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -477,93 +477,86 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
   margin-top: 8px;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 11px;
-  color:{color:text};
-  user-select: none;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: lowercase;
+
+  color: {color:text};
 }
 
 .perm-links {
   display: flex;
-  gap: 22px;
-  text-transform: lowercase;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  position: relative;
+  align-items: center;
+  gap: 10px;
+
+  opacity: .45;
+  transition: opacity .2s ease;
+}
+
+.entry:hover .perm-links {
+  opacity: .85;
 }
 
 .perm-links a {
-  color:{color:text};
+  color: {color:text};
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
-  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  transition:
+    transform .12s ease,
+    color .12s ease,
+    opacity .12s ease;
 }
 
-.perm-links a[title]:hover::after {
-  content: attr(title);
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  background:{color:text};
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 9px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
+.perm-links a:hover {
+  transform: translateY(-1px);
+  color: {color:Links Hover};
 }
 
-.perm-links a[title]::after {
-  opacity: 0;
-  visibility: hidden;
+.perm-links a + a::before {
+  content: "/";
+  opacity: .35;
+  margin-right: 10px;
 }
 
-.perm-links a:hover,
-.perm-links a:focus {
-  border-bottom-color:{color:Links Hover};
-  color:{color:text};
-  outline: none;
+.reblog::after {
+  content: "↻"; 
+  font-size: 12px;
+  line-height: 1;
 }
 
 .tags {
+  margin-top: 6px;
+
   display: flex;
-  gap: 6px;
-  margin-top: 8px;
-  max-width: 280px;
-  justify-content: flex-start;
-  align-self: flex-start;
   flex-wrap: wrap;
-  font-weight: 400;
-  color: rgba(0,0,0,0.45);
+  gap: 10px;
+
   font-size: 9px;
+  letter-spacing: .08em;
+
+  opacity: .35;
+  transition: opacity .2s ease;
+}
+
+.entry:hover .tags {
+  opacity: .7;
 }
 
 .tags a {
-  background: rgba(0,0,0,0.07);
-  padding: 3px 8px;
-  border-radius: 9999px;
-  color: rgba(0,0,0,0.5);
-  font-weight: 400;
-  font-size: 9px;
+  color: {color:text};
   text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tags a:hover,
-.tags a:focus {
-  background: rgba(0,0,0,0.15);
-  color: rgba(0,0,0,0.8);
-  outline: none;
+.tags a:hover {
+  color: {color:Links Hover};
 }
 
 /* end notes */
@@ -966,14 +959,13 @@ a.tumblr_blog {
     width: 170px;
     margin-left: -70px;
     top: 200px;
-border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.06);
     background: {color:Background};
 
     box-shadow: 
       0 1px 2px rgba(0,0,0,0.04),
       0 4px 12px rgba(0,0,0,0.03);
 
-    border-radius: 3px;
     font-family: 'Rajdhani', sans-serif;
     transition: margin-left 0.3s ease;
 
@@ -1068,11 +1060,11 @@ border: 1px solid rgba(0,0,0,0.06);
 }
 
 .links > a:last-child {
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 0px 0px;
 }
 
 .lb a:last-child {
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 0px 0px;
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
@@ -1277,39 +1269,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1324,39 +1298,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1382,39 +1338,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1436,39 +1374,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1482,39 +1402,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1531,39 +1433,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1580,39 +1464,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1630,39 +1496,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1681,39 +1529,21 @@ border: 1px solid rgba(0,0,0,0.06);
 {block:date}
 {block:IndexPage} 
 <div class="perm-links-wrapper">
+
   <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="Notes">{NoteCount} N</a>
+    <a href="{Permalink}" class="notes">{NoteCount}n</a>
     <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" title="Reblog post" aria-label="Reblog post" role="img" >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="11" height="11" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    stroke-width="1" 
-    stroke-linecap="round" 
-    stroke-linejoin="round" 
-    aria-hidden="true"
-    style="vertical-align: middle;"
-  >
-    <polyline points="17 1 21 5 17 9"></polyline>
-    <path d="M3 11a9 9 0 0 1 14-7.5L21 5"></path>
-    <polyline points="7 23 3 19 7 15"></polyline>
-    <path d="M21 13a9 9 0 0 1-14 7.5L3 19"></path>
-  </svg>
-</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
   </div>
 
-  {block:IfTags}
-    {block:HasTags}
-    <div class="tags">
-      {block:Tags}
-        <a href="{TagURL}">#{Tag}</a>
-      {/block:Tags}
-    </div>
-    {/block:HasTags}
-  {/block:IfTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}
+      <a href="{TagURL}">#{Tag}</a>
+    {/block:Tags}
+  </div>
+  {/block:HasTags}
+
 </div>
 {/block:IndexPage}
 {/block:date} 
