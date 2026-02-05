@@ -523,6 +523,8 @@ h1, h2, h3, h4, h5, h6 {
   transition:
   opacity .12s linear,
   transform .12s cubic-bezier(.3,.8,.4,1);
+  
+  z-index:100;
 }
 
 .posts:hover .notsi {
