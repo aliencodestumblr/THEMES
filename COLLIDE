@@ -38,13 +38,12 @@ attribute:"title"
 <meta name="color:links background" content="#ffffff"/>
 <meta name="color:player background" content="#ffffff"/>
 <meta name="color:Borders" content="#e0e0e0"/> 
-<meta name="color:Accent" content="#aaaaaa"/>  
-<meta name="color:Text" content="#9a9a9a" /> 
-<meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Links Hover" content="#444444" />
-<meta name="color:Permalink" content="#aaaaaa" /> 
-<meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:Ask Gradient 1" content="#000000"/>
+<meta name="color:Accent" content="#b8bfc5"/>  
+<meta name="color:Text" content="#b8bfc5" /> 
+<meta name="color:Links" content="#b8bfc5" />  
+<meta name="color:Links Hover" content="#6e7982" />
+<meta name="color:Scrollbar" content="#b8bfc5" />
+<meta name="color:Ask Gradient 1" content="#b8bfc5"/>
 <meta name="color:Ask Gradient 2" content="#000000"/>
 <meta name="color:Asker Text" content="#ffffff"/>
 <meta name="color:Tooltip Text" content="#ffffff"/>
@@ -367,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
     {/block:if2columns}
     {/block:permalinkpage}
     margin:20px; 
-    margin-bottom:13px;
+    margin-bottom:15px;
     padding:0px;    
     opacity:1;
     transition:1s;  
