@@ -32,7 +32,7 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background Color" content="#b5b8bb">
+<meta name="color:Background Color" content="#000000">
 <meta name="color:Shadow" content="#d4d6dc"/> 
 <meta name="color:Details" content="#ffffff"/> 
 <meta name="color:Gradient 1" content="#eeeeee"/> 
@@ -45,8 +45,8 @@ attribute:"title"
 <meta name="color:Scrollbar" content="#abb0b4"/> 
 <meta name="color:Ask Gradient 1" content="#c7cbd0"/> 
 <meta name="color:Ask Gradient 2" content="#42474e"/> 
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Light" content="1">
@@ -63,6 +63,8 @@ attribute:"title"
 <meta name="text:link 4" content="/"> 
 <meta name="text:link 5 title" content="dashboard"> 
 <meta name="text:link 5" content="/"> 
+
+<meta name="text:Navigation Text" content="navigation"> 
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
@@ -313,11 +315,12 @@ body {
     letter-spacing:1px;
     line-height:15px;
     {block:IfNotLight}
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkgID/UJqREcqAC4IEQLIwif8wAZAKsCAAoKEFA3hsFngAAAAASUVORK5CYII=);
-    {/block:IfNotLight}
-    {block:IfLight}
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAI0lEQVQIW2NkYGBg+P///38QzQgCIAaKIEgWJgFmIysHqQQAncwT/Y5fVhAAAAAASUVORK5CYII=);
-    {/block:IfLight}
+    {block:IfNotLight}
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkgID/UJqBEZkDEkQWALMxVAAAqFwFAVHEKVUAAAAASUVORK5CYII=);
+        {/block:IfNotLight}
+        {block:IfLight}
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkYGBg+P///38QDQKMyBwUAUZGRrAkhgoAvKwT9VYXn50AAAAASUVORK5CYII=);
+        {/block:IfLight}
     }
 
 h1, h2, h3, h4, h5, h6 {
@@ -518,8 +521,8 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 
   transition:
-    opacity .12s linear,
-    transform .12s cubic-bezier(.3,.8,.4,1);
+  opacity .12s linear,
+  transform .12s cubic-bezier(.3,.8,.4,1);
 }
 
 .posts:hover .notsi {
@@ -529,29 +532,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .notsi a {
+  color: {color:Links};
   position: relative;
   text-decoration: none;
 
-  background-image: linear-gradient(90deg,#aaa,#111);
-  background-size: 200%;
-  background-position: right;
+  transition: color 0.25s ease;
+  -webkit-text-fill-color: initial; 
+  background-image: none; 
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  transition: background-position .25s ease;
+  transition: color 0.15s ease-in-out;
 }
 
 .notsi a:hover {
+  color: {color:Links Hover};
   background-position: left;
+  transition: color 0.15s ease-in-out;
 }
 
 .notsi a:not(:last-child)::after {
-  content: " /";
-  margin-left: 4px;
-  color:{color:links};
-  -webkit-text-fill-color: {color:links};
-  opacity: .5;
+ content: " /";
+ margin-left: 4px;
+ color: {color:Links};
+ opacity: 0.5;
+ -webkit-text-fill-color: initial;
 }
 
 /* end notes */
