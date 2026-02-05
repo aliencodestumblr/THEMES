@@ -492,19 +492,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 10px;
-
-  opacity: .45;
+  opacity: .85;
   transition: opacity .2s ease;
 }
 
-.entry:hover .perm-links {
-  opacity: .85;
-}
-
 .perm-links a {
+  font-weight:100;
   color: {color:text};
   text-decoration: none;
-
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -1259,7 +1254,6 @@ a.tumblr_blog {
 </div>
 </div>
 
-
 <div id="posts">
 {block:posts}
 <div class="posts">
@@ -1271,9 +1265,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1300,9 +1294,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1340,9 +1334,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1376,9 +1370,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1404,9 +1398,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1435,9 +1429,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1466,9 +1460,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1498,9 +1492,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
@@ -1531,9 +1525,9 @@ a.tumblr_blog {
 <div class="perm-links-wrapper">
 
   <div class="perm-links">
-    <a href="{Permalink}" class="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog"></a>
+    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
+    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
+    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
   </div>
 
   {block:HasTags}
