@@ -306,6 +306,7 @@ img {
 }
 
 body {
+    background:#ffffff;
     color:{color:text}; 
     background-color:{color:Background Color};
     background-repeat:repeat;
@@ -1074,7 +1075,7 @@ a.tumblr_blog {
   text-transform: uppercase;
 
   appearance: none;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 .sidebar-nav::after {
