@@ -34,10 +34,10 @@ attribute:"title"
 
 <meta name="image:Sidebar" content=""/>
 
-<meta name="color:Background" content="#eeeeee"/>
+<meta name="color:Background" content="#f6f6f6"/>
 <meta name="color:links background" content="#ffffff"/>
 <meta name="color:player background" content="#ffffff"/>
-<meta name="color:Borders" content="#e0e0e0"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#b8bfc5"/>  
 <meta name="color:Text" content="#b8bfc5" /> 
 <meta name="color:Links" content="#b8bfc5" />  
