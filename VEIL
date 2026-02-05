@@ -1016,7 +1016,7 @@ a.tumblr_blog {
   font-size: 10px;
   line-height: 1.4;
 
-  color: {color:Sidebar Text};
+  color: {color:Text};
 
   box-shadow: 2px 2px 6px {color:Shadow};
 }
@@ -1044,7 +1044,7 @@ a.tumblr_blog {
 }
 
 .sidebar-card a {
-  color: {color:Sidebar Link};
+  color: {color:Links};
   text-decoration: none;
 }
 
