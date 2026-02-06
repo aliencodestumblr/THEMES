@@ -52,9 +52,9 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>  
 <meta name="if:Pagination" content=""/>
 
-<meta name="text:link 1 title" content="reload"> 
+<meta name="text:link 1 title" content="inbox"> 
 <meta name="text:link 1" content="/"> 
-<meta name="text:link 2 title" content="message"> 
+<meta name="text:link 2 title" content="ex files"> 
 <meta name="text:link 2" content="/"> 
 <meta name="text:link 3 title" content="tags"> 
 <meta name="text:link 3" content="/"> 
@@ -338,7 +338,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {
     margin-top: 20px;
-    margin-left: 120px; 
+    margin-left: 80px; 
     width: 350px;
     
     {block:if2Columns}
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
     {/block:if3Columns}
     
     {block:if3Columns}
-    margin-left: 70px;
+    margin-left: 80px;
     {/block:if3Columns}
     
     {block:if2Columns}
@@ -359,12 +359,12 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     margin-top: 40px;
-    margin-left: 120px; 
+    margin-left: 80px; 
     {block:if2Columns}
     margin-left: 79px; 
     {/block:if2Columns}
     {block:if3Columns}
-    margin-left: 70px;
+    margin-left: 80px;
     {/block:if3Columns}
     {/block:permalinkpage}
     margin-bottom: 50px;
@@ -470,13 +470,14 @@ body:hover::-webkit-scrollbar {
 /* pagination */
 #pagination {
     margin-top:40px;
-    width:200px;
-    margin-left:-190px;
+    width:178px;
+    margin-left:-180px;
     font-size:12.5px;
     padding:15px;
     padding-bottom:10px;
     background:{color:details};
-    box-shadow: 2px 2px 6px {color:Shadow};
+    box-shadow: 6px 6px 0 {color:Shadow}; 
+    border: 1px solid {color:Borders};
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     margin-bottom:100px;
     {block:permalinkpage}
@@ -1041,7 +1042,7 @@ a.tumblr_blog {
 #ltop:link, #ltop:visited {   
     position: fixed;
     background:{color:details};
-    bottom: 20px;
+    bottom: 25px;
     right: 20px; 
     width: 35px;
     height: 35px;
@@ -1251,7 +1252,7 @@ a.tumblr_blog {
     </button>
 
     <div class="nav-menu">
-      <a href="/">Home</a>
+      <a href="/">reload</a>
 
       {block:ifLink1}<a href="{text:Link 1}">{text:Link 1 Title}</a>{/block:ifLink1}
       {block:ifLink2}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:ifLink2}
