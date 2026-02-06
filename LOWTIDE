@@ -4,7 +4,6 @@
 
   add-ons:
     ↳ scroll to top + minimal sc — @aliencodes original
-    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -33,7 +32,7 @@ attribute:"title"
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Background Color" content="#000000">
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/>  
@@ -48,6 +47,7 @@ attribute:"title"
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/> 
+<meta name="if:Light" content="">
 <meta name="if:Dark Post Hovers" content=""/>
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Pagination" content=""/>
@@ -330,32 +330,24 @@ img { cursor:crosshair;
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
-    background-color:{color:background};
-    font:400 9px "Rajdhani", sans-serif;
-    transition:1.3s;  
-    letter-spacing:1.5px;
-    text-transform:lowercase;
-    text-align:justify;    
-    line-height:15px; 
-    word-wrap:break-word;
-    -webkit-animation-name:fadeIn;animation-name:fadeIn;
-}
+    background-color:{color:Background Color};
+    background-repeat:repeat;
+    background-size:auto;
+    background-attachment:fixed;
+    font:400 11px "Rajdhani", sans-serif;
+    letter-spacing:1px;
+    line-height:15px;
+    }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:810px;   
+    width:900px;   
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -366,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:120px; 
     margin-left:0px;  
-    width:810px;
+    width:900px;
     {block:permalinkpage}
     margin-top:120px;   
     margin-left:0px;   
@@ -377,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts {  
-    width:230px;        
+    width:260px;        
     {block:permalinkpage}
     margin-top:120px;   
     width:500px; 
@@ -439,33 +431,110 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pag {
+    position: relative;
+    margin: 60px auto 30px;
+    width: 460px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    left:0px;
+    padding: 14px 0;
+    z-index: 1;
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
+.pag::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    height:1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        {color:borders},
+        transparent
+    );
+    opacity:.45;
+    transform: translateY(-50%);
+    z-index:0;
 }
 
-.pag a:hover{
+.pag a,
+.pag span {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 34px;
+    height: 30px;
+    padding: 0 12px;
+
+    font-size: 13px;
+    text-transform: uppercase;
+
+    background: {color:background color};
     color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+
+    border-radius: 6px;
+    border: none;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        color .25s ease;
+}
+
+.pag-arrow {
+    border-radius: 6px;
+    background: #000;
+    color:{color:accent};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 30px;
+    padding: 0 10px; 
+
+    box-shadow:
+      inset 0 0 0 1px {color:borders},
+      0 1px 3px rgba(0, 0, 0, 0.08);
+
+    border: none;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      color 0.25s ease;
+}
+
+.pag-arrow:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 0 0 1px {color:borders},
+      0 4px 10px rgba(0, 0, 0, 0.12);
+    font-weight: 700;
+}
+
+.pag-current {
+    font-weight: 700;
+    color: {color:background};
+    background: #1a1a1a; 
+    box-shadow:
+        inset 0 0 0 1px {color:borders},
+        0 2px 6px rgba(0,0,0,.12);
+    cursor: default;
+    border-radius: 6px;
+    min-width: 34px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
 }
 /* end pagination */
 
@@ -580,9 +649,6 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255,255,255,0.14);
   border-radius: 3px;
 
-  box-shadow:
-    0 0 0 0.5px rgba(255,255,255,0.08),
-    0 4px 12px rgba(0,0,0,0.6);
 
   font: 600 8px "Rajdhani", sans-serif;
   letter-spacing: .4px;
@@ -736,130 +802,75 @@ ol.notes li.note img.avatar {
 
 
 /* audios */
-.album .art{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.headphones-ico{
-  width: 16px;
-  height: 16px;
-  display:block;
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    text-align:center;      
+.album {
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
 
 /* asks */
-
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color:{color:text};
+.ask-post {
+  margin: 0px 0 28px;
+  font-family: "Rajdhani", sans-serif;
 }
 
-.asker a {
-    color: {color:text};
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.asker a:hover {
-    color: {color:links hover};
-}
-
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color:{color:text};
-}
-
-.asker a {
-    color: {color:links};
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.asker a:hover {
-    color: {color:links hover};
-}
-
-.ask {
+.ask-question {
   position: relative;
-  background: linear-gradient(135deg, {color:Ask Gradient 1}, {color:Ask Gradient 2});
-  padding: 14px 16px;
-  border-radius: 10px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  border-left: 4px solid #bbbbbb;
-  transition: transform 0.2s ease;
+  padding: 16px 18px;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    135deg,
+    {color:Ask Gradient 1},
+    rgba({RGBcolor:Ask Gradient 2}, .85)
+  );
+
   color: {color:Asker Text};
+  font-size: 12px;
+  line-height: 1.6;
+
+  box-shadow: 0 3px 10px rgba({RGBcolor:Shadow}, .06);
 }
 
-
-.answer {
-    font-size: 11px;
-    color: {color:text};
-    margin-top: 6px;
-    margin-bottom:-10px;
+.ask-from {
+  color: {color:Asker Text};
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-right: 8px;
 }
 
-.answer img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+.ask-answer {
+  margin-top: 10px;
+  padding-left: 14px;
+
+  border-left: 2px solid rgba({RGBcolor:Shadow}, .15);
+
+  font-size: 11px;
+  line-height: 1.75;
+  color: {color:text};
+  
+  margin-bottom:-15px;
+
 }
 
+.ask-answer img {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 6px;
+  display: block;
+}
 /* end asks */
 
 
@@ -1444,9 +1455,16 @@ return false;
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
-  <div class="ask">{Question}</div>
-  <div class="answer">{Answer}</div>
+<div class="ask-post">
+  <div class="ask-question">
+    <span class="ask-from">{Asker}</span>
+    {Question}
+  </div>
+
+  <div class="ask-answer">
+    {Answer}
+  </div>
+</div>
 {block:IndexPage} 
   <div class="permalink-hover">
     <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
@@ -1462,22 +1480,10 @@ return false;
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<svg class="headphones-ico" viewBox="0 0 24 24" aria-hidden="true">
-  <path d="M4 13v5a2 2 0 0 0 2 2h2v-9H6a2 2 0 0 0-2 2zm12-2v9h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2zM12 3a8 8 0 0 0-8 8v2h2v-2a6 6 0 0 1 12 0v2h2v-2a8 8 0 0 0-8-8z"
-        fill="currentColor"/>
-</svg>
-</div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
+</div>  
 {block:IndexPage} 
   <div class="permalink-hover">
     <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
@@ -1677,13 +1683,29 @@ resizeVideos();
 {block:IndexPage}
 {block:Pagination}
 <div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
 
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+  {block:PreviousPage}
+  <a class="pag-arrow" href="{PreviousPage}">
+    <i class="fas fa-angle-left"></i>
+  </a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination}
+    {block:CurrentPage}
+      <span class="pag-current">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a class="pag-num" href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="pag-arrow" href="{NextPage}">
+    <i class="fas fa-angle-right"></i>
+  </a>
+  {/block:NextPage}
+
 </div>
 {/block:Pagination}
 {/block:IndexPage}
