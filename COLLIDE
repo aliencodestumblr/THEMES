@@ -721,7 +721,7 @@ ol.notes li.note img.avatar {
 .ask-question {
   position: relative;
   padding: 16px 18px;
-  border-radius: 10px;
+  border-radius: 6px;
 
   background: linear-gradient(
     135deg,
@@ -729,7 +729,7 @@ ol.notes li.note img.avatar {
     rgba({RGBcolor:Ask Gradient 2}, .85)
   );
 
-  color: {color:asker text};
+  color: {color:Asker Text};
   font-size: 12px;
   line-height: 1.6;
 
@@ -737,10 +737,10 @@ ol.notes li.note img.avatar {
 }
 
 .ask-from {
+  color: {color:Asker Text};
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 1.4px;
-  opacity: .6;
   margin-right: 8px;
 }
 
@@ -754,7 +754,7 @@ ol.notes li.note img.avatar {
   line-height: 1.75;
   color: {color:text};
   
-  margin-bottom:-5px;
+  margin-bottom:-15px;
 
 }
 
