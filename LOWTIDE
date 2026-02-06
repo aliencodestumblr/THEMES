@@ -32,7 +32,7 @@ attribute:"title"
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Background Color" content="#ffffff">
+<meta name="color:Background" content="#ffffff">
 <meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/>  
@@ -40,8 +40,8 @@ attribute:"title"
 <meta name="color:Links" content="#444444" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Scrollbar" content="#444444" />
-<meta name="color:Ask Gradient 1" content="#eeeeee"/>
-<meta name="color:Ask Gradient 2" content="#222222"/>
+<meta name="color:Ask Gradient 1" content="#474c53"/>
+<meta name="color:Ask Gradient 2" content="#b2b8bc"/>
 <meta name="color:Asker Text" content="#ffffff"/>
 <meta name="color:Tooltip Text" content="#ffffff"/>
  
@@ -332,7 +332,7 @@ img { cursor:crosshair;
 
 body {
     color:{color:text}; 
-    background-color:{color:Background Color};
+    background-color:{color:Background};
     background-repeat:repeat;
     background-size:auto;
     background-attachment:fixed;
