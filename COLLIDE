@@ -52,9 +52,10 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:2 columns" content=""/>
 <meta name="if:Tags" content="1"/>
-<meta name="if:Pagination" content=""/>
+<meta name="if:Right Sidebar" content="1"/>
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
+<meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
@@ -317,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:900px;    
+    width:870px;
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -328,7 +329,11 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:40px; 
     margin-left:130px;  
-    width:900px;
+    width:870px;
+    
+    {block:ifRightSidebar}
+    margin-left: -100px; 
+    {/block:ifRightSidebar}
     
     {block:if2columns}
     width:640px;
@@ -341,6 +346,9 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:60px;   
     margin-left:-95px;  
+    {block:ifRightSidebar}
+    margin-left: 65px; 
+    {/block:ifRightSidebar}
     {block:if2columns}
     margin-left:15px; 
     {/block:if2columns}
@@ -361,6 +369,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:60px; 
     width:450px; 
     margin-left:-95px; 
+    {block:ifRightSidebar}
+    margin-left: 65px; 
+    {/block:ifRightSidebar}
     {block:if2columns}
     margin-left:15px; 
     {/block:if2columns}
@@ -439,118 +450,188 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pag {
+    position: relative;
+    margin: 60px auto 30px;
+    width: 540px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    
+    {block:ifRightSidebar}
+    left:-100px;
+    {block:ifRightSidebar}
+    
+    padding: 14px 0;
+    z-index: 1;
+    
+    {block:ifNotRightSidebar}
+    left: 130px; 
+    {/block:ifNotRightSidebar}
+    
+    {block:permalinkpage}
+    display:none;
+    {/block:permalinkpage};  
 }
 
-.pag a{ 
-    background:transparent;
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+.pag::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:50%;
+    height:1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        {color:borders},
+        transparent
+    );
+    opacity:.45;
+    transform: translateY(-50%);
+    z-index:0;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.pag a,
+.pag span {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 34px;
+    height: 30px;
+    padding: 0 12px;
+
+    font-size: 13px;
+    text-transform: uppercase;
+
+    background: {color:background};
+    color: {color:accent};
+
+    border-radius: 6px;
+    border: none;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        color .25s ease;
+}
+
+.pag-arrow {
+    border-radius: 6px;
+    background: {color:background};
+    color: {color:accent};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 30px;
+    padding: 0 10px; 
+
+    box-shadow:
+      inset 0 0 0 1px {color:borders},
+      0 1px 3px rgba(0, 0, 0, 0.08);
+
+    border: none;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      color 0.25s ease;
+}
+
+.pag-arrow:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 0 0 1px {color:borders},
+      0 4px 10px rgba(0, 0, 0, 0.12);
+    font-weight: 700;
+}
+
+.pag-current {
+    font-weight: 700;
+    color: {color:background};
+    background: #1a1a1a; 
+    box-shadow:
+        inset 0 0 0 1px {color:borders},
+        0 2px 6px rgba(0,0,0,.12);
+    cursor: default;
+    border-radius: 6px;
+    min-width: 34px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
 }
 /* end pagination */
 
 /* notes */ 
 
-.perm-links-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
+{block:ifRightSidebar}
+.perm-inline {
   margin-top: 8px;
-
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 10px;
-  letter-spacing: .12em;
-  text-transform: lowercase;
-
+  font-family: "Rajdhani", sans-serif;
+  font-size: 11px;
   color: {color:text};
-}
-
-.perm-links {
-  display: flex;
+  user-select: none;
+  display: flex;         
+  width: 100%;           
   align-items: center;
-  gap: 10px;
-  opacity: .85;
-  transition: opacity .2s ease;
+  gap: 14px;
+  
+  justify-content: left; 
+  float: none !important;      
+  margin-left: 0 !important;    
 }
+{/block:ifRightSidebar}
 
-.perm-links a {
-  font-weight:100;
+.perm-inline {
+  margin-top: 8px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 11px;
   color: {color:text};
-  text-decoration: none;
+  user-select: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-
-  transition:
-    transform .12s ease,
-    color .12s ease,
-    opacity .12s ease;
+  gap: 14px;
+  float: right;  
+  flex-direction: row-reverse; 
 }
 
-.perm-links a:hover {
-  transform: translateY(-1px);
-  color: {color:Links Hover};
-}
-
-.perm-links a + a::before {
-  content: "/";
-  opacity: .35;
-  margin-right: 10px;
-}
-
-.reblog::after {
-  content: "↻"; 
-  font-size: 12px;
-  line-height: 1;
-}
-
-.tags {
-  margin-top: 6px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-
-  font-size: 9px;
-  letter-spacing: .08em;
-
-  opacity: .35;
-  transition: opacity .2s ease;
-}
-
-.entry:hover .tags {
-  opacity: .7;
-}
-
-.tags a {
-  color: {color:text};
+.perm-inline a {
   text-decoration: none;
+  color: inherit;
+  padding: 2px 0px;
+  transition: color 0.25s ease;
+  font-weight: 400;
+  white-space: nowrap;
+  text-transform:uppercase;
+  border-radius: 4px;
 }
 
-.tags a:hover {
-  color: {color:Links Hover};
+.perm-inline a:hover {
+  color: #4a4a4a;
+  background: rgba(120, 120, 120, 0.07);
+}
+
+.reblog-link {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reblog-icon {
+  stroke: {color:text};
+  transition: stroke 0.25s ease, transform 0.3s ease;
+}
+
+.reblog-link:hover .reblog-icon {
+  stroke: #4a4a4a;
 }
 
 /* end notes */
@@ -963,12 +1044,19 @@ a.tumblr_blog {
     font-family: 'Rajdhani', sans-serif;
     transition: margin-left 0.3s ease;
 
+    {block:ifRightSidebar}
+    margin-left: 800px; 
+    {/block:ifRightSidebar}
+
     {block:if2columns}
     margin-left: 40px; 
     {/block:if2columns}
 
     {block:permalinkpage}
     margin-left: -295px; 
+    {block:ifRightSidebar}
+    margin-left: 590px; 
+    {/block:ifRightSidebar}
     {block:if2columns}
     margin-left: -185px; 
     {/block:if2columns}
@@ -1169,6 +1257,7 @@ a.tumblr_blog {
    letter-spacing:1px;
    color:{color:text};
 }
+
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1261,22 +1350,17 @@ a.tumblr_blog {
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1290,22 +1374,17 @@ a.tumblr_blog {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1330,22 +1409,17 @@ a.tumblr_blog {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1366,22 +1440,17 @@ a.tumblr_blog {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1394,22 +1463,17 @@ a.tumblr_blog {
 <div class="answer">{Answer}</div>
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1425,22 +1489,17 @@ a.tumblr_blog {
 </div>  
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1456,22 +1515,17 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1488,22 +1542,17 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1521,22 +1570,17 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-links-wrapper">
-
-  <div class="perm-links">
-    <a href="{Permalink}" class="notes" title="notes">{NoteCount}n</a>
-    <a href="{Permalink}" class="date" title="{TimeAgo}">{DayOfWeek}</a>
-    <a href="{ReblogURL}" class="reblog" aria-label="Reblog" title="reblog post"></a>
-  </div>
-
-  {block:HasTags}
-  <div class="tags">
-    {block:Tags}
-      <a href="{TagURL}">#{Tag}</a>
-    {/block:Tags}
-  </div>
-  {/block:HasTags}
-
+<div class="perm-inline" aria-label="Post options">
+  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
+  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
+  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
+    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
+      <path d="M17 1l4 4-4 4"/>
+      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+      <path d="M7 23l-4-4 4-4"/>
+      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+    </svg>
+  </a>
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1670,13 +1714,29 @@ resizeVideos();
 {block:IndexPage}
 {block:Pagination}
 <div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
 
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+  {block:PreviousPage}
+  <a class="pag-arrow" href="{PreviousPage}">
+    <i class="fas fa-angle-left"></i>
+  </a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination}
+    {block:CurrentPage}
+      <span class="pag-current">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a class="pag-num" href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="pag-arrow" href="{NextPage}">
+    <i class="fas fa-angle-right"></i>
+  </a>
+  {/block:NextPage}
+
 </div>
 {/block:Pagination}
 {/block:IndexPage}
