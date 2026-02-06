@@ -35,6 +35,7 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Shadow" content="#d4d6dc"/> 
 <meta name="color:links background" content="#ffffff"/>
 <meta name="color:player background" content="#ffffff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
@@ -994,9 +995,10 @@ a.tumblr_blog {
     border: 1px solid rgba(0,0,0,0.06);
     background: {color:Background};
 
-    box-shadow: 
-      0 1px 2px rgba(0,0,0,0.04),
-      0 4px 12px rgba(0,0,0,0.03);
+    box-shadow:
+    0 1px 2px {color:Shadow},
+    0 4px 12px {color:Shadow};
+
 
     font-family: 'Rajdhani', sans-serif;
     transition: margin-left 0.3s ease;
