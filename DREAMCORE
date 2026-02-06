@@ -41,8 +41,8 @@ attribute:"title"
 <meta name="color:Links" content="#c9c9c9" />  
 <meta name="color:Links Hover" content="#adacac" />
 <meta name="color:Scrollbar" content="#c9c9c9" />
-<meta name="color:Gradient 1" content="#686868"/>
-<meta name="color:Gradient 2" content="#111111"/>
+<meta name="color:Gradient 1" content="#eeeeee"/>
+<meta name="color:Gradient 2" content="#282a2c"/>
 <meta name="color:Asker Text" content="#ffffff"/>
 <meta name="color:Tooltip Text" content="#ffffff"/>
  
