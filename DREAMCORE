@@ -1052,11 +1052,7 @@ sidebar {
 
   border-radius: 6px; 
 
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.04),
-    0 14px 34px {color:Shadow Color};
-
-
+  box-shadow: 0 4px 10px {color:Shadow Color};
 
   overflow: hidden;
   font-size: 0;
