@@ -52,7 +52,6 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:2 columns" content=""/>
 <meta name="if:Tags" content="1"/>
-<meta name="if:Right Sidebar" content=""/>
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
 <meta name="if:Pagination" content=""/>
@@ -328,15 +327,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:40px; 
-    margin-left:130px;  
+    margin-left:110px;  
     width:870px;
     
-    {block:ifRightSidebar}
-    margin-left: -100px; 
-    {/block:ifRightSidebar}
-    
     {block:if2columns}
-    width:640px;
+    width:620px;
     {/block:if2columns}
     
     {block:if2columns}
@@ -345,12 +340,9 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     margin-top:60px;   
-    margin-left:-95px;  
-    {block:ifRightSidebar}
-    margin-left: 65px; 
-    {/block:ifRightSidebar}
+    margin-left:-100px;  
     {block:if2columns}
-    margin-left:15px; 
+    margin-left:30px; 
     {/block:if2columns}
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -368,12 +360,9 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:60px; 
     width:450px; 
-    margin-left:-95px; 
-    {block:ifRightSidebar}
-    margin-left: 65px; 
-    {/block:ifRightSidebar}
+    margin-left:-100px; 
     {block:if2columns}
-    margin-left:15px; 
+    margin-left:30px; 
     {/block:if2columns}
     {/block:permalinkpage}
     margin:20px; 
@@ -459,16 +448,10 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     gap: 8px;
     
-    {block:ifRightSidebar}
-    left:-100px;
-    {block:ifRightSidebar}
-    
     padding: 14px 0;
     z-index: 1;
     
-    {block:ifNotRightSidebar}
     left: 130px; 
-    {/block:ifNotRightSidebar}
     
     {block:permalinkpage}
     display:none;
@@ -570,24 +553,6 @@ h1, h2, h3, h4, h5, h6 {
 /* end pagination */
 
 /* notes */ 
-
-{block:ifRightSidebar}
-.perm-inline {
-  margin-top: 8px;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 11px;
-  color: {color:text};
-  user-select: none;
-  display: flex;         
-  width: 100%;           
-  align-items: center;
-  gap: 14px;
-  
-  justify-content: left; 
-  float: none !important;      
-  margin-left: 0 !important;    
-}
-{/block:ifRightSidebar}
 
 .perm-inline {
   margin-top: 8px;
@@ -1032,7 +997,7 @@ a.tumblr_blog {
 .sidebar {
     position: fixed;
     width: 170px;
-    margin-left: -70px;
+    margin-left: -90px;
     top: 200px;
     border: 1px solid rgba(0,0,0,0.06);
     background: {color:Background};
@@ -1044,21 +1009,14 @@ a.tumblr_blog {
     font-family: 'Rajdhani', sans-serif;
     transition: margin-left 0.3s ease;
 
-    {block:ifRightSidebar}
-    margin-left: 800px; 
-    {/block:ifRightSidebar}
-
     {block:if2columns}
     margin-left: 40px; 
     {/block:if2columns}
 
     {block:permalinkpage}
-    margin-left: -295px; 
-    {block:ifRightSidebar}
-    margin-left: 590px; 
-    {/block:ifRightSidebar}
+    margin-left: -300px; 
     {block:if2columns}
-    margin-left: -185px; 
+    margin-left: -170px; 
     {/block:if2columns}
     {/block:permalinkpage}
 }
