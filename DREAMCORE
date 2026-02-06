@@ -1,15 +1,12 @@
-<!---
+<!--
 
-      design by @aliencodes
+  [ aliencodes theme ]
 
-      [ credits ]
-      base scroll to top by @fragilehelp           
-      infinite scroll, lightboxes, pxu photoset + minimal 
-      soundcloud player by @shythemes
-      blog music plater by @glenthemes
-      [ all rights reserved ] ©
-      
---->
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+    ↳ blog music — @glenthemes
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -33,59 +30,47 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Sidebar" content=""/>
+<meta name="image:icon" content=""/>
 
-<meta name="color:Background" content="#eeeeee"/>
-<meta name="color:Sidebar Background" content="#ffffff"/>
-<meta name="color:player background" content="#ffffff"/>
-<meta name="color:Borders" content="#e1dada"/> 
-<meta name="color:Accent" content="#a69e9e"/>  
-<meta name="color:Text" content="#a69e9e" /> 
-<meta name="color:Links" content="#a69e9e" />  
-<meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#a69e9e" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Background" content="#f6f6f6"/>
+<meta name="color:Details" content="#ffffff"/>  
+<meta name="color:Shadow Color" content="#e3e3e3">
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#c9c9c9"/>  
+<meta name="color:Text" content="#c9c9c9" /> 
+<meta name="color:Links" content="#c9c9c9" />  
+<meta name="color:Links Hover" content="#adacac" />
+<meta name="color:Scrollbar" content="#c9c9c9" />
+<meta name="color:Gradient 1" content="#686868"/>
+<meta name="color:Gradient 2" content="#111111"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:rounded sidebar picture" content=""/>
-<meta name="if:Show music player" content="1">
-<meta name="if:Tags" content=""/>
 
-<meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="tags"/>
-<meta name="text:Link 2" content="/" />
-<meta name="text:Link 2 Title" content="music"/>
-<meta name="text:Link 3" content="/" />
-<meta name="text:Link 3 Title" content="uploads"/>
-<meta name="text:Link 4" content="/" />
-<meta name="text:Link 4 Title" content="text"/>
-<meta name="text:Link 5" content="/" />
-<meta name="text:Link 5 Title" content="movies"/>
-<meta name="text:Link 6" content="/" />
-<meta name="text:Link 6 Title" content="dashboard"/>
+<meta name="text:Link 1 Url" content="/"/>
+<meta name="text:Link 2 URL" content="/"/>
+<meta name="text:Link 3 URL" content="/"/>
+<meta name="text:Link 4 URL" content="/"/>
 
-<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
-<meta name="text:Song Title" content="Song Title"/>
-<meta name="text:Artist Name" content="Artist Name"/>
+<meta name="text:Link Title 1" content="homepage"/>
+<meta name="text:Link Title 2" content="questions"/>
+<meta name="text:Link Title 3" content="archive"/>
+<meta name="text:Link Title 4" content="tags"/>
+
+<meta name="text:title" content="@"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-
+<link rel="stylesheet" href="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -102,54 +87,44 @@ attribute:"title"
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
- 
-<script>
-$(document).ready(function(){
-    $(".lb").hide();
-        $(".lh").show();$('.lh').toggle(function(){
-            $(".lb").slideDown(function(){});
-                },function(){
-            $(".lb").slideUp(function(){});
-        });
-    });
-</script>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $(".pn").hide();
-        $(".pnh").show();$('.pnh').toggle(function(){
-            $(".pn").slideDown(function(){});
-                },function(){
-            $(".pn").slideUp(function(){});
-        });
-    $(".lb").hide();
-        $(".lh").show();$('.lh').toggle(function(){
-            $(".lb").slideDown(function(){});
-                },function(){
-            $(".lb").slideUp(function(){});
-        });
-    });
-</script>
-<link href='https://static.tumblr.com/8pnyeus/sXxofi7lt/outicons.css' rel='stylesheet' type='text/css'>
-
-
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
-
 <style type="text/css">
-article iframe:not(iframe.bandcamp_audio_player,.spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 90px;
-    width: 100%;
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html, body, a, a:hover{cursor:crosshair;}
@@ -159,22 +134,55 @@ html, body, a, a:hover{cursor:crosshair;}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
+.cc {
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    width: 35px;
+    height: 35px;
+    background: {color:details};
+    box-shadow: 0 4px 10px {color:Shadow Color};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
+    border-radius:6px;
+}
+
+.cc svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    overflow: visible;
+}
+
+.cc svg path {
+    fill: {color:accent};
+}
+     
 iframe.tmblr-iframe {
-    position:fixed!important;
-    z-index:99999999!important;
-    top:5px;!important;
-    right:0!important;
+    z-index: 999;
+    right: 32px;
+    top: 21px;
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    padding-right: 60px;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
     {block:IfDarkTumblrControl}
     filter:invert(1);
     {/block:IfDarkTumblrControl}
-    transform:scale(0.45) rotate(0deg);
-    transform-origin:95% 0;
-    vertical-align:top right;
-    opacity:0.5;
-} 
+}
 
-.tmblr-iframe--app-cta-button {
-    display: none!important;
+.tmblr-iframe:hover {
+    opacity: 0.5 !important;
 }
 
 .vignette, #vignette {
@@ -182,12 +190,19 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:4px !important;
     max-width:none;
 }
  
 .tmblr-lightbox, #tumblr_lightbox {
     background-color:rgba({RGBcolor:background},.7) !important;
+}
+ 
+.lightbox-image, #tumblr_lightbox img {  
+    border:5px solid {color:details}!important;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 hr {
@@ -244,14 +259,50 @@ blockquote {
 }
 
 blockquote img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:0px;
 }
 
 blockquote video {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     width:100%; 
-    margin-bottom:-5px;
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { 
@@ -274,12 +325,10 @@ img {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 8.5px "Rajdhani", sans-serif;
+    font:400 11px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:1px;
     text-align:justify;    
@@ -289,16 +338,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
+    font:"Rajdhani", sans-serif;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:600px;    
+    width:765px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -307,29 +353,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:0px; 
-    margin-left:90px;  
-    width:600px;
+    margin-top:100px; 
+    margin-left:180px;  
+    width:765px;
     {block:permalinkpage}
-    margin-top:20px;   
-    margin-left:13px;  
+    padding-bottom:21px;
+    margin-top:125px;   
+    margin-left:23px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:250px;        
+    background:{color:details};   
+    width:300px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    padding-bottom:21px;
+    margin-top:125px; 
     width:450px; 
-    margin-left:13px; 
+    margin-left:23px; 
     {/block:permalinkpage} 
     margin:25px; 
-    margin-bottom:3px;
-    padding:0px;    
+    padding:15px;  
+    padding-bottom:4px;
     opacity:1;
-    transition:1s;  
+    transition:1s; 
+    box-shadow: 0 4px 10px {color:Shadow Color};
+    border-radius: 6px; 
 }
 
 {block:IndexPage}
@@ -341,15 +392,19 @@ h1, h2, h3, h4, h5, h6 {
 {/block:IndexPage}
 
 .posts img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
+        padding-bottom:21px;
     {/block:permalinkpage};   
     transition:1s; 
 }
 
 .video { 
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     width:100%; 
     {block:permalinkpage}
     width:100%;
@@ -375,113 +430,187 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb:vertical{
-    width:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+
+::-webkit-scrollbar {
+  width: 12px; 
 }
- 
-::-webkit-scrollbar-thumb:horizontal{
-    height:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+
+::-webkit-scrollbar-track {
+  background:{color:background};
+  border-radius: 2px;
 }
- 
-::-webkit-scrollbar{
-    width:11px;
-    height:11px;
-    background:{color:background};
-    background-image:url({image:Background});
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2});
+  border-radius: 2px;
+  border: 2px solid {color:background};
 }
+
 /* end scrollbar */
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
-}
-
-.pag a{ 
-    background:transparent;
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
+#pagination {
+    margin-top:40px;
+    width:270px;
+    margin-left:-150px;
+    font-size:11px;
+    padding:15px;
+    background:{color:details};
     border:1px solid {color:borders}; 
+    box-shadow: 0 4px 10px {color:Shadow Color};
+    border-radius:6px;
+    margin-bottom:100px;
+    text-align:left;
+    {block:permalinkpage}
+    display:none;
+    {/block:permalinkpage}
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+#pagination a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: {color:text};
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 13.3px;
+  font-weight: 550;
+  letter-spacing:0px;
+  text-align:center;
 }
+
+#pagination a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: {color:accent};
+  opacity: 0.3;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+#pagination a:hover {
+  color: {color:Links hover};
+}
+
+#pagination a:hover::after {
+  transform: scaleY(1);
+}
+
+
+#pagination div{
+    padding:15px;
+    margin:15px -15px -15px;
+}
+
+{block:daypage}
+    #pagination div{
+        margin:0;
+        padding:0;
+    }
+{block:daypage}
+
+#pagination a:hover{color:{color:Links hover};
+}
+
+#pagination a + a::before{
+    content:'/';
+    margin:0 10px;
+    pointer-events:none;
+    color:rgba(var(--Text),.3);
+}
+ 
+#pagination span{
+    height:1.4em;
+    font-weight:700;
+    display:inline-block;
+    color:{color:text};
+    border-bottom:1px solid {color:borders};
+}
+
+#pagination .current_page + div{border-top:1px solid {color:borders};}
+
+#pagination.infinite-scroll {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 /* end pagination */
 
-/* notes */ 
+.permalinks {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 16px;
+  margin-top: 5px;
+  padding-top: 0px;
+  font-family: "Rajdhani", sans-serif;
+  width: 100%;
+}
 
-.p {padding-top:3px;font-size:0;}
-.p i {opacity:0.75;font-size:10px;}
-.ple i {margin-right:2px;}
-.ple {font-weight:700;padding:0 0 1px;}
-.ple,.pri {display:inline-block;vertical-align:middle;width:250px;}
-.ple,.tags a {font-size:11px;letter-spacing:2px;line-height:100%;}
-.pri {text-align:right;margin-top:-27.5px;}
-.fa-refresh {margin-left:6px;}
- 
-.custom-like-button *{cursor:pointer!important;}
-.custom-like-button {
-    position:relative;
-    display:inline-block;
-    vertical-align:top;
-    width:10px;
-    height:10px;
-    cursor:pointer;
+.permalinks-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
- 
-.like_button:hover + .our_button {color:{color:Links Hover};}
-.like_button.liked + .our_button {color:{color:Links Hover};}
-.like_button iframe {width:100%!important;height:100%!important;}
-.like_button {z-index:10;opacity:0;}
-.our_button {z-index:1;}
-.our_button,.like_button {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+
+.permalinks-right a.pl-meta {
+  position: relative;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;  
+  padding: 6px 0px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-weight: 200;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: normal;
+  transition: color 0.35s ease;
+  border-bottom: none; 
+  border-radius: 4px;
 }
- 
-.tags {margin-top:4px;}
-.tags a {
-    margin-right:5px;
-    font-style:italic;
-    text-transform:none;
-    display:inline;
+
+.permalinks-right a.pl-meta:hover {
+  color: {color:links hover}; 
+  background: linear-gradient(90deg, {color:links hover} 0%, {color:details} 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 2px {color:links hover});
+  border-bottom: none; 
+}
+
+.permalinks-right a.pl-meta span:first-child {
+  font-weight: 400;
+  color: {color:links};
+  font-style: normal;
 }
 
 /* end notes */
 
 /* permalink */
 .perma {  
-    margin-top:-5px;
+    margin-top:-17px;
     margin-left:20px;  
     margin-bottom:100px;
-    width:450px;
-    height:100%;
-    font-size:9px;  
+    width:430px;
+    height:auto; 
+    overflow:auto;   
     font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
@@ -515,7 +644,6 @@ li.note {
 }
 
 ol.notes li a { 
-    font-size:9px;
     font-weight:700;
 } 
 
@@ -577,109 +705,111 @@ ol.notes li.note img.avatar {
 
 /* audios */
 .album {
-    padding:0px; 
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid {color:borders};
-    text-align:center;      
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
+  display: none;
 }
 /* end audios */ 
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 4px;
-    border:1px solid {color:borders};
-}
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: {color:asker text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:links};
+    font-weight: 600;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
+.asker a:hover {
+    color: {color:links hover};
+}
+
+/* question bubble */
+/* Asker info */
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
     color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+}
+
+.asker a {
+    color: {color:text};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:text};
+}
+
+.asker a {
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+  position: relative;
+  background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2});
+  padding: 14px 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 4px solid #bbbbbb;
+  transition: transform 0.2s ease;
+  color: {color:Asker Text};
+}
+
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
+    margin-bottom:-10px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
+
 /* end asks */
 
 
@@ -859,210 +989,193 @@ a.tumblr_blog {
 }
     
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 4.3px 1px 5px; 
-    margin:20px 0px 0px 20px; 
-    border-radius:3px;
-    background:{color:tooltip background};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:tooltip text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
 }
 
-#ltop:link, #ltop:visited {  
-    position:fixed;
-    background:;  
-    bottom:27px;
-    right:24px; 
-    font-size:20px; 
-    color:{color:accent};  
-    text-align:center;  
-    margin:-2px;  
-    padding:2px 7px 3px 6px; 
-    border-radius:100%;
-    display:none;       
-    transition:1s;
-    z-index:100;
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
-aside {
-    font-size:0;
-    position:fixed;
-    width:170px;
-    margin-left:-110px;
-    top:140px;
-    {block:permalinkpage}
-    margin-left:-185px; 
-    {/block:permalinkpage} 
-}
- 
-.sidehold {padding:20px;padding-top:50px;margin-top:-4px;}
-.sidehold,.img{background:{color:Sidebar Background};border:1px solid {color:borders};}
-.img {
-    display:inline-block;
-    margin:0 20px -45px;
-    width:46%;
-    padding:4px;
-    border-radius:5px;
-    {block:ifroundedsidebarpicture}border-radius:100%;{/block:ifroundedsidebarpicture};
-}
- 
-.desc {font-size:9px;margin:10px 0;}
-.lb {display:none;border-left:1px solid {color:borders};padding-left:10px;margin-bottom:10px;}
-.lb li {display:block;margin:5px 0;}
-.lb li a {border:0;padding:0;margin:0;}
-.lb li a:hover {color:{color:Links Hover};}
-nav li a {
-    display:inline-block;
-    padding:0 0 1px;
-    border-bottom:1px solid rgba({RGBcolor:Accent},0.5);
-}
- 
-nav ul {margin:0;padding:0;list-style-type:none;}
-nav li {
-    display:inline-block;
-    width:50%;
-    font-size:9px;
-    line-height:100%;
-    margin:0 0 10px;
-}
- 
-.srch {display:block;margin-top:5px;}
-.srch input{
-    width:100%;
-    background:inherit;
-    padding:0;
-    border:0;
-    margin:0;
-    outline:none;
-    font-family:inherit;
-    font-size:11px;
-    line-height:100%;
-}
- 
-.srch,.srch input[type=text] {color:{color:Accent};}    
-input::-webkit-input-placeholder {color:{color:Accent};}
-input::-moz-placeholder {color:{color:Accent};}
-input:-moz-placeholder {color:{color:Accent};}
-input:-ms-input-placeholder {color:{color:Accent};}
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance:none;}
- 
-/* Titles */
- 
-h1,h2 {letter-spacing:-0.25px;}
-h1 {margin:0;font-size:15px;line-height:100%;}
-h2 {margin:0 0 10px;font-size:14px;line-height:100%;}
-h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
-
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Circle-Size:38px;
-   --Progress-Border-Size:2px;
-   --Progress-Empty:{color:borders};
-   --Progress-Fill:#333;
-   --Player-Background:{color:player background};
-   --Play-Pause-Buttons-Size:14px;
-   --Play-Pause-Buttons-Color:{color:text};
-   --Player-Text-Margin:16px;
-
-   --Song-Name-Font-Size:10px;
-   --Song-Name-Color:{color:text}; 
-
-   --Artist-Name-Font-Size:11px;
-   --Artist-Name-Color:{color:text};
+#ltop:link, #ltop:visited {   
+    position: fixed;
+    background: {color:details}; 
+    bottom: 28px;
+    right: 25px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
+    display: none;   
+    transition: 1s;
+    z-index: 100;
+    box-shadow: 0 4px 10px {color:Shadow Color};
+    padding: 0; 
+    border-radius:6px;
 }
 
-#glenplayer07 {
-   position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
-   z-index:99;
+sidebar {
+  position: fixed;
+  top: 120px;
+  width: 300px;
+  margin-left: -150px;
+
+  background:{color:details}; 
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 6px; 
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.04),
+    0 14px 34px {color:Shadow Color};
+
+
+
+  overflow: hidden;
+  font-size: 0;
+  
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.flamingo {
-   display:flex;
-   align-items:center;
+{block:permalinkpage}
+sidebar {
+  margin-left: -307.5px;
+}
+{/block:permalinkpage}
+
+.sidebar-header {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 16px;
+
+  padding: 22px;
+  
+  border-bottom: 1px solid {color:borders};
 }
 
-.circleofdeath {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   border-radius:100%;
-   overflow:hidden;
+#icon img {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 7px; 
+  display: block;
+
+  opacity: 0.96;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-.tinfoil {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   background:var(--Progress-Empty);
-   border-radius:100%;
+.blogname {
+  margin: 0;
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 0.6px;
+
+  color: {color:text};
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
 }
 
-.oven {
-   background:var(--Progress-Fill);
+.verified-checkmark {
+  width: 15px;
+  height: 15px;
+  stroke: {color:links};
+  opacity: 0.75;
 }
 
-.oliveoil {
-   width:100%;
-   height:100%;
+.sidecontainer {
+  padding: 18px 22px 22px;
 }
 
-.crust {
-   position:absolute;
-   top:0;
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
+.info {
+  font-size: 11px;
+  line-height: 1.6;
+
+  padding: 12px 14px;
+  margin-bottom: 18px;
+
+  background:{color:background};
+  border-radius: 8px;
+
+  opacity: 0.9;
 }
 
-.cherry {
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   background:var(--Player-Background);
-   border-radius:100%;
-   cursor:pointer;
-   z-index:1;
+nav {
+  display: flex;
+  gap: 29.5px;
+  justify-content: flex-start;
+  margin-top: 6px;
+  margin-bottom:-6px;
 }
 
-.music-controls {display:flex;align-items:center}
+nav a {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-transform: uppercase;
 
-.music-controls .material-icons {
-   font-size:var(--Play-Pause-Buttons-Size);
-   color:var(--Play-Pause-Buttons-Color);
+  color: {color:links};
+  opacity: 0.55;
+
+  position: relative;
+
+  transition: opacity .2s ease, transform .2s ease;
 }
 
-.pausee {display:none;}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
 
-.beff {display:none;}
-.aff {display:block;}
+  width: 0%;
+  height: 1px;
 
-.music-info {
-   margin-left:var(--Player-Text-Margin);
-   line-height:1em;
+  background: {color:links};
+  transition: width .2s ease;
 }
 
-.song-name {
-   font-family:"Rajdhani", sans-serif;
-   font-size:var(--Song-Name-Font-Size);
-   text-transform:uppercase;
-   font-weight:bold;
-   letter-spacing:1.5px;
-   color:{color:text};
+nav a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
-.artist-name {
-   margin-top:3px;
-   font-family:"Rajdhani", sans-serif;
-   font-size:var(--Artist-Name-Font-Size);
-   letter-spacing:1px;
-   color:{color:text};
+nav a:hover::after {
+  width: 100%;
 }
 </style> 
 
@@ -1080,107 +1193,61 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg>
+</a>  
 
 </head>
 <body>  
 
-{block:ifshowmusicplayer}
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div id="glenplayer07">
-   <div class="flamingo">
-       <div class="circleofdeath">
-           <div class="tinfoil">
-               <div class="oliveoil"></div>
-           </div>
-          <div class="crust">
-               <div class="cherry">
-                   <div class="music-controls">
-                       <i class="material-icons playy">play_arrow</i>
-                       <i class="material-icons pausee">pause</i>
-                   </div>
-               </div><!--cherry-->
-           </div><!--crust-->
-       </div><!--circleofdeath-->
-
-       <div class="music-info">
-           <div class="song-name">{text:Song Title}</div>
-           <div class="artist-name">{text:Artist Name}</div>
-       </div><!--music-info-->
-   </div><!--flamingo-->
-</div><!--glenplayer07-->
-
-<audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
-<!----end music player---->
-{/block:ifshowmusicplayer}   
-
 <div class="entry"> 
-
-<aside>
-{block:ifSidebarImage}
-<a href="/"><img class="img" src="{image:Sidebar}"/></a>
-{/block:ifSidebarImage}
- 
-<div class="sidehold">
-<h1 style="letter-spacing: 2px;"><a href="/">{Title}</a></h1>
-<div class="desc">{Description}</div>
- 
-<nav>
-<ul>
-    <li><a href="/">reload</a></li>
-    <li><a href="/ask">speak</a></li>
-    <li><a href="#" class="lh">+navi</a></li>
-    <li><a href="/archive">ex files</a></li>
-    <div class="lb">
-        {block:ifLink1}
-        <li><a href="{text:Link 1}">{text:Link 1 Title}</a></li>
-        {/block:ifLink1}{block:ifLink2}
-        <li><a href="{text:Link 2}">{text:Link 2 Title}</a></li>
-        {/block:ifLink2}{block:ifLink3}
-        <li><a href="{text:Link 3}">{text:Link 3 Title}</a></li>
-        {/block:ifLink3}{block:ifLink4}
-        <li><a href="{text:Link 4}">{text:Link 4 Title}</a></li>
-        {/block:ifLink4}
-        {block:ifLink5}
-        <li><a href="{text:Link 5}">{text:Link 5 Title}</a></li>
-        {/block:ifLink5}
-         {block:ifLink6}
-        <li><a href="{text:Link 6}">{text:Link 6 Title}</a></li>
-        {/block:ifLink6}
+<sidebar>
+  <div class="sidebar-header">
+    <div id="icon">
+      <img src="{image:icon}">
     </div>
-</ul>
-</nav>
- 
-<form class="srch" action="/search" method="get">
-<input type="text" name="q" placeholder="search this blog..." value="{SearchQuery}"/>
-</form>
- 
-</div>
-</aside>
+
+    <div class="blogname">
+      {text:title}
+    </div>
+  </div>
+
+  <div class="sidecontainer">
+    <div class="info">{Description}</div>
+
+    <nav>
+      <a href="{text:Link 1 Url}" title="{text:Link Title 1}">reload</a>
+      <a href="{text:Link 2 Url}" title="{text:Link Title 2}">inbox</a>
+      <a href="{text:Link 3 Url}" title="{text:Link Title 3}">origin</a>
+      <a href="{text:Link 4 Url}" title="{text:Link Title 4}">catalogue</a>
+    </nav>
+  </div>
+</sidebar>
+
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
 <div class="posts">
+<article class="post" data-post-id="{PostID}" data-reblog-key="{ReblogKey}">
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div>  
 {/block:Text}
 
@@ -1189,22 +1256,15 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div>  
 {/block:Quote}
 
@@ -1224,22 +1284,18 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 {/block:Lines}
 </ul>
 </div>   
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
+{/block:indexpage}
+</div> 
 </div>
-{/block:IndexPage}
+</div>{/block:IndexPage}{/block:date}
 </div>
 {/block:Chat}
 
@@ -1255,83 +1311,50 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div> 
 {/block:answer}
 
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<span class="pe-7s-headphones"></span>
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
+</div>  
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
-</div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
-</div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
-</div> 
+{/block:indexpage}
 {/block:Audio}
 
 {block:Photo}   
@@ -1341,22 +1364,15 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div> 
 {/block:Photo}
 
@@ -1368,22 +1384,15 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div> 
 {/block:Photoset}
 
@@ -1396,22 +1405,15 @@ h3,h4,h5 {margin:10px;font-size:12px;line-height:100%;}
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:IndexPage} 
-<div class="p">
-<a class="ple" href="{Permalink}"><i class="fa fa-map-marker"></i> {FormattedNoteCount}</a>
- 
-<div class="pri">
-    <div class="custom-like-button">{LikeButton}
-    <span class="our_button"><i class="fa fa-heart"></i></span>
-    </div>
-    <a href="{ReblogURL}"><i class="fa fa-refresh"></i></a>
+{block:indexpage}  
+<div class="permalinks">
+  <div class="permalinks-right">
+    <a href="{ReblogURL}" class="pl-meta" title="Reblog Post" target="_blank"><span>RBLG</span></a>
+    <a href="{Permalink}" class="pl-meta" title="Open Post"><span>INFO</span></a>
+    <a href="{Permalink}" class="pl-meta" title="{TimeAgo}"><span>{NoteCount}N</span></a>
+  </div>
 </div>
- 
-{block:ifTags}{block:HasTags}<div class="tags">
-{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}
-</div>{/block:HasTags}{/block:ifTags}
-</div>
-{/block:IndexPage}
+{/block:indexpage}
 </div> 
 {/block:Video} 
 
@@ -1445,6 +1447,36 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:ifPagination}
+	<nav id="pagination">
+        <span class="current_page">page {CurrentPage} of {totalpages}</span>
+        
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+	</nav>
+{/block:ifPagination}
+
+{block:DayPagination}
+    <nav id="pagination">
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+        
+	</nav>
+{/block:DayPagination}
 </div>
 
 {block:IndexPage} 
@@ -1523,76 +1555,52 @@ resizeVideos();
 });
 </script>
   
-{block:ifnotpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div id="pagination">
-{block:NextPage}
-<a id="next" href="{NextPage}"></a>
-{/block:NextPage}
-{block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
-{/block:PreviousPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
+{block:ifnotpagination}
+  <div id="pagination" class="infinite-scroll">
+    {block:NextPage}
+      <a id="next" href="{NextPage}"></a>
+    {/block:NextPage}
+  </div>
 {/block:ifnotpagination} 
-
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
-
-
+ 
 <script>
 
- 
- 
-// drop links & post notes
 $(document).ready(function(){
-    $(".pn").hide();
-        $(".pnh").show();$('.pnh').toggle(function(){
-            $(".pn").slideDown(function(){});
-                },function(){
-            $(".pn").slideUp(function(){});
-        });
-    $(".lb").hide();
-        $(".lh").show();$('.lh').toggle(function(){
-            $(".lb").slideDown(function(){});
-                },function(){
-            $(".lb").slideUp(function(){});
-        });
-    });
- 
- 
 
- 
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
+});
 
 </script>
- 
-
-<script>
-// minimal soundcloud player © shythemes.tumblr
-$(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
-});
-</script> 
-<script>feather.replace()</script>
 </body>
 </html>
