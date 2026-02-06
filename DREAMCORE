@@ -41,8 +41,8 @@ attribute:"title"
 <meta name="color:Links" content="#c9c9c9" />  
 <meta name="color:Links Hover" content="#adacac" />
 <meta name="color:Scrollbar" content="#c9c9c9" />
-<meta name="color:Gradient 1" content="#eeeeee"/>
-<meta name="color:Gradient 2" content="#282a2c"/>
+<meta name="color:Gradient 1" content="#686868"/>
+<meta name="color:Gradient 2" content="#111111"/>
 <meta name="color:Asker Text" content="#ffffff"/>
 <meta name="color:Tooltip Text" content="#ffffff"/>
  
@@ -1054,6 +1054,8 @@ sidebar {
 
   box-shadow: 0 4px 10px {color:Shadow Color};
 
+
+
   overflow: hidden;
   font-size: 0;
   
@@ -1070,7 +1072,7 @@ sidebar {
   display: grid;
   grid-template-columns: 64px 1fr;
   align-items: center;
-  gap: 16px;
+  gap: 1px;
 
   padding: 22px;
   
@@ -1078,8 +1080,8 @@ sidebar {
 }
 
 #icon img {
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
 
   border-radius: 7px; 
   display: block;
