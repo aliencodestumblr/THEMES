@@ -55,7 +55,7 @@ attribute:"title"
 <meta name="if:Drop Links" content=""/>
 <meta name="if:Image" content=""/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show music player" content="1">
+<meta name="if:Show music player" content="">
 
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="tags"/>
@@ -713,48 +713,56 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color: {color:asker text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
+.ask-post {
+  margin: 0px 0 28px;
+  font-family: "Rajdhani", sans-serif;
 }
 
-.asker {
-    margin: 0 0 -6px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:text};
-    opacity: 0.85;
+.ask-question {
+  position: relative;
+  padding: 16px 18px;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    {color:Ask Gradient 1},
+    rgba({RGBcolor:Ask Gradient 2}, .85)
+  );
+
+  color: {color:asker text};
+  font-size: 12px;
+  line-height: 1.6;
+
+  box-shadow: 0 3px 10px rgba({RGBcolor:Shadow}, .06);
 }
 
-.answer {
-    margin: -8px 0 0 0;
-    padding-left: 0px;
-    color: {color:text};
-    line-height: 1.7;
-    font-size: 11px;
+.ask-from {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  opacity: .6;
+  margin-right: 8px;
 }
 
-.answer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
+.ask-answer {
+  margin-top: 10px;
+  padding-left: 14px;
+
+  border-left: 2px solid rgba({RGBcolor:Shadow}, .15);
+
+  font-size: 11px;
+  line-height: 1.75;
+  color: {color:text};
+  
+  margin-bottom:-5px;
+
 }
 
-.answer img:hover {
-    transform: scale(1.03);
+.ask-answer img {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 6px;
+  display: block;
 }
 /* end asks */
 
@@ -1409,9 +1417,16 @@ a.tumblr_blog {
 {/block:Link} 
  
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
+<div class="ask-post">
+  <div class="ask-question">
+    <span class="ask-from">{Asker}</span>
+    {Question}
+  </div>
+
+  <div class="ask-answer">
+    {Answer}
+  </div>
+</div>
 {block:date}
 {block:IndexPage} 
 <div class="perm-inline" aria-label="Post options">
