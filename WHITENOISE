@@ -99,32 +99,35 @@ html { scrollbar-gutter: stable both-edges; }
 
 body { overflow-y: scroll; }  
 
-
-article iframe:not(iframe.bandcamp_audio_player, .spotify_audio_player, iframe.soundcloud_audio_player, iframe.tumblr_audio_player) {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-    height: auto;
-    margin-bottom: -3px;
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
-iframe.soundcloud_audio_player,
-.tumblr_video_container {
-    width: 100%!important;
-    height: auto!important;
-}
-
-figure iframe.spotify_audio_player,
+article iframe[src*="spotify.com"],
 iframe.spotify_audio_player {
-    max-height: 80px;
-    width: 100%;
+  aspect-ratio: auto !important;
 }
 
-article iframe[src*='soundcloud'] {
-    max-height: 130px;
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
 }
 
-figure iframe.bandcamp_audio_player {
-    max-height: 120px;
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
 }
 
 html, body, a, a:hover{cursor:crosshair;}
