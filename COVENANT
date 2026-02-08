@@ -1244,7 +1244,7 @@ a.tumblr_blog {
 
 <div class="entry"> 
 <aside id="sidebar" aria-label="Sidebar">
-<h1 id="blogtitle">@covenant</h1>
+<h1 id="blogtitle">@{Name}</h1>
 
   <img id="icon" src="{image:Icon}">
 
