@@ -64,10 +64,10 @@ $(document).ready(function(){
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Navigation" content="#222"/>
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Gradient 1" content="#f6f6f6"/>
+<meta name="color:Gradient 2" content="#444444"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
@@ -94,7 +94,6 @@ $(document).ready(function(){
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
@@ -205,22 +204,53 @@ html, body, a, a:hover{cursor:crosshair;}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
+.cc {
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
+}
+
+.cc svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    overflow: visible;
+}
+
+.cc svg path {
+    fill: {color:accent};
+}
+   
 iframe.tmblr-iframe {
-    position:fixed!important;
-    z-index:99999999!important;
-    top:5px;!important;
-    right:0!important;
+    z-index: 999;
+    right: 20px;
+    top: 21px;
+    opacity: 0;
+    position: fixed;
+    width: 0;
     {block:IfDarkTumblrControl}
     filter:invert(1);
     {/block:IfDarkTumblrControl}
-    transform:scale(0.45) rotate(0deg);
-    transform-origin:95% 0;
-    vertical-align:top right;
-    opacity:0.5;
-} 
+    padding-right: 60px;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
 
-.tmblr-iframe--app-cta-button {
-    display: none!important;
+.tmblr-iframe:hover {
+    opacity: 0.5 !important;
 }
 
 .vignette, #vignette {
@@ -377,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:864px;    
+    width:910px;    
     {block:permalinkpage}  
     width:450px; 
     {/block:permalinkpage} 
@@ -386,12 +416,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:0px; 
-    margin-left:77px;  
-    width:864px;
+    margin-top:20px; 
+    margin-left:120px;  
+    width:910px;
     {block:permalinkpage}
-    margin-top:20px;   
-    margin-left:-130px;  
+    margin-top:40px;   
+    margin-left:-110px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -399,13 +429,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:transparent;   
-    width:250px;        
+    width:260px;        
     {block:permalinkpage}
-    margin-top:20px; 
+    margin-top:40px; 
     width:450px; 
-    margin-left:-130px; 
+    margin-left:-110px; 
     {/block:permalinkpage} 
-    margin:19px; 
+    margin:21px; 
     padding:0px;    
     opacity:1;
     transition:1s;  
@@ -454,88 +484,197 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb{ 
-background-color: {color:scrollbar};
-border: 3px solid {color:background};
-height:auto;
--moz-border-radius: 10px;
-border-radius: 10px;
+::-webkit-scrollbar {
+    width: 14px;
+    background-color: {color:background};
+    border-left: none;
 }
 
-::-webkit-scrollbar { 
-height:auto;
-width:9px; 
-background-color:{color:borders};
-border: 4px solid {color:background}; 
-} 
+::-webkit-scrollbar-thumb {
+    background-color: {color:scrollbar};
+    border: 3px solid {color:background};
+    border-radius: 7px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darken({color:scrollbar}, 12%);
+}
 /* end scrollbar */
 
 
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+#pagination {
+    margin-top:60px;
+    width:150px;
+    margin-left:-95px;
+    font-size:11px;
+    padding:15px;
+    margin-bottom:100px;
+    text-align:left;
+    {block:permalinkpage}
+    display:none;
+    {/block:permalinkpage}
 }
 
-.pag a{ 
-    background:transparent;
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+#pagination a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: {color:text};
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 13.3px;
+  font-weight: 550;
+  letter-spacing:0px;
+  text-align:center;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+#pagination a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: {color:accent};
+  opacity: 0.3;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+#pagination a:hover {
+  color: {color:Links hover};
+}
+
+#pagination a:hover::after {
+  transform: scaleY(1);
+}
+
+
+#pagination div{
+    padding:15px;
+    margin:15px -15px -15px;
+}
+
+{block:daypage}
+    #pagination div{
+        margin:0;
+        padding:0;
+    }
+{block:daypage}
+
+#pagination a:hover{color:{color:Links hover};
+}
+
+#pagination a + a::before{
+    content:'/';
+    margin:0 10px;
+    pointer-events:none;
+    color:rgba(var(--Text),.3);
+}
+ 
+#pagination span{
+    height:1.4em;
+    font-weight:700;
+    display:inline-block;
+    color:{color:text};
+    border-bottom:1px solid {color:borders};
+}
+
+#pagination .current_page + div{border-top:1px solid {color:borders};}
+
+#pagination.infinite-scroll {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 /* end pagination */
 
 /* notes */ 
 
-.sex {
-    padding:3px 0px;
-    font-size:8px;
-    text-align:right;
-    letter-spacing:1px;
-    color:{color:Link};
-    text-transform:uppercase;
-    margin-right:-5px;
+.permalinks {
+    padding: 7px 0 3px 0;
+    font-size: 9px;
+    text-align: right;
+    letter-spacing: 1.8px; 
+    color: {color:Link};
+    text-transform: uppercase;
+    margin-right: -5px;
+    font-family: "Rajdhani", sans-serif;
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
 }
- 
-.sex a {margin:0px 5px;}
-.pta a{margin:0px 3px;}
-.pta {
-    margin-right:5px;
-    padding-top:5px;
-    opacity:1;
-    font-size:8px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    transition:0.8s ease;
-    -o-transition:0.8s ease;
-    -moz-transition:0.8s ease;
-    -webkit-transition:0.8s ease;
+
+.permalinks a {
+    margin: 0 5px;
+    color: {color:Link};
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease;
+    padding-bottom: 1px;
+}
+
+.permalinks a:hover {
+    border-bottom: 1.5px solid {color:Link};
+}
+
+.permalinks .divider {
+    user-select: none;
+    font-size: 12px;
+    opacity: 0.35;
+    margin: 0 4px;
+    line-height: 1;
+    transition: opacity 0.25s ease;
+}
+
+.permalinks:hover .divider {
+    opacity: 0.5;
+}
+
+.tags {
+    margin-left: 12px;
+    padding-top: 4px;
+    font-size: 8px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    opacity: 1;
+    font-family: "Rajdhani", sans-serif;
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.tags a {
+    margin: 0 4px 2px 0;
+    color: {color:Link};
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease;
+    padding-bottom: 1px;
+}
+
+.tags a:hover {
+    border-bottom: 1.5px solid {color:Link};
 }
 
 /* end notes */
 
 /* permalink */
 .perma {  
-    margin-top:-13px;
-    margin-left:14px; 
+    margin-top:-5px;
+    margin-left:17px; 
     margin-bottom:100px;
     width:450px;
     height:100%;
@@ -652,60 +791,72 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 4px;
-    border:1px solid {color:borders};
-}
-
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: {color:asker text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:links};
+    font-weight: 600;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
+.asker a:hover {
+    color: {color:links hover};
+}
+
+/* question bubble */
+
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
     color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+}
+
+.asker a {
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+  font-size: 11px;
+  position: relative;
+  background: linear-gradient(135deg, {color:Ask Gradient 1}, {color:Ask Gradient 2});
+  padding: 14px 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 4px solid #96999f;
+  transition: transform 0.2s ease;
+  color: {color:Asker Text};
+}
+
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
+    margin-bottom:-10px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 /* end asks */
 
@@ -917,80 +1068,128 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
-#ltop {
-  color: {color:text};
-}
-
-#ltop:link, #ltop:visited {  
-    position:fixed;
-    background:;  
-    bottom:30px;
-    right:30px; 
-    font-size:20px; 
-    color:{color:accent};  
-    text-align:center;  
-    margin:-2px;  
-    padding:2px 7px 3px 6px; 
-    border-radius:100%;
-    display:none;       
-    transition:1s;
-    z-index:100;
+#ltop:link, #ltop:visited {   
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
+    display: none;   
+    transition: 1s;
+    z-index: 100;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #sidebar {
-    background:{color:Post};
-    position:fixed;
-    width:130px;
-    margin-left:-100px;
-    top:180px;
-    border:0px solid {color:borders};
-    border-right:0px;
-    padding:25px;
-    {block:permalinkpage}
-    margin-left:-307px;  
-    {/block:permalinkpage}
+    background: {color:background};
+    position: fixed;
+    width: 160px;
+    margin-left: -110px; 
+    top: 180px;
+    padding: 18px;
+
+    border-right: 1px solid {color:borders};
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    backdrop-filter: blur(2px);
 }
- 
-.img img{width:100%;}
-.img {border:1px solid {color:borders};}
-.links {margin:10px 0px;}
-.pag a{color:{color:Title};}
+
+{block:permalinkpage}
+#sidebar { margin-left: -340px; }
+{/block:permalinkpage}
+
+#sidebar-title {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: {color:Title};
+    padding-bottom: 10px;
+    border-bottom: 1px solid {color:borders};
+    user-select: none;
+}
+
+.icon {
+    border: 1px solid {color:borders};
+    padding: 4px;
+}
+
+.icon img {
+    width: 100%;
+    display: block;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reg, .lh, .dh {
+    display: block;
+    font-size: 8.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    padding: 6px 6px;
+
+    border-bottom: 1px solid {color:borders};
+
+    text-decoration: none;
+    transition: background .18s ease, padding-left .18s ease;
+}
+
+.reg:hover,
+.lh:hover,
+.dh:hover {
+    background: rgba(0,0,0,.05);
+    padding-left: 9px;
+}
+
+.db {
+    font-size: 10px;
+    line-height: 1.5;
+    max-height: 110px;
+    overflow: auto;
+
+    padding: 6px;
+
+    border-bottom: 1px solid {color:borders};
+}
 
 .lb {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0px;
-  text-transform: uppercase;
-  text-align: justify;
-  letter-spacing: 1px;
-  font-size: 7px;
-  line-height: 0px;
-  vertical-align: top;
-  margin-bottom: 2px;
-  padding: 5px;
-  border-bottom: 1px solid {color:borders};
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    padding: 6px;
+    border-bottom: 1px solid {color:borders};
 }
 
 .lb a {
-  text-decoration: none;
-  font-size: 7px;
-  padding: 2px 5px;
-  display: inline-block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    padding: 3px 6px;
+
+    border-radius: 3px;
+
+    transition: background .18s ease;
 }
 
 .lb a:hover {
-  text-decoration: none;
-}
-.lb, .db {line-height:150%;border-bottom:1px solid {color:borders};}
-.db{text-align:justify;max-height:100px;overflow:auto;}
-.reg, .lh, .dh, .lb, .db{padding:5px;}
-.lh, .dh {cursor:help;}
-.reg, .lh, .dh {
-    display:block;
-    text-transform:uppercase;
-    font-size:7px;
-    letter-spacing:1px;
-    border-bottom:1px solid {color:borders};
+    background: rgba(0,0,0,.07);
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
@@ -1117,12 +1316,14 @@ a.tumblr_blog {
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<a href="javascript:;" id="ltop" style="color:{color:text};">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
-    <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
-    <path fill-rule="evenodd" d="M11.47 4.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 6.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
-  </svg>
-</a>
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg></a> 
 
 </head>
 <body>  
@@ -1160,7 +1361,8 @@ a.tumblr_blog {
 <div class="entry"> 
 
 <div id="sidebar">
-{block:ifImage}<div class="img"><a href="/"><img src="{image:Sidebar}"></a></div>{/block:ifImage}
+<div id="sidebar-title">{Title}</div>
+{block:ifImage}<div class="icon"><a href="/"><img src="{image:Sidebar}"></a></div>{/block:ifImage}
 <div class="links">
     <a class="reg" href="/">reload</a>
     <a href="#" class="dh">bio</a>
@@ -1182,11 +1384,9 @@ a.tumblr_blog {
     </div>
     <a class="reg" href="/archive">ex files</a>
 </div>
-{block:ifPaginate}{block:Pagination}<div class="pag">
-{block:PreviousPage}<a href="{PreviousPage}">&larr;</a>{/block:PreviousPage}
-{block:NextPage}<a style="float:right;" href="{NextPage}">&rarr;</a>{/block:NextPage}
-</div>{/block:Pagination}{/block:ifPaginate}
 </div>
+
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
@@ -1195,17 +1395,24 @@ a.tumblr_blog {
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}+</div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 </div>  
@@ -1218,18 +1425,24 @@ a.tumblr_blog {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1254,18 +1467,24 @@ a.tumblr_blog {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1286,18 +1505,24 @@ a.tumblr_blog {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1305,25 +1530,29 @@ a.tumblr_blog {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+<div class="ask">{Question}</div>
+<div class="answer">{Answer}</div>
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1339,18 +1568,24 @@ a.tumblr_blog {
 </div>
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1366,18 +1601,24 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1394,18 +1635,24 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1423,18 +1670,24 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="sex">
-<a title="notes" href="{Permalink}">{NoteCount}</a> /  
-<a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
-{block:RebloggedFrom} /
-<a title="{ReblogParentName}" href="{ReblogParentURL}">via</a> /  
-<a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
-{/block:RebloggedFrom}
- 
-{block:ifTags}{block:HasTags}<div class="pta">
-{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}
- + </div>{/block:HasTags}{/block:ifTags}
-   
+<div class="permalinks">
+  <a title="notes" href="{Permalink}">{NoteCount}</a>
+  <span class="divider">/</span>
+  <a title="{TimeAgo}" href="{Permalink}">{DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}</a>
+  {block:RebloggedFrom}
+  <span class="divider">/</span>
+  <a title="{ReblogParentName}" href="{ReblogParentURL}">via</a>
+  <span class="divider">/</span>
+  <a title="{ReblogRootName}" href="{ReblogRootURL}">src</a>
+  {/block:RebloggedFrom}
+
+  {block:ifTags}
+  {block:HasTags}
+  <div class="tags">
+    {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}+
+  </div>
+  {/block:HasTags}
+  {/block:ifTags}
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1471,6 +1724,36 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:ifPagination}
+	<nav id="pagination">
+        <span class="current_page">page {CurrentPage} of {totalpages}</span>
+        
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+	</nav>
+{/block:ifPagination}
+
+{block:DayPagination}
+    <nav id="pagination">
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+        
+	</nav>
+{/block:DayPagination}
 </div>
 
 {block:IndexPage} 
@@ -1549,36 +1832,14 @@ resizeVideos();
 });
 </script>
   
-{block:ifnotpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div id="pagination">
-{block:NextPage}
-<a id="next" href="{NextPage}"></a>
-{/block:NextPage}
-{block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
-{/block:PreviousPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifnotpagination} 
+{block:ifnotpagination}
+  <div id="pagination" class="infinite-scroll">
+    {block:NextPage}
+      <a id="next" href="{NextPage}"></a>
+    {/block:NextPage}
+  </div>
+{/block:ifnotpagination}
 
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
  
