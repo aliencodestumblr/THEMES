@@ -46,7 +46,6 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>    
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Fixed header" content=""/>
 <meta name="if:Dark Icon Shadow" content="">
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Show music player" content="1">
