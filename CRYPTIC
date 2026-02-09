@@ -30,62 +30,39 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Header Icon" content=""/>
-
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Header Text" content="#FFFFFF"/>
-<meta name="color:Header Background" content="#000000"/>
+<meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Scrollbar" content="#cccccc"/> 
 <meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
+<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:Gradient 1" content="#eeeeee"/> 
+<meta name="color:Gradient 2" content="#444444"/> 
 <meta name="color:Asker Text" content="#ffffff"/>
-<meta name="color:Ask Gradient 1" content="#000000"/>
-<meta name="color:Ask Gradient 2" content="#ffffff"/>
-<meta name="color:tooltip text" content="#ffffff"/>
-
-<meta name="select:Post Columns" content="3" title="3 columns"/>
-<meta name="select:Post Columns" content="4" title="4 columns"/>
-<meta name="select:Post Columns" content="5" title="5 columns"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
-<meta name="if:Show caption" content=""/>   
+<meta name="if:Show caption" content=""/> 
+<meta name="if:3 Columns" content=""/> 
+<meta name="if:Dark Panel" content=""/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show Blog Title" content="1"/>
-<meta name="if:Drop Down Ask Box" content="1"/>
-<meta name="if:Header Fixed" content="1"/>
 <meta name="if:Light Post Hovers" content="1">
 
-<meta name="text:Ask Title" content="Message"/>
-<meta name="text:Link One" content=""/>
-<meta name="text:Link One Title" content=""/>
-<meta name="text:Link Two" content=""/>
-<meta name="text:Link Two Title" content=""/>
-<meta name="text:Link Three" content=""/>
-<meta name="text:Link Three Title" content=""/>
-<meta name="text:Link Four" content=""/>
-<meta name="text:link Four Title" content=""/>
-<meta name="text:link Five" content=""/>
-<meta name="text:link Five Title" content=""/>
-<meta name="text:link Six" content=""/>
-<meta name="text:link Six Title" content=""/>
+<meta name="text:Link One Title" content="message"/>
+<meta name="text:Link One" content="/"/>
+<meta name="text:Link Two Title" content="ex files"/>
+<meta name="text:Link Two" content="/"/>
+<meta name="text:Link Three Title" content="tags"/>
+<meta name="text:Link Three" content="/"/>
+<meta name="text:Link Four Title" content="uploads"/>
+<meta name="text:Link Four" content="/"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script> 
-$(document).ready(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
@@ -94,9 +71,6 @@ $("#panel").slideToggle("fast");
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
@@ -113,8 +87,9 @@ $("#panel").slideToggle("fast");
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
 
 <style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
 
-body { overflow-x: hidden; }
+body { overflow-y: scroll; }  
 
 :root{
   --sp-scale: 0.80;   
@@ -154,20 +129,19 @@ html, body, a, a:hover{cursor:crosshair;}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
-/* Force Tumblr controls iframe to sit on top and be clickable */
 iframe.tmblr-iframe {
-  position: fixed !important;
-  top: 20px !important;              
-  right: 0px !important;    
-  {block:IfDarkTumblrControl}
-  filter:invert(1);
-  {/block:IfDarkTumblrControl}
-  transform: scale(0.45) !important;
-  transform-origin: 95% 0 !important;
-  opacity: 0.95 !important;
-  pointer-events: auto !important;  
-  z-index: 2147483647 !important;  
-}
+    position:fixed!important;
+    z-index:99999999!important;
+    top:5px;!important;
+    right:0!important;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
+    transform:scale(0.45) rotate(0deg);
+    transform-origin:95% 0;
+    vertical-align:top right;
+    opacity:0.5;
+} 
 
 .tmblr-iframe--app-cta-button {
     display: none!important;
@@ -178,7 +152,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -187,7 +161,7 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:background}!important;
+    border:5px solid {color:details}!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -202,7 +176,7 @@ hr {
 }
 
 pre, code {
-    overflow:hidden;
+    overflow:auto;
     overflow-y:hidden;
     overflow-x:scroll; 
     user-select:all; 
@@ -307,11 +281,7 @@ img { cursor:crosshair;
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
-    margin:0;
-    margin-right:0px;
     color:{color:text}; 
     background-color:{color:background};
     font:400 11px "Rajdhani", sans-serif;
@@ -324,65 +294,68 @@ body {
     -webkit-animation-name:fadeIn;animation-name:fadeIn;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     text-align:justify; 
     line-height:15px;
 }
 
-.entry {
-    width: 100%;
-    max-width: none;
-    margin:0 0px;
-    height: auto;
+.entry {   
+    width:1160px; 
+    
+    {block:if3Columns}
+    width:1170px;
+    {/block:if3Columns}
+    
+    {block:permalinkpage}  
+    width:740px; 
+    {/block:permalinkpage} 
+    margin:auto;
+    height:auto; 
 }
 
 #posts {     
-    top:105px;
+    margin-top:30px; 
+    margin-left:0px;  
+    width:1160px;
     
-    margin-left:0;
-    margin-right:0;
-    padding:0px;
-
-    width:100%;
-    max-width:none;
-    box-sizing:border-box;
-
+    {block:if3Columns}
+    width:1170px;
+    {/block:if3Columns}
+    
     {block:permalinkpage}
-    margin-top:100px;
-    width:840px;
-    max-width:100%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:0;
+    margin-top:55px;   
+    margin-left:-30px;   
+    width:740px; 
     {/block:permalinkpage}
-
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-  float: left;
-  box-sizing: border-box;
-
-  width: calc(100% / {select:Post Columns});
-  padding: 0 15px 20px;
-  opacity: 1;
-
-  {block:permalinkpage}
-    float: none;
-    width: 840px; 
-    margin-left: 0px; 
-  {/block:permalinkpage}
-
-  transition:
-    transform .28s ease,
-    box-shadow .28s ease,
-    filter .28s ease,
-    opacity .30s ease;
+    width:250px;  
     
-    margin-bottom:15px;
+    {block:if3Columns}
+    width:350px;
+    {/block:if3Columns}
+    
+    {block:permalinkpage}
+     margin-top:55px;   
+    width:740px; 
+   margin-left:-30px;  
+    {/block:permalinkpage} 
+    margin:20px; 
+    padding:0px;    
+    opacity:1;
+    transition:1s;  
 }
+
+{block:IndexPage}
+.posts {
+   opacity:0;
+   z-index:-1;
+    transition:.5s;
+}
+{/block:IndexPage}
 
 .posts img {
     width:100%;    
@@ -418,40 +391,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {width:0px;height:0px;}
+::-webkit-scrollbar {width:1px;height:1px;}
 ::-webkit-scrollbar-thumb {
     border:0px solid {color:background};
     background-color:{color:scrollbar};}
 /* end scrollbar */
 
+
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;             
+  margin: 40px auto 70px; 
+  flex-wrap: wrap;
 }
 
-.pag a{ 
-    background:{color:background};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
+.pagination a,
+.pagination .page {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid {color:borders};
+  background:{color:details};
+  color:{color:links};
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.pagination a:hover {
+  background:{color:links hover};
+  color: #fff;
+  border-color:{color:borders};
+}
+
+.pagination .current {
+  background:{color:links hover};
+  color: #fff;
+  border-color:{color:borders};
+  font-weight: 700;
+  cursor: default;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-weight: 500;
 }
 /* end pagination */
 
@@ -461,8 +446,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .permalink-hover {
   position: absolute;
-  bottom: 23px;
-  right: 18px;
+  bottom: 5px;
+  right: 5px;
   display: flex;
   align-items: center;
   gap: 3px !important;
@@ -549,8 +534,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .permalink-hover {
   position: absolute;
-  bottom: 23px;
-  right: 18px;
+  bottom: 5px;
+  right: 5px;
   display: flex;
   align-items: center;
   gap: 3px !important;
@@ -650,10 +635,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:0px;
-    margin-left:10px;  
+    margin-top:-10px;
+    margin-left:20px;  
     margin-bottom:100px;
-    width:540px;
+    width:740px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -764,6 +749,56 @@ ol.notes li.note img.avatar {
   display: none;
 }
 /* end audios */ 
+
+
+/* asks */
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:links};
+}
+
+.asker a {
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+    position: relative;
+    background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2}); 
+    padding: 14px 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-left: 4px solid #bbbbbb; 
+    transition: transform 0.2s ease;
+    color:{color:asker text};
+}
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
+    margin-bottom:0px;
+}
+
+.answer img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+/* end asks */
+
 
 /* quote */
 .quote {    
@@ -944,12 +979,12 @@ a.tumblr_blog {
   padding: 4px 5px 4px 6px;
   margin-top: 14px;
   border-radius: 6px;
-  background: #000; 
+  background: rgba(25, 26, 26, 0.95); 
   font-family: "Rajdhani", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:Tooltip Text}; 
+  color: {color:tooltip text}; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
@@ -972,165 +1007,132 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    bottom: 25px;
-    right: 25px; 
-    width: 45px;
-    height: 45px;
+    top: 45px;
+    right: 20px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
     display: none;   
     transition: 1s;
     z-index: 100;
+    padding: 0; 
 }
 
-#top{    
-{block:ifHeaderFixed}position:fixed;{/block:ifHeaderFixed}
-{block:ifnotHeaderFixed}position:absolute;{/block:ifnotHeaderFixed}
-top:0px;
-width:100%;
-left:0px;
-text-align:left;
-padding:10px;
-padding-right:10px;
-padding: 10px 15px 10px 15px;
-background-color:{color:Header Background};
-z-index:100;
--webkit-transition: all 0.4s linear;
--webkit-transition: all 0.4s linear;
--moz-transition: all 0.4s linear;}
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
 
-.blogtitle{
-  font-size:30px;
-  letter-spacing:1px;
-  color:{color:Blog Title};
-  padding-top:0px;
-  line-height:45px;
-  font-weight:700;
-  text-align:left;
-  display:inline-block;
-  vertical-align:middle;
+  background: {color:details};
+  border-top: 1px solid {color:borders};
+
+  display: flex;
+  align-items: center;
+
+  font-family: "Rajdhani", sans-serif;
+  z-index: 999999;
 }
 
-.blogtitle a{color:{color:Blog Title};text-transfrom:uppercase;}
+.start-btn {
+  height: 100%;
+  padding: 0 18px;
 
-.title-icon{
-  display:inline-block;
-  vertical-align:middle;
-  margin-right:10px;
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  border-right: 1px solid {color:borders};
+  transition: .2s;
 }
 
-.title-icon img{
-  width:32px;
-  height:32px;
-  object-fit:cover;
-  border-radius:4px;
-  display:block;
+.start-btn:hover {
+  background: rgba(0,0,0,0.05);
 }
 
-#navback{
-opacity:.8;
-z-index:3;
-position:absolute;
-position:fixed;
-top:0px;
-left:0px;
-width:100%;
-height:70px;
-z-index:99;
-opacity:1;}
+.start-menu {
+  position: absolute;
+  bottom: 42px;
+  left: 0;
 
-.nav{
-margin-top:24px;
-color:{color:header text};
-display:inline;
-font-size:11px; 
-line-height:0px;
-position:absolute;
-text-transform:uppercase;
-letter-spacing:0px;
-text-align:left;}
+  width: 210px;
 
-.nav a{
-padding:0px;
-border-top:2px solid transparent;
-color:{color:header text};
-margin-left:10px;
-margin-right:10px;
--moz-transition: all 0.2s ease-in-out;
--webkit-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
--ms-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
-}
-.nav a:hover{
-border-top:2px solid {color:Header Link};
--webkit-transition: all 0s linear;
--webkit-transition: all 0s linear;
--moz-transition: all 0s linear;
-transition: all 0s linear;
+  background: {color:details};
+  border: 1px solid {color:borders};
+
+  padding: 8px 0;
+
+  display: none;
+  flex-direction: column;
 }
 
-#plus{
-color:{color:header text};
-display:inline-block;
-padding-left:23px;
-padding-right:5px;
-font-size:26px;
-margin-top:0px;
-position:absolute;
-font-weight:700;}
+.start-menu.active {
+  display: flex;
+}
 
-.ask_form{
-cursor:help;
-padding:1px;
-color:{color:header text};
-margin-right:10px;}
+.start-menu a,
+.start-menu .menu-item {
+  padding: 9px 14px;
 
-.asktitle{font-size:13px;text-transform:uppercase;letter-spacing:1px;
-text-align:left;color:{color:header text};padding-bottom:5px;display:block;font-weight:700;}
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
-.asktitle a{color:{color:header text};}
+  color: {color:text};
+  cursor: pointer;
 
-.message{
-display:none;
-font-size:12px;
-font-weight:400;
-position:absolute;
-top:60px;
-height:225px;
-left:0px;
-padding-bottom:10px;
-color:{color:header text};
-background-color:{color:Header Background};
-width:100%;
-text-align:right;
-position:fixed;
-text-align:left;
-padding-left:15px;
-padding-right:15px;
-z-index:2;}
- 
-.description{
-z-index:1;
-display:none;
-font-size:12px;
-font-weight:400;
-position:absolute;
-top:65px;
-left:0px;
-padding-bottom:10px;
-color:{color:header text};
-background-color:{color:Header Background};
-width:100%;
-text-align:right;
-position:fixed;
-text-align:left;
-padding-left:15px;}
+  text-decoration: none;
+  transition: .2s;
+}
 
-.hide{width:30px;height:27px;overflow:hidden;top:px;}
+.start-menu a:hover,
+.start-menu .menu-item:hover {
+  background: rgba(0,0,0,0.06);
+  
+  {block:ifDarkPanel}
+   background: #fff;
+   color:#444;
+  {block:ifDarkPanel}
+}
 
-.info {
-margin-left:73px; 
-margin-top:4px; 
-line-height:14px;
+.desc-window {
+  position: absolute;
+  bottom: 42px;
+  left: 211px;
+
+  width: 260px;
+  max-height: 240px;
+  overflow-y: auto;
+
+  background: {color:details};
+  border: 1px solid {color:borders};
+
+  padding: 14px;
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  display: none;
+}
+
+.desc-window.active {
+  display: block;
+}
+
+.taskbar-right {
+  margin-left: auto;
+  padding: 0 14px;
+  font-size: 11px;
+  font-style:italic;
 }
 
 </style> 
@@ -1143,185 +1145,83 @@ line-height:14px;
 
 <script src ="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
 
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet"> 
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script>
-$(document).ready(function() {
-//
-$('a.poplight[href^=#]').click(function() {
-var popID = $(this).attr('rel'); //Get Popup Name
-var popURL = $(this).attr('href'); //Get Popup href to define size
-var query= popURL.split('?');
-var dim= query[1].split('&');
-var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
-var popMargTop = ($('#' + popID).height() + 80) / 2;
-var popMargLeft = ($('#' + popID).width() + 80) / 2;
-//Apply Margin to Popup
-$('#' + popID).css({
-'margin-top' : -popMargTop,
-'margin-left' : -popMargLeft
-});
-$('body').append('<div id="fade"></div>');
-$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
-return false;
-});
-$('a.close, #fade').live('click', function() {
-$('#fade , .popup_block').fadeOut(function() {
-$('#fade, a.close').remove(); //fade them both out
-});
-return false;
-});
-});
-</script>
-
 <script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
-<a href="javascript:;" id="ltop">
-<img src="https://64.media.tumblr.com/aee09770a8e0ca529e1957b615233b2b/56217092dded0d98-fe/s75x75_c1/bf19cd1ea0c3e2e03818af05dc8598fba2111395.pnj" />
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg>
 </a> 
 
 </head>
-
 <body>   
 
 <div class="entry">
+<div class="taskbar">
 
-<div id="top">
-<div class="title-icon">
-<a href="/"><img src="{image:Header Icon}"></a>
+  <div class="start-btn" onclick="toggleStart()">
+    Start
+  </div>
+
+  <div class="start-menu" id="startMenu">
+
+    <a href="/">Home</a>
+
+    {block:IfLinkOneTitle}
+    <a href="{text:Link One}">{text:Link One Title}</a>
+    {/block:ifLinkOneTitle}
+
+    {block:ifLinkTwoTitle}
+    <a href="{text:Link Two}">{text:Link Two Title}</a>
+    {/block:ifLinkTwoTitle}
+
+    {block:ifLinkThreeTitle}
+    <a href="{text:Link Three}">{text:Link Three Title}</a>
+    {/block:ifLinkThreeTitle}
+
+    {block:ifLinkFourTitle}
+    <a href="{text:Link Four}">{text:Link Four Title}</a>
+    {/block:ifLinkFourTitle}
+
+    <!-- NEW -->
+    <div class="menu-item" onclick="toggleDesc()">Description ▸</div>
+
+  </div>
+
+  <!-- POPUP DESCRIPTION WINDOW -->
+  <div class="desc-window" id="descWindow">
+    {description}
+  </div>
+
+  <div class="taskbar-right">
+    {title}
+  </div>
+
 </div>
 
-<div class="blogtitle">
-{block:ifShowBlogTitle}<a href="/">{title}</a>{/block:ifShowBlogTitle}
-{block:ifnotShowBlogTitle}&nbsp;{/block:ifnotShowBlogTitle}
-</div>
-
-<div class="description">
-<div style="padding-right:5%;">{description}</div>
-</div>
-
-<div class="message">
-<p><div class="asktitle"><a href="/ask">{AskLabel}</a></p></a></div>
-<iframe frameborder="0" height="200px" id="" scrolling="no" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" width="500px;" overflow="hidden" "></iframe>  
-<p>
-<div style="display:block;margin-left:0px;margin-top:5px;"></div>
-<span class="ask_form">
-<b>X</b> CLOSE</span>
-</div>
-
-<span class="nav">
-<div id="plus" onclick="ShowMenu();changeText();" style="cursor:help; margin-left:0px;">+</div>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-<a href="/">Reload</a>
-
-<div style="display:inline;">|</div>
-
-{block:AskEnabled}
-{block:ifDropDownAskbox}
-&nbsp;&nbsp;&nbsp;<span class="ask_form">{text:Ask Title}</span>
-{/block:ifDropDownAskbox}
-{block:ifnotDropDownAskbox}
-<a href="/ask">{text:Ask Title}</a>
-{/block:ifnotDropDownAskbox}
-<div style="display:inline;">|</div>
-{/block:AskEnabled}
-
-{block:ifLinkOneTitle}
-<a href="{text:Link One}">{text:Link One Title}</a>
-<div style="display:inline;">|</div>
-{/block:ifLinkOneTitle}
-
-{block:ifLinkTwoTitle}
-<a href="{text:Link Two}">{text:Link Two Title}</a>
-<div style="display:inline;">|</div>
-{block:ifLinkThreeTitle}
-
-<a href="{text:Link Three}">{text:Link Three Title}</a>
-<div style="display:inline;">|</div>
-{/block:ifLinkThreeTitle}
-
-{block:ifLinkFourTitle}
-<a href="{text:Link Four}">{text:Link Four Title}</a>
-<div style="display:inline;">|</div>
-{/block:ifLinkFourTitle}
-
-{block:ifLinkFiveTitle}
-<a href="{text:Link Five}">{text:Link Five Title}</a>
-<div style="display:inline;">|</div>
-{/block:ifLinkFiveTitle}
-{block:ifLinkSixTitle}
-<a href="{text:Link Six}">{text:Link Six Title}</a>
-{/block:ifLinkSixTitle}
-</div>
-</span>
-</div>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    $(".message").hide(0);
-  $(".ask_form").click(function(){
-    $(".message").slideToggle(650);
-  });
-});
-</script>
-
-<script>
-var IsOpen = "no";
-function ShowMenu()
-{
-if (IsOpen == "no")
-{
-$(".description").slideDown("slow");
-document.getElementById('plus').innerHTML = '-';
-IsOpen="yes";
-}else
-{
-$(".description").slideUp("slow");
-document.getElementById('plus').innerHTML = '+';
-IsOpen="no";
-}
-}
-</script>
 
 <div id="posts">
 {block:posts}
 <div class="posts">
 
 {block:Text}    
-<div class="caption">{Body}</div> 
+<div class="caption">{Body}</div>
 {block:IndexPage} 
-<div class="permalink-hover"> 
-  <!-- 1) link + note count -->
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <!-- 3) reblog / reshare (simpler two-arrow) -->
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Text}
@@ -1332,31 +1232,13 @@ IsOpen="no";
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-  <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Quote}
@@ -1378,31 +1260,13 @@ IsOpen="no";
 </ul>
 </div>   
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>
 {/block:Chat}
@@ -1420,71 +1284,29 @@ IsOpen="no";
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <!-- simple chain -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-  
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div style="display:flex; gap:6px;">
-  <b>Q:</b>
-  <span>{Question}</span>
-</div>
-
-<div style="margin-top:5px;"></div>
-{Answer}
-<div style="margin-top:5px;"><i>asked by {Asker}</i></div>
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+  <div class="ask">{Question}</div>
+  <div class="answer">{Answer}</div>
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:answer}
@@ -1497,31 +1319,13 @@ IsOpen="no";
   {/block:AudioPlayer}
 </div>
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div>  
 {/block:Audio}
@@ -1534,31 +1338,13 @@ IsOpen="no";
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-  <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Photo}
@@ -1572,31 +1358,13 @@ IsOpen="no";
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-  <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Photoset}
@@ -1611,31 +1379,13 @@ IsOpen="no";
 {/block:caption}
 {/block:ifshowcaption}  
 {block:IndexPage} 
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
-  </a>
-
-  <a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
-
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
-  </a>
-</div>
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
 {/block:IndexPage}
 </div> 
 {/block:Video} 
@@ -1670,6 +1420,26 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:IfPagination}
+<div class="pagination">
+  {block:PreviousPage}
+    <a class="prev" href="{PreviousPage}">Prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="page current">{CurrentPage}</span>
+    {/block:CurrentPage}
+    {block:JumpPage}
+      <a class="page" href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+    <a class="next" href="{NextPage}">Next</a>
+  {/block:NextPage}
+</div>
+{/block:IfPagination}
 </div>
 
 {block:IndexPage} 
@@ -1679,161 +1449,74 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 
 <script>
-function setupNarniaGrid() {
-  var $window    = $(window);
-  var $container = $('#posts');
-  var $items     = $container.find('.posts');
-
-  if (!$container.length || !$items.length) return;
-
-  // 3 / 4 / 5 from your Tumblr select
-  var numColumns = {select:Post Columns};
-  var gutter     = 10; // px gap between columns
-
-  // total width we use for the grid = viewport minus 10px left & right
-  var viewportWidth = $window.width();
-  var available     = Math.max(0, viewportWidth - 20); // safety
-
-  // column width so N columns + gutters exactly fill "available"
-  var columnWidth = Math.floor(
-    (available - gutter * (numColumns - 1)) / numColumns
-  );
-
-  // final grid width is exactly "available"
-  var gridWidth = available;
-
-  $container.css({
-    width:  gridWidth + 'px',
-    margin: '0 auto'
-  });
-
-  $items.css({
-    width:        columnWidth + 'px',
-    marginBottom: gutter + 'px'
-  });
-
-  // save numbers for later (used when new posts load)
-  $container.data('narniaColumnWidth', columnWidth);
-  $container.data('narniaGutter', gutter);
-
-  // reset Masonry if it already exists
-  if ($container.data('masonry')) {
-    $container.masonry('destroy');
-  }
-
-  $container.masonry({
-    itemSelector:    '.posts',
-    columnWidth:     columnWidth,
-    gutter:          gutter,
-    isFitWidth:      true,
-    percentPosition: false
-  });
-}
-
-$(document).ready(function () {
-  // photosets
-  $('.photo-slideshow').pxuPhotoset({
-    lightbox: true,
-    rounded: false,
-    gutter: '1px',
-    photoset: '.photo-slideshow',
-    photoWrap: '.photo-data',
-    photo: '.pxu-photo'
-  });
-
-  // unnest captions
-  $('.posts').unnest({
-    yourCaption: ".caption",
-    wrapName: ".tumblr_parent",
-    newCaptionUsername: true,
-    originalPostCaptionUsername: true,
-    tumblrAvatars: false,
-    tumblrAvatarsName: ".tumblr_avatar",
-    usernameColon: false
-  });
-
-  {block:IndexPage}
-  var $container = $('#posts');
-
-  // initial layout when images are loaded
-  $container.imagesLoaded(function () {
-    setupNarniaGrid();
-    $container.find('.posts').animate({ opacity: 1, zIndex: 1 });
-  });
-
-  // re-layout on resize
-  $(window).on('resize', function () {
-    setupNarniaGrid();
-  });
-
-  // infinite scroll
-  $container.infinitescroll({
-      itemSelector: '.posts',
-      navSelector: '#pagination',
-      nextSelector: '#next',
-      loadingImg: '',
-      loadingText: '<em></em>',
-      bufferPx: 1000
-    },
-    function (newElements) {
-      var $newElems = $(newElements).css({ opacity: 0 });
-
-      // unnest captions for new posts
-      $newElems.unnest({
-        yourCaption: ".caption",
-        wrapName: ".tumblr_parent",
-        newCaptionUsername: true,
-        originalPostCaptionUsername: true,
-        tumblrAvatars: false,
-        tumblrAvatarsName: ".tumblr_avatar",
-        usernameColon: false
-      });
-
-      // update like buttons
-      var $newElemsIDs = $newElems.map(function () {
-        return this.id;
-      }).get();
-      if (Tumblr && Tumblr.LikeButton && Tumblr.LikeButton.get_status_by_post_ids) {
-        Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-      }
-
-      // photosets inside new posts
-      $newElems.find('.photo-slideshow').pxuPhotoset({
-        lightbox: true,
-        rounded: false,
-        gutter: '1px',
-        photoset: '.photo-slideshow',
-        photoWrap: '.photo-data',
-        photo: '.pxu-photo'
-      });
-
-      // once new images are loaded, append then relayout grid
-      $newElems.imagesLoaded(function () {
-        // use the same width/gutter as existing columns
-        var columnWidth = $container.data('narniaColumnWidth') || $container.find('.posts').outerWidth();
-        var gutter      = $container.data('narniaGutter') || 10;
-
-        $newElems.css({
-          width:        columnWidth + 'px',
-          marginBottom: gutter + 'px'
-        });
-
-        // append + tell Masonry about the new items (no destroy)
-        $container.append($newElems);
-        $container.masonry('appended', $newElems);
-
-        $newElems.animate({ opacity: 1, zIndex: 1 });
-
-        if (typeof resizeVideos === 'function') {
-          resizeVideos();
-        }
-      });
-    }
-  );
-  {/block:IndexPage}
+$(document).ready(function(){
+$('.photo-slideshow').pxuPhotoset({
+lightbox: true,
+rounded: false,
+gutter: '1px',
+photoset: '.photo-slideshow',
+photoWrap: '.photo-data',
+photo: '.pxu-photo'
+});
+$(function(){ $('.posts').unnest({ 
+yourCaption:".caption",
+wrapName:".tumblr_parent",
+newCaptionUsername:true,
+originalPostCaptionUsername:true, 
+tumblrAvatars:false,  
+tumblrAvatarsName:".tumblr_avatar",  
+usernameColon:false 
+});}) 
+{block:IndexPage}
+var $container = $('#posts');
+$container.masonry({ itemSelector: '.posts' });
+$container.imagesLoaded(function(){
+$container.masonry();
+$container.find('.posts').animate({ opacity: 1, zIndex: 1 });
+}); 
+$container.infinitescroll({
+itemSelector: '.posts',
+navSelector: '#pagination',
+nextSelector: '#next',
+loadingImg: '',
+loadingText: '<em></em>',
+bufferPx: 1000
+},
+function(newElements) {
+var $newElems = $( newElements ).css({ opacity: 0 });
+$newElems.unnest({
+yourCaption:".caption",
+wrapName:".tumblr_parent",
+newCaptionUsername:true,
+originalPostCaptionUsername:true, 
+tumblrAvatars:false,
+tumblrAvatarsName:".tumblr_avatar",  
+usernameColon:false });
+var $newElemsIDs = $newElems.map(function(){
+return this.id;
+}).get();
+Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+var $newElems = $( newElements );
+$newElems.find('.photo-slideshow').pxuPhotoset({
+lightbox: true,
+rounded: false,
+gutter: '1px',
+photoset: '.photo-slideshow',
+photoWrap: '.photo-data',
+photo: '.pxu-photo'
+},
+function(){
+$container.masonry();
+});
+$newElems.imagesLoaded(function(){
+$container.masonry( 'appended', $newElems );
+$newElems.animate({ opacity: 1, zIndex: 1 });
+resizeVideos();
+});
+}); 
+{/block:IndexPage}
 });
 </script>
-
   
 {block:ifnotpagination} 
 {block:IndexPage}
@@ -1843,7 +1526,7 @@ $(document).ready(function () {
 <a id="next" href="{NextPage}"></a>
 {/block:NextPage}
 {block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
+<a href="{PreviousPage}"></a>
 {/block:PreviousPage}
 </div>
 {/block:Pagination}
@@ -1904,6 +1587,16 @@ $(document).ready(function(){
 
 });
 
+</script>
+
+<script>
+function toggleStart() {
+  document.getElementById("startMenu").classList.toggle("active");
+}
+
+function toggleDesc() {
+  document.getElementById("descWindow").classList.toggle("active");
+}
 </script>
 
 <script>feather.replace()</script>
