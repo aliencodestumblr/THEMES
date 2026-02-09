@@ -1158,7 +1158,6 @@ a.tumblr_blog {
 .lh:hover,
 .dh:hover {
     background: rgba(0,0,0,.06);
-    transform: translateX(3px);
 }
 
 .db {
