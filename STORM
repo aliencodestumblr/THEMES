@@ -33,6 +33,7 @@ attribute:"title"
 <meta name="image:sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#a5a5a5"/> 
 <meta name="color:Text" content="#a5a5a5" /> 
 <meta name="color:Links" content="#a5a5a5" />  
@@ -496,9 +497,7 @@ h1, h2, h3, h4, h5, h6 {
     padding:15px;
     background:{color:details};
     border-radius:4px;
-    box-shadow:
-    0 2px 6px rgba(0,0,0,0.10),
-    0 1px 2px rgba(0,0,0,0.06);
+    border:1px solid {color:borders}; 
     border-radius: 4px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     margin-bottom:100px;
@@ -564,7 +563,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:700;
     display:inline-block;
     color:{color:text};
-    border-bottom:1px solid {color:borders};
+    border-bottom:1px solid {color:borders}; 
 }
 
 #pagination .current_page + div{border-top:1px solid {color:borders};}
@@ -2077,44 +2076,6 @@ descToggle.addEventListener("click", () => {
   }, { passive:true });
 
 })();
-</script>
-
-<script>
-
-$(document).ready(function(){
-
-  var accentColor = '#acd7bb';   
-  var playerHeight = 116;       
-
-  $('.soundcloud_audio_player').each(function(){
-
-    let baseSrc = $(this).attr('src').split('&')[0];
-
-    let params = [
-      'liking=false',
-      'sharing=false',
-      'auto_play=false',
-      'show_comments=false',
-      'continuous_play=false',
-      'buying=false',
-      'show_playcount=false',
-      'show_artwork=false',
-      'hide_related=true',
-      'origin=tumblr',
-      'color=' + accentColor.replace('#','')
-    ].join('&');
-
-    $(this).attr({
-      src: baseSrc + '&' + params,
-      height: playerHeight,
-      width: '100%',
-      loading: 'lazy'
-    });
-
-  });
-
-});
-
 </script>
 </body>
 </html>
