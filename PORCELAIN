@@ -256,7 +256,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -381,8 +381,6 @@ img {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
     background-color:#ffffff;
@@ -415,11 +413,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:20px; 
-    margin-left:120px;  
+    margin-left:140px;  
     width:910px;
     {block:permalinkpage}
     margin-top:40px;   
-    margin-left:-110px;  
+    margin-left:-90px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -430,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:40px; 
     width:450px; 
-    margin-left:-110px; 
+    margin-left:-90px; 
     {/block:permalinkpage} 
     margin:20px;
     margin-bottom:10px;
@@ -603,7 +601,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 7px 0 3px 0;
     font-size: 9px;
     text-align: right;
-    letter-spacing: 1.8px; 
+    letter-spacing: 0.5px; 
     color: {color:Link};
     text-transform: uppercase;
     margin-right: -5px;
@@ -671,8 +669,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-5px;
-    margin-left:17px; 
+    margin-top:0px;
+    margin-left:15px; 
     margin-bottom:100px;
     width:450px;
     height:100%;
@@ -1081,24 +1079,30 @@ a.tumblr_blog {
 }
 
 #sidebar {
-    background:#ffffff;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(8px);
+
     position: fixed;
-    width: 160px;
-    margin-left: -110px; 
+    width: 170px;
+    margin-left: -90px;
     top: 180px;
+
     padding: 18px;
 
-    border-right: 1px solid {color:borders};
+    border: 1px solid {color:borders};
+    border-radius: 6px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 
-    backdrop-filter: blur(2px);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 {block:permalinkpage}
-#sidebar { margin-left: -340px; }
+#sidebar { margin-left: -320px; }
 {/block:permalinkpage}
 
 #sidebar-title {
@@ -1107,16 +1111,18 @@ a.tumblr_blog {
     font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-align: center;
+
+    text-align: left;
     color: {color:Title};
-    padding-bottom: 10px;
-    border-bottom: 1px solid {color:borders};
+
+    padding-bottom: 0px;
+
     user-select: none;
 }
 
 .icon {
-    border: 1px solid {color:borders};
-    padding: 4px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .icon img {
@@ -1127,48 +1133,50 @@ a.tumblr_blog {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .reg, .lh, .dh {
     display: block;
-    font-size: 8.5px;
+
+    font-size: 9px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
 
-    padding: 6px 6px;
-
-    border-bottom: 1px solid {color:borders};
+    padding: 7px 8px;
 
     text-decoration: none;
-    transition: background .18s ease, padding-left .18s ease;
+    border-radius: 5px;
+
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        padding-left .18s ease;
 }
 
 .reg:hover,
 .lh:hover,
 .dh:hover {
-    background: rgba(0,0,0,.05);
-    padding-left: 9px;
+    background: rgba(0,0,0,.06);
+    transform: translateX(3px);
 }
 
 .db {
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 1.45;
+
     max-height: 110px;
     overflow: auto;
 
-    padding: 6px;
+    padding: 6px 2px;
 
-    border-bottom: 1px solid {color:borders};
+    opacity: .8;
 }
 
 .lb {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-
-    padding: 6px;
-    border-bottom: 1px solid {color:borders};
+    gap: 5px;
 }
 
 .lb a {
@@ -1176,15 +1184,19 @@ a.tumblr_blog {
     letter-spacing: 1px;
     text-decoration: none;
 
-    padding: 3px 6px;
+    padding: 4px 7px;
 
-    border-radius: 3px;
+    background: rgba(0,0,0,.04);
+    border-radius: 999px;
 
-    transition: background .18s ease;
+    transition:
+        background .18s ease,
+        transform .18s ease;
 }
 
 .lb a:hover {
-    background: rgba(0,0,0,.07);
+    background: rgba(0,0,0,.10);
+    transform: translateY(-1px);
 }
 
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
