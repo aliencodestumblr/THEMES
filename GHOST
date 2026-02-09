@@ -37,6 +37,7 @@ attribute:"title"
 <meta name="color:Gradient 1" content="#000000"/> 
 <meta name="color:Gradient 2" content="#222222"/> 
 <meta name="color:Menu Button Hover" content="#ffffff"/> 
+<meta name="color:Menu Link Hover" content="#ffffff"/> 
 <meta name="color:Borders" content="#242627"/> 
 <meta name="color:Accent" content="#eeeeee"/>  
 <meta name="color:Text" content="#eeeeee" /> 
@@ -490,7 +491,7 @@ h1, h2, h3, h4, h5, h6 {
 .permalink-overlay {
   position: absolute;
   inset: 0;
-  background: #000000;
+  background:{color:background};
   display: block;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -953,12 +954,12 @@ a.tumblr_blog {
   padding:12px;
   padding-bottom:5px;
 
-
+  
   display:flex;
   flex-direction:column;
   gap:14px;
 
-  background:#000;
+  background:{color:background};
   border:1px solid {color:borders};
 
   font-size:11px;
@@ -974,7 +975,7 @@ a.tumblr_blog {
   margin-top:-25px;
   width:90px;
   position:relative;
-  background:#000;
+  background:{color:background};
   border:1px solid {color:borders};
 }
 
@@ -994,7 +995,7 @@ a.tumblr_blog {
   display:none;
   flex-direction:column;
 
-  background:#000;
+  background:{color:background};
   border:1px solid {color:borders};
   border-top:none;
 
@@ -1019,7 +1020,7 @@ a.tumblr_blog {
 
 .nav-dropdown a:hover{
   background:{color:Menu Button Hover};
-  color:#000;
+  color:{color:Menu Link Hover};
 }
 
 #blogtitle{
