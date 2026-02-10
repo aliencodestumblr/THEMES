@@ -1507,13 +1507,6 @@ resizeVideos();
 {block:IndexPage}
 {block:Pagination}
 <div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
 </div>
 {/block:Pagination}
 {/block:IndexPage}
