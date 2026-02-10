@@ -353,11 +353,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #posts {     
     margin-top:100px; 
-    margin-left:-120px;  
-    width:720px;
+    margin-left:-125px;  
+    width:740px;
     {block:permalinkpage}
     margin-top:120px;   
-    margin-left:-90px;  
+    margin-left:-85px;  
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -368,10 +368,10 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:120px; 
     width:540px;
-    margin-left:-90px; 
+    margin-left:-85px; 
     {/block:permalinkpage} 
     margin:19px; 
-    padding:10px;      
+    padding:14px;      
     overflow:hidden;
     opacity:1;
     transition:1s;  
@@ -508,14 +508,14 @@ h1, h2, h3, h4, h5, h6 {
   background: #111;
   border-radius: 2px;
 
-  transform: translateY(-6px);
+  transform: translateY(-2px);
   opacity: 0;
 
   pointer-events: none;
 
   transition:
-    opacity .16s ease,
-    transform .16s ease;
+    opacity .12s ease,
+    transform .12s ease;
 }
 
 .posts:hover .permalink-hover.pm-rail{
@@ -956,7 +956,7 @@ a.tumblr_blog {
 #sidebar{
   position:fixed;
   top:120px;
-  margin-left:630px;
+  margin-left:635px;
   width:200px;
   z-index:20;
 
@@ -981,28 +981,46 @@ a.tumblr_blog {
   box-shadow: none; 
 }
 
+.sb-titleline{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
 .sb-name{
   font: 900 12px "Rajdhani", sans-serif;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  padding-right:4px;
+  letter-spacing:3.5px;
+  text-transform:uppercase;
+  padding-right:0;
   color:{color:accent};
+}
+
+.sb-titleline .badge{
+  width:16px;
+  height:16px;
+
+  flex:0 0 18px;
+
+  color:{color:badge};
+  fill:none;
+  stroke:currentColor;
+
+  stroke-width:2;  
+
+  opacity:1;        
+  filter:drop-shadow(0 0 2px rgba(255,255,255,.15));
+  transform:translateY(1px);
+  
+  margin-bottom:2.5px;
 }
 
 .sb-sub{
   margin-top:3px;
-
+  margin-bottom:-3px;
   font: 600 9px "Rajdhani", sans-serif;
   letter-spacing: 1.6px;
 
   opacity:.6;
-}
-
-.sb-badge{
-  margin-bottom:-3px;
-  width:16px;
-  height:16px;
-  opacity:.55;
 }
 
 .sb-photo-img{
@@ -1047,8 +1065,6 @@ a.tumblr_blog {
 .sb-nav a:hover{
   background:#000;
   color:#fff;
-
-  transform:translateX(3px);
 }
 
 .sb-desc{
@@ -1246,15 +1262,16 @@ a.tumblr_blog {
 
     <div class="sb-head">
       <div class="sb-titleline">
-        <span class="sb-name">{Name}</span>
+  <span class="sb-name">{Name}</span>
 
-        <svg class="sb-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Verified" role="img">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.746 3.746 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
-        </svg>
-      </div>
+  <svg class="badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Verified" role="img">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.746 3.746 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
+  </svg>
+</div>
 
-      <div class="sb-sub">{Title}</div>
+<div class="sb-sub">{Title}</div>
+
     </div>
 
     <div class="sb-photo">
@@ -1275,7 +1292,7 @@ a.tumblr_blog {
 
 </aside>
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
