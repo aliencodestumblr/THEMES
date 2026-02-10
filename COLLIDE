@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
     {/block:if2columns}
     {/block:permalinkpage}
     margin:20px; 
-    margin-bottom:15px;
+    margin-bottom:10px;
     padding:0px;    
     opacity:1;
     transition:1s;  
@@ -546,56 +546,72 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.perm-inline {
-  margin-top: 8px;
+.posts {
+  position: relative;
+  padding-bottom: 32px; 
+}
+
+.permalink-bar {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  padding: 4px 10px;
+  
+  background: rgba(255 255 255 / 0.07);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 8px;
+  
   font-family: "Rajdhani", sans-serif;
-  font-size: 11px;
-  color: {color:text};
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: {color:links};
   user-select: none;
+  align-items: center;
+  z-index: 10;
+}
+
+.permalink-bar a {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  float: right;  
-  flex-direction: row-reverse; 
-}
-
-.perm-inline a {
+  gap: 5px;
+  color: #ccc;
   text-decoration: none;
-  color: inherit;
-  padding: 2px 0px;
-  transition: color 0.25s ease;
+  border-radius: 6px;
+  padding: 2px 6px;
+  transition: color 0.3s ease;
+}
+
+.permalink-bar a:hover {
+  color: {color:links hover};
+}
+
+.permalink-bar svg {
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.permalink-bar .date-link {
   font-weight: 400;
-  white-space: nowrap;
-  text-transform:uppercase;
-  border-radius: 4px;
-}
-
-.perm-inline a:hover {
-  color: #4a4a4a;
-  background: rgba(120, 120, 120, 0.07);
-}
-
-.reblog-link {
-  padding: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reblog-icon {
-  stroke: {color:text};
-  transition: stroke 0.25s ease, transform 0.3s ease;
-}
-
-.reblog-link:hover .reblog-icon {
-  stroke: #4a4a4a;
+  font-size: 8.5px;
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
 }
 
 /* end notes */
 
 /* permalink */
 .perma {  
-    margin-top:0px;
+    margin-top:-20px;
     margin-left:15px; 
     margin-bottom:100px;
     width:450px;
@@ -746,7 +762,7 @@ ol.notes li.note img.avatar {
 
 .ask-answer {
   margin-top: 10px;
-  padding-left: 14px;
+  padding-left: 0px;
 
   border-left: 2px solid rgba({RGBcolor:Shadow}, .15);
 
@@ -1309,17 +1325,25 @@ a.tumblr_blog {
 <div class="caption">{Body}</div>
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1333,17 +1357,25 @@ a.tumblr_blog {
 {/block:Source} 
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1368,17 +1400,25 @@ a.tumblr_blog {
 </div>   
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1399,17 +1439,25 @@ a.tumblr_blog {
 {/block:Description}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1429,17 +1477,25 @@ a.tumblr_blog {
 </div>
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1455,17 +1511,25 @@ a.tumblr_blog {
 </div>  
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1481,17 +1545,25 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1508,17 +1580,25 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
@@ -1536,17 +1616,25 @@ a.tumblr_blog {
 {/block:ifshowcaption}  
 {block:date}
 {block:IndexPage} 
-<div class="perm-inline" aria-label="Post options">
-  <a href="{Permalink}" aria-label="Note count" title="post info">[{NoteCount}]</a>
-  <a href="{Permalink}" aria-label="Day of week" title="{TimeAgo}">[{DayOfWeek}]</a>
-  <a href="{ReblogURL}" aria-label="Reblog" class="reblog-link" aria-hidden="false" title="reblog post">
-    <svg class="reblog-icon" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="16" height="16" focusable="false">
-      <path d="M17 1l4 4-4 4"/>
-      <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
-      <path d="M7 23l-4-4 4-4"/>
-      <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+<div class="permalink-bar">
+
+  <a href="{Permalink}" title="{NoteCountWithLabel}" aria-label="Notes">
+<svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false" width="12" height="12">
+  <path d="M2 9l3-6 3 12 3-8 3 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    {NoteCount}
+  </a>
+
+  <a href="{Permalink}" title="{TimeAgo}" class="date-link" aria-label="Post date">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a href="{ReblogURL}" title="Reblog post" aria-label="Reblog">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+      <path d="M3 5h6l-2-2M13 11H7l2 2" />
     </svg>
   </a>
+
 </div>
 {/block:IndexPage}
 {/block:date} 
