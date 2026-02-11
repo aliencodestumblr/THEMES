@@ -43,6 +43,8 @@ attribute:"title"
 <meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Show caption" content=""/>  
+<meta name="if:Light Post Hovers" content="1">
+<meta name="if:Left Sidebar" content="1">
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
 
@@ -354,10 +356,21 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:100px; 
     margin-left:-125px;  
+    
     width:740px;
+    
+    {block:ifLeftSidebar}
+    margin-left:120px;      
+    {block:ifLeftSidebar}
+    
     {block:permalinkpage}
     margin-top:120px;   
     margin-left:-85px;  
+    
+    {block:ifLeftSidebar}
+    margin-left:30px;      
+    {block:ifLeftSidebar}
+    
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -369,6 +382,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:120px; 
     width:540px;
     margin-left:-85px; 
+    
+    {block:ifLeftSidebar}
+    margin-left:30px;      
+    {block:ifLeftSidebar}
+    
     {/block:permalinkpage} 
     margin:19px; 
     padding:14px;      
@@ -561,6 +579,85 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: auto !important;
 }
 {/block:PermalinkPage}
+
+{block:ifLightPostHovers}
+.posts{
+  position: relative;
+}
+
+.permalink-hover.pm-rail{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 8px;
+
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 4px;
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.06),
+    0 1px 2px rgba(0,0,0,.04);
+
+  transform: translateY(-2px);
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity .12s ease,
+    transform .12s ease;
+}
+
+.posts:hover .permalink-hover.pm-rail{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pm-rail-item{
+  font: 700 10px "Rajdhani", sans-serif;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #222;
+  text-decoration: none;
+
+  display: inline-flex;
+  align-items: center;
+
+  transition: opacity .15s ease, color .15s ease;
+}
+
+.pm-rail-item:not(:last-child)::after{
+  content: "|";
+  font-weight: 400;
+  opacity: .25;
+  margin-left: 10px;
+}
+
+.pm-rail-item:hover{
+  opacity: .6;
+}
+
+.pm-rail-item .label{
+  opacity: .45;
+  margin-right: 4px;
+}
+
+{block:PermalinkPage}
+.permalink-hover.pm-rail{
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+{/block:PermalinkPage}
+{/block:ifLightPostHovers}
 
 /* end notes */
 
@@ -959,9 +1056,18 @@ a.tumblr_blog {
   margin-left:635px;
   width:200px;
   z-index:20;
+  
+  {block:ifLeftSidebar}
+   margin-left:-105px;      
+  {block:ifLeftSidebar}
 
   {block:permalinkpage}
   margin-left:540px;
+  
+  {block:ifLeftSidebar}
+   margin-left:-195px;      
+  {block:ifLeftSidebar}
+  
   {/block:permalinkpage}
 }
 
