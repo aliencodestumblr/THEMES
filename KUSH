@@ -171,7 +171,6 @@ html, body, a, a:hover{cursor:crosshair;}
     fill: {color:accent};
 }
    
-     
 iframe.tmblr-iframe {
     z-index: 999;
     right: 20px;
