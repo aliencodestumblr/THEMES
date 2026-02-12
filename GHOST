@@ -32,7 +32,6 @@ attribute:"title"
 <meta name="image:icon" content=""/>
 
 <meta name="color:Background" content="#000000"/>
-<meta name="color:Player Background" content="#000000"/>
 <meta name="color:Gradient 1" content="#000000"/> 
 <meta name="color:Gradient 2" content="#222222"/> 
 <meta name="color:Menu Button Hover" content="#ffffff"/> 
