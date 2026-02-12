@@ -4,7 +4,6 @@
 
   add-ons:
     ↳ scroll to top + minimal sc — @aliencodes original
-    ↳ infinite scroll, lightboxes, pxu photoset - @shythemes
     ↳ blog music — @glenthemes
 
 -->
@@ -34,9 +33,10 @@ attribute:"title"
 <meta name="image:Header Icon" content="">
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:player background" content="#ffffff"/>
+<meta name="color:Player Packground" content="#ffffff"/>
 <meta name="color:Gradient 1" content="#444444"/> 
 <meta name="color:Gradient 2" content="#444444"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#444444"/> 
 <meta name="color:Text" content="#444444" /> 
 <meta name="color:Links" content="#444444" />  
@@ -46,7 +46,9 @@ attribute:"title"
 <meta name="if:Dark Tumblr control" content=""/>    
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:Fixed header" content=""/>
 <meta name="if:Dark Icon Shadow" content="">
+<meta name="if:Dark Post Hovers" content=""/>
 <meta name="if:Light Post Hovers" content="1">
 <meta name="if:Show music player" content="1">
 
@@ -532,194 +534,156 @@ h1, h2, h3, h4, h5, h6 {
 
 /* notes */ 
 
-.posts { position: relative; }
-
-.permalink-hover {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  display: flex;
-  align-items: center;
-  gap: 3px !important;
-  opacity: 0;
-  transform: translateY(3px);
-  pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
-  z-index: 9;
+.posts{
+  position: relative;
 }
 
-.posts:hover .permalink-hover {
-  opacity: 1;
+.permalink-hover.pm-rail{
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 4px 8px;
+
+  background: #111;
+  border-radius: 2px;
+
+  transform: translateY(6px);
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity .12s ease,
+    transform .12s ease;
+}
+
+.posts:hover .permalink-hover.pm-rail{
+  opacity: .96;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.permalink-hover a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 18px;
-  padding: 0 6px;
-  border-radius: 3px;
-  background: rgba(255,255,255,.75);
-  border: 1px solid rgba(0,0,0,.08);
-  backdrop-filter: blur(4px);
-  color: #000;
-  text-decoration: none;
-  font: 700 8.5px "Rajdhani", sans-serif;
-  letter-spacing: .4px;
+.pm-rail-item{
+  font: 700 10px "Rajdhani", sans-serif;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  opacity: .95;
-  box-shadow:
-    inset 0 0 4px rgba(255,255,255,.6),
-    0 0 3px rgba(0,0,0,.18);
-  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
-}
 
-.permalink-hover a:hover {
-  color: #000;
-  box-shadow: 0 0 8px rgba(0,0,0,.18);
-}
+  color: #fff;
+  text-decoration: none;
 
-.permalink-hover svg {
-  width: 10px;
-  height: 10px;
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
-  pointer-events: none;
-}
-
-.permalink-hover a.linkcount {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 8.5px;
-  padding: 0 7px;
+
+  transition: opacity .15s ease;
 }
 
-.permalink-hover a.linkcount span {
-  transform: translateY(0.5px);
+.pm-rail-item:not(:last-child)::after{
+  content: "|";
+  font-weight: 400;
+  opacity: .35;
+  margin-left: 10px;
+}
+
+.pm-rail-item:hover{
+  opacity: .65;
+}
+
+.pm-rail-item .label{
+  opacity: .55;
+  margin-right: 4px;
 }
 
 {block:PermalinkPage}
-.permalink-hover {
+.permalink-hover.pm-rail{
   opacity: 1 !important;
   transform: none !important;
   pointer-events: auto !important;
 }
 {/block:PermalinkPage}
 
-@media (hover: none) {
-  .permalink-hover {
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto !important;
-  }
+{block:ifLightPostHovers}
+.posts{
+  position: relative;
 }
 
-{/block:IfLightPostHovers}
-
-.posts { position: relative; }
-
-.permalink-hover {
+.permalink-hover.pm-rail{
   position: absolute;
-  bottom: 4px;
-  right: 4px;
+  bottom: -6px;
+  right: -6px;
+
   display: flex;
   align-items: center;
-  gap: 3px !important;
+  gap: 10px;
+
+  padding: 4px 10px;
+
+  background: #fff;
+  border: 1px solid {color:Borders};
+  border-radius: 3px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+
+  transform: translateY(6px);
   opacity: 0;
-  transform: translateY(3px);
+
   pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
-  z-index: 9;
+
+  transition:
+    opacity .12s ease,
+    transform .12s ease;
 }
 
-.posts:hover .permalink-hover {
-  opacity: 1;
+.posts:hover .permalink-hover.pm-rail{
+  opacity: .98;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.permalink-hover a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 18px;
-  padding: 0 6px;
-  border-radius: 3px;
-  background: rgba(0,0,0,.65);
-  border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  text-decoration: none;
-  font: 700 8.5px "Rajdhani", sans-serif;
-  letter-spacing: .4px;
+.pm-rail-item{
+  font: 700 10px "Rajdhani", sans-serif;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  opacity: .95;
-  box-shadow:
-    inset 0 0 4px rgba(255,255,255,.04),
-    0 0 3px rgba(0,0,0,.35);
-  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
-  {block:IfLightPostHovers}
-  background: rgba(255,255,255,.75);
-  border: 1px solid rgba(0,0,0,.08);
-  backdrop-filter: blur(4px);
-  color: #000;
-  box-shadow:
-    inset 0 0 4px rgba(255,255,255,.6),
-    0 0 3px rgba(0,0,0,.18);
-  transition: background .2s ease, color .2s ease, transform .15s ease, box-shadow .2s ease;
-}
-  {/block:IfLightPostHovers}
-}
 
-.permalink-hover a:hover {
-  color: #fff;
-  box-shadow: 0 0 8px rgba(255,255,255,.15);
-  {block:IfLightPostHovers}
-  box-shadow: 0 0 8px rgba(0,0,0,.18);
-  color: {color:links};
-  {/block:IfLightPostHovers}
-}
+  color: {color:Links}; 
+  text-decoration: none;
 
-.permalink-hover svg {
-  width: 10px;
-  height: 10px;
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
-  pointer-events: none;
-}
-
-.permalink-hover a.linkcount {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 8.5px;
-  padding: 0 7px;
+
+  transition: opacity .15s ease, color .15s ease;
 }
 
-.permalink-hover a.linkcount span {
-  transform: translateY(0.5px);
+.pm-rail-item:not(:last-child)::after{
+  content: "|";
+  font-weight: 400;
+  opacity: .35;
+  margin-left: 10px;
+  color: {color:text};
+}
+
+.pm-rail-item:hover{
+  opacity: .65;
+}
+
+.pm-rail-item .label{
+  opacity: .55;
+  margin-right: 4px;
+  color: {color:text};
 }
 
 {block:PermalinkPage}
-.permalink-hover {
+.permalink-hover.pm-rail{
   opacity: 1 !important;
   transform: none !important;
   pointer-events: auto !important;
 }
 {/block:PermalinkPage}
-
-@media (hover: none) {
-  .permalink-hover {
-    opacity: 1 !important;
-    transform: none !important;
-    pointer-events: auto !important;
-  }
-}
+{/block:ifLightPostHovers}
 
 /* end notes */
 
@@ -1692,7 +1656,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 
 </header>
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
@@ -1701,29 +1665,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {block:Text}    
 <div class="caption">{Body}</div>
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1736,29 +1689,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1782,29 +1724,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 </ul>
 </div>   
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1827,29 +1758,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1861,29 +1781,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <div class="ask">{Question}</div>
 <div class="answer">{Answer}</div>
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1898,29 +1807,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
   {/block:AudioPlayer}
 </div>
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1938,29 +1836,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -1975,29 +1862,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
@@ -2014,29 +1890,18 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}  
-<div class="permalink-hover">
-  <a href="{Permalink}" class="linkcount" title="{NoteCountWithLabel}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M9.5 14.5 8 16a3 3 0 1 1-4.2-4.2l3-3a3 3 0 0 1 4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m14.5 9.5 1.5-1.5a3 3 0 1 1 4.2 4.2l-3 3a3 3 0 0 1-4.2 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <path d="m9.5 9.5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-    </svg>
-    <span>{NoteCount}</span>
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
   </a>
 
-<a href="{Permalink}" title="{TimeAgo}"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M12 2v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/> <path d="M6.5 6a8 8 0 1 0 11 0" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/> </svg> </a>
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
 
-  <a href="{ReblogURL}" title="Reblog post">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path
-    d="M3 10.5 21 3l-6 18-3.5-7L3 10.5Z"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    fill="none"
-  />
-</svg>
+  <a class="pm-rail-item" href="{ReblogURL}">
+    REBLOG
   </a>
 </div>
 {/block:indexpage}
