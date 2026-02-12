@@ -33,24 +33,21 @@ attribute:"title"
 <meta name="image:Sidebar" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#8394a5" />
-<meta name="color:Hover Permalink" content="#aaaaaa" /> 
 <meta name="color:Blog Title" content="#8394a5"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#8394a5"/>
-<meta name="color:ask box background" content="#000000"/>
-<meta name="color:asker text" content="#ffffff"/>
-<meta name="color:tooltip background" content="#000000"/>
-<meta name="color:tooltip text" content="#ffffff"/>
+<meta name="color:Gradient 1" content="#eeeeee"/>
+<meta name="color:Gradient 2" content="#111111"/>
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Tooltip Text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:Post Hovers" content="1"/>
 <meta name="if:Show Blog Title" content="1"/>
 <meta name="if:Show Sidebar Image" content="0"/>
 
@@ -67,17 +64,10 @@ attribute:"title"
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
-<script> 
-$(document).readyy(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
@@ -86,9 +76,6 @@ $("#panel").slideToggle("fast");
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
@@ -170,7 +157,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -179,7 +166,7 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:details}!important;
+    border:5px solid {color:background};!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -240,11 +227,44 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
 }
 
 blockquote video {
     width:100%; 
+}
+
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 img { cursor:crosshair;
@@ -266,8 +286,6 @@ img { cursor:crosshair;
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
     background-color:{color:background};
@@ -282,10 +300,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
@@ -295,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:580px;   
+    width:600px;   
     {block:permalinkpage}  
     width:540px; 
     {/block:permalinkpage} 
@@ -306,10 +320,10 @@ h1, h2, h3, h4, h5, h6 {
 #posts {     
     margin-top:0px; 
     margin-left:130px;  
-    width:580px;
+    width:620px;
     {block:permalinkpage}
-    margin-top:30px;   
-    margin-left:110px;   
+    margin-top:28px;   
+    margin-left:100px;   
     width:540px; 
     {/block:permalinkpage}
     margin-bottom:50px;
@@ -318,11 +332,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     background:{color:details};   
-    width:250px;        
+    width:270px;        
     {block:permalinkpage}
-    margin-top:30px;   
+    margin-top:28px;   
     width:540px; 
-    margin-left:110px;  
+    margin-left:100px;  
     {/block:permalinkpage} 
     margin:20px; 
     padding:0px;    
@@ -367,62 +381,66 @@ h1, h2, h3, h4, h5, h6 {
 
 #infscr-loading img {
     display:none;
-    width:20px;
-    height:20px;
 }
 
 /* scrollbar */
-::-webkit-scrollbar-thumb:vertical{
-    width:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+::-webkit-scrollbar {
+  width: 12px; 
 }
- 
-::-webkit-scrollbar-thumb:horizontal{
-    height:10px;
-    background:{color:scrollbar};
-    border-radius:5px;
-    border:2px solid {color:background};
+
+::-webkit-scrollbar-track {
+  background:{color:background};
+  border-radius: 2px;
 }
- 
-::-webkit-scrollbar{
-    width:11px;
-    height:11px;
-    background:{color:background};
-    background-image:url({image:Background});
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2});
+  border-radius: 2px;
+  border: 2px solid {color:background};
 }
 /* end scrollbar */
 
-
 /* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+.pagination {
+  width:700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;             
+  margin: 40px auto 70px; 
+  margin-left:90px;
+  flex-wrap: wrap;
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
+.pagination a,
+.pagination .page {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid {color:borders};
+  background:{color:details};
+  color:{color:links};
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.pagination a:hover {
+  background:{color:links hover};
+  color: #fff;
+  border-color:{color:borders};
+}
+
+.pagination .current {
+  background:{color:links hover};
+  color: #fff;
+  border-color:{color:borders};
+  font-weight: 700;
+  cursor: default;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-weight: 500;
 }
 /* end pagination */
 
@@ -430,49 +448,78 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover-buttons{
   position:absolute;
-  bottom:15px;
-  left:8px;
+  bottom:6px;
+  left:7px;
+
   display:flex;
   gap:6px;
 
   opacity:0;
-  transition:all .5s ease;
+  transform:translateY(8px);
+
+  transition:all .35s ease;
+
   z-index:50;
   pointer-events:none;
 }
 
 .posts:hover .hover-buttons{
-  bottom:8px;
   opacity:1;
+  transform:translateY(0);
   pointer-events:auto;
 }
 
 .hb-btn{
-  width:24px;
-  height:24px;
+  width:26px;
+  height:26px;
+
   display:flex;
   align-items:center;
   justify-content:center;
 
-  background:rgba(0,0,0,.18);
-  border-radius:50%;
-  transition:all .4s ease;
+  border-radius:8px; 
+
+  background:rgba(0,0,0,.28);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  opacity:.75;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
 }
 
-.hb-btn i{
-  font-size:9.5px;
-  color:#fff;
+.hb-ic{
+  width:15px;
+  height:15px;
+
+  stroke:#fff;
+  stroke-width:1.6;
+  fill:none;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+
+  opacity:.9;
 }
 
 .hb-btn:hover{
-  background:rgba(0,0,0,.35);
+  opacity:1;
+
+  background:rgba(0,0,0,.45);
+
+  transform:translateY(-2px) scale(1.05);
+
+  box-shadow:0 6px 14px rgba(0,0,0,.35);
 }
 
-.rotate{
-  transition:transform 1s ease;
-}
-.rotate:hover{
-  transform:rotate(360deg);
+.hb-btn:hover .hb-ic{
+  stroke-width:2;
 }
 
 /* end notes */
@@ -480,7 +527,7 @@ h1, h2, h3, h4, h5, h6 {
 /* permalink */
 .perma {  
     margin-top:-15px;
-    margin-left:26px;  
+    margin-left:16px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -596,61 +643,50 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {    
-    background:{color:ask box background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:asker text};
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;  
-    border-radius: 4px;
-    border:1px solid {color:borders};
-    
-}
-
 .asker {
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:text};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+  position: relative;
+  background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2});
+  padding: 14px 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 4px solid #bbbbbb;
+  transition: transform 0.2s ease;
+  color: {color:Asker Text};
+}
+
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 /* end asks */
 
@@ -879,78 +915,110 @@ a.tumblr_blog {
     transition:1s;
     z-index:100;
 }
- 
-.sidebar{ 
-    border-right:1px solid {color:borders}; 
-    z-index:100; 
-    position:fixed; 
-    top:0px; 
-    left:50%; 
-    margin:0 0 0 -400px; 
-    width:200px; 
-    padding:10px; 
-    height:120%; 
-    background:{color:details}; 
-    font-size:9px; 
-    text-align:right; 
-}
- 
-.blogtitle{
-    margin:0 0 5px;
-    font-family:"Rajdhani", sans-serif;
-    font-size:18px;
-    line-height:100%;
-    letter-spacing:1px;
-    font-style:italic;
-}
- 
-.icon img{
-    margin:10px auto 10px;
-    max-width:200px;
-}
- 
-.description{
-    padding:3px 0 0;
-}
- 
-.line{
-    width:215px;
- margin-left:-7px;
-    border:1px solid {color:borders};
-}
- 
-.navigation{
-    margin:2px 5px 0 0;
-}
- 
-.navigation .title{
-    font-style:italic;
-    letter-spacing:1px;
-}
- 
-.dropdown{
-    overflow:hidden;
-    height:0;
- 
-    line-height:130%;
- 
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    transition: all 1s ease;
-}
- 
-.navigation:hover .dropdown{
-    height:80px;
-}
- 
-.dropdown a{
-    display:inline-block;
- 
-    font-size:9px;
-    font-style:italic;
-    text-transform:lowercase;
+
+.sidebar{
+    position:fixed;
+    top:0;
+    margin-left:-165px;
+
+    width:230px;
+    height:100vh;
+
+    padding:28px 22px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+    background:{color:background};
+    border-right:1px solid {color:borders};
+
+    font-size:12px;
+    line-height:1.5;
+
+    z-index:100;
+    
+    {block:permalinkpage}
+    margin-left:-195px;
+    {/block:permalinkpage} 
 }
 
+.blogtitle{
+    font-family:"Rajdhani", sans-serif;
+    font-size:20px;
+    font-weight:300;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-style:normal;
+    margin-top:60px;
+}
+
+.blogtitle a{
+    color:{color:Blog Title};
+    text-decoration:none;
+}
+
+.icon img{
+    width:100%;
+    border-radius:6px;
+    display:block;
+}
+
+.description{
+    font-size:11px;
+    opacity:.75;
+}
+
+.line{
+    width:100%;
+    height:1px;
+    background:{color:borders};
+    border:none;
+    margin:6px 0;
+}
+
+.navigation{
+       margin-top:8px;
+}
+
+.navigation .title{
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.6;
+}
+
+.dropdown{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+    margin-top:8px;
+
+    opacity:0;
+    transform:translateY(-6px);
+
+    transition:.25s ease;
+    pointer-events:none;
+}
+
+.navigation:hover .dropdown{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+.dropdown a{
+    font-size:11px;
+    text-decoration:none;
+    opacity:.8;
+    transition:.15s ease;
+}
+
+.dropdown a:hover{
+    opacity:1;
+    padding-left:4px;
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -967,36 +1035,6 @@ a.tumblr_blog {
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script>
-$(document).ready(function() {
-//
-$('a.poplight[href^=#]').click(function() {
-var popID = $(this).attr('rel'); //Get Popup Name
-var popURL = $(this).attr('href'); //Get Popup href to define size
-var query= popURL.split('?');
-var dim= query[1].split('&');
-var popWidth = dim[0].split('=')[1]; //Gets the first query string value
-$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
-var popMargTop = ($('#' + popID).height() + 80) / 2;
-var popMargLeft = ($('#' + popID).width() + 80) / 2;
-//Apply Margin to Popup
-$('#' + popID).css({
-'margin-top' : -popMargTop,
-'margin-left' : -popMargLeft
-});
-$('body').append('<div id="fade"></div>');
-$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
-return false;
-});
-$('a.close, #fade').live('click', function() {
-$('#fade , .popup_block').fadeOut(function() {
-$('#fade, a.close').remove(); //fade them both out
-});
-return false;
-});
-});
-</script>
-
 <a href="javascript:;" id="ltop" style="color:{color:text};">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
     <path fill-rule="evenodd" d="M11.47 10.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 12.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z" clip-rule="evenodd" />
@@ -1005,70 +1043,43 @@ return false;
 </a>
 
 </head>
-
 <body>   
 
 <div class="entry">
-
 <div class="sidebar">
-<BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
 {block:ifshowblogtitle}
 <div class="blogtitle">
 <a href="/">{Title}</a>
 </div>
- 
 <div class="line"></div>
 {/block:ifshowblogtitle}
- 
+
 {block:ifshowsidebarimage}
 <div class="icon">
 <a href="/"><img src="{image:sidebar}"></a>
 </div>
- 
 <div class="line"></div>
 {/block:ifshowsidebarimage}
- 
- 
+
 {block:description}
 <div class="description">
 {Description}
 </div>
 {/block:description}
- 
+
 <div class="navigation">
- 
-<span class="title">+ Navigation</span>
- 
+<span class="title">Navigation</span>
+
 <div class="dropdown">
- 
-{block:iflink1title}
-<a href="{text:link 1}">{text:link 1 title}</a><br>
-{/block:iflink1title}
- 
-{block:ifpopupaskbox}
-<a href="#?w=500" rel="01" class="poplight">{text:pop up askbox title}</a><br>
-{/block:ifpopupaskbox}
- 
-{block:iflink2title}
-<a href="{text:link 2}">{text:link 2 title}</a><br>
-{/block:iflink2title}
- 
-{block:iflink3title}
-<a href="{text:link 3}">{text:link 3 title}</a><br>
-{/block:iflink3title}
- 
-{block:iflink4title}
-<a href="{text:link 4}">{text:link 4 title}</a><br>
-{/block:iflink4title}
- 
-{block:iflink5title}
-<a href="{text:link 5}">{text:link 5 title}</a>
-{/block:iflink5title}
- 
+{block:iflink1title}<a href="{text:link 1}">{text:link 1 title}</a>{/block:iflink1title}
+{block:ifpopupaskbox}<a href="#?w=500" rel="01" class="poplight">{text:pop up askbox title}</a>{/block:ifpopupaskbox}
+{block:iflink2title}<a href="{text:link 2}">{text:link 2 title}</a>{/block:iflink2title}
+{block:iflink3title}<a href="{text:link 3}">{text:link 3 title}</a>{/block:iflink3title}
+{block:iflink4title}<a href="{text:link 4}">{text:link 4 title}</a>{/block:iflink4title}
+{block:iflink5title}<a href="{text:link 5}">{text:link 5 title}</a>{/block:iflink5title}
 </div>
 </div>
- 
- 
 </div>
 
 <div id="posts">
@@ -1079,12 +1090,16 @@ return false;
 <div class="caption">{Body}</div>
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1098,12 +1113,16 @@ return false;
 {/block:Source} 
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1128,12 +1147,16 @@ return false;
 </div>   
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1154,12 +1177,16 @@ return false;
 {/block:Description}  
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1167,19 +1194,21 @@ return false;
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="answer">{Answer}</div> 
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+  <div class="ask">{Question}</div>
+  <div class="answer">{Answer}</div>
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1195,12 +1224,16 @@ return false;
 </div>
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1216,12 +1249,16 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1237,12 +1274,16 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1260,12 +1301,16 @@ return false;
 {/block:ifshowcaption}  
 {block:IndexPage} 
 <div class="hover-buttons">
-  <a class="hb-btn rotate" href="{Permalink}" title="{NoteCountWithLabel}">
-    <i class="fa fa-search"></i>
+  <a class="hb-btn" href="{Permalink}" title="{NoteCountWithLabel}">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M10 6L4 12l6 6M4 12h16" />
+    </svg>
   </a>
 
-  <a class="hb-btn rotate" href="{ReblogURL}" target="_blank" title="Reblog">
-    <i class="fa fa-share"></i>
+  <a class="hb-btn" href="{ReblogURL}" target="_blank" title="Reblog">
+    <svg viewBox="0 0 24 24" class="hb-ic">
+      <path d="M7 7h10v10M17 7l-10 10" />
+    </svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1302,6 +1347,26 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:IfPagination}
+<div class="pagination">
+  {block:PreviousPage}
+    <a class="prev" href="{PreviousPage}">Prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="page current">{CurrentPage}</span>
+    {/block:CurrentPage}
+    {block:JumpPage}
+      <a class="page" href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+    <a class="next" href="{NextPage}">Next</a>
+  {/block:NextPage}
+</div>
+{/block:IfPagination}
 </div>
 
 {block:IndexPage} 
@@ -1388,28 +1453,12 @@ resizeVideos();
 <a id="next" href="{NextPage}"></a>
 {/block:NextPage}
 {block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
+<a href="{PreviousPage}"></a>
 {/block:PreviousPage}
 </div>
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifnotpagination} 
-
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
  
