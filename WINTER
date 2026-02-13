@@ -33,7 +33,7 @@ attribute:"title"
 <meta name="image:sidebar" content=""/>
 
 <meta name="color:Accent" content="#a5a5a5"/> 
-<meta name="color:Heart Monitor" content="#a5a5a5"/> 
+<meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Text" content="#a5a5a5" /> 
 <meta name="color:Links" content="#a5a5a5" />  
 <meta name="color:Links Hover" content="#dcdcdc" />
@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #posts {     
-    margin-top:100px; 
+    margin-top:101px; 
     margin-left:-125px;  
     
     width:740px;
@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
     
     {block:permalinkpage}
     margin-top:120px;   
-    margin-left:-85px;  
+    margin-left:-87px;  
     
     {block:ifLeftSidebar}
     margin-left:30px;      
@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
     {block:permalinkpage}
     margin-top:120px; 
     width:540px;
-    margin-left:-85px; 
+    margin-left:-87px; 
     
     {block:ifLeftSidebar}
     margin-left:30px;      
@@ -394,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity:1;
     transition:1s;  
     background:#fff;
-    border: 1px solid rgba(0,0,0,.06);
+    border: 1px solid {color:Borders};
     border-radius: 2px;
 }
 
@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background:{color:background}; 
+  background:#fff; 
   border-radius: 2px;
 }
 
@@ -663,8 +663,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* permalink */
 .perma {  
-    margin-top:-20px;
-    margin-left:25px;  
+    margin-top:-15px;
+    margin-left:20px;  
     margin-bottom:100px;
     width:540px;
     height:auto; 
@@ -1062,7 +1062,7 @@ a.tumblr_blog {
   {block:ifLeftSidebar}
 
   {block:permalinkpage}
-  margin-left:540px;
+  margin-left:545px;
   
   {block:ifLeftSidebar}
    margin-left:-195px;      
@@ -1072,10 +1072,9 @@ a.tumblr_blog {
 }
 
 #sidebar .sb-panel{
-  background: rgba(255,255,255,0.78);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
 
-  border: 1px solid rgba(0,0,0,.06);
+  border: 1px solid {color:Borders};
   border-radius: 2px;
 
   padding: 14px 14px 16px;
@@ -1117,7 +1116,7 @@ a.tumblr_blog {
   filter:drop-shadow(0 0 2px rgba(255,255,255,.15));
   transform:translateY(1px);
   
-  margin-bottom:2.5px;
+  margin-bottom:2.9px;
 }
 
 .sb-sub{
@@ -1130,13 +1129,12 @@ a.tumblr_blog {
 }
 
 .sb-photo-img{
-  width:100%;
+  width:99%;
   aspect-ratio:1/1;
 
   border-radius:2px;
 
   box-shadow:none;
-  border:1px solid rgba(0,0,0,.06);
 }
 
 .sb-nav{
@@ -1159,7 +1157,7 @@ a.tumblr_blog {
 
   background:transparent;
 
-  border:1px solid rgba(0,0,0,.06);
+  border:1px solid {color:Borders};
   border-radius:2px;
 
   transition:
@@ -1171,6 +1169,7 @@ a.tumblr_blog {
 .sb-nav a:hover{
   background:#000;
   color:#fff;
+  border:1px solid #000;  
 }
 
 .sb-desc{
@@ -1182,7 +1181,7 @@ a.tumblr_blog {
 
   padding-top:6px;
 
-  border-top:1px solid rgba(0,0,0,.06);
+  border-top:1px solid {color:Borders};
 
   max-height:140px;
   overflow:auto;
