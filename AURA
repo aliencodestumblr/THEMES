@@ -983,7 +983,6 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    background:#ffffff;
     bottom: 20px;
     right: 20px; 
     width: 35px;
@@ -996,8 +995,6 @@ a.tumblr_blog {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.04);
-    border-radius: 4px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
