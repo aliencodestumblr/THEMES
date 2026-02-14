@@ -1079,70 +1079,49 @@ a.tumblr_blog {
 :root {
   --nav-text: {color:links};
   --nav-text-hover: {color:links hover};
-  --nav-bg: rgba(255, 255, 255, 0.06);
-  --nav-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: inset 0 1px 3px rgba(255,255,255,0.25), inset 0 -1px 3px rgba(0,0,0,0.1);
+  --nav-depth: {color:links hover};
 }
 
 #nav-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   width: 190px;
-  margin-left:-2px;
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+  margin-left:0px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 #nav-links a {
   position: relative;
-  display: block;
+  display: inline-block;
   color: var(--nav-text);
   text-decoration: none;
-  padding: 6px 14px;
-  border: 1.4px solid var(--nav-border);
-  border-radius: 6px;
-  background: var(--nav-bg);
-  box-shadow: var(--glass-shadow);
-  line-height: 1.2;
-  user-select: none;
-  transition:
-    color 0.15s ease-in-out,
-    box-shadow 0.3s ease,
-    transform 0.2s ease;
+  transition: 
+    color 0.2s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
+/* 3D hover illusion */
 #nav-links a:hover,
 #nav-links a:focus {
   color: var(--nav-text-hover);
-  box-shadow: var(--glass-shadow);
-  animation: flicker 0.4s infinite alternate ease-in-out;
-  transform: translateX(1.5px);
+  transform: translate(-2px, -2px);
+  text-shadow:
+    1px 1px 0 var(--nav-depth),
+    2px 2px 0 var(--nav-depth),
+    3px 3px 0 var(--nav-depth);
   outline: none;
 }
 
-@keyframes flicker {
-  0% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.1);
-  }
-  100% {
-    filter: brightness(1);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  #nav-links a,
-  #nav-links a:hover,
-  #nav-links a:focus {
-    animation: none !important;
+  #nav-links a {
+    transition: none !important;
     transform: none !important;
-    box-shadow: var(--glass-shadow) !important;
-    transition: color 0.3s ease !important;
+    text-shadow: none !important;
   }
 }
 
