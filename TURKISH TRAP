@@ -1085,13 +1085,13 @@ a.tumblr_blog {
 #nav-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   width: 190px;
   margin-left:0px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 100;
+  margin-top:5px;
   letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 #nav-links a {
@@ -1105,7 +1105,6 @@ a.tumblr_blog {
     transform 0.25s ease;
 }
 
-/* 3D hover illusion */
 #nav-links a:hover,
 #nav-links a:focus {
   color: var(--nav-text-hover);
