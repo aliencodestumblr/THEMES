@@ -1072,7 +1072,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     opacity: .9;
 }
 
-.info {
+.bio {
     margin: 22px 0;
     font-size: 12px;
     line-height: 1.6;
@@ -1269,7 +1269,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <div id="sidebar">
 <div class="sb-title">@{Name}</div>
 {block:ifImage}<a href="/"><div class="icon"><img src="{image:Icon}"/></div></a>{/block:ifImage}
-<div class="info">{Description}</div>
+<div class="bio">{Description}</div>
 <div class="navi">
     <a href="/">reload</a>
     <a href="/ask">inbox</a>
