@@ -30,17 +30,16 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Sidebar" content=""/>
+<meta name="image:Icon" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:img background" content="#fff"/>
+<meta name="color:Icon Background" content="#fff"/>
 <meta name="color:player background" content="#fff"/>
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:Gradient 1" content="#000000"/>
 <meta name="color:Gradient 2" content="#000000"/>
 <meta name="color:asker text" content="#ffffff"/>
@@ -1056,35 +1055,35 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     text-transform: uppercase;
 }
 
-.img {
+.icon {
     padding: 8px;
-    background: {color:img background};
+    background: {color:Icon Background};
     border: 1px solid {color:Borders};
     transition: transform .3s ease, opacity .3s ease;
 }
 
-.img img {
+.icon img {
     width: 100%;
     display: block;
 }
 
-.img:hover {
+.icon:hover {
     transform: scale(1.02);
     opacity: .9;
 }
 
-.desc {
+.info {
     margin: 22px 0;
     font-size: 12px;
     line-height: 1.6;
     opacity: .75;
 }
 
-.links {
+.navi {
     text-align: right;
 }
 
-.links a {
+.navi a {
     display: block;
     padding: 6px 0;
     border-top: 1px solid {color:Borders};
@@ -1095,7 +1094,7 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
     transition: all .25s ease;
 }
 
-.links a:hover {
+.navi a:hover {
     padding-right: 6px;
     opacity: 1;
     letter-spacing: 1.6px;
@@ -1269,9 +1268,9 @@ box-shadow: 2px 2px 6px rgba(255,255,255,0.06);
 <div class="entry"> 
 <div id="sidebar">
 <div class="sb-title">@{Name}</div>
-{block:ifImage}<a href="/"><div class="img"><img src="{image:Sidebar}"/></div></a>{/block:ifImage}
-<div class="desc">{Description}</div>
-<div class="links">
+{block:ifImage}<a href="/"><div class="icon"><img src="{image:Icon}"/></div></a>{/block:ifImage}
+<div class="info">{Description}</div>
+<div class="navi">
     <a href="/">reload</a>
     <a href="/ask">inbox</a>
     {block:ifDropLinks}
