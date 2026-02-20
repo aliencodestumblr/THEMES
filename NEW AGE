@@ -1,10 +1,6 @@
 <!--
 
-  [ aliencodes theme ]
-
-  add-ons:
-    ↳ scroll to top + minimal sc — @aliencodes original
-    ↳ blog music — @glenthemes
+  [ aliencodes © 2026 ]
 
 -->
 <!DOCTYPE html>
@@ -30,68 +26,39 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:icon" content=""/>
+<meta name="image:Icon" content=""/>
 
-<meta name="color:Background" content="#f6f6f6"/>
-<meta name="color:player background" content="#fff"/>
-<meta name="color:Details" content="#ffffff"/>  
-<meta name="color:box shadow" content="#e3e3e3" />
+<meta name="color:Background" content="#ffffff"/> 
+<meta name="color:Accent" content="#cacaca"/> 
 <meta name="color:Borders" content="#eeeeee"/> 
-<meta name="color:Post Info" content="#afa5a5"/>
-<meta name="color:Shadow Color" content="#ccc5c5">
-<meta name="color:Accent" content="#afa5a5"/>  
-<meta name="color:Text" content="#afa5a5" /> 
-<meta name="color:Links" content="#afa5a5" />  
-<meta name="color:Links Hover" content="#938686" />
-<meta name="color:title" content="#afa5a5"/>
-<meta name="color:subtitle" content="#afa5a5"/>
-<meta name="color:tags" content="#afa5a5"/>
-<meta name="color:Ask Gradient 1" content="#eeeeee"/>  
-<meta name="color:Ask Gradient 2" content="#111111"/>  
-<meta name="color:Scrollbar" content="#9a8080" />
-<meta name="color:asker text" content="#444444"/>
+<meta name="color:Text" content="#cacaca" /> 
+<meta name="color:Links" content="#cacaca" />  
+<meta name="color:Links Hover" content="#cacaca" />
+<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Gradient 1" content="#f0f0f0"/> 
+<meta name="color:Gradient 2" content="#444444"/> 
 <meta name="color:Tooltip Text" content="#ffffff"/>
  
-<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>  
-<meta name="if:show tags" content="1" />
+<meta name="if:Show Title" content="1"/>  
+<meta name="if:Dark Post Hovers" content=""/>
+<meta name="if:Light Post Hovers" content="1">
 <meta name="if:Pagination" content=""/>
-<meta name="if:description" content="1" />
-<meta name="if:show subtitle" content="1" />
-<meta name="if:Show music player" content="1">
 
-<meta name="text:subtitle" content="@NAME"/> 
-<meta name="text:permalink symbol" content="⟁"/> 
-<meta name="text:link 1 url" content="url"/>
-<meta name="text:link 1 title" content="link 1"/>
-<meta name="text:link 2 url" content="url"/>
-<meta name="text:link 2 title" content="link 2"/>
-<meta name="text:link 3 url" content="url"/>
-<meta name="text:link 3 title" content="link 3"/>
-<meta name="text:link 4 url" content="url"/>
-<meta name="text:link 4 title" content="link 4"/>
-
-<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
-
-<meta name="text:Song Title" content="Song Title"/>
-<meta name="text:Artist Name" content="Artist Name"/>
+<meta name="text:Link 1" content="/"/>
+<meta name="text:Link 1 Title" content="homepage"/>
+<meta name="text:Link 2" content="/"/>
+<meta name="text:Link 2 Title" content="dm"/>
+<meta name="text:Link 3" content="/"/>
+<meta name="text:Link 3 Title" content="tags"/>
+<meta name="text:Link 4" content="/"/>
+<meta name="text:Link 4 Title" content="spotify"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="uploaded"/>
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script> 
-$(document).readyy(function(){
-$("#flip").click(function(){
-$("#panel").slideToggle("fast");
-});
-});
-</script>
-
-<link rel="stylesheet" href="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,17 +79,10 @@ $("#panel").slideToggle("fast");
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
-
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
-
 <style type="text/css">
 html { scrollbar-gutter: stable both-edges; }
 
-body { overflow-y: scroll; }
+body { overflow-y: scroll; }  
 
 :root{
   --sp-scale: 0.80;   
@@ -161,17 +121,16 @@ html, body, a, a:hover{cursor:crosshair;}
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
-     
+    
 .cc {
-    z-index: 100;
+    z-index: 99999999;
     position: fixed;
     top: 20px;
     right: 20px;
     width: 35px;
     height: 35px;
-    border-radius: 4px;
-    background: {color:details};
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background:{color:background};
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,12 +150,15 @@ html, body, a, a:hover{cursor:crosshair;}
 }
      
 iframe.tmblr-iframe {
-    z-index: 999;
-    right: 27px;
+    z-index: 99999999999999;
+    right: 20px;
     top: 21px;
     opacity: 0;
     position: fixed;
     width: 0;
+    {block:IfDarkTumblrControl}
+    filter:invert(1);
+    {/block:IfDarkTumblrControl}
     padding-right: 60px;
     transform: scale(0.6);
     -webkit-transform: scale(0.6);
@@ -204,9 +166,6 @@ iframe.tmblr-iframe {
     -webkit-transform-origin: 100% 0;
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
 }
 
 .tmblr-iframe:hover {
@@ -218,16 +177,16 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
 .tmblr-lightbox, #tumblr_lightbox {
-    background-color:rgba({RGBcolor:background},.7) !important;
+    background-color:#fff !important;
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:details}!important;
+    border:5px solid #fff!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -236,7 +195,6 @@ iframe.tmblr-iframe {
 hr {
     margin:10px auto;
     border-style:solid;
-    border-color:{color:borders};
     border-top-width:0.5px;
     border-bottom-width:0.5px;
 }
@@ -249,7 +207,7 @@ pre, code {
     font-family:monospace;
     padding:1px; 
     line-height:14px;
-    background:{color:background};
+    background:#fff;
     margin:10px 0px; 
 }
  
@@ -276,7 +234,6 @@ a.read_more {
  text-transform:uppercase; 
  font-weight:bold;
  padding-bottom:3px;
- border-bottom:1px solid {color:borders};
 }
 
 p a {font-weight:700;}
@@ -287,15 +244,24 @@ blockquote {
 }
 
 blockquote img {
+    border-radius:2px;
     width:calc(100% - 0);
     height:auto;
     margin-bottom:0px;
 }
 
 blockquote video {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-radius:2px;
     width:100%; 
+}
+
+img { 
+    border-radius:2px;
+    cursor:crosshair;
+    border:0;
+    width:calc(100% - 0);
+    height:auto;
+    display:block;
 }
 
 video {
@@ -332,19 +298,11 @@ video + .permalink {
   padding-top: 0 !important;
 }
 
-img { 
-    cursor:crosshair;
-    border:0;
-    width:calc(100% - 0);
-    height:auto;
-    display:block;
-}
-
 ::-moz-selection {
-    background:{color:background};
+    background:#fff;
     color:{color:links hover};
 }
-::selection {background:{color:background};
+::selection {background:#fff;
     color:{color:links hover};
 }
  
@@ -352,24 +310,14 @@ img {
      display:none;
 }
 
-.album .art{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.headphones-ico{
-  width: 16px;
-  height: 16px;
-  display:block;
-}
+.spotify_audio_player {height:80px !important;}
 
 body {
     color:{color:text}; 
-    background-color:{color:background};
-    font:400 11px "Rajdhani", sans-serif;
+    background-color:{color:Background};
+    font:400 10.5px "Rajdhani", sans-serif;
     transition:1.3s;  
-    letter-spacing:1px;
+    letter-spacing:1.5px;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
@@ -383,41 +331,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry {   
-    width:760px;    
+    width:990px;   
     {block:permalinkpage}  
-    width:450px; 
+    width:540px;
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    margin-top:50px; 
-    margin-left:150px;  
-    width:760px;
+    margin-top:90px; 
+    margin-left:5px;  
+    
+    width:990px;
+
     {block:permalinkpage}
-    margin-top:50px;   
-    margin-left:-5px;  
+    margin-top:108px;   
+    margin-left:0px;  
+    width:540px;
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:{color:details};   
-    width:290px;        
+    width:270px;        
     {block:permalinkpage}
-    margin-top:50px; 
-    width:450px; 
-    margin-left:-5px; 
+    margin-top:108px; 
+    width:540px;
+    margin-left:0px; 
     {/block:permalinkpage} 
-    margin:25px; 
-    padding:15px;    
+    margin:30px; 
+    padding:0px;      
     opacity:1;
-    transition:1s; 
-    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.04), 
-              4px 8px 14px rgba(0, 0, 0, 0.06);
-  border-radius: 4px;
+    transition:1s;  
 }
 
 {block:IndexPage}
@@ -429,8 +376,6 @@ h1, h2, h3, h4, h5, h6 {
 {/block:IndexPage}
 
 .posts img {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
     width:100%;    
     {block:permalinkpage}
     width:100%;
@@ -463,123 +408,186 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-/* scrollbar */
-::-webkit-scrollbar-thumb:vertical {
-    width:8px;
-    background:{color:scrollbar};
-    border-radius:0px;
-    border:2px solid {color:background};
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-    height:8px;
-    background:{color:scrollbar};
-    border-radius:0px;
-    border:2px solid {color:background};
-}
-
 ::-webkit-scrollbar {
-    width:9px;
-    height:9px;
-    background:{color:background};
-    background-image:url({image:Background});
-}
-/* end scrollbar */
-
-/* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+  width: 12px; 
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+::-webkit-scrollbar-track {
+  background:{color:Background};
+  border-radius: 2px;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2}); 
+  border-radius: 2px;
+  border: 2px solid {color:Background};
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom,{color:Gradient 1}, {color:Gradient 2}); 
+}
+
+.pagination {
+  width:1000px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;             
+  margin: 40px auto 70px; 
+  flex-wrap: wrap;
+  margin-left:0px;
+}
+
+.pagination a,
+.pagination .page {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(0,0,0,.06);
+  background:{color:background};
+  color:{color:links};
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+  background:{color:links hover};
+  color: #fff;
+  border-color:#eee;
+}
+
+.pagination .current {
+  background:{color:links hover};
+  color: #fff;
+  border-color:rgba(0,0,0,.06);
+  font-weight: 700;
+  cursor: default;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-weight: 500;
 }
 /* end pagination */
 
 /* notes */ 
- 
-#postinfo {
-    width:calc(290px + 20px);
-    color:{color:text};
-    margin:10px 0px 0px 0px;
-    padding:0px 20px 0px 0px;
-    line-height:13px;
-    margin-left:-18px;
-    text-align:right;
-    font-size:14px;
-    font-weight:bold;
-}
- 
-#postinfo a {
-    margin-left:0px;
-    color:{color:post info};
-    padding:0px 0px 10px 0px;
-}
- 
-#postinfo a:hover {
-    color:{color:link};
-    border-bottom: 3px solid {color:links hover};
-}
- 
-#tags {
-    margin:1px -15px 0px -15px;
-    padding:8px 30px 0px 30px;
-    line-height:130%;
-    margin-top:11px;
-    margin-bottom:0px;
-    text-align:justify;
-    font-size:10px;
-    border-top: 3px solid {color:borders};
-    color:{color:tags};
-    word-wrap:break-word;
-}
- 
-#tags a { 
-    color:{color:tags};
-    margin-right:7px;
-    font-size:11px;
-}
- 
-#tags a:hover {
-    color:{color:links};
-}
- 
-{block:ifnotshowtags}
-{block:indexpage}
-#tags { display:none; }
-{/block:indexpage}
-{/block:ifnotshowtags}
 
-/* end notes */
+.posts{ position:relative; }
 
-/* permalink */
+.permalink-hover.pm-rail{
+  position:absolute;
+  bottom:-3px;
+  right:-3px;
+
+  display:flex;
+  align-items:center;
+  gap:3px;
+
+  padding:0;
+
+  opacity:0;
+  transform:translateY(6px);
+  pointer-events:none;
+
+  transition:opacity .10s ease, transform .10s ease;
+}
+
+.posts:hover .permalink-hover.pm-rail{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.pm-rail-item{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+
+  height:15px;             
+  padding:0 5px;          
+
+  font:800 7.5px "Rajdhani", sans-serif;  
+  letter-spacing:1.2px;      
+  text-transform:uppercase;
+  text-decoration:none;
+
+  border-radius:2px;
+  user-select:none;
+
+  transition:
+    opacity .10s ease,
+    background .10s ease,
+    border-color .10s ease;
+}
+
+.pm-rail-item{
+  color:#eaeaea;
+  background:rgba(12,12,12,.92);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 2px 6px rgba(0,0,0,.25);
+}
+
+.pm-rail-item:hover{
+  opacity:.75;
+  border-color:rgba(255,255,255,.18);
+}
+
+.pm-rail-item .label{
+  opacity:.5;
+  margin-right:2px;
+  font-weight:600;
+}
+
+{block:PermalinkPage}
+.permalink-hover.pm-rail{
+  opacity:1 !important;
+  transform:none !important;
+  pointer-events:auto !important;
+}
+{/block:PermalinkPage}
+
+{block:ifLightPostHovers}
+
+.permalink-hover.pm-rail{
+  opacity:0;
+}
+
+.pm-rail-item{
+  color:{color:Links};
+  background:rgba(255,255,255,.96);
+  border:1px solid #eee;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 2px 6px rgba(0,0,0,.06);
+}
+
+.pm-rail-item:hover{
+  opacity:.72;
+  background:#fff;
+}
+
+.pm-rail-item .label{
+  color:{color:Text};
+  opacity:.55;
+}
+
+{block:PermalinkPage}
+.permalink-hover.pm-rail{
+  opacity:1 !important;
+  transform:none !important;
+  pointer-events:auto !important;
+}
+{/block:PermalinkPage}
+
+{/block:ifLightPostHovers}
+
 .perma {  
-    margin-top:-17px;
-    margin-left:21px;  
+    margin-top:0px;
+    margin-left:0px;  
     margin-bottom:100px;
-    width:430px;
+    width:540px;
     height:auto; 
     overflow:auto;   
     font-family:"Rajdhani", sans-serif;
@@ -591,12 +599,12 @@ h1, h2, h3, h4, h5, h6 {
 
 ol.notes {    
     margin-top:0px;
-    margin-left:0px; 
+    margin-left:25px; 
     margin-right:0px;  
     width:auto;
     height:auto;  
     padding:1px;
-    font-size:8.5px;
+    font-size:9.5px;
     text-align:left; 
     text-transform:uppercase; 
     letter-spacing:1px; 
@@ -663,8 +671,8 @@ ol.notes li.note img.avatar {
 }  
 
 .perma-info {
-    margin-top:10px;
-    margin-left:5px;
+    margin-top:0px;
+    margin-left:30px;
     margin-right:5px;
     margin-bottom:10px;
     font-size:9px;
@@ -691,55 +699,53 @@ ol.notes li.note img.avatar {
 }
 /* end audios */ 
 
-
 /* asks */
+.asker {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:text};
+}
+
+.asker a {
+    color: {color:text};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.asker a:hover {
+    color: {color:links hover};
+}
 
 .ask {
-    background: linear-gradient(135deg, {color:Ask Gradient 1}, rgba({RGBcolor:Ask Gradient 2}) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color: {color:Asker Text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
+  position: relative;
+  background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2});
+  padding: 14px 16px;
+  border-radius: 10px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-left: 4px solid #bbbbbb;
+  transition: transform 0.2s ease;
+  color: {color:Asker Text};
 }
 
-.asker {
-    margin: 0 0 -6px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:text};
-    opacity: 0.85;
-}
 
 .answer {
-    margin: -8px 0 0 0;
-    padding-left: 0px;
+    font-size: 11px;
     color: {color:text};
-    line-height: 1.7;
-    font-size: 10.5px;
+    margin-top: 6px;
 }
 
 .answer img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
+    margin-top: 10px;
 }
-
-.answer img:hover {
-    transform: scale(1.03);
-}
-
 /* end asks */
-
 
 /* quote */
 .quote {    
@@ -792,7 +798,7 @@ ol.notes li.note img.avatar {
     text-transform:uppercase;
     text-align:center; 
     font-weight:bold; 
-    border-bottom:1px solid {color:borders}; 
+    border-bottom:1px solid #eee;
     z-index:9999999999;
 }  
 
@@ -819,18 +825,18 @@ span.chats {
 }
 
 .chat li:nth-child(odd) {
-    border-left:1px solid {color:borders}; 
-    border-bottom:1px solid {color:borders};
+    border-left:1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 
 .chat li:nth-child(even) {
-    border-right:1px solid {color:borders};
-    border-bottom:1px solid {color:borders};
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 
 .chat li:nth-child(odd):hover {
-    border-left:1px solid {color:borders}; 
-    border-bottom:1px solid {color:borders}; 
+    border-left:1px solid #eee;
+    border-bottom:1px solid #eee;
     -webkit-transition-duration:600ms;
     -o-transition-duration:600ms; 
     -moz-transition-duration:600ms; 
@@ -838,8 +844,8 @@ span.chats {
 }
 
 .chat li:nth-child(even):hover {
-    border-right:1px solid {color:borders};
-    border-bottom:1px solid {color:borders}; 
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
     -webkit-transition-duration:600ms; 
     -o-transition-duration:600ms; 
     -moz-transition-duration:600ms; 
@@ -856,7 +862,7 @@ span.chats {
 }
 
 .host a {
-    background:{color:background};   
+    background:{color:Background};
     margin-top:20px;
     text-transform:uppercase;
     font-size:8px; 
@@ -864,7 +870,7 @@ span.chats {
     padding:3px 10px 3px 10px;
     border-bottom-right-radius:5px;
     border-top-right-radius:5px;
-    border:1px solid {color:borders};
+    border:1px solid {color:Borders};
 }
 
 .host:before {
@@ -873,7 +879,7 @@ span.chats {
     margin-left:20px; 
     margin-right:-1px;
     margin-bottom:15px;
-    background:{color:background};
+    background:#fff;
     font-family:'FontAwesome';  
     content:"\f1d8";
     color:{color:accent};
@@ -881,7 +887,7 @@ span.chats {
     padding:0px 5px 1px 5px;
     border-bottom-left-radius:5px;
     border-top-left-radius:5px;
-    border:1px solid {color:borders};
+    border:1px solid #eee;
 }
 
 .link-dsc {
@@ -890,7 +896,7 @@ span.chats {
     margin-right:20px;
     margin-bottom:15px;
     padding-top:10px;
-    border-top:1px solid {color:borders};
+    border-top:1px solid {color:Borders};
 }
 /* end links */
 
@@ -914,12 +920,12 @@ p:has(> a.tumblr_blog) {
 
 a.tumblr_blog {
   display: none !important;
-}
-    
+} 
+
 #s-m-t-tooltip {
   position: absolute;
   max-width: 280px;
-  padding: 4px 5px 4px 6px;
+  padding: 6px 10px;
   margin-top: 14px;
   border-radius: 6px;
   background: rgba(25, 26, 26, 0.95); 
@@ -927,7 +933,7 @@ a.tumblr_blog {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:Tooltip Text}; 
+  color:{color:Tooltip Text}; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
@@ -948,10 +954,8 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
-#ltop:link, #ltop:visited {  
-    border-radius: 4px;
+#ltop:link, #ltop:visited {   
     position: fixed;
-    background: {color:details}; 
     bottom: 20px;
     right: 20px; 
     width: 35px;
@@ -964,232 +968,186 @@ a.tumblr_blog {
     display: none;   
     transition: 1s;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
-    padding: 0; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-#sidebar {
-    background-color:{color:details}; 
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.06), 
-    5px 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    top:150px; 
-    width:235px; 
-    text-align:left; 
-    position:fixed; 
-    margin-left:-140px; 
-    padding:15px;
-    padding-bottom:3px;
-    background-image:url({image:sidebar bg});
-    background-attachment:;
-    background-repeat:100%;
-    background-size:cover;
-    background-position:;
-    {block:permalinkpage}
-    margin-left:-295px;  
-    {/block:permalinkpage}
-}
- 
-#description {
-    color:{color:text}; 
-    margin-left: -15px; 
-    margin-top:12px; 
-    width:235px; 
-    text-align:justify;
-    background:transparent; 
-    padding:15px;
-    border-top: 3px solid {color:borders};
-    line-height:15px;
-    font-size:11px;
-}
- 
-#description a { 
-    line-height:16px;
-    text-decoration:none;
-    background-color:transparent;
-}
- 
-#icon {
-    float:left; 
-    margin-top:-35px;
-    margin-left:2px; 
-    margin-right:7px;
-    background:{color:details}; 
-    padding:5px;
-    width:64px; 
-    height:64px; 
-    border-radius:4px;
-}
- 
-#title {
-    font-family: "Rajdhani", sans-serif;
-    color: {color:permalink};
-    text-align: left;
-    margin-left: 0px;
-    margin-top: -4px;
-    font-weight: bold;
-    font-size: 17px;
+:root{
+  --hb-h: 140px;         
+  --hb-pad-x: 34px;
+  --hb-pad-y: 18px;
+
+  --hb-glass: rgba(255,255,255,.06);  
+  --hb-stroke: rgba(255,255,255,.10); 
 }
 
-#title a { color: {color:title}; }
+body{ padding-top: var(--hb-h); }
 
-#title a:hover { color: {color:links hover}; }
+#headerbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:var(--hb-h);
+  z-index:9999;
 
-#subtitle {
-    font-size: 11px; 
-    color: {color:post info};
-    margin-left: 0px;
-    line-height: 14px;
-    margin-top: 3px;
-    margin-bottom: -15px;
-    text-align: justify;
-    display: flex;
-    align-items: center; 
+  background: var(--hb-glass);
+
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+  border-bottom: 1px solid var(--hb-stroke);
 }
 
-#subtitle .verified-checkmark {
-    width: 14px;
-    height: 14px;
-    stroke: {color:permalink};
-    margin-left: 4px;
-    position: relative;
-    top: -0.2px;
+#headerbar .hb-wrap{
+  height:100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--hb-pad-y) var(--hb-pad-x);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
 }
 
-#nav {
-    margin-left:6px; 
-    margin-top:37px; 
-    font-weight:bold; 
-    font-size:16px; 
-    color:{color:links};
+#headerbar .hb-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-width: 320px;
 }
 
-#nav a {
-    padding:0px;
-    padding-right:0px;
-    padding-bottom:10px; 
-    color:{color:links};
-}
- 
-#nav a:hover {
-    color:{color:links hover};
-    border-bottom: 3px solid {color:links hover};
-}
- 
-{block:ifnotdescription}
-#description { display:none; }
-#sidebar { padding-bottom:13px; }
-#nav a:hover { border-bottom:none; }
-{/block:ifnotdescription}
+#headerbar .hb-avatar{
+  width:64px;
+  height:64px;
+  border-radius: 10px; 
+  object-fit:cover;
+  flex-shrink:0;
 
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Circle-Size:38px;
-   --Progress-Border-Size:2px;
-   --Progress-Empty:#eee;
-   --Progress-Fill:{color:text};
-   --Player-Background:{color:player background};
-   --Play-Pause-Buttons-Size:14px;
-   --Play-Pause-Buttons-Color:{color:text};
-   --Player-Text-Margin:16px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
 
-   --Song-Name-Font-Size:10px;
-   --Song-Name-Color:{color:text}; 
-
-   --Artist-Name-Font-Size:11px;
-   --Artist-Name-Color:{color:text};
+  transition:
+    transform .18s cubic-bezier(.2,.9,.2,1),
+    box-shadow .18s cubic-bezier(.2,.9,.2,1),
+    filter .18s ease;
 }
 
-#glenplayer07 {
-   position:fixed;
-   bottom:0;margin-bottom:25px;
-   left:0;margin-left:25px;
-   z-index:99;
+#headerbar .hb-avatar:hover{
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.28),
+    0 0 0 2px rgba({RGBcolor:Accent},.18),
+    0 0 18px rgba({RGBcolor:Accent},.22);
+  filter: contrast(1.06) brightness(1.06);
 }
 
-.flamingo {
-   display:flex;
-   align-items:center;
+#headerbar .hb-id{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  max-width: 520px;
 }
 
-.circleofdeath {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   border-radius:100%;
-   overflow:hidden;
+#headerbar .hb-logo{
+  font:900 12px "Rajdhani", sans-serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:{color:Accent};
+  line-height:1;
+  opacity:.95;
 }
 
-.tinfoil {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   background:var(--Progress-Empty);
-   border-radius:100%;
+#headerbar .hb-name{
+  font:900 10px "Rajdhani", sans-serif;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  color:{color:Accent};
+  line-height:1.1;
 }
 
-.oven {
-   background:var(--Progress-Fill);
+#headerbar .hb-sub{
+  font:600 9.5px "Rajdhani", sans-serif;
+  letter-spacing:1.3px;
+  line-height:1.25;
+  opacity:.62;
+
+  max-width: 520px;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
 }
 
-.oliveoil {
-   width:100%;
-   height:100%;
+#headerbar .hb-nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
 }
 
-.crust {
-   position:absolute;
-   top:0;
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
+#headerbar .hb-nav a{
+  position:relative;
+  text-decoration:none;
+  color:{color:Links};
+  opacity:.6;
+  transition:
+    opacity .14s ease,
+    transform .18s cubic-bezier(.4,0,.2,1);
 }
 
-.cherry {
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   background:var(--Player-Background);
-   border-radius:100%;
-   cursor:pointer;
-   z-index:1;
+#headerbar .hb-nav a span{
+  position:relative;
+  display:inline-block;
+
+  font:800 9px "Rajdhani", sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  line-height:1;
+
+  padding:2px 0;
 }
 
-.music-controls {display:flex;align-items:center}
-
-.music-controls .material-icons {
-   font-size:var(--Play-Pause-Buttons-Size);
-   color:var(--Play-Pause-Buttons-Color);
+#headerbar .hb-nav a span::before,
+#headerbar .hb-nav a span::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  width:0;
+  height:1px;
+  background:{color:Accent};
+  transition:width .18s cubic-bezier(.4,0,.2,1);
+  transform:translateX(-50%);
 }
 
-.pausee {display:none;}
-
-.beff {display:none;}
-.aff {display:block;}
-
-.music-info {
-   margin-left:var(--Player-Text-Margin);
-   line-height:1em;
+#headerbar .hb-nav a span::before{
+  top:-4px;
 }
 
-.song-name {
-   font-family:m"Rajdhani", sans-serif;
-   font-size:var(--Song-Name-Font-Size);
-   text-transform:uppercase;
-   font-weight:bold;
-   letter-spacing:1.5px;
-   color:{color:text};
+#headerbar .hb-nav a span::after{
+  bottom:-3px;
 }
 
-.artist-name {
-   margin-top:3px;
-   font-family:"Rajdhani", sans-serif;
-   font-size:var(--Artist-Name-Font-Size);
-   letter-spacing:1px;
-   color:{color:text};
-} 
+#headerbar .hb-nav a:hover{
+  opacity:1;
+}
+
+#headerbar .hb-nav a:hover span::before,
+#headerbar .hb-nav a:hover span::after{
+  width:100%;
+}
+
+@media (max-width: 900px){
+  :root{ --hb-h: 155px; }
+  #headerbar .hb-wrap{
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:14px;
+  }
+  #headerbar .hb-nav{ justify-content:flex-start; }
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1213,84 +1171,61 @@ a.tumblr_blog {
      width="18" height="18">
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-</svg>
-
-</a>  
+</svg></a>  
 
 </head>
 <body>  
 
-{block:ifshowmusicplayer}
-<!-------MUSIC PLAYER BY GLENTHEMES------->
-<div id="glenplayer07">
-   <div class="flamingo">
-       <div class="circleofdeath">
-           <div class="tinfoil">
-               <div class="oliveoil"></div>
-           </div>
-          <div class="crust">
-               <div class="cherry">
-                   <div class="music-controls">
-                       <i class="material-icons playy">play_arrow</i>
-                       <i class="material-icons pausee">pause</i>
-                   </div>
-               </div><!--cherry-->
-           </div><!--crust-->
-       </div><!--circleofdeath-->
-
-       <div class="music-info">
-           <div class="song-name">{text:Song Title}</div>
-           <div class="artist-name">{text:Artist Name}</div>
-       </div><!--music-info-->
-   </div><!--flamingo-->
-</div><!--glenplayer07-->
-
-<audio id="audio" src="{text:Audio MP3 Source}" type="audio"></audio>
-<!----end music player---->
-{/block:ifshowmusicplayer} 
-
 <div class="entry"> 
-<div id="sidebar">
-<div id="icon"><img src="{image:icon}" style="position:fixed; top:{text:description top}px; margin-top:-5px; margin-left:-5px; background-color:transparent; padding:5px;width:64px; border-radius:8px;height:64px;{block:ifborders}margin-top:-5px;{/block:ifborders}"></a></div>
-<div id="title">
-  <a href="/">{Title}</a>
-  {block:ifshowsubtitle}
-  <div id="subtitle">
-    @{Name}
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
-    stroke-width="1.5" stroke="currentColor" class="verified-checkmark" aria-label="Verified">
-      <path stroke-linecap="round" stroke-linejoin="round" 
-      d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 
-      3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 
-      3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 
-      1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 
-      2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 
-      1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-    </svg>
-  </div>
-  {/block:ifshowsubtitle}
-</div>
-<div id="nav">
-<a href="{text:link 1 url}" title="{text:link 1 title}">.001</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{text:link 2 url}" title="{text:link 2 title}">.002</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{text:link 3 url}" title="{text:link 3 title}">.003</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="{text:link 4 url}" title="{text:link 4 title}">.004</a>
-</div>
-<div id="description">{description}</div>
-</div>
+<header id="headerbar">
+  <div class="hb-wrap">
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></div>
+    <div class="hb-left">
+      <img class="hb-avatar" src="{image:Icon}" alt="{Name}">
+
+      <div class="hb-id">
+        {block:ifShowTitle}
+        <div class="hb-logo">{title}</div>
+        {/block:ifShowTitle}        
+        <div class="hb-name">@{Name}</div>
+        <div class="hb-sub">{Description}</div>
+      </div>
+    </div>
+
+    <nav class="hb-nav" aria-label="Header Navigation">
+      {block:IfLink1Title}<a href="{text:Link 1}"><span>{text:Link 1 Title}</span></a>{/block:IfLink1Title}
+      {block:IfLink2Title}<a href="{text:Link 2}"><span>{text:Link 2 Title}</span></a>{/block:IfLink2Title}
+      {block:IfLink3Title}<a href="{text:Link 3}"><span>{text:Link 3 Title}</span></a>{/block:IfLink3Title}
+      {block:IfLink4Title}<a href="{text:Link 4}"><span>{text:Link 4 Title}</span></a>{/block:IfLink4Title}
+      {block:IfLink5Title}<a href="{text:Link 5}"><span>{text:Link 5 Title}</span></a>{/block:IfLink5Title}
+    </nav>
+
+  </div>
+</header>
+
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
 
 <div id="posts">
 {block:posts}
 <div class="posts">
-<article class="post" data-post-id="{PostID}" data-reblog-key="{ReblogKey}">
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item" href="{ReblogURL}">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div>  
 {/block:Text}
@@ -1300,9 +1235,21 @@ a.tumblr_blog {
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div>  
 {/block:Quote}
@@ -1323,9 +1270,21 @@ a.tumblr_blog {
 {/block:Lines}
 </ul>
 </div>   
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div> 
 </div>
@@ -1345,20 +1304,44 @@ a.tumblr_blog {
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+  <div class="ask">{Question}</div>
+  <div class="answer">{Answer}</div>
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div> 
 {/block:answer}
@@ -1369,12 +1352,27 @@ a.tumblr_blog {
   {block:AudioPlayer}
   <div class="player">{AudioPlayerBlack}</div>
   {/block:AudioPlayer}
+</div> 
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
 </div>
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 {/block:indexpage}
 </div> 
+</div>
+</div>{/block:IndexPage}{/block:date}
+</div>  
 {/block:Audio}
 
 {block:Photo}   
@@ -1384,9 +1382,22 @@ a.tumblr_blog {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item" href="{Permalink}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item" href="{Permalink}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item" href="{ReblogURL}">
+    rblg
+  </a>
+</div>
+
 {/block:indexpage}
 </div> 
 {/block:Photo}
@@ -1399,9 +1410,21 @@ a.tumblr_blog {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div> 
 {/block:Photoset}
@@ -1415,9 +1438,21 @@ a.tumblr_blog {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage} 
-<div id="postinfo"><a href="{permalink}" title="permalink">{NoteCount}</a> &nbsp; {text:permalink symbol} &nbsp; <a href="{permalink}" title="{DayOfMonthWithZero} {ShortMonth} {Year}">{24HourWithZero}:{Minutes}</a></div>
-{block:HasTags} <div id="tags">{block:Tags}• <a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+{block:indexpage}  
+<div class="permalink-hover pm-rail">
+  <a class="pm-rail-item pm-left" href="{Permalink}" title="{NoteCountWithLabel}">
+    <span class="label">NOTES</span>
+    <span class="value">{NoteCount}</span>
+  </a>
+
+  <a class="pm-rail-item pm-center" href="{Permalink}" title="{TimeAgo}">
+    {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+  </a>
+
+  <a class="pm-rail-item pm-right" href="{ReblogURL}" title="Reblog post">
+    rblg
+  </a>
+</div>
 {/block:indexpage}
 </div> 
 {/block:Video} 
@@ -1452,6 +1487,26 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:IfPagination}
+<div class="pagination">
+  {block:PreviousPage}
+    <a class="prev" href="{PreviousPage}">Prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="page current">{CurrentPage}</span>
+    {/block:CurrentPage}
+    {block:JumpPage}
+      <a class="page" href="{URL}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+    <a class="next" href="{NextPage}">Next</a>
+  {/block:NextPage}
+</div>
+{/block:IfPagination}
 </div>
 
 {block:IndexPage} 
@@ -1538,28 +1593,12 @@ resizeVideos();
 <a id="next" href="{NextPage}"></a>
 {/block:NextPage}
 {block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
+<a href="{PreviousPage}"></a>
 {/block:PreviousPage}
 </div>
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifnotpagination} 
-
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
  
@@ -1601,6 +1640,5 @@ $(document).ready(function(){
 
 </script>
 
-<script>feather.replace()</script>
 </body>
 </html>
