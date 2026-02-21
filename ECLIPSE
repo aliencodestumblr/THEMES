@@ -1,3 +1,11 @@
+<!--
+
+  [ aliencodes theme ]
+
+  add-ons:
+    ↳ scroll to top + minimal sc — @aliencodes original
+
+-->
 <!DOCTYPE html>
 <html>  
 <head> 
@@ -20,92 +28,150 @@ attribute:"title"
 });
 })(jQuery);
 </script>
- 
 
-<meta name="color:Background" content="#000000"/>
-<meta name="color:Details" content="#000000"/>    
-<meta name="color:Borders" content="#000000"/> 
-<meta name="color:Accent" content="#cecbcb"/>  
-<meta name="color:Text" content="#cecbcb" /> 
-<meta name="color:Links" content="#cecbcb" />  
-<meta name="color:Links Hover" content="#cecbcb" />
-<meta name="color:Scrollbar" content="#cecbcb" />
- 
-<meta name="if:Dark Tumblr control" content="1"/>   
-<meta name="if:Show caption" content=""/>   
-<meta name="if:Pagination" content=""/> 
-
-<meta name="text:Link 1 URL" content=""/>
-<meta name="text:Link 1" content=""/>
-<meta name="text:Link 2 URL" content=""/>
-<meta name="text:Link 2" content=""/>
-<meta name="text:Link 3 URL" content=""/>
-<meta name="text:Link 3" content=""/>
-
-
-<meta name="text:Subtitle" content="some text"/>
- 
 <meta name="image:Icon" content=""/>
 
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:Borders" content="#eeeeee"/> 
+<meta name="color:Accent" content="#aaaaaa"/>  
+<meta name="color:Text" content="#aaaaaa" /> 
+<meta name="color:Links" content="#aaaaaa" />  
+<meta name="color:Blog Title" content="#f1f1f1"/> 
+<meta name="color:Links Hover" content="#aaaaaa" />
+<meta name="color:Scrollbar" content="#aaaaaa" />
+<meta name="color:asker text" content="#444444"/>
+<meta name="color:tooltip text" content="#ffffff"/>
+ 
+<meta name="if:Dark Tumblr control" content=""/>   
+<meta name="if:Show caption" content=""/>   
+<meta name="if:Pagination" content=""/>
+<meta name="if:4 Columns" content=""/>
+<meta name="if:Light Post Hovers" content="1">
+<meta name="if:Show sidebar image" content="1">
 
+<meta name="text:Link One Title" content="reload"/>
+<meta name="text:Link One" content="/"/>
+<meta name="text:Link Two Title" content="inbox"/>
+<meta name="text:Link Two" content="/"/>
+<meta name="text:Link Three Title" content="tags"/>
+<meta name="text:Link Three" content="/"/>
+<meta name="text:Link Four Title" content="movies"/>
+<meta name="text:Link Four" content="/"/>
+
+<script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Micro+5&family=Montez&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
 <script src="https://use.fontawesome.com/92822ad00c.js"></script> 
-
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Rosario:400,700|Alegreya+Sans+SC|Cinzel|Kodchasan|Major+Mono+Display|Montserrat|Montserrat+Alternates|Playfair+Display+SC|Questrial|Quicksand|Reem+Kufi|Hind:400,700" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 
 <link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script> 
 
 <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ 
 <link rel="stylesheet" href="https://static.tumblr.com/h7yjwkn/6dcox9wiy/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Micro+5&family=Montez&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&display=swap" rel="stylesheet">
-<style type="text/css">
 
-html {
-    cursor:crosshair;
+<link href="//fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+<script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
+
+<style type="text/css">
+html { scrollbar-gutter: stable both-edges; }
+
+body { overflow-y: scroll; }  
+
+:root{
+  --sp-scale: 0.80;   
+  --sp-base-height: 80px;  
 }
 
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  aspect-ratio: auto !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  width: calc(100% / var(--sp-scale)) !important;
+  height: var(--sp-base-height) !important; 
+  transform: scale(var(--sp-scale)) !important;
+  transform-origin: top left !important;
+  display: block;
+  border: 0;
+}
+
+figure iframe.spotify_audio_player {
+  max-height: none !important; 
+  width: calc(100% / var(--sp-scale)) !important;
+}
+
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
+  display: block;
+}
+
+html, body, a, a:hover{cursor:crosshair;}
+ 
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
      
-iframe.tmblr-iframe {
-    position:fixed!important;
-    z-index:99999999!important;
-    top:5px;!important;
-    right:0!important;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
-    transform:scale(0.45) rotate(0deg);
-    transform-origin:95% 0;
-    vertical-align:top right;
-    opacity:0.5;
-} 
+.cc {
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
+}
 
-.tmblr-iframe--app-cta-button {
-    display: none!important;
+.cc svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    overflow: visible;
+}
+
+.cc svg path {
+    fill: {color:accent};
+}
+   
+iframe.tmblr-iframe {
+    z-index: 999;
+    right: 20px;
+    top: 21px;
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    padding-right: 60px;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transition: opacity 0.4s ease;
+    -webkit-transition: opacity 0.4s ease;
+}
+
+.tmblr-iframe:hover {
+    opacity: 0.5 !important;
 }
 
 .vignette, #vignette {
@@ -153,12 +219,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+   cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
-        cursor:crosshair;
+    cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -170,7 +237,6 @@ a.read_more {
  text-transform:uppercase; 
  font-weight:bold;
  padding-bottom:3px;
- border-bottom:1px solid {color:borders};
 }
 
 p a {font-weight:700;}
@@ -183,15 +249,47 @@ blockquote {
 blockquote img {
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:5px;
 }
 
 blockquote video {
     width:100%; 
 }
 
-img {
-        cursor:crosshair;
+video {
+  display: block;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after {
+  content: none !important;
+  display: none !important;
+  height: 0 !important;
+}
+
+.npf_video + .post-notes,
+.npf_video + .bottom,
+video + .post-notes,
+video + .permalink {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+img { cursor:crosshair;
     border:0;
     width:calc(100% - 0);
     height:auto;
@@ -215,9 +313,10 @@ img {
 body {
     color:{color:text}; 
     background-color:{color:background};
-    font:400 10px Inconsolata;
+    font:400 9px "Rajdhani", sans-serif;
     transition:1.3s;  
-    letter-spacing:1px;
+    letter-spacing:1.5px;
+    text-transform:lowercase;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
@@ -227,50 +326,67 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin:15px 15px 5px 15px;
     color:{color:accent};
-    font:700 10px arial;
+    font:700 10px "Rajdhani", sans-serif;
     text-transform:uppercase;
     text-align:justify; 
     line-height:15px;
 }
 
 .entry {   
-    width:350px;    
-    {block:iffourcolumns}
-    width:350px;    
-    {/block:iffourcolumns}
-    {block:permalinkpage}  
-    width:350px; 
-    {/block:permalinkpage} 
-    margin:auto;
+    width:930px;   
+    margin:0;
     height:auto; 
+
+    {block:permalinkpage}  
+    width:540px; 
+    {/block:permalinkpage}
 }
 
 #posts {     
-    margin-left:-30px;
-    margin-top:-6px; 
-    width:350px;
-    {block:permalinkpage}
-    margin-top:60px;   
-    margin-left:-30px;  
-    {/block:permalinkpage}
-    
+    width:930px;
+    margin-top:20px;
+
+    margin-left:320px;
+
+    margin-right:0;
     margin-bottom:50px;
     transition:.5s;
+    
+    {block:if4Columns}
+     width:1120px;
+    {/block:if4Columns}   
+    
+    {block:if4Columns}
+     margin-left:260px;
+    {/block:if4Columns} 
+
+    {block:permalinkpage}
+    width:540px; 
+    margin-left:270px;
+    margin-top:40px;
+    
+    {block:if4Columns}
+     margin-left:260px;
+    {/block:if4Columns} 
+    
+    {/block:permalinkpage}
 }
 
 .posts {  
     background:{color:details};   
-    width:350px;        
-    
-    {block:permalinkpage}
-    width:350px; 
-    margin-left:0px; 
-    {/block:permalinkpage} 
-    margin:22px; 
-    padding:10px;    
-    overflow:hidden;
+    width:270px;  
+    {block:if4Columns}
+    width:240px;
+    {/block:if4Columns}
+    margin:20px 40px 20px 0;  
+    padding:0px;    
     opacity:1;
     transition:1s;  
+
+    {block:permalinkpage}
+    width:540px; 
+    margin:20px 0; 
+    {/block:permalinkpage} 
 }
 
 {block:IndexPage}
@@ -283,7 +399,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -315,102 +430,84 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-/* scrollbar */
 ::-webkit-scrollbar {width:1px;height:1px;}
 ::-webkit-scrollbar-thumb {
     border:0px solid {color:background};
     background-color:{color:scrollbar};}
-/* end scrollbar */
 
+.post-footer{
+  margin-top:12px;
+  padding-top:10px;
 
-/* pagination */
-.pag {      
-    bottom:40px;
-    margin-left:0px;
-    margin-bottom:20px; 
-    width:100%;
-    height:auto;  
-    text-align:center;   
-    z-index:100;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:8px;
+
+  border-top:1px solid rgba(0,0,0,.06);
 }
 
-.pag a{ 
-    background:{color:details};
-    width:auto; 
-    font-size:12px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:accent};    
-    padding:2px 7px 3px 7px;     
-    margin:0px; 
-    transition:1s;
-    border-radius:3px;
-    border:1px solid {color:borders}; 
+.pf-notes{
+  display:inline-flex;
+  align-items:baseline;
+  gap:6px;
+
+  text-decoration:none;
+  color:{color:text};
+  opacity:.62;
+
+  font-family:"Rajdhani", sans-serif;
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:lowercase;
+
+  transition:opacity .15s ease, color .15s ease;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
-}
-/* end pagination */
-
-/* notes */ 
-.notsi {     
-     background:{color:details};  
-    margin-top:5px; 
-    margin-left:0px; 
-    margin-right:0px; 
-    margin-bottom:0px;
-    width:auto;  
-    text-align:center;    
-    font-size:6px;
-    font-style:italic;
-    text-transform:lowercase; 
-    padding:0px; 
-    opacity:1;
-    transition:2s; 
-}
- 
-.notsi a {    
-    background:{color:background};
-    display:inline-block;  
-    color:{color:accent};
-    font-size:6px;    
-    text-align:center;  
-    padding:0px 2px 0px 2px;  
-    margin:0px 1px;
-    z-index:10;
-    transition:1s; 
+.pf-notes .pf-num{
+  font-weight:600;
+  letter-spacing:.6px;
 }
 
-.notsi2 {     
-     background:{color:details};  
-    margin-top:5px; 
-    margin-left:0px; 
-    margin-right:0px; 
-    margin-bottom:0px;
-    width:auto;  
-    height:5px;
-    text-align:right;    
-    font-size:8px;
-    text-transform:uppercase; 
-    padding:0px; 
-    opacity:1;
-    transition:2s; 
+.pf-notes .pf-lab{
+  opacity:.75;
 }
- 
-/* end notes */
 
-/* permalink */
+.pf-btn{
+  width:18px;
+  height:18px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+  color:{color:text};
+  opacity:.55;
+
+  transition:opacity .15s ease, color .15s ease;
+}
+
+.pf-btn svg{
+  width:12px;
+  height:12px;
+  display:block;
+}
+
+.pf-notes:hover,
+.pf-btn:hover{
+  opacity:1;
+  color:{color:Accent};
+}
+
 .perma {  
-    margin-top:10px;
-    margin-left:20px;  
+    margin-top:-15px;
+    margin-left:0px;  
     margin-bottom:100px;
-    width:360px;
+    width:540px;
     height:auto; 
     overflow:auto;   
-    font-family:'Hind';
+    font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
     font-style:normal;   
@@ -427,13 +524,12 @@ ol.notes {
     font-size:8.5px;
     text-align:left; 
     text-transform:uppercase; 
-    letter-spacing:0px; 
+    letter-spacing:1px; 
     line-height:17px;      
     overflow:auto;
 } 
 
 ol.notes li.note {  
-    background:{color:details};
     padding:3px 5px 2px 5px;   
     border-radius:5px;
     margin:3px;
@@ -493,127 +589,74 @@ ol.notes li.note img.avatar {
 
 .perma-info {
     margin-top:10px;
-    margin-left:5px;
+    margin-left:0px;
     margin-right:5px;
     margin-bottom:10px;
     font-size:9px;
     text-transform:uppercase;
     letter-spacing:0.5px; 
 }
-/* end permalink */
 
-
-/* audios */
 .album {
-    padding:0px; 
-}
-
-.art { 
-    float:left;
-    background:{color:background};   
-    margin-top:20px;
-    margin-left:20px; 
-    width:18px; 
-    padding:6px 11px 6px 8px;
-    font-size:21px;
-    color:{color:accent};
-    border-radius:5px;
-    border:1px solid {color:borders};
-    text-align:center;      
+  margin-left: 20px;
 }
 
 .player {
-    position:absolute;
-    width:10px;  
-    height:11px;  
-    padding:4px 21px 21px 4px; 
-    margin-top:21px; 
-    margin-left:20px;    
-    margin-bottom:0px;
-    overflow:hidden;   
-    opacity:0;  
-    -webkit-transition: all 0.4s linear; 
-    -moz-transition: all 0.4s linear; 
-    -o-transition: all 0.4s linear;   
+  opacity: 1;
+  pointer-events: auto;
+  margin: 0;
 }
 
-
+.art,
 .track {
-    margin-top:25px; 
-    margin-bottom:22px;  
-    {block:permalinkpage}
-    margin-bottom:5px;  
-    {/block:permalinkpage}
-    margin-left:70px;   
-    line-height:12px;
-    text-align:left; 
-    text-transform:lowercase;
-}
-/* end audios */ 
-
-
-/* asks */
-.ask {    
-    background:{color:background};
-    margin-top:-5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:0px;
-    padding:15px;
-    width:auto; 
-    color:{color:text}; 
-    text-align:justify;
-    text-transform:none;   
-    line-height:15px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+  display: none;
 }
 
 .asker {
-    margin-top:15px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:8px;
-    width:auto;
-    font-size:9px;
-    text-transform:uppercase; 
-    padding:1px;
-    text-align:left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color:{color:asker text};
 }
 
 .asker a {
-    width:auto;
-    color:{color:links};  
-    margin-left:0px;
-    margin-right:0px;
+    color: {color:links};
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.answer { 
-    margin-top:5px;
-    margin-left:15px;
-    margin-right:15px;
-    margin-bottom:20px;
-    padding-top:8px;  
-    width:auto; 
-    color:{color:text};
-    text-align:justify; 
-    line-height:15px;  
+.asker a:hover {
+    color: {color:links hover};
+}
+
+.ask {
+    position: relative;
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
+    padding: 14px 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    border-left: 4px solid #bbbbbb; 
+    transition: transform 0.2s ease;
+    color:{color:asker text};
+}
+
+.answer {
+    font-size: 11px;
+    color: {color:text};
+    margin-top: 6px;
 }
 
 .answer img {
-    width:calc(100% - 0);
-    border-radius:0;
-    margin-top:-7px;
-    margin-left:;
-    padding:0;
-    display:block;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
-/* end asks */
 
-
-/* quote */
 .quote {    
     text-align:justify;
     line-height:15px;  
@@ -648,10 +691,7 @@ ol.notes li.note img.avatar {
     color:{color:accent};
     content: "━";      
 }
-/* end quotes */
 
-
-/* chat */
 .chatitle { 
     margin-top:20px;
     margin-bottom:-11px;
@@ -664,7 +704,6 @@ ol.notes li.note img.avatar {
     text-transform:uppercase;
     text-align:center; 
     font-weight:bold; 
-    border-bottom:1px solid {color:borders}; 
     z-index:9999999999;
 }  
 
@@ -717,10 +756,6 @@ span.chats {
     -moz-transition-duration:600ms; 
     -ms-transition-duration:600ms;
 }
-/* end chat */
-
-
-/* links */
 
 .host {
     margin-top:5px;
@@ -736,7 +771,6 @@ span.chats {
     padding:3px 10px 3px 10px;
     border-bottom-right-radius:5px;
     border-top-right-radius:5px;
-    border:1px solid {color:borders};
 }
 
 .host:before {
@@ -764,193 +798,277 @@ span.chats {
     padding-top:10px;
     border-top:1px solid {color:borders};
 }
-/* end links */
 
-.caption {
-    margin-top:0px;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px; 
-    overflow:hidden;
+.caption,
+.caption p {
+  margin-top: 0px !important;
+  line-height: 1.3 !important;
 }
 
-.caption .tumblr_parent {
-    background:;
-    position:relative;   
-    margin:0px 0px 0px 0px;   
-    padding:0px 0px 0px 0px;    
-    color:{color:text};   
-    border-left:0px solid {color:borders};
-}
- 
-.caption .tumblr_parent > a:first-of-type {   
-    background:{color:details};
-    margin-top:7px;
-    margin-bottom:6px; 
-    margin-left:-14px;  
-    color:{color:text};
-    font-size:8px; 
-    text-transform:uppercase; 
-    padding:2px 15px 1px 15px;
-    text-align:center;
-    letter-spacing:1px;
-    font-weight:bold;  
-    display:none;     
-    border-bottom:1px solid {color:borders};
-    border-top:1px solid {color:borders};
-    border-right:2px solid {color:borders};
-    border-radius:0px 5px 5px 0px;
-} 
-
-.caption .tumblr_parent img,figure,video {
-    margin-top:1px;
+p > a.tumblr_blog {
+  display: none !important;
 }
 
-.caption .tumblr_parent > p:first-of-type {
-    display:block;
-    margin:0 auto 5px;
-} 
- 
-.caption h2 {
-    margin:3px 0px 5px 0px;
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:8.5px;
-    text-align:justify;
-    line-height:13px; 
-    padding-bottom:5px;
-    border-bottom:1px solid {color:borders}; 
+p > a.tumblr_blog::after {
+  content: none !important;
 }
 
-.tumblr_parent .tumblr_avatar { 
-    display:none;
-} 
-    
-/* tooltip, credit and back to top (don't remove) */
+p:has(> a.tumblr_blog) {
+  display: none !important;
+}
+
+a.tumblr_blog {
+  display: none !important;
+}  
+
 #s-m-t-tooltip {
-    max-width:300px;
-    padding:2px 10px 2px 10px; 
-    margin:20px 0px 0px 20px;  
-    background:{color:Details};
-    font-size:9px;
-    text-transform:uppercase;
-    color:{color:text};  
-    opacity:1;   
-    z-index:9999999999999999999;
+  position: absolute;
+  max-width: 280px;
+  padding: 4px 5px 4px 6px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background: rgba(25, 26, 26, 0.95); 
+  font-family: "Rajdhani", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {color:tooltip text}; 
+  opacity: 0;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.55),
+    0 0 12px rgba(255,255,255,0.04);
 }
 
-#ltop:link, #ltop:visited {  
-    position:fixed;
-    background:;  
-    bottom:24px;
-    right:24px; 
-    text-transform:uppercase;  
-    font-size:19px; 
-    letter-spacing:0px; 
-    color:{color:accent};  
-    text-align:center;  
-    margin:-2px;  
-    padding:2px 7px 3px 6px; 
-    border-radius:100%;
-    display:none;       
-    transition:1s;
-    z-index:100;
+#s-m-t-tooltip.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 8px 24px rgba(0,0,0,0.65),
+    0 0 18px {color:Link};
 }
 
-
-header {
-    position:relative;
-    width:350px;
-    margin:150px auto 50px auto;
-}
- 
-.tai {
-    text-transform:lowercase;
-    margin-top:10px;
-
-    font:bold 1.6em/1em helvetica, arial;
-    border:0;
-    color:{color:title};
-    margin-bottom:5px;
-}
- 
-.sub {display:block;}
- 
-.i {
-    display:inline-block;
-    position:absolute;
-    left:-95px;
-    top:-5px;
-}
- 
-.i img {
-    width:65px;
-    height:65px;
-    -moz-border-radius:100%;
-    -webkit-border-radius:100%;
-    border-radius:100%;    
-    display:block;
-}
- 
-nav {
-    margin-top:15px;
-{block:ifnumberedlinks}
-    margin-top:35px;
-{/block:ifnumberedlinks}    
-}
- 
-nav a {
-    border-bottom:1px solid #fff;
-    margin-right:20px;
-    counter-increment:link;    
-    position:relative;
-    line-height:1.2em;
-    display:inline-block;   
-}
- 
-{block:ifnumberedlinks}
-nav a:before {    
-    content:counter(link, decimal-leading-zero);
-    font-weight:bold;
-    font-family:helvetica;
-    color:{color:title};
-    top:calc(-100% - 5px);
-    position:Absolute;
-} 
-{/block:ifnumberedlinks}
- 
-#d {margin-top:15px;} 
-
-.when {
-    margin-top:10px;
-    width:350px;
-    overflow:hidden;
-    padding-top:5px;
-    text-transform:lowercase; 
-}
- 
-.when span {display:block;}
- 
-.w {
-    margin-right:15px;
-    float:left;
+#ltop:link, #ltop:visited {   
+    position: fixed;
+    background: {color:details}; 
+    bottom: 20px;
+    right: 20px; 
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: {color:accent};
+    line-height: 45px; 
+    text-align: center;
+    display: none;   
+    transition: 1s;
+    z-index: 100;
+    padding: 0; 
 }
 
-.w a:first-of-type::before {
-    position:absolute;
-    top:-4px;
-    width:100%;
-    height:1px;
-    content:'';
-    background:{color:borders};
+#hb-sidebar.hb-side{
+  position:fixed;
+  top:120px;
+  left:60px;
+  width:220px;
+  z-index:999999;
+
+  background:transparent;
+  padding:0;
+
+  user-select:none;
 }
- 
-.when a {
-    position:relative;
-    display:inline-block;
-    margin-right:5px;
+
+{block:if4Columns}
+#hb-sidebar.hb-side{
+  left:20px;
 }
- 
+{/block:if4Columns}
+
+{block:permalinkpage}
+#hb-sidebar.hb-side{
+  left:24px; 
+  {block:if4Columns}
+  left:20px;
+  {/block:if4Columns}
+}
+{/block:permalinkpage}
+
+.hb-side-icon{
+  width:90px;
+  height:90px;
+  display:block;
+  margin:0 auto 14px;
+
+  border-radius:4px;
+  overflow:hidden;
+  position:relative;
+}
+
+.hb-side-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.hb-side-main{
+  text-align:center;
+}
+
+.hb-side-title{
+  display:inline-block;
+
+  font-family:"Rajdhani", sans-serif;
+  font-size:16px;
+  font-weight:600;
+  letter-spacing:3px;
+  text-transform:uppercase;
+
+  color:{color:text};
+  text-decoration:none;
+
+  opacity:.9;
+  transition:opacity .15s ease, transform .15s ease;
+}
+
+.hb-side-title:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+.hb-side-desc{
+  margin:8px auto 14px;
+  max-width:210px;
+
+  font-family:"Rajdhani", sans-serif;
+  font-size:9px;
+  letter-spacing:1px;
+  line-height:1.4;
+
+  color:{color:text};
+  opacity:.6;
+}
+
+.hb-side-nav{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:24px; 
+  margin-top:16px;
+}
+
+.hb-side-nav a{
+  position:relative;
+  display:inline-block;
+
+  text-decoration:none;
+  color:{color:text};
+  opacity:.7;
+
+  transition:
+    opacity .15s ease;
+}
+
+.hb-side-nav a span{
+  display:inline-block;
+
+  font-family:"Rajdhani", sans-serif;
+  font-size:11px;
+  font-weight:300;         
+  text-transform:lowercase; 
+  letter-spacing:2px;
+  line-height:1;
+
+  transition:
+    letter-spacing .18s cubic-bezier(.4,0,.2,1),
+    font-weight .18s ease,
+    color .15s ease;
+}
+
+.hb-side-nav a:hover{
+  opacity:1;
+}
+
+.hb-side-nav a:hover span{
+  font-weight:600;          
+  letter-spacing:1.2px;    
+  color:{color:Accent};
+}
+
+.hb-side-pag{
+  margin-top:24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+
+  text-align:center;
+}
+
+.hb-side-pag a{
+  position:relative;
+  display:inline-block;
+
+  text-decoration:none;
+  color:{color:text};
+  opacity:.62;
+
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.hb-side-pag a:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+.hb-side-pag a span{
+  display:inline-block;
+
+  font-family:"Rajdhani", sans-serif;
+  font-size:11px;
+  font-weight:300;
+  text-transform:lowercase;
+  letter-spacing:2px;
+  line-height:1;
+
+  padding:2px 0;
+
+  transition: letter-spacing .18s cubic-bezier(.4,0,.2,1), font-weight .18s ease, color .15s ease;
+}
+
+.hb-side-pag a:hover span{
+  font-weight:600;
+  letter-spacing:1.2px;
+  color:{color:Accent};
+}
+
+.hb-side-pag a + a::before{
+  content:"";
+  position:absolute;
+  left:-10px;
+  top:50%;
+  width:1px;
+  height:10px;
+  transform:translateY(-50%);
+  background: rgba(0,0,0,.10);
+  opacity:.7;
+}
+
+.hb-side-desc:after{
+  content:"";
+  display:block;
+  width:54px;
+  height:1px;
+  margin:14px auto 0;
+  background: rgba(0,0,0,.08);
+}
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -967,28 +1085,91 @@ nav a:before {
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
-<a href="javascript:;" id="ltop"><i class="fa fa-caret-up"></i></a> 
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
+<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
+     fill="none" viewBox="0 0 24 24" 
+     stroke-width="2.25" stroke="currentColor" 
+     width="18" height="18">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+</svg>
+</a> 
 
 </head>
+<body>   
 
-<body>  
+<div class="entry">
+<aside class="hb-side" id="hb-sidebar">
 
-<header><a class="i" href="/"><img src="{image:Icon}"/></a><a href="/" class="tai">{title}</a>{block:ifSubtitle}<span class="sub">{text:subtitle}</span>{/block:ifSubtitle}<nav>{block:ifLink1}<a href="{text:Link 1 URL}">{text:Link 1}</U></a>{/block:ifLink1}{block:ifLink2}<a href="{text:Link 2 URL}">{text:Link 2}</a>{/block:ifLink2}{block:ifLink3}<a href="{text:Link 3 URL}">{text:Link 3}</a>{/block:ifLink3}<a href="/archive">grid</a></nav><div id="d">{description}</div>
-</header>
+  {block:ifshowsidebarimage}
+  <a class="hb-side-icon" href="/" aria-label="Home">
+    <img src="{image:Icon}" alt="{Title}">
+  </a>
+  {/block:ifshowsidebarimage}
 
+  <div class="hb-side-main">
 
+    <a class="hb-side-title" href="/">{Title}</a>
 
-<div class="entry">    
+    <div class="hb-side-desc">{Description}</div>
+
+    <nav class="hb-side-nav" aria-label="Navigation">
+      {block:IfLinkOneTitle}<a href="{text:Link One}"><span>{text:Link One Title}</span></a>{/block:ifLinkOneTitle}
+      {block:ifLinkTwoTitle}<a href="{text:Link Two}"><span>{text:Link Two Title}</span></a>{/block:ifLinkTwoTitle}
+      {block:ifLinkThreeTitle}<a href="{text:Link Three}"><span>{text:Link Three Title}</span></a>{/block:ifLinkThreeTitle}
+      {block:ifLinkFourTitle}<a href="{text:Link Four}"><span>{text:Link Four Title}</span></a>{/block:ifLinkFourTitle}
+      <a href="/dashboard"><span>dashboard</span></a>
+    </nav>
+{block:ifpagination}
+    {block:IndexPage}
+    {block:Pagination}
+    <div class="hb-side-pag" aria-label="Pagination">
+      {block:PreviousPage}
+      <a class="hb-pag-prev" href="{PreviousPage}"><span>backward</span></a>
+      {/block:PreviousPage}
+
+      {block:NextPage}
+      <a class="hb-pag-next" href="{NextPage}"><span>forward</span></a>
+      {/block:NextPage}
+    </div>
+    {/block:Pagination}
+    {/block:IndexPage}
+    {/block:ifpagination}
+  </div>
+</aside>
+
+<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
+
 <div id="posts">
 {block:posts}
 <div class="posts">
 
 {block:Text}    
 <div class="caption">{Body}</div>
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div>  
 {/block:Text}
 
@@ -997,9 +1178,30 @@ nav a:before {
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div>  
 {/block:Quote}
 
@@ -1019,9 +1221,30 @@ nav a:before {
 {/block:Lines}
 </ul>
 </div>   
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div>
 {/block:Chat}
 
@@ -1037,44 +1260,95 @@ nav a:before {
 {block:Description} 
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div> 
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div> 
-<div class="ask">  
-{Question} 
-</div>   
-<div class="asker" style="margin-top:20px;margin-bottom:0px">answered by <b>{Name}</b></div> 
-<div class="answer">{Answer}</div> 
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+  <div class="ask">{Question}</div>
+  <div class="answer">{Answer}</div>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div> 
 {/block:answer}
 
 
 {block:Audio}   
 <div class="album">
-<div class="art">
-<span class="pe-7s-headphones"></span>
+  {block:AudioPlayer}
+  <div class="player">{AudioPlayerBlack}</div>
+  {/block:AudioPlayer}
 </div>
-{block:AudioPlayer}
-<div class="player">{AudioPlayerGrey}</div>
-{/block:AudioPlayer} 
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-<div class="track">
-<font style="text-transform:uppercase;font-size:9px;font-weight:bold;letter-spacing:0.4px;margin-top:15px">
-{block:Artist}{Artist}{/block:Artist}
-</font><br>
-{block:TrackName}{TrackName}{/block:TrackName} 
-</div>   
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
-</div>
-{/block:indexpage}
+{/block:IndexPage}
 </div>  
 {/block:Audio}
 
@@ -1085,9 +1359,30 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div> 
 {/block:Photo}
 
@@ -1099,9 +1394,30 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div> 
 {/block:Photoset}
 
@@ -1114,9 +1430,30 @@ nav a:before {
 <div class="caption">{caption}</div>
 {/block:caption}
 {/block:ifshowcaption}  
-{block:indexpage}<div class="when"><span class="w"><a href="{Permalink}" target="_blank">posted on {dayofweek}</a><br>{block:notecount}<a href="{permalink}" class="noted">{notecount}</a>{/block:notecount}+ <a href="{ReblogURL}" target="_blank" class="r">reblog</a></span>
+{block:IndexPage} 
+<div class="post-footer">
+  {block:NoteCount}
+  <a class="pf-notes" href="{Permalink}#notes">
+    <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
+  </a>
+  {/block:NoteCount}
+
+  <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 </div>
-{/block:indexpage}
+{/block:IndexPage}
 </div> 
 {/block:Video} 
 
@@ -1242,35 +1579,47 @@ resizeVideos();
 {/block:Pagination}
 {/block:IndexPage}
 {/block:ifnotpagination} 
-
-{block:ifpagination} 
-{block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
 </div> 
 </div> 
  
-
 <script>
-// minimal soundcloud player © shythemes.tumblr
-$(document).ready(function(){
-   var color = '#acd7bb'; // color of play button (hex) 
-   $('.soundcloud_audio_player').each(function(){
-       $(this).attr({ src: $(this).attr('src').split('&')[0] + '&amp;liking=false&amp;sharing=false&amp;auto_play=false&amp;show_comments=false&amp;continuous_play=false&amp;buying=false&amp;show_playcount=false&amp;show_artwork=false&amp;origin=tumblr&amp;color=' + color.split('#')[1], height: 116, width: '100%' });
-   });
-});
-</script> 
 
+$(document).ready(function(){
+
+  var accentColor = '#acd7bb';   
+  var playerHeight = 116;       
+
+  $('.soundcloud_audio_player').each(function(){
+
+    let baseSrc = $(this).attr('src').split('&')[0];
+
+    let params = [
+      'liking=false',
+      'sharing=false',
+      'auto_play=false',
+      'show_comments=false',
+      'continuous_play=false',
+      'buying=false',
+      'show_playcount=false',
+      'show_artwork=false',
+      'hide_related=true',
+      'origin=tumblr',
+      'color=' + accentColor.replace('#','')
+    ].join('&');
+
+    $(this).attr({
+      src: baseSrc + '&' + params,
+      height: playerHeight,
+      width: '100%',
+      loading: 'lazy'
+    });
+
+  });
+
+});
+
+</script>
+
+<script>feather.replace()</script>
 </body>
 </html>
