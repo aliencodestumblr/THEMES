@@ -31,8 +31,7 @@ attribute:"title"
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#ffffff"/>    
+<meta name="color:Background" content="#ffffff"/>   
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -47,7 +46,6 @@ attribute:"title"
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
 <meta name="if:4 Columns" content=""/>
-<meta name="if:Light Post Hovers" content="1">
 <meta name="if:Show sidebar image" content="1">
 
 <meta name="text:Link One Title" content="reload"/>
