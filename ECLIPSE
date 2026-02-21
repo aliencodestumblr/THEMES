@@ -1,9 +1,6 @@
 <!--
 
-  [ aliencodes theme ]
-
-  add-ons:
-    ↳ scroll to top + minimal sc — @aliencodes original
+  [ aliencodes ]
 
 -->
 <!DOCTYPE html>
@@ -31,7 +28,8 @@ attribute:"title"
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Background" content="#ffffff"/>   
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -154,16 +152,19 @@ html, body, a, a:hover{cursor:crosshair;}
    
 iframe.tmblr-iframe {
     z-index: 999;
-    right: 20px;
-    top: 21px;
+    right: 24px;
+    top: 26px;
     opacity: 0;
     position: fixed;
     width: 0;
     padding-right: 60px;
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
+
+    transform: scale(0.45);
+    -webkit-transform: scale(0.45);
+
     transform-origin: 100% 0;
     -webkit-transform-origin: 100% 0;
+
     transition: opacity 0.4s ease;
     -webkit-transition: opacity 0.4s ease;
 }
@@ -902,7 +903,7 @@ a.tumblr_blog {
   height:90px;
   display:block;
   margin:0 auto 14px;
-
+  margin-left:63px;
   border-radius:4px;
   overflow:hidden;
   position:relative;
@@ -941,9 +942,8 @@ a.tumblr_blog {
 }
 
 .hb-side-desc{
-  margin:8px auto 14px;
+  margin:10px auto 14px;
   max-width:210px;
-
   font-family:"Rajdhani", sans-serif;
   font-size:9px;
   letter-spacing:1px;
@@ -1065,6 +1065,7 @@ a.tumblr_blog {
   width:54px;
   height:1px;
   margin:14px auto 0;
+  margin-left:76px;
   background: rgba(0,0,0,.08);
 }
 </style> 
