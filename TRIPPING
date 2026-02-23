@@ -1087,7 +1087,7 @@ a.tumblr_blog {
 }
 
 #sidebar .sb-panel{
-  margin-left:56px;          /* offsets from rail */
+  margin-left:56px;          
   background:#fff;
   border-radius:4px;
   padding:14px;
@@ -1114,7 +1114,6 @@ a.tumblr_blog {
   pointer-events:none;
 }
 
-/* head layout */
 #sidebar .sb-head{
   display:flex;
   align-items:center;
@@ -1186,7 +1185,6 @@ a.tumblr_blog {
   overflow:hidden;
 }
 
-/* micro divider */
 #sidebar .sb-rule{
   height:1px;
   background:rgba(0,0,0,.06);
@@ -1195,7 +1193,6 @@ a.tumblr_blog {
   z-index:1;
 }
 
-/* optional: show full nav labels inside panel too (tiny) */
 #sidebar .sb-labels{
   display:flex;
   flex-wrap:wrap;
@@ -1213,7 +1210,6 @@ a.tumblr_blog {
   color:{color:Text};
 }
 
-/* ---- PLAYER DOCK (KEEP LOGIC) ---- */
 #sidebar .sb-playerwrap{
   margin-top:12px;
   padding-top:12px;
