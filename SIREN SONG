@@ -149,7 +149,7 @@ html, body, a, a:hover{cursor:crosshair;}
      
 iframe.tmblr-iframe {
     z-index: 999;
-    right: 21px;
+    right: 27px;
     top: 25px;
 
     opacity: 0;
