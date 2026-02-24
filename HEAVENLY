@@ -37,13 +37,16 @@ attribute:"title"
 <meta name="color:Player Border Hover" content="#aaaaaa"/>
 <meta name="color:Play Icon Color" content="#aaaaaa"/>
 <meta name="color:Play Icon Hover" content="#ffffff"/>
-<meta name="color:Gradient 1" content="#ededed"/> 
-<meta name="color:Gradient 2" content="#111111"/> 
 <meta name="color:Accent" content="#bababa"/> 
 <meta name="color:Text" content="#bababa" /> 
 <meta name="color:Links" content="#bababa" />  
 <meta name="color:Links Hover" content="#444444" />
-<meta name="color:Asker Text" content="#ffffff"/>
+<meta name="color:Ask Background" content="#f4f4f4"/> 
+<meta name="color:Ask Text" content="#bababa"/> 
+<meta name="color:Ask Border" content="#eeeeee"/> 
+<meta name="color:Answer Background" content="#222222"/> 
+<meta name="color:Answer Text" content="#ffffff"/> 
+<meta name="color:Answer Border" content="#000000"/>
 
 <meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>   
@@ -90,10 +93,6 @@ attribute:"title"
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
 <style type="text/css">
-html { scrollbar-gutter: stable both-edges; }
-
-body { overflow-y: scroll; }  
-
 :root{
   --sp-scale: 0.80;   
   --sp-base-height: 80px;  
@@ -369,6 +368,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left:20px; 
     {/block:permalinkpage} 
     margin:25px; 
+    margin-bottom:15px;
     padding:0px;      
     overflow:hidden;
     opacity:1;
@@ -417,19 +417,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* scrollbar */
-::-webkit-scrollbar {
-  width: 12px; 
+::-webkit-scrollbar{
+  width:8px;
 }
 
-::-webkit-scrollbar-track {
-  background:{color:Background};
-  border-radius: 2px;
+::-webkit-scrollbar-track{
+  background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2});
-  border-radius: 2px;
-  border: 2px solid {color:Background};
+::-webkit-scrollbar-thumb{
+  background: transparent;     
+  border-radius: 3px;
+}
+
+.is-scrolling ::-webkit-scrollbar-thumb{
+  background: {color:Accent};
+}
+
+.is-scrolling ::-webkit-scrollbar-thumb:hover{
+  box-shadow: 0 0 6px rgba({RGBcolor:Accent}, .45);
+}
+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.is-scrolling{
+  scrollbar-color: {color:Accent} transparent;
 }
 /* end scrollbar */
 
@@ -739,88 +753,81 @@ ol.notes li.reply:before{
 
 
 /* asks */
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color: {color:asker text};
+.ask-wrap{
+  margin-bottom:14px;
 }
 
-.asker a {
-    color: {color:links};
-    font-weight: 600;
+.asker{
+  font-family:"Rajdhani", sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:0 0 6px 0;
+  color:{color:text};
+  opacity:.75;
 }
 
-.asker a:hover {
-    color: {color:links hover};
+.asker a{
+  color:{color:links};
+  font-weight:700;
+  text-decoration:none;
+  transition:color .12s linear, opacity .12s linear;
 }
 
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color:{color:text};
+.asker a:hover{
+  color:{color:links hover};
+  opacity:.9;
 }
 
-.asker a {
-    color: {color:text};
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.bubble{
+  position:relative;
+  display:inline-block;
+  max-width:92%;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.45;
+  font-size:11px;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.08);
 }
 
-.asker a:hover {
-    color: {color:links hover};
+.ask{
+  background:{color:Ask background};
+  color:{color:Ask Text};
+  border-color:{color:Ask Border};
 }
 
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color:{color:text};
+.answer{
+  margin-top:8px;
+  text-align:right; 
 }
 
-.asker a {
-    color: {color:links};
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.answer .bubble{
+  background:{color:Answer Background};
+  color:{color:Answer Text};
+  border-color:{color:Answer Border};
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.asker a:hover {
-    color: {color:links hover};
+.answer img{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  display:block;
 }
 
-.ask {
-  position: relative;
-  background: linear-gradient(135deg, {color:Gradient 1}, {color:Gradient 2});
-  padding: 14px 16px;
-  border-radius: 10px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  border-left: 4px solid #bbbbbb;
-  transition: transform 0.2s ease;
-  color: {color:Asker Text};
+.bubble a{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+  opacity:.95;
 }
 
-
-.answer {
-    font-size: 11px;
-    color: {color:text};
-    margin-top: 6px;
-}
-
-.answer img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+.bubble a:hover{
+  opacity:1;
 }
 /* end asks */
 
@@ -1536,9 +1543,15 @@ a.tumblr_blog {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
-  <div class="ask">{Question}</div>
-  <div class="answer">{Answer}</div>
+<div class="ask-wrap">
+  <div class="asker">
+    sent by <b><a href="{AskerURL}">{Asker}</a></b>
+  </div>
+  <div class="bubble ask">{Question}</div>
+  <div class="answer">
+    <div class="bubble">{Answer}</div>
+  </div>
+</div>
 {block:indexpage}  
 <div class="post-footer">
   {block:NoteCount}
@@ -1939,6 +1952,19 @@ $(document).ready(function(){
   audio.addEventListener('ended', function(){ setState(false); });
 
   setState(!audio.paused);
+})();
+</script>
+
+<script>
+(function(){
+  var t;
+  window.addEventListener('scroll', function(){
+    document.documentElement.classList.add('is-scrolling');
+    clearTimeout(t);
+    t = setTimeout(function(){
+      document.documentElement.classList.remove('is-scrolling');
+    }, 500);
+  }, {passive:true});
 })();
 </script>
 
