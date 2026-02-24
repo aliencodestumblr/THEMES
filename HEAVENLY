@@ -28,6 +28,8 @@ attribute:"title"
 
 <meta name="image:Icon" content=""/>
 
+<meta name="color:Background" content="#ffffff">
+<meta name="color:Details" content="#ffffff">
 <meta name="color:Shadow Color" content="#f4f3f3">
 <meta name="color:Player Button Background" content="#ffffff"/> 
 <meta name="color:Player Button Border" content="#eeeeee"/>
@@ -35,20 +37,23 @@ attribute:"title"
 <meta name="color:Player Border Hover" content="#aaaaaa"/>
 <meta name="color:Play Icon Color" content="#aaaaaa"/>
 <meta name="color:Play Icon Hover" content="#ffffff"/>
-<meta name="color:Gradient 1" content="#aaaaaa"/> 
-<meta name="color:Gradient 2" content="#222222"/> 
+<meta name="color:Gradient 1" content="#ededed"/> 
+<meta name="color:Gradient 2" content="#111111"/> 
 <meta name="color:Accent" content="#bababa"/> 
 <meta name="color:Text" content="#bababa" /> 
 <meta name="color:Links" content="#bababa" />  
 <meta name="color:Links Hover" content="#444444" />
 <meta name="color:Asker Text" content="#ffffff"/>
 
+<meta name="if:Dark Tumblr control" content=""/>  
 <meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
+<meta name="if:3 Columns" content=""/>
 <meta name="if:Show Sidebar Labels" content=""/>
 <meta name="if:Show Blogtitle" content=""/>
 <meta name="if:Show music player" content="">
 
+<meta name="text:Blog Title" content="heavenly"/>
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="homepage"/>
 <meta name="text:Link 2" content="/"/>
@@ -134,7 +139,7 @@ html, body, a, a:hover{cursor:crosshair;}
     right: 20px;
     width: 35px;
     height: 35px;
-    background:#ffffff;
+    background:{color:Details};
     box-shadow: 0 4px 10px {color:Shadow Color};
     border-radius: 5px; 
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -178,22 +183,9 @@ iframe.tmblr-iframe {
 .tmblr-iframe:hover {
     opacity: 0.5 !important;
 }
-
-.vignette, #vignette {
-    opacity:0;
-}
-.lightbox-image, #tumblr_lightbox img {  
-    box-shadow:none !important;
-    border-radius:2px !important;
-    max-width:none;
-}
- 
-.tmblr-lightbox, #tumblr_lightbox {
-    background-color:rgba({RGBcolor:background},.7) !important;
-}
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid #ffffff;!important;
+    border:5px solid {color:Background};!important;
     box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -298,10 +290,10 @@ video + .permalink {
 }
 
 ::-moz-selection {
-    background:#fff;
+    background:{color:Background};
     color:{color:links hover};
 }
-::selection {background:#fff;
+::selection {background:{color:Background};
     color:{color:links hover};
 }
  
@@ -309,11 +301,9 @@ video + .permalink {
      display:none;
 }
 
-.spotify_audio_player {height:80px !important;}
-
 body {
     color:{color:text}; 
-    background-color:#ffffff;
+    background-color:{color:Background};
     font:400 10.5px "Rajdhani", sans-serif;
     transition:1.3s;  
     letter-spacing:0.5px;
@@ -345,9 +335,22 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:10px; 
     margin-left:120px; 
     
+    {block:if3Columns}
+    width:930px;
+    {/block:if3Columns} 
+    
+    {block:if3Columns}
+    margin-left:30px; 
+    {/block:if3Columns}     
+    
     {block:permalinkpage}
     margin-top:35px;   
     margin-left:20px; 
+    
+    {block:if3Columns}
+    margin-left:-70px; 
+    {/block:if3Columns} 
+    
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
@@ -355,6 +358,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts {  
     width:300px;
+    
+    {block:if3Columns}
+    width:260px;
+    {/block:if3Columns}    
+    
     {block:permalinkpage}
     margin-top:35px; 
     width:540px;
@@ -414,14 +422,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background:#ffffff;; 
+  background:{color:Background};
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, {color:Gradient 1}, {color:Gradient 2});
   border-radius: 2px;
-  border: 2px solid #ffffff; 
+  border: 2px solid {color:Background};
 }
 /* end scrollbar */
 
@@ -450,7 +458,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 32px;
   text-align: center;
   border: 1px solid #eee;
-  background:#ffffff;
+  background:{color:Background};
   color: {color:Links};
   text-decoration: none;
   border-radius: 6px;
@@ -671,8 +679,6 @@ ol.notes li a{
 ol.notes li a:hover{
     opacity:.6;
 }
-
-/* thin minimal icons */
 
 ol.notes li.note:before{
     content:"";
@@ -933,7 +939,7 @@ span.chats {
 }
 
 .host a {
-    background:#fff;   
+    background:{color:Background};  
     margin-top:20px;
     text-transform:uppercase;
     font-size:8px; 
@@ -950,7 +956,7 @@ span.chats {
     margin-left:20px; 
     margin-right:-1px;
     margin-bottom:15px;
-    background:#fff;
+    background:{color:Background};
     font-family:'FontAwesome';  
     content:"\f1d8";
     color:{color:accent};
@@ -1027,7 +1033,7 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    background:#ffffff;
+    background:{color:Details};
     bottom: 20px;
     right: 20px; 
     width: 35px;
@@ -1048,14 +1054,25 @@ a.tumblr_blog {
 #sidebar{
   position:fixed;
   top:85px;
-  margin-left:-150px;
-  width:230px;
+  margin-left:-130px;
+  width:220px;
   z-index:1000;
   user-select:none;
+  
+  {block:if3Columns}
+  margin-left:-220px; 
+  {block:if3Columns}      
 }
 
 {block:permalinkpage}
-#sidebar{ margin-left:-250px; }
+#sidebar{ 
+  margin-left:-230px;
+
+  {block:if3Columns}
+   margin-left:-320px; 
+  {/block:if3Columns} 
+
+}
 {/block:permalinkpage}
 
 #sidebar .sb-card{
@@ -1065,7 +1082,7 @@ a.tumblr_blog {
 }
 
 #sidebar .sb-box{
-  background:#fff;
+  background:{color:Details};
   border-radius:4px;
   box-shadow: 0 4px 10px {color:Shadow Color};
   overflow:hidden;
@@ -1300,7 +1317,7 @@ a.tumblr_blog {
         <div class="sb-label">Description</div>
       {/block:ifShowSidebarLabels}
         {block:ifShowBlogtitle}
-        <h1 class="sb-title">{Name}</h1>
+        <h1 class="sb-title">{text:Blog Title}</h1>
         {/block:ifShowBlogtitle}
         <p class="sb-desc">{Description}</p>
       </div>
