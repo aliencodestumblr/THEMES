@@ -1,7 +1,7 @@
 <!--
-
-  [ aliencodes ]
-
+  ╭─ aliencodes ─╮
+     theme by @aliencodes
+  ╰─────────────╯
 -->
 <!DOCTYPE html>
 <html>  
@@ -29,7 +29,6 @@ attribute:"title"
 <meta name="image:Icon" content=""/>
 
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Details" content="#ffffff"/>    
 <meta name="color:Borders" content="#eeeeee"/> 
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
@@ -37,7 +36,12 @@ attribute:"title"
 <meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
-<meta name="color:asker text" content="#444444"/>
+<meta name="color:Ask Background" content="#f4f4f4"/> 
+<meta name="color:Ask Text" content="#bababa"/> 
+<meta name="color:Ask Border" content="#eeeeee"/> 
+<meta name="color:Answer Background" content="#444444"/> 
+<meta name="color:Answer Text" content="#ffffff"/> 
+<meta name="color:Answer Border" content="#000000"/>
 <meta name="color:tooltip text" content="#ffffff"/>
  
 <meta name="if:Dark Tumblr control" content=""/>   
@@ -178,7 +182,7 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
@@ -187,8 +191,6 @@ iframe.tmblr-iframe {
 }
  
 .lightbox-image, #tumblr_lightbox img {  
-    border:5px solid {color:details}!important;
-    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
     -moz-box-sizing:border-box;
     box-sizing:border-box;
 }
@@ -372,7 +374,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .posts {  
-    background:{color:details};   
     width:270px;  
     {block:if4Columns}
     width:240px;
@@ -429,20 +430,46 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
-::-webkit-scrollbar {width:1px;height:1px;}
-::-webkit-scrollbar-thumb {
-    border:0px solid {color:background};
-    background-color:{color:scrollbar};}
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background: transparent;     
+  border-radius: 3px;
+}
+
+.is-scrolling ::-webkit-scrollbar-thumb{
+  background: {color:Scrollbar};
+}
+
+.is-scrolling ::-webkit-scrollbar-thumb:hover{
+  box-shadow: 0 0 6px rgba({RGBcolor:Scrollbar}, .45);
+}
+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+.is-scrolling{
+  scrollbar-color: {color:Accent} transparent;
+}
+
+/* notes */ 
 
 .post-footer{
   margin-top:12px;
   padding-top:10px;
-
+  
   display:flex;
   justify-content:flex-end;
   align-items:center;
   gap:8px;
-
+  margin-right:-4px;
   border-top:1px solid rgba(0,0,0,.06);
 }
 
@@ -454,7 +481,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration:none;
   color:{color:text};
   opacity:.62;
-
+  
   font-family:"Rajdhani", sans-serif;
   font-size:10px;
   letter-spacing:1.2px;
@@ -611,49 +638,81 @@ ol.notes li.note img.avatar {
   display: none;
 }
 
-.asker {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color:{color:asker text};
+.ask-wrap{
+  margin-bottom:14px;
 }
 
-.asker a {
-    color: {color:links};
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.asker{
+  font-family:"Rajdhani", sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:0 0 6px 0;
+  color:{color:text};
+  opacity:.75;
 }
 
-.asker a:hover {
-    color: {color:links hover};
+.asker a{
+  color:{color:links};
+  font-weight:700;
+  text-decoration:none;
+  transition:color .12s linear, opacity .12s linear;
 }
 
-.ask {
-    position: relative;
-    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
-    padding: 14px 16px;
-    border-radius: 10px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    border-left: 4px solid #bbbbbb; 
-    transition: transform 0.2s ease;
-    color:{color:asker text};
+.asker a:hover{
+  color:{color:links hover};
+  opacity:.9;
 }
 
-.answer {
-    font-size: 11px;
-    color: {color:text};
-    margin-top: 6px;
+.bubble{
+  position:relative;
+  display:inline-block;
+  max-width:92%;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.45;
+  font-size:11px;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.08);
 }
 
-.answer img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+.ask{
+  background:{color:Ask background};
+  color:{color:Ask Text};
+  border-color:{color:Ask Border};
+}
+
+.answer{
+  margin-top:8px;
+  text-align:right; 
+}
+
+.answer .bubble{
+  background:{color:Answer Background};
+  color:{color:Answer Text};
+  border-color:{color:Answer Border};
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.answer img{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  display:block;
+}
+
+.bubble a{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+  opacity:.95;
+}
+
+.bubble a:hover{
+  opacity:1;
 }
 
 .quote {    
@@ -854,7 +913,6 @@ a.tumblr_blog {
 
 #ltop:link, #ltop:visited {   
     position: fixed;
-    background: {color:details}; 
     bottom: 20px;
     right: 20px; 
     width: 35px;
@@ -929,7 +987,7 @@ a.tumblr_blog {
   letter-spacing:3px;
   text-transform:uppercase;
 
-  color:{color:text};
+  color:{color:Blog Title};
   text-decoration:none;
 
   opacity:.9;
@@ -1148,24 +1206,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1180,24 +1240,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1223,24 +1285,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1262,24 +1326,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1287,30 +1353,42 @@ a.tumblr_blog {
 {/block:Link} 
 
 {block:Answer}      
-<div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
-  <div class="ask">{Question}</div>
-  <div class="answer">{Answer}</div>
+<div class="ask-wrap">
+
+  <div class="asker">
+    sent by <b><a href="{AskerURL}">{Asker}</a></b>
+  </div>
+
+  <div class="bubble ask">{Question}</div>
+
+  <div class="answer">
+    <div class="bubble">{Answer}</div>
+  </div>
+
+</div>
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1327,24 +1405,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1361,24 +1441,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1396,24 +1478,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1432,24 +1516,26 @@ a.tumblr_blog {
 {block:IndexPage} 
 <div class="post-footer">
   {block:NoteCount}
-  <a class="pf-notes" href="{Permalink}#notes">
+  <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
     <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
   </a>
   {/block:NoteCount}
 
   <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 7h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7l-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M7 17h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+  <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 
   <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10 13a5 5 0 0 1 0-7l1.2-1.2a5 5 0 0 1 7 7L17 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 11a5 5 0 0 1 0 7L12.8 19.2a5 5 0 0 1-7-7L7 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+  <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
   </a>
 </div>
 {/block:IndexPage}
@@ -1617,6 +1703,19 @@ $(document).ready(function(){
 
 });
 
+</script>
+
+<script>
+(function(){
+  var t;
+  window.addEventListener('scroll', function(){
+    document.documentElement.classList.add('is-scrolling');
+    clearTimeout(t);
+    t = setTimeout(function(){
+      document.documentElement.classList.remove('is-scrolling');
+    }, 500);
+  }, {passive:true});
+})();
 </script>
 
 <script>feather.replace()</script>
