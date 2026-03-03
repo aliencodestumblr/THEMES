@@ -1217,7 +1217,7 @@ a.tumblr_blog {
     <div class="hb-main">
 <div class="hb-top">
   <div class="hb-left">
-    <a class="hb-title" href="/">BABE</a>
+    <a class="hb-title" href="/">{title}</a>
 
     {block:ifshowmusicplayer}
     <div class="hb-mini-music" id="hb-header-music" title="click to play / pause">
