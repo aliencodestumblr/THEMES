@@ -39,7 +39,6 @@ attribute:"title"
 <meta name="color:Accent" content="#aaaaaa"/>  
 <meta name="color:Text" content="#aaaaaa" /> 
 <meta name="color:Links" content="#aaaaaa" />  
-<meta name="color:Blog Title" content="#f1f1f1"/> 
 <meta name="color:Links Hover" content="#aaaaaa" />
 <meta name="color:Scrollbar" content="#aaaaaa" />
 <meta name="color:Asker Text" content="#444444"/>
@@ -1060,7 +1059,6 @@ a.tumblr_blog {
   letter-spacing:3px;
   text-transform:uppercase;
 
-  color:{color:text};
   text-decoration:none;
 
   opacity:.9;
@@ -1169,6 +1167,7 @@ a.tumblr_blog {
   overflow:hidden;
   text-overflow:ellipsis;
   max-width:280px;
+  margin-top:1px;
 }
 
 .hb-desc{
