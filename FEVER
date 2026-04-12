@@ -47,7 +47,7 @@ INFINITE SCROLL       ──  @aliencodes
 
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show music player" content="">
+<meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="homepage"/>
