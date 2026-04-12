@@ -459,12 +459,7 @@ h1,h2,h3,h4,h5,h6{
   min-height:22px;
   padding:0 9px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(18,18,18,0.92) 0%,
-      rgba(10,10,10,0.88) 100%
-    );
+  background:#000000;
 
   border-radius:4px 4px 0 0;
 
@@ -504,12 +499,7 @@ h1,h2,h3,h4,h5,h6{
   align-items:center;
   justify-content:flex-end;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(16,16,16,0.95) 0%,
-      rgba(8,8,8,0.96) 100%
-    );
+  background:#000000;
 
   border-radius:0 0 4px 4px;
 
@@ -2067,6 +2057,11 @@ a.tumblr_blog{ display:none !important; }
           </span>
         </div>
 
+<div class="sb-online-pill">
+          <span class="online-dot"></span>
+          <span id="RealOnlineCount">12</span>
+          <span class="online-label">online</span>
+        </div>
       </div>
 
       <div class="sb-core-panels">
