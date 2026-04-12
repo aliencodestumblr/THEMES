@@ -1157,7 +1157,7 @@ a.tumblr_blog{ display:none !important; }
   max-width:220px;
   padding:4px 8px;
   margin-top:10px;
-  border-radius:2px;
+  border-radius:4px;
   background: rgba(10,10,10,.96);
   font-family:"Rajdhani", sans-serif;
   font-size:8.5px;
@@ -1436,17 +1436,15 @@ a.tumblr_blog{ display:none !important; }
   background: linear-gradient(90deg, rgba(255,255,255,.94), transparent);
 }
 
-/* META */
 .sb-top-meta{
   display: grid;
-  grid-template-columns: minmax(0,1fr) auto;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   gap: 7px;
   padding: 10px 10px 0;
-  align-items: center;
 }
 
 .sb-profile-pill,
-.sb-online-pill{
+.sb-blog-pill{
   min-width: 0;
   min-height: 28px;
   display: inline-flex;
@@ -1465,14 +1463,14 @@ a.tumblr_blog{ display:none !important; }
   overflow: hidden;
 }
 
-.sb-online-pill{
-  padding: 0 9px;
-  gap: 5px;
-  white-space: nowrap;
+.sb-blog-pill{
+  padding: 0 10px;
+  justify-content: flex-end; 
+  overflow: hidden;
 }
 
 .sb-profile-pill:hover,
-.sb-online-pill:hover{
+.sb-blog-pill:hover{
   transform: translateY(-1px);
   background:
     linear-gradient(180deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.34) 100%);
@@ -1514,37 +1512,23 @@ a.tumblr_blog{ display:none !important; }
   stroke-width: 2;
 }
 
-.online-dot{
-  width: 5px;
-  height: 5px;
-  flex: 0 0 5px;
-  border-radius: 50%;
-  background: #8e8e8e;
-  animation: sbPulse 2s ease-in-out infinite;
-}
-
-@keyframes sbPulse{
-  0%,100%{ transform: scale(1); opacity: .55; box-shadow: 0 0 0 0 rgba(255,255,255,0); }
-  50%{ transform: scale(1.18); opacity: 1; box-shadow: 0 0 8px 2px rgba(255,255,255,.34); }
-}
-
-.online-label,
-#RealOnlineCount{
+.sb-blog-name{
+  min-width: 0;
   font-family: "Orbitron", sans-serif;
   font-size: 7px;
-  letter-spacing: .95px;
+  letter-spacing: 1.05px;
   text-transform: uppercase;
   color: var(--text-color);
-}
-
-.online-label{
-  opacity: .48;
+  line-height: 1;
+  text-align: right; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* SECTIONS */
 .sb-core-panels{
   display: grid;
-  gap: 0;
 }
 
 .sb-section{
@@ -1557,7 +1541,6 @@ a.tumblr_blog{ display:none !important; }
 
 .sb-section-label{
   margin-bottom: 6px;
-  padding-left: 1px;
   font-family: "Orbitron", sans-serif;
   font-size: 7px;
   letter-spacing: 1.8px;
@@ -1577,28 +1560,18 @@ a.tumblr_blog{ display:none !important; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,.52);
 }
 
-.sb-about-box::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(135deg, rgba(255,255,255,.14), transparent 60%);
-  pointer-events:none;
-}
-
 .sb-about-accent{
   position:absolute;
   top:10px;
   bottom:10px;
   left:0;
   width:2px;
-  border-radius: 999px;
+  border-radius:999px;
   background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(255,255,255,.82), rgba(0,0,0,.08));
   opacity:.62;
 }
 
 .hd-desc-wrap{
-  position: relative;
-  z-index: 2;
   font-family: "Rajdhani", sans-serif;
   font-size: 9px;
   line-height: 1.42;
@@ -1613,7 +1586,6 @@ a.tumblr_blog{ display:none !important; }
 }
 
 .sb-nav-grid a{
-  position: relative;
   display: grid;
   grid-template-columns: 24px minmax(0,1fr) 14px;
   align-items: center;
@@ -1622,77 +1594,31 @@ a.tumblr_blog{ display:none !important; }
   padding: 0 10px;
   text-decoration: none;
   border-radius: 11px;
-  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255,255,255,.44) 0%, rgba(255,255,255,.22) 100%);
   border: 1px solid rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.58);
-  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
-}
-
-.sb-nav-grid a::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.14), transparent 44%),
-    linear-gradient(180deg, transparent, rgba(255,255,255,.04));
-  pointer-events:none;
 }
 
 .sb-nav-grid a:hover{
   transform: translateX(3px);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.28) 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.65),
-    0 8px 16px rgba(0,0,0,.04);
 }
 
 .sb-nav-no{
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 17px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.04);
-  border: 1px solid rgba(0,0,0,.05);
   font-family: "Orbitron", sans-serif;
   font-size: 6px;
-  letter-spacing: 1.1px;
   color: rgba(0,0,0,.46);
 }
 
 .sb-nav-text{
-  position: relative;
-  z-index: 2;
-  min-width: 0;
   font-family: "Orbitron", sans-serif;
   font-size: 7px;
-  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--text-color);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .sb-nav-arrow{
-  position: relative;
-  z-index: 2;
-  justify-self: end;
-  font-family: "Orbitron", sans-serif;
   font-size: 8px;
   color: rgba(0,0,0,.34);
-  transition: transform .22s ease, color .22s ease;
-}
-
-.sb-nav-grid a:hover .sb-nav-arrow{
-  transform: translateX(2px);
-  color: rgba(0,0,0,.52);
 }
 
 /* PLAYER */
@@ -2042,27 +1968,24 @@ a.tumblr_blog{ display:none !important; }
         </div>
 
         <div class="sb-hero-overlay">
-          <div class="sb-kicker">digital profile</div>
-          <div class="sb-title" data-text="{Title}">{Title}</div>
-        </div>
-      </a>
+         <div class="sb-kicker">digital profile</div>
+         </div>
+       </a>
 
       <div class="sb-top-meta">
-        <div class="sb-profile-pill">
-          <span class="hd-name-text">{Name}</span>
-          <span class="hd-verified-badge">
-            <svg viewBox="0 0 24 24">
-              <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </span>
-        </div>
+  <div class="sb-profile-pill">
+    <span class="hd-name-text">{Name}</span>
+    <span class="hd-verified-badge">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
 
-<div class="sb-online-pill">
-          <span class="online-dot"></span>
-          <span id="RealOnlineCount">12</span>
-          <span class="online-label">online</span>
-        </div>
-      </div>
+  <div class="sb-blog-pill" title="{Title}">
+    <span class="sb-blog-name">{Title}</span>
+  </div>
+</div>
 
       <div class="sb-core-panels">
 
