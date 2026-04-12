@@ -1586,6 +1586,7 @@ a.tumblr_blog{ display:none !important; }
 }
 
 .sb-nav-grid a{
+  position: relative;
   display: grid;
   grid-template-columns: 24px minmax(0,1fr) 14px;
   align-items: center;
@@ -1594,31 +1595,80 @@ a.tumblr_blog{ display:none !important; }
   padding: 0 10px;
   text-decoration: none;
   border-radius: 11px;
+  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255,255,255,.44) 0%, rgba(255,255,255,.22) 100%);
   border: 1px solid rgba(0,0,0,.05);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.58),
+    0 3px 8px rgba(0,0,0,.02);
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.sb-nav-grid a::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.14), transparent 44%),
+    linear-gradient(180deg, transparent, rgba(255,255,255,.04));
+  pointer-events:none;
 }
 
 .sb-nav-grid a:hover{
   transform: translateX(3px);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.28) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.65),
+    0 5px 10px rgba(0,0,0,.025);
 }
 
 .sb-nav-no{
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 17px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.05);
   font-family: "Orbitron", sans-serif;
   font-size: 6px;
+  letter-spacing: 1.1px;
   color: rgba(0,0,0,.46);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.46);
 }
 
 .sb-nav-text{
+  position: relative;
+  z-index: 2;
+  min-width: 0;
   font-family: "Orbitron", sans-serif;
   font-size: 7px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sb-nav-arrow{
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  font-family: "Orbitron", sans-serif;
   font-size: 8px;
   color: rgba(0,0,0,.34);
+  transition: transform .22s ease, color .22s ease;
+}
+
+.sb-nav-grid a:hover .sb-nav-arrow{
+  transform: translateX(2px);
+  color: rgba(0,0,0,.52);
 }
 
 /* PLAYER */
