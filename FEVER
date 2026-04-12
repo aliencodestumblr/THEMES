@@ -4,7 +4,7 @@
 
 OTHER CREDITS:
 POST MEDIA HOVERS     ──  @raivys
-MUSIC PLAYER          ──  @glenthemes
+MUSIC PLAYER          ──  @aliencodes/glenthemes
 PHOTOSETS SCRIPT      ──  @shythemes
 INFINITE SCROLL       ──  @aliencodes
 -->
@@ -31,10 +31,8 @@ INFINITE SCROLL       ──  @aliencodes
 })(jQuery);
 </script>
 
-<!-- // ÍCONE // -->
 <meta name="image:Icon" content=""/>
 
-<!-- // CONTROLES DE COR // -->
 <meta name="color:Accent" content="#858b94"/>
 <meta name="color:Borders" content="#EEEEEE"/>
 <meta name="color:Text" content="#858b94" />
@@ -49,12 +47,10 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="color:Answer Text" content="#ffffff"/>
 <meta name="color:Answer Border" content="#000000"/>
 
-<!-- // OPÇÕES DE TOGGLE // -->
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
 
-<!-- // LINKS DE NAVEGAÇÃO // -->
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="homepage"/>
 <meta name="text:Link 2" content="/"/>
@@ -64,28 +60,26 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="spotify"/>
 
-<!-- // MUSIC PLAYER PLAYLIST CONFIG // -->
-<meta name="text:Track 1 Title" content="Lover, Please Stay (Live)">
-<meta name="text:Track 1 Artist" content="Nothing But Thieves">
-<meta name="text:Track 1 Audio" content="https://rhizo.gitlab.io/m/Lover_Please_Stay_-_Live.mp3">
+<meta name="text:Track 1 Title" content="Loretta Young silks">
+<meta name="text:Track 1 Artist" content="Sneakerpimps">
+<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxMzM0NTQ1Xw/Loretta%20Young%20Silks%20-%20sneakerpimps.mp3">
 
-<meta name="text:Track 2 Title" content="A Drowning Cry">
-<meta name="text:Track 2 Artist" content="acloudyskye">
-<meta name="text:Track 2 Audio" content="https://rhizo.gitlab.io/m/A_Drowning_Cry.mp3">
+<meta name="text:Track 2 Title" content="Semana Satán">
+<meta name="text:Track 2 Artist" content="Uniforms">
+<meta name="text:Track 2 Audio" content="https://od.lk/s/MzlfODk2ODIyODFf/Semana%20Sata%CC%81n%20-%20Uniforms.mp3">
 
-<meta name="text:Track 3 Title" content="Thoughts of You">
-<meta name="text:Track 3 Artist" content="Chewing, POP ETC">
-<meta name="text:Track 3 Audio" content="https://rhizo.gitlab.io/m/Thoughts_of_You.mp3">
+<meta name="text:Track 3 Title" content="Fool 4 You">
+<meta name="text:Track 3 Artist" content="Mr Little Jeans">
+<meta name="text:Track 3 Audio" content="https://od.lk/s/MzlfMTAxMTY0NTU0Xw/Mr%20Little%20Jeans%20-%20Fool%204%20You.mp3">
 
-<meta name="text:Track 4 Title" content="Amnésie">
-<meta name="text:Track 4 Artist" content="Nhyx">
-<meta name="text:Track 4 Audio" content="https://rhizo.gitlab.io/m/Amnesie.mp3">
+<meta name="text:Track 4 Title" content="Running Away">
+<meta name="text:Track 4 Artist" content="Washed Out">
+<meta name="text:Track 4 Audio" content="https://od.lk/s/MzlfNjY1NzIxMDFf/Running%20Away%20-%20Washed%20Out.mp3">
 
-<meta name="text:Track 5 Title" content="Serene Moments">
-<meta name="text:Track 5 Artist" content="redrose">
-<meta name="text:Track 5 Audio" content="https://rhizo.gitlab.io/m/Serene_Moments.mp3">
+<meta name="text:Track 5 Title" content="Teeth">
+<meta name="text:Track 5 Artist" content="Mallrat">
+<meta name="text:Track 5 Audio" content="https://od.lk/s/MzlfMTAwOTAwMjcyXw/Teeth%20-%20Mallrat.mp3">
 
-<!-- // FONTES & ÍCONES // -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -104,7 +98,6 @@ INFINITE SCROLL       ──  @aliencodes
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
-<!-- // CSS DO TEMA // -->
 <style type="text/css">
 /* ANTI-SCROLL LATERAL */
 html { scrollbar-gutter: stable both-edges; }
@@ -1455,6 +1448,7 @@ a.tumblr_blog{ display:none !important; }
   background: linear-gradient(90deg, rgba(255,255,255,.94), transparent);
 }
 
+/* META */
 .sb-top-meta{
   display: grid;
   grid-template-columns: minmax(0,1fr) auto;
@@ -2075,11 +2069,6 @@ a.tumblr_blog{ display:none !important; }
           </span>
         </div>
 
-        <div class="sb-online-pill">
-          <span class="online-dot"></span>
-          <span id="RealOnlineCount">12</span>
-          <span class="online-label">online</span>
-        </div>
       </div>
 
       <div class="sb-core-panels">
@@ -2223,6 +2212,7 @@ a.tumblr_blog{ display:none !important; }
 })();
 </script>
 
+<!-- // ÍCONE SVG DOS CONTROLES // -->
 <div class="cc">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
     <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
@@ -2644,6 +2634,7 @@ data-notes="{NoteCountWithLabel}">
         {block:ContentSource}<a href="{SourceURL}"></a>{/block:ContentSource}
       </div>
       
+<!-- // INFORMAÇÕES + NOTAS DA PÁGINA DE PERMALINK DO POST // -->
       {block:PermalinkPage}
       {block:PostNotes}
       <div class="perma">
