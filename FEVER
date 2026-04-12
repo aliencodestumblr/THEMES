@@ -33,13 +33,11 @@ INFINITE SCROLL       ──  @aliencodes
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Accent" content="#858b94"/>
+<meta name="color:Accent" content="#444444"/>
 <meta name="color:Borders" content="#EEEEEE"/>
-<meta name="color:Text" content="#858b94" />
-<meta name="color:Links" content="#858b94" />
-<meta name="color:Links Hover" content="#858b94" />
-<meta name="color:Notes Color" content="#858b94" />
-<meta name="color:Blog Title" content="#858b94" />
+<meta name="color:Text" content="#444444" />
+<meta name="color:Links" content="#444444" />
+<meta name="color:Links Hover" content="#444444" />
 <meta name="color:Ask Background" content="#f4f4f4"/>
 <meta name="color:Ask Text" content="#bababa"/>
 <meta name="color:Ask Border" content="#eeeeee"/>
