@@ -477,7 +477,7 @@ h1,h2,h3,h4,h5,h6{
   margin-bottom:0px;
 
   opacity:0;
-  transform:translateX(18px) translateY(2px);
+  transform:translateX(18px);
   transition:
     opacity .6s cubic-bezier(.22,1,.36,1),
     transform .6s cubic-bezier(.22,1,.36,1);
@@ -508,7 +508,7 @@ h1,h2,h3,h4,h5,h6{
     inset 0 1px 0 rgba(255,255,255,0.03);
 
   opacity:0;
-  transform:translateX(-20px) translateY(-2px);
+  transform:translateX(-20px);
   transition:
     opacity .66s cubic-bezier(.22,1,.36,1),
     transform .66s cubic-bezier(.22,1,.36,1);
