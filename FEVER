@@ -468,7 +468,7 @@ h1,h2,h3,h4,h5,h6{
     inset 0 1px 0 rgba(255,255,255,0.04);
 
   font-family:"Orbitron","Inter",sans-serif;
-  font-size:7px;
+  font-size:6px;
   font-weight:600;
   letter-spacing:1.35px;
   text-transform:uppercase;
@@ -545,13 +545,13 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .notsi .inf2 i{
-  font-size:13px;
+  font-size:11px;
   line-height:1;
 }
 
 .notsi .inf2 .rb-icon{
-  width:13px;
-  height:13px;
+  width:11px;
+  height:11px;
   display:block;
 }
 
