@@ -1,12 +1,12 @@
 <!--
 
-       @ALIENCODES 
+       @ALIENCODES // @RAIVYS
 
 OTHER CREDITS:
+POST MEDIA HOVERS     ──  @raivys
 MUSIC PLAYER          ──  @glenthemes
 PHOTOSETS SCRIPT      ──  @shythemes
 INFINITE SCROLL       ──  @aliencodes
-BASE CODE             ──  @aliencodes/@fentycodes
 -->
 <!DOCTYPE html>
 <html>
@@ -15,6 +15,7 @@ BASE CODE             ──  @aliencodes/@fentycodes
 <title>{Title}</title>
 <link rel="shortcut icon" href="{Favicon}">
 
+<!-- // TOOLTIP + jQUERY // -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
 <script>
@@ -30,24 +31,28 @@ BASE CODE             ──  @aliencodes/@fentycodes
 })(jQuery);
 </script>
 
+<!-- // ÍCONE // -->
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Accent" content="#858b94"/>
-<meta name="color:Text" content="#858b94" />
-<meta name="color:Links" content="#858b94" />
-<meta name="color:Links Hover" content="#858b94" />
-<meta name="color:Notes Color" content="#858b94" />
-<meta name="color:Ask Background" content="#f4f4f4"/>
-<meta name="color:Ask Text" content="#bababa"/>
-<meta name="color:Ask Border" content="#eeeeee"/>
-<meta name="color:Answer Background" content="#444444"/>
+<!-- // CONTROLES DE COR // -->
+<meta name="color:Accent" content="#ffffff"/>
+<meta name="color:Borders" content="#000000"/>
+<meta name="color:Text" content="#ffffff" />
+<meta name="color:Links" content="#ffffff" />
+<meta name="color:Links Hover" content="#ffffff" />
+<meta name="color:Ask Background" content="#000000"/>
+<meta name="color:Ask Text" content="#ffffff"/>
+<meta name="color:Ask Border" content="#000000"/>
+<meta name="color:Answer Background" content="#111111"/>
 <meta name="color:Answer Text" content="#ffffff"/>
 <meta name="color:Answer Border" content="#000000"/>
 
+<!-- // OPÇÕES DE TOGGLE // -->
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="">
 
+<!-- // LINKS DE NAVEGAÇÃO // -->
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="homepage"/>
 <meta name="text:Link 2" content="/"/>
@@ -57,10 +62,28 @@ BASE CODE             ──  @aliencodes/@fentycodes
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="spotify"/>
 
-<meta name="text:Audio MP3 Source" content="https://a.tumblr.com/tumblr_miih77jiBg1rwxzf7o1.mp3"/>
-<meta name="text:Song Title" content="Song Title"/>
-<meta name="text:Artist Name" content="Artist Name"/>
+<!-- // MUSIC PLAYER PLAYLIST CONFIG // -->
+<meta name="text:Track 1 Title" content="Loretta Young silks">
+<meta name="text:Track 1 Artist" content="Sneakerpimps">
+<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxMzM0NTQ1Xw/Loretta%20Young%20Silks%20-%20sneakerpimps.mp3">
 
+<meta name="text:Track 2 Title" content="Semana Satán">
+<meta name="text:Track 2 Artist" content="Uniforms">
+<meta name="text:Track 2 Audio" content="https://od.lk/s/MzlfODk2ODIyODFf/Semana%20Sata%CC%81n%20-%20Uniforms.mp3">
+
+<meta name="text:Track 3 Title" content="Fool 4 You">
+<meta name="text:Track 3 Artist" content="Mr Little Jeans">
+<meta name="text:Track 3 Audio" content="https://od.lk/s/MzlfMTAxMTY0NTU0Xw/Mr%20Little%20Jeans%20-%20Fool%204%20You.mp3">
+
+<meta name="text:Track 4 Title" content="Running Away">
+<meta name="text:Track 4 Artist" content="Washed Out">
+<meta name="text:Track 4 Audio" content="https://od.lk/s/MzlfNjY1NzIxMDFf/Running%20Away%20-%20Washed%20Out.mp3">
+
+<meta name="text:Track 5 Title" content="Teeth">
+<meta name="text:Track 5 Artist" content="Mallrat">
+<meta name="text:Track 5 Audio" content="https://od.lk/s/MzlfMTAwOTAwMjcyXw/Teeth%20-%20Mallrat.mp3">
+
+<!-- // FONTES & ÍCONES // -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -77,12 +100,16 @@ BASE CODE             ──  @aliencodes/@fentycodes
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
+<!-- // CSS DO TEMA // -->
 <style type="text/css">
 /* ANTI-SCROLL LATERAL */
 html { scrollbar-gutter: stable both-edges; }
 body { overflow-y: scroll; }
 
+
+/* ---------------- PLAYER DO SPOTIFY ---------------- */
 :root{
   --sp-scale: 0.80;
   --sp-base-height: 80px;
@@ -105,55 +132,75 @@ figure iframe.spotify_audio_player {
   width: calc(100% / var(--sp-scale)) !important;
 }
 
-html, body, a, a:hover{cursor:crosshair;}
-
 @keyframes fadein {from {opacity:0;} to {opacity:1;}}
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}}
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}}
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}}
 
+html, body, * {
+cursor:crosshair;
+}
+
+/* ---------------- CONTROLES ---------------- */
 .cc {
-  z-index: 100;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  right: auto;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 1s;
-  padding: 0;
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
 }
-.cc svg { display:block; width:14px; height:14px; overflow:visible; }
-.cc svg path { fill: {color:accent}; }
 
+.cc svg {
+    display: block;
+    width: 11px;
+    height: 11px;
+    overflow: visible;
+    color: {color:accent};
+}
+
+.cc svg path,
+.cc svg circle,
+.cc svg line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+     
 iframe.tmblr-iframe {
-  z-index: 999;
-  margin-left: 20px;
-  right: auto;
-  top: 11px;
-  opacity: 0;
-  position: fixed;
-  width: 0;
+    z-index: 999;
+    right: 22px;
+    top: 27px;
+    opacity: 0;
+    position: fixed;
 
-  {block:IfDarkTumblrControl}
-  filter:invert(1);
-  {/block:IfDarkTumblrControl}
+    width: 0;
 
-  transform: scale(0.6);
-  -webkit-transform: scale(0.6);
+    filter: invert(1);
 
-  transform-origin: 0 0;
-  -webkit-transform-origin: 0 0;
+    padding-right: 90px; /* smaller hover area */
 
-  transition: opacity 0.4s ease;
-  -webkit-transition: opacity 0.4s ease;
+    transform: scale(0.38);
+    -webkit-transform: scale(0.38);
+
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+
+    transition: opacity 0.35s ease;
+    -webkit-transition: opacity 0.35s ease;
 }
 
-.tmblr-iframe:hover { opacity: 0.5 !important; }
-
+.tmblr-iframe:hover {
+    opacity: 0.5 !important;
+}
+/* ---------------- IMAGENS EXPANDIDAS ---------------- */
 .vignette, #vignette { opacity:0; }
 
 .lightbox-image, #tumblr_lightbox img {
@@ -173,6 +220,7 @@ iframe.tmblr-iframe {
   box-sizing:border-box;
 }
 
+/* ---------------- ESTILO DE LINKS + MÍDIA ---------------- */
 pre, code {
   overflow-x:auto;
   user-select:all;
@@ -188,13 +236,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
-  cursor:crosshair;
   color:{color:links};
   text-decoration:none;
   transition:.5s;
 }
 
 a:hover {
+  cursor:help;
   color:{color:links hover};
   text-decoration:none;
   transition:.5s;
@@ -211,12 +259,14 @@ a.read_more{
 p a {font-weight:700;}
 p {margin-top:0px;}
 
+
+/* --------- BLOCKQUOTE + MÍDIA NPF (FOTO/VÍDEO) --------- */
 blockquote { display:block; margin:0px; }
 
 
 blockquote img {
   border-radius:4px;
-  width:100%;
+  width:calc(100% - 0);
   height:auto;
 }
 blockquote video {
@@ -226,8 +276,8 @@ blockquote video {
 
 img {
   border-radius:4px;
-  cursor:crosshair;
-  width:100%;
+  border:0;
+  width:calc(100% - 0);
   height:auto;
   display:block;
 }
@@ -258,9 +308,10 @@ figure::after,
   height:0 !important;
 }
 
+/* ---------------- BODY ---------------- */
 body {
   color:{color:text};
-  background-color:#ffffff;
+  background-color:#000;
   font:400 10.5px "Rajdhani", sans-serif;
   transition:1.3s;
   letter-spacing:0.5px;
@@ -270,6 +321,8 @@ body {
   -webkit-animation-name:fadeIn; animation-name:fadeIn;
 }
 
+
+/* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ----------- */
 h1,h2,h3,h4,h5,h6{
   color:{color:accent};
   font:"Rajdhani", sans-serif;
@@ -277,42 +330,51 @@ h1,h2,h3,h4,h5,h6{
   line-height:15px;
 }
 
+
+/* ---------------- CONTAINER DE DESIGN DOS POSTS ---------------- */
 .entry{
-  width:800px;
+  width:930px;
   height:auto;
   margin: 0 auto !important;
 
   {block:PermalinkPage}
-  width:700px;
+  width:800px;
   margin: 0 auto !important;
   {/block:PermalinkPage}
 }
 
 #posts{
-  width:800px;
-  margin: 10px auto 50px auto !important;
-
-  transform: translateX(-100px);
+  width:930px;
+  margin: 120px auto 50px auto !important;
   
+  
+  /* POSIÇÃO DOS POSTS
+   Este valor move todos os posts horizontalmente.
+   Use números negativos para mover os posts para a ESQUERDA.
+   Use números positivos para mover os posts para a DIREITA.
+   Ajuste esse valor se quiser alinhar os posts melhor no layout. */
+  transform: translateX(0px);
+  
+
+/* permitir transições, mas NÃO no transform — NÃO REMOVA */
   transition-property: opacity, filter;
-  transition-duration: .5s;
-  transition-timing-function: ease;
+  transition-duration: .0s;
 
   {block:PermalinkPage}
-  width:700px;
-  margin:35px auto 0 auto !important;
-  transform: translateX(-100px);
+  width:800px;
+  margin:145px auto 0 auto !important;
+  transform: translateX(0px);
   {/block:PermalinkPage}
 }
 
 .posts{
-  width:330px;
+  width:260px;
   margin:25px;
   margin-bottom:25px;
   padding:0;
   overflow:visible;
   opacity:1;
-  transition:2s;
+  transition:1s;
 
   {block:PermalinkPage}
   width:700px;
@@ -320,6 +382,8 @@ h1,h2,h3,h4,h5,h6{
   {/block:PermalinkPage}
 }
 
+
+/* ---------------- LINHA DO USUÁRIO NO TOPO DO POST ---------------- */
 .post-top{
   margin: 0 0 8px 0;
   display:flex;
@@ -345,143 +409,126 @@ h1,h2,h3,h4,h5,h6{
   opacity:.6;
 }
 
+
+/* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
 {block:IndexPage}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap');
+
 .notsi{
   position:absolute;
   inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   pointer-events:none;
+  z-index:10;
   border-radius:4px;
-  overflow:hidden;
-  z-index:2;
 }
 
+/* dark glass fade background */
 .notsi::before{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:inherit;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,.65) 0%,
-      rgba(255,255,255,.45) 40%,
-      rgba(255,255,255,.55) 100%
-    );
-
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-
-  opacity:0;
-  transition:opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1);  
-  pointer-events:none;
-  will-change:opacity;
-}
-
-.notsi .inf{
-  position:absolute;
-  left:50%;
-  bottom:12px;
-  transform:translateX(-50%) translateY(8px);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-
-  height:30px;
-  padding:0 14px;
-
-  background:rgba(255,255,255,.46);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:6px;
-
+  background:rgba(0,0,0,.28);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
-
-  font-family:"Rajdhani", sans-serif;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
-  line-height:1;
-
-  color:{color:Notes Color};
-
   opacity:0;
-  visibility:hidden;
   transition:
-    opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1),    
-    transform 1.2s cubic-bezier(0.23, 1, 0.32, 1),   
-    visibility 0s linear 1.2s;                       
-
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.25) inset,
-    0 10px 22px rgba(0,0,0,.09);
-
+    opacity .75s cubic-bezier(.19,1,.22,1);
   pointer-events:none;
-  z-index:3;
-
-  will-change:opacity, transform;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
+  border-radius:4px;
 }
 
-.notsi .inf .divider{
-  width:1px;
-  height:12px;
-  background:rgba(0,0,0,.12);
-  flex:0 0 1px;
-}
-
-.notsi .inf a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:{color:Notes Color};
-  opacity:.88;
-
+/* time */
+.notsi .inf{
+  position:relative;
+  z-index:2;
+  opacity:0;
+  margin-bottom:10px;
+  transform:translateY(12px);
   transition:
-    color .16s ease,
-    opacity .16s ease,
-    letter-spacing .16s ease;
-}
-
-.notsi .inf a:hover{
-  opacity:1;
-  color:{color:Links Hover};
-  letter-spacing:1.55px;
+    opacity .7s cubic-bezier(.19,1,.22,1),
+    transform .7s cubic-bezier(.19,1,.22,1);
+  transition-delay:.08s;
+  pointer-events:none;
 }
 
 .notsi .npf-time{
-  opacity:.65;
+  font-family:"Orbitron", sans-serif;
+  font-size:7px;
+  font-weight:400;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.78);
+  text-align:center;
+  text-shadow:0 0 10px rgba(0,0,0,.35);
 }
 
-.notsi .npf-notes{
-  font-weight:900;
+/* icon row */
+.notsi .inf2{
+  position:relative;
+  z-index:2;
+  opacity:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  transform:translateY(14px);
+  transition:
+    opacity .8s cubic-bezier(.19,1,.22,1),
+    transform .8s cubic-bezier(.19,1,.22,1);
+  transition-delay:.16s;
+  pointer-events:auto;
 }
 
-.notsi a::before,
-.notsi a::after{
-  content:"" !important;
+/* icon links */
+.notsi .inf2 a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:rgba(255,255,255,.72);
+  font-size:10px;
+  line-height:1;
+  padding:0;
+  background:none !important;
+  border:none !important;
+  box-shadow:none !important;
+  opacity:.92;
+  transition:
+    color .3s ease,
+    transform .35s ease,
+    opacity .35s ease;
 }
 
+.notsi .inf2 a:hover{
+  color:#fff;
+  transform:translateY(-1px) scale(1.06);
+  opacity:1;
+}
+
+/* show on hover */
+.post:hover .notsi::before,
 .ac-hover-on .notsi::before{
   opacity:1;
 }
 
+.post:hover .notsi .inf,
 .ac-hover-on .notsi .inf{
   opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(0);
-  pointer-events:auto;
-  transition:
-    opacity 1.2s cubic-bezier(0.23, 1, 0.32, 1),   
-    transform 1.2s cubic-bezier(0.23, 1, 0.32, 1),   
-    visibility 0s linear 0s;
+  transform:translateY(0);
+}
+
+.post:hover .notsi .inf2,
+.ac-hover-on .notsi .inf2{
+  opacity:1;
+  transform:translateY(0);
 }
 {/block:IndexPage}
 
+/* --------- TAMANHOS DE IMAGEM + VÍDEO / NÃO ALTERAR --------- */
 .posts img{
   width:100%;
   {block:permalinkpage}
@@ -499,6 +546,8 @@ h1,h2,h3,h4,h5,h6{
 
 .vsanna{ display:none; }
 
+
+/* ---------------- ROLAGEM INFINITA ---------------- */
 #infscr-loading{
   position:absolute;
   bottom:0;
@@ -513,6 +562,8 @@ h1,h2,h3,h4,h5,h6{
   height:20px;
 }
 
+
+/* EFEITO DE CARREGAMENTO SUAVE */
 {block:IndexPage}
 .posts{
   transition: opacity .75s ease, transform .75s ease;
@@ -526,16 +577,14 @@ h1,h2,h3,h4,h5,h6{
   transform: translateY(0);
 }
 {/block:IndexPage}
+/* FIM DO EFEITO DE CARREGAMENTO SUAVE */
 
-::-webkit-scrollbar{ width:8px; }
-::-webkit-scrollbar-track{ background: transparent; }
-::-webkit-scrollbar-thumb{ background: transparent; border-radius: 3px; }
-.is-scrolling ::-webkit-scrollbar-thumb{ background: {color:Accent}; }
-.is-scrolling ::-webkit-scrollbar-thumb:hover{ box-shadow: 0 0 6px rgba({RGBcolor:Accent}, .45); }
 
-*{ scrollbar-width: thin; scrollbar-color: transparent transparent; }
-.is-scrolling{ scrollbar-color: {color:Accent} transparent; }
+/* ---------------- BARRA DE ROLAGEM ---------------- */
+::-webkit-scrollbar{ width:8px; } ::-webkit-scrollbar-track{ background: transparent; } ::-webkit-scrollbar-thumb{ background: transparent; border-radius: 3px; } .is-scrolling ::-webkit-scrollbar-thumb{ background: {color:Accent}; } .is-scrolling ::-webkit-scrollbar-thumb:hover{ box-shadow: 0 0 6px rgba({RGBcolor:Accent}, .45); } *{ scrollbar-width: thin; scrollbar-color: transparent transparent; } .is-scrolling{ scrollbar-color: {color:Accent} transparent; }
 
+
+/* ---------------- PAGINAÇÃO ---------------- */
 .pagination {
   width: 700px;
   max-width: 100%;
@@ -595,80 +644,126 @@ body .pagination{
   color:{color:Links};
 }
 
+
+/* ---------------- PERMALINK DO POST (INFERIOR) ---------------- */
+{block:IndexPage}
 .post-footer{
-  margin-top:10px;
-
+  margin-top:8px;
   display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:10px;
-
-  padding:3px 10px;
-
- background: linear-gradient(
-  to left,
-  #ffffff 0%,
-  #f8f8f8 100%
-);
-
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:4px;
-}
-
-.pf-notes{
-  display:inline-flex;
+  justify-content:space-between;
   align-items:center;
   gap:6px;
 
+  padding:4px 7px;
+  background:linear-gradient(180deg, rgba(16,16,16,.95) 0%, rgba(6,6,6,.98) 100%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:5px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.03),
+    0 4px 14px rgba(0,0,0,.22);
+}
+
+.pf-left,
+.pf-right{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+/* NOTES */
+.pf-notes{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  height:18px;
+  padding:0 6px;
+
   text-decoration:none;
-  color:{color:text};
-  opacity:.7;
+  color:rgba(255,255,255,.78);
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:4px;
 
   font-family:"Rajdhani", sans-serif;
-  font-size:10px;
-  letter-spacing:1.2px;
-  text-transform:lowercase;
-
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
   line-height:1;
-  transition:opacity .15s ease, color .15s ease;
+
+  transition:.15s ease;
 }
 
 .pf-notes .pf-num{
-  font-weight:600;
-  letter-spacing:.6px;
+  font-size:10px;
+  font-weight:700;
+  color:#fff;
 }
 
 .pf-notes .pf-lab{
-  opacity:.75;
+  opacity:.5;
 }
 
+/* ICON BUTTONS */
 .pf-btn{
-  width:20px;
-  height:20px;
+  width:18px;
+  height:18px;
 
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
   text-decoration:none;
-  color:{color:text};
-  opacity:.6;
+  color:rgba(255,255,255,.68);
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:4px;
 
-  transition:opacity .15s ease, color .15s ease;
+  transition:.15s ease;
 }
 
 .pf-btn svg{
+  width:10px;
+  height:10px;
+}
+
+/* HOVER */
+.pf-notes:hover{
+  color:#fff;
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.12);
+}
+
+.pf-btn:hover{
+  color:{color:Accent};
+  background:rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.14);
+}
+
+/* CLICK FEEL */
+.pf-btn:active,
+.pf-notes:active{
+  transform:scale(.95);
+}
+
+.notsi .npf-reblog .rb-icon{
   width:13px;
   height:13px;
   display:block;
+  fill:none;
 }
 
-.pf-notes:hover,
-.pf-btn:hover{
-  opacity:1;
-  color:{color:Accent};
+.notsi .npf-reblog .rb-icon path{
+  stroke:currentColor;
+  stroke-width:.85;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
 }
+{/block:IndexPage}
 
+/* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
 .perma{
   width:700px;
   margin:0 0 100px 0px;
@@ -736,10 +831,14 @@ ol.notes li.reply:before{
   display:none !important;
 }
 
+
+/* ÁUDIOS */
 .album{ margin-left: 20px; }
 .player{ opacity:1; pointer-events:auto; margin:0; }
 .art, .track{ display:none; }
 
+
+/* DESIGN DO POST DE ASK */
 .ask-wrap{ margin-bottom:14px; }
 
 .asker{
@@ -810,6 +909,8 @@ ol.notes li.reply:before{
 
 .bubble a:hover{ opacity:1; }
 
+
+/* CITAÇÃO */
 .quote{
   text-align:justify;
   line-height:15px;
@@ -884,6 +985,8 @@ span.chats{
   border-bottom:1px solid #eee;
 }
 
+
+/* LINKS */
 .host{ margin-top:5px; margin-bottom:20px; }
 .host a{
   background:#fff;
@@ -921,6 +1024,8 @@ span.chats{
   border-top:1px solid #eee;
 }
 
+
+/* ---------------- DETALHES NPF — IMPORTANTE! ---------------- */
 .caption,
 .caption p{
   margin-top:0px !important;
@@ -970,6 +1075,7 @@ a.tumblr_blog{ display:none !important; }
   content:"" !important;
 }
 
+/* ---------------- TOOLTIP + VOLTAR AO TOPO ---------------- */
 #s-m-t-tooltip{
   position:absolute;
   max-width:220px;
@@ -985,7 +1091,7 @@ a.tumblr_blog{ display:none !important; }
   color:#fff;
   line-height:1.2;
   opacity:0;
-  z-index:99999;
+  z-index: 999999999999;
   pointer-events:none;
   transform: translateY(4px);
   transition: opacity .16s ease, transform .16s ease;
@@ -1001,433 +1107,663 @@ a.tumblr_blog{ display:none !important; }
     0 8px 18px rgba(0,0,0,.45);
 }
 
-#ltop:link, #ltop:visited{
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  width: 35px;
-  height: 35px;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: {color:accent};
-  line-height: 45px;
-  text-align: center;
-  display: none;
-  transition: 1s;
-  z-index: 100;
+#ltop{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:35px;
+  height:35px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:{color:accent};
+  text-decoration:none;
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:opacity .3s ease, transform .3s ease;
+  transform:translateY(6px);
+
+  z-index:100;
 }
+
+#ltop.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+
+#ltop svg{
+  display:block;
+  width:15px;
+  height:15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap');
 
 :root{
-  --sb-w: 180px;
-  --sb-pad: 16px;
-  --sb-top-pad: 30px;  
+  --header-bg: rgba(8,8,8,0.72);
+  --header-bg-strong: rgba(14,14,14,0.88);
+  --header-blur: blur(20px) saturate(155%);
+  --sharp-radius: 16px;
 
-  --sb-bg: rgba(20, 20, 20, 0.95);
-  --sb-border: rgba(255,255,255,.08);
-  --sb-text: rgba(255,255,255,.9);
-  --glitch-pink: #ff44e6;
-  --glitch-blue: #4afff5;
-
-  --sb-font: "Rajdhani", sans-serif;
+  --text-color: rgba(255,255,255,0.90);
+  --muted: rgba(255,255,255,0.46);
+  --line: rgba(255,255,255,0.10);
+  --line-soft: rgba(255,255,255,0.14);
+  --soft-glow: rgba(255,255,255,0.08);
 }
 
-#sidebar, #sidebar *{ box-sizing:border-box; }
-
-/* ESTRUTURA PRINCIPAL */
-#sidebar{
-  position:fixed;
-  top:0;
-  right:0;
-  left:auto;
-  width: var(--sb-w);
-  height: 100vh;
-  z-index:9999;
-  user-select:none;
-
-  background: var(--sb-bg);
-  border-left: 1px solid var(--sb-border);
-  border-right: 0;
-  backdrop-filter: blur(10px);
-
-  overflow-y:auto;
-  overflow-x:hidden;
-
-  scrollbar-width: thin;
-  color: var(--sb-text);
+#sharp-header{
+  position: fixed;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  width: auto;
+  min-width: 910px;
+  max-width: 94vw;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(18,18,18,0.82), rgba(6,6,6,0.72));
+  backdrop-filter: var(--header-blur);
+  -webkit-backdrop-filter: var(--header-blur);
+  border: 1px solid var(--line);
+  border-radius: var(--sharp-radius);
+  box-shadow:
+    0 18px 48px rgba(0,0,0,0.62),
+    0 0 18px rgba(255,255,255,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.02);
+  overflow: visible;
+  animation: headerDrift 7s ease-in-out infinite;
 }
 
-#sidebar::-webkit-scrollbar{ width: 8px; }
-#sidebar::-webkit-scrollbar-thumb{
-  background: rgba(255,255,255,.12);
-  border-radius: 10px;
-}
-
-#sidebar::-webkit-scrollbar-track{ background: transparent; }
-
-#sidebar .sb-card{
-  width:100%;
-  padding: var(--sb-top-pad) var(--sb-pad) var(--sb-pad);
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-
-  background: transparent;
-  border:0;
-  border-radius:0;
-  box-shadow:none;
-  overflow:visible;
-  position:relative;
-  min-height: 100%;  
-}
-
-#sidebar .sb-time{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin: 0 0 12px 0;  
-
-  font-family:"Orbitron", sans-serif;
-  font-size: 11px;  
-  letter-spacing: 3px;
-  text-transform:uppercase;
-
-  color: var(--sb-text);
-  opacity:.7;
-  line-height:1;
-}
-
-#sidebar .sb-counter{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin: 0 0 12px 0; 
-
-  font-family:"Orbitron", sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform:uppercase;
-
-  color: var(--sb-text);
-  opacity:.6;
-  line-height:1;
-}
-
-#sidebar .sb-counter span {
-  color: var(--sb-text);   
-  font-weight: 400;
-  margin-left: 4px;
-}
-
-#sidebar .sb-vertical-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 35px; 
-}
-
-#sidebar .sb-vertical-title {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 25px;  
-  letter-spacing: 3px;
-}
-
-#sidebar .sb-title-line {
-  font-family: "Orbitron", sans-serif;
-  font-size: 14px;  
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.4;
-  white-space: nowrap;
-  color: var(--sb-text);
-  opacity: 0.95;
-  position: relative;
-}
-
-#sidebar .glitch {
-  position: relative;
-  animation: glitch-skew 3s infinite linear alternate-reverse;
-}
-
-#sidebar .glitch::before,
-#sidebar .glitch::after {
-  content: attr(data-text);
+#sharp-header::before{
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--sb-bg);
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.06) 0%,
+      rgba(255,255,255,0.02) 28%,
+      transparent 60%,
+      rgba(255,255,255,0.03) 100%
+    );
+  opacity: .9;
 }
 
-#sidebar .glitch::before {
-  animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-  color: var(--glitch-pink);
-  z-index: -1;
-  text-shadow: 2px 0 currentColor;
+#sharp-header::after{
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  opacity: .35;
 }
 
-#sidebar .glitch::after {
-  animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-  color: var(--glitch-blue);
-  z-index: -2;
-  text-shadow: -2px 0 currentColor;
+@keyframes headerDrift{
+  0%,100%{ transform: translateX(-50%) translateY(0); }
+  50%{ transform: translateX(-50%) translateY(-2px); }
 }
 
-@keyframes glitch-anim-1 {
-  0% { clip-path: inset(20% 0 30% 0); transform: translate(-2px, 2px); opacity: 0.8; }
-  20% { clip-path: inset(50% 0 20% 0); transform: translate(-3px, 1px); opacity: 0.9; }
-  40% { clip-path: inset(5% 0 70% 0); transform: translate(-2px, -2px); opacity: 0.8; }
-  60% { clip-path: inset(70% 0 15% 0); transform: translate(-3px, -1px); opacity: 0.7; }
-  80% { clip-path: inset(15% 0 65% 0); transform: translate(-2px, 3px); opacity: 0.9; }
-  100% { clip-path: inset(45% 0 35% 0); transform: translate(-2px, 1px); opacity: 0.8; }
-}
-
-@keyframes glitch-anim-2 {
-  0% { clip-path: inset(60% 0 15% 0); transform: translate(2px, -2px); opacity: 0.7; }
-  20% { clip-path: inset(70% 0 20% 0); transform: translate(3px, -1px); opacity: 0.6; }
-  40% { clip-path: inset(45% 0 40% 0); transform: translate(2px, 3px); opacity: 1; }
-  60% { clip-path: inset(20% 0 60% 0); transform: translate(3px, 2px); opacity: 0.8; }
-  80% { clip-path: inset(10% 0 75% 0); transform: translate(2px, -1px); opacity: 0.9; }
-  100% { clip-path: inset(65% 0 20% 0); transform: translate(2px, 2px); opacity: 0.8; }
-}
-
-@keyframes glitch-skew {
-  0% { transform: skew(0deg); }
-  40% { transform: skew(0.5deg); }
-  60% { transform: skew(-0.5deg); }
-  100% { transform: skew(0deg); }
-}
-
-#sidebar .sb-head {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.hd-inner{
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 18px;
 }
 
-#sidebar .sb-icon{
-    margin-top:20px;
-  width: 75px;  
-  height: 75px;
+/* LEFT */
+.hd-left{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* AVATAR */
+.hd-avatar-link{
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   border-radius: 50%;
-  overflow: hidden;
-
-  border: 2px solid rgba(255,255,255,.15);
-  box-shadow: 0 8px 20px rgba(0,0,0,.4);
-  display: block;
-  transition: all 0.3s ease;
-  filter: grayscale(30%);
-}
-
-#sidebar .sb-icon:hover {
-  transform: scale(1.03);
-  border-color: rgba(255,255,255,.3);
-  filter: grayscale(0%);
-  box-shadow: 0 0 25px rgba(255,255,255,.15);
-}
-
-#sidebar .sb-icon img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-#sidebar .sb-desc{
-  margin: 0 0 30px 0;  
-  font-family: "Rajdhani", sans-serif;
-  font-size: 10px;
-  line-height: 1.4;
-  letter-spacing: 1.5px;
-  opacity: 0.6;
-  text-transform: uppercase;
-  max-width: 140px;
-  word-break: break-word;
-  display: block;
   overflow: visible;
 }
 
-#sidebar .sb-divider{
-  width: 40px;
-  margin: 0px 0 25px 0; 
-  height: 1px;
-  background: rgba(255,255,255,.2);
-}
-
-/* NAVIGATION */
-#sidebar .sb-body{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  margin-bottom: auto; 
-}
-
-#sidebar #nav-links{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap: 15px;  
-  margin-bottom: 30px;  
-}
-
-#sidebar #nav-links a.sb-nav-btn{
-  width: 40px;  
-  height: 24px;
-  padding:0;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
-  border-radius:2px;
-
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.05);
-
-  color: var(--sb-text);
-  opacity:.8;
-
-  box-shadow: none;
-  backdrop-filter: blur(4px);
-
-  transition: all .15s ease;
+.hd-avatar-link img{
   position: relative;
-  overflow: hidden;
+  z-index: 5;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.74);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.52),
+    0 0 12px rgba(255,255,255,0.04),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
 }
 
-#sidebar #nav-links a.sb-nav-btn:hover {
-  background: rgba(255,255,255,.15);
-  opacity: 1;
-  transform: translateY(-2px);  
-  border-color: rgba(255,255,255,.1);
+.avatar-glow,
+.avatar-orbit{
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-#sidebar #nav-links .sb-nav-num{
+.avatar-glow{
+  inset: -14px;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 34%, rgba(255,255,255,0) 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.avatar-orbit{
+  inset: -6px;
+  z-index: 3;
+}
+
+.avatar-orbit::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 16%,
+    rgba(255,255,255,0.85) 24%,
+    transparent 32%,
+    transparent 56%,
+    rgba(255,255,255,0.40) 64%,
+    transparent 72%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.orbit-a::before{
+  animation: orbitSpin 7s linear infinite;
+  opacity: .85;
+}
+
+.orbit-b{
+  inset: -10px;
+}
+
+.orbit-b::before{
+  animation: orbitSpinReverse 10s linear infinite;
+  opacity: .32;
+}
+
+@keyframes orbitSpin{
+  to{ transform: rotate(360deg); }
+}
+
+@keyframes orbitSpinReverse{
+  to{ transform: rotate(-360deg); }
+}
+
+@keyframes glowPulse{
+  0%,100%{ transform: scale(.97); opacity: .42; }
+  50%{ transform: scale(1.07); opacity: .82; }
+}
+
+/* META */
+.hd-meta{
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hd-title-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.hd-title-wrap{
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hd-title{
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  white-space: nowrap;
+  opacity: .90;
+  text-shadow: 0 0 8px rgba(255,255,255,0.06);
+  animation: titlePulse 5.8s ease-in-out infinite;
+}
+
+.title-line{
+  position: relative;
+  width: 58px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,.34), transparent);
+  opacity: .45;
+  animation: lineBlink 4.2s ease-in-out infinite;
+}
+
+@keyframes titlePulse{
+  0%,100%{ opacity: .72; letter-spacing: 3px; }
+  50%{ opacity: 1; letter-spacing: 3.4px; }
+}
+
+@keyframes lineBlink{
+  0%,100%{ opacity: .24; transform: scaleX(.92); }
+  50%{ opacity: .65; transform: scaleX(1); }
+}
+
+.hd-profile-info{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 27px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 10px rgba(255,255,255,0.015);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+
+.hd-name-text{
+  font-family: "Orbitron", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.hd-verified-badge{
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 0 0 0 rgba(255,255,255,0);
+  animation: badgeGlow 4s ease-in-out infinite;
+}
+
+.hd-verified-badge svg{
+  width: 9px;
+  height: 9px;
+  fill: none;
+  stroke: rgba(255,255,255,0.84);
+  stroke-width: 2;
+}
+
+@keyframes badgeGlow{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  50%{ box-shadow: 0 0 10px 1px rgba(255,255,255,.06); }
+}
+
+.hd-status-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.status-chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  font-family: "Orbitron", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  animation: chipFloat 6s ease-in-out infinite;
+}
+
+.status-chip:nth-child(2){
+  animation-delay: .8s;
+}
+
+.chip-label,
+.online-label{
+  opacity: .52;
+}
+
+.online-dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 0 0 0 rgba(255,255,255,0);
+  animation: dotSignal 2.1s ease-in-out infinite;
+}
+
+@keyframes chipFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-1px); }
+}
+
+@keyframes dotSignal{
+  0%,100%{ transform: scale(1); opacity: .55; box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  50%{ transform: scale(1.18); opacity: 1; box-shadow: 0 0 10px 1px rgba(255,255,255,.10); }
+}
+
+/* RIGHT */
+.hd-right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.hd-click-menu{
+  position: relative;
+}
+
+.hd-trigger{
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 33px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 0 0 rgba(255,255,255,0);
+  font-family: "Orbitron", sans-serif;
+  font-size: 8px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform .22s ease, background .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.hd-trigger:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 0 14px rgba(255,255,255,.03);
+}
+
+.hd-trigger::-webkit-details-marker{
+  display: none;
+}
+
+.hd-dropdown-pane{
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  padding: 12px;
+  background: rgba(6,6,6,0.92);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  box-shadow:
+    0 18px 42px rgba(0,0,0,0.58),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  z-index: 500;
+  animation: paneRise .22s ease;
+}
+
+@keyframes paneRise{
+  from{ opacity: 0; transform: translateY(6px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.hd-info-pane{
+  width: 260px;
+}
+
+.hd-nav-pane{
+  width: 220px;
+}
+
+.hd-desc-wrap{
   font-family: "Rajdhani", sans-serif;
-  font-size:9px;  
-  font-weight:300;
-  letter-spacing:2px;
-  text-transform:uppercase;
-
-  color: var(--sb-text);
-  line-height:1;
-  opacity:.9;
+  font-size: 10px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: rgba(255,255,255,0.86);
 }
 
-#sidebar .sb-player{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top: auto;  
-  margin-bottom: 15px;
-  padding: 12px 0 8px 0;
-  border-top: 1px solid rgba(255,255,255,.08);
+.hd-links-grid{
+  display: grid;
+  gap: 6px;
 }
 
-#sidebar .sb-player-row{
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;  
+.hd-links-grid a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 10px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.88);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
-#sidebar .sb-play,
-#sidebar .sb-pause{
-  position:relative;
-  width: 18px; 
-  height: 18px;
-  padding:0;
+.hd-links-grid a:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.13);
+  box-shadow: 0 0 12px rgba(255,255,255,.03);
+}
 
+.hd-inline-time{
   display:inline-flex;
   align-items:center;
-  justify-content:center;
-
+  margin-left:6px;
+  padding:0 8px;
+  height:18px;
   border-radius:999px;
-  border:1px solid rgba(255,255,255,.1);
-  background: rgba(255,255,255,.08);
-
-  cursor:pointer;
-  -webkit-appearance:none;
-  appearance:none;
-
-  box-shadow: none;
-  transition: all .15s ease;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  font-family:"Orbitron", sans-serif;
+  font-size:7px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.72);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-#sidebar .sb-play:hover,
-#sidebar .sb-pause:hover{
-  background: rgba(255,255,255,.15);
-  transform: scale(1.08);
+.hd-music-player{
+  width:214px;
+  min-width:214px;
+  max-width:214px;
+  flex:0 0 214px;
 }
 
-#sidebar .sb-play .material-icons,
-#sidebar .sb-pause .material-icons{
-  font-size: 10px;
-  line-height:1;
-  display:block;
-  color: var(--sb-text);
-  opacity:.9;
+.player-inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:22px 17px minmax(0,1fr);
+  align-items:center;
+  column-gap:4px;
+  height:35px;
+  width:100%;
+  padding:0 9px 0 6px;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 0 1px rgba(255,255,255,0.01);
+  box-sizing:border-box;
 }
 
-#sidebar .sb-track{
-  min-width:0;
+.single-play-btn,
+.player-next-btn{
+  position:relative;
+  z-index:3;
+  border:none;
+  background:#000;
   display:flex;
   align-items:center;
   justify-content:center;
-  line-height:1;
-  white-space:nowrap;
+  cursor:pointer;
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.34),
+    0 0 8px rgba(255,255,255,0.03);
+  transition:transform .2s ease, opacity .2s ease;
+  flex:0 0 auto;
 }
 
-#sidebar .sb-song,
-#sidebar .sb-artist{
-  font-family:"Rajdhani", sans-serif;
-  font-size:8px;  
-  font-weight:500;
-  letter-spacing:1.5px;
+.single-play-btn:hover,
+.player-next-btn:hover{
+  transform:scale(1.06);
+}
+
+.single-play-btn{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+}
+
+.player-next-btn{
+  width:17px;
+  height:17px;
+  border-radius:50%;
+}
+
+.single-play-btn i,
+.player-next-btn i{
+  color:#fff;
+  font-size:11px !important;
+  line-height:1;
+}
+
+.single-play-btn i:last-child{
+  display:none;
+}
+
+.single-play-btn.is-playing i:first-child{
+  display:none;
+}
+
+.single-play-btn.is-playing i:last-child{
+  display:block;
+}
+
+.track-details{
+  position:relative;
+  z-index:3;
+  min-width:0;
+  max-width:100%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+  font-family:"Orbitron", sans-serif;
   text-transform:uppercase;
-  color: var(--sb-text);
+  line-height:1.02;
+}
+
+.track-name{
+  display:block;
+  width:100%;
+  max-width:100%;
+  font-size:8px;
+  letter-spacing:1.2px;
+  color:rgba(255,255,255,0.90);
+  white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+}
+
+.track-artist{
+  display:block;
+  width:100%;
+  max-width:100%;
+  margin-top:2px;
+  font-size:7px;
+  letter-spacing:.9px;
+  color:rgba(255,255,255,0.48);
   white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-#sidebar .sb-song{ 
-  opacity:.8; 
-  max-width:90px; 
-  font-weight: 600;
+.freq-bars{
+  position:absolute;
+  left:50px;
+  right:7px;
+  bottom:4px;
+  height:4px;
+  opacity:.42;
+  background:repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.12) 0 3px,
+    transparent 3px 6px
+  );
+  animation:freqMove 1s ease-in-out infinite alternate;
+  pointer-events:none;
 }
 
-#sidebar .sb-artist{ 
-  opacity:.5; 
-  max-width:70px; 
+@keyframes freqMove{
+  0%{ transform:scaleX(.92); }
+  100%{ transform:scaleX(1); }
 }
 
-#sidebar .sb-artist::before{ 
-  content:"—"; 
-  margin:0 5px; 
-  opacity:.3; 
+.freq-bars.is-paused{
+  animation:none;
+  opacity:.18;
 }
 
-#sidebar .sb-footer-spacer {
-  height: 10px;
-  width: 100%;
-}
+/* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
 .posts.has-npf-media .post-footer{
   display:none !important; 
 }
@@ -1480,8 +1816,10 @@ a.tumblr_blog{ display:none !important; }
 }
 
 .posts img{ display:block; width:100%; height:auto; }
+/* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
 </style>
 
+<!-- // PHOTOSETS + DESIGN DE GRID // -->
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
 <script src="https://static.tumblr.com/qudkd6d/Az6nkemqr/pxuphotoset.min.js"></script>
 <script src="//static.tumblr.com/fwgzvyf/Oj1o08f6h/shythemes.vr.js"></script>
@@ -1490,143 +1828,154 @@ a.tumblr_blog{ display:none !important; }
 </head>
 <body>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
-<a href="javascript:;" id="ltop">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.25" stroke="currentColor" width="18" height="18">
-    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+<!-- // VOLTAR AO TOPO // -->
+<a href="#" id="ltop" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="1.6"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       width="14"
+       height="14"
+       aria-hidden="true">
+    <path d="M6 14l6-6 6 6"></path>
   </svg>
 </a>
 
-
 <div class="entry">
-<aside id="sidebar" aria-label="Sidebar">
-  <div class="sb-card">
 
-    <div class="sb-time" id="sbClock">00:00</div>
+<header id="sharp-header">
+  <div class="hd-inner">
 
-    <div class="sb-counter">
-      visits: 
-      <span id="visitorCount">0</span>
-    </div>
-
-    <div class="sb-head">
-      <a class="sb-icon" href="/" aria-label="Home">
-        <img src="{image:Icon}" alt="{Name} icon">
+    <div class="hd-left">
+      <a class="hd-avatar-link" href="/">
+        <span class="avatar-orbit orbit-a"></span>
+        <span class="avatar-orbit orbit-b"></span>
+        <span class="avatar-glow"></span>
+        <img src="{image:Icon}" alt="icon">
       </a>
-    </div>
 
-    <div class="sb-glitch-title glitch" data-text="{title}">{title}</div>
+      <div class="hd-meta">
+        <div class="hd-title-row">
+          <div class="hd-title-wrap">
+            <div class="hd-title" data-text="{Title}">{Title}</div>
 
-    <p class="sb-desc">{description}</p>
+            <!-- ✦ TIME MOVED HERE -->
+            <span class="hd-inline-time">
+              <span id="sbClock">00:00</span>
+            </span>
 
-    <div class="sb-divider"></div>
-
-    <div class="sb-body">
-       <nav id="nav-links" aria-label="Primary navigation">
-
-  {block:IfLink1Title}
-  <a class="sb-nav-btn" href="{text:Link 1}" aria-label="{text:Link 1 Title}" title="{text:Link 1 Title}">
-    <span class="sb-nav-num">.001</span>
-  </a>
-  {/block:IfLink1Title}
-
-  {block:IfLink2Title}
-  <a class="sb-nav-btn" href="{text:Link 2}" aria-label="{text:Link 2 Title}" title="{text:Link 2 Title}">
-    <span class="sb-nav-num">.002</span>
-  </a>
-  {/block:IfLink2Title}
-
-  {block:IfLink3Title}
-  <a class="sb-nav-btn" href="{text:Link 3}" aria-label="{text:Link 3 Title}" title="{text:Link 3 Title}">
-    <span class="sb-nav-num">.003</span>
-  </a>
-  {/block:IfLink3Title}
-
-  {block:IfLink4Title}
-  <a class="sb-nav-btn" href="{text:Link 4}" aria-label="{text:Link 4 Title}" title="{text:Link 4 Title}">
-    <span class="sb-nav-num">.004</span>
-  </a>
-  {/block:IfLink4Title}
-
-</nav>
-
-      {block:ifshowmusicplayer}
-      <div class="sb-player" aria-label="Music player">
-        <div class="sb-player-row">
-
-          <button class="sb-play" type="button" aria-label="Play">
-            <i class="material-icons" aria-hidden="true">play_arrow</i>
-          </button>
-
-          <button class="sb-pause" type="button" aria-label="Pause">
-            <i class="material-icons" aria-hidden="true">pause</i>
-          </button>
-
-          <div class="sb-track">
-            <span class="sb-song">{text:Song Title}</span>
-            <span class="sb-artist">{text:Artist Name}</span>
+            <span class="title-line"></span>
           </div>
 
+          <div class="hd-profile-info">
+            <span class="hd-name-text">{Name}</span>
+            <span class="hd-verified-badge">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
         </div>
 
-        <audio id="audio" src="{text:Audio MP3 Source}" preload="none"></audio>
+        <!-- ✦ STATUS ROW REMOVED ENTIRELY -->
+      </div>
+    </div>
+
+    <div class="hd-right">
+      <details class="hd-click-menu">
+        <summary class="hd-trigger">info</summary>
+        <div class="hd-dropdown-pane hd-info-pane">
+          <div class="hd-desc-wrap">{Description}</div>
+        </div>
+      </details>
+
+      <details class="hd-click-menu">
+        <summary class="hd-trigger">nav</summary>
+        <div class="hd-dropdown-pane hd-nav-pane">
+          <nav class="hd-links-grid">
+            <a href="{text:Link 1}">{text:Link 1 Title}</a>
+            <a href="{text:Link 2}">{text:Link 2 Title}</a>
+            <a href="/archive">ex files</a>
+            <a href="{text:Link 3}">{text:Link 3 Title}</a>
+            <a href="{text:Link 4}">{text:Link 4 Title}</a>
+          </nav>
+        </div>
+      </details>
+
+      {block:ifshowmusicplayer}
+      <div class="hd-music-player">
+        <div class="player-inner">
+
+          <button id="music-toggle" class="single-play-btn">
+            <i class="material-icons">play_arrow</i>
+            <i class="material-icons">pause</i>
+          </button>
+
+          <button id="music-next" class="player-next-btn">
+            <i class="material-icons">skip_next</i>
+          </button>
+
+          <div class="track-details">
+            <span class="track-name" id="track-name">{text:Track 1 Title}</span>
+            <span class="track-artist" id="track-artist">{text:Track 1 Artist}</span>
+          </div>
+
+          <div class="freq-bars" id="freq-bars"></div>
+        </div>
+
+        <audio id="audio" preload="metadata"></audio>
+
+        <script type="application/json" id="playlist-data">
+        [
+          {"title":"{text:Track 1 Title}","artist":"{text:Track 1 Artist}","src":"{text:Track 1 Audio}"},
+          {"title":"{text:Track 2 Title}","artist":"{text:Track 2 Artist}","src":"{text:Track 2 Audio}"},
+          {"title":"{text:Track 3 Title}","artist":"{text:Track 3 Artist}","src":"{text:Track 3 Audio}"},
+          {"title":"{text:Track 4 Title}","artist":"{text:Track 4 Artist}","src":"{text:Track 4 Audio}"},
+          {"title":"{text:Track 5 Title}","artist":"{text:Track 5 Artist}","src":"{text:Track 5 Audio}"}
+        ]
+        </script>
       </div>
       {/block:ifshowmusicplayer}
-
     </div>
+
   </div>
-</aside>
+</header>
 
 <script>
-(function() {
-  function updateClock() {
-    const clockEl = document.getElementById('sbClock');
-    if (!clockEl) return;
+(function(){
+  function updateSBClock(){
+    var clock = document.getElementById("sbClock");
+    if(!clock) return;
 
-    const now = new Date();
-    const options = {
-      timeZone: 'America/Chicago',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true
-    };
-    // toLocaleTimeString returns something like "07:30 PM"
-    const timeString = now.toLocaleTimeString('en-US', options);
-    clockEl.textContent = timeString;
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    clock.textContent = hours + ":" + minutes + " " + ampm;
   }
 
-  updateClock();
-  setInterval(updateClock, 1000);
+  updateSBClock();
+  setInterval(updateSBClock, 1000);
 })();
 </script>
 
-<script>
-(function() {
+<!-- // ÍCONE SVG DOS CONTROLES // -->
+<div class="cc">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
+    <path d="M7.6 6.8a7 7 0 1 0 8.8 0"></path>
+  </svg>
+</div>
 
-  let count = localStorage.getItem('sidebar_visitor_count');
-  if (count === null) {
-    count = 1247; 
-  } else {
-    count = parseInt(count, 10) + 1; 
-  }
-
-  localStorage.setItem('sidebar_visitor_count', count);
-
-  const displayCount = count.toString().padStart(6, '0');
-  const countEl = document.getElementById('visitorCount');
-  if (countEl) {
-    countEl.textContent = displayCount;
-  }
-})();
-</script>
-
-  <div class="cc">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/>
-    </svg>
-  </div>
-
+<!-- // HTML DO CONTAINER DE DESIGN DOS POSTS // -->
   <div id="posts">
 {block:Posts}
 <div class="posts"
@@ -1634,7 +1983,7 @@ data-permalink="{Permalink}"
 data-reblogurl="{ReblogURL}"
 data-via="{ReblogParentURL}"
 data-root="{ReblogRootURL}"
-data-time="{DayOfWeek} {24hour}:{Minutes}{AmPm}"
+data-time="{DayOfWeek} {12Hour}:{Minutes} {AmPm}"
 data-notes="{NoteCountWithLabel}">
 
       {block:Text}    
@@ -1652,45 +2001,51 @@ data-notes="{NoteCountWithLabel}">
 
   <div class="caption">{Body}</div>
 
-      {block:indexpage}
-      <!-- // PERMALINK INFERIOR DO POST // -->
-      <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
+    {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
 
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
 
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
 
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Text}
 
       {block:Quote}
@@ -1706,41 +2061,51 @@ data-notes="{NoteCountWithLabel}">
       
       <div class="quote">{Quote}</div>
       {block:Source}<div class="sourceqt">{Source}</div>{/block:Source}
-      {block:indexpage}
-      <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+      {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
+
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
+
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
+
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Quote}
 
       {block:Chat}
@@ -1765,41 +2130,51 @@ data-notes="{NoteCountWithLabel}">
           {/block:Lines}
         </ul>
       </div>
-      {block:indexpage}
-      <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+      {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
+
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
+
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
+
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Chat}
 
       {block:Link}
@@ -1816,41 +2191,51 @@ data-notes="{NoteCountWithLabel}">
       <div class="links"><a href="{URL}" style="font-weight:bold" {Target} target="_blank">{Name}</a></div>
       {block:Host}<div class="host"><a href="{URL}" {Target} target="_blank">{Host}</a></div>{/block:Host}
       {block:Description}<div class="link-dsc">{Description}</div>{/block:Description}
-      {block:indexpage}
-      <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+      {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
+
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
+
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
+
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Link}
 
       {block:Answer}
@@ -1860,81 +2245,104 @@ data-notes="{NoteCountWithLabel}">
         <div class="answer"><div class="bubble">{Answer}</div></div>
       </div>
       {block:indexpage}
+      <!-- // PERMALINK INFERIOR DO POST // -->
       <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+       {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
+
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
+
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
+
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Answer}
 
       {block:Audio}
       <div class="album">
         {block:AudioPlayer}<div class="player">{AudioPlayerBlack}</div>{/block:AudioPlayer}
       </div>
-            {block:indexpage}
-      <div class="post-footer">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span><span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via / reblogged from" aria-label="Via (Reblog source)">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 8a3 3 0 1 0 0 .01V8z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M17 7a3 3 0 1 0 0 .01V7z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M12 17a3 3 0 1 0 0 .01V17z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M9.4 9.4l3.2 6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M14.8 8.6l-4.2 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 3l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 6H10a4 4 0 0 0-4 4v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 21l-3-3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M5 18h9a4 4 0 0 0 4-4v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M14 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10 14L19 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19 14v4a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      {/block:indexpage}
+       {block:IndexPage}
+<!-- // UPDATED BLACK POST FOOTER // -->
+<div class="post-footer">
+
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
+
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    {/block:RebloggedFrom}
+
+    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+</div>
+{/block:IndexPage}
       {/block:Audio}
 
       {block:Photo}
@@ -1981,7 +2389,8 @@ data-notes="{NoteCountWithLabel}">
         {block:RebloggedFrom}<a href="{ReblogParentURL}"></a>{/block:RebloggedFrom}
         {block:ContentSource}<a href="{SourceURL}"></a>{/block:ContentSource}
       </div>
-
+      
+<!-- // INFORMAÇÕES + NOTAS DA PÁGINA DE PERMALINK DO POST // -->
       {block:PermalinkPage}
       {block:PostNotes}
       <div class="perma">
@@ -2006,6 +2415,7 @@ data-notes="{NoteCountWithLabel}">
   </div>
 </div>
 
+<!-- // SCRIPTS DE ROLAGEM INFINITA — IMPORTANTE! // -->
 {block:IndexPage}
 <script src="https://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
 <script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script>
@@ -2023,7 +2433,6 @@ data-notes="{NoteCountWithLabel}">
   var $container = $('#posts');
   if(!$container.length) return;
 
-  // never init twice
   if($container.data('acInitDone') === 1) return;
   $container.data('acInitDone', 1);
 
@@ -2031,18 +2440,17 @@ data-notes="{NoteCountWithLabel}">
   var resizeObserver = null;
   var activePost = null;
   var activeRoot = null;
-  var scrollTimer = null;
   var restoreRAF = 0;
-  var isScrolling = false;
   var scrollTimeout = null;
   var isLoadingMore = false;
-  var layoutSettling = false;          // still used to block restore, not mouseenter
-  var settlingEndTimer = null;          // timer to end settling period
+  var layoutSettling = false;
 
   /* -----------------------------
      helpers
   ----------------------------- */
-  function safe(fn){ try{ fn(); }catch(e){} }
+  function safe(fn){
+    try{ fn(); }catch(e){}
+  }
 
   function throttle(fn, wait){
     var t = null;
@@ -2066,7 +2474,6 @@ data-notes="{NoteCountWithLabel}">
     $('.posts.ac-hover-on, .ac-hover-root.ac-hover-on').removeClass('ac-hover-on');
     activePost = null;
     activeRoot = null;
-    cancelRestoreRAF();
   }
 
   function activateHoverForRoot($root){
@@ -2077,11 +2484,9 @@ data-notes="{NoteCountWithLabel}">
     if(!$post.length) return;
 
     var post = $post[0];
-
     if(activePost === post && activeRoot === root) return;
 
     clearActiveHover();
-
     activePost = post;
     activeRoot = root;
 
@@ -2135,16 +2540,11 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function restoreHoverUnderPointer(){
-    // Don't restore if we're scrolling
-    if(isScrolling) return;
-    
-    // Don't restore if we don't have valid mouse position
     if(lastMouse.x < 0 || lastMouse.y < 0) return;
-    
-    // Don't restore while loading more posts or layout settling
     if(isLoadingMore || layoutSettling) return;
-    
-    /* keep current hover if pointer is still inside it */
+
+    /* only preserve an already-active hover during scroll / relayout.
+       do not activate a brand new post from stale mouse coordinates. */
     if(activeRoot && document.documentElement.contains(activeRoot)){
       if(pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
         var $still = $(activeRoot);
@@ -2157,14 +2557,7 @@ data-notes="{NoteCountWithLabel}">
       }
     }
 
-    var $root = getHoverRootUnderPointer();
-
-    if(!$root.length){
-      clearActiveHover();
-      return;
-    }
-
-    activateHoverForRoot($root);
+    clearActiveHover();
   }
 
   function scheduleRestore(){
@@ -2183,16 +2576,8 @@ data-notes="{NoteCountWithLabel}">
     });
   }
 
-  // relayout and restore, but do NOT extend settling (used for image loads etc.)
   function relayoutAndRestore(){
     relayout();
-    scheduleRestore();
-  }
-
-  // relayout, restore, AND extend settling if we are still loading more posts
-  function relayoutAndExtendSettling(){
-    relayout();
-    if(isLoadingMore) scheduleEndSettling(200); // shorter extension
     scheduleRestore();
   }
 
@@ -2218,7 +2603,6 @@ data-notes="{NoteCountWithLabel}">
       if(img._acHoverWatchBound) return;
       img._acHoverWatchBound = true;
 
-      // Use relayoutAndRestore (does NOT extend settling)
       img.addEventListener('load', relayoutAndRestore, { once:false });
       img.addEventListener('error', relayoutAndRestore, { once:false });
     });
@@ -2250,7 +2634,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   /* -----------------------------
-     media detection (unchanged)
+     media detection
   ----------------------------- */
   function hasTumblrMediaUrl(str){
     str = (str || '').toLowerCase();
@@ -2317,7 +2701,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   /* -----------------------------
-     plugin inits (safe, unchanged)
+     plugin inits
   ----------------------------- */
   function initPhotosets($scope){
     $scope = ($scope && $scope.length) ? $scope : $(document);
@@ -2479,7 +2863,6 @@ data-notes="{NoteCountWithLabel}">
     }
 
     if($candidate.is('.posts')) return $post;
-
     return $candidate.first();
   }
 
@@ -2577,13 +2960,9 @@ data-notes="{NoteCountWithLabel}">
     }).first();
 
     if($preferred.length) return tightenNPFHoverTarget(cleanHoverTarget($preferred, $post), $post);
-
     return tightenNPFHoverTarget(cleanHoverTarget($ancestor, $post), $post);
   }
 
-  /* -----------------------------
-     pick hover target (unchanged)
-  ----------------------------- */
   function pickHoverTarget($post){
     if(!$post || !$post.length) return $();
 
@@ -2638,12 +3017,64 @@ data-notes="{NoteCountWithLabel}">
     $wanted = tightenNPFHoverTarget($wanted, $post);
 
     if(!$wanted.length) return false;
-
     return $root[0] !== $wanted[0];
   }
 
   /* -----------------------------
-     build overlay node (unchanged)
+     stronger lightbox target finder
+  ----------------------------- */
+  function getFirstLightboxTarget($post){
+    if(!$post || !$post.length) return $();
+
+    var $target = $();
+
+    $target = $post.find(
+      '.photo-slideshow a[href], ' +
+      '.pxu-photo a[href], ' +
+      '.photo-data a[href], ' +
+      '.npf_image a[href], ' +
+      'figure.tmblr-full a[href], ' +
+      '.tmblr-full a[href], ' +
+      'a[href*="media.tumblr.com"], ' +
+      'a[href*="64.media.tumblr.com"], ' +
+      'a[href*="va.media.tumblr.com"]'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
+
+    if($target.length) return $target;
+
+    $target = $post.find(
+      '.photo-slideshow .pxu-photo img, ' +
+      '.photo-slideshow img, ' +
+      '.photo-data img'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
+
+    if($target.length) return $target;
+
+    $target = $post.find(
+      '.npf_image img, ' +
+      'figure.tmblr-full img, ' +
+      '.tmblr-full img'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
+
+    if($target.length) return $target;
+
+    $target = $post.find(
+      '.npf_video_container, .npf_video, video'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
+
+    return $target;
+  }
+
+  /* -----------------------------
+     build overlay node
   ----------------------------- */
   function buildOverlayNode(){
     var tpl = document.getElementById('npf-hover-template');
@@ -2652,18 +3083,21 @@ data-notes="{NoteCountWithLabel}">
     }
 
     return $(
-      '<div class="notsi">' +
-        '<div class="inf">Posted <div class="npf-time"></div></div>' +
+      '<div class="notsi" data-ac-hover-root>' +
+        '<div class="inf">' +
+          '<div class="npf-time" data-ac-time></div>' +
+        '</div>' +
         '<div class="inf2">' +
-          '<a class="npf-reblog" href="#" target="_blank">reblog</a>' +
-          '<a class="npf-permalink" href="#"><span class="npf-notes">notes</span></a>' +
+          '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
+          '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
+          '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
         '</div>' +
       '</div>'
     );
   }
 
   /* -----------------------------
-     inject overlay - with immediate hover check
+     inject overlay
   ----------------------------- */
   function addHoverOverlay($post){
     if(!$post || !$post.length) return;
@@ -2688,14 +3122,9 @@ data-notes="{NoteCountWithLabel}">
 
     var rb  = $post.attr('data-reblogurl') || '#';
     var tm  = $post.attr('data-time') || '';
-    var nts = ($post.attr('data-notes') || '').trim();
 
-    // if already built and still valid, do not tear it down again
-    if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)){
-      return;
-    }
+    if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
 
-    // remove old hover pieces before rebuilding
     if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
       clearActiveHover();
     }
@@ -2714,8 +3143,9 @@ data-notes="{NoteCountWithLabel}">
     var $pmA = $node.find('a.npf-permalink, [data-ac-permalink]').first();
     if($pmA.length) $pmA.attr('href', perma);
 
-    if(nts){
-      $node.find('.npf-notes, [data-ac-notes]').first().text(nts);
+    var $lbA = $node.find('a.npf-lightbox, [data-ac-lightbox]').first();
+    if($lbA.length){
+      $lbA.attr('href', '#');
     }
 
     var $target = pickHoverTarget($post);
@@ -2748,16 +3178,8 @@ data-notes="{NoteCountWithLabel}">
 
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
-    $post.trigger('ac:hoverroot:rebuilt');
 
     killFloatingPermalinkIcons($post, perma);
-
-    // IMMEDIATE HOVER CHECK: if mouse is inside this new root and not loading, activate now
-    if (!isLoadingMore && lastMouse.x >= 0 && lastMouse.y >= 0) {
-      if (pointerInsideElement($target[0], lastMouse.x, lastMouse.y)) {
-        activateHoverForRoot($target);
-      }
-    }
   }
 
   function processPosts($scope){
@@ -2798,75 +3220,67 @@ data-notes="{NoteCountWithLabel}">
   }
 
   /* -----------------------------
-     Settling management
-  ----------------------------- */
-  function endSettling(){
-    layoutSettling = false;
-    isLoadingMore = false;
-    // Force a hover check now that layout is stable
-    restoreHoverUnderPointer();
-  }
-
-  function scheduleEndSettling(delay){
-    if(settlingEndTimer) clearTimeout(settlingEndTimer);
-    settlingEndTimer = setTimeout(function(){
-      settlingEndTimer = null;
-      endSettling();
-    }, delay);
-  }
-
-  /* -----------------------------
-     hover toggler - IMMEDIATE ACTIVATION & DEACTIVATION, BLOCKED DURING SCROLL
+     hover + button events
   ----------------------------- */
   function bindHoverEvents(){
     $doc.off('.acHoverFix');
     $win.off('.acHoverFixWin');
 
-    // Track mouse position
     $doc.on('mousemove.acHoverFix', function(e){
       lastMouse.x = e.clientX;
       lastMouse.y = e.clientY;
-      scheduleRestore();
+
+      if(isLoadingMore || layoutSettling) return;
+
+      var $root = getHoverRootUnderPointer();
+
+      if($root.length){
+        activateHoverForRoot($root);
+      } else {
+        clearActiveHover();
+      }
     });
 
-    // Direct hover on root elements - activation allowed even during layoutSettling, but not during scroll or loading
-    $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(e){
-      if(isScrolling || isLoadingMore) return;  // block during scroll or loading
+    $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
+      if(isLoadingMore || layoutSettling) return;
       activateHoverForRoot($(this));
     });
 
-    // IMMEDIATE deactivation on mouseleave, regardless of layoutSettling
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
       var rel = e.relatedTarget;
-      
-      // If moving to something inside the notsi overlay, keep hover
-      if(rel && $(rel).closest('.notsi').length) {
+
+      if(rel && $(rel).closest('.notsi').length) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
+
+      if(layoutSettling){
+        setTimeout(function(){
+          if(!$(this).find(':hover').length && !$(this).is(':hover')){
+            $(this).removeClass('ac-hover-on');
+            var $post = $(this).closest('.posts');
+            if($post.length) $post.removeClass('ac-hover-on');
+            if(activeRoot === this){
+              activePost = null;
+              activeRoot = null;
+            }
+          }
+        }.bind(this), 50);
         return;
       }
-      
-      // If moving to another ac-hover-root, let that one handle activation
-      if(rel && $(rel).closest('.ac-hover-root').length) {
-        return;
-      }
-      
-      // Immediate clear
+
       $(this).removeClass('ac-hover-on');
+
       var $post = $(this).closest('.posts');
-      if($post.length) {
-        $post.removeClass('ac-hover-on');
-      }
-      
+      if($post.length) $post.removeClass('ac-hover-on');
+
       activePost = null;
       activeRoot = null;
-      cancelRestoreRAF(); // prevent any pending restore
     });
 
-    // Handle overlay hover
     $doc.on('mouseenter.acHoverFix', '.notsi', function(){
-      if(isScrolling || isLoadingMore) return;
-      
+      if(isLoadingMore || layoutSettling) return;
+
       var $root = $(this).parent('.ac-hover-root');
-      if($root.length) {
+      if($root.length){
         activateHoverForRoot($root);
       }
     });
@@ -2874,96 +3288,140 @@ data-notes="{NoteCountWithLabel}">
     $doc.on('mouseleave.acHoverFix', '.notsi', function(e){
       var $root = $(this).parent('.ac-hover-root');
       var rel = e.relatedTarget;
-      
-      // If moving to another part of the root, keep hover
-      if($root.length && rel && $root[0].contains(rel)) {
+
+      if($root.length && rel && $root[0].contains(rel)) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
+
+      if(layoutSettling){
+        setTimeout(function(){
+          if($root.length && !$root.is(':hover') && !$root.find(':hover').length){
+            $root.removeClass('ac-hover-on');
+            var $post = $root.closest('.posts');
+            if($post.length) $post.removeClass('ac-hover-on');
+            if(activeRoot === $root[0]){
+              activePost = null;
+              activeRoot = null;
+            }
+          }
+        }, 50);
         return;
       }
-      
-      // If moving to another ac-hover-root, let that one handle activation
-      if(rel && $(rel).closest('.ac-hover-root').length) {
-        return;
-      }
-      
-      if($root.length) {
+
+      if($root.length){
         $root.removeClass('ac-hover-on');
         var $post = $root.closest('.posts');
-        if($post.length) {
-          $post.removeClass('ac-hover-on');
-        }
+        if($post.length) $post.removeClass('ac-hover-on');
         activePost = null;
         activeRoot = null;
-        cancelRestoreRAF();
       }
     });
 
-    // Handle scroll - shorter timeout and immediate restore after stop
+    $doc.on('click.acHoverFix', '.notsi .npf-lightbox, .notsi [data-ac-lightbox]', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $post = $(this).closest('.posts');
+      if(!$post.length){
+        $post = $(this).closest('.ac-hover-root').closest('.posts');
+      }
+      if(!$post.length) return;
+
+      var $target = getFirstLightboxTarget($post);
+      if(!$target.length) return;
+
+      if($target.is('a')){
+        $target[0].dispatchEvent(new MouseEvent('click', {
+          bubbles: true,
+          cancelable: true,
+          view: window
+        }));
+        return;
+      }
+
+      $target[0].dispatchEvent(new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      }));
+
+      setTimeout(function(){
+        if($target.closest('.pxu-photo').length){
+          var wrap = $target.closest('.pxu-photo')[0];
+          if(wrap){
+            wrap.dispatchEvent(new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window
+            }));
+          }
+        }
+
+        if($target.closest('.photo-data').length){
+          var pdata = $target.closest('.photo-data')[0];
+          if(pdata){
+            pdata.dispatchEvent(new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window
+            }));
+          }
+        }
+
+        if($target.closest('.npf_image, figure.tmblr-full, .tmblr-full').length){
+          var npfWrap = $target.closest('.npf_image, figure.tmblr-full, .tmblr-full')[0];
+          if(npfWrap){
+            npfWrap.dispatchEvent(new MouseEvent('click', {
+              bubbles: true,
+              cancelable: true,
+              view: window
+            }));
+          }
+        }
+      }, 0);
+    });
+
     $win.on('scroll.acHoverFixWin', function(){
-      isScrolling = true;
-      
-      if(scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-      
+      if(scrollTimeout) clearTimeout(scrollTimeout);
+
       scrollTimeout = setTimeout(function(){
-        isScrolling = false;
-        scrollTimeout = null;
-        
-        // Immediately check hover after scrolling stops
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling) {
-          restoreHoverUnderPointer();
+        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
+          scheduleRestore();
         }
-        // Also schedule a restore for safety
-        scheduleRestore();
-      }, 50); // reduced to 50ms
+      }, 100);
     });
 
-    // Handle wheel
     $doc.on('wheel.acHoverFix', function(){
-      isScrolling = true;
-      
-      if(scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-      
+      if(scrollTimeout) clearTimeout(scrollTimeout);
+
       scrollTimeout = setTimeout(function(){
-        isScrolling = false;
-        scrollTimeout = null;
-        
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling) {
-          restoreHoverUnderPointer();
+        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
+          scheduleRestore();
         }
-        scheduleRestore();
-      }, 50);
+      }, 100);
     });
 
-    // Handle resize
     $win.on('resize.acHoverFixWin', throttle(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      relayoutAndRestore();  // no settling extension
+      relayout();
     }, 20));
 
-    // Handle mouse leaving the document
     $doc.on('mouseleave.acHoverFix', function(e){
       if(e.target === document || e.target === document.documentElement || e.target === document.body){
         clearActiveHover();
       }
     });
 
-    // Handle window blur
     $win.on('blur.acHoverFixWin', function(){
       clearActiveHover();
     });
 
-    // Handle visibility change
     document.addEventListener('visibilitychange', function(){
       if(document.hidden){
         clearActiveHover();
       }
     }, { passive:true });
 
-    // Handle touch
     document.addEventListener('touchstart', function(){
       clearActiveHover();
     }, { passive:true });
@@ -2974,7 +3432,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   /* -----------------------------
-     Masonry + Infinite Scroll - WITH SMARTER SETTLING
+     Masonry + Infinite Scroll
   ----------------------------- */
   function initMasonryIfPresent(){
     if(!$.fn.masonry) return;
@@ -2989,7 +3447,7 @@ data-notes="{NoteCountWithLabel}">
           transitionDuration: 0
         });
 
-        relayoutAndRestore();
+        relayout();
 
         setTimeout(function(){
           processUnprocessedPosts();
@@ -3042,9 +3500,11 @@ data-notes="{NoteCountWithLabel}">
       var $new = $(newElements);
       if(!$new.length) return;
 
-      // Set loading flag to prevent hover interference
       isLoadingMore = true;
       layoutSettling = true;
+
+      var hadActiveHover = activePost !== null;
+      var savedActiveRoot = activeRoot;
 
       $new.removeClass('is-ready');
 
@@ -3059,36 +3519,44 @@ data-notes="{NoteCountWithLabel}">
           safe(function(){
             $container.masonry('appended', $new);
           });
-          // Use extending version for the initial masonry relayout
-          relayoutAndExtendSettling();
+          relayout();
         }
 
         setTimeout(function(){
           $new.addClass('is-ready');
         }, 80);
 
-        // Follow‑up relayouts – also extend settling because layout may still shift
         setTimeout(function(){
           processUnprocessedPosts();
           rebuildUnstablePosts($new);
-          relayoutAndExtendSettling();
+          relayoutAndRestore();
+
+          setTimeout(function(){
+            layoutSettling = false;
+            isLoadingMore = false;
+
+            if(hadActiveHover && savedActiveRoot && lastMouse.x >= 0 && lastMouse.y >= 0){
+              setTimeout(function(){
+                restoreHoverUnderPointer();
+              }, 50);
+            } else if(lastMouse.x >= 0 && lastMouse.y >= 0){
+              scheduleRestore();
+            }
+          }, 150);
         }, 140);
 
         setTimeout(function(){
           processUnprocessedPosts();
           rebuildUnstablePosts($new);
-          relayoutAndExtendSettling();
+          relayoutAndRestore();
         }, 420);
 
         setTimeout(function(){
           processUnprocessedPosts();
           rebuildUnstablePosts($new);
-          relayoutAndExtendSettling();
+          relayoutAndRestore();
         }, 900);
       };
-
-      // Initial settling end scheduled (300ms, extended by relayoutAndExtendSettling)
-      scheduleEndSettling(300);
 
       if($new.imagesLoaded){
         $new.imagesLoaded(function(){ finish(); });
@@ -3140,45 +3608,94 @@ data-notes="{NoteCountWithLabel}">
 <script>
 (function(){
   var audio = document.getElementById('audio');
-  if(!audio) return;
+  var playBtn = document.getElementById('music-toggle');
+  var nextBtn = document.getElementById('music-next');
+  var nameEl = document.getElementById('track-name');
+  var artistEl = document.getElementById('track-artist');
+  var bars = document.getElementById('freq-bars');
+  var dataEl = document.getElementById('playlist-data');
 
-  var wrap = document.querySelector('#sidebar .sb-player');
-  if(!wrap) return;
+  if(!audio || !playBtn || !nextBtn || !nameEl || !artistEl || !dataEl) return;
 
-  var playBtn = wrap.querySelector('.sb-play');
-  var pauseBtn = wrap.querySelector('.sb-pause');
+  var playlist = [];
+  try{
+    playlist = JSON.parse(dataEl.textContent.trim());
+  }catch(e){
+    playlist = [];
+  }
+
+  if(!playlist.length) return;
+
+  var index = 0;
+
+  function loadTrack(i, autoplay){
+    if(i < 0) i = 0;
+    if(i >= playlist.length) i = 0;
+    index = i;
+
+    var track = playlist[index];
+    audio.src = track.src;
+    nameEl.textContent = track.title || '';
+    artistEl.textContent = track.artist || '';
+
+    if(autoplay){
+      audio.play().catch(function(){});
+    }else{
+      audio.load();
+      setState(false);
+    }
+  }
 
   function setState(playing){
-    if(playBtn) playBtn.style.display = playing ? 'none' : 'inline-flex';
-    if(pauseBtn) pauseBtn.style.display = playing ? 'inline-flex' : 'none';
+    playBtn.classList.toggle('is-playing', playing);
+    if(bars){
+      bars.classList.toggle('is-paused', !playing);
+    }
   }
 
-  if(playBtn){
-    playBtn.addEventListener('click', function(e){
-      e.preventDefault();
-      audio.play();
-    });
-  }
-
-  if(pauseBtn){
-    pauseBtn.addEventListener('click', function(e){
-      e.preventDefault();
+  function togglePlay(){
+    if(audio.paused){
+      audio.play().catch(function(){});
+    }else{
       audio.pause();
-    });
+    }
   }
 
-  audio.addEventListener('play', function(){ setState(true); });
-  audio.addEventListener('pause', function(){ setState(false); });
-  audio.addEventListener('ended', function(){ setState(false); });
+  function nextTrack(autoplay){
+    index = (index + 1) % playlist.length;
+    loadTrack(index, autoplay);
+  }
 
-  setState(!audio.paused);
+  playBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    togglePlay();
+  });
+
+  nextBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    nextTrack(true);
+  });
+
+  audio.addEventListener('play', function(){
+    setState(true);
+  });
+
+  audio.addEventListener('pause', function(){
+    setState(false);
+  });
+
+  audio.addEventListener('ended', function(){
+    nextTrack(true);
+  });
+
+  loadTrack(0, false);
 })();
 </script>
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
-<script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
 <script>feather.replace()</script>
 
+<!-- // SCROLLBAR SCRIPT // -->
 <script>
 (function(){
   var t;
@@ -3192,28 +3709,157 @@ data-notes="{NoteCountWithLabel}">
 })();
 </script>
 
+<!-- // DESIGN HTML DO HOVER DO PERMALINK DO POST // -->
 {block:IndexPage}
 <template id="npf-hover-template">
   <div class="notsi" data-ac-hover-root>
-
     <div class="inf">
-      <span class="npf-time" data-ac-time></span>
-
-      <div class="divider"></div>
-
-      <a class="npf-reblog" data-ac-reblog href="#">reblog</a>
-
-      <div class="divider"></div>
-
-      <a class="npf-permalink" data-ac-permalink href="#">
-        <span class="npf-notes" data-ac-notes>notes</span>
-      </a>
+      <div class="npf-time" data-ac-time></div>
     </div>
 
+    <div class="inf2">
+      <a class="npf-reblog" data-ac-reblog href="#" aria-label="Reblog">
+  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="rb-icon">
+    <path d="M3 5h6l-2-2M13 11H7l2 2"></path>
+  </svg>
+</a>
+
+      <a class="npf-permalink" data-ac-permalink href="#" aria-label="Permalink">
+        <i class="ph ph-link-simple-horizontal"></i>
+      </a>
+
+      <a class="npf-lightbox" data-ac-lightbox href="#" aria-label="Lightbox">
+        <i class="ph ph-arrows-out"></i>
+      </a>
+    </div>
   </div>
 </template>
 {/block:IndexPage}
+<!-- // END: DESIGN HTML DO HOVER DO PERMALINK DO POST // -->
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function cleanNoteCounts(scope) {
+    (scope || document).querySelectorAll(".npf-notes[data-ac-notes]").forEach(function(el) {
+      var raw = (el.textContent || "").trim();
+      var match = raw.match(/[\d.,]+(?:[KMB])?/i);
+      if (match) {
+        el.textContent = match[0];
+      }
+    });
+  }
+
+  cleanNoteCounts();
+
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === "childList") {
+        mutation.addedNodes.forEach(function(node) {
+          if (node.nodeType === 1) cleanNoteCounts(node);
+        });
+      }
+      if (mutation.type === "characterData") {
+        cleanNoteCounts(mutation.target.parentNode);
+      }
+    });
+  });
+
+  observer.observe(document.body, {
+    subtree: true,
+    childList: true,
+    characterData: true
+  });
+});
+</script>
+
+<script>
+(function() {
+  var el = document.getElementById("RealOnlineCount");
+  if (!el) return;
+
+  // Expanded list of possible "online user" counts – you can adjust these
+  var counts = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 27];
+
+  function updateCounter() {
+    // Pick a random value from the counts array
+    var randomIndex = Math.floor(Math.random() * counts.length);
+    var newCount = counts[randomIndex];
+    el.textContent = newCount;
+  }
+
+  // Set the initial value
+  updateCounter();
+
+  // Update at random intervals between 3000ms and 7000ms (3–7 seconds)
+  function scheduleUpdate() {
+    var interval = Math.floor(Math.random() * 4000) + 3000; // 3000–7000 ms
+    setTimeout(function() {
+      updateCounter();
+      scheduleUpdate(); // Schedule the next update
+    }, interval);
+  }
+
+  scheduleUpdate();
+})();
+</script>
+
+
+<script>
+(function(){
+  var bubble = document.querySelector('.cc');
+  if(!bubble) return;
+
+  var topPos = 22;
+  var rightPos = 22;
+  var size = 44;
+
+  document.addEventListener('mousemove', function(e){
+    var withinX = e.clientX >= (window.innerWidth - rightPos - size) &&
+                  e.clientX <= (window.innerWidth - rightPos);
+
+    var withinY = e.clientY >= topPos &&
+                  e.clientY <= (topPos + size);
+
+    if(withinX && withinY){
+      bubble.classList.add('is-hover');
+    } else {
+      bubble.classList.remove('is-hover');
+    }
+  });
+
+  document.addEventListener('mouseleave', function(){
+    bubble.classList.remove('is-hover');
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('ltop');
+  if(!btn) return;
+
+  function toggleTopBtn(){
+    if(window.pageYOffset > 200){
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', toggleTopBtn);
+  toggleTopBtn();
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+})();
+</script>
+
+<!-- // KEEP // -->
 {block:IndexPage}
 <div id="pagination" style="display:none;">
   {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
