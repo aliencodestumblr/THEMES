@@ -35,15 +35,17 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="image:Icon" content=""/>
 
 <!-- // CONTROLES DE COR // -->
-<meta name="color:Accent" content="#ffffff"/>
-<meta name="color:Borders" content="#000000"/>
-<meta name="color:Text" content="#ffffff" />
-<meta name="color:Links" content="#ffffff" />
-<meta name="color:Links Hover" content="#ffffff" />
-<meta name="color:Ask Background" content="#000000"/>
-<meta name="color:Ask Text" content="#ffffff"/>
-<meta name="color:Ask Border" content="#000000"/>
-<meta name="color:Answer Background" content="#111111"/>
+<meta name="color:Accent" content="#858b94"/>
+<meta name="color:Borders" content="#EEEEEE"/>
+<meta name="color:Text" content="#858b94" />
+<meta name="color:Links" content="#858b94" />
+<meta name="color:Links Hover" content="#858b94" />
+<meta name="color:Notes Color" content="#858b94" />
+<meta name="color:Blog Title" content="#858b94" />
+<meta name="color:Ask Background" content="#f4f4f4"/>
+<meta name="color:Ask Text" content="#bababa"/>
+<meta name="color:Ask Border" content="#eeeeee"/>
+<meta name="color:Answer Background" content="#444444"/>
 <meta name="color:Answer Text" content="#ffffff"/>
 <meta name="color:Answer Border" content="#000000"/>
 
@@ -63,25 +65,25 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="text:Link 4 Title" content="spotify"/>
 
 <!-- // MUSIC PLAYER PLAYLIST CONFIG // -->
-<meta name="text:Track 1 Title" content="Loretta Young silks">
-<meta name="text:Track 1 Artist" content="Sneakerpimps">
-<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxMzM0NTQ1Xw/Loretta%20Young%20Silks%20-%20sneakerpimps.mp3">
+<meta name="text:Track 1 Title" content="Lover, Please Stay (Live)">
+<meta name="text:Track 1 Artist" content="Nothing But Thieves">
+<meta name="text:Track 1 Audio" content="https://rhizo.gitlab.io/m/Lover_Please_Stay_-_Live.mp3">
 
-<meta name="text:Track 2 Title" content="Semana Satán">
-<meta name="text:Track 2 Artist" content="Uniforms">
-<meta name="text:Track 2 Audio" content="https://od.lk/s/MzlfODk2ODIyODFf/Semana%20Sata%CC%81n%20-%20Uniforms.mp3">
+<meta name="text:Track 2 Title" content="A Drowning Cry">
+<meta name="text:Track 2 Artist" content="acloudyskye">
+<meta name="text:Track 2 Audio" content="https://rhizo.gitlab.io/m/A_Drowning_Cry.mp3">
 
-<meta name="text:Track 3 Title" content="Fool 4 You">
-<meta name="text:Track 3 Artist" content="Mr Little Jeans">
-<meta name="text:Track 3 Audio" content="https://od.lk/s/MzlfMTAxMTY0NTU0Xw/Mr%20Little%20Jeans%20-%20Fool%204%20You.mp3">
+<meta name="text:Track 3 Title" content="Thoughts of You">
+<meta name="text:Track 3 Artist" content="Chewing, POP ETC">
+<meta name="text:Track 3 Audio" content="https://rhizo.gitlab.io/m/Thoughts_of_You.mp3">
 
-<meta name="text:Track 4 Title" content="Running Away">
-<meta name="text:Track 4 Artist" content="Washed Out">
-<meta name="text:Track 4 Audio" content="https://od.lk/s/MzlfNjY1NzIxMDFf/Running%20Away%20-%20Washed%20Out.mp3">
+<meta name="text:Track 4 Title" content="Amnésie">
+<meta name="text:Track 4 Artist" content="Nhyx">
+<meta name="text:Track 4 Audio" content="https://rhizo.gitlab.io/m/Amnesie.mp3">
 
-<meta name="text:Track 5 Title" content="Teeth">
-<meta name="text:Track 5 Artist" content="Mallrat">
-<meta name="text:Track 5 Audio" content="https://od.lk/s/MzlfMTAwOTAwMjcyXw/Teeth%20-%20Mallrat.mp3">
+<meta name="text:Track 5 Title" content="Serene Moments">
+<meta name="text:Track 5 Artist" content="redrose">
+<meta name="text:Track 5 Audio" content="https://rhizo.gitlab.io/m/Serene_Moments.mp3">
 
 <!-- // FONTES & ÍCONES // -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1485,6 +1487,23 @@ a.tumblr_blog{ display:none !important; }
   50%{ transform: scale(1.18); opacity: 1; box-shadow: 0 0 10px 1px rgba(255,255,255,.10); }
 }
 
+.hd-inline-time{
+  display:inline-flex;
+  align-items:center;
+  margin-left:6px;
+  padding:0 8px;
+  height:18px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  font-family:"Orbitron", sans-serif;
+  font-size:7px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.72);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
 /* RIGHT */
 .hd-right{
   display: flex;
@@ -1599,23 +1618,6 @@ a.tumblr_blog{ display:none !important; }
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.13);
   box-shadow: 0 0 12px rgba(255,255,255,.03);
-}
-
-.hd-inline-time{
-  display:inline-flex;
-  align-items:center;
-  margin-left:6px;
-  padding:0 8px;
-  height:18px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.08);
-  font-family:"Orbitron", sans-serif;
-  font-size:7px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:rgba(255,255,255,0.72);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .hd-music-player{
@@ -1862,7 +1864,6 @@ a.tumblr_blog{ display:none !important; }
           <div class="hd-title-wrap">
             <div class="hd-title" data-text="{Title}">{Title}</div>
 
-            <!-- ✦ TIME MOVED HERE -->
             <span class="hd-inline-time">
               <span id="sbClock">00:00</span>
             </span>
@@ -1880,7 +1881,6 @@ a.tumblr_blog{ display:none !important; }
           </div>
         </div>
 
-        <!-- ✦ STATUS ROW REMOVED ENTIRELY -->
       </div>
     </div>
 
@@ -2245,8 +2245,6 @@ data-notes="{NoteCountWithLabel}">
         <div class="answer"><div class="bubble">{Answer}</div></div>
       </div>
       {block:indexpage}
-      <!-- // PERMALINK INFERIOR DO POST // -->
-      <div class="post-footer">
        {block:IndexPage}
 <!-- // UPDATED BLACK POST FOOTER // -->
 <div class="post-footer">
