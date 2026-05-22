@@ -3480,7 +3480,16 @@ data-notes="{NoteCountWithLabel}">
         processUnprocessedPosts();
         rebuildUnstablePosts($container);
         hardRelayout();
-        runSettledLayouts($container);
+
+setTimeout(function(){
+  $container.find('.posts').addClass('is-ready').css({
+    visibility: '',
+    opacity: ''
+  });
+
+  hardRelayout();
+  runSettledLayouts($container);
+}, 80);
       });
 
       $win.on('resize.acMasonryFix', throttle(function(){
@@ -3594,7 +3603,10 @@ data-notes="{NoteCountWithLabel}">
     initMasonryIfPresent();
     initInfiniteScrollIfPresent();
 
-    $('.posts').addClass('is-ready');
+    $container.find('.posts').css({
+  visibility: 'hidden',
+  opacity: 0
+});
 
     setTimeout(function(){
       processUnprocessedPosts();
