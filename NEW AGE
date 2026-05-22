@@ -196,7 +196,6 @@ pre, code {
   line-height:14px;
   background:rgba(0,0,0,.04);
   margin:10px 0;
-  border-radius:4px;
 }
 
 li {margin-left:-32px;}
@@ -1774,7 +1773,6 @@ a.tumblr_blog{ display:none !important; }
 
 .posts .media-wrap{
   position:relative;
-  border-radius:4px;
   overflow:hidden;
 }
 
