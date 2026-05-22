@@ -2634,13 +2634,6 @@ data-notes="{NoteCountWithLabel}">
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 {block:IndexPage}
-<script src="https://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
-<script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script>
-{/block:IndexPage}
-<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
-{block:IndexPage}
 <script>
 (function($){
   if(!window.jQuery) return;
@@ -2661,6 +2654,7 @@ data-notes="{NoteCountWithLabel}">
   var scrollTimeout = null;
   var isLoadingMore = false;
   var layoutSettling = false;
+  var settleTimer = 0;
 
   /* -----------------------------
      helpers
@@ -2678,6 +2672,11 @@ data-notes="{NoteCountWithLabel}">
         fn();
       }, wait);
     };
+  }
+
+  function debounceLayout(fn, wait){
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(fn, wait);
   }
 
   function cancelRestoreRAF(){
@@ -3648,25 +3647,50 @@ data-notes="{NoteCountWithLabel}">
 
   /* -----------------------------
      Masonry + Infinite Scroll
-     Fixed: new posts are appended before media is measured, then Masonry is
-     forced through several settled layout passes so infinite-scroll posts do
-     not overlap.
+     Keeps the original fade/loading behavior, but fixes overlap by:
+     - waiting for the new batch's media before Masonry measures it
+     - registering new posts with Masonry only once
+     - waiting until the loaded batch has stable heights
+     - revealing only after Masonry has measured the final post sizes
   ----------------------------- */
   function masonryReady(){
-    return !!($.fn.masonry && $container.data('masonry'));
+    return !!($.fn.masonry && ($container.data('masonry') || $container.data('masonry-instance')));
+  }
+
+  function ensureMasonry(){
+    if(!$.fn.masonry) return;
+
+    safe(function(){
+      if(!masonryReady()){
+        $container.masonry({
+          itemSelector: '.posts',
+          isFitWidth: true,
+          transitionDuration: 0,
+          percentPosition: false
+        });
+      } else {
+        $container.masonry('option', {
+          itemSelector: '.posts',
+          isFitWidth: true,
+          transitionDuration: 0,
+          percentPosition: false
+        });
+      }
+    });
   }
 
   function hardRelayout(){
     if(!$.fn.masonry) return;
 
     safe(function(){
+      ensureMasonry();
       $container.masonry('reloadItems');
       $container.masonry('layout');
     });
   }
 
   function runSettledLayouts($scope, done){
-    var delays = [0, 80, 180, 360, 700, 1200, 1900];
+    var delays = [0, 90, 220, 480, 900, 1500];
     var remaining = delays.length;
 
     function onePass(){
@@ -3688,7 +3712,7 @@ data-notes="{NoteCountWithLabel}">
     $scope = $scope && $scope.length ? $scope : $container;
 
     var called = false;
-    var fallback = setTimeout(done, 2400);
+    var fallback = setTimeout(done, 2600);
 
     function done(){
       if(called) return;
@@ -3700,12 +3724,94 @@ data-notes="{NoteCountWithLabel}">
     forceEager($scope);
 
     if($.fn.imagesLoaded){
-      $scope.imagesLoaded(function(){ done(); });
+      safe(function(){
+        var loader = $scope.imagesLoaded();
+
+        if(loader && loader.progress){
+          loader.progress(function(){
+            hardRelayout();
+          });
+        }
+
+        if(loader && loader.always){
+          loader.always(done);
+        } else {
+          $scope.imagesLoaded(function(){
+            done();
+          });
+        }
+      });
     } else if(window.imagesLoaded){
-      imagesLoaded($scope.get(), function(){ done(); });
+      imagesLoaded($scope.get(), function(){
+        done();
+      });
     } else {
-      setTimeout(done, 350);
+      var pending = 0;
+
+      $scope.find('img').each(function(){
+        if(this.complete) return;
+        pending++;
+        $(this).one('load error', function(){
+          pending--;
+          hardRelayout();
+          if(pending <= 0) done();
+        });
+      });
+
+      if(!pending) done();
     }
+  }
+
+  function postHeightSignature($items){
+    var parts = [];
+
+    $items.each(function(){
+      var $post = $(this);
+      parts.push([
+        Math.round($post.outerHeight(true) || 0),
+        $post.find('img').filter(function(){ return this.complete; }).length,
+        $post.find('iframe').length
+      ].join(':'));
+    });
+
+    return parts.join('|');
+  }
+
+  function waitForStablePostHeights($items, callback){
+    if(!$items || !$items.length){
+      callback();
+      return;
+    }
+
+    var last = '';
+    var stableCount = 0;
+    var checks = 0;
+    var maxChecks = 12;
+
+    function check(){
+      processPosts($items);
+      rebuildUnstablePosts($items);
+      hardRelayout();
+
+      var now = postHeightSignature($items);
+      if(now === last){
+        stableCount++;
+      } else {
+        stableCount = 0;
+        last = now;
+      }
+
+      checks++;
+
+      if(stableCount >= 2 || checks >= maxChecks){
+        callback();
+        return;
+      }
+
+      setTimeout(check, 120);
+    }
+
+    check();
   }
 
   function initMasonryIfPresent(){
@@ -3715,26 +3821,21 @@ data-notes="{NoteCountWithLabel}">
 
     var start = function(){
       safe(function(){
-        $container.masonry({
-          itemSelector: '.posts',
-          isFitWidth: true,
-          transitionDuration: 0,
-          percentPosition: false
-        });
+        ensureMasonry();
 
         processUnprocessedPosts();
         rebuildUnstablePosts($container);
         hardRelayout();
 
-setTimeout(function(){
-  $container.find('.posts').addClass('is-ready').css({
-    visibility: '',
-    opacity: ''
-  });
+        setTimeout(function(){
+          $container.find('.posts').addClass('is-ready').css({
+            visibility: '',
+            opacity: ''
+          });
 
-  hardRelayout();
-  runSettledLayouts($container);
-}, 80);
+          hardRelayout();
+          runSettledLayouts($container);
+        }, 80);
       });
 
       $win.on('resize.acMasonryFix', throttle(function(){
@@ -3785,56 +3886,47 @@ setTimeout(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($new);
 
-      hardRelayout();
-
       waitForPostMedia($new, function(){
         processPosts($new);
         processUnprocessedPosts();
         rebuildUnstablePosts($new);
 
-        if($.fn.masonry){
-          safe(function(){
-            if(masonryReady()){
+        waitForStablePostHeights($new, function(){
+          if($.fn.masonry){
+            safe(function(){
+              ensureMasonry();
               $container.masonry('appended', $new);
-            } else {
-              $container.masonry({
-                itemSelector: '.posts',
-                isFitWidth: true,
-                transitionDuration: 0,
-                percentPosition: false
+              $container.masonry('reloadItems');
+              $container.masonry('layout');
+            });
+          }
+
+          runSettledLayouts($new, function(){
+            $new
+              .addClass('is-ready')
+              .css({
+                visibility: '',
+                opacity: ''
               });
+
+            hardRelayout();
+
+            layoutSettling = false;
+            isLoadingMore = false;
+
+            if(hadActiveHover && savedActiveRoot && lastMouse.x >= 0 && lastMouse.y >= 0){
+              setTimeout(function(){
+                restoreHoverUnderPointer();
+              }, 50);
+            } else if(lastMouse.x >= 0 && lastMouse.y >= 0){
+              scheduleRestore();
             }
           });
-        }
-
-        hardRelayout();
-
-        setTimeout(function(){
-          $new
-            .addClass('is-ready')
-            .css({
-              visibility: '',
-              opacity: ''
-            });
-
-          hardRelayout();
-        }, 60);
-
-        runSettledLayouts($new, function(){
-          layoutSettling = false;
-          isLoadingMore = false;
-
-          if(hadActiveHover && savedActiveRoot && lastMouse.x >= 0 && lastMouse.y >= 0){
-            setTimeout(function(){
-              restoreHoverUnderPointer();
-            }, 50);
-          } else if(lastMouse.x >= 0 && lastMouse.y >= 0){
-            scheduleRestore();
-          }
         });
       });
     });
   }
+
 
   /* -----------------------------
      GO
@@ -3849,9 +3941,9 @@ setTimeout(function(){
     initInfiniteScrollIfPresent();
 
     $container.find('.posts').css({
-  visibility: 'hidden',
-  opacity: 0
-});
+      visibility: 'hidden',
+      opacity: 0
+    });
 
     setTimeout(function(){
       processUnprocessedPosts();
