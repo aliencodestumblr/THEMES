@@ -1589,7 +1589,7 @@ a.tumblr_blog{ display:none !important; }
 .sb-mini-player{
   position:fixed;
   top:62px;
-  right:22px;
+  right:30px;
   z-index:99999;
 
   width:130px;
