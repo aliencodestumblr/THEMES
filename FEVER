@@ -2700,7 +2700,11 @@ data-notes="{NoteCountWithLabel}">
     if(!$post.length) return;
 
     var post = $post[0];
-    if(activePost === post && activeRoot === root) return;
+    if(activePost === post && activeRoot === root){
+      $post.addClass('ac-hover-on');
+      $root.addClass('ac-hover-on');
+      return;
+    }
 
     clearActiveHover();
     activePost = post;
@@ -2757,7 +2761,13 @@ data-notes="{NoteCountWithLabel}">
 
   function restoreHoverUnderPointer(){
     if(lastMouse.x < 0 || lastMouse.y < 0) return;
-    if(isLoadingMore || layoutSettling) return;
+
+    var $root = getHoverRootUnderPointer();
+
+    if($root.length){
+      activateHoverForRoot($root);
+      return;
+    }
 
     if(activeRoot && document.documentElement.contains(activeRoot)){
       if(pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
@@ -3339,13 +3349,16 @@ data-notes="{NoteCountWithLabel}">
 
     if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
 
-    if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
-      clearActiveHover();
-    }
+    var wasActive = activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot));
 
     $post.removeClass('ac-hover-on');
     $post.find('.notsi').remove();
     $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
+
+    if(wasActive){
+      activePost = null;
+      activeRoot = null;
+    }
 
     var $node = buildOverlayNode();
 
@@ -3392,6 +3405,16 @@ data-notes="{NoteCountWithLabel}">
 
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
+
+    if(wasActive){
+      activePost = $post[0];
+      activeRoot = $target[0];
+
+      if(lastMouse.x >= 0 && lastMouse.y >= 0 && pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
+        $post.addClass('ac-hover-on');
+        $target.addClass('ac-hover-on');
+      }
+    }
 
     killFloatingPermalinkIcons($post, perma);
   }
@@ -3444,8 +3467,6 @@ data-notes="{NoteCountWithLabel}">
       lastMouse.x = e.clientX;
       lastMouse.y = e.clientY;
 
-      if(isLoadingMore || layoutSettling) return;
-
       var $root = getHoverRootUnderPointer();
 
       if($root.length){
@@ -3456,7 +3477,6 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
-      if(isLoadingMore || layoutSettling) return;
       activateHoverForRoot($(this));
     });
 
@@ -3466,33 +3486,18 @@ data-notes="{NoteCountWithLabel}">
       if(rel && $(rel).closest('.notsi').length) return;
       if(rel && $(rel).closest('.ac-hover-root').length) return;
 
-      if(layoutSettling){
-        setTimeout(function(){
-          if(!$(this).find(':hover').length && !$(this).is(':hover')){
-            $(this).removeClass('ac-hover-on');
-            var $post = $(this).closest('.posts');
-            if($post.length) $post.removeClass('ac-hover-on');
-            if(activeRoot === this){
-              activePost = null;
-              activeRoot = null;
-            }
-          }
-        }.bind(this), 50);
-        return;
-      }
-
       $(this).removeClass('ac-hover-on');
 
       var $post = $(this).closest('.posts');
       if($post.length) $post.removeClass('ac-hover-on');
 
-      activePost = null;
-      activeRoot = null;
+      if(activeRoot === this){
+        activePost = null;
+        activeRoot = null;
+      }
     });
 
     $doc.on('mouseenter.acHoverFix', '.notsi', function(){
-      if(isLoadingMore || layoutSettling) return;
-
       var $root = $(this).parent('.ac-hover-root');
       if($root.length){
         activateHoverForRoot($root);
@@ -3506,27 +3511,16 @@ data-notes="{NoteCountWithLabel}">
       if($root.length && rel && $root[0].contains(rel)) return;
       if(rel && $(rel).closest('.ac-hover-root').length) return;
 
-      if(layoutSettling){
-        setTimeout(function(){
-          if($root.length && !$root.is(':hover') && !$root.find(':hover').length){
-            $root.removeClass('ac-hover-on');
-            var $post = $root.closest('.posts');
-            if($post.length) $post.removeClass('ac-hover-on');
-            if(activeRoot === $root[0]){
-              activePost = null;
-              activeRoot = null;
-            }
-          }
-        }, 50);
-        return;
-      }
-
       if($root.length){
         $root.removeClass('ac-hover-on');
+
         var $post = $root.closest('.posts');
         if($post.length) $post.removeClass('ac-hover-on');
-        activePost = null;
-        activeRoot = null;
+
+        if(activeRoot === $root[0]){
+          activePost = null;
+          activeRoot = null;
+        }
       }
     });
 
@@ -3598,7 +3592,7 @@ data-notes="{NoteCountWithLabel}">
       if(scrollTimeout) clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(function(){
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
+        if(lastMouse.x >= 0 && lastMouse.y >= 0){
           scheduleRestore();
         }
       }, 100);
@@ -3608,7 +3602,7 @@ data-notes="{NoteCountWithLabel}">
       if(scrollTimeout) clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(function(){
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
+        if(lastMouse.x >= 0 && lastMouse.y >= 0){
           scheduleRestore();
         }
       }, 100);
@@ -3618,6 +3612,7 @@ data-notes="{NoteCountWithLabel}">
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayout();
+      scheduleRestore();
     }, 20));
 
     $doc.on('mouseleave.acHoverFix', function(e){
@@ -3647,11 +3642,6 @@ data-notes="{NoteCountWithLabel}">
 
   /* -----------------------------
      Masonry + Infinite Scroll
-     Keeps the original fade/loading behavior, but fixes overlap by:
-     - waiting for the new batch's media before Masonry measures it
-     - registering new posts with Masonry only once
-     - waiting until the loaded batch has stable heights
-     - revealing only after Masonry has measured the final post sizes
   ----------------------------- */
   function masonryReady(){
     return !!($.fn.masonry && ($container.data('masonry') || $container.data('masonry-instance')));
@@ -3730,6 +3720,7 @@ data-notes="{NoteCountWithLabel}">
         if(loader && loader.progress){
           loader.progress(function(){
             hardRelayout();
+            scheduleRestore();
           });
         }
 
@@ -3754,6 +3745,7 @@ data-notes="{NoteCountWithLabel}">
         $(this).one('load error', function(){
           pending--;
           hardRelayout();
+          scheduleRestore();
           if(pending <= 0) done();
         });
       });
@@ -3792,6 +3784,7 @@ data-notes="{NoteCountWithLabel}">
       processPosts($items);
       rebuildUnstablePosts($items);
       hardRelayout();
+      scheduleRestore();
 
       var now = postHeightSignature($items);
       if(now === last){
@@ -3868,11 +3861,6 @@ data-notes="{NoteCountWithLabel}">
       isLoadingMore = true;
       layoutSettling = true;
 
-      var hadActiveHover = activePost !== null;
-      var savedActiveRoot = activeRoot;
-
-      clearActiveHover();
-
       $new
         .removeClass('is-ready')
         .css({
@@ -3885,11 +3873,13 @@ data-notes="{NoteCountWithLabel}">
       processPosts($new);
       processUnprocessedPosts();
       rebuildUnstablePosts($new);
+      scheduleRestore();
 
       waitForPostMedia($new, function(){
         processPosts($new);
         processUnprocessedPosts();
         rebuildUnstablePosts($new);
+        scheduleRestore();
 
         waitForStablePostHeights($new, function(){
           if($.fn.masonry){
@@ -3914,11 +3904,7 @@ data-notes="{NoteCountWithLabel}">
             layoutSettling = false;
             isLoadingMore = false;
 
-            if(hadActiveHover && savedActiveRoot && lastMouse.x >= 0 && lastMouse.y >= 0){
-              setTimeout(function(){
-                restoreHoverUnderPointer();
-              }, 50);
-            } else if(lastMouse.x >= 0 && lastMouse.y >= 0){
+            if(lastMouse.x >= 0 && lastMouse.y >= 0){
               scheduleRestore();
             }
           });
@@ -3926,7 +3912,6 @@ data-notes="{NoteCountWithLabel}">
       });
     });
   }
-
 
   /* -----------------------------
      GO
