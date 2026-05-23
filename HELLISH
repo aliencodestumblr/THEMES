@@ -430,31 +430,22 @@ h1,h2,h3,h4,h5,h6{
   z-index:99;
 }
 
+/* STRONG GLASS VEIL */
 .notsi::before{
   content:"";
   position:absolute;
   inset:0;
 
   background:
-    radial-gradient(
-      circle at top left,
-      rgba(255,255,255,.55),
-      transparent 45%
-    ),
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.38),
-      rgba(255,255,255,.16)
-    );
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,.72), transparent 42%),
+    radial-gradient(circle at 85% 85%, rgba(255,255,255,.32), transparent 46%),
+    linear-gradient(135deg, rgba(255,255,255,.48), rgba(255,255,255,.18));
 
-  backdrop-filter:blur(16px) saturate(200%);
-  -webkit-backdrop-filter:blur(16px) saturate(200%);
+  backdrop-filter:blur(18px) saturate(220%);
+  -webkit-backdrop-filter:blur(18px) saturate(220%);
 
   opacity:0;
-
-  transition:
-    opacity .65s cubic-bezier(.22,1,.36,1);
-
+  transition:opacity .65s cubic-bezier(.22,1,.36,1);
   pointer-events:none;
 }
 
@@ -465,35 +456,40 @@ h1,h2,h3,h4,h5,h6{
 .notsi .npf-box{
   position:absolute;
   left:12px;
+  right:12px;
   bottom:12px;
   z-index:5;
   pointer-events:none;
 }
 
-/* CONTROL BAR */
+/* MAIN FLOATING CAPSULE */
 .notsi .inf2{
   display:flex;
   align-items:center;
-  gap:6px;
+  justify-content:space-between;
+  gap:7px;
 
-  padding:6px;
+  width:100%;
+  box-sizing:border-box;
 
-  border-radius:7px;
+  padding:7px;
 
-  background:rgba(255,255,255,.96);
+  border-radius:9px;
 
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.92);
 
-  border:1px solid rgba(255,255,255,.85);
+  backdrop-filter:blur(18px) saturate(180%);
+  -webkit-backdrop-filter:blur(18px) saturate(180%);
+
+  border:1px solid rgba(255,255,255,.9);
 
   box-shadow:
-    0 15px 30px rgba(0,0,0,.12),
-    0 2px 8px rgba(0,0,0,.08),
+    0 18px 38px rgba(0,0,0,.16),
+    0 3px 10px rgba(0,0,0,.08),
     inset 0 1px 0 rgba(255,255,255,.95);
 
   opacity:0;
-  transform:translateY(10px);
+  transform:translateY(12px) scale(.985);
 
   transition:
     opacity .45s cubic-bezier(.22,1,.36,1),
@@ -502,29 +498,41 @@ h1,h2,h3,h4,h5,h6{
   pointer-events:auto;
 }
 
+/* LINKS */
 .notsi .inf2 a{
-  width:26px;
-  height:24px;
+  position:relative;
+
+  flex:1;
+  min-width:0;
+  height:28px;
 
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:5px;
 
-  border-radius:4px;
+  border-radius:6px;
 
-  background:rgba(0,0,0,.04);
+  background:rgba(0,0,0,.035);
 
-  color:rgba(0,0,0,.58);
+  color:rgba(0,0,0,.62);
   text-decoration:none;
 
+  font-family:Inter, Arial, sans-serif;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.9px;
+  text-transform:uppercase;
+
   opacity:0;
-  transform:translateY(5px);
+  transform:translateY(6px);
 
   transition:
     opacity .35s ease,
     transform .35s cubic-bezier(.22,1,.36,1),
-    background .22s ease,
-    color .22s ease;
+    background .24s ease,
+    color .24s ease,
+    box-shadow .24s ease;
 }
 
 .notsi .inf2 a::before,
@@ -535,21 +543,28 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .notsi .inf2 i{
-  font-size:10px;
+  font-size:11px;
   line-height:1;
 }
 
 .notsi .inf2 .rb-icon{
-  width:10px;
-  height:10px;
+  width:11px;
+  height:11px;
+  flex:0 0 auto;
 }
 
 .notsi .inf2 .rb-icon path{
   fill:none;
   stroke:currentColor;
-  stroke-width:1.55;
+  stroke-width:1.65;
   stroke-linecap:round;
   stroke-linejoin:round;
+}
+
+.notsi .ac-label{
+  display:block;
+  line-height:1;
+  white-space:nowrap;
 }
 
 /* BUTTON HOVER */
@@ -558,9 +573,10 @@ h1,h2,h3,h4,h5,h6{
   color:#000;
 
   box-shadow:
-    0 4px 12px rgba(0,0,0,.08);
+    0 7px 18px rgba(0,0,0,.12),
+    inset 0 0 0 1px rgba(0,0,0,.045);
 
-  transform:translateY(-1px);
+  transform:translateY(-2px);
 }
 
 /* STAGGER */
@@ -569,15 +585,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .notsi .inf2 a:nth-child(2){
-  transition-delay:.08s;
+  transition-delay:.09s;
 }
 
 .notsi .inf2 a:nth-child(3){
-  transition-delay:.12s;
+  transition-delay:.14s;
 }
 
 /* ACTIVE */
-
 .post:hover .notsi::before,
 .ac-hover-on .notsi::before{
   opacity:1;
@@ -586,7 +601,7 @@ h1,h2,h3,h4,h5,h6{
 .post:hover .notsi .inf2,
 .ac-hover-on .notsi .inf2{
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(0) scale(1);
 }
 
 .post:hover .notsi .inf2 a,
@@ -1194,7 +1209,7 @@ a.tumblr_blog{ display:none !important; }
   font-size:8.5px;
   font-weight:600;
   text-transform:uppercase;
-  letter-spacing:2px;
+  letter-spacing:0.5px;
   color:#fff;
   line-height:1.2;
   opacity:0;
@@ -1255,7 +1270,7 @@ a.tumblr_blog{ display:none !important; }
   position:fixed;
   top:96px;
   left:50%;
-  width:188px;
+  width:205px;
   z-index:9999;
   transform:translateX(-575px);
   user-select:none;
@@ -1266,12 +1281,13 @@ a.tumblr_blog{ display:none !important; }
   width:100%;
   padding:14px 0 14px 18px;
   box-sizing:border-box;
+
   background:transparent!important;
   border:0!important;
   box-shadow:none!important;
 }
 
-/* subtle left rail */
+/* left rail */
 #sidebar .sb-inner::before{
   content:"";
   position:absolute;
@@ -1279,11 +1295,12 @@ a.tumblr_blog{ display:none !important; }
   bottom:0;
   left:0;
   width:1px;
+
   background:linear-gradient(
     to bottom,
     transparent,
-    rgba(0,0,0,.14) 18%,
-    rgba(0,0,0,.08) 72%,
+    rgba(0,0,0,.15) 18%,
+    rgba(0,0,0,.07) 72%,
     transparent
   );
 }
@@ -1296,6 +1313,7 @@ a.tumblr_blog{ display:none !important; }
   width:7px;
   height:38px;
   border-radius:999px;
+
   background:#111;
   box-shadow:0 0 18px rgba(0,0,0,.12);
 }
@@ -1305,14 +1323,18 @@ a.tumblr_blog{ display:none !important; }
   position:relative;
   width:68px;
   height:68px;
-  margin:0 0 15px 0;
+  margin:0 0 16px 0;
   border-radius:18px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   background:rgba(255,255,255,.82);
+
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
+
   box-shadow:
     0 12px 28px rgba(0,0,0,.08),
     inset 0 0 0 1px rgba(0,0,0,.055);
@@ -1323,13 +1345,16 @@ a.tumblr_blog{ display:none !important; }
   position:absolute;
   inset:-4px;
   border-radius:21px;
+
   background:
-    linear-gradient(135deg,
+    linear-gradient(
+      135deg,
       rgba(0,0,0,.42),
       rgba(0,0,0,.06) 32%,
       transparent 55%,
       rgba(0,0,0,.18)
     );
+
   opacity:.75;
   z-index:-1;
   animation:sbSoftPulse 4.8s ease-in-out infinite;
@@ -1341,38 +1366,54 @@ a.tumblr_blog{ display:none !important; }
   border-radius:14px;
   object-fit:cover;
   display:block;
+
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.9);
 }
 
 @keyframes sbSoftPulse{
-  0%,100%{opacity:.45; filter:blur(0);}
-  50%{opacity:.9; filter:blur(.4px);}
+  0%,100%{
+    opacity:.45;
+    filter:blur(0);
+  }
+
+  50%{
+    opacity:.9;
+    filter:blur(.4px);
+  }
 }
 
 /* identity */
 #sidebar .sb-ident{
+  width:176px;
   text-align:left;
 }
 
 #sidebar .sb-name-line{
+  width:176px;
   display:flex;
   align-items:center;
   justify-content:flex-start;
   gap:7px;
-  margin-bottom:9px;
+
+  margin:0 0 9px 0;
+  overflow:visible;
 }
 
 #sidebar .sb-name-glitch{
   position:relative;
-  display:inline-block;
-  max-width:142px;
+  display:block;
+  min-width:0;
+  max-width:150px;
+
   font-family:"Orbitron","Rajdhani",sans-serif;
   font-size:12px;
   font-weight:800;
   letter-spacing:2px;
   text-transform:uppercase;
-  line-height:1;
+  line-height:1.15;
+
   color:#111;
+
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -1400,61 +1441,111 @@ a.tumblr_blog{ display:none !important; }
 }
 
 @keyframes sbGlitchA{
-  0%,88%,100%{opacity:0;clip-path:inset(0);}
-  89%{opacity:1;clip-path:inset(15% 0 68% 0);}
-  90%{opacity:.65;clip-path:inset(58% 0 22% 0);}
-  91%{opacity:0;}
+  0%,88%,100%{
+    opacity:0;
+    clip-path:inset(0);
+  }
+
+  89%{
+    opacity:1;
+    clip-path:inset(15% 0 68% 0);
+  }
+
+  90%{
+    opacity:.65;
+    clip-path:inset(58% 0 22% 0);
+  }
+
+  91%{
+    opacity:0;
+  }
 }
 
 @keyframes sbGlitchB{
-  0%,94%,100%{opacity:0;clip-path:inset(0);}
-  95%{opacity:.58;clip-path:inset(38% 0 36% 0);}
-  96%{opacity:.35;clip-path:inset(8% 0 78% 0);}
-  97%{opacity:0;}
+  0%,94%,100%{
+    opacity:0;
+    clip-path:inset(0);
+  }
+
+  95%{
+    opacity:.58;
+    clip-path:inset(38% 0 36% 0);
+  }
+
+  96%{
+    opacity:.35;
+    clip-path:inset(8% 0 78% 0);
+  }
+
+  97%{
+    opacity:0;
+  }
 }
 
-#sidebar .sb-badge-wrap{
+/* black square verified badge */
+#sidebar .sb-verified{
   width:15px;
   height:15px;
-  border-radius:5px;
+  min-width:15px;
+
+  border-radius:4px;
+  background:#111;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#111;
+
   flex:0 0 auto;
-  transform:rotate(-6deg);
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.10),
+    inset 0 0 0 1px rgba(255,255,255,.07);
+
+  transform:translateY(-.5px);
 }
 
 #sidebar .sb-badge{
   width:10px;
   height:10px;
+  display:block;
+
   stroke:#fff;
   fill:none;
-  stroke-width:2.2;
+  stroke-width:2.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 /* description */
 #sidebar .sb-desc{
-  margin:0 0 15px 0;
-  max-width:166px;
+  width:176px;
+  max-width:176px;
+  margin:0 0 16px 0;
+
   font-family:"Rajdhani",sans-serif;
   font-size:10.5px;
   line-height:1.45;
+
   color:rgba(0,0,0,.54);
   text-align:left;
+
+  overflow-wrap:break-word;
 }
 
 /* menu */
 #sidebar .sb-menu{
-  width:166px;
+  width:176px;
 }
 
 #sidebar .sb-menu-btn{
   appearance:none;
   -webkit-appearance:none;
+
+  position:relative;
   width:100%;
-  height:28px;
-  padding:0 9px;
+  height:29px;
+  padding:0 10px;
+
   border:0;
   outline:none;
   cursor:pointer;
@@ -1463,16 +1554,19 @@ a.tumblr_blog{ display:none !important; }
   align-items:center;
   justify-content:space-between;
 
-  background:rgba(255,255,255,.78);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.72);
 
-  border-radius:8px;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  border-radius:7px;
+
   box-shadow:
-    0 8px 20px rgba(0,0,0,.06),
-    inset 0 0 0 1px rgba(0,0,0,.055);
+    0 8px 18px rgba(0,0,0,.055),
+    inset 0 0 0 1px rgba(0,0,0,.06);
 
   color:#111;
+
   font-family:"Rajdhani",sans-serif;
   font-size:9px;
   font-weight:800;
@@ -1480,39 +1574,66 @@ a.tumblr_blog{ display:none !important; }
   text-transform:uppercase;
 
   transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    background .22s ease;
+    background .25s ease,
+    box-shadow .25s ease,
+    transform .25s ease;
 }
 
 #sidebar .sb-menu-btn:hover{
+  background:rgba(255,255,255,.9);
   transform:translateY(-1px);
-  background:rgba(255,255,255,.92);
+
   box-shadow:
-    0 12px 24px rgba(0,0,0,.08),
-    inset 0 0 0 1px rgba(0,0,0,.07);
+    0 12px 24px rgba(0,0,0,.075),
+    inset 0 0 0 1px rgba(0,0,0,.075);
 }
 
 #sidebar .sb-menu-btn b{
-  font-size:11px;
-  font-weight:400;
-  opacity:.45;
-  transition:transform .28s ease, opacity .28s ease;
+  position:relative;
+  width:12px;
+  height:12px;
+  display:block;
+  opacity:.55;
 }
 
-#sidebar .sb-menu-btn.is-open b{
-  transform:rotate(45deg);
-  opacity:.75;
+#sidebar .sb-menu-btn b::before,
+#sidebar .sb-menu-btn b::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  width:11px;
+  height:1px;
+
+  background:#111;
+
+  transform:translate(-50%,-50%);
+  transition:
+    transform .28s ease,
+    opacity .28s ease;
 }
 
+#sidebar .sb-menu-btn b::after{
+  transform:translate(-50%,-50%) rotate(90deg);
+}
+
+#sidebar .sb-menu-btn.is-open b::after{
+  transform:translate(-50%,-50%) rotate(0deg);
+  opacity:0;
+}
+
+/* dropdown links */
 #sidebar #nav-links{
   display:grid;
   grid-template-columns:1fr;
-  gap:6px;
+  gap:5px;
+
   max-height:0;
   overflow:hidden;
   opacity:0;
   transform:translateY(-5px);
+
   transition:
     max-height .45s cubic-bezier(.22,1,.36,1),
     opacity .25s ease,
@@ -1520,7 +1641,7 @@ a.tumblr_blog{ display:none !important; }
 }
 
 #sidebar #nav-links.is-open{
-  max-height:180px;
+  max-height:190px;
   opacity:1;
   transform:translateY(0);
   padding-top:8px;
@@ -1529,70 +1650,84 @@ a.tumblr_blog{ display:none !important; }
 #sidebar #nav-links a{
   position:relative;
   display:block;
-  padding:6px 9px 6px 20px;
+  padding:7px 9px 7px 24px;
 
   text-align:left;
   text-decoration:none;
-  color:rgba(0,0,0,.54);
+  overflow:hidden;
 
-  background:rgba(255,255,255,.46);
+  color:rgba(0,0,0,.56);
+
+  background:rgba(255,255,255,.42);
   border-radius:7px;
 
   font-family:"Rajdhani",sans-serif;
   font-size:9.5px;
-  font-weight:700;
-  letter-spacing:1.55px;
+  font-weight:800;
+  letter-spacing:1.45px;
   text-transform:uppercase;
 
   box-shadow:inset 0 0 0 1px rgba(0,0,0,.035);
 
   transition:
-    color .2s ease,
-    background .2s ease,
-    transform .2s ease,
-    letter-spacing .2s ease;
+    color .22s ease,
+    background .22s ease,
+    transform .22s ease,
+    padding-left .22s ease;
+}
+
+#sidebar #nav-links a span{
+  position:relative;
+  z-index:2;
 }
 
 #sidebar #nav-links a::before{
   content:"";
   position:absolute;
-  left:9px;
+  left:10px;
   top:50%;
-  width:4px;
-  height:4px;
-  border-radius:999px;
-  background:rgba(0,0,0,.28);
+  width:6px;
+  height:1px;
+
+  background:rgba(0,0,0,.34);
+
   transform:translateY(-50%);
-  transition:background .2s ease, transform .2s ease;
+  transition:
+    width .22s ease,
+    background .22s ease;
 }
 
 #sidebar #nav-links a::after{
-  display:none!important;
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.3)
+  );
+
+  opacity:0;
+  z-index:1;
+
+  transition:opacity .22s ease;
 }
 
 #sidebar #nav-links a:hover{
   color:#000;
   background:rgba(255,255,255,.86);
-  transform:translateX(4px);
-  letter-spacing:2px;
+  transform:translateX(3px);
+  padding-left:28px;
 }
 
 #sidebar #nav-links a:hover::before{
+  width:11px;
   background:#111;
-  transform:translateY(-50%) scale(1.35);
 }
 
-/* clock */
-#sidebar .sb-clock{
-  width:166px;
-  margin-top:12px;
-  padding-left:1px;
-  font-family:"Orbitron","Rajdhani",sans-serif;
-  font-size:7.5px;
-  letter-spacing:1.8px;
-  color:rgba(0,0,0,.36);
-  text-transform:uppercase;
-  text-align:left;
+#sidebar #nav-links a:hover::after{
+  opacity:1;
 }
 
 .sb-mini-player{
@@ -1751,6 +1886,7 @@ a.tumblr_blog{ display:none !important; }
 
 .posts .media-wrap{
   position:relative;
+  border-radius:4px;
   overflow:hidden;
 }
 
@@ -1818,84 +1954,10 @@ a.tumblr_blog{ display:none !important; }
   pointer-events:none;
 }
 {/block:IndexPage}
-
-/* ALIENCODES CREDIT */
-
-.alien-credit,
-.alien-credit:link,
-.alien-credit:visited,
-.alien-credit:hover{
-    position:fixed;
-    right:22px;
-    bottom:18px;
-    z-index:999999;
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    text-decoration:none!important;
-    background:none!important;
-    border:none!important;
-    box-shadow:none!important;
-
-    font-family:'Orbitron',sans-serif;
-}
-
-/* main A */
-
-.alien-a{
-    position:relative;
-
-    font-size:24px;
-    font-weight:700;
-    line-height:1;
-
-    color:{color:Links}!important;
-
-    opacity:.85;
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
-}
-
-/* reveal text */
-
-.alien-name{
-    max-width:0;
-    overflow:hidden;
-    white-space:nowrap;
-
-    opacity:0;
-
-    font-size:8px;
-    font-weight:500;
-
-    letter-spacing:.32em;
-    text-transform:uppercase;
-
-    color:{color:Links}!important;
-
-    transition:
-        max-width .55s cubic-bezier(.22,1,.36,1),
-        opacity .35s ease;
-}
-
-.alien-credit:hover .alien-name{
-    max-width:140px;
-    opacity:.75;
-}
-
-.alien-credit:hover .alien-a{
-    opacity:1;
-    transform:translateY(-1px);
-}
 </style>
 
 <!-- // PHOTOSETS + DESIGN DE GRID // -->
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
-<link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
 </head>
 <body>
@@ -1918,8 +1980,8 @@ a.tumblr_blog{ display:none !important; }
 
 <div class="entry">
 
+<!-- SIDEBAR HTML -->
 <aside id="sidebar" aria-label="Sidebar">
-
   <div class="sb-inner">
 
     <div class="sb-avatar-ring">
@@ -1930,9 +1992,9 @@ a.tumblr_blog{ display:none !important; }
       <div class="sb-name-line">
         <span class="sb-name-glitch" data-text="{Name}">{Name}</span>
 
-        <span class="sb-badge-wrap" aria-hidden="true">
+        <span class="sb-verified" aria-hidden="true">
           <svg class="sb-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75"/>
+            <path d="M9 12.75 11.25 15 15 9.75"/>
           </svg>
         </span>
       </div>
@@ -1943,21 +2005,18 @@ a.tumblr_blog{ display:none !important; }
     <div class="sb-menu">
       <button class="sb-menu-btn" type="button" aria-expanded="false">
         <span>navigation</span>
-        <b>＋</b>
+        <b></b>
       </button>
 
       <nav id="nav-links" aria-label="Primary">
-        {block:IfLink1Title}<a href="{text:Link 1}">{text:Link 1 Title}</a>{/block:IfLink1Title}
-        {block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title}
-        {block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}
-        {block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}
+        {block:IfLink1Title}<a href="{text:Link 1}"><span>{text:Link 1 Title}</span></a>{/block:IfLink1Title}
+        {block:IfLink2Title}<a href="{text:Link 2}"><span>{text:Link 2 Title}</span></a>{/block:IfLink2Title}
+        {block:IfLink3Title}<a href="{text:Link 3}"><span>{text:Link 3 Title}</span></a>{/block:IfLink3Title}
+        {block:IfLink4Title}<a href="{text:Link 4}"><span>{text:Link 4 Title}</span></a>{/block:IfLink4Title}
       </nav>
     </div>
 
-    <div class="sb-clock" id="sbClock">12:00 AM</div>
-
   </div>
-
 </aside>
 
 {block:ifshowmusicplayer}
@@ -3938,14 +3997,17 @@ document.addEventListener("DOMContentLoaded", function(){
           <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="rb-icon">
             <path d="M3 5h6l-2-2M13 11H7l2 2"></path>
           </svg>
+          <span class="ac-label">repost</span>
         </a>
 
         <a class="npf-permalink" data-ac-permalink href="#" aria-label="Permalink">
           <i class="ph ph-link-simple-horizontal"></i>
+          <span class="ac-label">link</span>
         </a>
 
         <a class="npf-lightbox" data-ac-lightbox href="#" aria-label="Lightbox">
           <i class="ph ph-arrows-out"></i>
+          <span class="ac-label">view</span>
         </a>
       </div>
     </div>
@@ -4207,11 +4269,6 @@ document.addEventListener("DOMContentLoaded", function(){
   scheduleUpdate();
 })();
 </script>
-
-<a href="https://aliencodes.tumblr.com" class="alien-credit" target="_blank" title="theme by ALIENCODES">
-  <span class="alien-a">A</span>
-  <span class="alien-name">ALIENCODES</span>
-</a>
 
 <!-- // KEEP // -->
 {block:IndexPage}
