@@ -2587,10 +2587,8 @@ data-notes="{NoteCountWithLabel}">
   var isLoadingMore = false;
   var layoutSettling = false;
   var settleTimer = 0;
+  var manualLayoutActive = false;
 
-  /* -----------------------------
-     helpers
-  ----------------------------- */
   function safe(fn){
     try{ fn(); }catch(e){}
   }
@@ -2632,6 +2630,7 @@ data-notes="{NoteCountWithLabel}">
     if(!$post.length) return;
 
     var post = $post[0];
+
     if(activePost === post && activeRoot === root){
       $post.addClass('ac-hover-on');
       $root.addClass('ac-hover-on');
@@ -2639,6 +2638,7 @@ data-notes="{NoteCountWithLabel}">
     }
 
     clearActiveHover();
+
     activePost = post;
     activeRoot = root;
 
@@ -2724,74 +2724,6 @@ data-notes="{NoteCountWithLabel}">
     });
   }
 
-  function relayout(){
-    if(!$.fn.masonry) return;
-    safe(function(){
-      $container.masonry('reloadItems');
-      $container.masonry('layout');
-    });
-  }
-
-  function relayoutAndRestore(){
-    relayout();
-    scheduleRestore();
-  }
-
-  function forceEager($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
-
-    $scope.find('img[loading="lazy"]').each(function(){
-      try{ this.loading = 'eager'; }catch(e){}
-      $(this).attr('loading','eager');
-    });
-
-    $scope.find('iframe[loading="lazy"]').each(function(){
-      $(this).attr('loading','eager');
-    });
-  }
-
-  function watchHeights($items){
-    if(!$items || !$items.length) $items = $container.find('.posts');
-
-    $items.find('img').each(function(){
-      var img = this;
-      if(img.complete) return;
-      if(img._acHoverWatchBound) return;
-      img._acHoverWatchBound = true;
-
-      img.addEventListener('load', relayoutAndRestore, { once:false });
-      img.addEventListener('error', relayoutAndRestore, { once:false });
-    });
-
-    $items.find('iframe').each(function(){
-      var frame = this;
-      if(frame._acHoverWatchBound) return;
-      frame._acHoverWatchBound = true;
-
-      frame.addEventListener('load', relayoutAndRestore, { once:false });
-    });
-
-    if(window.ResizeObserver){
-      if(!resizeObserver){
-        resizeObserver = new ResizeObserver(throttle(relayoutAndRestore, 80));
-      }
-
-      $items.each(function(){
-        if(this._acHoverROBound) return;
-        this._acHoverROBound = true;
-        try{ resizeObserver.observe(this); }catch(e){}
-      });
-    } else {
-      setTimeout(relayoutAndRestore, 300);
-      setTimeout(relayoutAndRestore, 800);
-      setTimeout(relayoutAndRestore, 1400);
-      setTimeout(relayoutAndRestore, 2200);
-    }
-  }
-
-  /* -----------------------------
-     media detection
-  ----------------------------- */
   function hasTumblrMediaUrl(str){
     str = (str || '').toLowerCase();
     return (
@@ -2856,9 +2788,6 @@ data-notes="{NoteCountWithLabel}">
     return $scope.filter('.posts').add($scope.find('.posts'));
   }
 
-  /* -----------------------------
-     plugin inits
-  ----------------------------- */
   function initPhotosets($scope){
     $scope = ($scope && $scope.length) ? $scope : $(document);
     if(!$.fn.pxuPhotoset) return;
@@ -3024,12 +2953,15 @@ data-notes="{NoteCountWithLabel}">
 
   function countNPFMedia($scope){
     if(!$scope || !$scope.length) return 0;
+
     var imgCount = $scope.find('img').filter(function(){
       return looksLikeNPFImage($(this));
     }).length;
+
     var vidCount = $scope.find('video, iframe, .npf_video_container, .npf_video').filter(function(){
       return looksLikeNPFVideo($(this));
     }).length;
+
     return imgCount + vidCount;
   }
 
@@ -3106,12 +3038,15 @@ data-notes="{NoteCountWithLabel}">
 
     var $preferred = $ancestor.find('.npf_photoset, .npf_grid, .npf_container, .npf_group').filter(function(){
       var $el = $(this);
+
       var imgCount = $el.find('img').filter(function(){
         return looksLikeNPFImage($(this));
       }).length;
+
       var vidCount = $el.find('video, iframe, .npf_video_container, .npf_video').filter(function(){
         return looksLikeNPFVideo($(this));
       }).length;
+
       return imgCount > 1 || vidCount > 0;
     }).first();
 
@@ -3134,6 +3069,7 @@ data-notes="{NoteCountWithLabel}">
     var $vid = $post.find('.npf_video_container, .npf_video, video, iframe').filter(function(){
       return looksLikeNPFVideo($(this));
     }).first();
+
     if($vid.length){
       var $wrap = $vid.closest('figure.tmblr-full, .tmblr-full, .npf_video_container, .npf_video').first();
       return $wrap.length ? $wrap : $vid;
@@ -3146,11 +3082,13 @@ data-notes="{NoteCountWithLabel}">
         return looksLikeNPFImage($(this));
       }).length > 0;
     }).first();
+
     if($oneBlock.length) return $oneBlock;
 
     var $img = $post.find('img').filter(function(){
       return looksLikeNPFImage($(this));
     }).first();
+
     if($img.length){
       var $imgWrap = $img.closest('figure.tmblr-full, .tmblr-full, .npf_image, figure, div').first();
       return $imgWrap.length ? $imgWrap : $img;
@@ -3176,15 +3114,10 @@ data-notes="{NoteCountWithLabel}">
     return $root[0] !== $wanted[0];
   }
 
-  /* -----------------------------
-     stronger lightbox target finder
-  ----------------------------- */
   function getFirstLightboxTarget($post){
     if(!$post || !$post.length) return $();
 
-    var $target = $();
-
-    $target = $post.find(
+    var $target = $post.find(
       '.photo-slideshow a[href], ' +
       '.pxu-photo a[href], ' +
       '.photo-data a[href], ' +
@@ -3220,18 +3153,11 @@ data-notes="{NoteCountWithLabel}">
 
     if($target.length) return $target;
 
-    $target = $post.find(
-      '.npf_video_container, .npf_video, video'
-    ).filter(function(){
+    return $post.find('.npf_video_container, .npf_video, video').filter(function(){
       return !$(this).closest('.notsi').length;
     }).first();
-
-    return $target;
   }
 
-  /* -----------------------------
-     build overlay node
-  ----------------------------- */
   function buildOverlayNode(){
     var tpl = document.getElementById('npf-hover-template');
     if(tpl && tpl.content && tpl.content.firstElementChild){
@@ -3252,16 +3178,15 @@ data-notes="{NoteCountWithLabel}">
     );
   }
 
-  /* -----------------------------
-     inject overlay
-  ----------------------------- */
   function addHoverOverlay($post){
     if(!$post || !$post.length) return;
 
     var hasOldPhotoset = $post.find('.photo-slideshow').length > 0;
+
     var hasImg = $post.find('img').filter(function(){
       return looksLikeNPFImage($(this));
     }).length > 0;
+
     var hasVid = $post.find('.npf_video_container, .npf_video, video, iframe').filter(function(){
       return looksLikeNPFVideo($(this));
     }).length > 0;
@@ -3303,9 +3228,7 @@ data-notes="{NoteCountWithLabel}">
     if($pmA.length) $pmA.attr('href', perma);
 
     var $lbA = $node.find('a.npf-lightbox, [data-ac-lightbox]').first();
-    if($lbA.length){
-      $lbA.attr('href', '#');
-    }
+    if($lbA.length) $lbA.attr('href', '#');
 
     var $target = pickHoverTarget($post);
     if(!$target.length) $target = $post;
@@ -3388,9 +3311,286 @@ data-notes="{NoteCountWithLabel}">
     processPosts($bad);
   }
 
-  /* -----------------------------
-     hover + button events
-  ----------------------------- */
+  function forceEager($scope){
+    $scope = $scope && $scope.length ? $scope : $(document);
+
+    $scope.find('img[loading="lazy"]').each(function(){
+      try{ this.loading = 'eager'; }catch(e){}
+      $(this).attr('loading','eager');
+    });
+
+    $scope.find('iframe[loading="lazy"]').each(function(){
+      $(this).attr('loading','eager');
+    });
+  }
+
+  function masonryReady(){
+    return !!($.fn.masonry && ($container.data('masonry') || $container.data('masonry-instance')));
+  }
+
+  function ensureMasonry(){
+    if(!$.fn.masonry) return;
+
+    safe(function(){
+      if(!masonryReady()){
+        $container.masonry({
+          itemSelector: '.posts',
+          isFitWidth: true,
+          transitionDuration: 0,
+          percentPosition: false
+        });
+      } else {
+        $container.masonry('option', {
+          itemSelector: '.posts',
+          isFitWidth: true,
+          transitionDuration: 0,
+          percentPosition: false
+        });
+      }
+    });
+  }
+
+  function manualLayoutPosts(){
+    var $items = $container.children('.posts');
+    if(!$items.length) return;
+
+    manualLayoutActive = true;
+
+    var containerWidth = Math.round($container.width() || $container.parent().width() || $win.width() || 0);
+    if(containerWidth <= 0) return;
+
+    var sampleWidth = 0;
+    $items.each(function(){
+      var w = Math.ceil($(this).outerWidth(true) || 0);
+      if(w > sampleWidth) sampleWidth = w;
+    });
+
+    if(sampleWidth <= 0) sampleWidth = 250;
+
+    var cols = Math.max(1, Math.floor(containerWidth / sampleWidth));
+    var colWidth = sampleWidth;
+    var usedWidth = cols * colWidth;
+    var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
+    var heights = [];
+
+    for(var i=0;i<cols;i++) heights[i] = 0;
+
+    $container.css({
+      position: 'relative',
+      height: ''
+    });
+
+    $items.each(function(){
+      var $item = $(this);
+
+      $item.css({
+        position: 'absolute',
+        display: 'block'
+      });
+
+      var shortest = 0;
+      for(var i=1;i<cols;i++){
+        if(heights[i] < heights[shortest]) shortest = i;
+      }
+
+      var itemHeight = Math.ceil($item.outerHeight(true) || $item[0].getBoundingClientRect().height || 0);
+      if(itemHeight <= 0) itemHeight = 1;
+
+      var left = leftOffset + (shortest * colWidth);
+      var top = heights[shortest];
+
+      $item.css({
+        left: left + 'px',
+        top: top + 'px'
+      });
+
+      heights[shortest] += itemHeight;
+    });
+
+    var maxHeight = 0;
+    for(var j=0;j<heights.length;j++){
+      if(heights[j] > maxHeight) maxHeight = heights[j];
+    }
+
+    $container.css('height', Math.ceil(maxHeight) + 'px');
+  }
+
+  function postsArePiled(){
+    var $items = $container.children('.posts');
+    if($items.length < 2) return false;
+
+    var seen = {};
+    var piled = 0;
+
+    $items.slice(0, Math.min($items.length, 8)).each(function(){
+      var $item = $(this);
+      var pos = $item.position();
+      var left = Math.round(pos.left || 0);
+      var top = Math.round(pos.top || 0);
+      var key = left + ':' + top;
+
+      if(seen[key]) piled++;
+      seen[key] = true;
+    });
+
+    return piled >= 2;
+  }
+
+  function hardRelayout(forceManual){
+    if($.fn.masonry && !manualLayoutActive){
+      safe(function(){
+        ensureMasonry();
+        $container.masonry('reloadItems');
+        $container.masonry('layout');
+      });
+    }
+
+    setTimeout(function(){
+      if(forceManual || manualLayoutActive || postsArePiled()){
+        manualLayoutPosts();
+      }
+    }, 30);
+  }
+
+  function relayout(){
+    hardRelayout(false);
+  }
+
+  function relayoutAndRestore(){
+    hardRelayout(false);
+    scheduleRestore();
+  }
+
+  function watchHeights($items){
+    if(!$items || !$items.length) $items = $container.find('.posts');
+
+    $items.find('img').each(function(){
+      var img = this;
+      if(img.complete) return;
+      if(img._acHoverWatchBound) return;
+      img._acHoverWatchBound = true;
+
+      img.addEventListener('load', relayoutAndRestore, { once:false });
+      img.addEventListener('error', relayoutAndRestore, { once:false });
+    });
+
+    $items.find('iframe').each(function(){
+      var frame = this;
+      if(frame._acHoverWatchBound) return;
+      frame._acHoverWatchBound = true;
+
+      frame.addEventListener('load', relayoutAndRestore, { once:false });
+    });
+
+    if(window.ResizeObserver){
+      if(!resizeObserver){
+        resizeObserver = new ResizeObserver(throttle(function(){
+          hardRelayout(manualLayoutActive);
+          scheduleRestore();
+        }, 120));
+      }
+
+      $items.each(function(){
+        if(this._acHoverROBound) return;
+        this._acHoverROBound = true;
+        try{ resizeObserver.observe(this); }catch(e){}
+      });
+    } else {
+      setTimeout(relayoutAndRestore, 300);
+      setTimeout(relayoutAndRestore, 800);
+      setTimeout(relayoutAndRestore, 1500);
+      setTimeout(relayoutAndRestore, 2400);
+    }
+  }
+
+  function waitForPostMedia($scope, callback){
+    $scope = $scope && $scope.length ? $scope : $container;
+
+    var called = false;
+    var fallback = setTimeout(done, 3600);
+
+    function done(){
+      if(called) return;
+      called = true;
+      clearTimeout(fallback);
+      callback();
+    }
+
+    forceEager($scope);
+
+    if($.fn.imagesLoaded){
+      try{
+        var loader = $scope.imagesLoaded();
+
+        if(loader && loader.progress){
+          loader.progress(function(){
+            hardRelayout(false);
+            scheduleRestore();
+          });
+        }
+
+        if(loader && loader.always){
+          loader.always(done);
+        } else {
+          $scope.imagesLoaded(function(){
+            done();
+          });
+        }
+      }catch(e){
+        done();
+      }
+    } else if(window.imagesLoaded){
+      try{
+        imagesLoaded($scope.get(), function(){
+          done();
+        });
+      }catch(e2){
+        done();
+      }
+    } else {
+      var pending = 0;
+
+      $scope.find('img').each(function(){
+        if(this.complete) return;
+        pending++;
+        $(this).one('load error', function(){
+          pending--;
+          hardRelayout(false);
+          scheduleRestore();
+          if(pending <= 0) done();
+        });
+      });
+
+      if(!pending) done();
+    }
+  }
+
+  function runSettledLayouts($scope, done){
+    var delays = [0, 120, 300, 650, 1100, 1800, 2600];
+    var remaining = delays.length;
+
+    function onePass(){
+      processUnprocessedPosts();
+      rebuildUnstablePosts($scope && $scope.length ? $scope : $container);
+      hardRelayout(manualLayoutActive);
+      scheduleRestore();
+
+      remaining--;
+      if(remaining <= 0 && typeof done === 'function') done();
+    }
+
+    for(var i=0;i<delays.length;i++){
+      setTimeout(onePass, delays[i]);
+    }
+  }
+
+  function revealPosts($posts){
+    $posts.addClass('is-ready').css({
+      visibility: '',
+      opacity: ''
+    });
+  }
+
   function bindHoverEvents(){
     $doc.off('.acHoverFix');
     $win.off('.acHoverFixWin');
@@ -3520,8 +3720,13 @@ data-notes="{NoteCountWithLabel}">
       }, 0);
     });
 
+    // ========== FIXED SCROLL / WHEEL HANDLERS ==========
+    // Clear hover immediately on scroll start, cancel any pending restore,
+    // then re‑evaluate after scrolling stops.
     $win.on('scroll.acHoverFixWin', function(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
+      cancelRestoreRAF();
+      clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
         if(lastMouse.x >= 0 && lastMouse.y >= 0){
@@ -3532,6 +3737,8 @@ data-notes="{NoteCountWithLabel}">
 
     $doc.on('wheel.acHoverFix', function(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
+      cancelRestoreRAF();
+      clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
         if(lastMouse.x >= 0 && lastMouse.y >= 0){
@@ -3539,13 +3746,14 @@ data-notes="{NoteCountWithLabel}">
         }
       }, 100);
     });
+    // ========== END FIX ==========
 
     $win.on('resize.acHoverFixWin', throttle(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      relayout();
+      hardRelayout(manualLayoutActive);
       scheduleRestore();
-    }, 20));
+    }, 160));
 
     $doc.on('mouseleave.acHoverFix', function(e){
       if(e.target === document || e.target === document.documentElement || e.target === document.body){
@@ -3572,205 +3780,31 @@ data-notes="{NoteCountWithLabel}">
     }, { passive:true });
   }
 
-  /* -----------------------------
-     Masonry + Infinite Scroll
-  ----------------------------- */
-  function masonryReady(){
-    return !!($.fn.masonry && ($container.data('masonry') || $container.data('masonry-instance')));
-  }
-
-  function ensureMasonry(){
-    if(!$.fn.masonry) return;
-
-    safe(function(){
-      if(!masonryReady()){
-        $container.masonry({
-          itemSelector: '.posts',
-          isFitWidth: true,
-          transitionDuration: 0,
-          percentPosition: false
-        });
-      } else {
-        $container.masonry('option', {
-          itemSelector: '.posts',
-          isFitWidth: true,
-          transitionDuration: 0,
-          percentPosition: false
-        });
-      }
-    });
-  }
-
-  function hardRelayout(){
-    if(!$.fn.masonry) return;
-
-    safe(function(){
-      ensureMasonry();
-      $container.masonry('reloadItems');
-      $container.masonry('layout');
-    });
-  }
-
-  function runSettledLayouts($scope, done){
-    var delays = [0, 90, 220, 480, 900, 1500];
-    var remaining = delays.length;
-
-    function onePass(){
-      processUnprocessedPosts();
-      rebuildUnstablePosts($scope && $scope.length ? $scope : $container);
-      hardRelayout();
-      scheduleRestore();
-
-      remaining--;
-      if(remaining <= 0 && typeof done === 'function') done();
-    }
-
-    for(var i=0;i<delays.length;i++){
-      setTimeout(onePass, delays[i]);
-    }
-  }
-
-  function waitForPostMedia($scope, callback){
-    $scope = $scope && $scope.length ? $scope : $container;
-
-    var called = false;
-    var fallback = setTimeout(done, 2600);
-
-    function done(){
-      if(called) return;
-      called = true;
-      clearTimeout(fallback);
-      callback();
-    }
-
-    forceEager($scope);
-
-    if($.fn.imagesLoaded){
-      safe(function(){
-        var loader = $scope.imagesLoaded();
-
-        if(loader && loader.progress){
-          loader.progress(function(){
-            hardRelayout();
-            scheduleRestore();
-          });
-        }
-
-        if(loader && loader.always){
-          loader.always(done);
-        } else {
-          $scope.imagesLoaded(function(){
-            done();
-          });
-        }
-      });
-    } else if(window.imagesLoaded){
-      imagesLoaded($scope.get(), function(){
-        done();
-      });
-    } else {
-      var pending = 0;
-
-      $scope.find('img').each(function(){
-        if(this.complete) return;
-        pending++;
-        $(this).one('load error', function(){
-          pending--;
-          hardRelayout();
-          scheduleRestore();
-          if(pending <= 0) done();
-        });
-      });
-
-      if(!pending) done();
-    }
-  }
-
-  function postHeightSignature($items){
-    var parts = [];
-
-    $items.each(function(){
-      var $post = $(this);
-      parts.push([
-        Math.round($post.outerHeight(true) || 0),
-        $post.find('img').filter(function(){ return this.complete; }).length,
-        $post.find('iframe').length
-      ].join(':'));
-    });
-
-    return parts.join('|');
-  }
-
-  function waitForStablePostHeights($items, callback){
-    if(!$items || !$items.length){
-      callback();
-      return;
-    }
-
-    var last = '';
-    var stableCount = 0;
-    var checks = 0;
-    var maxChecks = 12;
-
-    function check(){
-      processPosts($items);
-      rebuildUnstablePosts($items);
-      hardRelayout();
-      scheduleRestore();
-
-      var now = postHeightSignature($items);
-      if(now === last){
-        stableCount++;
-      } else {
-        stableCount = 0;
-        last = now;
-      }
-
-      checks++;
-
-      if(stableCount >= 2 || checks >= maxChecks){
-        callback();
-        return;
-      }
-
-      setTimeout(check, 120);
-    }
-
-    check();
-  }
-
   function initMasonryIfPresent(){
-    if(!$.fn.masonry) return;
-
     $container.css('position','relative');
 
-    var start = function(){
-      safe(function(){
-        ensureMasonry();
+    if($.fn.masonry){
+      ensureMasonry();
+    }
 
-        processUnprocessedPosts();
-        rebuildUnstablePosts($container);
-        hardRelayout();
+    processUnprocessedPosts();
+    rebuildUnstablePosts($container);
+    revealPosts($container.find('.posts'));
+    hardRelayout(false);
 
-        setTimeout(function(){
-          $container.find('.posts').addClass('is-ready').css({
-            visibility: '',
-            opacity: ''
-          });
+    waitForPostMedia($container, function(){
+      processUnprocessedPosts();
+      rebuildUnstablePosts($container);
+      revealPosts($container.find('.posts'));
+      hardRelayout(false);
+      runSettledLayouts($container);
+    });
 
-          hardRelayout();
-          runSettledLayouts($container);
-        }, 80);
-      });
-
-      $win.on('resize.acMasonryFix', throttle(function(){
-        processUnprocessedPosts();
-        rebuildUnstablePosts($container);
-        runSettledLayouts($container);
-      }, 220));
-    };
-
-    waitForPostMedia($container, start);
+    $win.on('resize.acMasonryFix', throttle(function(){
+      processUnprocessedPosts();
+      rebuildUnstablePosts($container);
+      runSettledLayouts($container);
+    }, 260));
   }
 
   function initInfiniteScrollIfPresent(){
@@ -3796,58 +3830,53 @@ data-notes="{NoteCountWithLabel}">
       $new
         .removeClass('is-ready')
         .css({
-          visibility: 'hidden',
-          opacity: 0
+          visibility: '',
+          opacity: 0,
+          display: 'block'
         });
 
       $container.append($new);
 
+      forceEager($new);
       processPosts($new);
       processUnprocessedPosts();
       rebuildUnstablePosts($new);
-      scheduleRestore();
+
+      hardRelayout(true);
 
       waitForPostMedia($new, function(){
         processPosts($new);
         processUnprocessedPosts();
         rebuildUnstablePosts($new);
-        scheduleRestore();
 
-        waitForStablePostHeights($new, function(){
-          if($.fn.masonry){
-            safe(function(){
-              ensureMasonry();
-              $container.masonry('appended', $new);
-              $container.masonry('reloadItems');
-              $container.masonry('layout');
-            });
-          }
+        hardRelayout(true);
 
-          runSettledLayouts($new, function(){
-            $new
-              .addClass('is-ready')
-              .css({
-                visibility: '',
-                opacity: ''
-              });
+        setTimeout(function(){
+          revealPosts($new);
+          hardRelayout(true);
 
-            hardRelayout();
+          setTimeout(function(){
+            hardRelayout(true);
 
             layoutSettling = false;
             isLoadingMore = false;
 
-            if(lastMouse.x >= 0 && lastMouse.y >= 0){
+            runSettledLayouts($container, function(){
               scheduleRestore();
-            }
-          });
-        });
+            });
+          }, 180);
+        }, 120);
       });
+
+      setTimeout(function(){
+        revealPosts($new);
+        hardRelayout(true);
+        layoutSettling = false;
+        isLoadingMore = false;
+      }, 4000);
     });
   }
 
-  /* -----------------------------
-     GO
-  ----------------------------- */
   $(document).ready(function(){
     processPosts($(document));
     processUnprocessedPosts();
@@ -3857,28 +3886,29 @@ data-notes="{NoteCountWithLabel}">
     initMasonryIfPresent();
     initInfiniteScrollIfPresent();
 
-    $container.find('.posts').css({
-      visibility: 'hidden',
-      opacity: 0
-    });
+    revealPosts($container.find('.posts'));
+    hardRelayout(false);
 
     setTimeout(function(){
+      revealPosts($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
     }, 700);
 
     setTimeout(function(){
+      revealPosts($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
     }, 1500);
 
     setTimeout(function(){
+      revealPosts($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
-    }, 2400);
+    }, 2600);
   });
 
 })(window.jQuery);
