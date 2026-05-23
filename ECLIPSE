@@ -2588,6 +2588,7 @@ data-notes="{NoteCountWithLabel}">
   var layoutSettling = false;
   var settleTimer = 0;
   var manualLayoutActive = false;
+  var hoverDisabled = false;
 
   function safe(fn){
     try{ fn(); }catch(e){}
@@ -2623,6 +2624,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function activateHoverForRoot($root){
+    if(hoverDisabled) return;
     if(!$root || !$root.length) return;
 
     var root = $root[0];
@@ -2667,6 +2669,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function getHoverRootUnderPointer(){
+    if(hoverDisabled) return $();
     if(lastMouse.x < 0 || lastMouse.y < 0) return $();
 
     var el = null;
@@ -2692,6 +2695,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function restoreHoverUnderPointer(){
+    if(hoverDisabled) return;
     if(lastMouse.x < 0 || lastMouse.y < 0) return;
 
     var $root = getHoverRootUnderPointer();
@@ -2717,6 +2721,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function scheduleRestore(){
+    if(hoverDisabled) return;
     cancelRestoreRAF();
     restoreRAF = requestAnimationFrame(function(){
       restoreRAF = 0;
@@ -3350,14 +3355,39 @@ data-notes="{NoteCountWithLabel}">
     });
   }
 
-  function manualLayoutPosts(){
+  function hidePostsUntilLayout($posts) {
+    if(!$posts || !$posts.length) return;
+    
+    $posts.each(function() {
+      var $p = $(this);
+      if(!$p.data('originalDisplay')) {
+        $p.data('originalDisplay', $p.css('display'));
+      }
+    });
+    
+    $posts.css({
+      visibility: 'hidden',
+      opacity: 0
+    });
+  }
+  
+  function revealPostsAfterLayout($posts) {
+    if(!$posts || !$posts.length) return;
+    
+    $posts.css({
+      visibility: '',
+      opacity: ''
+    }).addClass('is-ready');
+  }
+  
+  function manualLayoutPosts(forceReveal) {
     var $items = $container.children('.posts');
-    if(!$items.length) return;
+    if(!$items.length) return false;
 
     manualLayoutActive = true;
 
     var containerWidth = Math.round($container.width() || $container.parent().width() || $win.width() || 0);
-    if(containerWidth <= 0) return;
+    if(containerWidth <= 0) return false;
 
     var sampleWidth = 0;
     $items.each(function(){
@@ -3413,6 +3443,13 @@ data-notes="{NoteCountWithLabel}">
     }
 
     $container.css('height', Math.ceil(maxHeight) + 'px');
+    
+    if(forceReveal) {
+      revealPostsAfterLayout($items);
+    }
+    
+    manualLayoutActive = false;
+    return true;
   }
 
   function postsArePiled(){
@@ -3436,20 +3473,19 @@ data-notes="{NoteCountWithLabel}">
     return piled >= 2;
   }
 
-  function hardRelayout(forceManual){
-    if($.fn.masonry && !manualLayoutActive){
+  function hardRelayout(forceManual, shouldReveal) {
+    if(shouldReveal === undefined) shouldReveal = true;
+    
+    if($.fn.masonry && !manualLayoutActive && !forceManual){
       safe(function(){
         ensureMasonry();
         $container.masonry('reloadItems');
         $container.masonry('layout');
       });
+      if(shouldReveal) revealPostsAfterLayout($container.children('.posts'));
+    } else {
+      manualLayoutPosts(shouldReveal);
     }
-
-    setTimeout(function(){
-      if(forceManual || manualLayoutActive || postsArePiled()){
-        manualLayoutPosts();
-      }
-    }, 30);
   }
 
   function relayout(){
@@ -3485,7 +3521,7 @@ data-notes="{NoteCountWithLabel}">
     if(window.ResizeObserver){
       if(!resizeObserver){
         resizeObserver = new ResizeObserver(throttle(function(){
-          hardRelayout(manualLayoutActive);
+          hardRelayout(manualLayoutActive, true);
           scheduleRestore();
         }, 120));
       }
@@ -3524,7 +3560,7 @@ data-notes="{NoteCountWithLabel}">
 
         if(loader && loader.progress){
           loader.progress(function(){
-            hardRelayout(false);
+            hardRelayout(false, true);
             scheduleRestore();
           });
         }
@@ -3555,7 +3591,7 @@ data-notes="{NoteCountWithLabel}">
         pending++;
         $(this).one('load error', function(){
           pending--;
-          hardRelayout(false);
+          hardRelayout(false, true);
           scheduleRestore();
           if(pending <= 0) done();
         });
@@ -3572,7 +3608,7 @@ data-notes="{NoteCountWithLabel}">
     function onePass(){
       processUnprocessedPosts();
       rebuildUnstablePosts($scope && $scope.length ? $scope : $container);
-      hardRelayout(manualLayoutActive);
+      hardRelayout(manualLayoutActive, true);
       scheduleRestore();
 
       remaining--;
@@ -3582,13 +3618,6 @@ data-notes="{NoteCountWithLabel}">
     for(var i=0;i<delays.length;i++){
       setTimeout(onePass, delays[i]);
     }
-  }
-
-  function revealPosts($posts){
-    $posts.addClass('is-ready').css({
-      visibility: '',
-      opacity: ''
-    });
   }
 
   function bindHoverEvents(){
@@ -3609,7 +3638,7 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
-      activateHoverForRoot($(this));
+      if(!hoverDisabled) activateHoverForRoot($(this));
     });
 
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
@@ -3630,9 +3659,11 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $doc.on('mouseenter.acHoverFix', '.notsi', function(){
-      var $root = $(this).parent('.ac-hover-root');
-      if($root.length){
-        activateHoverForRoot($root);
+      if(!hoverDisabled){
+        var $root = $(this).parent('.ac-hover-root');
+        if($root.length){
+          activateHoverForRoot($root);
+        }
       }
     });
 
@@ -3720,38 +3751,43 @@ data-notes="{NoteCountWithLabel}">
       }, 0);
     });
 
-    // ========== FIXED SCROLL / WHEEL HANDLERS ==========
-    // Clear hover immediately on scroll start, cancel any pending restore,
-    // then re‑evaluate after scrolling stops.
+    // FIXED: Scroll and wheel events properly disable hover temporarily
     $win.on('scroll.acHoverFixWin', function(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
       cancelRestoreRAF();
+      
+      // Disable hover during scroll
+      hoverDisabled = true;
       clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
+        hoverDisabled = false;
         if(lastMouse.x >= 0 && lastMouse.y >= 0){
           scheduleRestore();
         }
-      }, 100);
+      }, 150);
     });
 
     $doc.on('wheel.acHoverFix', function(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
       cancelRestoreRAF();
+      
+      // Disable hover during wheel
+      hoverDisabled = true;
       clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
+        hoverDisabled = false;
         if(lastMouse.x >= 0 && lastMouse.y >= 0){
           scheduleRestore();
         }
-      }, 100);
+      }, 150);
     });
-    // ========== END FIX ==========
 
     $win.on('resize.acHoverFixWin', throttle(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      hardRelayout(manualLayoutActive);
+      hardRelayout(manualLayoutActive, true);
       scheduleRestore();
     }, 160));
 
@@ -3782,6 +3818,9 @@ data-notes="{NoteCountWithLabel}">
 
   function initMasonryIfPresent(){
     $container.css('position','relative');
+    
+    var $initialPosts = $container.find('.posts');
+    hidePostsUntilLayout($initialPosts);
 
     if($.fn.masonry){
       ensureMasonry();
@@ -3789,14 +3828,19 @@ data-notes="{NoteCountWithLabel}">
 
     processUnprocessedPosts();
     rebuildUnstablePosts($container);
-    revealPosts($container.find('.posts'));
-    hardRelayout(false);
+    
+    hardRelayout(false, false);
+    
+    setTimeout(function() {
+      revealPostsAfterLayout($container.find('.posts'));
+      hardRelayout(false, true);
+    }, 50);
 
     waitForPostMedia($container, function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      revealPosts($container.find('.posts'));
-      hardRelayout(false);
+      revealPostsAfterLayout($container.find('.posts'));
+      hardRelayout(false, true);
       runSettledLayouts($container);
     });
 
@@ -3830,7 +3874,7 @@ data-notes="{NoteCountWithLabel}">
       $new
         .removeClass('is-ready')
         .css({
-          visibility: '',
+          visibility: 'hidden',
           opacity: 0,
           display: 'block'
         });
@@ -3842,35 +3886,31 @@ data-notes="{NoteCountWithLabel}">
       processUnprocessedPosts();
       rebuildUnstablePosts($new);
 
-      hardRelayout(true);
+      hardRelayout(true, false);
 
       waitForPostMedia($new, function(){
         processPosts($new);
         processUnprocessedPosts();
         rebuildUnstablePosts($new);
 
-        hardRelayout(true);
+        hardRelayout(true, true);
+        revealPostsAfterLayout($new);
 
         setTimeout(function(){
-          revealPosts($new);
-          hardRelayout(true);
+          hardRelayout(true, true);
 
-          setTimeout(function(){
-            hardRelayout(true);
+          layoutSettling = false;
+          isLoadingMore = false;
 
-            layoutSettling = false;
-            isLoadingMore = false;
-
-            runSettledLayouts($container, function(){
-              scheduleRestore();
-            });
-          }, 180);
-        }, 120);
+          runSettledLayouts($container, function(){
+            scheduleRestore();
+          });
+        }, 180);
       });
 
       setTimeout(function(){
-        revealPosts($new);
-        hardRelayout(true);
+        revealPostsAfterLayout($new);
+        hardRelayout(true, true);
         layoutSettling = false;
         isLoadingMore = false;
       }, 4000);
@@ -3886,25 +3926,22 @@ data-notes="{NoteCountWithLabel}">
     initMasonryIfPresent();
     initInfiniteScrollIfPresent();
 
-    revealPosts($container.find('.posts'));
-    hardRelayout(false);
-
     setTimeout(function(){
-      revealPosts($container.find('.posts'));
+      revealPostsAfterLayout($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
     }, 700);
 
     setTimeout(function(){
-      revealPosts($container.find('.posts'));
+      revealPostsAfterLayout($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
     }, 1500);
 
     setTimeout(function(){
-      revealPosts($container.find('.posts'));
+      revealPostsAfterLayout($container.find('.posts'));
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       relayoutAndRestore();
