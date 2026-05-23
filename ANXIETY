@@ -1192,7 +1192,7 @@ a.tumblr_blog{ display:none !important; }
 
 #ltop{
   position:fixed;
-  bottom:20px;
+  top:45px;
   right:20px;
   width:35px;
   height:35px;
@@ -2088,8 +2088,6 @@ a.tumblr_blog{ display:none !important; }
 
 .posts img{ display:block; width:100%; height:auto; }
 /* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
-
-/* ALIENCODES CREDIT */
 
 .alien-credit,
 .alien-credit:link,
