@@ -1837,8 +1837,8 @@ a.tumblr_blog{ display:none !important; }
 .alien-credit:visited,
 .alien-credit:hover{
     position:fixed;
-    right:22px;
-    bottom:18px;
+    right:30px;
+    bottom:30px;
     z-index:999999;
 
     display:flex;
