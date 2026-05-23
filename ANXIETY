@@ -2088,6 +2088,79 @@ a.tumblr_blog{ display:none !important; }
 
 .posts img{ display:block; width:100%; height:auto; }
 /* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
+
+/* ALIENCODES CREDIT */
+
+.alien-credit,
+.alien-credit:link,
+.alien-credit:visited,
+.alien-credit:hover{
+    position:fixed;
+    right:22px;
+    bottom:18px;
+    z-index:999999;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none!important;
+    background:none!important;
+    border:none!important;
+    box-shadow:none!important;
+
+    font-family:'Orbitron',sans-serif;
+}
+
+/* main A */
+
+.alien-a{
+    position:relative;
+
+    font-size:24px;
+    font-weight:700;
+    line-height:1;
+
+    color:{color:Links}!important;
+
+    opacity:.85;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+/* reveal text */
+
+.alien-name{
+    max-width:0;
+    overflow:hidden;
+    white-space:nowrap;
+
+    opacity:0;
+
+    font-size:8px;
+    font-weight:500;
+
+    letter-spacing:.32em;
+    text-transform:uppercase;
+
+    color:{color:Links}!important;
+
+    transition:
+        max-width .55s cubic-bezier(.22,1,.36,1),
+        opacity .35s ease;
+}
+
+.alien-credit:hover .alien-name{
+    max-width:140px;
+    opacity:.75;
+}
+
+.alien-credit:hover .alien-a{
+    opacity:1;
+    transform:translateY(-1px);
+}
 </style>
 
 <!-- // PHOTOSETS + DESIGN DE GRID // -->
@@ -4393,6 +4466,11 @@ data-notes="{NoteCountWithLabel}">
   });
 })();
 </script>
+
+<a href="https://aliencodes.tumblr.com" class="alien-credit" target="_blank" title="theme by ALIENCODES">
+  <span class="alien-a">A</span>
+  <span class="alien-name">ALIENCODES</span>
+</a>
 
 <!-- // KEEP // -->
 {block:IndexPage}
