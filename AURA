@@ -4029,20 +4029,17 @@ data-notes="{NoteCountWithLabel}">
       }, 0);
     });
 
-    // FIXED: Scroll and wheel events properly disable hover temporarily
+    // FIX: scroll and wheel events disable hover temporarily, but do NOT auto‑restore
     $win.on('scroll.acHoverFixWin', function(){
       if(scrollTimeout) clearTimeout(scrollTimeout);
       cancelRestoreRAF();
       
-      // Disable hover during scroll
       hoverDisabled = true;
       clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
         hoverDisabled = false;
-        if(lastMouse.x >= 0 && lastMouse.y >= 0){
-          scheduleRestore();
-        }
+        // No automatic hover restoration – prevents unwanted activation while scrolling
       }, 150);
     });
 
@@ -4050,15 +4047,12 @@ data-notes="{NoteCountWithLabel}">
       if(scrollTimeout) clearTimeout(scrollTimeout);
       cancelRestoreRAF();
       
-      // Disable hover during wheel
       hoverDisabled = true;
       clearActiveHover();
 
       scrollTimeout = setTimeout(function(){
         hoverDisabled = false;
-        if(lastMouse.x >= 0 && lastMouse.y >= 0){
-          scheduleRestore();
-        }
+        // No automatic hover restoration
       }, 150);
     });
 
