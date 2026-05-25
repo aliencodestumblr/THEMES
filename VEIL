@@ -352,7 +352,7 @@ h1,h2,h3,h4,h5,h6{
   {block:PermalinkPage}
   width:540px;
   margin:45px auto 0 auto !important;
-  transform: translateX(-25px);
+  transform: translateX(0px);
   border:0px;
   {/block:PermalinkPage}
 }
