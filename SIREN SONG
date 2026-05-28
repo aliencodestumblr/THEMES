@@ -2495,11 +2495,14 @@ data-notes="{NoteCountWithLabel}">
   var activeRoot = null;
   var restoreRAF = 0;
   var scrollTimeout = null;
+  var hoverResumeTimer = 0;
   var isLoadingMore = false;
   var layoutSettling = false;
   var settleTimer = 0;
   var manualLayoutActive = false;
   var hoverDisabled = false;
+  var hoverRestoreAllowed = false;
+  var scrollReleaseTimer = 0;
 
   function safe(fn){
     try{ fn(); }catch(e){}
@@ -2534,8 +2537,48 @@ data-notes="{NoteCountWithLabel}">
     activeRoot = null;
   }
 
+  function hoverIsPaused(){
+    /*
+      IMPORTANT:
+      Do NOT pause hover just because infinite scroll is loading or Masonry is settling.
+      That was the glitch: while new post sets were loading, hoverIsPaused() returned true,
+      so existing posts could not activate their hover permalink overlays until the load cycle ended.
+    */
+    return hoverDisabled;
+  }
+
+  function pauseHover(){
+    hoverDisabled = true;
+    cancelRestoreRAF();
+    clearActiveHover();
+
+    if(hoverResumeTimer){
+      clearTimeout(hoverResumeTimer);
+      hoverResumeTimer = 0;
+    }
+  }
+
+  function resumeHoverWhenStable(delay){
+    if(hoverResumeTimer) clearTimeout(hoverResumeTimer);
+
+    hoverResumeTimer = setTimeout(function(){
+      hoverResumeTimer = 0;
+
+      if(isLoadingMore || layoutSettling){
+        resumeHoverWhenStable(120);
+        return;
+      }
+
+      hoverDisabled = false;
+
+      if(lastMouse.x >= 0 && lastMouse.y >= 0){
+        scheduleRestore();
+      }
+    }, delay || 180);
+  }
+
   function activateHoverForRoot($root){
-    if(hoverDisabled) return;
+    if(hoverIsPaused()) return;
     if(!$root || !$root.length) return;
 
     var root = $root[0];
@@ -2580,7 +2623,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function getHoverRootUnderPointer(){
-    if(hoverDisabled) return $();
+    if(hoverIsPaused()) return $();
     if(lastMouse.x < 0 || lastMouse.y < 0) return $();
 
     var el = null;
@@ -2606,7 +2649,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function restoreHoverUnderPointer(){
-    if(hoverDisabled) return;
+    if(hoverIsPaused()) return;
     if(lastMouse.x < 0 || lastMouse.y < 0) return;
 
     var $root = getHoverRootUnderPointer();
@@ -2632,12 +2675,47 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function scheduleRestore(){
-    if(hoverDisabled) return;
+    /*
+      Only restore hover after REAL pointer activity.
+      This prevents the permalink overlay from activating by itself while scrolling,
+      because scrolling can move posts under the last saved mouse position.
+    */
+    if(hoverIsPaused() || !hoverRestoreAllowed) return;
+
     cancelRestoreRAF();
     restoreRAF = requestAnimationFrame(function(){
       restoreRAF = 0;
+      if(hoverIsPaused() || !hoverRestoreAllowed) return;
       restoreHoverUnderPointer();
     });
+  }
+
+  function stopScrollGhostHover(){
+    /*
+      While scrolling, the mouse position technically stays the same,
+      but the posts move underneath it. If we restore hover from that stale position,
+      random post hovers can activate by themselves.
+    */
+    hoverRestoreAllowed = false;
+    cancelRestoreRAF();
+    clearActiveHover();
+
+    if(scrollReleaseTimer){
+      clearTimeout(scrollReleaseTimer);
+      scrollReleaseTimer = 0;
+    }
+
+    scrollReleaseTimer = setTimeout(function(){
+      scrollReleaseTimer = 0;
+      /*
+        Do NOT call scheduleRestore() here.
+        The next hover should only happen after an actual mousemove/mouseenter.
+      */
+    }, 140);
+  }
+
+  function allowHoverFromPointer(){
+    hoverRestoreAllowed = true;
   }
 
   function hasTumblrMediaUrl(str){
@@ -3177,7 +3255,7 @@ data-notes="{NoteCountWithLabel}">
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
 
-    if(wasActive){
+    if(wasActive && !hoverIsPaused()){
       activePost = $post[0];
       activeRoot = $target[0];
 
@@ -3188,6 +3266,19 @@ data-notes="{NoteCountWithLabel}">
     }
 
     killFloatingPermalinkIcons($post, perma);
+  }
+
+  function forceEager($scope){
+    $scope = $scope && $scope.length ? $scope : $(document);
+
+    $scope.find('img[loading="lazy"]').each(function(){
+      try{ this.loading = 'eager'; }catch(e){}
+      $(this).attr('loading','eager');
+    });
+
+    $scope.find('iframe[loading="lazy"]').each(function(){
+      $(this).attr('loading','eager');
+    });
   }
 
   function processPosts($scope){
@@ -3227,19 +3318,6 @@ data-notes="{NoteCountWithLabel}">
     processPosts($bad);
   }
 
-  function forceEager($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
-
-    $scope.find('img[loading="lazy"]').each(function(){
-      try{ this.loading = 'eager'; }catch(e){}
-      $(this).attr('loading','eager');
-    });
-
-    $scope.find('iframe[loading="lazy"]').each(function(){
-      $(this).attr('loading','eager');
-    });
-  }
-
   function masonryReady(){
     return !!($.fn.masonry && ($container.data('masonry') || $container.data('masonry-instance')));
   }
@@ -3266,39 +3344,42 @@ data-notes="{NoteCountWithLabel}">
     });
   }
 
-  function hidePostsUntilLayout($posts) {
+  function hidePostsUntilLayout($posts){
     if(!$posts || !$posts.length) return;
-    
-    $posts.each(function() {
+
+    $posts.each(function(){
       var $p = $(this);
-      if(!$p.data('originalDisplay')) {
+      if(!$p.data('originalDisplay')){
         $p.data('originalDisplay', $p.css('display'));
       }
     });
-    
+
     $posts.css({
       visibility: 'hidden',
       opacity: 0
     });
   }
-  
-  function revealPostsAfterLayout($posts) {
+
+  function revealPostsAfterLayout($posts){
     if(!$posts || !$posts.length) return;
-    
+
     $posts.css({
       visibility: '',
       opacity: ''
     }).addClass('is-ready');
   }
-  
-  function manualLayoutPosts(forceReveal) {
+
+  function manualLayoutPosts(forceReveal){
     var $items = $container.children('.posts');
     if(!$items.length) return false;
 
     manualLayoutActive = true;
 
     var containerWidth = Math.round($container.width() || $container.parent().width() || $win.width() || 0);
-    if(containerWidth <= 0) return false;
+    if(containerWidth <= 0){
+      manualLayoutActive = false;
+      return false;
+    }
 
     var sampleWidth = 0;
     $items.each(function(){
@@ -3354,39 +3435,18 @@ data-notes="{NoteCountWithLabel}">
     }
 
     $container.css('height', Math.ceil(maxHeight) + 'px');
-    
-    if(forceReveal) {
+
+    if(forceReveal){
       revealPostsAfterLayout($items);
     }
-    
+
     manualLayoutActive = false;
     return true;
   }
 
-  function postsArePiled(){
-    var $items = $container.children('.posts');
-    if($items.length < 2) return false;
-
-    var seen = {};
-    var piled = 0;
-
-    $items.slice(0, Math.min($items.length, 8)).each(function(){
-      var $item = $(this);
-      var pos = $item.position();
-      var left = Math.round(pos.left || 0);
-      var top = Math.round(pos.top || 0);
-      var key = left + ':' + top;
-
-      if(seen[key]) piled++;
-      seen[key] = true;
-    });
-
-    return piled >= 2;
-  }
-
-  function hardRelayout(forceManual, shouldReveal) {
+  function hardRelayout(forceManual, shouldReveal){
     if(shouldReveal === undefined) shouldReveal = true;
-    
+
     if($.fn.masonry && !manualLayoutActive && !forceManual){
       safe(function(){
         ensureMasonry();
@@ -3397,10 +3457,6 @@ data-notes="{NoteCountWithLabel}">
     } else {
       manualLayoutPosts(shouldReveal);
     }
-  }
-
-  function relayout(){
-    hardRelayout(false);
   }
 
   function relayoutAndRestore(){
@@ -3433,7 +3489,7 @@ data-notes="{NoteCountWithLabel}">
       if(!resizeObserver){
         resizeObserver = new ResizeObserver(throttle(function(){
           hardRelayout(manualLayoutActive, true);
-          scheduleRestore();
+          if(!hoverIsPaused()) scheduleRestore();
         }, 120));
       }
 
@@ -3472,7 +3528,7 @@ data-notes="{NoteCountWithLabel}">
         if(loader && loader.progress){
           loader.progress(function(){
             hardRelayout(false, true);
-            scheduleRestore();
+            if(!hoverIsPaused()) scheduleRestore();
           });
         }
 
@@ -3503,7 +3559,7 @@ data-notes="{NoteCountWithLabel}">
         $(this).one('load error', function(){
           pending--;
           hardRelayout(false, true);
-          scheduleRestore();
+          if(!hoverIsPaused()) scheduleRestore();
           if(pending <= 0) done();
         });
       });
@@ -3520,7 +3576,7 @@ data-notes="{NoteCountWithLabel}">
       processUnprocessedPosts();
       rebuildUnstablePosts($scope && $scope.length ? $scope : $container);
       hardRelayout(manualLayoutActive, true);
-      scheduleRestore();
+      if(!hoverIsPaused()) scheduleRestore();
 
       remaining--;
       if(remaining <= 0 && typeof done === 'function') done();
@@ -3538,6 +3594,9 @@ data-notes="{NoteCountWithLabel}">
     $doc.on('mousemove.acHoverFix', function(e){
       lastMouse.x = e.clientX;
       lastMouse.y = e.clientY;
+      allowHoverFromPointer();
+
+      if(hoverIsPaused()) return;
 
       var $root = getHoverRootUnderPointer();
 
@@ -3549,7 +3608,8 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
-      if(!hoverDisabled) activateHoverForRoot($(this));
+      allowHoverFromPointer();
+      if(!hoverIsPaused()) activateHoverForRoot($(this));
     });
 
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
@@ -3570,7 +3630,8 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $doc.on('mouseenter.acHoverFix', '.notsi', function(){
-      if(!hoverDisabled){
+      allowHoverFromPointer();
+      if(!hoverIsPaused()){
         var $root = $(this).parent('.ac-hover-root');
         if($root.length){
           activateHoverForRoot($root);
@@ -3610,15 +3671,6 @@ data-notes="{NoteCountWithLabel}">
 
       var $target = getFirstLightboxTarget($post);
       if(!$target.length) return;
-
-      if($target.is('a')){
-        $target[0].dispatchEvent(new MouseEvent('click', {
-          bubbles: true,
-          cancelable: true,
-          view: window
-        }));
-        return;
-      }
 
       $target[0].dispatchEvent(new MouseEvent('click', {
         bubbles: true,
@@ -3662,38 +3714,21 @@ data-notes="{NoteCountWithLabel}">
       }, 0);
     });
 
-    // FIX: scroll and wheel events disable hover temporarily, but do NOT auto‑restore
     $win.on('scroll.acHoverFixWin', function(){
-      if(scrollTimeout) clearTimeout(scrollTimeout);
-      cancelRestoreRAF();
-      
-      hoverDisabled = true;
-      clearActiveHover();
-
-      scrollTimeout = setTimeout(function(){
-        hoverDisabled = false;
-        // No automatic hover restoration – prevents unwanted activation while scrolling
-      }, 150);
+      if(hoverIsPaused()) return;
+      stopScrollGhostHover();
     });
 
     $doc.on('wheel.acHoverFix', function(){
-      if(scrollTimeout) clearTimeout(scrollTimeout);
-      cancelRestoreRAF();
-      
-      hoverDisabled = true;
-      clearActiveHover();
-
-      scrollTimeout = setTimeout(function(){
-        hoverDisabled = false;
-        // No automatic hover restoration
-      }, 150);
+      if(hoverIsPaused()) return;
+      stopScrollGhostHover();
     });
 
     $win.on('resize.acHoverFixWin', throttle(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
       hardRelayout(manualLayoutActive, true);
-      scheduleRestore();
+      if(!hoverIsPaused()) scheduleRestore();
     }, 160));
 
     $doc.on('mouseleave.acHoverFix', function(e){
@@ -3703,16 +3738,19 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $win.on('blur.acHoverFixWin', function(){
+      hoverRestoreAllowed = false;
       clearActiveHover();
     });
 
     document.addEventListener('visibilitychange', function(){
       if(document.hidden){
+        hoverRestoreAllowed = false;
         clearActiveHover();
       }
     }, { passive:true });
 
     document.addEventListener('touchstart', function(){
+      hoverRestoreAllowed = false;
       clearActiveHover();
     }, { passive:true });
 
@@ -3723,7 +3761,7 @@ data-notes="{NoteCountWithLabel}">
 
   function initMasonryIfPresent(){
     $container.css('position','relative');
-    
+
     var $initialPosts = $container.find('.posts');
     hidePostsUntilLayout($initialPosts);
 
@@ -3733,10 +3771,10 @@ data-notes="{NoteCountWithLabel}">
 
     processUnprocessedPosts();
     rebuildUnstablePosts($container);
-    
+
     hardRelayout(false, false);
-    
-    setTimeout(function() {
+
+    setTimeout(function(){
       revealPostsAfterLayout($container.find('.posts'));
       hardRelayout(false, true);
     }, 50);
@@ -3776,6 +3814,11 @@ data-notes="{NoteCountWithLabel}">
       isLoadingMore = true;
       layoutSettling = true;
 
+      /*
+        Do not pause/clear hover here.
+        Existing posts should keep working while the next infinite-scroll batch is loading.
+      */
+
       $new
         .removeClass('is-ready')
         .css({
@@ -3804,10 +3847,11 @@ data-notes="{NoteCountWithLabel}">
         setTimeout(function(){
           hardRelayout(true, true);
 
-          layoutSettling = false;
           isLoadingMore = false;
 
           runSettledLayouts($container, function(){
+            layoutSettling = false;
+            resumeHoverWhenStable(80);
             scheduleRestore();
           });
         }, 180);
@@ -3816,8 +3860,10 @@ data-notes="{NoteCountWithLabel}">
       setTimeout(function(){
         revealPostsAfterLayout($new);
         hardRelayout(true, true);
-        layoutSettling = false;
         isLoadingMore = false;
+        layoutSettling = false;
+        resumeHoverWhenStable(80);
+        scheduleRestore();
       }, 4000);
     });
   }
