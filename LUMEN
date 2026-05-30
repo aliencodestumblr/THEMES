@@ -34,7 +34,7 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="image:Icon" content=""/>
 
 <meta name="color:Accent" content="#EEEEEE"/>
-<meta name="color:Borders" content="#111111"/>
+<meta name="color:Borders" content="#141618"/>
 <meta name="color:Text" content="#EEEEEE" />
 <meta name="color:Links" content="#EEEEEE" />
 <meta name="color:Links Hover" content="#EEEEEE" />
@@ -320,11 +320,57 @@ body {
 
 
 /* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ------------ */
-h1,h2,h3,h4,h5,h6{
-  color:{color:accent};
-  font:"Rajdhani", sans-serif;
-  text-align:justify;
-  line-height:15px;
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
 }
 
 
