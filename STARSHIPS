@@ -352,7 +352,7 @@ h1,h2,h3,h4,h5,h6{
   {block:PermalinkPage}
   width:540px;
   margin:45px auto 0 auto !important;
-  transform: translateX(-25px);
+  transform: translateX(0px);
   border:0px;
   {/block:PermalinkPage}
 }
@@ -1712,7 +1712,6 @@ a.tumblr_blog{ display:none !important; }
 
 .posts .media-wrap{
   position:relative;
-  border-radius:4px;
   overflow:hidden;
 }
 
@@ -1843,7 +1842,7 @@ a.tumblr_blog{ display:none !important; }
 
     <nav class="spine-nav" aria-label="Navigation">
       <a href="/"><span>homepage</span></a>
-      <a href="/ask"><span>inbox</span></a>
+      <a href="/ask"><span>dm</span></a>
       <a href="/archive"><span>ex files</span></a>
       {block:IfLink1Title}<a href="{text:Link 1}"><span>{text:Link 1 Title}</span></a>{/block:IfLink1Title}
       {block:IfLink2Title}<a href="{text:Link 2}"><span>{text:Link 2 Title}</span></a>{/block:IfLink2Title}
