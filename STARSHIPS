@@ -51,9 +51,9 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
-<meta name="text:Link 1 Title" content="homepage"/>
+<meta name="text:Link 1 Title" content="uploads"/>
 <meta name="text:Link 2" content="/"/>
-<meta name="text:Link 2 Title" content="dm"/>
+<meta name="text:Link 2 Title" content="movies"/>
 <meta name="text:Link 3" content="/"/>
 <meta name="text:Link 3 Title" content="tags"/>
 <meta name="text:Link 4" content="/"/>
@@ -1842,9 +1842,9 @@ a.tumblr_blog{ display:none !important; }
     </div>
 
     <nav class="spine-nav" aria-label="Navigation">
-      <a href="/"><span>home</span></a>
-      <a href="/ask"><span>ask</span></a>
-      <a href="/archive"><span>archive</span></a>
+      <a href="/"><span>homepage</span></a>
+      <a href="/ask"><span>inbox</span></a>
+      <a href="/archive"><span>ex files</span></a>
       {block:IfLink1Title}<a href="{text:Link 1}"><span>{text:Link 1 Title}</span></a>{/block:IfLink1Title}
       {block:IfLink2Title}<a href="{text:Link 2}"><span>{text:Link 2 Title}</span></a>{/block:IfLink2Title}
       {block:IfLink3Title}<a href="{text:Link 3}"><span>{text:Link 3 Title}</span></a>{/block:IfLink3Title}
