@@ -320,11 +320,57 @@ body {
 
 
 /* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ------------ */
-h1,h2,h3,h4,h5,h6{
-  color:{color:accent};
-  font:"Rajdhani", sans-serif;
-  text-align:justify;
-  line-height:15px;
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
 }
 
 
@@ -352,7 +398,7 @@ h1,h2,h3,h4,h5,h6{
   {block:PermalinkPage}
   width:540px;
   margin:45px auto 0 auto !important;
-  transform: translateX(-25px);
+  transform: translateX(0px);
   border:0px;
   {/block:PermalinkPage}
 }
@@ -420,54 +466,27 @@ h1,h2,h3,h4,h5,h6{
 
 
 /* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
-{block:IndexPage}
-
-.notsi{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  pointer-events:none;
-  z-index:99;
-}
-
-.notsi .inf{
-  display:none!important;
-}
+/* FLOATING COMMAND MODULE */
 
 .notsi .npf-box{
   position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
+  right:10px;
+  bottom:10px;
   z-index:5;
   pointer-events:none;
 }
 
-/* BOTTOM COMMAND BAR */
-
 .notsi .inf2{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:0;
-
-  width:100%;
-  box-sizing:border-box;
-  padding:0;
-
-  background:rgba(0,0,0,.9);
-
-  border-top:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-    0 -10px 30px rgba(0,0,0,.5);
+  gap:4px;
 
   opacity:0;
-  transform:translateY(32px);
+  transform:translateY(10px);
 
   transition:
-    opacity .55s cubic-bezier(.16,1,.3,1),
-    transform .55s cubic-bezier(.16,1,.3,1);
+    opacity .38s cubic-bezier(.16,1,.3,1),
+    transform .38s cubic-bezier(.16,1,.3,1);
 
   pointer-events:auto;
 }
@@ -475,133 +494,95 @@ h1,h2,h3,h4,h5,h6{
 /* BUTTONS */
 
 .notsi .inf2 a{
-  position:relative;
-
-  flex:1;
-  min-width:0;
-  height:46px;
+  width:34px;
+  height:34px;
 
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
 
-  background:transparent;
+  padding:0!important;
+  margin:0!important;
 
-  border-right:1px solid rgba(255,255,255,.05);
+  background:rgba(0,0,0,.92);
 
-  color:rgba(255,255,255,.4);
-  text-decoration:none;
+  border:1px solid rgba(255,255,255,.08);
 
-  font-family:"Rajdhani",sans-serif;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
+  border-radius:3px;
+
+  color:rgba(255,255,255,.42);
+
+  text-decoration:none!important;
 
   opacity:0;
-  transform:translateY(20px);
+  transform:translateY(8px);
 
   transition:
-    opacity .3s ease,
-    transform .4s cubic-bezier(.16,1,.3,1),
-    color .25s ease,
-    background .25s ease;
-}
-
-.notsi .inf2 a:last-child{
-  border-right:none;
+    opacity .25s ease,
+    transform .35s cubic-bezier(.16,1,.3,1),
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
 }
 
 .notsi .inf2 a::before,
-.notsi .inf2::before,
-.notsi .inf2::after{
+.notsi .inf2 a::after{
   display:none!important;
 }
 
 /* ICONS */
 
 .notsi .inf2 i{
-  font-size:12px;
-  line-height:1;
+  font-size:11px;
 }
 
 .notsi .inf2 .rb-icon{
   width:12px;
   height:12px;
-  flex:0 0 auto;
-
-  opacity:.6;
-  transition:opacity .25s ease;
+  opacity:.7;
 }
 
 .notsi .inf2 .rb-icon path{
   fill:none;
   stroke:currentColor;
-  stroke-width:1.5;
+  stroke-width:1.6;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
 .notsi .ac-label{
-  display:block;
-  line-height:1;
-  white-space:nowrap;
+  display:none!important;
 }
 
 /* HOVER */
 
 .notsi .inf2 a:hover{
-  background:rgba(255,255,255,.02);
   color:#fff;
-}
 
-.notsi .inf2 a:hover .rb-icon{
-  opacity:1;
-}
+  background:rgba(255,255,255,.05);
 
-/* LASER UNDERLINE */
-
-.notsi .inf2 a::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  bottom:0;
-
-  width:100%;
-  height:2px;
-
-  background:#fff;
+  border-color:rgba(255,255,255,.18);
 
   box-shadow:
-    0 0 8px #fff,
-    0 0 15px rgba(255,255,255,.5);
+    0 0 0 1px rgba(255,255,255,.05),
+    0 8px 18px rgba(0,0,0,.45);
 
-  transform:scaleX(0);
-
-  transition:
-    transform .3s cubic-bezier(.16,1,.3,1);
-
-  display:block!important;
-}
-
-.notsi .inf2 a:hover::after{
-  transform:scaleX(1);
+  transform:translateY(-2px);
 }
 
 /* STAGGER */
 
 .notsi .inf2 a:nth-child(1){
-  transition-delay:.04s;
+  transition-delay:.03s;
 }
 
 .notsi .inf2 a:nth-child(2){
-  transition-delay:.08s;
+  transition-delay:.06s;
 }
 
 .notsi .inf2 a:nth-child(3){
-  transition-delay:.12s;
+  transition-delay:.09s;
 }
 
 /* REVEAL */
@@ -617,8 +598,6 @@ h1,h2,h3,h4,h5,h6{
   opacity:1;
   transform:translateY(0);
 }
-
-{/block:IndexPage}
 
 /* --------- TAMANHOS DE IMAGEM + VÍDEO / NÃO ALTERAR --------- */
 .posts img{
@@ -674,63 +653,67 @@ h1,h2,h3,h4,h5,h6{
 
 
 /* ---------------- PAGINAÇÃO ---------------- */
-.pagination {
-  width: 700px;
-  max-width: 100%;
-  margin: 50px auto 80px;
+
+.page-nav{
+  width:min(700px, calc(100% - 40px));
+  margin:50px auto 80px!important;
+
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:30px;
-  font-size:12px;
-  text-transform: uppercase;
-  font-weight:600;
-  opacity:.85;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+
+  font-family:"Rajdhani",sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
 }
-.pagination a,
-.pagination span{
-  display:inline-block;
-  min-width:32px;
-  height:32px;
-  line-height:32px;
-  text-align:center;
-  border:1px solid #eee;
-  background:#ffffff;
+
+.page-nav a,
+.page-nav span{
+  min-width:31px;
+  height:30px;
+  padding:0 10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid {color:Borders};
+  border-radius:2px;
+
   color:{color:Links};
-  text-decoration:none;
-  border-radius:6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  text-decoration:none!important;
+
+  box-sizing:border-box;
+
+  transition:.22s ease;
 }
-.pagination a:hover{
+
+.page-nav a:hover{
   background:{color:Links};
-  color:#ffffff;
   border-color:{color:Links};
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  color:#000;
+  transform:translateY(-2px);
 }
-.pagination .current_page{
+
+.page-nav .current_page{
   background:{color:Links};
-  color:#fff;
   border-color:{color:Links};
+  color:#000;
 }
-body .pagination{
-  margin-left:60%;
-  transform: translateX(-50%);
-  position: relative;
+
+.page-nav .prev,
+.page-nav .next{
+  min-width:68px;
 }
-.pagination .prev,
-.pagination .disabled{
-  opacity:0.35;
+
+.page-nav .disabled{
+  opacity:.25;
   pointer-events:none;
-  cursor:default;
-}
-.pagination .prev span,
-.pagination .disabled span{
-  background:#ffffff;
-  border:1px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-  color:{color:Links};
 }
 
 
@@ -3830,7 +3813,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     <div class="npf-box">
       <div class="inf">
-        <span class="npf-time" data-ac-time></span>
+
       </div>
 
       <div class="inf2">
@@ -4094,10 +4077,42 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <!-- // KEEP // -->
 {block:IndexPage}
-<div id="pagination" style="display:none;">
+{block:IfPagination}
+{block:Pagination}
+
+<nav class="page-nav" aria-label="Pagination">
+
+  {block:PreviousPage}
+  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="current_page">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="next" href="{NextPage}" title="Next Page">next</a>
+  {/block:NextPage}
+
+</nav>
+
+{/block:Pagination}
+{/block:IfPagination}
+{/block:IndexPage}
+
+
+<!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
+{block:IndexPage}
+<div id="pagination" style="display:none!important;">
   {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
 </div>
-<div id="infscr-loading" style="display:none;"></div>
+<div id="infscr-loading" style="display:none!important;"></div>
 {/block:IndexPage}
 </body>
 </html>
