@@ -1,3 +1,13 @@
+<!--
+
+       @ALIENCODES // @RAIVYS
+
+OTHER CREDITS:
+POST MEDIA HOVERS     ──  @raivys
+MUSIC PLAYER          ──  @aliencodes/glenthemes
+PHOTOSETS SCRIPT      ──  @shythemes
+INFINITE SCROLL       ──  @aliencodes
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -288,16 +298,61 @@ body {
 
 
 /* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ----------- */
-h1,h2,h3,h4,h5,h6{
-  color:{color:accent};
-  font:"Rajdhani", sans-serif;
-  text-align:justify;
-  line-height:15px;
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
 }
 
 
 /* ---------------- CONTAINER DE DESIGN DOS POSTS ---------------- */
-
 .entry{
   width:330px;
   height:auto;
@@ -327,7 +382,6 @@ h1,h2,h3,h4,h5,h6{
   {/block:PermalinkPage}
 }
 
-/* side borders */
 #posts::before,
 #posts::after{
   content:"";
@@ -370,7 +424,7 @@ h1,h2,h3,h4,h5,h6{
   {/block:PermalinkPage}
 }
 
-/* ---------------- LINHA DO USUÁRIO NO TOPO DO POST ---------------- */
+/* ------------- LINHA DO USUÁRIO NO TOPO DO POST ------------- */
 .post-top{
   margin: 0 0 8px 0;
   display:flex;
@@ -397,7 +451,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-/* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
+/* ------------- HOVER DO PERMALINK EM FOTO/VÍDEO ------------- */
 {block:IndexPage}
 
 .notsi{
@@ -430,8 +484,6 @@ h1,h2,h3,h4,h5,h6{
     opacity:1!important;
 }
 
-/* INNER WRAP */
-
 .notsi .npf-box{
     position:relative!important;
 
@@ -444,8 +496,6 @@ h1,h2,h3,h4,h5,h6{
     z-index:99999999999999!important;
 }
 
-/* BUTTON STACK */
-
 .notsi .inf2{
     position:relative!important;
 
@@ -456,10 +506,6 @@ h1,h2,h3,h4,h5,h6{
     pointer-events:auto!important;
 }
 
-/* invisible hover bridge */
-
-/* invisible hover bridge */
-
 .notsi .inf2::after{
     content:"";
 
@@ -468,7 +514,6 @@ h1,h2,h3,h4,h5,h6{
     top:-12px;
     bottom:-12px;
 
-    /* starts AFTER the buttons instead of covering them */
     left:100%;
     margin-left:0;
 
@@ -479,8 +524,6 @@ h1,h2,h3,h4,h5,h6{
 
     z-index:0;
 }
-
-/* BUTTONS */
 
 .notsi .inf2 a{
      z-index:5!important;
@@ -522,14 +565,10 @@ h1,h2,h3,h4,h5,h6{
         0 3px 8px rgba(0,0,0,.1)!important;
 }
 
-/* HIDE ICONS COMPLETELY */
-
 .notsi .inf2 i,
 .notsi .inf2 svg{
     display:none!important;
 }
-
-/* PREVENT CLIPPING */
 
 .post,
 .posts,
@@ -541,8 +580,6 @@ figure,
 .npf_row{
     overflow:visible!important;
 }
-
-/* REMOVE UNUSED ELEMENTS */
 
 .notsi .inf,
 .notsi .npf-box::before,
@@ -610,63 +647,66 @@ figure,
 
 
 /* ---------------- PAGINAÇÃO ---------------- */
-.pagination {
-  width: 700px;
-  max-width: 100%;
-  margin: 50px auto 80px;
+.page-nav{
+  width:min(700px, calc(100% - 40px));
+  margin:50px auto 80px!important;
+
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:30px;
-  font-size:12px;
-  text-transform: uppercase;
-  font-weight:600;
-  opacity:.85;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+
+  font-family:"Rajdhani",sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
 }
-.pagination a,
-.pagination span{
-  display:inline-block;
-  min-width:32px;
-  height:32px;
-  line-height:32px;
-  text-align:center;
-  border:1px solid #eee;
-  background:#ffffff;
+
+.page-nav a,
+.page-nav span{
+  min-width:31px;
+  height:30px;
+  padding:0 10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid {color:Borders};
+  border-radius:2px;
+
   color:{color:Links};
-  text-decoration:none;
-  border-radius:6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  text-decoration:none!important;
+
+  box-sizing:border-box;
+
+  transition:.22s ease;
 }
-.pagination a:hover{
+
+.page-nav a:hover{
   background:{color:Links};
-  color:#ffffff;
   border-color:{color:Links};
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  color:#000;
+  transform:translateY(-2px);
 }
-.pagination .current_page{
+
+.page-nav .current_page{
   background:{color:Links};
-  color:#fff;
   border-color:{color:Links};
+  color:#000;
 }
-body .pagination{
-  margin-left:60%;
-  transform: translateX(-50%);
-  position: relative;
+
+.page-nav .prev,
+.page-nav .next{
+  min-width:68px;
 }
-.pagination .prev,
-.pagination .disabled{
-  opacity:0.35;
+
+.page-nav .disabled{
+  opacity:.25;
   pointer-events:none;
-  cursor:default;
-}
-.pagination .prev span,
-.pagination .disabled span{
-  background:#ffffff;
-  border:1px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-  color:{color:Links};
 }
 
 
@@ -689,8 +729,6 @@ body .pagination{
   background:#fff;
   border:1px solid {color:Borders};
 }
-
-/* ALL LINKS */
 
 .tp-pill{
   position:relative;
@@ -729,8 +767,6 @@ body .pagination{
   content:none!important;
 }
 
-/* NOTES */
-
 .tp-notes{
   gap:4px;
 }
@@ -752,8 +788,6 @@ body .pagination{
   color:rgba(0,0,0,.55);
 }
 
-/* tighter separator */
-
 .tp-notes::after{
   content:"/";
 
@@ -771,13 +805,9 @@ body .pagination{
   color:rgba(0,0,0,.22);
 }
 
-/* REBLOG */
-
 .tp-reblog{
   opacity:.58;
 }
-
-/* NEW LAST ICON */
 
 .tp-icon{
   width:13px;
@@ -804,8 +834,6 @@ body .pagination{
   transition:
     transform .28s cubic-bezier(.22,1,.36,1);
 }
-
-/* HOVER */
 
 .tp-pill:hover{
   color:#111;
@@ -1312,14 +1340,10 @@ a.tumblr_blog{ display:none !important; }
   to{ transform:rotate(360deg); }
 }
 
-/* text area */
-
 .sb-copy{
   width:210px;
   text-align:right;
 }
-
-/* smaller description */
 
 .sb-description{
   position:relative;
@@ -1335,7 +1359,6 @@ a.tumblr_blog{ display:none !important; }
   text-align:right;
 }
 
-/* tiny horizontal line before desc */
 .sb-description::before{
   content:"";
   display:inline-block;
@@ -1347,8 +1370,6 @@ a.tumblr_blog{ display:none !important; }
 
   background:rgba(0,0,0,.38);
 }
-
-/* nav title */
 
 .sb-nav-wrap{
   position:relative;
@@ -1377,10 +1398,6 @@ a.tumblr_blog{ display:none !important; }
 .sb-nav-wrap:hover .sb-nav-title{
   color:rgba(0,0,0,.72);
 }
-
-/* dropdown links */
-
-/* animated stagger dropdown */
 
 .sb-nav{
   position:absolute;
@@ -1453,7 +1470,6 @@ a.tumblr_blog{ display:none !important; }
   letter-spacing:1px;
 }
 
-/* hide old elements if they still exist somewhere */
 .sb-hero,
 .sb-badge,
 .sb-stats-footer,
@@ -1462,10 +1478,6 @@ a.tumblr_blog{ display:none !important; }
 .sb-online-wrap{
   display:none!important;
 }
-
-/* =========================
-   TOP RIGHT AC MUSIC PLAYER
-   ========================= */
 
 #top-player-fixed{
   position:fixed;
@@ -1476,8 +1488,6 @@ a.tumblr_blog{ display:none !important; }
   width:132px;
   box-sizing:border-box;
 }
-
-/* PLAYER BOX */
 
 #top-player-fixed .ac-player{
   width:100%;
@@ -1495,8 +1505,6 @@ a.tumblr_blog{ display:none !important; }
 
   box-shadow:none;
 }
-
-/* META */
 
 #top-player-fixed .ac-player-meta{
   display:flex;
@@ -1543,8 +1551,6 @@ a.tumblr_blog{ display:none !important; }
   color:rgba(0,0,0,.42);
 }
 
-/* ROW */
-
 #top-player-fixed .ac-player-row{
   display:grid;
   grid-template-columns:18px 1fr 13px;
@@ -1553,8 +1559,6 @@ a.tumblr_blog{ display:none !important; }
 
   width:100%;
 }
-
-/* BUTTONS */
 
 #top-player-fixed .ac-play-btn{
   border:none;
@@ -1605,8 +1609,6 @@ a.tumblr_blog{ display:none !important; }
   font-size:12px!important;
 }
 
-/* PLAY / PAUSE SWAP */
-
 #top-player-fixed .ac-toggle-btn i:last-child{
   display:none;
 }
@@ -1618,8 +1620,6 @@ a.tumblr_blog{ display:none !important; }
 #top-player-fixed .ac-player.is-playing .ac-toggle-btn i:last-child{
   display:block;
 }
-
-/* WAVE BAR */
 
 #top-player-fixed .ac-player-wave{
   width:100%;
@@ -1727,14 +1727,11 @@ a.tumblr_blog{ display:none !important; }
   display:none!important;
 }
 
-
-/* hide usernames on photo / media posts */
 .posts.has-npf-media .post-top,
 .posts.has-npf-media .text-userline{
   display:none!important;
 }
 
-/* text post username line only */
 .text-userline{
   display:flex!important;
   align-items:center!important;
@@ -1760,11 +1757,6 @@ a.tumblr_blog{ display:none !important; }
   font-weight:800!important;
 }
 
-/* =========================
-   TUMBLR LIGHTBOX IMAGE FIX
-   keeps huge images contained
-   ========================= */
-
 .tmblr-lightbox,
 .tmblr-lightbox * {
   box-sizing: border-box !important;
@@ -1789,7 +1781,6 @@ a.tumblr_blog{ display:none !important; }
   margin: auto !important;
 }
 
-/* keeps the image centered on screen */
 .tmblr-lightbox .lightbox-image,
 .tmblr-lightbox-image {
   display: flex !important;
@@ -1802,13 +1793,11 @@ a.tumblr_blog{ display:none !important; }
 
 {block:PermalinkPage}
 
-/* hide ONLY the original stretched #posts borders on permalink */
 #posts::before,
 #posts::after{
   display:none!important;
 }
 
-/* clean screen-height borders measured by JS */
 body::before,
 body::after{
   content:"";
@@ -1930,7 +1919,6 @@ body::after{
 </aside>
 </div>
 
-<!-- YOUR CLOCK SCRIPT -->
 <script>
 (function(){
   function updateSBClock(){
@@ -2372,6 +2360,10 @@ data-notes="{NoteCountWithLabel}">
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
+<!-- // PHOTOSETS + DESIGN DE GRID // -->
+<link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
+
 {block:IndexPage}
 <script>
 (function($){
@@ -2386,17 +2378,13 @@ data-notes="{NoteCountWithLabel}">
   $container.data('acInitDone', 1);
 
   var lastMouse = { x:-1, y:-1 };
-  var resizeObserver = null;
   var activePost = null;
   var activeRoot = null;
   var restoreRAF = 0;
-  var scrollTimeout = null;
-  var isLoadingMore = false;
-  var layoutSettling = false;
+  var resizeObserver = null;
+  var layoutTimer = null;
 
-  function safe(fn){
-    try{ fn(); }catch(e){}
-  }
+  function safe(fn){ try{ fn(); }catch(e){} }
 
   function throttle(fn, wait){
     var t = null;
@@ -2422,124 +2410,6 @@ data-notes="{NoteCountWithLabel}">
     activeRoot = null;
   }
 
-  function resolveHoverRoot($thing){
-    if(!$thing || !$thing.length) return $();
-
-    var $root = $thing.closest('.ac-hover-root');
-    if($root.length) return $root.first();
-
-    var $post = $thing.closest('.posts.has-npf-media');
-    if($post.length){
-      $root = $post.find('.ac-hover-root').first();
-      if($root.length) return $root;
-    }
-
-    return $();
-  }
-
-  function activateHoverForRoot($root){
-    $root = resolveHoverRoot($root);
-    if(!$root.length) return;
-
-    var root = $root[0];
-    var $post = $root.closest('.posts.has-npf-media');
-    if(!$post.length) return;
-
-    var post = $post[0];
-
-    if(activePost !== post || activeRoot !== root){
-      clearActiveHover();
-      activePost = post;
-      activeRoot = root;
-    }
-
-    $post.addClass('ac-hover-on');
-    $root.addClass('ac-hover-on');
-  }
-
-  function pointerInsideElement(el, x, y, pad){
-    if(!el || x < 0 || y < 0) return false;
-    pad = pad || 0;
-
-    var rect;
-    try{
-      rect = el.getBoundingClientRect();
-    }catch(e){
-      return false;
-    }
-
-    if(!rect) return false;
-
-    return (
-      x >= rect.left - pad &&
-      x <= rect.right + pad &&
-      y >= rect.top - pad &&
-      y <= rect.bottom + pad
-    );
-  }
-
-  function pointerInsideActiveHoverZone(){
-    if(!activeRoot || !activePost) return false;
-
-    if(pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y, 95)) return true;
-
-    var $post = $(activePost);
-
-    var $box = $post.find('.npf-box, .inf2').first();
-    if($box.length && pointerInsideElement($box[0], lastMouse.x, lastMouse.y, 95)) return true;
-
-    return false;
-  }
-
-  function getHoverRootUnderPointer(){
-    if(lastMouse.x < 0 || lastMouse.y < 0) return $();
-
-    var el = null;
-    try{
-      el = document.elementFromPoint(lastMouse.x, lastMouse.y);
-    }catch(e){
-      el = null;
-    }
-
-    if(!el) return $();
-
-    var $el = $(el);
-
-    var $hoverPiece = $el.closest('.npf-box, .inf2, .npf-reblog, .npf-permalink, .npf-lightbox');
-    if($hoverPiece.length){
-      var $fromPiece = resolveHoverRoot($hoverPiece);
-      if($fromPiece.length) return $fromPiece;
-    }
-
-    var $root = $el.closest('.ac-hover-root');
-    if($root.length) return $root.first();
-
-    if(pointerInsideActiveHoverZone()){
-      return $(activeRoot);
-    }
-
-    return $();
-  }
-
-  function restoreHoverUnderPointer(){
-    if(lastMouse.x < 0 || lastMouse.y < 0) return;
-    if(isLoadingMore || layoutSettling) return;
-
-    var $root = getHoverRootUnderPointer();
-
-    if($root.length){
-      activateHoverForRoot($root);
-      return;
-    }
-
-    if(pointerInsideActiveHoverZone()){
-      activateHoverForRoot($(activeRoot));
-      return;
-    }
-
-    clearActiveHover();
-  }
-
   function scheduleRestore(){
     cancelRestoreRAF();
     restoreRAF = requestAnimationFrame(function(){
@@ -2548,69 +2418,91 @@ data-notes="{NoteCountWithLabel}">
     });
   }
 
-  function relayout(){
-    if(!$.fn.masonry) return;
-    safe(function(){
-      $container.masonry('reloadItems');
-      $container.masonry('layout');
-    });
+  function pointerInsideElement(el, x, y){
+    if(!el || x < 0 || y < 0) return false;
+
+    var rect;
+    try{ rect = el.getBoundingClientRect(); }
+    catch(e){ return false; }
+
+    return rect &&
+      x >= rect.left &&
+      x <= rect.right &&
+      y >= rect.top &&
+      y <= rect.bottom;
   }
 
-  function relayoutAndRestore(){
-    relayout();
-    scheduleRestore();
-  }
+  function getHoverRootUnderPointer(){
+    if(lastMouse.x < 0 || lastMouse.y < 0) return $();
 
-  function forceEager($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
+    var el = null;
+    try{ el = document.elementFromPoint(lastMouse.x, lastMouse.y); }
+    catch(e){ el = null; }
 
-    $scope.find('img[loading="lazy"]').each(function(){
-      try{ this.loading = 'eager'; }catch(e){}
-      $(this).attr('loading','eager');
-    });
+    if(!el) return $();
 
-    $scope.find('iframe[loading="lazy"]').each(function(){
-      $(this).attr('loading','eager');
-    });
-  }
+    var $el = $(el);
+    var $root = $el.closest('.ac-hover-root');
 
-  function watchHeights($items){
-    if(!$items || !$items.length) $items = $container.find('.posts');
+    if($root.length) return $root;
 
-    $items.find('img').each(function(){
-      var img = this;
-      if(img.complete) return;
-      if(img._acHoverWatchBound) return;
-      img._acHoverWatchBound = true;
-
-      img.addEventListener('load', relayoutAndRestore, { once:false });
-      img.addEventListener('error', relayoutAndRestore, { once:false });
-    });
-
-    $items.find('iframe').each(function(){
-      var frame = this;
-      if(frame._acHoverWatchBound) return;
-      frame._acHoverWatchBound = true;
-
-      frame.addEventListener('load', relayoutAndRestore, { once:false });
-    });
-
-    if(window.ResizeObserver){
-      if(!resizeObserver){
-        resizeObserver = new ResizeObserver(throttle(relayoutAndRestore, 80));
-      }
-
-      $items.each(function(){
-        if(this._acHoverROBound) return;
-        this._acHoverROBound = true;
-        try{ resizeObserver.observe(this); }catch(e){}
-      });
-    } else {
-      setTimeout(relayoutAndRestore, 300);
-      setTimeout(relayoutAndRestore, 800);
-      setTimeout(relayoutAndRestore, 1400);
-      setTimeout(relayoutAndRestore, 2200);
+    var $overlay = $el.closest('.notsi');
+    if($overlay.length){
+      var $overlayRoot = $overlay.parent('.ac-hover-root');
+      if($overlayRoot.length) return $overlayRoot;
     }
+
+    return $();
+  }
+
+  function activateHoverForRoot($root){
+    if(!$root || !$root.length) return;
+
+    var root = $root[0];
+    var $post = $root.closest('.posts.has-npf-media');
+    if(!$post.length) return;
+
+    var post = $post[0];
+
+    if(activePost === post && activeRoot === root){
+      $post.addClass('ac-hover-on');
+      $root.addClass('ac-hover-on');
+      return;
+    }
+
+    clearActiveHover();
+
+    activePost = post;
+    activeRoot = root;
+
+    $post.addClass('ac-hover-on');
+    $root.addClass('ac-hover-on');
+  }
+
+  function restoreHoverUnderPointer(){
+    if(lastMouse.x < 0 || lastMouse.y < 0) return;
+
+    var $root = getHoverRootUnderPointer();
+
+    if($root.length){
+      activateHoverForRoot($root);
+      return;
+    }
+
+    if(activeRoot && document.documentElement.contains(activeRoot)){
+      if(pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
+        var $still = $(activeRoot);
+        var $stillPost = $still.closest('.posts.has-npf-media');
+
+        if($stillPost.length){
+          $stillPost.addClass('ac-hover-on');
+          $still.addClass('ac-hover-on');
+          return;
+        }
+      }
+    }
+
+    clearActiveHover();
   }
 
   function hasTumblrMediaUrl(str){
@@ -2623,7 +2515,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function inThemeChrome($el){
-    return $el.closest('#sidebar, #topbar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop, #sharp-sidebar-wrap, #top-player-fixed').length > 0;
+    return $el.closest('#sidebar, #topbar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop').length > 0;
   }
 
   function inPXUPhotoset($el){
@@ -2634,15 +2526,16 @@ data-notes="{NoteCountWithLabel}">
     if(!$img || !$img.length) return false;
     if(inThemeChrome($img) || inPXUPhotoset($img)) return false;
 
-    var src = ($img.attr('src') || '');
-    var srcset = ($img.attr('srcset') || '');
-    var dataSrc = ($img.attr('data-src') || '');
+    var src = $img.attr('src') || '';
+    var srcset = $img.attr('srcset') || '';
+    var dataSrc = $img.attr('data-src') || '';
 
     if(hasTumblrMediaUrl(src) || hasTumblrMediaUrl(srcset) || hasTumblrMediaUrl(dataSrc)) return true;
 
     if($img.closest('figure.tmblr-full, .tmblr-full, .npf_image, .npf_row, .npf_col, .reblog-list').length) return true;
 
     var $pic = $img.closest('picture');
+
     if($pic.length){
       var ok = false;
       $pic.find('source').each(function(){
@@ -2661,7 +2554,7 @@ data-notes="{NoteCountWithLabel}">
     if($node.is('.npf_video_container, .npf_video, video')) return true;
 
     if($node.is('iframe')){
-      var s = ($node.attr('src') || '');
+      var s = $node.attr('src') || '';
       return (
         s.indexOf('tumblr.com/video') !== -1 ||
         s.indexOf('youtube.com') !== -1 ||
@@ -2682,11 +2575,10 @@ data-notes="{NoteCountWithLabel}">
     if(!$.fn.pxuPhotoset) return;
 
     $scope.find('.photo-slideshow').each(function(){
-      var el = this;
-      if(el._acPXUInited) return;
-      el._acPXUInited = true;
+      if(this._acPXUInited) return;
+      this._acPXUInited = true;
 
-      $(el).pxuPhotoset({
+      $(this).pxuPhotoset({
         lightbox:true,
         rounded:false,
         gutter:'1px',
@@ -2706,6 +2598,7 @@ data-notes="{NoteCountWithLabel}">
     $posts.each(function(){
       var $post = $(this);
       if($post.data('acUnnestDone') === 1) return;
+
       $post.data('acUnnestDone', 1);
 
       $post.unnest({
@@ -2722,21 +2615,18 @@ data-notes="{NoteCountWithLabel}">
 
   function cleanupNPFMediaUrls($scope){
     $scope = ($scope && $scope.length) ? $scope : $(document);
-    var hosts = ['64.media.tumblr.com/','va.media.tumblr.com/','media.tumblr.com/'];
 
     $scope.find('a[href]').each(function(){
       var $a = $(this);
-      var hrefRaw = ($a.attr('href') || '');
+      var hrefRaw = $a.attr('href') || '';
       var href = hrefRaw.toLowerCase();
-      var txt  = $.trim($a.text() || '');
+      var txt = $.trim($a.text() || '');
 
-      var isMedia = false;
-      for(var i=0;i<hosts.length;i++){
-        if(href.indexOf(hosts[i]) !== -1){
-          isMedia = true;
-          break;
-        }
-      }
+      var isMedia =
+        href.indexOf('64.media.tumblr.com/') !== -1 ||
+        href.indexOf('va.media.tumblr.com/') !== -1 ||
+        href.indexOf('media.tumblr.com/') !== -1;
+
       if(!isMedia) return;
 
       if(txt && ($.trim(hrefRaw) === txt || $.trim(href) === txt.toLowerCase()) && $a.children().length === 0){
@@ -2757,39 +2647,19 @@ data-notes="{NoteCountWithLabel}">
       var href = $a.attr('href') || '';
       if(!href) return;
 
-      var isSame = (href === permalink) ||
-                   (href.indexOf(permalink) !== -1) ||
-                   (permalink.indexOf(href) !== -1);
+      var isSame =
+        href === permalink ||
+        href.indexOf(permalink) !== -1 ||
+        permalink.indexOf(href) !== -1;
+
       if(!isSame) return;
 
       var txt = $.trim($a.text() || '');
       var hasIcon = $a.find('svg, img').length > 0;
 
-      if(hasIcon && txt === ''){
-        $a.remove();
-        return;
-      }
-
-      if(hasIcon && txt.length <= 1){
-        $a.remove();
-        return;
-      }
+      if(hasIcon && txt === '') $a.remove();
+      if(hasIcon && txt.length <= 1) $a.remove();
     });
-  }
-
-  function markAsMediaPost($post){
-    $post.addClass('has-npf-media');
-  }
-
-  function unmarkIfNoMedia($post){
-    $post.removeClass('has-npf-media');
-    $post.removeData('acHoverDone');
-    $post.removeClass('ac-hover-on');
-    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
-
-    if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
-      clearActiveHover();
-    }
   }
 
   function commonAncestor(nodes, stopAt){
@@ -2802,42 +2672,35 @@ data-notes="{NoteCountWithLabel}">
     for(var i=0;i<nodes.length;i++){
       var path = [];
       var n = nodes[i];
+
       while(n && n.nodeType === 1){
         path.unshift(n);
         if(n === stopAt) break;
         n = n.parentNode;
       }
+
       paths.push(path);
       if(path.length < minLen) minLen = path.length;
     }
 
     var lastCommon = null;
+
     for(var j=0;j<minLen;j++){
       var test = paths[0][j];
       var same = true;
+
       for(var k=1;k<paths.length;k++){
         if(paths[k][j] !== test){
           same = false;
           break;
         }
       }
+
       if(same) lastCommon = test;
       else break;
     }
 
     return lastCommon;
-  }
-
-  function cleanHoverTarget($candidate, $post){
-    if(!$candidate || !$candidate.length) return $();
-
-    if($candidate.is('a, img, picture, source')){
-      var $better = $candidate.closest('.npf_photoset, .npf_grid, .npf_container, .npf_group, .npf_row, figure.tmblr-full, .tmblr-full, .npf_image, div');
-      if($better.length && $better[0] !== $post[0]) return $better.first();
-    }
-
-    if($candidate.is('.posts')) return $post;
-    return $candidate.first();
   }
 
   function countNPFMedia($scope){
@@ -2854,7 +2717,20 @@ data-notes="{NoteCountWithLabel}">
     return imgCount + vidCount;
   }
 
-  function tightenNPFHoverTarget($target, $post){
+  function cleanHoverTarget($candidate, $post){
+    if(!$candidate || !$candidate.length) return $();
+
+    if($candidate.is('a, img, picture, source')){
+      var $better = $candidate.closest('.npf_photoset, .npf_grid, .npf_container, .npf_group, .npf_row, figure.tmblr-full, .tmblr-full, .npf_image, div');
+      if($better.length && $better[0] !== $post[0]) return $better.first();
+    }
+
+    if($candidate.is('.posts')) return $post;
+
+    return $candidate.first();
+  }
+
+  function tightenNPFHoverTarget($target){
     if(!$target || !$target.length) return $();
 
     var $t = $target.first();
@@ -2880,11 +2756,6 @@ data-notes="{NoteCountWithLabel}">
     return $t;
   }
 
-  function isWideNPFRoot($target){
-    if(!$target || !$target.length) return false;
-    return $target.is('.npf_container, .npf_grid, .npf_photoset, .npf_group, .npf_row, .npf_col');
-  }
-
   function pickNPFUnifiedContainer($post){
     if(!$post || !$post.length) return $();
 
@@ -2895,6 +2766,7 @@ data-notes="{NoteCountWithLabel}">
       'figure.tmblr-full, .tmblr-full, .npf_image, .npf_video_container, .npf_video'
     ).filter(function(){
       var $el = $(this);
+
       if(inPXUPhotoset($el)) return false;
 
       var hasImg = $el.find('img').filter(function(){
@@ -2926,21 +2798,14 @@ data-notes="{NoteCountWithLabel}">
     var $ancestor = $(ancestor);
 
     var $preferred = $ancestor.find('.npf_photoset, .npf_grid, .npf_container, .npf_group').filter(function(){
-      var $el = $(this);
-
-      var imgCount = $el.find('img').filter(function(){
-        return looksLikeNPFImage($(this));
-      }).length;
-
-      var vidCount = $el.find('video, iframe, .npf_video_container, .npf_video').filter(function(){
-        return looksLikeNPFVideo($(this));
-      }).length;
-
-      return imgCount > 1 || vidCount > 0;
+      return countNPFMedia($(this)) > 1;
     }).first();
 
-    if($preferred.length) return tightenNPFHoverTarget(cleanHoverTarget($preferred, $post), $post);
-    return tightenNPFHoverTarget(cleanHoverTarget($ancestor, $post), $post);
+    if($preferred.length){
+      return tightenNPFHoverTarget(cleanHoverTarget($preferred, $post));
+    }
+
+    return tightenNPFHoverTarget(cleanHoverTarget($ancestor, $post));
   }
 
   function pickHoverTarget($post){
@@ -2967,6 +2832,7 @@ data-notes="{NoteCountWithLabel}">
     var $oneBlock = $post.find('figure.tmblr-full, .tmblr-full, .npf_image, figure').filter(function(){
       var $b = $(this);
       if(inPXUPhotoset($b)) return false;
+
       return $b.find('img').filter(function(){
         return looksLikeNPFImage($(this));
       }).length > 0;
@@ -2986,6 +2852,11 @@ data-notes="{NoteCountWithLabel}">
     return $();
   }
 
+  function isWideNPFRoot($target){
+    if(!$target || !$target.length) return false;
+    return $target.is('.npf_container, .npf_grid, .npf_photoset, .npf_group, .npf_row, .npf_col');
+  }
+
   function postNeedsRebuild($post){
     if(!$post || !$post.length) return false;
 
@@ -2993,115 +2864,68 @@ data-notes="{NoteCountWithLabel}">
     var $overlay = $post.find('.notsi').first();
 
     if(!$root.length || !$overlay.length) return true;
-    if(!$overlay.closest('.ac-hover-root').length) return true;
+    if(!$overlay.parent().is($root)) return true;
 
     var $wanted = pickHoverTarget($post);
     if(!$wanted.length) $wanted = $post;
-    $wanted = tightenNPFHoverTarget($wanted, $post);
 
+    $wanted = tightenNPFHoverTarget($wanted);
     if(!$wanted.length) return false;
+
     return $root[0] !== $wanted[0];
   }
 
-  function openTumblrLightboxFromPost($post){
-    if(!$post || !$post.length) return;
+  function getFirstLightboxTarget($post){
+    if(!$post || !$post.length) return $();
 
-    var imgs = [];
+    var $target = $post.find(
+      '.photo-slideshow a[href], .pxu-photo a[href], .photo-data a[href], ' +
+      '.npf_image a[href], figure.tmblr-full a[href], .tmblr-full a[href], ' +
+      'a[href*="media.tumblr.com"], a[href*="64.media.tumblr.com"], a[href*="va.media.tumblr.com"]'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
 
-    $post.find('.media-wrap img, .photo-slideshow img, .pxu-photo img, .npf_image img, figure.tmblr-full img, .tmblr-full img').each(function(){
-      var $img = $(this);
-      if($img.closest('.notsi').length) return;
+    if($target.length) return $target;
 
-      var high =
-        $img.attr('data-highres') ||
-        $img.attr('data-src') ||
-        $img.closest('a[href]').attr('href') ||
-        $img.attr('src');
-
-      var low = $img.attr('src') || high;
-
-      if(!high) return;
-
-      imgs.push({
-        width: parseInt($img.attr('data-width'),10) || this.naturalWidth || this.width || 1280,
-        height: parseInt($img.attr('data-height'),10) || this.naturalHeight || this.height || 1280,
-        low_res: low,
-        high_res: high
-      });
-    });
-
-    if(imgs.length && window.Tumblr && Tumblr.Lightbox && typeof Tumblr.Lightbox.init === 'function'){
-      Tumblr.Lightbox.init(imgs);
-      $('body').addClass('tumblr_lightbox_active');
-    }
-  }
-
-  function normalizeOverlayNode($node){
-    if(!$node || !$node.length) return $node;
-
-    $node.addClass('notsi');
-    $node.attr('data-ac-hover-root','');
-
-    if(!$node.find('.npf-box').length){
-      var $inf = $node.children('.inf').first();
-      var $inf2 = $node.children('.inf2').first();
-
-      var $box = $('<div class="npf-box"></div>');
-
-      if($inf.length) $box.append($inf);
-      if($inf2.length) $box.append($inf2);
-
-      if(!$box.children().length){
-        $box.append(
-          '<div class="inf2">' +
-            '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
-            '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
-            '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
-          '</div>'
-        );
-      }
-
-      $node.append($box);
-    }
-
-    $node[0].style.pointerEvents = 'none';
-
-    $node.find('.npf-box').each(function(){
-      this.style.pointerEvents = 'auto';
-    });
-
-    $node.find('.inf2').each(function(){
-      this.style.pointerEvents = 'auto';
-    });
-
-    $node.find('.inf2 a').each(function(){
-      this.style.pointerEvents = 'auto';
-    });
-
-    return $node;
+    return $post.find(
+      '.photo-slideshow .pxu-photo img, .photo-slideshow img, .photo-data img, ' +
+      '.npf_image img, figure.tmblr-full img, .tmblr-full img, ' +
+      '.npf_video_container, .npf_video, video'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
   }
 
   function buildOverlayNode(){
     var tpl = document.getElementById('npf-hover-template');
 
     if(tpl && tpl.content && tpl.content.firstElementChild){
-      return normalizeOverlayNode($(tpl.content.firstElementChild.cloneNode(true)));
+      return $(tpl.content.firstElementChild.cloneNode(true));
     }
 
-    return normalizeOverlayNode($(
+    return $(
       '<div class="notsi" data-ac-hover-root>' +
-        '<div class="npf-box">' +
-          '<div class="inf">' +
-            '<div class="npf-time" data-ac-time></div>' +
-          '</div>' +
-          '<div class="inf2">' +
-            '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
-            '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
-            '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
-          '</div>' +
+        '<div class="inf">' +
+          '<div class="npf-time" data-ac-time></div>' +
+        '</div>' +
+        '<div class="inf2">' +
+          '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
+          '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
+          '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
         '</div>' +
       '</div>'
-    ));
+    );
+  }
+
+  function unmarkIfNoMedia($post){
+    $post.removeClass('has-npf-media ac-hover-on');
+    $post.removeData('acHoverDone');
+    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
+
+    if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
+      clearActiveHover();
+    }
   }
 
   function addHoverOverlay($post){
@@ -3122,41 +2946,38 @@ data-notes="{NoteCountWithLabel}">
       return;
     }
 
-    markAsMediaPost($post);
+    $post.addClass('has-npf-media');
 
     var perma = $post.attr('data-permalink') || '';
     if(!perma) return;
 
-    var rb  = $post.attr('data-reblogurl') || '#';
-    var tm  = $post.attr('data-time') || '';
+    var rb = $post.attr('data-reblogurl') || '#';
+    var tm = $post.attr('data-time') || '';
 
     if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
 
-    if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
-      clearActiveHover();
-    }
+    var wasActive = activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot));
 
     $post.removeClass('ac-hover-on');
     $post.find('.notsi').remove();
     $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
 
+    if(wasActive){
+      activePost = null;
+      activeRoot = null;
+    }
+
     var $node = buildOverlayNode();
 
     $node.find('.npf-time, [data-ac-time]').first().text(tm);
-
-    var $rbA = $node.find('a.npf-reblog, [data-ac-reblog]').first();
-    if($rbA.length) $rbA.attr('href', rb);
-
-    var $pmA = $node.find('a.npf-permalink, [data-ac-permalink]').first();
-    if($pmA.length) $pmA.attr('href', perma);
-
-    var $lbA = $node.find('a.npf-lightbox, [data-ac-lightbox]').first();
-    if($lbA.length) $lbA.attr('href', '#');
+    $node.find('a.npf-reblog, [data-ac-reblog]').first().attr('href', rb);
+    $node.find('a.npf-permalink, [data-ac-permalink]').first().attr('href', perma);
+    $node.find('a.npf-lightbox, [data-ac-lightbox]').first().attr('href', '#');
 
     var $target = pickHoverTarget($post);
     if(!$target.length) $target = $post;
 
-    $target = tightenNPFHoverTarget($target, $post);
+    $target = tightenNPFHoverTarget($target);
 
     if(($target.css('position') || 'static') === 'static'){
       $target.css('position','relative');
@@ -3170,21 +2991,37 @@ data-notes="{NoteCountWithLabel}">
         bottom:'0',
         width:'auto'
       });
+
       $target.addClass('ac-hover-root--npf-wide');
-    } else {
-      $node.css({
-        top:'',
-        left:'',
-        right:'',
-        bottom:'',
-        width:''
-      });
     }
 
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
 
+    if(wasActive){
+      activePost = $post[0];
+      activeRoot = $target[0];
+
+      if(lastMouse.x >= 0 && lastMouse.y >= 0 && pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
+        $post.addClass('ac-hover-on');
+        $target.addClass('ac-hover-on');
+      }
+    }
+
     killFloatingPermalinkIcons($post, perma);
+  }
+
+  function forceEager($scope){
+    $scope = $scope && $scope.length ? $scope : $(document);
+
+    $scope.find('img[loading="lazy"]').each(function(){
+      try{ this.loading = 'eager'; }catch(e){}
+      $(this).attr('loading','eager');
+    });
+
+    $scope.find('iframe[loading="lazy"]').each(function(){
+      $(this).attr('loading','eager');
+    });
   }
 
   function processPosts($scope){
@@ -3192,6 +3029,7 @@ data-notes="{NoteCountWithLabel}">
     if(!$posts.length) return;
 
     forceEager($posts);
+
     safe(function(){ initPhotosets($posts); });
     safe(function(){ initUnnest($posts); });
     safe(function(){ cleanupNPFMediaUrls($posts); });
@@ -3208,20 +3046,198 @@ data-notes="{NoteCountWithLabel}">
       return !$(this).data('acHoverDone');
     });
 
-    if(!$todo.length) return;
-    processPosts($todo);
+    if($todo.length) processPosts($todo);
   }
 
   function rebuildUnstablePosts($scope){
     var $posts = scopePosts($scope);
-    if(!$posts.length) $posts = $container.find('.posts');
+    if(!$posts.length) return;
 
     var $bad = $posts.filter(function(){
       return postNeedsRebuild($(this));
     });
 
-    if(!$bad.length) return;
-    processPosts($bad);
+    if($bad.length) processPosts($bad);
+  }
+
+  function getPostWidth(){
+    var w = 0;
+
+    $container.children('.posts').each(function(){
+      var $p = $(this);
+      var ow = Math.ceil($p.outerWidth(true) || 0);
+
+      if(ow > w) w = ow;
+    });
+
+    if(w <= 0) w = 340;
+
+    return w;
+  }
+
+  function layoutPosts(){
+    var $items = $container.children('.posts');
+    if(!$items.length) return;
+
+    var containerWidth =
+      Math.round($container.width()) ||
+      Math.round($container.parent().width()) ||
+      Math.round($win.width());
+
+    var itemWidth = getPostWidth();
+    var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
+    var usedWidth = cols * itemWidth;
+    var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
+    var heights = [];
+
+    for(var i=0;i<cols;i++) heights[i] = 0;
+
+    $container.css({
+      position:'relative',
+      height:''
+    });
+
+    $items.each(function(){
+      var $item = $(this);
+
+      $item.css({
+        position:'absolute',
+        display:'block'
+      });
+
+      var shortest = 0;
+
+      for(var i=1;i<cols;i++){
+        if(heights[i] < heights[shortest]) shortest = i;
+      }
+
+      var itemHeight =
+        Math.ceil($item.outerHeight(true)) ||
+        Math.ceil(this.getBoundingClientRect().height) ||
+        1;
+
+      var left = leftOffset + shortest * itemWidth;
+      var top = heights[shortest];
+
+      $item.css({
+        left:left + 'px',
+        top:top + 'px'
+      });
+
+      heights[shortest] += itemHeight;
+    });
+
+    var maxHeight = 0;
+
+    for(var j=0;j<heights.length;j++){
+      if(heights[j] > maxHeight) maxHeight = heights[j];
+    }
+
+    $container.css('height', Math.ceil(maxHeight) + 'px');
+    scheduleRestore();
+  }
+
+  function requestLayout(){
+    if(layoutTimer) clearTimeout(layoutTimer);
+
+    layoutTimer = setTimeout(function(){
+      layoutTimer = null;
+      layoutPosts();
+    }, 40);
+  }
+
+  function hidePosts($posts){
+    if(!$posts || !$posts.length) return;
+
+    $posts.css({
+      visibility:'hidden',
+      opacity:0
+    });
+  }
+
+  function showPosts($posts){
+    if(!$posts || !$posts.length) return;
+
+    $posts.css({
+      visibility:'',
+      opacity:''
+    }).addClass('is-ready');
+  }
+
+  function layoutAndReveal($posts){
+    processPosts($posts);
+    rebuildUnstablePosts($posts);
+
+    if($.fn.imagesLoaded){
+      $posts.imagesLoaded(function(){
+        layoutPosts();
+        showPosts($posts);
+
+        setTimeout(function(){
+          layoutPosts();
+          showPosts($posts);
+        }, 160);
+
+        setTimeout(function(){
+          layoutPosts();
+          showPosts($posts);
+        }, 650);
+      });
+    } else {
+      layoutPosts();
+      showPosts($posts);
+
+      setTimeout(function(){
+        layoutPosts();
+        showPosts($posts);
+      }, 500);
+    }
+  }
+
+  function watchHeights($items){
+    if(!$items || !$items.length) $items = $container.find('.posts');
+
+    $items.find('img').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
+
+      this.addEventListener('load', requestLayout, { once:false });
+      this.addEventListener('error', requestLayout, { once:false });
+    });
+
+    $items.find('iframe').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
+
+      this.addEventListener('load', requestLayout, { once:false });
+    });
+
+    if(window.ResizeObserver){
+      if(!resizeObserver){
+        resizeObserver = new ResizeObserver(throttle(function(){
+          requestLayout();
+        }, 140));
+      }
+
+      $items.each(function(){
+        if(this._acHoverROBound) return;
+        this._acHoverROBound = true;
+
+        try{ resizeObserver.observe(this); }catch(e){}
+      });
+    }
+  }
+
+  function runSettledLayouts($scope){
+    var delays = [100, 260, 520, 900, 1500, 2400];
+
+    for(var i=0;i<delays.length;i++){
+      setTimeout(function(){
+        processUnprocessedPosts();
+        if($scope && $scope.length) rebuildUnstablePosts($scope);
+        layoutPosts();
+      }, delays[i]);
+    }
   }
 
   function bindHoverEvents(){
@@ -3232,94 +3248,55 @@ data-notes="{NoteCountWithLabel}">
       lastMouse.x = e.clientX;
       lastMouse.y = e.clientY;
 
-      if(isLoadingMore || layoutSettling) return;
-
       var $root = getHoverRootUnderPointer();
 
-      if($root.length){
-        activateHoverForRoot($root);
-        return;
-      }
-
-      if(pointerInsideActiveHoverZone()){
-        activateHoverForRoot($(activeRoot));
-        return;
-      }
-
-      clearActiveHover();
+      if($root.length) activateHoverForRoot($root);
+      else clearActiveHover();
     });
 
-    $doc.on(
-      'mouseenter.acHoverFix mouseover.acHoverFix',
-      '.ac-hover-root, .npf-box, .inf2, .inf2 a',
-      function(){
-        if(isLoadingMore || layoutSettling) return;
-
-        var $root = resolveHoverRoot($(this));
-        if($root.length) activateHoverForRoot($root);
-      }
-    );
+    $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
+      activateHoverForRoot($(this));
+    });
 
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
-      var rootEl = this;
       var rel = e.relatedTarget;
 
-      if(rel){
-        var $rel = $(rel);
-        if($rel.closest('.npf-box, .inf2, .inf2 a').length) return;
-        if($rel.closest('.ac-hover-root').length) return;
+      if(rel && $(rel).closest('.notsi').length) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
+
+      $(this).removeClass('ac-hover-on');
+
+      var $post = $(this).closest('.posts');
+      if($post.length) $post.removeClass('ac-hover-on');
+
+      if(activeRoot === this){
+        activePost = null;
+        activeRoot = null;
       }
+    });
 
-      setTimeout(function(){
-        if(pointerInsideActiveHoverZone()) return;
+    $doc.on('mouseenter.acHoverFix', '.notsi', function(){
+      var $root = $(this).parent('.ac-hover-root');
+      if($root.length) activateHoverForRoot($root);
+    });
 
-        var $root = $(rootEl);
+    $doc.on('mouseleave.acHoverFix', '.notsi', function(e){
+      var $root = $(this).parent('.ac-hover-root');
+      var rel = e.relatedTarget;
+
+      if($root.length && rel && $root[0].contains(rel)) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
+
+      if($root.length){
         $root.removeClass('ac-hover-on');
 
         var $post = $root.closest('.posts');
         if($post.length) $post.removeClass('ac-hover-on');
 
-        if(activeRoot === rootEl){
+        if(activeRoot === $root[0]){
           activePost = null;
           activeRoot = null;
         }
-      }, 120);
-    });
-
-    $doc.on('mouseleave.acHoverFix', '.npf-box, .inf2', function(e){
-      var rel = e.relatedTarget;
-
-      if(rel){
-        var $rel = $(rel);
-        if($rel.closest('.npf-box, .inf2, .inf2 a, .ac-hover-root').length) return;
-      }
-
-      setTimeout(function(){
-        if(pointerInsideActiveHoverZone()) return;
-
-        var $root = getHoverRootUnderPointer();
-        if($root.length){
-          activateHoverForRoot($root);
-          return;
-        }
-
-        clearActiveHover();
-      }, 120);
-    });
-
-    $doc.on('click.acHoverFix', '.notsi .npf-reblog, .notsi [data-ac-reblog]', function(e){
-      var href = $(this).attr('href');
-      if(!href || href === '#'){
-        e.preventDefault();
-        return;
-      }
-    });
-
-    $doc.on('click.acHoverFix', '.notsi .npf-permalink, .notsi [data-ac-permalink]', function(e){
-      var href = $(this).attr('href');
-      if(!href || href === '#'){
-        e.preventDefault();
-        return;
       }
     });
 
@@ -3330,46 +3307,48 @@ data-notes="{NoteCountWithLabel}">
       var $post = $(this).closest('.posts');
 
       if(!$post.length){
-        var $root = resolveHoverRoot($(this));
-        if($root.length) $post = $root.closest('.posts');
+        $post = $(this).closest('.ac-hover-root').closest('.posts');
       }
 
       if(!$post.length) return;
 
-      openTumblrLightboxFromPost($post);
-    });
+      var $target = getFirstLightboxTarget($post);
+      if(!$target.length) return;
 
-    $win.on('scroll.acHoverFixWin', function(){
-      if(scrollTimeout) clearTimeout(scrollTimeout);
+      $target[0].dispatchEvent(new MouseEvent('click', {
+        bubbles:true,
+        cancelable:true,
+        view:window
+      }));
 
-      scrollTimeout = setTimeout(function(){
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
-          scheduleRestore();
+      setTimeout(function(){
+        var wrap =
+          $target.closest('.pxu-photo')[0] ||
+          $target.closest('.photo-data')[0] ||
+          $target.closest('.npf_image, figure.tmblr-full, .tmblr-full')[0];
+
+        if(wrap){
+          wrap.dispatchEvent(new MouseEvent('click', {
+            bubbles:true,
+            cancelable:true,
+            view:window
+          }));
         }
-      }, 100);
+      }, 0);
     });
 
-    $doc.on('wheel.acHoverFix', function(){
-      if(scrollTimeout) clearTimeout(scrollTimeout);
+    $win.on('scroll.acHoverFixWin', throttle(function(){
+      scheduleRestore();
+    }, 80));
 
-      scrollTimeout = setTimeout(function(){
-        if(lastMouse.x >= 0 && lastMouse.y >= 0 && !isLoadingMore && !layoutSettling){
-          scheduleRestore();
-        }
-      }, 100);
-    });
+    $doc.on('wheel.acHoverFix touchmove.acHoverFix', throttle(function(){
+      scheduleRestore();
+    }, 80));
 
     $win.on('resize.acHoverFixWin', throttle(function(){
-      processUnprocessedPosts();
-      rebuildUnstablePosts($container);
-      relayout();
-    }, 20));
-
-    $doc.on('mouseleave.acHoverFix', function(e){
-      if(e.target === document || e.target === document.documentElement || e.target === document.body){
-        clearActiveHover();
-      }
-    });
+      requestLayout();
+      scheduleRestore();
+    }, 160));
 
     $win.on('blur.acHoverFixWin', function(){
       clearActiveHover();
@@ -3397,108 +3376,77 @@ data-notes="{NoteCountWithLabel}">
       navSelector:'#pagination',
       nextSelector:'#next',
       itemSelector:'.posts',
-      loading:{ selector:'#infscr-loading', img:'', msgText:'', finishedMsg:'' },
+      loading:{
+        selector:'#infscr-loading',
+        img:'',
+        msgText:'',
+        finishedMsg:''
+      },
       bufferPx:1200,
       appendCallback:false
     }, function(newElements){
-      var $new = $(newElements);
+      var $new = $(newElements).filter('.posts');
+
+      if(!$new.length) $new = $(newElements).find('.posts');
       if(!$new.length) return;
 
-      isLoadingMore = true;
-      layoutSettling = true;
+      $new
+        .removeClass('is-ready ac-hover-on')
+        .css({
+          visibility:'hidden',
+          opacity:0,
+          display:'block',
+          position:'absolute'
+        });
 
-      var hadActiveHover = activePost !== null;
-      var savedActiveRoot = activeRoot;
+      $container.append($new);
 
-      $new.removeClass('is-ready');
+      forceEager($new);
+      layoutAndReveal($new);
+      runSettledLayouts($new);
 
-      var finish = function(){
-        $container.append($new);
-
-        processPosts($new);
-        processUnprocessedPosts();
-        rebuildUnstablePosts($new);
-
-        if($.fn.masonry){
-          safe(function(){
-            $container.masonry('appended', $new);
-          });
-          relayout();
-        }
-
-        setTimeout(function(){
-          $new.addClass('is-ready');
-        }, 80);
-
-        setTimeout(function(){
-          processUnprocessedPosts();
-          rebuildUnstablePosts($new);
-          relayoutAndRestore();
-
-          setTimeout(function(){
-            layoutSettling = false;
-            isLoadingMore = false;
-
-            if(hadActiveHover && savedActiveRoot && lastMouse.x >= 0 && lastMouse.y >= 0){
-              setTimeout(function(){
-                restoreHoverUnderPointer();
-              }, 50);
-            } else if(lastMouse.x >= 0 && lastMouse.y >= 0){
-              scheduleRestore();
-            }
-          }, 150);
-        }, 140);
-
-        setTimeout(function(){
-          processUnprocessedPosts();
-          rebuildUnstablePosts($new);
-          relayoutAndRestore();
-        }, 420);
-
-        setTimeout(function(){
-          processUnprocessedPosts();
-          rebuildUnstablePosts($new);
-          relayoutAndRestore();
-        }, 900);
-      };
-
-      if($new.imagesLoaded){
-        $new.imagesLoaded(function(){ finish(); });
-      } else if(window.imagesLoaded){
-        imagesLoaded($new.get(), function(){ finish(); });
-      } else {
-        setTimeout(finish, 180);
-      }
+      setTimeout(function(){
+        showPosts($new);
+        layoutPosts();
+        scheduleRestore();
+      }, 3600);
     });
   }
 
   $(document).ready(function(){
-    processPosts($(document));
-    processUnprocessedPosts();
-    rebuildUnstablePosts($container);
+    $container.css('position','relative');
+
+    var $initial = $container.find('.posts');
+
+    hidePosts($initial);
+
     bindHoverEvents();
 
+    forceEager($initial);
+    layoutAndReveal($initial);
     initInfiniteScrollIfPresent();
-
-    $('.posts').addClass('is-ready');
-
-    setTimeout(function(){
-      processUnprocessedPosts();
-      rebuildUnstablePosts($container);
-      relayoutAndRestore();
-    }, 700);
+    runSettledLayouts($container);
 
     setTimeout(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      relayoutAndRestore();
-    }, 1500);
+      showPosts($container.find('.posts'));
+      layoutPosts();
+    }, 800);
 
     setTimeout(function(){
       processUnprocessedPosts();
       rebuildUnstablePosts($container);
-      relayoutAndRestore();
-    }, 2400);
+      showPosts($container.find('.posts'));
+      layoutPosts();
+    }, 1600);
+
+    setTimeout(function(){
+      processUnprocessedPosts();
+      rebuildUnstablePosts($container);
+      showPosts($container.find('.posts'));
+      layoutPosts();
+    }, 2800);
   });
 
 })(window.jQuery);
@@ -3879,12 +3827,44 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 {/block:PermalinkPage}
 
-<!-- // KEEP // -->
+<!-- // VISIBLE PAGINATION // -->
 {block:IndexPage}
-<div id="pagination" style="display:none;">
+{block:IfPagination}
+{block:Pagination}
+
+<nav class="page-nav" aria-label="Pagination">
+
+  {block:PreviousPage}
+  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="current_page">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="next" href="{NextPage}" title="Next Page">next</a>
+  {/block:NextPage}
+
+</nav>
+
+{/block:Pagination}
+{/block:IfPagination}
+{/block:IndexPage}
+
+
+<!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
+{block:IndexPage}
+<div id="pagination" style="display:none!important;">
   {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
 </div>
-<div id="infscr-loading" style="display:none;"></div>
+<div id="infscr-loading" style="display:none!important;"></div>
 {/block:IndexPage}
 </body>
 </html>
