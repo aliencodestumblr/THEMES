@@ -50,7 +50,7 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:3 Columns" content="">
+<meta name="if:3 Columns" content="1">
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/tagged/upl"/>
@@ -383,7 +383,7 @@ body {
   margin: 0 auto !important;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin: 0 auto !important;
   {/block:PermalinkPage}
 }
@@ -398,9 +398,9 @@ body {
   transition-duration: .0s;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin:45px auto 0 auto !important;
-  transform: translateX(30px);
+  transform: translateX(-25px);
   border:0px;
   {/block:PermalinkPage}
 }
@@ -417,7 +417,7 @@ body {
   transition:1s;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin:25px auto 0 auto;
 
   background:transparent;
@@ -435,7 +435,7 @@ body {
   margin: 0 auto !important;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin: 0 auto !important;
   {/block:PermalinkPage}
 }
@@ -450,9 +450,9 @@ body {
   transition-duration: .0s;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin:45px auto 0 auto !important;
-  transform: translateX(10px);
+  transform: translateX(-25px);
   border:0px;
   {/block:PermalinkPage}
 }
@@ -469,7 +469,7 @@ body {
   transition:1s;
 
   {block:PermalinkPage}
-  width:740px;
+  width:540px;
   margin:25px auto 0 auto;
 
   background:transparent;
@@ -482,7 +482,7 @@ body {
 {/block:if3Columns}
 
 
-/* ------------- LINHA DO USUÁRIO NO TOPO DO POST ------------- */
+/* ---------------- LINHA DO USUÁRIO NO TOPO DO POST ---------------- */
 .post-top{
   margin: 0 0 8px 0;
   display:flex;
@@ -509,7 +509,7 @@ body {
 }
 
 
-/* ------------- HOVER DO PERMALINK EM FOTO/VÍDEO ------------- */
+/* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
 {block:IndexPage}
 
 .notsi{
@@ -759,66 +759,63 @@ body {
 
 
 /* ---------------- PAGINAÇÃO ---------------- */
-.page-nav{
-  width:min(700px, calc(100% - 40px));
-  margin:50px auto 80px!important;
-
+.pagination {
+  width: 700px;
+  max-width: 100%;
+  margin: 50px auto 80px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
-  gap:6px;
-
-  font-family:"Rajdhani",sans-serif;
-  font-size:9px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
+  align-items:center;
+  gap:30px;
+  font-size:12px;
+  text-transform: uppercase;
+  font-weight:600;
+  opacity:.85;
 }
-
-.page-nav a,
-.page-nav span{
-  min-width:31px;
-  height:30px;
-  padding:0 10px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:rgba(255,255,255,.04);
-  border:1px solid {color:Borders};
-  border-radius:2px;
-
+.pagination a,
+.pagination span{
+  display:inline-block;
+  min-width:32px;
+  height:32px;
+  line-height:32px;
+  text-align:center;
+  border:1px solid #eee;
+  background:#ffffff;
   color:{color:Links};
-  text-decoration:none!important;
-
-  box-sizing:border-box;
-
-  transition:.22s ease;
+  text-decoration:none;
+  border-radius:6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
-
-.page-nav a:hover{
+.pagination a:hover{
   background:{color:Links};
+  color:#ffffff;
   border-color:{color:Links};
-  color:#000;
-  transform:translateY(-2px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
-
-.page-nav .current_page{
+.pagination .current_page{
   background:{color:Links};
+  color:#fff;
   border-color:{color:Links};
-  color:#000;
 }
-
-.page-nav .prev,
-.page-nav .next{
-  min-width:68px;
+body .pagination{
+  margin-left:60%;
+  transform: translateX(-50%);
+  position: relative;
 }
-
-.page-nav .disabled{
-  opacity:.25;
+.pagination .prev,
+.pagination .disabled{
+  opacity:0.35;
   pointer-events:none;
+  cursor:default;
+}
+.pagination .prev span,
+.pagination .disabled span{
+  background:#ffffff;
+  border:1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  color:{color:Links};
 }
 
 
@@ -975,7 +972,7 @@ body {
 
 /* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
 .perma{
-  width:740px;
+  width:540px;
   margin:0 0 100px 0px;
   font-family:"Rajdhani", sans-serif;
   text-align:left;
@@ -983,7 +980,7 @@ body {
   letter-spacing:1px;
 }
 .perma-info{
-  width:740px;
+  width:540px;
   margin:20px 0 22px 0;
   font-size:9px;
   line-height:1.7;
@@ -1006,7 +1003,7 @@ body {
 }
 
 ol.notes{
-  width:740px;
+  width:540px;
   margin:0;
   padding:0;
   list-style:none;
@@ -1015,7 +1012,7 @@ ol.notes{
   line-height:16px;
 }
 ol.notes li.note{
-  width:740px;
+  width:540px;
   margin-left:0px;
   padding:4px 0;
   border-bottom:1px solid rgba(0,0,0,.05);
@@ -1766,6 +1763,7 @@ a.tumblr_blog{ display:none !important; }
 
 .posts .media-wrap{
   position:relative;
+  border-radius:4px;
   overflow:hidden;
 }
 
@@ -2036,11 +2034,7 @@ data-notes="{NoteCountWithLabel}">
 </div>
   {/block:IndexPage}
 
-  {block:Title}
-<h1 class="post-title">{Title}</h1>
-{/block:Title}
-
-<div class="caption">{Body}</div>
+  <div class="caption">{Body}</div>
 
 {block:IndexPage}
   <div class="post-footer">
@@ -2453,10 +2447,6 @@ data-notes="{NoteCountWithLabel}">
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
-<!-- // PHOTOSETS + DESIGN DE GRID // -->
-<link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
-<script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
-
 {block:IndexPage}
 <script>
 (function($){
@@ -2470,12 +2460,23 @@ data-notes="{NoteCountWithLabel}">
   if($container.data('acInitDone') === 1) return;
   $container.data('acInitDone', 1);
 
-  var lastMouse = { x:-1, y:-1 };
-  var activePost = null;
-  var activeRoot = null;
-  var restoreRAF = 0;
-  var resizeObserver = null;
   var layoutTimer = null;
+  var scanTimer = null;
+  var mutationObserver = null;
+  var activeRoot = null;
+  var activePost = null;
+
+  $('#ac-hover-script-safety').remove();
+
+  $('<style id="ac-hover-script-safety">' +
+    '#posts{position:relative!important;}' +
+    '#posts > .posts{position:absolute;z-index:1;box-sizing:border-box;}' +
+    '#posts > .posts.ac-hover-on{z-index:50!important;}' +
+    '.ac-hover-root{position:relative;z-index:2;}' +
+    '.ac-hover-root.ac-hover-on{z-index:60!important;}' +
+    '.posts.ac-prep{visibility:hidden!important;opacity:0!important;pointer-events:none!important;z-index:-1!important;}' +
+    '.posts.is-ready{visibility:visible;opacity:1;pointer-events:auto;}' +
+  '</style>').appendTo('head');
 
   function safe(fn){ try{ fn(); }catch(e){} }
 
@@ -2490,112 +2491,21 @@ data-notes="{NoteCountWithLabel}">
     };
   }
 
-  function cancelRestoreRAF(){
-    if(restoreRAF){
-      cancelAnimationFrame(restoreRAF);
-      restoreRAF = 0;
-    }
-  }
-
   function clearActiveHover(){
     $('.posts.ac-hover-on, .ac-hover-root.ac-hover-on').removeClass('ac-hover-on');
-    activePost = null;
     activeRoot = null;
+    activePost = null;
   }
 
-  function scheduleRestore(){
-    cancelRestoreRAF();
-    restoreRAF = requestAnimationFrame(function(){
-      restoreRAF = 0;
-      restoreHoverUnderPointer();
-    });
-  }
-
-  function pointerInsideElement(el, x, y){
-    if(!el || x < 0 || y < 0) return false;
-
-    var rect;
-    try{ rect = el.getBoundingClientRect(); }
-    catch(e){ return false; }
-
-    return rect &&
-      x >= rect.left &&
-      x <= rect.right &&
-      y >= rect.top &&
-      y <= rect.bottom;
-  }
-
-  function getHoverRootUnderPointer(){
-    if(lastMouse.x < 0 || lastMouse.y < 0) return $();
-
-    var el = null;
-    try{ el = document.elementFromPoint(lastMouse.x, lastMouse.y); }
-    catch(e){ el = null; }
-
-    if(!el) return $();
-
-    var $el = $(el);
-    var $root = $el.closest('.ac-hover-root');
-
-    if($root.length) return $root;
-
-    var $overlay = $el.closest('.notsi');
-    if($overlay.length){
-      var $overlayRoot = $overlay.parent('.ac-hover-root');
-      if($overlayRoot.length) return $overlayRoot;
-    }
-
-    return $();
-  }
-
-  function activateHoverForRoot($root){
-    if(!$root || !$root.length) return;
-
-    var root = $root[0];
-    var $post = $root.closest('.posts.has-npf-media');
-    if(!$post.length) return;
-
-    var post = $post[0];
-
-    if(activePost === post && activeRoot === root){
-      $post.addClass('ac-hover-on');
-      $root.addClass('ac-hover-on');
+  function clearDeadHover(){
+    if(activeRoot && !document.documentElement.contains(activeRoot)){
+      clearActiveHover();
       return;
     }
 
-    clearActiveHover();
-
-    activePost = post;
-    activeRoot = root;
-
-    $post.addClass('ac-hover-on');
-    $root.addClass('ac-hover-on');
-  }
-
-  function restoreHoverUnderPointer(){
-    if(lastMouse.x < 0 || lastMouse.y < 0) return;
-
-    var $root = getHoverRootUnderPointer();
-
-    if($root.length){
-      activateHoverForRoot($root);
-      return;
+    if(activePost && !document.documentElement.contains(activePost)){
+      clearActiveHover();
     }
-
-    if(activeRoot && document.documentElement.contains(activeRoot)){
-      if(pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
-        var $still = $(activeRoot);
-        var $stillPost = $still.closest('.posts.has-npf-media');
-
-        if($stillPost.length){
-          $stillPost.addClass('ac-hover-on');
-          $still.addClass('ac-hover-on');
-          return;
-        }
-      }
-    }
-
-    clearActiveHover();
   }
 
   function hasTumblrMediaUrl(str){
@@ -2631,9 +2541,11 @@ data-notes="{NoteCountWithLabel}">
 
     if($pic.length){
       var ok = false;
+
       $pic.find('source').each(function(){
         if(hasTumblrMediaUrl($(this).attr('srcset') || '')) ok = true;
       });
+
       if(ok) return true;
     }
 
@@ -2648,6 +2560,7 @@ data-notes="{NoteCountWithLabel}">
 
     if($node.is('iframe')){
       var s = $node.attr('src') || '';
+
       return (
         s.indexOf('tumblr.com/video') !== -1 ||
         s.indexOf('youtube.com') !== -1 ||
@@ -2750,7 +2663,6 @@ data-notes="{NoteCountWithLabel}">
       var txt = $.trim($a.text() || '');
       var hasIcon = $a.find('svg, img').length > 0;
 
-      if(hasIcon && txt === '') $a.remove();
       if(hasIcon && txt.length <= 1) $a.remove();
     });
   }
@@ -3049,16 +2961,9 @@ data-notes="{NoteCountWithLabel}">
 
     if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
 
-    var wasActive = activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot));
-
     $post.removeClass('ac-hover-on');
     $post.find('.notsi').remove();
     $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
-
-    if(wasActive){
-      activePost = null;
-      activeRoot = null;
-    }
 
     var $node = buildOverlayNode();
 
@@ -3091,16 +2996,6 @@ data-notes="{NoteCountWithLabel}">
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
 
-    if(wasActive){
-      activePost = $post[0];
-      activeRoot = $target[0];
-
-      if(lastMouse.x >= 0 && lastMouse.y >= 0 && pointerInsideElement(activeRoot, lastMouse.x, lastMouse.y)){
-        $post.addClass('ac-hover-on');
-        $target.addClass('ac-hover-on');
-      }
-    }
-
     killFloatingPermalinkIcons($post, perma);
   }
 
@@ -3131,15 +3026,49 @@ data-notes="{NoteCountWithLabel}">
       addHoverOverlay($(this));
     });
 
-    watchHeights($posts);
+    watchMediaLoads($posts);
+  }
+
+  function scanForNewPosts(){
+    if(scanTimer) clearTimeout(scanTimer);
+
+    scanTimer = setTimeout(function(){
+      scanTimer = null;
+
+      var $new = $container.children('.posts').filter(function(){
+        return !$(this).data('acScanned');
+      });
+
+      if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
+
+      hidePosts($new);
+      processPosts($new);
+
+      if($.fn.imagesLoaded){
+        $new.imagesLoaded(function(){
+          showPosts($new);
+          layoutPosts();
+          runSettledLayouts($new);
+        });
+      } else {
+        showPosts($new);
+        layoutPosts();
+        runSettledLayouts($new);
+      }
+    }, 90);
   }
 
   function processUnprocessedPosts(){
-    var $todo = $container.find('.posts').filter(function(){
-      return !$(this).data('acHoverDone');
+    var $todo = $container.children('.posts').filter(function(){
+      return !$(this).data('acHoverDone') && !$(this).data('acNoHoverScan');
     });
 
-    if($todo.length) processPosts($todo);
+    if(!$todo.length) return;
+    processPosts($todo);
   }
 
   function rebuildUnstablePosts($scope){
@@ -3158,19 +3087,37 @@ data-notes="{NoteCountWithLabel}">
 
     $container.children('.posts').each(function(){
       var $p = $(this);
-      var ow = Math.ceil($p.outerWidth(true) || 0);
+      if($p.hasClass('ac-prep')) return;
 
+      var ow = Math.ceil($p.outerWidth(true) || 0);
       if(ow > w) w = ow;
     });
+
+    if(w <= 0){
+      $container.children('.posts').each(function(){
+        var ow = Math.ceil($(this).outerWidth(true) || 0);
+        if(ow > w) w = ow;
+      });
+    }
 
     if(w <= 0) w = 340;
 
     return w;
   }
 
+  function getColumnCount(containerWidth, itemWidth){
+    var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
+
+    if(cols > 3) cols = 3;
+
+    return cols;
+  }
+
   function layoutPosts(){
     var $items = $container.children('.posts');
     if(!$items.length) return;
+
+    clearDeadHover();
 
     var containerWidth =
       Math.round($container.width()) ||
@@ -3178,7 +3125,8 @@ data-notes="{NoteCountWithLabel}">
       Math.round($win.width());
 
     var itemWidth = getPostWidth();
-    var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
+    var cols = getColumnCount(containerWidth, itemWidth);
+
     var usedWidth = cols * itemWidth;
     var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
     var heights = [];
@@ -3200,8 +3148,8 @@ data-notes="{NoteCountWithLabel}">
 
       var shortest = 0;
 
-      for(var i=1;i<cols;i++){
-        if(heights[i] < heights[shortest]) shortest = i;
+      for(var c=1;c<cols;c++){
+        if(heights[c] < heights[shortest]) shortest = c;
       }
 
       var itemHeight =
@@ -3214,7 +3162,8 @@ data-notes="{NoteCountWithLabel}">
 
       $item.css({
         left:left + 'px',
-        top:top + 'px'
+        top:top + 'px',
+        zIndex:1
       });
 
       heights[shortest] += itemHeight;
@@ -3227,7 +3176,6 @@ data-notes="{NoteCountWithLabel}">
     }
 
     $container.css('height', Math.ceil(maxHeight) + 'px');
-    scheduleRestore();
   }
 
   function requestLayout(){
@@ -3236,98 +3184,86 @@ data-notes="{NoteCountWithLabel}">
     layoutTimer = setTimeout(function(){
       layoutTimer = null;
       layoutPosts();
-    }, 40);
+    }, 90);
   }
 
   function hidePosts($posts){
     if(!$posts || !$posts.length) return;
 
-    $posts.css({
-      visibility:'hidden',
-      opacity:0
-    });
+    $posts
+      .removeClass('is-ready ac-hover-on')
+      .addClass('ac-prep')
+      .css({
+        visibility:'hidden',
+        opacity:0,
+        pointerEvents:'none',
+        zIndex:-1
+      });
   }
 
   function showPosts($posts){
     if(!$posts || !$posts.length) return;
 
-    $posts.css({
-      visibility:'',
-      opacity:''
-    }).addClass('is-ready');
+    $posts
+      .removeClass('ac-prep ac-hover-on')
+      .addClass('is-ready')
+      .css({
+        visibility:'',
+        opacity:'',
+        pointerEvents:'',
+        zIndex:1
+      });
   }
 
   function layoutAndReveal($posts){
     processPosts($posts);
-    rebuildUnstablePosts($posts);
+
+    function reveal(){
+      showPosts($posts);
+      layoutPosts();
+
+      setTimeout(function(){ layoutPosts(); }, 180);
+      setTimeout(function(){ layoutPosts(); }, 700);
+      setTimeout(function(){ layoutPosts(); }, 1400);
+    }
 
     if($.fn.imagesLoaded){
       $posts.imagesLoaded(function(){
-        layoutPosts();
-        showPosts($posts);
-
-        setTimeout(function(){
-          layoutPosts();
-          showPosts($posts);
-        }, 160);
-
-        setTimeout(function(){
-          layoutPosts();
-          showPosts($posts);
-        }, 650);
+        reveal();
       });
     } else {
-      layoutPosts();
-      showPosts($posts);
-
-      setTimeout(function(){
-        layoutPosts();
-        showPosts($posts);
-      }, 500);
+      reveal();
     }
   }
 
-  function watchHeights($items){
-    if(!$items || !$items.length) $items = $container.find('.posts');
+  function watchMediaLoads($items){
+    if(!$items || !$items.length) return;
 
     $items.find('img').each(function(){
       if(this._acHoverWatchBound) return;
       this._acHoverWatchBound = true;
 
-      this.addEventListener('load', requestLayout, { once:false });
-      this.addEventListener('error', requestLayout, { once:false });
+      this.addEventListener('load', requestLayout, false);
+      this.addEventListener('error', requestLayout, false);
     });
 
     $items.find('iframe').each(function(){
       if(this._acHoverWatchBound) return;
       this._acHoverWatchBound = true;
 
-      this.addEventListener('load', requestLayout, { once:false });
+      this.addEventListener('load', requestLayout, false);
     });
-
-    if(window.ResizeObserver){
-      if(!resizeObserver){
-        resizeObserver = new ResizeObserver(throttle(function(){
-          requestLayout();
-        }, 140));
-      }
-
-      $items.each(function(){
-        if(this._acHoverROBound) return;
-        this._acHoverROBound = true;
-
-        try{ resizeObserver.observe(this); }catch(e){}
-      });
-    }
   }
 
   function runSettledLayouts($scope){
-    var delays = [100, 260, 520, 900, 1500, 2400];
+    var delays = [180, 500, 1000, 1800];
 
     for(var i=0;i<delays.length;i++){
       setTimeout(function(){
-        processUnprocessedPosts();
-        if($scope && $scope.length) rebuildUnstablePosts($scope);
+        if($scope && $scope.length){
+          rebuildUnstablePosts($scope);
+        }
+
         layoutPosts();
       }, delays[i]);
     }
@@ -3337,18 +3273,19 @@ data-notes="{NoteCountWithLabel}">
     $doc.off('.acHoverFix');
     $win.off('.acHoverFixWin');
 
-    $doc.on('mousemove.acHoverFix', function(e){
-      lastMouse.x = e.clientX;
-      lastMouse.y = e.clientY;
-
-      var $root = getHoverRootUnderPointer();
-
-      if($root.length) activateHoverForRoot($root);
-      else clearActiveHover();
-    });
-
     $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
-      activateHoverForRoot($(this));
+      var $root = $(this);
+      var $post = $root.closest('.posts');
+
+      if(!$post.length || $post.hasClass('ac-prep')) return;
+
+      clearActiveHover();
+
+      activeRoot = this;
+      activePost = $post[0];
+
+      $root.addClass('ac-hover-on');
+      $post.addClass('ac-hover-on');
     });
 
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
@@ -3357,20 +3294,32 @@ data-notes="{NoteCountWithLabel}">
       if(rel && $(rel).closest('.notsi').length) return;
       if(rel && $(rel).closest('.ac-hover-root').length) return;
 
-      $(this).removeClass('ac-hover-on');
+      var $root = $(this);
+      var $post = $root.closest('.posts');
 
-      var $post = $(this).closest('.posts');
-      if($post.length) $post.removeClass('ac-hover-on');
+      $root.removeClass('ac-hover-on');
+
+      if($post.length){
+        $post.removeClass('ac-hover-on');
+      }
 
       if(activeRoot === this){
-        activePost = null;
         activeRoot = null;
+        activePost = null;
       }
     });
 
     $doc.on('mouseenter.acHoverFix', '.notsi', function(){
       var $root = $(this).parent('.ac-hover-root');
-      if($root.length) activateHoverForRoot($root);
+      var $post = $root.closest('.posts');
+
+      if(!$root.length || !$post.length || $post.hasClass('ac-prep')) return;
+
+      activeRoot = $root[0];
+      activePost = $post[0];
+
+      $root.addClass('ac-hover-on');
+      $post.addClass('ac-hover-on');
     });
 
     $doc.on('mouseleave.acHoverFix', '.notsi', function(e){
@@ -3381,14 +3330,17 @@ data-notes="{NoteCountWithLabel}">
       if(rel && $(rel).closest('.ac-hover-root').length) return;
 
       if($root.length){
+        var $post = $root.closest('.posts');
+
         $root.removeClass('ac-hover-on');
 
-        var $post = $root.closest('.posts');
-        if($post.length) $post.removeClass('ac-hover-on');
+        if($post.length){
+          $post.removeClass('ac-hover-on');
+        }
 
         if(activeRoot === $root[0]){
-          activePost = null;
           activeRoot = null;
+          activePost = null;
         }
       }
     });
@@ -3431,17 +3383,17 @@ data-notes="{NoteCountWithLabel}">
     });
 
     $win.on('scroll.acHoverFixWin', throttle(function(){
-      scheduleRestore();
-    }, 80));
+      clearDeadHover();
+      scanForNewPosts();
+    }, 160));
 
     $doc.on('wheel.acHoverFix touchmove.acHoverFix', throttle(function(){
-      scheduleRestore();
-    }, 80));
+      clearDeadHover();
+    }, 160));
 
     $win.on('resize.acHoverFixWin', throttle(function(){
       requestLayout();
-      scheduleRestore();
-    }, 160));
+    }, 220));
 
     $win.on('blur.acHoverFixWin', function(){
       clearActiveHover();
@@ -3458,6 +3410,34 @@ data-notes="{NoteCountWithLabel}">
     document.addEventListener('pointercancel', function(){
       clearActiveHover();
     }, { passive:true });
+  }
+
+  function initMutationObserver(){
+    if(!window.MutationObserver) return;
+
+    if(mutationObserver){
+      try{ mutationObserver.disconnect(); }catch(e){}
+    }
+
+    mutationObserver = new MutationObserver(function(mutations){
+      var found = false;
+
+      for(var i=0;i<mutations.length;i++){
+        if(mutations[i].addedNodes && mutations[i].addedNodes.length){
+          found = true;
+          break;
+        }
+      }
+
+      if(found) scanForNewPosts();
+    });
+
+    try{
+      mutationObserver.observe($container[0], {
+        childList:true,
+        subtree:false
+      });
+    }catch(e){}
   }
 
   function initInfiniteScrollIfPresent(){
@@ -3480,16 +3460,28 @@ data-notes="{NoteCountWithLabel}">
     }, function(newElements){
       var $new = $(newElements).filter('.posts');
 
-      if(!$new.length) $new = $(newElements).find('.posts');
+      if(!$new.length){
+        $new = $(newElements).find('.posts');
+      }
+
       if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
 
       $new
         .removeClass('is-ready ac-hover-on')
+        .addClass('ac-prep')
         .css({
           visibility:'hidden',
           opacity:0,
+          pointerEvents:'none',
           display:'block',
-          position:'absolute'
+          position:'absolute',
+          left:'-99999px',
+          top:'0',
+          zIndex:-1
         });
 
       $container.append($new);
@@ -3497,49 +3489,48 @@ data-notes="{NoteCountWithLabel}">
       forceEager($new);
       layoutAndReveal($new);
       runSettledLayouts($new);
-
-      setTimeout(function(){
-        showPosts($new);
-        layoutPosts();
-        scheduleRestore();
-      }, 3600);
     });
   }
 
   $(document).ready(function(){
     $container.css('position','relative');
 
-    var $initial = $container.find('.posts');
+    var $initial = $container.children('.posts');
+
+    $initial.each(function(){
+      $(this).data('acScanned', 1);
+    });
 
     hidePosts($initial);
 
     bindHoverEvents();
+    initMutationObserver();
 
     forceEager($initial);
     layoutAndReveal($initial);
     initInfiniteScrollIfPresent();
-    runSettledLayouts($container);
+    runSettledLayouts($initial);
 
     setTimeout(function(){
       processUnprocessedPosts();
-      rebuildUnstablePosts($container);
-      showPosts($container.find('.posts'));
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
       layoutPosts();
     }, 800);
 
     setTimeout(function(){
       processUnprocessedPosts();
-      rebuildUnstablePosts($container);
-      showPosts($container.find('.posts'));
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
       layoutPosts();
-    }, 1600);
+    }, 1800);
 
     setTimeout(function(){
       processUnprocessedPosts();
-      rebuildUnstablePosts($container);
-      showPosts($container.find('.posts'));
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
       layoutPosts();
-    }, 2800);
+    }, 3000);
   });
 
 })(window.jQuery);
@@ -3854,44 +3845,12 @@ data-notes="{NoteCountWithLabel}">
 })();
 </script>
 
-<!-- // VISIBLE PAGINATION // -->
+<!-- // KEEP // -->
 {block:IndexPage}
-{block:IfPagination}
-{block:Pagination}
-
-<nav class="page-nav" aria-label="Pagination">
-
-  {block:PreviousPage}
-  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
-  {/block:PreviousPage}
-
-  {block:JumpPagination length="5"}
-    {block:CurrentPage}
-      <span class="current_page">{PageNumber}</span>
-    {/block:CurrentPage}
-
-    {block:JumpPage}
-      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
-    {/block:JumpPage}
-  {/block:JumpPagination}
-
-  {block:NextPage}
-  <a class="next" href="{NextPage}" title="Next Page">next</a>
-  {/block:NextPage}
-
-</nav>
-
-{/block:Pagination}
-{/block:IfPagination}
-{/block:IndexPage}
-
-
-<!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
-{block:IndexPage}
-<div id="pagination" style="display:none!important;">
+<div id="pagination" style="display:none;">
   {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
 </div>
-<div id="infscr-loading" style="display:none!important;"></div>
+<div id="infscr-loading" style="display:none;"></div>
 {/block:IndexPage}
 </body>
 </html>
