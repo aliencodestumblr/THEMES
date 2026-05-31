@@ -45,7 +45,7 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="color:Answer Text" content="#ffffff"/>
 <meta name="color:Answer Border" content="#000000"/>
 
-<meta name="if:Dark Tumblr Control" content="1">
+<meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
@@ -322,11 +322,57 @@ body {
 
 
 /* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ------------ */
-h1,h2,h3,h4,h5,h6{
-  color:{color:accent};
-  font:"Rajdhani", sans-serif;
-  text-align:justify;
-  line-height:15px;
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
 }
 
 
@@ -414,7 +460,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-/* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
+/* ------------- HOVER DO PERMALINK EM FOTO/VÍDEO ------------- */
 {block:IndexPage}
 
 .notsi{
@@ -1840,7 +1886,11 @@ data-notes="{NoteCountWithLabel}">
 </div>
   {/block:IndexPage}
 
-  <div class="caption">{Body}</div>
+  {block:Title}
+<h1 class="post-title">{Title}</h1>
+{/block:Title}
+
+<div class="caption">{Body}</div>
 
 {block:IndexPage}
   <div class="post-footer">
