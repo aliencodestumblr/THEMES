@@ -33,17 +33,17 @@ INFINITE SCROLL       ──  @aliencodes
 
 <meta name="image:Icon" content=""/>
 
-<meta name="color:Accent" content="#444444"/>
-<meta name="color:Borders" content="#EEEEEE"/>
-<meta name="color:Text" content="#444444" />
-<meta name="color:Links" content="#444444" />
-<meta name="color:Links Hover" content="#444444" />
+<meta name="color:Accent" content="#eeeeee"/>
+<meta name="color:Borders" content="#1e1f21"/>
+<meta name="color:Text" content="#eeeeee" />
+<meta name="color:Links" content="#eeeeee" />
+<meta name="color:Links Hover" content="#eeeeee" />
 <meta name="color:Ask Background" content="#f4f4f4"/>
-<meta name="color:Ask Text" content="#bababa"/>
+<meta name="color:Ask Text" content="#eeeeee"/>
 <meta name="color:Ask Border" content="#eeeeee"/>
-<meta name="color:Answer Background" content="#444444"/>
-<meta name="color:Answer Text" content="#ffffff"/>
-<meta name="color:Answer Border" content="#000000"/>
+<meta name="color:Answer Background" content="#1e1f21"/>
+<meta name="color:Answer Text" content="#eeeeee"/>
+<meta name="color:Answer Border" content="#1e1f21"/>
 
 <meta name="if:Dark Tumblr Control" content="1">
 <meta name="if:Show caption" content=""/>
