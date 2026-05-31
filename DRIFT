@@ -2317,18 +2317,28 @@ data-notes="{NoteCountWithLabel}">
   var $container = $('#posts');
   if(!$container.length) return;
 
-  if($container.data('acInitDoneSpotifyFix') === 1) return;
-  $container.data('acInitDoneSpotifyFix', 1);
+  if($container.data('acInitDone') === 1) return;
+  $container.data('acInitDone', 1);
 
-  var resizeObserver = null;
-  var activePost = null;
+  var layoutTimer = null;
+  var scanTimer = null;
+  var mutationObserver = null;
   var activeRoot = null;
-  var hoverTimer = null;
-  var isLoadingMore = false;
+  var activePost = null;
 
-  function safe(fn){
-    try{ fn(); }catch(e){}
-  }
+  $('#ac-hover-script-safety').remove();
+
+  $('<style id="ac-hover-script-safety">' +
+    '#posts{position:relative!important;}' +
+    '#posts > .posts{position:absolute;z-index:1;box-sizing:border-box;}' +
+    '#posts > .posts.ac-hover-on{z-index:50!important;}' +
+    '.ac-hover-root{position:relative;z-index:2;}' +
+    '.ac-hover-root.ac-hover-on{z-index:60!important;}' +
+    '.posts.ac-prep{visibility:hidden!important;opacity:0!important;pointer-events:none!important;z-index:-1!important;}' +
+    '.posts.is-ready{visibility:visible;opacity:1;pointer-events:auto;}' +
+  '</style>').appendTo('head');
+
+  function safe(fn){ try{ fn(); }catch(e){} }
 
   function throttle(fn, wait){
     var t = null;
@@ -2343,58 +2353,19 @@ data-notes="{NoteCountWithLabel}">
 
   function clearActiveHover(){
     $('.posts.ac-hover-on, .ac-hover-root.ac-hover-on').removeClass('ac-hover-on');
-    activePost = null;
     activeRoot = null;
+    activePost = null;
   }
 
-  function relayout(){
-    if(!$.fn.masonry) return;
-    safe(function(){
-      $container.masonry('reloadItems');
-      $container.masonry('layout');
-    });
-  }
+  function clearDeadHover(){
+    if(activeRoot && !document.documentElement.contains(activeRoot)){
+      clearActiveHover();
+      return;
+    }
 
-  function relayoutSoon(){
-    setTimeout(relayout, 80);
-    setTimeout(relayout, 300);
-    setTimeout(relayout, 900);
-  }
-
-  function forceVisible($items){
-    if(!$items || !$items.length) return;
-
-    $items.css({
-      opacity:'',
-      visibility:'',
-      display:'',
-      transform:''
-    });
-
-    $items.addClass('is-ready');
-  }
-
-  function forceEager($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
-
-    $scope.find('img[loading="lazy"]').each(function(){
-      try{ this.loading = 'eager'; }catch(e){}
-      $(this).attr('loading','eager');
-    });
-
-    $scope.find('iframe[loading="lazy"]').each(function(){
-      $(this).attr('loading','eager');
-    });
-  }
-
-  function inThemeChrome($el){
-    return $el.closest(
-      '#sidebar, #topbar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop, #sharp-sidebar-wrap, #top-player-fixed, .sb-mini-player, iframe.tmblr-iframe'
-    ).length > 0;
-  }
-
-  function inPXUPhotoset($el){
-    return $el.closest('.photo-slideshow, .pxu-photo, .photo-data').length > 0;
+    if(activePost && !document.documentElement.contains(activePost)){
+      clearActiveHover();
+    }
   }
 
   function hasTumblrMediaUrl(str){
@@ -2406,43 +2377,12 @@ data-notes="{NoteCountWithLabel}">
     );
   }
 
-  function isSpotifyOrAudioEmbed($node){
-    if(!$node || !$node.length) return false;
-
-    var src = ($node.attr('src') || '').toLowerCase();
-    var href = ($node.attr('href') || '').toLowerCase();
-
-    return (
-      src.indexOf('spotify.com') !== -1 ||
-      src.indexOf('open.spotify.com') !== -1 ||
-      src.indexOf('soundcloud.com') !== -1 ||
-      href.indexOf('spotify.com') !== -1 ||
-      href.indexOf('open.spotify.com') !== -1 ||
-      href.indexOf('soundcloud.com') !== -1 ||
-      $node.closest('.spotify_audio_player, .soundcloud_audio_player, .audio_player, .tumblr_audio_player').length > 0
-    );
+  function inThemeChrome($el){
+    return $el.closest('#sidebar, #topbar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop').length > 0;
   }
 
-  function markSpotifyPostsAsText($scope){
-    var $posts = scopePosts($scope);
-
-    $posts.each(function(){
-      var $post = $(this);
-
-      var hasSpotify = $post.find('iframe, a, .spotify_audio_player, .soundcloud_audio_player, .audio_player, .tumblr_audio_player').filter(function(){
-        return isSpotifyOrAudioEmbed($(this));
-      }).length > 0;
-
-      if(hasSpotify){
-        $post
-          .addClass('ac-text-post ac-embed-post ac-spotify-post')
-          .removeClass('has-npf-media ac-hover-on');
-
-        $post.find('.notsi').remove();
-        $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-npf-media');
-        $post.removeData('acHoverDone');
-      }
-    });
+  function inPXUPhotoset($el){
+    return $el.closest('.photo-slideshow, .pxu-photo, .photo-data').length > 0;
   }
 
   function looksLikeNPFImage($img){
@@ -2455,16 +2395,17 @@ data-notes="{NoteCountWithLabel}">
 
     if(hasTumblrMediaUrl(src) || hasTumblrMediaUrl(srcset) || hasTumblrMediaUrl(dataSrc)) return true;
 
-    if($img.closest(
-      '.media-wrap, figure.tmblr-full, .tmblr-full, .npf_image, .npf_row, .npf_col, .npf_photoset, .npf_grid, .npf_container, .reblog-list'
-    ).length) return true;
+    if($img.closest('figure.tmblr-full, .tmblr-full, .npf_image, .npf_row, .npf_col, .reblog-list').length) return true;
 
     var $pic = $img.closest('picture');
+
     if($pic.length){
       var ok = false;
+
       $pic.find('source').each(function(){
         if(hasTumblrMediaUrl($(this).attr('srcset') || '')) ok = true;
       });
+
       if(ok) return true;
     }
 
@@ -2473,22 +2414,16 @@ data-notes="{NoteCountWithLabel}">
 
   function looksLikeNPFVideo($node){
     if(!$node || !$node.length) return false;
-    if(inThemeChrome($node) || inPXUPhotoset($node)) return false;
-
-    /* IMPORTANT:
-       Spotify/SoundCloud/audio embeds are NOT media-hover posts.
-       They should behave like text/embed posts. */
-    if(isSpotifyOrAudioEmbed($node)) return false;
+    if(inPXUPhotoset($node)) return false;
 
     if($node.is('.npf_video_container, .npf_video, video')) return true;
 
     if($node.is('iframe')){
-      var s = ($node.attr('src') || '').toLowerCase();
+      var s = $node.attr('src') || '';
 
       return (
         s.indexOf('tumblr.com/video') !== -1 ||
         s.indexOf('youtube.com') !== -1 ||
-        s.indexOf('youtu.be') !== -1 ||
         s.indexOf('vimeo.com') !== -1
       );
     }
@@ -2502,7 +2437,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function initPhotosets($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
+    $scope = ($scope && $scope.length) ? $scope : $(document);
     if(!$.fn.pxuPhotoset) return;
 
     $scope.find('.photo-slideshow').each(function(){
@@ -2529,6 +2464,7 @@ data-notes="{NoteCountWithLabel}">
     $posts.each(function(){
       var $post = $(this);
       if($post.data('acUnnestDone') === 1) return;
+
       $post.data('acUnnestDone', 1);
 
       $post.unnest({
@@ -2544,8 +2480,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function cleanupNPFMediaUrls($scope){
-    $scope = $scope && $scope.length ? $scope : $(document);
-    var hosts = ['64.media.tumblr.com/','va.media.tumblr.com/','media.tumblr.com/'];
+    $scope = ($scope && $scope.length) ? $scope : $(document);
 
     $scope.find('a[href]').each(function(){
       var $a = $(this);
@@ -2553,14 +2488,10 @@ data-notes="{NoteCountWithLabel}">
       var href = hrefRaw.toLowerCase();
       var txt = $.trim($a.text() || '');
 
-      var isMedia = false;
-
-      for(var i = 0; i < hosts.length; i++){
-        if(href.indexOf(hosts[i]) !== -1){
-          isMedia = true;
-          break;
-        }
-      }
+      var isMedia =
+        href.indexOf('64.media.tumblr.com/') !== -1 ||
+        href.indexOf('va.media.tumblr.com/') !== -1 ||
+        href.indexOf('media.tumblr.com/') !== -1;
 
       if(!isMedia) return;
 
@@ -2570,6 +2501,71 @@ data-notes="{NoteCountWithLabel}">
         else $a.remove();
       }
     });
+  }
+
+  function killFloatingPermalinkIcons($post, permalink){
+    if(!$post || !$post.length || !permalink) return;
+
+    $post.find('a[href]').each(function(){
+      var $a = $(this);
+      if($a.closest('.notsi').length) return;
+
+      var href = $a.attr('href') || '';
+      if(!href) return;
+
+      var isSame =
+        href === permalink ||
+        href.indexOf(permalink) !== -1 ||
+        permalink.indexOf(href) !== -1;
+
+      if(!isSame) return;
+
+      var txt = $.trim($a.text() || '');
+      var hasIcon = $a.find('svg, img').length > 0;
+
+      if(hasIcon && txt.length <= 1) $a.remove();
+    });
+  }
+
+  function commonAncestor(nodes, stopAt){
+    if(!nodes || !nodes.length) return null;
+    if(nodes.length === 1) return nodes[0];
+
+    var paths = [];
+    var minLen = Infinity;
+
+    for(var i=0;i<nodes.length;i++){
+      var path = [];
+      var n = nodes[i];
+
+      while(n && n.nodeType === 1){
+        path.unshift(n);
+        if(n === stopAt) break;
+        n = n.parentNode;
+      }
+
+      paths.push(path);
+      if(path.length < minLen) minLen = path.length;
+    }
+
+    var lastCommon = null;
+
+    for(var j=0;j<minLen;j++){
+      var test = paths[0][j];
+      var same = true;
+
+      for(var k=1;k<paths.length;k++){
+        if(paths[k][j] !== test){
+          same = false;
+          break;
+        }
+      }
+
+      if(same) lastCommon = test;
+      else break;
+    }
+
+    return lastCommon;
   }
 
   function countNPFMedia($scope){
@@ -2586,27 +2582,99 @@ data-notes="{NoteCountWithLabel}">
     return imgCount + vidCount;
   }
 
-  function postHasAudioEmbed($post){
-    return $post.find('iframe, a, .spotify_audio_player, .soundcloud_audio_player, .audio_player, .tumblr_audio_player').filter(function(){
-      return isSpotifyOrAudioEmbed($(this));
-    }).length > 0;
+  function cleanHoverTarget($candidate, $post){
+    if(!$candidate || !$candidate.length) return $();
+
+    if($candidate.is('a, img, picture, source')){
+      var $better = $candidate.closest('.npf_photoset, .npf_grid, .npf_container, .npf_group, .npf_row, figure.tmblr-full, .tmblr-full, .npf_image, div');
+      if($better.length && $better[0] !== $post[0]) return $better.first();
+    }
+
+    if($candidate.is('.posts')) return $post;
+
+    return $candidate.first();
   }
 
-  function postHasMedia($post){
-    if(!$post || !$post.length) return false;
+  function tightenNPFHoverTarget($target){
+    if(!$target || !$target.length) return $();
 
-    /* Spotify/audio posts stay text/embed posts, not hover-media posts. */
-    if(postHasAudioEmbed($post)) return false;
+    var $t = $target.first();
 
-    if($post.find('.media-wrap, .photo-slideshow').length) return true;
+    if($t.is('.npf_container, .npf_grid, .npf_photoset, .npf_group, .npf_row, .npf_col')){
+      var totalMedia = countNPFMedia($t);
 
-    return countNPFMedia($post) > 0;
+      if(totalMedia <= 1){
+        var $tightSingle = $t.find('figure.tmblr-full, .tmblr-full, .npf_image, .npf_video_container, .npf_video').filter(function(){
+          return countNPFMedia($(this)) > 0;
+        }).first();
+
+        if($tightSingle.length) return $tightSingle;
+      }
+
+      var $sameCountChild = $t.find('.npf_image, figure.tmblr-full, .tmblr-full').filter(function(){
+        return countNPFMedia($(this)) === totalMedia && totalMedia > 0;
+      }).first();
+
+      if($sameCountChild.length) return $sameCountChild;
+    }
+
+    return $t;
+  }
+
+  function pickNPFUnifiedContainer($post){
+    if(!$post || !$post.length) return $();
+
+    var postNode = $post[0];
+
+    var $mediaBits = $post.find(
+      '.npf_photoset, .npf_grid, .npf_container, .npf_group, .npf_row, .npf_col,' +
+      'figure.tmblr-full, .tmblr-full, .npf_image, .npf_video_container, .npf_video'
+    ).filter(function(){
+      var $el = $(this);
+
+      if(inPXUPhotoset($el)) return false;
+
+      var hasImg = $el.find('img').filter(function(){
+        return looksLikeNPFImage($(this));
+      }).length > 0;
+
+      var hasVid = $el.find('video, iframe, .npf_video_container, .npf_video').filter(function(){
+        return looksLikeNPFVideo($(this));
+      }).length > 0;
+
+      return hasImg || hasVid;
+    });
+
+    if(!$mediaBits.length){
+      $mediaBits = $post.find('img, video, iframe').filter(function(){
+        var $el = $(this);
+        return looksLikeNPFImage($el) || looksLikeNPFVideo($el);
+      });
+    }
+
+    if(!$mediaBits.length) return $();
+
+    var nodes = [];
+    $mediaBits.each(function(){ nodes.push(this); });
+
+    var ancestor = commonAncestor(nodes, postNode);
+    if(!ancestor) return $();
+
+    var $ancestor = $(ancestor);
+
+    var $preferred = $ancestor.find('.npf_photoset, .npf_grid, .npf_container, .npf_group').filter(function(){
+      return countNPFMedia($(this)) > 1;
+    }).first();
+
+    if($preferred.length){
+      return tightenNPFHoverTarget(cleanHoverTarget($preferred, $post));
+    }
+
+    return tightenNPFHoverTarget(cleanHoverTarget($ancestor, $post));
   }
 
   function pickHoverTarget($post){
     if(!$post || !$post.length) return $();
-
-    if(postHasAudioEmbed($post)) return $();
 
     var $mw = $post.find('.media-wrap').first();
     if($mw.length) return $mw;
@@ -2614,13 +2682,8 @@ data-notes="{NoteCountWithLabel}">
     var $old = $post.find('.photo-slideshow').first();
     if($old.length) return $old;
 
-    var $group = $post.find(
-      '.npf_photoset, .npf_grid, .npf_container, .npf_group, .npf_row'
-    ).filter(function(){
-      return countNPFMedia($(this)) > 0;
-    }).first();
-
-    if($group.length) return $group;
+    var $unified = pickNPFUnifiedContainer($post);
+    if($unified.length) return $unified;
 
     var $vid = $post.find('.npf_video_container, .npf_video, video, iframe').filter(function(){
       return looksLikeNPFVideo($(this));
@@ -2647,97 +2710,83 @@ data-notes="{NoteCountWithLabel}">
     }).first();
 
     if($img.length){
-      var $imgWrap = $img.closest('figure.tmblr-full, .tmblr-full, .npf_image, picture, div').first();
+      var $imgWrap = $img.closest('figure.tmblr-full, .tmblr-full, .npf_image, figure, div').first();
       return $imgWrap.length ? $imgWrap : $img;
     }
 
     return $();
   }
 
-  function normalizeOverlayNode($node){
-    if(!$node || !$node.length) return $node;
+  function isWideNPFRoot($target){
+    if(!$target || !$target.length) return false;
+    return $target.is('.npf_container, .npf_grid, .npf_photoset, .npf_group, .npf_row, .npf_col');
+  }
 
-    $node.addClass('notsi');
-    $node.attr('data-ac-hover-root','');
+  function postNeedsRebuild($post){
+    if(!$post || !$post.length) return false;
 
-    if(!$node.find('.npf-box').length){
-      var $inf = $node.children('.inf').first();
-      var $inf2 = $node.children('.inf2').first();
-      var $box = $('<div class="npf-box"></div>');
+    var $root = $post.find('.ac-hover-root').first();
+    var $overlay = $post.find('.notsi').first();
 
-      if($inf.length) $box.append($inf);
-      if($inf2.length) $box.append($inf2);
+    if(!$root.length || !$overlay.length) return true;
+    if(!$overlay.parent().is($root)) return true;
 
-      if(!$box.children().length){
-        $box.append(
-          '<div class="inf2">' +
-            '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
-            '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
-            '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
-          '</div>'
-        );
-      }
+    var $wanted = pickHoverTarget($post);
+    if(!$wanted.length) $wanted = $post;
 
-      $node.append($box);
-    }
+    $wanted = tightenNPFHoverTarget($wanted);
+    if(!$wanted.length) return false;
 
-    $node[0].style.pointerEvents = 'none';
+    return $root[0] !== $wanted[0];
+  }
 
-    $node.find('.npf-box, .inf2, .inf2 a, a').each(function(){
-      this.style.pointerEvents = 'auto';
-    });
+  function getFirstLightboxTarget($post){
+    if(!$post || !$post.length) return $();
 
-    return $node;
+    var $target = $post.find(
+      '.photo-slideshow a[href], .pxu-photo a[href], .photo-data a[href], ' +
+      '.npf_image a[href], figure.tmblr-full a[href], .tmblr-full a[href], ' +
+      'a[href*="media.tumblr.com"], a[href*="64.media.tumblr.com"], a[href*="va.media.tumblr.com"]'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
+
+    if($target.length) return $target;
+
+    return $post.find(
+      '.photo-slideshow .pxu-photo img, .photo-slideshow img, .photo-data img, ' +
+      '.npf_image img, figure.tmblr-full img, .tmblr-full img, ' +
+      '.npf_video_container, .npf_video, video'
+    ).filter(function(){
+      return !$(this).closest('.notsi').length;
+    }).first();
   }
 
   function buildOverlayNode(){
     var tpl = document.getElementById('npf-hover-template');
 
     if(tpl && tpl.content && tpl.content.firstElementChild){
-      return normalizeOverlayNode($(tpl.content.firstElementChild.cloneNode(true)));
+      return $(tpl.content.firstElementChild.cloneNode(true));
     }
 
-    return normalizeOverlayNode($(
+    return $(
       '<div class="notsi" data-ac-hover-root>' +
-        '<div class="npf-box">' +
-          '<div class="inf">' +
-            '<div class="npf-time" data-ac-time></div>' +
-          '</div>' +
-          '<div class="inf2">' +
-            '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
-            '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
-            '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
-          '</div>' +
+        '<div class="inf">' +
+          '<div class="npf-time" data-ac-time></div>' +
+        '</div>' +
+        '<div class="inf2">' +
+          '<a class="npf-reblog" data-ac-reblog href="#"><i class="ph ph-arrows-clockwise"></i></a>' +
+          '<a class="npf-permalink" data-ac-permalink href="#"><i class="ph ph-link-simple-horizontal"></i></a>' +
+          '<a class="npf-lightbox" data-ac-lightbox href="#"><i class="ph ph-arrows-out"></i></a>' +
         '</div>' +
       '</div>'
-    ));
+    );
   }
 
-  function postNeedsRebuild($post){
-    if(!$post || !$post.length) return false;
-
-    if(postHasAudioEmbed($post)) return false;
-
-    var $root = $post.find('.ac-hover-root').first();
-    var $overlay = $post.find('.notsi').first();
-
-    if(!$root.length || !$overlay.length) return true;
-    if(!$overlay.closest('.ac-hover-root').length) return true;
-
-    var $wanted = pickHoverTarget($post);
-    if(!$wanted.length) return false;
-
-    return $root[0] !== $wanted[0];
-  }
-
-  function removeHoverFromTextEmbed($post){
-    $post
-      .addClass('ac-text-post ac-embed-post')
-      .removeClass('has-npf-media ac-hover-on');
-
-    $post.find('.notsi').remove();
-    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-npf-media');
+  function unmarkIfNoMedia($post){
+    $post.removeClass('has-npf-media ac-hover-on');
     $post.removeData('acHoverDone');
+    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
 
     if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
       clearActiveHover();
@@ -2747,225 +2796,413 @@ data-notes="{NoteCountWithLabel}">
   function addHoverOverlay($post){
     if(!$post || !$post.length) return;
 
-    if(postHasAudioEmbed($post)){
-      removeHoverFromTextEmbed($post);
+    var hasOldPhotoset = $post.find('.photo-slideshow').length > 0;
+
+    var hasImg = $post.find('img').filter(function(){
+      return looksLikeNPFImage($(this));
+    }).length > 0;
+
+    var hasVid = $post.find('.npf_video_container, .npf_video, video, iframe').filter(function(){
+      return looksLikeNPFVideo($(this));
+    }).length > 0;
+
+    if(!(hasOldPhotoset || hasImg || hasVid)){
+      unmarkIfNoMedia($post);
       return;
     }
 
-    if(!postHasMedia($post)){
-      $post.removeClass('has-npf-media ac-hover-on');
-      $post.removeData('acHoverDone');
-      $post.find('.notsi').remove();
-      $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-npf-media');
-      return;
-    }
+    $post.addClass('has-npf-media');
 
     var perma = $post.attr('data-permalink') || '';
     if(!perma) return;
 
-    if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
-
-    if(activePost === $post[0] || (activeRoot && $.contains($post[0], activeRoot))){
-      clearActiveHover();
-    }
-
     var rb = $post.attr('data-reblogurl') || '#';
     var tm = $post.attr('data-time') || '';
 
-    $post
-      .addClass('has-npf-media')
-      .removeClass('ac-text-post ac-embed-post ac-spotify-post ac-hover-on');
+    if($post.data('acHoverDone') === 1 && !postNeedsRebuild($post)) return;
 
+    $post.removeClass('ac-hover-on');
     $post.find('.notsi').remove();
-    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-npf-media');
+    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
+
+    var $node = buildOverlayNode();
+
+    $node.find('.npf-time, [data-ac-time]').first().text(tm);
+    $node.find('a.npf-reblog, [data-ac-reblog]').first().attr('href', rb);
+    $node.find('a.npf-permalink, [data-ac-permalink]').first().attr('href', perma);
+    $node.find('a.npf-lightbox, [data-ac-lightbox]').first().attr('href', '#');
 
     var $target = pickHoverTarget($post);
-    if(!$target.length) return;
+    if(!$target.length) $target = $post;
+
+    $target = tightenNPFHoverTarget($target);
 
     if(($target.css('position') || 'static') === 'static'){
       $target.css('position','relative');
     }
 
-    $target.css('overflow','hidden');
+    if(isWideNPFRoot($target)){
+      $node.css({
+        top:'0',
+        left:'0',
+        right:'1px',
+        bottom:'0',
+        width:'auto'
+      });
 
-    var $node = buildOverlayNode();
-
-    $node.find('.npf-time, [data-ac-time]').first().text(tm);
-
-    var $rbA = $node.find('a.npf-reblog, [data-ac-reblog]').first();
-    if($rbA.length) $rbA.attr('href', rb);
-
-    var $pmA = $node.find('a.npf-permalink, [data-ac-permalink]').first();
-    if($pmA.length) $pmA.attr('href', perma);
-
-    var $lbA = $node.find('a.npf-lightbox, [data-ac-lightbox]').first();
-    if($lbA.length) $lbA.attr('href', '#');
+      $target.addClass('ac-hover-root--npf-wide');
+    }
 
     $target.addClass('ac-npf-media ac-hover-root').append($node);
     $post.data('acHoverDone', 1);
+
+    killFloatingPermalinkIcons($post, perma);
   }
 
-  function watchHeights($items){
-    if(!$items || !$items.length) return;
+  function forceEager($scope){
+    $scope = $scope && $scope.length ? $scope : $(document);
 
-    $items.find('img').each(function(){
-      var img = this;
-      if(img._acHoverWatchBound) return;
-      img._acHoverWatchBound = true;
-
-      img.addEventListener('load', relayoutSoon, { passive:true });
-      img.addEventListener('error', relayoutSoon, { passive:true });
+    $scope.find('img[loading="lazy"]').each(function(){
+      try{ this.loading = 'eager'; }catch(e){}
+      $(this).attr('loading','eager');
     });
 
-    $items.find('iframe').each(function(){
-      var frame = this;
-      if(frame._acHoverWatchBound) return;
-      frame._acHoverWatchBound = true;
-
-      frame.addEventListener('load', relayoutSoon, { passive:true });
+    $scope.find('iframe[loading="lazy"]').each(function(){
+      $(this).attr('loading','eager');
     });
-
-    if(window.ResizeObserver){
-      if(!resizeObserver){
-        resizeObserver = new ResizeObserver(throttle(relayoutSoon, 100));
-      }
-
-      $items.each(function(){
-        if(this._acHoverROBound) return;
-        this._acHoverROBound = true;
-
-        try{
-          resizeObserver.observe(this);
-        }catch(e){}
-      });
-    }
   }
 
   function processPosts($scope){
     var $posts = scopePosts($scope);
     if(!$posts.length) return;
 
-    forceVisible($posts);
     forceEager($posts);
 
     safe(function(){ initPhotosets($posts); });
     safe(function(){ initUnnest($posts); });
     safe(function(){ cleanupNPFMediaUrls($posts); });
 
-    markSpotifyPostsAsText($posts);
-
     $posts.each(function(){
       addHoverOverlay($(this));
     });
 
-    watchHeights($posts);
+    watchMediaLoads($posts);
+  }
+
+  function scanForNewPosts(){
+    if(scanTimer) clearTimeout(scanTimer);
+
+    scanTimer = setTimeout(function(){
+      scanTimer = null;
+
+      var $new = $container.children('.posts').filter(function(){
+        return !$(this).data('acScanned');
+      });
+
+      if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
+
+      hidePosts($new);
+      processPosts($new);
+
+      if($.fn.imagesLoaded){
+        $new.imagesLoaded(function(){
+          showPosts($new);
+          layoutPosts();
+          runSettledLayouts($new);
+        });
+      } else {
+        showPosts($new);
+        layoutPosts();
+        runSettledLayouts($new);
+      }
+    }, 90);
   }
 
   function processUnprocessedPosts(){
-    var $todo = $container.find('.posts').filter(function(){
-      var $post = $(this);
-
-      if(postHasAudioEmbed($post)) return true;
-      if(!$post.data('acHoverDone') && postHasMedia($post)) return true;
-      if(postNeedsRebuild($post)) return true;
-
-      return false;
+    var $todo = $container.children('.posts').filter(function(){
+      return !$(this).data('acHoverDone') && !$(this).data('acNoHoverScan');
     });
 
     if(!$todo.length) return;
     processPosts($todo);
   }
 
-  function openTumblrLightboxFromPost($post){
-    if(!$post || !$post.length) return;
+  function rebuildUnstablePosts($scope){
+    var $posts = scopePosts($scope);
+    if(!$posts.length) return;
 
-    var imgs = [];
-
-    $post.find('.media-wrap img, .photo-slideshow img, .pxu-photo img, .npf_image img, figure.tmblr-full img, .tmblr-full img').each(function(){
-      var $img = $(this);
-      if($img.closest('.notsi').length) return;
-
-      var high =
-        $img.attr('data-highres') ||
-        $img.attr('data-src') ||
-        $img.closest('a[href]').attr('href') ||
-        $img.attr('src');
-
-      var low = $img.attr('src') || high;
-      if(!high) return;
-
-      imgs.push({
-        width: parseInt($img.attr('data-width'),10) || this.naturalWidth || this.width || 1280,
-        height: parseInt($img.attr('data-height'),10) || this.naturalHeight || this.height || 1280,
-        low_res: low,
-        high_res: high
-      });
+    var $bad = $posts.filter(function(){
+      return postNeedsRebuild($(this));
     });
 
-    if(imgs.length && window.Tumblr && Tumblr.Lightbox && typeof Tumblr.Lightbox.init === 'function'){
-      Tumblr.Lightbox.init(imgs);
-      $('body').addClass('tumblr_lightbox_active');
+    if($bad.length) processPosts($bad);
+  }
+
+  function getPostWidth(){
+    var w = 0;
+
+    $container.children('.posts').each(function(){
+      var $p = $(this);
+      if($p.hasClass('ac-prep')) return;
+
+      var ow = Math.ceil($p.outerWidth(true) || 0);
+      if(ow > w) w = ow;
+    });
+
+    if(w <= 0){
+      $container.children('.posts').each(function(){
+        var ow = Math.ceil($(this).outerWidth(true) || 0);
+        if(ow > w) w = ow;
+      });
+    }
+
+    if(w <= 0) w = 340;
+
+    return w;
+  }
+
+  function getColumnCount(containerWidth, itemWidth){
+    var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
+
+    if(cols > 3) cols = 3;
+
+    return cols;
+  }
+
+  function layoutPosts(){
+    var $items = $container.children('.posts');
+    if(!$items.length) return;
+
+    clearDeadHover();
+
+    var containerWidth =
+      Math.round($container.width()) ||
+      Math.round($container.parent().width()) ||
+      Math.round($win.width());
+
+    var itemWidth = getPostWidth();
+    var cols = getColumnCount(containerWidth, itemWidth);
+
+    var usedWidth = cols * itemWidth;
+    var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
+    var heights = [];
+
+    for(var i=0;i<cols;i++) heights[i] = 0;
+
+    $container.css({
+      position:'relative',
+      height:''
+    });
+
+    $items.each(function(){
+      var $item = $(this);
+
+      $item.css({
+        position:'absolute',
+        display:'block'
+      });
+
+      var shortest = 0;
+
+      for(var c=1;c<cols;c++){
+        if(heights[c] < heights[shortest]) shortest = c;
+      }
+
+      var itemHeight =
+        Math.ceil($item.outerHeight(true)) ||
+        Math.ceil(this.getBoundingClientRect().height) ||
+        1;
+
+      var left = leftOffset + shortest * itemWidth;
+      var top = heights[shortest];
+
+      $item.css({
+        left:left + 'px',
+        top:top + 'px',
+        zIndex:1
+      });
+
+      heights[shortest] += itemHeight;
+    });
+
+    var maxHeight = 0;
+
+    for(var j=0;j<heights.length;j++){
+      if(heights[j] > maxHeight) maxHeight = heights[j];
+    }
+
+    $container.css('height', Math.ceil(maxHeight) + 'px');
+  }
+
+  function requestLayout(){
+    if(layoutTimer) clearTimeout(layoutTimer);
+
+    layoutTimer = setTimeout(function(){
+      layoutTimer = null;
+      layoutPosts();
+    }, 90);
+  }
+
+  function hidePosts($posts){
+    if(!$posts || !$posts.length) return;
+
+    $posts
+      .removeClass('is-ready ac-hover-on')
+      .addClass('ac-prep')
+      .css({
+        visibility:'hidden',
+        opacity:0,
+        pointerEvents:'none',
+        zIndex:-1
+      });
+  }
+
+  function showPosts($posts){
+    if(!$posts || !$posts.length) return;
+
+    $posts
+      .removeClass('ac-prep ac-hover-on')
+      .addClass('is-ready')
+      .css({
+        visibility:'',
+        opacity:'',
+        pointerEvents:'',
+        zIndex:1
+      });
+  }
+
+  function layoutAndReveal($posts){
+    processPosts($posts);
+
+    function reveal(){
+      showPosts($posts);
+      layoutPosts();
+
+      setTimeout(function(){ layoutPosts(); }, 180);
+      setTimeout(function(){ layoutPosts(); }, 700);
+      setTimeout(function(){ layoutPosts(); }, 1400);
+    }
+
+    if($.fn.imagesLoaded){
+      $posts.imagesLoaded(function(){
+        reveal();
+      });
+    } else {
+      reveal();
     }
   }
 
-  function activateHover($root){
-    if(!$root || !$root.length || isLoadingMore) return;
+  function watchMediaLoads($items){
+    if(!$items || !$items.length) return;
 
-    var $post = $root.closest('.posts');
-    if(!$post.length) return;
+    $items.find('img').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
 
-    if(postHasAudioEmbed($post)) return;
+      this.addEventListener('load', requestLayout, false);
+      this.addEventListener('error', requestLayout, false);
+    });
 
-    if(activeRoot !== $root[0]){
-      clearActiveHover();
-      activeRoot = $root[0];
-      activePost = $post[0];
+    $items.find('iframe').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
+
+      this.addEventListener('load', requestLayout, false);
+    });
+  }
+
+  function runSettledLayouts($scope){
+    var delays = [180, 500, 1000, 1800];
+
+    for(var i=0;i<delays.length;i++){
+      setTimeout(function(){
+        if($scope && $scope.length){
+          rebuildUnstablePosts($scope);
+        }
+
+        layoutPosts();
+      }, delays[i]);
     }
-
-    $root.addClass('ac-hover-on');
-    $post.addClass('ac-hover-on');
   }
 
   function bindHoverEvents(){
     $doc.off('.acHoverFix');
     $win.off('.acHoverFixWin');
 
-    $doc.on('mouseenter.acHoverFix mouseover.acHoverFix', '.ac-hover-root, .notsi .npf-box, .notsi .inf2, .notsi a', function(){
-      clearTimeout(hoverTimer);
+    $doc.on('mouseenter.acHoverFix', '.ac-hover-root', function(){
+      var $root = $(this);
+      var $post = $root.closest('.posts');
 
-      var $root = $(this).closest('.ac-hover-root');
-      if($root.length) activateHover($root);
+      if(!$post.length || $post.hasClass('ac-prep')) return;
+
+      clearActiveHover();
+
+      activeRoot = this;
+      activePost = $post[0];
+
+      $root.addClass('ac-hover-on');
+      $post.addClass('ac-hover-on');
     });
 
     $doc.on('mouseleave.acHoverFix', '.ac-hover-root', function(e){
-      var rootEl = this;
       var rel = e.relatedTarget;
 
-      if(rel && $(rel).closest('.ac-hover-root, .notsi, .npf-box, .inf2').length) return;
+      if(rel && $(rel).closest('.notsi').length) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
 
-      clearTimeout(hoverTimer);
+      var $root = $(this);
+      var $post = $root.closest('.posts');
 
-      hoverTimer = setTimeout(function(){
-        $(rootEl).removeClass('ac-hover-on');
+      $root.removeClass('ac-hover-on');
 
-        var $post = $(rootEl).closest('.posts');
+      if($post.length){
         $post.removeClass('ac-hover-on');
+      }
 
-        if(activeRoot === rootEl){
+      if(activeRoot === this){
+        activeRoot = null;
+        activePost = null;
+      }
+    });
+
+    $doc.on('mouseenter.acHoverFix', '.notsi', function(){
+      var $root = $(this).parent('.ac-hover-root');
+      var $post = $root.closest('.posts');
+
+      if(!$root.length || !$post.length || $post.hasClass('ac-prep')) return;
+
+      activeRoot = $root[0];
+      activePost = $post[0];
+
+      $root.addClass('ac-hover-on');
+      $post.addClass('ac-hover-on');
+    });
+
+    $doc.on('mouseleave.acHoverFix', '.notsi', function(e){
+      var $root = $(this).parent('.ac-hover-root');
+      var rel = e.relatedTarget;
+
+      if($root.length && rel && $root[0].contains(rel)) return;
+      if(rel && $(rel).closest('.ac-hover-root').length) return;
+
+      if($root.length){
+        var $post = $root.closest('.posts');
+
+        $root.removeClass('ac-hover-on');
+
+        if($post.length){
+          $post.removeClass('ac-hover-on');
+        }
+
+        if(activeRoot === $root[0]){
           activeRoot = null;
           activePost = null;
         }
-      }, 110);
-    });
-
-    $doc.on('click.acHoverFix', '.notsi .npf-reblog, .notsi [data-ac-reblog]', function(e){
-      var href = $(this).attr('href');
-      if(!href || href === '#') e.preventDefault();
-    });
-
-    $doc.on('click.acHoverFix', '.notsi .npf-permalink, .notsi [data-ac-permalink]', function(e){
-      var href = $(this).attr('href');
-      if(!href || href === '#') e.preventDefault();
+      }
     });
 
     $doc.on('click.acHoverFix', '.notsi .npf-lightbox, .notsi [data-ac-lightbox]', function(e){
@@ -2973,13 +3210,50 @@ data-notes="{NoteCountWithLabel}">
       e.stopPropagation();
 
       var $post = $(this).closest('.posts');
-      if($post.length) openTumblrLightboxFromPost($post);
+
+      if(!$post.length){
+        $post = $(this).closest('.ac-hover-root').closest('.posts');
+      }
+
+      if(!$post.length) return;
+
+      var $target = getFirstLightboxTarget($post);
+      if(!$target.length) return;
+
+      $target[0].dispatchEvent(new MouseEvent('click', {
+        bubbles:true,
+        cancelable:true,
+        view:window
+      }));
+
+      setTimeout(function(){
+        var wrap =
+          $target.closest('.pxu-photo')[0] ||
+          $target.closest('.photo-data')[0] ||
+          $target.closest('.npf_image, figure.tmblr-full, .tmblr-full')[0];
+
+        if(wrap){
+          wrap.dispatchEvent(new MouseEvent('click', {
+            bubbles:true,
+            cancelable:true,
+            view:window
+          }));
+        }
+      }, 0);
     });
 
+    $win.on('scroll.acHoverFixWin', throttle(function(){
+      clearDeadHover();
+      scanForNewPosts();
+    }, 160));
+
+    $doc.on('wheel.acHoverFix touchmove.acHoverFix', throttle(function(){
+      clearDeadHover();
+    }, 160));
+
     $win.on('resize.acHoverFixWin', throttle(function(){
-      processUnprocessedPosts();
-      relayoutSoon();
-    }, 120));
+      requestLayout();
+    }, 220));
 
     $win.on('blur.acHoverFixWin', function(){
       clearActiveHover();
@@ -2992,73 +3266,38 @@ data-notes="{NoteCountWithLabel}">
     document.addEventListener('touchstart', function(){
       clearActiveHover();
     }, { passive:true });
+
+    document.addEventListener('pointercancel', function(){
+      clearActiveHover();
+    }, { passive:true });
   }
 
-  function appendNewPosts($new){
-    if(!$new || !$new.length) return;
+  function initMutationObserver(){
+    if(!window.MutationObserver) return;
 
-    isLoadingMore = true;
-    clearActiveHover();
-
-    $new = $new.filter('.posts').add($new.find('.posts'));
-
-    if(!$new.length){
-      isLoadingMore = false;
-      return;
+    if(mutationObserver){
+      try{ mutationObserver.disconnect(); }catch(e){}
     }
 
-    $new.removeClass('ac-hover-on');
-    $new.css({
-      opacity:'1',
-      visibility:'visible',
-      display:'block'
-    });
+    mutationObserver = new MutationObserver(function(mutations){
+      var found = false;
 
-    $container.append($new);
-
-    processPosts($new);
-
-    if($.fn.imagesLoaded){
-      $new.imagesLoaded(function(){
-        processPosts($new);
-
-        if($.fn.masonry){
-          safe(function(){
-            $container.masonry('appended', $new, true);
-            $container.masonry('reloadItems');
-            $container.masonry('layout');
-          });
+      for(var i=0;i<mutations.length;i++){
+        if(mutations[i].addedNodes && mutations[i].addedNodes.length){
+          found = true;
+          break;
         }
-
-        forceVisible($new);
-        relayoutSoon();
-
-        setTimeout(function(){
-          processPosts($new);
-          forceVisible($new);
-          relayout();
-          isLoadingMore = false;
-        }, 500);
-      });
-    } else {
-      if($.fn.masonry){
-        safe(function(){
-          $container.masonry('appended', $new, true);
-          $container.masonry('reloadItems');
-          $container.masonry('layout');
-        });
       }
 
-      forceVisible($new);
-      relayoutSoon();
+      if(found) scanForNewPosts();
+    });
 
-      setTimeout(function(){
-        processPosts($new);
-        forceVisible($new);
-        relayout();
-        isLoadingMore = false;
-      }, 650);
-    }
+    try{
+      mutationObserver.observe($container[0], {
+        childList:true,
+        subtree:false
+      });
+    }catch(e){}
   }
 
   function initInfiniteScrollIfPresent(){
@@ -3079,41 +3318,79 @@ data-notes="{NoteCountWithLabel}">
       bufferPx:1200,
       appendCallback:false
     }, function(newElements){
-      appendNewPosts($(newElements));
+      var $new = $(newElements).filter('.posts');
+
+      if(!$new.length){
+        $new = $(newElements).find('.posts');
+      }
+
+      if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
+
+      $new
+        .removeClass('is-ready ac-hover-on')
+        .addClass('ac-prep')
+        .css({
+          visibility:'hidden',
+          opacity:0,
+          pointerEvents:'none',
+          display:'block',
+          position:'absolute',
+          left:'-99999px',
+          top:'0',
+          zIndex:-1
+        });
+
+      $container.append($new);
+
+      forceEager($new);
+      layoutAndReveal($new);
+      runSettledLayouts($new);
     });
   }
 
   $(document).ready(function(){
-    processPosts($(document));
-    bindHoverEvents();
-    initInfiniteScrollIfPresent();
+    $container.css('position','relative');
 
-    forceVisible($('.posts'));
+    var $initial = $container.children('.posts');
 
-    safe(function(){
-      if($.fn.masonry){
-        $container.masonry('reloadItems');
-        $container.masonry('layout');
-      }
+    $initial.each(function(){
+      $(this).data('acScanned', 1);
     });
 
-    setTimeout(function(){
-      processUnprocessedPosts();
-      forceVisible($('.posts'));
-      relayout();
-    }, 700);
+    hidePosts($initial);
+
+    bindHoverEvents();
+    initMutationObserver();
+
+    forceEager($initial);
+    layoutAndReveal($initial);
+    initInfiniteScrollIfPresent();
+    runSettledLayouts($initial);
 
     setTimeout(function(){
       processUnprocessedPosts();
-      forceVisible($('.posts'));
-      relayout();
-    }, 1600);
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
+      layoutPosts();
+    }, 800);
 
     setTimeout(function(){
       processUnprocessedPosts();
-      forceVisible($('.posts'));
-      relayout();
-    }, 2800);
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
+      layoutPosts();
+    }, 1800);
+
+    setTimeout(function(){
+      processUnprocessedPosts();
+      rebuildUnstablePosts($initial);
+      showPosts($initial);
+      layoutPosts();
+    }, 3000);
   });
 
 })(window.jQuery);
