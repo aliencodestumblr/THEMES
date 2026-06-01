@@ -1458,112 +1458,179 @@ a.tumblr_blog{ display:none !important; }
   border-bottom: 1px solid transparent;
 }
 
-.blk-audio-dock {
-  width: 100%;
-  height: 40px;
-  padding: 0 6px;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  margin-bottom: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-  transition: border-color 0.3s ease, background 0.3s ease;
+.blk-audio-dock{
+  width:100%;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 5px;
+
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.025);
+
+  margin-bottom:16px;
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease;
 }
 
-.blk-audio-dock:hover {
-  background: rgba(255, 255, 255, 0.6);
-  border-color: rgba(0, 0, 0, 0.09);
+.blk-audio-dock:hover{
+  border-color:rgba(0,0,0,.10);
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,.04);
 }
 
-.blk-dock-play {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 28px;
-  height: 28px;
-  border: 0;
-  background: rgba(0, 0, 0, 0.03);
-  color: {color:Text};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  outline: none;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+.blk-dock-play{
+  appearance:none;
+  -webkit-appearance:none;
+
+  width:30px;
+  height:30px;
+
+  flex-shrink:0;
+
+  border:0;
+
+  background:{color:Text};
+  color:#fff;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+  margin:0;
+
+  font-size:14px;
+  line-height:1;
+
+  transition:
+    transform .18s ease,
+    opacity .18s ease;
 }
 
-.blk-dock-play:hover {
-  background: rgba(0, 0, 0, 0.08);
-  transform: scale(1.04);
+.blk-dock-play:hover{
+  transform:scale(1.05);
 }
 
-.blk-dock-play span {
-  margin-left: 2px;
+.blk-dock-play span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+  height:100%;
+
+  margin:0 !important;
+  padding:0;
+
+  line-height:1;
+
+  transform:translate(0.5px, 0.5px);
 }
 
-.blk-dock-metadata {
-  flex: 1;
-  min-width: 0;
-  padding: 0 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.blk-dock-metadata{
+  flex:1;
+  min-width:0;
+
+  margin:0 10px;
+  padding-left:10px;
+
+  border-left:1px solid rgba(0,0,0,.06);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-.blk-dock-track {
-  font-family: "Orbitron", sans-serif;
-  font-size: 7.5px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: {color:Text};
-  opacity: 0.85;
+.blk-dock-track{
+  font-family:"Orbitron",sans-serif;
+
+  font-size:7px;
+  font-weight:900;
+
+  text-transform:uppercase;
+  letter-spacing:.7px;
+
+  color:{color:Text};
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  line-height:1;
 }
 
-.blk-dock-artist {
-  font-family: "Rajdhani", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: {color:Text};
-  opacity: 0.45;
-  margin-top: 1px;
+.blk-dock-artist{
+  font-family:"Rajdhani",sans-serif;
+
+  font-size:10px;
+  font-weight:600;
+
+  color:{color:Text};
+  opacity:.45;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  margin-top:3px;
+  line-height:1;
 }
 
-.blk-dock-skip {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  background: transparent;
-  border: 0;
-  color: {color:Text};
-  font-size: 13px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.25;
-  outline: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+
+.blk-dock-skip{
+  appearance:none;
+  -webkit-appearance:none;
+
+  height:100%;
+
+  flex-shrink:0;
+
+  border:0;
+  background:transparent;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 0 0 10px;
+  margin:0;
+
+  border-left:1px solid rgba(0,0,0,.06);
+
+  font-family:"Orbitron",sans-serif;
+  font-size:7px;
+  font-weight:900;
+
+  text-transform:uppercase;
+  letter-spacing:.8px;
+
+  color:{color:Text};
+
+  cursor:pointer;
+
+  opacity:.42;
+
+  transition:opacity .18s ease;
 }
 
-.blk-dock-skip:hover {
-  opacity: 0.8;
-  transform: translateX(1px);
+.blk-dock-skip:hover{
+  opacity:.90;
 }
 
-.blk-dock-skip span {
-  line-height: 1;
-  transform: translateY(-1px);
+.blk-dock-skip span{
+  display:block;
+  line-height:1;
 }
 
 .blk-footer-nav {
@@ -1742,9 +1809,9 @@ a.tumblr_blog{ display:none !important; }
         <div class="blk-dock-artist" id="sbTrackArtist">{text:Track 1 Artist}</div>
       </div>
 
-      <button class="blk-dock-skip" id="sbNext" type="button" aria-label="Skip Track">
-        <span>→</span>
-      </button>
+      <button class="blk-dock-skip" id="sbNext" type="button" aria-label="Next Track">
+  <span>NEXT</span>
+</button>
 
       <div id="sbPlaylist" class="sb-hidden-playlist" aria-hidden="true">
         {block:IfTrack1Audio}<button class="sb-song is-active" type="button" data-src="{text:Track 1 Audio}" data-title="{text:Track 1 Title}" data-artist="{text:Track 1 Artist}">01</button>{/block:IfTrack1Audio}
