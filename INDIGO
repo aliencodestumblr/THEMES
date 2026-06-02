@@ -1,3 +1,13 @@
+<!--
+
+       @ALIENCODES // @RAIVYS
+
+OTHER CREDITS:
+POST MEDIA HOVERS     ──  @raivys
+MUSIC PLAYER          ──  @aliencodes/glenthemes
+PHOTOSETS SCRIPT      ──  @shythemes
+INFINITE SCROLL       ──  @aliencodes
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -1408,7 +1418,7 @@ a.tumblr_blog{ display:none !important; }
 
 #ltop{
   position:fixed;
-  bottom:20px;
+  top:46px;
   right:20px;
   width:35px;
   height:35px;
@@ -2030,6 +2040,68 @@ a.tumblr_blog{ display:none !important; }
   pointer-events:none;
 }
 {/block:IndexPage}
+
+.alien-credit,
+.alien-credit:link,
+.alien-credit:visited,
+.alien-credit:hover {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+.alien-a {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+    color: {color:Links} !important;
+    z-index: 2;
+    background: transparent;
+    padding-right: 4px;
+    
+    transition: text-shadow 0.3s ease;
+}
+
+.alien-name {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: {color:Links} !important;
+    line-height: 1;
+    
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    
+    transition: 
+        max-width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.alien-credit:hover .alien-a {
+    text-shadow: 0 0 8px {color:Links};
+}
+
+.alien-credit:hover .alien-name {
+    max-width: 150px;
+    opacity: 0.85;
+    transform: translateX(0);
+}
 </style>
 
 <!-- // PHOTOSETS + DESIGN DE GRID // -->
@@ -2037,6 +2109,11 @@ a.tumblr_blog{ display:none !important; }
 
 </head>
 <body>
+
+<a href="https://aliencodes.tumblr.com" class="alien-credit" target="_blank" title="theme by ALIENCODES">
+  <span class="alien-a">A</span>
+  <span class="alien-name">LIENCODES</span>
+</a>
 
 <!-- // VOLTAR AO TOPO // -->
 <a href="#" id="ltop" aria-label="Back to top">
@@ -2167,8 +2244,9 @@ a.tumblr_blog{ display:none !important; }
 <!-- // ÍCONE SVG DOS CONTROLES // -->
 <div class="cc">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-    <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
-    <path d="M7.6 6.8a7 7 0 1 0 8.8 0"></path>
+    <circle cx="12" cy="12" r="1"></circle>
+    <circle cx="19" cy="12" r="1"></circle>
+    <circle cx="5" cy="12" r="1"></circle>
   </svg>
 </div>
 
