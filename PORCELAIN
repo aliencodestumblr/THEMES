@@ -3440,7 +3440,6 @@ data-notes="{NoteCountWithLabel}">
   function updateUIState(isPlaying) {
     if (isPlaying) {
       playerMain.classList.add('is-playing');
-      // Swap icons from CSS play-state triangle to pause-state bars
       if (playIcon) {
         playIcon.classList.remove('play-state');
         playIcon.classList.add('pause-state');
@@ -3486,36 +3485,42 @@ data-notes="{NoteCountWithLabel}">
   audio.addEventListener('pause', function() { updateUIState(false); });
   audio.addEventListener('ended', function() { nextTrack(); });
 
-  // 7. Playlist Drawer Toggle Handling (Forced Layout Engine Render)
+  // 7. Playlist Drawer Toggle & Outside Click Logic (Fixed Conflict)
   if (playlistToggle && playlistDrawer) {
+    
+    function openDrawer() {
+      playlistDrawer.classList.add('is-open');
+      playerMain.classList.add('drawer-active');
+      playlistDrawer.style.display = 'flex';
+    }
+
+    function closeDrawer() {
+      playlistDrawer.classList.remove('is-open');
+      playerMain.classList.remove('drawer-active');
+      playlistDrawer.style.display = 'none';
+    }
+
+    // Explicit toggle check
     playlistToggle.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation(); // Prevents instant bubbling close handler execution
+      e.stopPropagation(); // Stop click from bubbling up immediately
       
-      var isOpen = playlistDrawer.classList.contains('is-open');
-      
-      if (!isOpen) {
-        playlistDrawer.classList.add('is-open');
-        playerMain.classList.add('drawer-active');
-        playlistDrawer.style.display = 'flex'; // Explicit layout enforcement override
+      if (playlistDrawer.classList.contains('is-open')) {
+        closeDrawer();
       } else {
-        playlistDrawer.classList.remove('is-open');
-        playerMain.classList.remove('drawer-active');
-        playlistDrawer.style.display = 'none';
+        openDrawer();
       }
     });
 
-    // Optional safety feature: Closes drawer layout context if user clicks outside bar
+    // Close only if clicking outside the player bar completely
     document.addEventListener('click', function(e) {
-      if (playlistDrawer.classList.contains('is-open') && !playerMain.contains(e.target)) {
-        playlistDrawer.classList.remove('is-open');
-        playerMain.classList.remove('drawer-active');
-        playlistDrawer.style.display = 'none';
+      if (!playerMain.contains(e.target)) {
+        closeDrawer();
       }
     });
   }
 
-  // Initialize player with first track index layer without firing auto play rules
+  // Initialize player with first track index without firing auto play rules
   loadTrack(0, false);
 })();
 </script>
