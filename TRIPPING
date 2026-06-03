@@ -3537,6 +3537,18 @@ document.addEventListener("DOMContentLoaded", function(){
     audio.play();
   });
 
+  // --- FIX: Add click listeners to each song item in the playlist ---
+  songs.forEach(function(song, songIndex){
+    song.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Load the clicked song by its index and play it immediately
+      loadSong(songIndex);
+      audio.play();
+    });
+  });
+
   // Init track data safely without fighting styles
   loadSong(0);
 
