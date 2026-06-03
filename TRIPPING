@@ -46,7 +46,6 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="color:Answer Text" content="#ffffff"/>
 <meta name="color:Answer Border" content="#000000"/>
 
-<meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
@@ -174,10 +173,6 @@ iframe.tmblr-iframe {
     position: fixed;
 
     width: 0;
-
-    {block:IfDarkTumblrControl}
-    filter: invert(1);
-    {/block:IfDarkTumblrControl}
 
     padding-right: 90px; 
 
