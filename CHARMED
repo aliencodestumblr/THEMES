@@ -61,9 +61,9 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="text:Link 4" content="/"/>
 <meta name="text:Link 4 Title" content="spotify"/>
 
-<meta name="text:Track 1 Title" content="Loretta Young silks">
-<meta name="text:Track 1 Artist" content="Sneakerpimps">
-<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxMzM0NTQ1Xw/Loretta%20Young%20Silks%20-%20sneakerpimps.mp3">
+<meta name="text:Track 1 Title" content="300 Dreams">
+<meta name="text:Track 1 Artist" content="After">
+<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxOTM1MzQ2Xw/300%20dreams.mp3">
 
 <meta name="text:Track 2 Title" content="Semana Satán">
 <meta name="text:Track 2 Artist" content="Uniforms">
@@ -544,16 +544,14 @@ body {
     transform .22s ease;
 }
 
-/* Upgraded Laser Tracking Line Effect */
 .notsi .inf2 a::before{
   content:"";
   position:absolute;
   left:-10%;
   top:0;
-  width:2px; /* Ultra sharp line width */
+  width:2px; 
   height:100%;
   
-  /* Bright white laser beam with a soft trailing data glow */
   background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.4) 30%, transparent 100%);
   opacity:0;
 
@@ -562,7 +560,6 @@ body {
     opacity .2s ease;
 }
 
-/* Triggers the smooth left-to-right scanning line sweep on hover */
 .notsi .inf2 a:hover::before{
   left:110%;
   opacity:1;
@@ -582,7 +579,6 @@ body {
   line-height:1;
 }
 
-/* Slight extra brightness boost on text and borders when hovered */
 .notsi .inf2 a:hover{
   color:#fff!important;
   background:#000!important;
@@ -1482,7 +1478,6 @@ a.tumblr_blog{ display:none !important; }
   width:100%;
 }
 
-/* Restored to original 155px landscape height */
 .im-avatar-frame{
   position:relative;
   width:100%;
