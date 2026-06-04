@@ -2251,10 +2251,15 @@ data-notes="{NoteCountWithLabel}">
     '#posts{position:relative!important;}' +
     '#posts > .posts{position:absolute;z-index:1;box-sizing:border-box;}' +
     '#posts > .posts.ac-hover-on{z-index:50!important;}' +
-    '.ac-hover-root{position:relative;z-index:2;}' +
+    '.ac-hover-root{position:relative!important;z-index:2;overflow:hidden;}' +
     '.ac-hover-root.ac-hover-on{z-index:60!important;}' +
     '.posts.ac-prep{visibility:hidden!important;opacity:0!important;pointer-events:none!important;z-index:-1!important;}' +
     '.posts.is-ready{visibility:visible;opacity:1;pointer-events:auto;}' +
+
+    /* FIX: force every generated hover bar to live at the bottom */
+    '.ac-hover-root > .notsi{top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;}' +
+    '.ac-hover-root--npf-wide > .notsi{top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;height:42px!important;}' +
+    '.posts.has-npf-media .notsi{top:auto!important;bottom:0!important;}' +
   '</style>').appendTo('head');
 
   function safe(fn){ try{ fn(); }catch(e){} }
@@ -2297,7 +2302,7 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function inThemeChrome($el){
-    return $el.closest('#sidebar, #topbar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop').length > 0;
+    return $el.closest('#sidebar, #topbar, .sidebar, .sb-icon, .brand-icon, .sb-card, .cc, #ltop, .scm-style-player').length > 0;
   }
 
   function inPXUPhotoset($el){
@@ -2320,11 +2325,9 @@ data-notes="{NoteCountWithLabel}">
 
     if($pic.length){
       var ok = false;
-
       $pic.find('source').each(function(){
         if(hasTumblrMediaUrl($(this).attr('srcset') || '')) ok = true;
       });
-
       if(ok) return true;
     }
 
@@ -2334,15 +2337,17 @@ data-notes="{NoteCountWithLabel}">
   function looksLikeNPFVideo($node){
     if(!$node || !$node.length) return false;
     if(inPXUPhotoset($node)) return false;
+    if(inThemeChrome($node)) return false;
 
     if($node.is('.npf_video_container, .npf_video, video')) return true;
 
     if($node.is('iframe')){
-      var s = $node.attr('src') || '';
+      var s = ($node.attr('src') || '').toLowerCase();
 
       return (
         s.indexOf('tumblr.com/video') !== -1 ||
         s.indexOf('youtube.com') !== -1 ||
+        s.indexOf('youtu.be') !== -1 ||
         s.indexOf('vimeo.com') !== -1
       );
     }
@@ -2453,7 +2458,7 @@ data-notes="{NoteCountWithLabel}">
     var paths = [];
     var minLen = Infinity;
 
-    for(var i=0;i<nodes.length;i++){
+    for(var i = 0; i < nodes.length; i++){
       var path = [];
       var n = nodes[i];
 
@@ -2469,11 +2474,11 @@ data-notes="{NoteCountWithLabel}">
 
     var lastCommon = null;
 
-    for(var j=0;j<minLen;j++){
+    for(var j = 0; j < minLen; j++){
       var test = paths[0][j];
       var same = true;
 
-      for(var k=1;k<paths.length;k++){
+      for(var k = 1; k < paths.length; k++){
         if(paths[k][j] !== test){
           same = false;
           break;
@@ -2742,7 +2747,7 @@ data-notes="{NoteCountWithLabel}">
 
     $post.removeClass('ac-hover-on');
     $post.find('.notsi').remove();
-    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide');
+    $post.find('.ac-hover-root').removeClass('ac-hover-root ac-hover-on ac-hover-root--npf-wide ac-npf-media');
 
     var $node = buildOverlayNode();
 
@@ -2760,15 +2765,21 @@ data-notes="{NoteCountWithLabel}">
       $target.css('position','relative');
     }
 
-    if(isWideNPFRoot($target)){
-      $node.css({
-        top:'0',
-        left:'0',
-        right:'1px',
-        bottom:'0',
-        width:'auto'
-      });
+    /*
+      MAIN FIX:
+      Your old script set wide NPF/photoset hover nodes to top:0 and bottom:0.
+      That made the hover bar animate from the top on NPF photosets.
+      This forces every generated NPF overlay to pin to the bottom instead.
+    */
+    $node.css({
+      top:'auto',
+      left:'0',
+      right:'0',
+      bottom:'0',
+      width:'100%'
+    });
 
+    if(isWideNPFRoot($target)){
       $target.addClass('ac-hover-root--npf-wide');
     }
 
@@ -2887,6 +2898,7 @@ data-notes="{NoteCountWithLabel}">
   function getColumnCount(containerWidth, itemWidth){
     var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
 
+    /* 1, 2, 3, or 4 columns only */
     if(cols > 4) cols = 4;
 
     return cols;
@@ -2910,7 +2922,7 @@ data-notes="{NoteCountWithLabel}">
     var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
     var heights = [];
 
-    for(var i=0;i<cols;i++) heights[i] = 0;
+    for(var i = 0; i < cols; i++) heights[i] = 0;
 
     $container.css({
       position:'relative',
@@ -2927,7 +2939,7 @@ data-notes="{NoteCountWithLabel}">
 
       var shortest = 0;
 
-      for(var c=1;c<cols;c++){
+      for(var c = 1; c < cols; c++){
         if(heights[c] < heights[shortest]) shortest = c;
       }
 
@@ -2950,7 +2962,7 @@ data-notes="{NoteCountWithLabel}">
 
     var maxHeight = 0;
 
-    for(var j=0;j<heights.length;j++){
+    for(var j = 0; j < heights.length; j++){
       if(heights[j] > maxHeight) maxHeight = heights[j];
     }
 
@@ -3037,7 +3049,7 @@ data-notes="{NoteCountWithLabel}">
   function runSettledLayouts($scope){
     var delays = [180, 500, 1000, 1800];
 
-    for(var i=0;i<delays.length;i++){
+    for(var i = 0; i < delays.length; i++){
       setTimeout(function(){
         if($scope && $scope.length){
           rebuildUnstablePosts($scope);
@@ -3201,7 +3213,7 @@ data-notes="{NoteCountWithLabel}">
     mutationObserver = new MutationObserver(function(mutations){
       var found = false;
 
-      for(var i=0;i<mutations.length;i++){
+      for(var i = 0; i < mutations.length; i++){
         if(mutations[i].addedNodes && mutations[i].addedNodes.length){
           found = true;
           break;
