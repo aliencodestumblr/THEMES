@@ -35,17 +35,17 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="image:Icon" content=""/>
 
 <!-- // CONTROLES DE COR // -->
-<meta name="color:Accent" content="#222222"/>
-<meta name="color:Borders" content="#eeeeee"/>
-<meta name="color:Text" content="#222222" />
-<meta name="color:Links" content="#222222" />
-<meta name="color:Links Hover" content="#222222" />
-<meta name="color:Ask Background" content="#ffffff"/>
-<meta name="color:Ask Text" content="#222222"/>
-<meta name="color:Ask Border" content="#ffffff"/>
-<meta name="color:Answer Background" content="#222222"/>
+<meta name="color:Accent" content="#eeeeee"/>
+<meta name="color:Borders" content="#131415"/>
+<meta name="color:Text" content="#eeeeee" />
+<meta name="color:Links" content="#eeeeee" />
+<meta name="color:Links Hover" content="#eeeeee" />
+<meta name="color:Ask Background" content="#000000"/>
+<meta name="color:Ask Text" content="#eeeeee"/>
+<meta name="color:Ask Border" content="#000000"/>
+<meta name="color:Answer Background" content="#1e2227"/>
 <meta name="color:Answer Text" content="#eeeeee"/>
-<meta name="color:Answer Border" content="#222222"/>
+<meta name="color:Answer Border" content="#000000"/>
 
 <!-- // OPÇÕES DE TOGGLE // -->
 <meta name="if:Show caption" content=""/>
@@ -1669,6 +1669,7 @@ nav a:hover::before {
       {block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title} 
       {block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}
       {block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}
+      <a href="/dashboard">dashboard</a>
     </nav>
 
   </div>
