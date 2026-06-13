@@ -493,24 +493,22 @@ body { overflow-y: scroll; }
   pointer-events: none;
 }
 
-/* --- Perfectly Balanced HUD Data Strip Row --- */
 .notsi .inf2 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end; /* Aligns the grid items to the right side */
+  justify-content: flex-end; 
   
   background: var(--hud-bg);
   backdrop-filter: blur(var(--hud-blur));
   -webkit-backdrop-filter: blur(var(--hud-blur));
   
-  /* Precision top border sealing the bottom of the post */
   border-top: 1px solid var(--hud-border);
   border-bottom: none;
   border-left: none;
   border-right: none;
   
-  padding: 0; /* Removed padding to let the blocks hit edges seamlessly */
+  padding: 0; 
   gap: 0;
   width: 100%;
   box-sizing: border-box;
@@ -521,32 +519,28 @@ body { overflow-y: scroll; }
   pointer-events: auto;
 }
 
-/* --- Uniform Mathematical Grid Items --- */
 .notsi .inf2 a {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centers contents perfectly inside each box */
+  justify-content: center; 
   gap: 7px;
   
-  height: 34px; /* Fixed data row height */
-  width: 85px;  /* Strict fixed width ensures every button is completely even */
-  padding: 0;   /* Handled completely by the width variable now */
+  height: 34px; 
+  width: 85px;  
+  padding: 0;   
   text-decoration: none;
   color: var(--hud-text-muted);
   box-sizing: border-box;
   
-  /* Clean structural vertical dividers */
   border-left: 1px solid var(--hud-border);
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-/* Closes the outer right grid edge cleanly */
 .notsi .inf2 a:last-child {
   border-right: 1px solid var(--hud-border);
 }
 
-/* --- Telemetry Labels (Fixed Matrix Size) --- */
 .notsi .ac-label {
   max-width: none;
   opacity: 1;
@@ -562,14 +556,12 @@ body { overflow-y: scroll; }
   line-height: 1;
 }
 
-/* --- High-Contrast Inverted Block Focus --- */
 .notsi .inf2 a:hover {
-  background: var(--hud-accent); /* Inverts to solid aesthetic grid chunk */
-  color: #ffffff; /* Pops icon and text to clean pure white contrast */
+  background: var(--hud-accent); 
+  color: #ffffff; 
   border-color: var(--hud-accent);
 }
 
-/* Centered sub-crosshair tracking indicator (+) */
 .notsi .inf2 a::before {
   content: '+';
   position: absolute;
@@ -586,7 +578,6 @@ body { overflow-y: scroll; }
   opacity: 0.3;
 }
 
-/* --- Precision Vector Realignment --- */
 .notsi .inf2 .rb-icon {
   width: 11px;
   height: 11px;
@@ -599,12 +590,11 @@ body { overflow-y: scroll; }
 .notsi .inf2 .rb-icon path {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.75px; /* Razor sharp definition */
+  stroke-width: 1.75px; 
   stroke-linecap: square; 
   stroke-linejoin: miter;
 }
 
-/* --- Activation Trigger --- */
 .post:hover .notsi .inf2,
 .ac-hover-on .notsi .inf2 {
   opacity: 1;
@@ -1366,7 +1356,6 @@ a.tumblr_blog{ display:none !important; }
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght=600;800&family=Rajdhani:wght=500;600;700&display=swap');
 
-/* Style Configuration Variables */
 :root {
   --hud-bg: rgba(255, 255, 255, 0.55);
   --hud-blur: 20px;
@@ -1393,7 +1382,6 @@ a.tumblr_blog{ display:none !important; }
   font-family: var(--font-data);
 }
 
-/* --- Modular Data Chips --- */
 .hud-chip {
   background: var(--hud-bg);
   backdrop-filter: blur(var(--hud-blur));
@@ -1403,7 +1391,6 @@ a.tumblr_blog{ display:none !important; }
   box-sizing: border-box;
 }
 
-/* Top profile module styling */
 .profile-chip {
   display: flex;
   flex-direction: column;
@@ -1414,9 +1401,9 @@ a.tumblr_blog{ display:none !important; }
   display: flex;
   align-items: center;
   gap: 14px;
+  min-width: 0; 
 }
 
-/* --- Liquid Neon Sweep Frame --- */
 .avatar-hull {
   position: relative;
   width: 64px;
@@ -1458,7 +1445,15 @@ a.tumblr_blog{ display:none !important; }
   z-index: 3;
 }
 
-/* --- Cyber Glitch Title Effect --- */
+.identity-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;          
+  min-width: 0;    
+  overflow: hidden; 
+}
+
 .username-glitch {
   margin: 0;
   font-family: var(--font-display);
@@ -1470,6 +1465,12 @@ a.tumblr_blog{ display:none !important; }
   line-height: 1.1;
   cursor: default;
   position: relative;
+
+  display: block;
+  width: 100%;
+  white-space: nowrap;       
+  overflow: hidden;          
+  text-overflow: ellipsis;   
 }
 
 .username-glitch:hover {
@@ -1485,7 +1486,6 @@ a.tumblr_blog{ display:none !important; }
   100% { text-shadow: 1px 1px 0 rgba(0,0,0,0.2), -1px -1px 0 rgba(255,255,255,0.8); transform: skew(0deg); }
 }
 
-/* --- Live Broadcast Badge --- */
 .live-badge {
   display: inline-flex;
   align-items: center;
@@ -1524,7 +1524,6 @@ a.tumblr_blog{ display:none !important; }
   letter-spacing: 1.5px;
 }
 
-/* --- Description Module --- */
 .desc-text {
   font-size: 13px;
   line-height: 1.5;
@@ -1532,7 +1531,6 @@ a.tumblr_blog{ display:none !important; }
   color: var(--hud-text-muted);
 }
 
-/* --- Meta Info Chip --- */
 .meta-chip {
   display: flex;
   justify-content: space-between;
@@ -1549,11 +1547,10 @@ a.tumblr_blog{ display:none !important; }
   opacity: 0.25;
 }
 
-/* --- Sliding Panel Nav Menu (TEXT LENGTH WRAPPER) --- */
 .menu-stack {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Automatically wraps options down if they exceed the 250px width */
+  flex-wrap: wrap; 
   gap: 6px;
   background: transparent;
   border: none;
@@ -1563,12 +1560,12 @@ a.tumblr_blog{ display:none !important; }
 
 .nav-node {
   position: relative;
-  flex: 0 1 auto; /* Tells elements only to consume space equal to their text label length */
+  flex: 0 1 auto; 
   background: var(--hud-bg);
   backdrop-filter: blur(var(--hud-blur));
   -webkit-backdrop-filter: blur(var(--hud-blur));
   border: 1px solid var(--hud-border);
-  padding: 8px 12px; /* Balanced side margins for independent button presentation */
+  padding: 8px 12px; 
   font-size: 11px;
   font-weight: 700;
   color: var(--hud-text-muted);
@@ -1599,7 +1596,6 @@ a.tumblr_blog{ display:none !important; }
   left: 0;
 }
 
-/* --- Micro HUD Music Player (ULTRA-MINIMAL SINGLE ROW) --- */
 .scm-style-player {
   position: relative;
   width: 100%; 
@@ -1689,7 +1685,6 @@ a.tumblr_blog{ display:none !important; }
   transition: max-width 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease;
 }
 
-/* Reveals text beautifully when audio starts playing */
 .scm-style-player.is-playing .scm-track-data {
   max-width: 140px;
   opacity: 1;
