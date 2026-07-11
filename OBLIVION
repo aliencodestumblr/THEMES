@@ -1,14 +1,15 @@
 <!--
 
-  [ aliencodes theme ]
+       @ALIENCODES // @RAIVYS
 
-  add-ons:
-    ↳ scroll to top + minimal sc — @aliencodes original
-    ↳ blog music — @glenthemes
-
+OTHER CREDITS:
+POST MEDIA HOVERS     ──  @raivys
+MUSIC PLAYER          ──  @aliencodes/glenthemes
+PHOTOSETS SCRIPT      ──  @shythemes
+INFINITE SCROLL       ──  @aliencodes
 -->
 <!DOCTYPE html>
-<html>
+<html>  
 <head> 
 
 <title>{Title}</title>
@@ -30,48 +31,59 @@ attribute:"title"
 })(jQuery);
 </script>
 
-<meta name="image:Icon" content="" />
+<meta name="image:Icon" content=""/>
 
-<meta name="color:Gradient 1" content="#8f9faa"/>
-<meta name="color:Gradient 2" content="#c0ccd4"/>
+<meta name="color:Details" content="#ffffff"/>
+<meta name="color:Shadows" content="#aaaaaa"/> 
+<meta name="color:Accent" content="#444444"/>
+<meta name="color:Borders" content="#EEEEEE"/>
+<meta name="color:Text" content="#444444" />
+<meta name="color:Links" content="#444444" />
+<meta name="color:Links Hover" content="#444444" />
+<meta name="color:Ask Background" content="#f4f4f4"/>
+<meta name="color:Ask Text" content="#bababa"/>
+<meta name="color:Ask Border" content="#eeeeee"/>
+<meta name="color:Answer Background" content="#444444"/>
+<meta name="color:Answer Text" content="#ffffff"/>
+<meta name="color:Answer Border" content="#000000"/>
 
-<meta name="color:Background" content="#ffffff"/>
-<meta name="color:Text"      content="#3a3b3d"/>
-<meta name="color:Links"       content="#5a5c61"/>
-<meta name="color:Links Hover" content="#111315"/>
-<meta name="color:Search Background" content="#ffffff"/>
-<meta name="color:Accent"      content="#aaaaaa"/>
-<meta name="color:Asker Text"      content="#ffffff"/>
-<meta name="color:Tooltip Text"      content="#ffffff"/>
-
-<meta name="if:Dark Tumblr control" content=""/>   
-<meta name="if:Show caption" content=""/>  
+<meta name="if:Show caption" content=""/>   
 <meta name="if:Pagination" content=""/>
-<meta name="if:3 columns" content=""/>  
-<meta name="if:left sidebar" content=""/>
-<meta name="if:circle icon" content=""/>
-<meta name="if:Show search bar" content="1"/>  
-<meta name="if:Pagination" content=""/>
+<meta name="if:Show music player" content="">
 
-<meta name="text:Link 1 Url" content="/" />
-<meta name="text:Link 1 Title" content="link" /> 
-<meta name="text:Link 2 Url" content="/" />
-<meta name="text:Link 2 Title" content="link" />
-<meta name="text:Link 3 Url" content="/" />
-<meta name="text:Link 3 Title" content="link" /> 
-<meta name="text:Link 4 Url" content="/" />
-<meta name="text:Link 4 Title" content="link" />   
+<meta name="text:Link 1" content="/"/>
+<meta name="text:Link 1 Title" content="reload"/>
+<meta name="text:Link 2" content="/"/>
+<meta name="text:Link 2 Title" content="message"/>
+<meta name="text:Link 3" content="/"/>
+<meta name="text:Link 3 Title" content="tags"/>
+<meta name="text:Link 4" content="/"/>
+<meta name="text:Link 4 Title" content="exit"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="extra"/>
 
-<meta name="text:Meta Line" content="444"/>
+<meta name="text:Track 1 Title" content="Deep Diving">
+<meta name="text:Track 1 Artist" content="After">
+<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfNjQ0MjM0MDZf/Deep%20Diving%20-%20After.mp3">
+
+<meta name="text:Track 2 Title" content="Semana Satán">
+<meta name="text:Track 2 Artist" content="Uniforms">
+<meta name="text:Track 2 Audio" content="https://od.lk/s/MzlfODk2ODIyODFf/Semana%20Sata%CC%81n%20-%20Uniforms.mp3">
+
+<meta name="text:Track 3 Title" content="Fool 4 You">
+<meta name="text:Track 3 Artist" content="Mr Little Jeans">
+<meta name="text:Track 3 Audio" content="https://od.lk/s/MzlfMTAxMTY0NTU0Xw/Mr%20Little%20Jeans%20-%20Fool%204%20You.mp3">
+
+<meta name="text:Track 4 Title" content="Running Away">
+<meta name="text:Track 4 Artist" content="Washed Out">
+<meta name="text:Track 4 Audio" content="https://od.lk/s/MzlfNjY1NzIxMDFf/Running%20Away%20-%20Washed%20Out.mp3">
+
+<meta name="text:Track 5 Title" content="Teeth">
+<meta name="text:Track 5 Artist" content="Mallrat">
+<meta name="text:Track 5 Audio" content="https://od.lk/s/MzlfMTAwOTAwMjcyXw/Teeth%20-%20Mallrat.mp3">
 
 <script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js">
 </script>
-<script language="JavaScript" src="https://dl.dropbox.com/u/3173073/GothicDarkness/qTip.js" type="text/JavaScript"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,10 +105,6 @@ attribute:"title"
 <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
 
 <script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <script src="//glenthemes.github.io/-music-/glenplayer07.js"></script>
@@ -136,12 +144,14 @@ iframe.spotify_audio_player {
   margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important; 
   display: block;
 }
+
+html, body, a, a:hover{cursor:crosshair;}
  
 @keyframes fadein {from {opacity:0;} to {opacity:1;}} 
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Firefox */
 @-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Safari and Chrome */
 @-o-keyframes fadein {from {opacity:0;} to {opacity:1;}} /* Opera */
-  
+     
 .cc {
     z-index: 100;
     position: fixed;
@@ -149,8 +159,6 @@ iframe.spotify_audio_player {
     right: 20px;
     width: 35px;
     height: 35px;
-    background: {color:background};
-    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,32 +168,45 @@ iframe.spotify_audio_player {
 
 .cc svg {
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 11px;
+    height: 11px;
     overflow: visible;
+    color: {color:accent};
 }
 
-.cc svg path {
-    fill: {color:accent};
+.cc svg path,
+.cc svg circle,
+.cc svg line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
      
 iframe.tmblr-iframe {
     z-index: 999;
-    right: 28px;
-    top: 21px;
+    right: 22px;
+    top: 27px;
     opacity: 0;
     position: fixed;
+
     width: 0;
-    padding-right: 60px;
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
+
+    {block:IfDarkTumblrControl}
+    filter: invert(1);
+    {/block:IfDarkTumblrControl}
+
+    padding-right: 90px; 
+
+    transform: scale(0.38);
+    -webkit-transform: scale(0.38);
+
     transform-origin: 100% 0;
     -webkit-transform-origin: 100% 0;
-    transition: opacity 0.4s ease;
-    -webkit-transition: opacity 0.4s ease;
-    {block:IfDarkTumblrControl}
-    filter:invert(1);
-    {/block:IfDarkTumblrControl}
+
+    transition: opacity 0.35s ease;
+    -webkit-transition: opacity 0.35s ease;
 }
 
 .tmblr-iframe:hover {
@@ -197,19 +218,19 @@ iframe.tmblr-iframe {
 }
 .lightbox-image, #tumblr_lightbox img {  
     box-shadow:none !important;
-    border-radius:{text:border radius}px !important;
+    border-radius:2px !important;
     max-width:none;
 }
  
 .tmblr-lightbox, #tumblr_lightbox {
     background-color:rgba({RGBcolor:background},.7) !important;
 }
-
-hr {
-    margin:10px auto;
-    border-style:solid;
-    border-top-width:0.5px;
-    border-bottom-width:0.5px;
+ 
+.lightbox-image, #tumblr_lightbox img {  
+    border:5px solid #ffffff;!important;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 pre, code {
@@ -220,7 +241,7 @@ pre, code {
     font-family:monospace;
     padding:1px; 
     line-height:14px;
-    background:{color:background};
+    background:#fff;
     margin:10px 0px; 
 }
  
@@ -229,11 +250,13 @@ li {margin-left:-32px;}
 ul {margin-left:6px;}
 
 a, a:link, a:active, a:visited {
+    cursor:crosshair;
     color:{color:links};
     text-decoration:none;
     transition:.5s;
 }
 a:hover {
+    cursor:crosshair;
     color:{color:links hover}; 
     text-decoration:none;
     transition:.5s;
@@ -255,13 +278,23 @@ blockquote {
 }
 
 blockquote img {
+    border-radius:4px;
     width:calc(100% - 0);
     height:auto;
-    margin-bottom:0px;
 }
 
 blockquote video {
+    border-radius:4px;
     width:100%; 
+}
+
+img { 
+    border-radius:4px;
+    cursor:crosshair;
+    border:0;
+    width:calc(100% - 0);
+    height:auto;
+    display:block;
 }
 
 video {
@@ -298,18 +331,11 @@ video + .permalink {
   padding-top: 0 !important;
 }
 
-img { 
-    border:0;
-    width:calc(100% - 0);
-    height:auto;
-    display:block;
-}
-
 ::-moz-selection {
-    background:{color:background};
+    background:#fff;
     color:{color:links hover};
 }
-::selection {background:{color:background};
+::selection {background:#fff;
     color:{color:links hover};
 }
  
@@ -320,75 +346,113 @@ img {
 .spotify_audio_player {height:80px !important;}
 
 body {
-    color:{color:text};
-    background-color:{color:background};
-    font:400 11.5px "Rajdhani", sans-serif;
-    transition: color .10s ease, background-color 0s;
-    letter-spacing:1px;
+    color:{color:text}; 
+    background-color:#ffffff;
+    font:400 10.5px "Rajdhani", sans-serif;
+    transition:1.3s;  
+    letter-spacing:0.5px;
     text-align:justify;    
     line-height:15px; 
     word-wrap:break-word;
-    
+    -webkit-animation-name:fadeIn;animation-name:fadeIn;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin:15px 15px 5px 15px;
-    color:{color:accent};
-    font:700 10px "Rajdhani", sans-serif;
-    text-transform:uppercase;
-    text-align:justify; 
-    line-height:15px;
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
 }
 
 .entry {   
-    width:920px;    
+    width:760px;    
+    
     {block:permalinkpage}  
-    width:700px; 
+    width:540px;
     {/block:permalinkpage} 
     margin:auto;
     height:auto; 
 }
 
 #posts {     
-    margin-top:80px; 
-    margin-left:-110px;  
-    {block:if3columns}
-    margin-left:-130px;  
-    {/block:if3columns}
-    width:920px;
-    {block:if3columns}
-    width:1020px; 
-    {/block:if3columns}
-    {block:ifleftsidebar}
-    margin-left:110px; 
-    {/block:ifleftsidebar}
+    width:760px;
+    margin-top:100px; 
+    margin-left:160px; 
+    
     {block:permalinkpage}
-    margin-top:130px;   
-    margin-left:-190px;  
+    margin-top:125px;
+    margin-left:50px;
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    background:transparent;   
-    width:360px;    
-    {block:if3columns}
-    width:270px; 
-    {/block:if3columns}
-    {block:permalinkpage}
-    margin-top:130px; 
-    width:700px; 
-    margin-left:-190px; 
-    {/block:permalinkpage}
-    margin:40px; 
-    {block:if3columns}
-    margin:25px;  
-    {/block:if3columns}
-    padding:0px;      
+    width:300px;
+    margin:25px;      
+    border-radius:4px;
     overflow:hidden;
     opacity:1;
+    transition:1s;  
+    
+    padding:15px; 
+    background: {color:details}; 
+    box-shadow: 0 2px 12px {color:Shadows};
 }
+
+{block:permalinkpage} 
+.posts {
+    margin-top:125px; 
+    width:540px;
+    
+}
+{/block:permalinkpage}
 
 {block:IndexPage}
 .posts {
@@ -400,7 +464,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .posts img {
     width:100%;    
-    
     {block:permalinkpage}
     width:100%;
     {/block:permalinkpage};   
@@ -432,167 +495,204 @@ h1, h2, h3, h4, h5, h6 {
     height:20px;
 }
 
+/* scrollbar */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#fff;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(
+    180deg,
+    {color:Gradient 1},
+    {color:Gradient 2}
+  );
+
+  border:2px solid #fff;
+  border-radius:999px;
+
+  transition:.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(
+    180deg,
+    {color:Gradient 2},
+    {color:Gradient 1}
+  );
+}
+/* end scrollbar */
+
+
 /* pagination */
-.pag {     
-    position:fixed;
-    margin-top:30px;
-    margin-left:-15px;
-    margin-bottom:20px; 
-    width:190px;
-    height:auto;  
-    text-align:left;   
-    z-index:100;
+.page-nav{
+  width:min(700px, calc(100% - 40px));
+  margin:50px auto 80px!important;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+
+  font-family:"Rajdhani",sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
 }
 
-.pag a{ 
-    background:{color:details};
-    width:12px;
-    height:12px; 
-    font-size:8.5px;  
-    text-align:center;
-    text-transform:uppercase; 
-    color:{color:links};    
-    padding:4px 7px 4px 7px;     
-    margin:0px; 
-    transition:1s;
-    border:1px solid {color:borders}; 
+.page-nav a,
+.page-nav span{
+  min-width:31px;
+  height:30px;
+  padding:0 10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid {color:Borders};
+  border-radius:2px;
+
+  color:{color:Links};
+  text-decoration:none!important;
+
+  box-sizing:border-box;
+
+  transition:.22s ease;
 }
 
-.pag a:hover{
-    color:{color:accent};
-    font-weight:700; 
-    transition:1s;
+.page-nav a:hover{
+  background:{color:Links};
+  border-color:{color:Links};
+  color:#000;
+  transform:translateY(-2px);
 }
+
+.page-nav .current_page{
+  background:{color:Links};
+  border-color:{color:Links};
+  color:#000;
+}
+
+.page-nav .prev,
+.page-nav .next{
+  min-width:68px;
+}
+
+.page-nav .disabled{
+  opacity:.25;
+  pointer-events:none;
+}
+
+
 /* end pagination */
-
-::-webkit-scrollbar {
-  width: 12px; 
-}
-
-::-webkit-scrollbar-track {
-  background:{color:background}; 
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, {color:Gradient 2}, {color:Gradient 1}); 
-  border-radius: 2px;
-  border: 3px solid {color:background}; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, {color:Gradient 2}, {color:Gradient 1}); 
-}
 
 /* notes */ 
 
-.nots {
-  margin-top: 0px;
-  padding: 8px 0 0;
-
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  flex-wrap: wrap;
-
-  justify-content: flex-start;
-
-
-  font: 800 9px "Rajdhani", sans-serif;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-
-  color: var(--site-links);
-  position: relative;
-}
-
-.nots a{
-  color: var(--site-links);
-  text-decoration: none;
-  transition: color .2s ease;
-}
-
-.nots a:hover{
-  color: var(--site-links-hover);
-  animation: notsGlitch .18s linear 2;
-}
-
-@keyframes notsGlitch{
-  0%{ transform: translateX(0); }
-  25%{ transform: translateX(-1px); }
-  50%{ transform: translateX(1px); }
-  100%{ transform: translateX(0); }
-}
-
-.nots .sep{
-  opacity: .35;
-  user-select: none;
-}
-
-.nots .timeago{
-  margin-left: auto;
-  font-size: 10px;
-  letter-spacing: 2px;
-  opacity: .6;
-  color: var(--site-text);
-
-  position: relative;
-  top: -3px;  
-  right:-2px;
-}
-
-
-.nots.is-centered .timeago{
-  margin-left: 0;
-}
-
-/* Mobile */
-@media (max-width: 720px){
-  .nots{
-    gap: 10px;
-  }
-  .nots .timeago{
+.permalink-hover {
+    position: relative;
     width: 100%;
-    margin-left: 0;
-    opacity: .55;
-  }
+    margin-top: 9px;
+    padding: 0px 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-.nots-icon{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  line-height: 1;
-  opacity: .85;
-  transition: opacity .2s ease, transform .18s ease, color .2s ease;
+.perma-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
 }
 
-.nots-icon svg{
-  display: block;
+.perma-btn {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    cursor: pointer;
+    color: {color:text};
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
 }
 
-.nots-icon:hover{
-  opacity: 1;
-  color: var(--site-links-hover);
-  transform: translateY(-1px);
-  animation: notsGlitch .18s linear 2;
+.perma-btn:hover {
+    opacity: 1;
 }
 
-.nots .sep{
-  margin: 0 2px;
+.perma-btn svg {
+    width: 10px;
+    height: 10px;
+    display: block;
+    stroke: currentColor;
+    stroke-width: 1.5; 
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.perma-like {
+    overflow: hidden;
+}
+
+.perma-like .like_button,
+.perma-like .like_button iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    z-index: 5 !important;
+    cursor: pointer !important;
+}
+
+.perma-note-link {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: {color:text};
+    text-decoration: none !important;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.perma-note-link:hover {
+    opacity: 1;
+}
+
+.perma-note-link span {
+    margin-left: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 /* end notes */
 
 /* permalink */
 .perma {  
-    margin-top:-15px;
-    margin-left:37px;  
+    margin-top:-10px;
+    margin-left:30px;  
     margin-bottom:100px;
-    width:700px;
-    height:100%;
-    font-size:9px;  
+    width:540px;
+    height:auto; 
+    overflow:auto;   
     font-family:"Rajdhani", sans-serif;
     text-align:left; 
     text-transform:uppercase; 
@@ -607,7 +707,7 @@ ol.notes {
     width:auto;
     height:auto;  
     padding:1px;
-    font-size:8.5px;
+    font-size:9.5px;
     text-align:left; 
     text-transform:uppercase; 
     letter-spacing:1px; 
@@ -626,7 +726,6 @@ li.note {
 }
 
 ol.notes li a { 
-    font-size:9px;
     font-weight:700;
 } 
 
@@ -705,51 +804,76 @@ ol.notes li.note img.avatar {
 
 
 /* asks */
-.ask {
-    background: linear-gradient(135deg, {color:Gradient 1} 0%, rgba({RGBcolor:Gradient 2},0.05) 100%);
-    margin: 12px 0;
-    padding: 20px;
-    color:{color:Asker Text};
-    text-align: left;
-    line-height: 1.7;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba({RGBcolor:Shadow}, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    font-family:"Rajdhani", sans-serif;
+.ask-wrap{ margin-bottom:14px; }
+
+.asker{
+  font-family:"Rajdhani", sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:0 0 6px 0;
+  color:{color:text};
+  opacity:.75;
 }
 
-.asker {
-    margin: 0 0 12px 0;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: {color:links};
-    opacity: 0.85;
+.asker a{
+  color:{color:links};
+  font-weight:700;
+  text-decoration:none;
+  transition:color .12s linear, opacity .12s linear;
 }
 
-.answer {
-    margin: 0;
-    padding-left: 0px;
-    color: {color:text};
-    line-height: 1.7;
-    font-size: 12px;
+.asker a:hover{
+  color:{color:links hover};
+  opacity:.9;
 }
 
-.answer img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0;
-    display: block;
-    transition: transform 0.3s ease;
+.bubble{
+  position:relative;
+  display:inline-block;
+  max-width:92%;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.45;
+  font-size:11px;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.08);
 }
 
-.answer img:hover {
-    transform: scale(1.03);
+.ask{
+  background:{color:Ask background};
+  color:{color:Ask Text};
+  border-color:{color:Ask Border};
 }
+
+.answer{ margin-top:8px; text-align:right; }
+
+.answer .bubble{
+  background:{color:Answer Background};
+  color:{color:Answer Text};
+  border-color:{color:Answer Border};
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.answer img{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  display:block;
+}
+
+.bubble a{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+  opacity:.95;
+}
+
+.bubble a:hover{ opacity:1; }
 /* end asks */
-
 
 /* quote */
 .quote {    
@@ -802,6 +926,7 @@ ol.notes li.note img.avatar {
     text-transform:uppercase;
     text-align:center; 
     font-weight:bold; 
+    border-bottom:1px solid #eee;
     z-index:9999999999;
 }  
 
@@ -827,7 +952,19 @@ span.chats {
     letter-spacing:.1em;
 }
 
+.chat li:nth-child(odd) {
+    border-left:1px solid #eee;
+    border-bottom:1px solid #eee;
+}
+
+.chat li:nth-child(even) {
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
+}
+
 .chat li:nth-child(odd):hover {
+    border-left:1px solid #eee;
+    border-bottom:1px solid #eee;
     -webkit-transition-duration:600ms;
     -o-transition-duration:600ms; 
     -moz-transition-duration:600ms; 
@@ -835,6 +972,8 @@ span.chats {
 }
 
 .chat li:nth-child(even):hover {
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
     -webkit-transition-duration:600ms; 
     -o-transition-duration:600ms; 
     -moz-transition-duration:600ms; 
@@ -851,7 +990,7 @@ span.chats {
 }
 
 .host a {
-    background:{color:background};   
+    background:#fff;   
     margin-top:20px;
     text-transform:uppercase;
     font-size:8px; 
@@ -859,6 +998,7 @@ span.chats {
     padding:3px 10px 3px 10px;
     border-bottom-right-radius:5px;
     border-top-right-radius:5px;
+    border:1px solid #eee;
 }
 
 .host:before {
@@ -867,12 +1007,15 @@ span.chats {
     margin-left:20px; 
     margin-right:-1px;
     margin-bottom:15px;
-    background:{color:background};
+    background:#fff;
     font-family:'FontAwesome';  
     content:"\f1d8";
     color:{color:accent};
     font-size:9px;
     padding:0px 5px 1px 5px;
+    border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    border:1px solid #eee;
 }
 
 .link-dsc {
@@ -881,6 +1024,7 @@ span.chats {
     margin-right:20px;
     margin-bottom:15px;
     padding-top:10px;
+    border-top:1px solid #eee;
 }
 /* end links */
 
@@ -904,12 +1048,12 @@ p:has(> a.tumblr_blog) {
 
 a.tumblr_blog {
   display: none !important;
-}
+} 
 
 #s-m-t-tooltip {
   position: absolute;
   max-width: 280px;
-  padding: 4px 5px 4px 6px;
+  padding: 6px 10px;
   margin-top: 14px;
   border-radius: 6px;
   background: rgba(25, 26, 26, 0.95); 
@@ -917,7 +1061,7 @@ a.tumblr_blog {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: {color:tooltip text}; 
+  color:#fff; 
   opacity: 0;
   z-index: 99999;
   pointer-events: none;
@@ -938,468 +1082,226 @@ a.tumblr_blog {
     0 0 18px {color:Link};
 }
 
-#ltop:link, #ltop:visited {   
+#ltop:link, #ltop:visited {  
+    position:fixed;
+    background:;  
+    font-family:"Rajdhani", sans-serif;
+    bottom:28px;
+    right:20px; 
+    font-size:15px; 
+    color:{color:text};  
+    text-align:center;  
+    margin:-2px;  
+    padding:2px 7px 3px 6px; 
+    border-radius:100%;
+    display:none;       
+    transition:1s;
+    z-index:100;
+}
+
+aside {
+    font-size: 0;
     position: fixed;
-    background:{color:background}; 
-    bottom: 20px;
-    right: 20px; 
-    width: 35px;
-    height: 35px;
+    width: 270px;
+    margin-left: -140px;
+    top: 125px;
+    background: {color:details};
+    box-shadow: 0 2px 12px {color:Shadows};
+    border-radius: 6px; 
+}
+
+{block:permalinkpage}
+aside {
+    margin-left: -250px; 
+}
+{/block:permalinkpage}
+
+.aside-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 20px 0 20px;
+}
+
+.asideimg {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px; 
+    object-fit: cover;
+    display: block;
+}
+
+.aside-title {
+    position: relative;
+    font-family: "Rajdhani", sans-serif;
     font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: {color:accent};
-    line-height: 45px; 
+    color: {color:links};
+    display: inline-block;
+}
+
+.aside-title::before,
+.aside-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: {color:details}; 
+    color: {color:links};        
+}
+
+.aside-title::before {
+    animation: clean-glitch-1 4s infinite linear alternate-reverse;
+    clip-path: inset(0 0 60% 0); 
+}
+
+.aside-title::after {
+    animation: clean-glitch-2 4s infinite linear alternate-reverse;
+    clip-path: inset(60% 0 0 0); 
+}
+
+@keyframes clean-glitch-1 {
+    0%, 92%, 100% { transform: translateX(0); opacity: 1; }
+    93% { transform: translateX(-2px); opacity: 0.8; }
+    94% { transform: translateX(1px); opacity: 1; }
+    95% { transform: translateX(0); }
+    97% { transform: translateX(-1px); opacity: 0.9; }
+    98% { transform: translateX(2px); }
+}
+
+@keyframes clean-glitch-2 {
+    0%, 92%, 100% { transform: translateX(0); opacity: 1; }
+    93% { transform: translateX(2px); }
+    94% { transform: translateX(-1px); opacity: 0.9; }
+    95% { transform: translateX(1px); }
+    96% { transform: translateX(0); opacity: 1; }
+    98% { transform: translateX(-2px); }
+}
+ 
+.sidehold {
+    padding: 20px;
+    padding-top: 12px;
+}
+
+.desc {
+    font-size: 11px;
+    border-radius:3px;
+    margin-bottom: 15px;
+    border: 1px solid {color:borders}; 
+    padding: 7px;
+    color: {color:text};
+}
+
+nav {
+    margin-bottom: 0px;
+    width: 100%;
     text-align: center;
-    display: none;   
-    transition: 1s;
-    z-index: 100;
-  border-radius: 4px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transition: .70s;
 }
 
-/*-------MUSIC PLAYER BY GLENTHEMES-------*/
-:root {
-   --Circle-Size:38px;
-   --Progress-Border-Size:2px;
-   --Progress-Empty:{color:borders};
-   --Progress-Fill:{color:text};
-   --Player-Background:{color:player background};
-   --Play-Pause-Buttons-Size:14px;
-   --Play-Pause-Buttons-Color:{color:text};
-   --Player-Text-Margin:16px;
-
-   --Song-Name-Font-Size:10px;
-   --Song-Name-Color:{color:text}; 
-
-   --Artist-Name-Font-Size:11px;
-   --Artist-Name-Color:{color:text};
+nav a {
+    position: relative;
+    display: inline-block;
+    line-height: 12px; 
+    text-align: left;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0px 10px 0px 0px;
+    letter-spacing: 1.5px;
+    transition: opacity 0.3s ease;
+    padding: 3px 0;
+    color: {color:links};
+    opacity: 0.6; 
+    text-decoration: none;
 }
 
-#glenplayer07 {
-   position:fixed;
-   bottom:0;margin-bottom:30px;
-   left:0;margin-left:30px;
-   z-index:99;
+nav a:last-child {
+    margin-right: 0;
 }
 
-.flamingo {
-   display:flex;
-   align-items:center;
+nav a:hover,
+nav a:focus {
+    opacity: 1;
 }
 
-.circleofdeath {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   border-radius:100%;
-   overflow:hidden;
+.cl-effect-11 a {
+    border-bottom: 1px solid {color:borders};
+} 
+
+.cl-effect-11 a::before {
+    display: none !important;
 }
 
-.tinfoil {
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
-   background:var(--Progress-Empty);
-   border-radius:100%;
+.aura-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dashed {color:borders};
+    background: transparent;
+    color: {color:text};
+    font-family: "Rajdhani", sans-serif;
 }
 
-.oven {
-   background:var(--Progress-Fill);
+.aura-track {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.oliveoil {
-   width:100%;
-   height:100%;
+.aura-track-title {
+    max-width: 100%;
+    font-family: "Orbitron", sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.crust {
-   position:absolute;
-   top:0;
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:var(--Circle-Size);
-   height:var(--Circle-Size);
+.aura-track-artist {
+    margin-top: 2px;
+    max-width: 100%;
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 0.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.cherry {
-   display:flex;
-   align-items:center;
-   justify-content:center;
-   width:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   height:calc(var(--Circle-Size) - (var(--Progress-Border-Size) * 2));
-   background:var(--Player-Background);
-   border-radius:100%;
-   cursor:pointer;
-   z-index:1;
+.aura-play, .aura-next {
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: {color:links};
+    font-family: "Rajdhani", sans-serif;
+    transition: opacity .2s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.music-controls {display:flex;align-items:center}
+.aura-play { font-size: 14px; }
+.aura-next { font-size: 16px; }
 
-.music-controls .material-icons {
-   font-size:var(--Play-Pause-Buttons-Size);
-   color:var(--Play-Pause-Buttons-Color);
-}
-
-.pausee {display:none;}
-
-.beff {display:none;}
-.aff {display:block;}
-
-.music-info {
-   margin-left:var(--Player-Text-Margin);
-   line-height:1em;
-}
-
-.song-name {
-   font-family:muli, helvetica, arial, sans-serif;
-   font-size:var(--Song-Name-Font-Size);
-   text-transform:uppercase;
-   font-weight:bold;
-   letter-spacing:1.5px;
-   color:{color:text};
-}
-
-.artist-name {
-   margin-top:3px;
-   font-family:muli, helvetica, arial, sans-serif;
-   font-size:var(--Artist-Name-Font-Size);
-   letter-spacing:1px;
-   color:{color:text};
-}  
-
-#bfy-sidebar {
-
-  --bg: #0f1011;
-  --panel:{color:search background};
-  --ink: {color:links};
-  --muted: #a7a9ad;
-  --line: {color:borders};
-  
-  position: fixed;
-  top: 130px;      /* adjust for your header height */
-  margin-left: 800px;       /* far-right of the page */
-  width: 240px;
-  z-index: 30;
-  {block:if3columns}
-  margin-left: 860px; 
-  {/block:if3columns}
-  {block:ifleftsidebar}
-   margin-left:-150px; 
-  {/block:ifleftsidebar}
-  {block:permalinkpage}  
-   margin-left:690px;
-  {/block:permalinkpage} 
-}
-
-/* header row */
-#bfy-sidebar .bfy-top {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 22px;
-}
-#bfy-sidebar .bfy-ava {
-  width: 72px; height: 72px; object-fit: cover;
-  border-radius: 5px; display: block;
-  {block:ifcircleicon}
-  border-radius: 100%;
-  {/block:ifcircleicon}
-}
-#bfy-sidebar .bfy-title {
-  margin: 0 0 6px 0;
-  text-transform:lowercase;
-  font-size: 17px; font-weight: 500; letter-spacing: 1.5px;
-}
-#bfy-sidebar .bfy-meta {
-  font-size: 10.5px; color: var(--muted);
-}
-
-#bfy-sidebar .bfy-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;                
-  color: var(--ink);      
-}
-
-#bfy-sidebar .bfy-title .bfy-badge {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-block;
-  color: var(--ink);      
-  opacity: .95;
-  transition: opacity .06s ease; 
-  margin-top:1.2px;
-}
-
-#bfy-sidebar .bfy-title:hover .bfy-badge { opacity: 1; }
-
-#bfy-sidebar .bfy-panel {
-  position: relative;
-  background: transparent;
-  border-radius: 0px;
-  padding: 5px; 
-  display: flex;              
-  flex-direction: column;      
-}
-
-#bfy-sidebar .bfy-panel > *:last-child {
-  margin-bottom: 0;
-}
-
-
-#bfy-sidebar .bfy-notch-eye {
-  position: absolute;
-  top: -15px;                
-  left: 50%;
-  transform: translateX(-50%);
-  background:transparent;           
-  padding: 6px;
-  border-radius: 50%;        
-  color: var(--ink);         
-}
-#bfy-sidebar .bfy-notch-eye svg {
-  display: block;
-  width: 18px;
-  height: 18px;
-}
-
-#bfy-sidebar .bfy-bio {
-  margin: 0 0 16px 0;
-  line-height: 1.6;
-  letter-spacing: .5px;
-  color:{color:text};
-  font-size:13.5px;
-}
-
-#bfy-sidebar .bfy-search {
-  position: relative;
-  height: 28px;                
-  background: var(--panel);
-  border-radius: 0;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-}
-
-#bfy-sidebar .bfy-ico {
-  width: 24px;               
-  height: 100%;
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-}
-
-#bfy-sidebar .bfy-ico svg {
-  width: 14px;                 
-  height: 14px;
-}
-
-#bfy-sidebar .bfy-search input {
-  flex: 1;
-  height: 100%;
-  background: transparent;
-  font-family:"Rajdhani", sans-serif;
-  letter-spacing:1.5px;
-  border: 0;
-  outline: 0;
-  color: var(--ink);
-  padding-right: 8px;
-  font-size: 12px;
-  line-height: 1;
-}
-
-#bfy-sidebar .bfy-search input::placeholder {
-  color: var(--muted);
-  opacity: .85;
-  font-size: 12px;
-}
-
-#bfy-sidebar .bfy-search:focus-within {
-  box-shadow: 0 0 0 1px var(--line) inset;
-}
-
-#bfy-sidebar .bfy-actions {
-  display: flex;
-  gap: 8px;             
-  margin-bottom: 18px;  
-}
-
-#bfy-sidebar .bfy-btn {
-  width: 28px;          
-  height: 28px;
-  display: grid;
-  place-items: center;
-  border-radius: 0;   
-  background: transparent;
-  color: var(--ink);
-  cursor: pointer;
-  text-decoration: none;
-
-  transition: transform .14s ease, border-color .14s ease, opacity .14s ease;
-}
-
-#bfy-sidebar .bfy-btn svg {
-  width: 14px;   
-  height: 14px;
-}
-
-#bfy-sidebar .bfy-btn {
-  box-sizing: border-box;
-  padding: 0;
-  line-height: 0;
-}
-
-#bfy-sidebar .bfy-btn svg {
-  display: block;    
-  width: 14px;      
-  height: 14px;
-}
-
-#bfy-sidebar .bfy-btn.bfy-toggle svg {
-  width: 16px;
-  height: 16px;
-  stroke-width: 1.6;   
-}
-
-#bfy-sidebar .bfy-btn:hover {
-  transform: scale(1.08);
-}
-#bfy-sidebar .bfy-btn:active {
-  transform: scale(.94);
-}
-#bfy-sidebar .bfy-btn:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-#bfy-sidebar .bfy-rule{
-  height:1px;
-  background: var(--line);
-  border:0;
-  opacity:0;
-  transform:scaleX(.96);
-  margin:0;                     
-  transition:
-    opacity .16s ease,
-    transform .16s ease,
-    margin-top .16s ease;
-}
-#bfy-sidebar .bfy-panel.is-open .bfy-rule{
-  opacity:1;
-  transform:scaleX(1);
-  margin-top:9px;                 
-}
-
-#bfy-sidebar .bfy-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-
-  overflow: hidden;                  
-  max-height: 0;                   
-  opacity: 0;
-  transform: translateY(-6px);       
-  transform-origin: top;
-
-transition:
-    max-height .22s ease,
-    opacity    .16s ease,
-    transform  .16s ease,
-    margin-top .16s ease;   
-  margin-top:0;           
-
-  pointer-events: none;              
-  will-change: max-height, opacity, transform;
-}
-
-#bfy-sidebar .bfy-rule{
-  display: none !important;
-}
-
-#bfy-sidebar .bfy-panel.is-open .bfy-links,
-#bfy-sidebar .bfy-actions:hover + .bfy-links,
-#bfy-sidebar .bfy-links:hover {
-  max-height: 160px;                 
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;              
-}
-
-#bfy-sidebar .bfy-actions { margin-bottom: 4px !important; }
-#bfy-sidebar .bfy-panel.is-open .bfy-links { margin-top: 2px !important; }
-
-#bfy-sidebar .bfy-links .bfy-num { color: var(--ink); text-decoration: none; opacity: .9; }
-#bfy-sidebar .bfy-links .bfy-num:hover { opacity: 1; text-decoration: underline; }
-
-#bfy-sidebar .bfy-panel.is-open .bfy-links,
-#bfy-sidebar .bfy-actions:hover + .bfy-links,
-#bfy-sidebar .bfy-links:hover {
-  max-height: 160px;            
-  opacity: 1;
-  transform: translateY(0);
-
-  transition:
-    opacity .18s ease,
-    transform .18s ease,
-    max-height .24s ease;       
-
-  pointer-events: auto;
-  visibility: visible;
-}
-
-#bfy-sidebar .bfy-links[hidden] { display: flex; }
-#bfy-sidebar .bfy-links.revealed { animation: none; }
-
-#bfy-sidebar .bfy-actions {
-  margin-bottom: 4px !important;   
-}
-
-#bfy-sidebar .bfy-links {
-  padding-top: 0 !important;       
-  margin-top: 0 !important;       
-  transform: translateY(-4px) !important;  
-}
-
-#bfy-sidebar .bfy-panel.is-open .bfy-links,
-#bfy-sidebar .bfy-actions:hover + .bfy-links,
-#bfy-sidebar .bfy-links:hover {
-  margin-top: 9px !important;
-  transform: translateY(0) !important;
-}
-
-#bfy-sidebar .bfy-btn,
-#bfy-sidebar .bfy-search,
-#bfy-sidebar .bfy-panel {
-  transition: none !important;  
-  border-color:{color:borders}; !important;
-  color:{color:links}; !important;
-}
-
-#bfy-sidebar .bfy-btn,
-#bfy-sidebar .bfy-btn:focus,
-#bfy-sidebar .bfy-btn:focus-visible,
-#bfy-sidebar .bfy-btn:hover,
-#bfy-sidebar .bfy-btn:active {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
-
-#bfy-sidebar .bfy-links {
-  position: relative !important;
-}
-
-#bfy-sidebar .bfy-links::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 0; right: 0;
-  top: -2px;              
-  height: 4px;          
-  background: var(--site-bg, transparent) !important; 
-  pointer-events: none !important;
-}
+.aura-play:hover, .aura-next:hover { opacity: 0.5; }
+.sb-hidden-playlist { display: none !important; }
 </style> 
 
 <link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
@@ -1416,214 +1318,161 @@ transition:
 
 <link href='https://static.tumblr.com/blpgwiz/Zjemijy8n/fade_in_down.css' rel='stylesheet' style='text/css'>
 
-<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script>
-<a href="javascript:;" id="ltop"><svg xmlns="http://www.w3.org/2000/svg" 
-     fill="none" viewBox="0 0 24 24" 
-     stroke-width="2.25" stroke="currentColor" 
-     width="18" height="18">
-  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
-</svg></a> 
+<!-- // VOLTAR AO TOPO // -->
+<script type="text/javascript" src="https://static.tumblr.com/5u1fog0/GzWnj3uo9/ltop.js"></script> 
+<a href="javascript:;" id="ltop">top</a> 
 
 </head>
 <body>  
 
 <div class="entry"> 
-<aside id="bfy-sidebar" aria-label="blog sidebar">
-  <div class="bfy-top">
-    <img class="bfy-ava" src="{image:icon}" alt="{Title}">
-    <div class="bfy-head">
-     <h2 class="bfy-title">
-  <span class="bfy-name">{Name}</span>
-  <svg class="bfy-badge" xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24" aria-label="Verified">
-    <path fill="none" stroke="currentColor" stroke-width="1.6"
-          stroke-linecap="round" stroke-linejoin="round"
-          d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
-  </svg>
-</h2>
 
-      <div class="bfy-meta">{text:Meta line}</div>
+<aside>
+ 
+    <div class="aside-header">
+        <a href="/"><img class="asideimg" src="{image:Icon}" title="{title}" /></a>
+        <div class="aside-title" data-text="{Title}">{Title}</div>
     </div>
-  </div>
+     
+    <div class="sidehold">
+        <div class="desc">{Description}</div>
+         
+        <nav class="cl-effect-11">
+            {block:IfLink1Title}
+                <a href="{text:Link 1}" title="{text:Link 1 Title}">{text:Link 1 Title}</a>
+            {/block:IfLink1Title}
+            
+            {block:IfLink2Title}
+                <a href="{text:Link 2}" title="{text:Link 2 Title}">{text:Link 2 Title}</a>
+            {/block:IfLink2Title}
+            
+            {block:IfLink3Title}
+                <a href="{text:Link 3}" title="{text:Link 3 Title}">{text:Link 3 Title}</a>
+            {/block:IfLink3Title}
+            
+            {block:IfLink4Title}
+                <a href="{text:Link 4}" title="{text:Link 4 Title}">{text:Link 4 Title}</a>
+            {/block:IfLink4Title}
+            
+            {block:IfLink5Title}
+                <a href="{text:Link 5}" title="{text:Link 5 Title}">{text:Link 5 Title}</a>
+            {/block:IfLink5Title}
+        </nav>
 
-  <section class="bfy-panel">
+        {block:ifshowmusicplayer}
+        <div class="aura-player" aria-label="Audio Console">
+            <audio id="acMiniAudio" preload="none"></audio>
 
-    <p class="bfy-bio">{description}</p>
-{block:ifshowsearchbar}
-    {block:SearchForm}
-    <form action="/search" method="get" class="bfy-search" role="search">
-      <span class="bfy-ico bfy-ico-search" aria-hidden="true">
-        <!-- magnifier -->
-        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21 21l-4.6-4.6M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </span>
-      <input type="text" name="q" placeholder="search" value="{SearchQuery}" aria-label="Search">
-    </form>
-    {/block:SearchForm}
-{block:ifshowsearchbar}
+            <button class="aura-play" id="acMiniToggle" type="button" title="Play/Pause">
+                <span id="acMiniIcon">▷</span>
+            </button>
 
-<div class="bfy-actions">
-  <a class="bfy-btn" href="/" title="Home">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <path d="M12 3.8 18.6 7.6v8.8L12 20.2 5.4 16.4V7.6L12 3.8Z"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linejoin="round"/>
-      <path d="M8.2 11.3 12 8.6l3.8 2.7"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- doorway -->
-      <path d="M10.6 19.9v-4.7a.9.9 0 0 1 .9-.9h1a.9.9 0 0 1 .9.9v4.7"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linecap="round"/>
-    </svg>
-  </a>
+            <div class="aura-track">
+                <div class="aura-track-title" id="sbTrackName">{text:Track 1 Title}</div>
+                <div class="aura-track-artist" id="sbTrackArtist">{text:Track 1 Artist}</div>
+            </div>
 
-  {block:AskEnabled}
-  <a class="bfy-btn" href="/ask" title="Ask">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <path d="M19 12.8a4 4 0 0 1-4 4H10l-4.7 3.2V8.8a4 4 0 0 1 4-4H15a4 4 0 0 1 4 4v4Z"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linejoin="round"/>
-      <path d="M15.8 8.2v1.6M15 9h1.6M15.3 8.5l1 1M16.3 8.5l-1 1"
-            fill="none" stroke="currentColor" stroke-width="1.2"
-            stroke-linecap="round"/>
-      <path d="M8.7 11.5h6"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linecap="round" opacity=".85"/>
-    </svg>
-  </a>
-  {/block:AskEnabled}
+            <button class="aura-next" id="sbNext" type="button" aria-label="Skip Track">›</button>
 
-  <button class="bfy-btn bfy-toggle" type="button"
-          aria-expanded="false" aria-controls="bfy-links"
-          title="More">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <circle cx="12" cy="12" r="7"
-              fill="none" stroke="currentColor" stroke-width="1.4" opacity=".85"/>
-      <path d="M7.2 14.8c2.8 2.6 6.8 2.6 9.6 0"
-            fill="none" stroke="currentColor" stroke-width="1.4"
-            stroke-linecap="round" opacity=".8"/>
-      <circle cx="16.8" cy="9.3" r="1.35" fill="currentColor"/>
-    </svg>
-  </button>
-</div>
-
-    <hr class="bfy-rule">
-
-   <nav id="bfy-links" class="bfy-links">
-      <a href="{text:Link 1 URL}" class="bfy-num" title="{text:Link 1 Title}">.001</a>
-      <a href="{text:Link 2 URL}" class="bfy-num" title="{text:Link 2 Title}">.002</a>
-      <a href="{text:Link 3 URL}" class="bfy-num" title="{text:Link 3 title}">.003</a>
-      <a href="{text:Link 4 URL}" class="bfy-num" title="{text:Link 4 title}">.004</a>
-    </nav>
-  </section>
+            <div id="sbPlaylist" class="sb-hidden-playlist" aria-hidden="true">
+                {block:IfTrack1Audio}<button class="sb-song is-active" type="button" data-src="{text:Track 1 Audio}" data-title="{text:Track 1 Title}" data-artist="{text:Track 1 Artist}">01</button>{/block:IfTrack1Audio}
+                {block:IfTrack2Audio}<button class="sb-song" type="button" data-src="{text:Track 2 Audio}" data-title="{text:Track 2 Title}" data-artist="{text:Track 2 Artist}">02</button>{/block:IfTrack2Audio}
+                {block:IfTrack3Audio}<button class="sb-song" type="button" data-src="{text:Track 3 Audio}" data-title="{text:Track 3 Title}" data-artist="{text:Track 3 Artist}">03</button>{/block:IfTrack3Audio}
+                {block:IfTrack4Audio}<button class="sb-song" type="button" data-src="{text:Track 4 Audio}" data-title="{text:Track 4 Title}" data-artist="{text:Track 4 Artist}">04</button>{/block:IfTrack4Audio}
+                {block:IfTrack5Audio}<button class="sb-song" type="button" data-src="{text:Track 5 Audio}" data-title="{text:Track 5 Title}" data-artist="{text:Track 5 Artist}">05</button>{/block:IfTrack5Audio}
+            </div>
+        </div>
+        {/block:ifshowmusicplayer}
+    </div>
 </aside>
 
-<div class="cc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"/></svg></div>
+<!-- // ÍCONE SVG DOS CONTROLES // -->
+<div class="cc">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
+    <path d="M7.6 6.8a7 7 0 1 0 8.8 0"></path>
+  </svg>
+</div>
 
 <div id="posts">
 {block:posts}
 <div class="posts">
 
 {block:Text}    
+{block:Title}
+<h1 class="post-title">{Title}</h1>
+{/block:Title}
+
 <div class="caption">{Body}</div>
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div>  
 {/block:Text}
- 
+
 {block:Quote}     
 <div class="quote">{Quote}</div> 
 {block:Source}
 <div class="sourceqt">{Source}</div>
 {/block:Source} 
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div>  
 {/block:Quote}
- 
+
 {block:Chat}      
 <div class="chatitle">
 {Title}
@@ -1641,51 +1490,40 @@ transition:
 </ul>
 </div>   
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
+</div> 
+</div>
+</div>{/block:IndexPage}{/block:date}
 </div>
 {/block:Chat}
- 
+
 {block:Link}     
 <div class="links"> 
 <a href="{URL}" style="font-weight:bold" {Target}  target="_blank">{Name}</a>
@@ -1699,153 +1537,97 @@ transition:
 <div class="link-dsc">{Description}</div> 
 {/block:Description}  
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div> 
 {/block:Link} 
- 
+
 {block:Answer}      
-<div class="asker">sent by <b>{Asker}</b></div>
-<div class="ask">{Question}</div>
-<div class="answer">{Answer}</div>
+<div class="ask-wrap">
+        <div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+        <div class="bubble ask">{Question}</div>
+        <div class="answer"><div class="bubble">{Answer}</div></div>
+      </div>
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div> 
 {/block:answer}
- 
+
+
 {block:Audio}   
 <div class="album">
   {block:AudioPlayer}
   <div class="player">{AudioPlayerBlack}</div>
   {/block:AudioPlayer}
-</div>
-{block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
-
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
-
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
-
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
-
-  <div class="timeago">{TimeAgo}</div>
-</div>
-{/block:Date}
-{/block:indexpage} 
 </div> 
+{block:indexpage}  
+  <div class="permalink-hover">
+    <a href="{Permalink}" title="{NoteCountWithLabel}">{NoteCount}</a>
+    <a href="{Permalink}" title="{TimeAgo}">
+      {DayofMonthWithZero}.{MonthNumberWithZero}.{ShortYear}
+    </a>
+    <a href="{ReblogURL}" title="reblog post">rblg</a>
+  </div>
+{/block:indexpage}
+</div> 
+</div>
+</div>{/block:IndexPage}{/block:date}
+</div>  
 {/block:Audio}
- 
+
 {block:Photo}   
 <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-HighRes}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}"></a>
 {block:ifshowcaption}
@@ -1854,52 +1636,38 @@ transition:
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div> 
 {/block:Photo}
- 
- 
+
+
 {block:Photoset}   
 <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div> 
 {block:ifshowcaption}
@@ -1908,51 +1676,37 @@ transition:
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div> 
 {/block:Photoset}
- 
+
 {block:Video}  
 <div class="video">
 {Video-250} 
@@ -1963,48 +1717,34 @@ transition:
 {/block:caption}
 {/block:ifshowcaption}  
 {block:indexpage}
-{block:Date}
-<div class="nots">
-  <a class="nots-icon info"
-     href="{Permalink}"
-     title="{NoteCountWithLabel}">
+<div class="permalink-hover" data-post-id="{PostID}">
 
-  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <circle cx="12" cy="12" r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"/>
-</svg>
-  </a>
+    <div class="perma-actions">
+        
+        <a class="perma-btn" href="{ReblogURL}" title="Reblog">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 1l4 4-4 4"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <path d="M7 23l-4-4 4-4"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+            </svg>
+        </a>
 
-  <a class="nots-icon reblog"
-     href="{ReblogURL}"
-     title="Reblog">
+        <div class="perma-btn perma-like" title="Like">
+            {LikeButton size="20"}
+            <svg viewBox="0 0 24 24">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+        </div>
 
-    <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
-  <path d="M7 7h10l-2-2M17 17H7l2 2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <path d="M7 7a7 7 0 0 0-2 5m12 5a7 7 0 0 0 2-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        stroke-linecap="round"/>
-</svg>
-  </a>
+    </div>
 
-  <div class="timeago">{TimeAgo}</div>
+    <a class="perma-note-link" href="{Permalink}" title="{TimeAgo}">
+        {NoteCount}<span>N</span>
+    </a>
+
 </div>
-{/block:Date}
-{/block:indexpage} 
+{/block:indexpage}
 </div> 
 {/block:Video} 
 
@@ -2045,6 +1785,10 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 <script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script> 
 {/block:IndexPage}
 <script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+
+<!-- // PHOTOSETS + DESIGN DE GRID // -->
+<link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -2116,53 +1860,48 @@ resizeVideos();
 });
 </script>
   
-{block:ifnotpagination} 
+<!-- // VISIBLE PAGINATION // -->
 {block:IndexPage}
+{block:IfPagination}
 {block:Pagination}
-<div id="pagination">
-{block:NextPage}
-<a id="next" href="{NextPage}"></a>
-{/block:NextPage}
-{block:PreviousPage}
-<a href="{PreviousPage}">&larr;&nbsp;</a>
-{/block:PreviousPage}
-</div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifnotpagination} 
 
-{block:ifpagination} 
+<nav class="page-nav" aria-label="Pagination">
+
+  {block:PreviousPage}
+  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="current_page">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="next" href="{NextPage}" title="Next Page">next</a>
+  {/block:NextPage}
+
+</nav>
+
+{/block:Pagination}
+{/block:IfPagination}
+{/block:IndexPage}
+
+
+<!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
 {block:IndexPage}
-{block:Pagination}
-<div class="pag">
-{block:PreviousPage}
-<a href="{PreviousPage}"><i class="fas fa-angle-left" style="font-size:10px"></i></a>
-{/block:PreviousPage}	
-
-{block:NextPage}
-<a href="{NextPage}"><i class="fas fa-angle-right" style="font-size:10px"></i></a>
-{/block:NextPage}
+<div id="pagination" style="display:none!important;">
+  {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
 </div>
-{/block:Pagination}
-{/block:IndexPage}
-{/block:ifpagination} 
+<div id="infscr-loading" style="display:none!important;"></div>
+{/block:IndexPage} 
 </div> 
 </div> 
  
-<script>
-  (function () {
-    var toggle = document.querySelector('#bfy-sidebar .bfy-toggle');
-    var panel  = document.querySelector('#bfy-sidebar .bfy-panel');
-    if (!toggle || !panel) return;
-
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      panel.classList.toggle('is-open', !open);   // let CSS handle the animation
-    });
-  })();
-</script>
-
 <script>
 
 $(document).ready(function(){
@@ -2202,110 +1941,77 @@ $(document).ready(function(){
 </script>
 
 <script>
-(() => {
-  const root   = document.documentElement;
-  const btn    = document.getElementById('theme-toggle');
-  const key    = 'theme-preference';
+document.addEventListener("DOMContentLoaded", function(){
 
-  const getPref = () => localStorage.getItem(key) ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var audio = document.getElementById("acMiniAudio");
+  var toggle = document.getElementById("acMiniToggle");
+  var icon = document.getElementById("acMiniIcon");
+  var next = document.getElementById("sbNext");
+  var title = document.getElementById("sbTrackName");
+  var artist = document.getElementById("sbTrackArtist");
+  var songs = [].slice.call(document.querySelectorAll("#sbPlaylist .sb-song"));
 
-  const apply = (mode) => {
-    root.setAttribute('data-theme', mode);
-    if (btn) btn.setAttribute('aria-pressed', mode === 'dark');
-  };
+  if(!audio || !toggle || !icon || !songs.length) return;
 
-  apply(getPref());
+  var index = 0;
 
-  btn && btn.addEventListener('click', () => {
-    const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
-    apply(next);
-    localStorage.setItem(key, next);
-  });
+  function loadSong(i){
+    index = i;
+    var song = songs[index];
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem(key)) apply(e.matches ? 'dark' : 'light');
-  });
-})();
-</script>
+    audio.src = song.dataset.src;
 
-<script>feather.replace()</script>
-
-<script>
-(() => {
-  const toggle = document.getElementById('search-toggle');
-  const panel  = document.getElementById('search-panel');
-  if (!toggle || !panel) return;
-
-  const inner    = panel.querySelector('.search-inner');
-  const closeBtn = panel.querySelector('.search-close');
-  const input    = panel.querySelector('input[type="text"], input[type="search"]');
-
-  const isOpen = () => panel.classList.contains('open');
-  const setAria = (open) => {
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-  };
-
-  const onKeydown = (e) => { if (e.key === 'Escape') close(); };
-  const onDocClick = (e) => {
-    if (!isOpen()) return;
-    const inside = inner && inner.contains(e.target);
-    const onToggle = toggle.contains(e.target);
-    if (!inside && !onToggle) close();
-  };
-
-  function open(){
-    if (isOpen()) return;
-    panel.classList.add('open');
-    setAria(true);
-
-    setTimeout(() => (input || inner || panel).focus({ preventScroll:true }), 10);
-    document.addEventListener('keydown', onKeydown);
-    document.addEventListener('click', onDocClick, { capture:true });
+    if(title) title.innerHTML = song.dataset.title || "untitled";
+    if(artist) artist.innerHTML = song.dataset.artist || "unknown";
   }
 
-  function close(){
-    if (!isOpen()) return;
-    panel.classList.remove('open');
-    setAria(false);
-    toggle.focus({ preventScroll:true });
-    document.removeEventListener('keydown', onKeydown);
-    document.removeEventListener('click', onDocClick, { capture:true });
-  }
+  function showPlaying(){
+  icon.innerHTML = "▢";
+  toggle.classList.add("is-playing");
+}
 
-  toggle.addEventListener('click', (e) => { e.preventDefault(); isOpen() ? close() : open(); });
-  closeBtn?.addEventListener('click', (e) => { e.preventDefault(); close(); });
-  inner?.addEventListener('click', (e) => e.stopPropagation());
+function showPaused(){
+  icon.innerHTML = "▷";
+  toggle.classList.remove("is-playing");
+}
 
-  setAria(isOpen());
-})();
-</script>
-
-<script>
-(() => {
-  const BTN = document.getElementById('controls-toggle');
-  if (!BTN) return;
-
-  const KEY = 'controls-open';
-
-  const apply = (on) => {
-    document.body.classList.toggle('controls-open', on);
-  };
-
-
-  let saved = null;
-  try { saved = localStorage.getItem(KEY); } catch(_) {}
-  const startOpen = (saved === '1');  
-  apply(startOpen);
-
-  BTN.addEventListener('click', (e) => {
+  toggle.addEventListener("click", function(e){
     e.preventDefault();
-    const next = !document.body.classList.contains('controls-open');
-    apply(next);
-    try { localStorage.setItem(KEY, next ? '1' : '0'); } catch(_) {}
+    e.stopPropagation();
+
+    if(!audio.src) loadSong(index);
+
+    if(audio.paused){
+      audio.play();
+    } else {
+      audio.pause();
+    }
   });
-})();
+
+  if(next){
+    next.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      index = (index + 1) % songs.length;
+      loadSong(index);
+      audio.play();
+    });
+  }
+
+  audio.addEventListener("play", showPlaying);
+  audio.addEventListener("pause", showPaused);
+  audio.addEventListener("ended", function(){
+    index = (index + 1) % songs.length;
+    loadSong(index);
+    audio.play();
+  });
+
+  loadSong(0);
+  showPaused();
+
+});
 </script>
+<script>feather.replace()</script>
 </body>
 </html>
