@@ -385,7 +385,7 @@ body { overflow-y: scroll; }
 
 #posts {     
     width:800px;
-    margin-top:100px; 
+    margin-top:105px; 
     margin-left:150px; 
     
     {block:permalinkpage}
@@ -1958,6 +1958,7 @@ data-notes="{NoteCountWithLabel}">
     </div>
     {/block:Posts}
   </div>
+  {block:IndexPage}
   {block:ifPagination}
 	<nav id="pagination">
         <span class="current_page">page {CurrentPage} of {totalpages}</span>
@@ -1988,6 +1989,7 @@ data-notes="{NoteCountWithLabel}">
         
 	</nav>
 {/block:DayPagination}
+{/block:IndexPage}
 </div>
 
 <!-- // SCRIPTS DE ROLAGEM INFINITA — IMPORTANTE! // -->
