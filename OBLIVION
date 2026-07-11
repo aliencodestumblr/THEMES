@@ -34,7 +34,7 @@ attribute:"title"
 <meta name="image:Icon" content=""/>
 
 <meta name="color:Details" content="#ffffff"/>
-<meta name="color:Shadows" content="#aaaaaa"/> 
+<meta name="color:Shadows" content="#d0d3d5"/> 
 <meta name="color:Accent" content="#444444"/>
 <meta name="color:Borders" content="#EEEEEE"/>
 <meta name="color:Text" content="#444444" />
