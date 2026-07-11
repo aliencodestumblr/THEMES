@@ -31,7 +31,7 @@
 
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Details" content="#ffffff"/>
-<meta name="color:Shadows" content="#d0d3d5"/> 
+<meta name="color:Shadow" content="#d0d3d5"/> 
 <meta name="color:Accent" content="#444444"/>
 <meta name="color:Borders" content="#EEEEEE"/>
 <meta name="color:Text" content="#444444" />
@@ -374,7 +374,7 @@ body { overflow-y: scroll; }
 
 /* ---------------- CONTAINER DE DESIGN DOS POSTS ---------------- */
 .entry {   
-    width:760px;    
+    width:800px;    
     
     {block:permalinkpage}  
     width:540px;
@@ -384,36 +384,36 @@ body { overflow-y: scroll; }
 }
 
 #posts {     
-    width:760px;
+    width:800px;
     margin-top:100px; 
-    margin-left:160px; 
+    margin-left:150px; 
     
     {block:permalinkpage}
     margin-top:125px;
-    margin-left:50px;
+    margin-left:30px;
     {/block:permalinkpage}
     margin-bottom:50px;
     transition:.5s;
 }
 
 .posts {  
-    width:330px;
-    margin:25px;      
-    border-radius:4px;
+    width:360px;
+    margin:20px;      
     overflow:hidden;
     opacity:1;
     transition:1s;  
     
     padding:15px; 
     background: {color:details}; 
-    box-shadow: 0 2px 12px {color:Shadows};
+    border:1px solid {color:borders}; 
+    box-shadow: 6px 6px 0 2px {color:Shadow};
 }
 
 {block:permalinkpage} 
 .posts {
     margin-top:125px; 
     width:540px;
-    
+    border:0;
 }
 {/block:permalinkpage}
 
@@ -504,8 +504,8 @@ body { overflow-y: scroll; }
     font-size:11px;
     padding:15px;
     background: {color:details};
-    box-shadow: 0 2px 12px {color:Shadows};
-    border-radius: 6px; 
+    border:1px solid {color:borders}; 
+    box-shadow: 6px 6px 0 2px {color:Shadow};
     margin-bottom:100px;
     text-align:left;
 }
@@ -1079,7 +1079,7 @@ a.tumblr_blog{ display:none !important; }
   font-size: 8.5px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0px;
   color: #fff;
   line-height: 1.2;
   z-index: 9999999999;
@@ -1144,16 +1144,16 @@ aside {
     font-size: 0;
     position: fixed;
     width: 270px;
-    margin-left: -140px;
+    margin-left: -150px;
     top: 125px;
     background: {color:details};
-    box-shadow: 0 2px 12px {color:Shadows};
-    border-radius: 6px; 
+    border:1px solid {color:borders}; 
+    box-shadow: 6px 6px 0 2px {color:Shadow};
 }
 
 {block:permalinkpage}
 aside {
-    margin-left: -250px; 
+    margin-left: -280px; 
 }
 {/block:permalinkpage}
 
@@ -2024,6 +2024,8 @@ data-notes="{NoteCountWithLabel}">
 
   $('<style id="ac-masonry-top-style">' +
     '#posts{position:relative!important;display:block!important;}' +
+    /* Zero out opacity and lock a temporary min-height structural floor only during initial document paint execution */
+    '#posts:not([style*="height"]) { opacity: 0 !important; min-height: 80vh !important; }' + 
     '#posts>.posts{position:absolute;z-index:1;box-sizing:border-box;display:block;}' +
     '#posts>.posts.ac-prep{visibility:hidden!important;opacity:0!important;pointer-events:none!important;z-index:-1!important;}' +
     '#posts>.posts.is-ready{visibility:visible!important;opacity:1!important;pointer-events:auto!important;}' +
@@ -2060,6 +2062,11 @@ data-notes="{NoteCountWithLabel}">
       }, wait);
     };
   }
+
+  // Self-executing setup to catch layout collapse before DOM ready fires
+  (function earlyPrepend(){
+    $container.css({ 'opacity': '0', 'min-height': '80vh' });
+  })();
 
   function scopePosts($scope){
     $scope = ($scope && $scope.length) ? $scope : $(document);
@@ -2454,11 +2461,11 @@ data-notes="{NoteCountWithLabel}">
       }
     }
 
-    // Set height and prevent styling calculations from collapsing container boundaries
     if (maxHeight > 0) {
       $container.css({
         'height': Math.ceil(maxHeight) + 'px',
-        'min-height': Math.ceil(maxHeight) + 'px'
+        'min-height': Math.ceil(maxHeight) + 'px',
+        'opacity': '1' /* Clean reveal once the masonry positions exist */
       });
     }
   }
@@ -2559,7 +2566,6 @@ data-notes="{NoteCountWithLabel}">
   }
 
   function scanForNewPosts(){
-    // hard absolute exit if pagination container shows up active
     if($('#pagination').is(':visible') || $('#pagination').length && $('#pagination').css('display') !== 'none') {
       return;
     }
@@ -2587,7 +2593,7 @@ data-notes="{NoteCountWithLabel}">
 
   function initMutationObserver(){
     if(!window.MutationObserver) return;
-    if($('#pagination').is(':visible')) return; // do not observe changes if pagination handles view shifts
+    if($('#pagination').is(':visible')) return;
 
     if(mutationObserver){
       try{ mutationObserver.disconnect(); }catch(e){}
@@ -2619,7 +2625,6 @@ data-notes="{NoteCountWithLabel}">
   function initInfiniteScroll(){
     var $pagination = $('#pagination');
     
-    // Complete Kill-Switch: If pagination is turned on, unbind completely
     if($pagination.is(':visible') || ($pagination.length && $pagination.css('display') !== 'none')) {
       try {
         $container.infinitescroll('destroy');
@@ -2689,7 +2694,6 @@ data-notes="{NoteCountWithLabel}">
     },220));
 
     $win.on('scroll.acMasonryTop', throttle(function(){
-      // Double check check against document loops
       if(!$('#pagination').is(':visible')) {
         scanForNewPosts();
       }
@@ -2814,68 +2818,6 @@ document.addEventListener("DOMContentLoaded", function(){
 })();
 </script>
 
-
-<script>
-(function() {
-  var el = document.getElementById("RealOnlineCount");
-  if (!el) return;
-
-  // Expanded list of possible "online user" counts – you can adjust these
-  var counts = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 27];
-
-  function updateCounter() {
-    // Pick a random value from the counts array
-    var randomIndex = Math.floor(Math.random() * counts.length);
-    var newCount = counts[randomIndex];
-    el.textContent = newCount;
-  }
-
-  // Set the initial value
-  updateCounter();
-
-  // Update at random intervals between 3000ms and 7000ms (3–7 seconds)
-  function scheduleUpdate() {
-    var interval = Math.floor(Math.random() * 4000) + 3000; // 3000–7000 ms
-    setTimeout(function() {
-      updateCounter();
-      scheduleUpdate(); // Schedule the next update
-    }, interval);
-  }
-
-  scheduleUpdate();
-})();
-</script>
-
-
-<script>
-(function(){
-  var bubble = document.querySelector('.cc');
-  if(!bubble) return;
-
-  var topPos = 22;
-  var rightPos = 22;
-  var size = 44;
-
-  document.addEventListener('mousemove', function(e){
-    var withinX = e.clientX >= (window.innerWidth - rightPos - size) &&
-                  e.clientX <= (window.innerWidth - rightPos);
-
-    var withinY = e.clientY >= topPos &&
-                  e.clientY <= (topPos + size);
-
-    if(withinX && withinY){
-      bubble.classList.add('is-hover');
-    } else {
-      bubble.classList.remove('is-hover');
-    }
-  });
-
-  document.addEventListener('mouseleave', function(){
-    bubble.classList.remove('is-hover');
-  });
-})();
-</script>
-
 <script>
 (function(){
   var btn = document.getElementById('ltop');
@@ -2899,88 +2841,6 @@ document.addEventListener("DOMContentLoaded", function(){
       behavior: 'smooth'
     });
   });
-})();
-</script>
-
-<script>
-(function(){
-  if(window.__sbEnginesRunning) return;
-  window.__sbEnginesRunning = true;
-
-  var lastClockText = "";
-  var currentUsers = Math.floor(Math.random() * 19) + 14;
-  var clockTimer = null;
-  var counterTimer = null;
-
-  function pad(num){
-    return String(num).padStart(2, "0");
-  }
-
-  function updateClock(){
-    var clock = document.getElementById("sb-clock-val");
-    if(!clock) return;
-
-    var time = new Date().toLocaleTimeString("en-US", {
-      timeZone: "America/Chicago",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true
-    });
-
-    if(time !== lastClockText){
-      clock.textContent = time;
-      lastClockText = time;
-    }
-  }
-
-  function scheduleClock(){
-    updateClock();
-
-    clearTimeout(clockTimer);
-
-    var now = new Date();
-    var msUntilNextMinute =
-      (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-
-    clockTimer = setTimeout(scheduleClock, msUntilNextMinute + 50);
-  }
-
-  function updateCounter(){
-    var counter = document.getElementById("sb-counter-val");
-    if(!counter) return;
-
-    counter.textContent = pad(currentUsers);
-  }
-
-  function scheduleCounter(){
-    var change = Math.floor(Math.random() * 3) - 1;
-    currentUsers += change;
-
-    if(currentUsers < 10) currentUsers = 12;
-    if(currentUsers > 45) currentUsers = 28;
-
-    updateCounter();
-
-    clearTimeout(counterTimer);
-    counterTimer = setTimeout(
-      scheduleCounter,
-      Math.floor(Math.random() * 4000) + 5000
-    );
-  }
-
-  function startSidebarEngines(){
-    scheduleClock();
-    updateCounter();
-
-    clearTimeout(counterTimer);
-    counterTimer = setTimeout(scheduleCounter, 3000);
-  }
-
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", startSidebarEngines, { once:true });
-  }else{
-    startSidebarEngines();
-  }
 })();
 </script>
 
