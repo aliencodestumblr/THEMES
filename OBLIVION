@@ -527,70 +527,97 @@ body {
 }
 /* end scrollbar */
 
+/* ---  PAGINATION --- */
+#pagination {
+    margin-top:40px;
+    width:240px;
+    margin-left:-140px;
+    font-size:11px;
+    padding:15px;
+    background: {color:details};
+    box-shadow: 0 2px 12px {color:Shadows};
+    border-radius: 6px; 
+    margin-bottom:100px;
+    text-align:left;
+}
 
-/* pagination */
-.page-nav{
-  width:min(700px, calc(100% - 40px));
-  margin:50px auto 80px!important;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:6px;
-
-  font-family:"Rajdhani",sans-serif;
+#pagination a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  color: {color:text};
+  text-decoration: none;
+  transition: color 0.3s ease;
   font-size:9px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
+  text-align:center;
 }
 
-.page-nav a,
-.page-nav span{
-  min-width:31px;
-  height:30px;
-  padding:0 10px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:rgba(255,255,255,.04);
-  border:1px solid {color:Borders};
-  border-radius:2px;
-
-  color:{color:Links};
-  text-decoration:none!important;
-
-  box-sizing:border-box;
-
-  transition:.22s ease;
+#pagination a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: {color:accent};
+  opacity: 0.3;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  z-index: -1;
 }
 
-.page-nav a:hover{
-  background:{color:Links};
-  border-color:{color:Links};
-  color:#000;
-  transform:translateY(-2px);
+#pagination a:hover {
+  color: {color:Links hover};
 }
 
-.page-nav .current_page{
-  background:{color:Links};
-  border-color:{color:Links};
-  color:#000;
+#pagination a:hover::after {
+  transform: scaleY(1);
 }
 
-.page-nav .prev,
-.page-nav .next{
-  min-width:68px;
+
+#pagination div{
+    padding:15px;
+    margin:15px -15px -15px;
 }
 
-.page-nav .disabled{
-  opacity:.25;
-  pointer-events:none;
+{block:daypage}
+    #pagination div{
+        margin:0;
+        padding:0;
+    }
+{block:daypage}
+
+#pagination a:hover{color:{color:Links hover};
 }
 
+#pagination a + a::before{
+    content:'/';
+    margin:0 10px;
+    pointer-events:none;
+    color:rgba(var(--Text),.3);
+}
+ 
+#pagination span{
+    height:1.4em;
+    font-weight:700;
+    display:inline-block;
+    color:{color:text};
+    border-bottom:1px solid {color:borders};
+}
+
+#pagination .current_page + div{border-top:1px solid {color:borders};}
+
+#pagination.infinite-scroll {
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
 
 /* end pagination */
 
@@ -1778,6 +1805,36 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 {/block:Posts} 
 </div>
+{block:ifPagination}
+	<nav id="pagination">
+        <span class="current_page">page {CurrentPage} of {totalpages}</span>
+        
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+	</nav>
+{/block:ifPagination}
+
+{block:DayPagination}
+    <nav id="pagination">
+    	<div>
+            <a {block:PreviousPage}class="active" href="{PreviousPage}"{/block:PreviousPage}>
+                backward
+            </a>
+ 
+            <a {block:NextPage}class="active" href="{NextPage}"{/block:NextPage}>
+                forward
+            </a>
+    	</div>
+        
+	</nav>
+{/block:DayPagination}
 </div>
 
 {block:IndexPage} 
@@ -1792,104 +1849,88 @@ reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originall
 
 <script>
 $(document).ready(function(){
-$('.photo-slideshow').pxuPhotoset({
-lightbox: true,
-rounded: false,
-gutter: '1px',
-photoset: '.photo-slideshow',
-photoWrap: '.photo-data',
-photo: '.pxu-photo'
-});
-$(function(){ $('.posts').unnest({ 
-yourCaption:".caption",
-wrapName:".tumblr_parent",
-newCaptionUsername:true,
-originalPostCaptionUsername:true, 
-tumblrAvatars:false,  
-tumblrAvatarsName:".tumblr_avatar",  
-usernameColon:false 
-});}) 
-{block:IndexPage}
-var $container = $('#posts');
-$container.masonry({ itemSelector: '.posts' });
-$container.imagesLoaded(function(){
-$container.masonry();
-$container.find('.posts').animate({ opacity: 1, zIndex: 1 });
-}); 
-$container.infinitescroll({
-itemSelector: '.posts',
-navSelector: '#pagination',
-nextSelector: '#next',
-loadingImg: '',
-loadingText: '<em></em>',
-bufferPx: 1000
-},
-function(newElements) {
-var $newElems = $( newElements ).css({ opacity: 0 });
-$newElems.unnest({
-yourCaption:".caption",
-wrapName:".tumblr_parent",
-newCaptionUsername:true,
-originalPostCaptionUsername:true, 
-tumblrAvatars:false,
-tumblrAvatarsName:".tumblr_avatar",  
-usernameColon:false });
-var $newElemsIDs = $newElems.map(function(){
-return this.id;
-}).get();
-Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-var $newElems = $( newElements );
-$newElems.find('.photo-slideshow').pxuPhotoset({
-lightbox: true,
-rounded: false,
-gutter: '1px',
-photoset: '.photo-slideshow',
-photoWrap: '.photo-data',
-photo: '.pxu-photo'
-},
-function(){
-$container.masonry();
-});
-$newElems.imagesLoaded(function(){
-$container.masonry( 'appended', $newElems );
-$newElems.animate({ opacity: 1, zIndex: 1 });
-resizeVideos();
-});
-}); 
-{/block:IndexPage}
+    $('.photo-slideshow').pxuPhotoset({
+        lightbox: true,
+        rounded: false,
+        gutter: '1px',
+        photoset: '.photo-slideshow',
+        photoWrap: '.photo-data',
+        photo: '.pxu-photo'
+    });
+
+    $(function(){ 
+        $('.posts').unnest({ 
+            yourCaption:".caption",
+            wrapName:".tumblr_parent",
+            newCaptionUsername:true,
+            originalPostCaptionUsername:true, 
+            tumblrAvatars:false,  
+            tumblrAvatarsName:".tumblr_avatar",  
+            usernameColon:false 
+        });
+    });
+
+    {block:IndexPage}
+    var $container = $('#posts');
+    
+    // Always initialize Masonry for the grid look
+    $container.masonry({ itemSelector: '.posts' });
+    $container.imagesLoaded(function(){
+        $container.masonry();
+        $container.find('.posts').animate({ opacity: 1, zIndex: 1 });
+    }); 
+
+    /* ONLY INITIALIZE INFINITE SCROLL IF PAGINATION TOGGLE IS TURNED OFF */
+    {block:IfNotPagination}
+    $container.infinitescroll({
+        itemSelector: '.posts',
+        navSelector: '#pagination',
+        nextSelector: '#next',
+        loadingImg: '',
+        loadingText: '<em></em>',
+        bufferPx: 1000
+    },
+    function(newElements) {
+        var $newElems = $( newElements ).css({ opacity: 0 });
+        $newElems.unnest({
+            yourCaption:".caption",
+            wrapName:".tumblr_parent",
+            newCaptionUsername:true,
+            originalPostCaptionUsername:true, 
+            tumblrAvatars:false,
+            tumblrAvatarsName:".tumblr_avatar",  
+            usernameColon:false 
+        });
+        
+        var $newElemsIDs = $newElems.map(function(){
+            return this.id;
+        }).get();
+        
+        Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+        
+        var $newElems = $( newElements );
+        $newElems.find('.photo-slideshow').pxuPhotoset({
+            lightbox: true,
+            rounded: false,
+            gutter: '1px',
+            photoset: '.photo-slideshow',
+            photoWrap: '.photo-data',
+            photo: '.pxu-photo'
+        },
+        function(){
+            $container.masonry();
+        });
+        
+        $newElems.imagesLoaded(function(){
+            $container.masonry( 'appended', $newElems );
+            $newElems.animate({ opacity: 1, zIndex: 1 });
+            if (typeof resizeVideos === 'function') { resizeVideos(); }
+        });
+    }); 
+    {/block:IfNotPagination}
+    {/block:IndexPage}
 });
 </script>
-  
-<!-- // VISIBLE PAGINATION // -->
-{block:IndexPage}
-{block:IfPagination}
-{block:Pagination}
-
-<nav class="page-nav" aria-label="Pagination">
-
-  {block:PreviousPage}
-  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
-  {/block:PreviousPage}
-
-  {block:JumpPagination length="5"}
-    {block:CurrentPage}
-      <span class="current_page">{PageNumber}</span>
-    {/block:CurrentPage}
-
-    {block:JumpPage}
-      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
-    {/block:JumpPage}
-  {/block:JumpPagination}
-
-  {block:NextPage}
-  <a class="next" href="{NextPage}" title="Next Page">next</a>
-  {/block:NextPage}
-
-</nav>
-
-{/block:Pagination}
-{/block:IfPagination}
-{/block:IndexPage}
 
 
 <!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
