@@ -51,7 +51,6 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
-<meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
 <meta name="text:Link 1 Title" content="homepage"/>
@@ -1496,13 +1495,13 @@ a.tumblr_blog{ display:none !important; }
       </svg>
     </h1>
 
-    <div class="sidebar-nav">
-      <a href="/">index</a> 
-      {block:AskEnabled}<a href="/ask">dm</a> {/block:AskEnabled}
-      {block:IfLinkOneTitle}<a href="{text:Link One}">{text:Link One Title}</a>{/block:IfLinkOneTitle} 
-      {block:IfLinkTwoTitle}<a href="{text:Link Two}">{text:Link Two Title}</a>{/block:IfLinkTwoTitle} 
-      {block:IfLinkThreeTitle}<a href="{text:Link Three}">{text:Link Three Title}</a>{/block:IfLinkThreeTitle}
-    </div>
+  <div class="sidebar-nav">
+  {block:IfLink1Title}<a href="{text:Link 1}">{text:Link 1 Title}</a>{/block:IfLink1Title} 
+  {block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title} 
+  {block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}
+  {block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}
+  {block:IfLink5Title}<a href="{text:Link 5}">{text:Link 5 Title}</a>{/block:IfLink5Title}
+</div>
 
     <div class="sidebar-desc">
       {Description}
