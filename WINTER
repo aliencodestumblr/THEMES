@@ -33,8 +33,9 @@ INFINITE SCROLL       ──  @aliencodes
 </script>
 
 <meta name="image:sidebar" content=""/>
+<meta name="image:Background Image" content=""/>
 
-<meta name="color:Background" content="#444444"/>
+<meta name="color:Background" content="#eeeeee"/>
 <meta name="color:Details" content="#ffffff"/>
 <meta name="color:Accent" content="#444444"/>
 <meta name="color:Borders" content="#EEEEEE"/>
@@ -266,6 +267,7 @@ figure::after,
 body {
   color:{color:text};
   background-color:{color:Background};
+  background-image: url('{image:Background Image}');
   font:400 10.5px "Rajdhani", sans-serif;
   transition:1.3s;
   letter-spacing:0.5px;
