@@ -1360,11 +1360,15 @@ a.tumblr_blog{ display:none !important; }
 }
 
 .sidebar-nav a::after {
-  content: " /";
+  content: "/";
+  padding-left: 0.5em;   
+  padding-right: 0.5em; 
+  display: inline-block; 
 }
 
 .sidebar-nav a:last-child::after {
   content: "";
+  padding: 0;
 }
 
 .sidebar-desc {
@@ -1498,11 +1502,7 @@ a.tumblr_blog{ display:none !important; }
     </h1>
 
   <div class="sidebar-nav">
-  {block:IfLink1Title}<a href="{text:Link 1}">{text:Link 1 Title}</a>{/block:IfLink1Title} 
-  {block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title} 
-  {block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}
-  {block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}
-  {block:IfLink5Title}<a href="{text:Link 5}">{text:Link 5 Title}</a>{/block:IfLink5Title}
+  {block:IfLink1Title}<a href="{text:Link 1}">{text:Link 1 Title}</a>{/block:IfLink1Title}{block:IfLink2Title}<a href="{text:Link 2}">{text:Link 2 Title}</a>{/block:IfLink2Title}{block:IfLink3Title}<a href="{text:Link 3}">{text:Link 3 Title}</a>{/block:IfLink3Title}{block:IfLink4Title}<a href="{text:Link 4}">{text:Link 4 Title}</a>{/block:IfLink4Title}{block:IfLink5Title}<a href="{text:Link 5}">{text:Link 5 Title}</a>{/block:IfLink5Title}
 </div>
 
     <div class="sidebar-desc">
