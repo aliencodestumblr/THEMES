@@ -362,7 +362,10 @@ body {
 
   {block:PermalinkPage}
   width: 700px;
+  margin: 150px 0 50px 0 !important; 
+  {block:ifShowHeaderIcon}
   margin: 310px 0 50px 0 !important; 
+  {/block:ifShowHeaderIcon}
   transform: translateX(0px);
   {/block:PermalinkPage}
 }
@@ -379,8 +382,13 @@ body {
   transition: 1s;
 
   {block:PermalinkPage}
-  width: 700px !important;        
-  margin: 315px auto 0 auto !important;
+  width: 700px !important;   
+  {block:ifNotShowHeaderIcon}
+  margin: 150px 0 50px 0 !important; 
+  {/block:ifNotShowHeaderIcon}
+  {block:ifShowHeaderIcon}
+  margin: 315px 0 50px 0 !important; 
+  {/block:ifShowHeaderIcon}
   float: none;
   padding: 0 !important;
   {/block:PermalinkPage}
@@ -416,7 +424,12 @@ body {
 
   {block:PermalinkPage}
   width: 700px;
-  margin: 350px auto 0 auto !important;
+  {block:ifNotShowHeaderIcon}
+  margin: 155px 0 50px 0 !important; 
+  {/block:ifNotShowHeaderIcon}
+  {block:ifShowHeaderIcon}
+  margin: 315px 0 50px 0 !important; 
+  {/block:ifShowHeaderIcon}
   transform: translateX(0px);
   {/block:PermalinkPage}
 }
