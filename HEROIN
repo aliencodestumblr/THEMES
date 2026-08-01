@@ -1,3 +1,13 @@
+<!--
+
+       @ALIENCODES // @RAIVYS
+
+OTHER CREDITS:
+POST MEDIA HOVERS     ──  @raivys
+MUSIC PLAYER          ──  @aliencodes/glenthemes
+PHOTOSETS SCRIPT      ──  @shythemes
+INFINITE SCROLL       ──  @aliencodes
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +47,7 @@
 <meta name="color:Answer Text" content="#222222"/>
 <meta name="color:Answer Border" content="#eeeeee"/>
 
-<meta name="if:Dark Tumblr Control" content="">
+<meta name="if:Dark Tumblr Control" content="1">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
