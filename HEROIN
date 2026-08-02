@@ -1,13 +1,3 @@
-<!--
-
-       @ALIENCODES // @RAIVYS
-
-OTHER CREDITS:
-POST MEDIA HOVERS     ──  @raivys
-MUSIC PLAYER          ──  @aliencodes/glenthemes
-PHOTOSETS SCRIPT      ──  @shythemes
-INFINITE SCROLL       ──  @aliencodes
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +37,7 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="color:Answer Text" content="#222222"/>
 <meta name="color:Answer Border" content="#eeeeee"/>
 
-<meta name="if:Dark Tumblr Control" content="1">
+<meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:Show music player" content="1">
@@ -117,7 +107,8 @@ iframe.spotify_audio_player {
   transform-origin: top left !important;
   display: block;
   border: 0;
-  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important;
+  /* Adjusts for the scale shrinkage and adds 5px of spacing underneath */
+  margin-bottom: calc((var(--sp-base-height) * (var(--sp-scale) - 1)) + 8px) !important;
 }
 
 figure iframe.spotify_audio_player {
@@ -433,7 +424,7 @@ body { overflow-y: scroll; }
 
 /* ---------------- LINHA DO USUÁRIO NO TOPO DO POST ---------------- */
 .post-top{
-  margin: 0 0 8px 0;
+  margin: 0 0 7px 0;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -1256,7 +1247,6 @@ a.tumblr_blog{ display:none !important; }
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&family=Karla:wght@200;400;700&family=Libre+Baskerville:ital@1&display=swap');
 
-/* --- MAIN HEADER --- */
 #main-header {
   position: relative;
   width: 100%;
@@ -1285,11 +1275,10 @@ a.tumblr_blog{ display:none !important; }
   text-align: center;
 }
 
-/* --- FIXED TOP-RIGHT NARROW PLAYER --- */
 .audio-widget-fixed {
   position: fixed;
   top: 70px;
-  right: 20px;
+  right: 31px;
   background: rgba(10, 10, 10, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
@@ -1402,7 +1391,6 @@ a.tumblr_blog{ display:none !important; }
   display: none !important;
 }
 
-/* --- HEADER TOP ROW --- */
 .header-top-row {
   display: flex;
   align-items: center;
