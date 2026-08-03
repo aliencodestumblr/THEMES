@@ -771,8 +771,8 @@ body { overflow-y: scroll; }
 {block:PermalinkPage}
 
 .perma{
-  width:500px;
-  margin:18px auto 100px auto;
+  width:540px;
+  margin:0px auto 100px auto;
   font-family:"Rajdhani", sans-serif;
   text-align:left;
   text-transform:uppercase;
@@ -784,8 +784,8 @@ body { overflow-y: scroll; }
 }
 
 .perma-info{
-  width:500px;
-  margin:20px auto 22px auto;
+  width:540px;
+  margin:0px auto 22px auto;
   padding:0;
   font-size:9px;
   line-height:1.7;
@@ -814,7 +814,7 @@ body { overflow-y: scroll; }
 }
 
 ol.notes{
-  width:500px;
+  width:540px;
   margin:0 auto !important;
   padding:0 !important;
   list-style:none;
@@ -902,7 +902,7 @@ ol.notes .more_notes_link{
 
 .perma,
 ol.notes{
-  width:500px !important;
+  width:540px !important;
   margin-left:auto !important;
   margin-right:auto !important;
 }
