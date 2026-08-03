@@ -91,7 +91,6 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 
 <style type="text/css">
-/* ---------------- PLAYER DO SPOTIFY ---------------- */
 :root{
   --sp-scale: 0.80;
   --sp-base-height: 80px;
@@ -699,7 +698,7 @@ body { overflow-y: scroll; }
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important;
-  margin-top: 25px !important;
+  margin-top: 0px !important;
   padding: 12px 0 0 0 !important;
   background: transparent !important;
   clear: both !important;
