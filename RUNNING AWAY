@@ -105,7 +105,8 @@ iframe.spotify_audio_player {
   transform-origin: top left !important;
   display: block;
   border: 0;
-  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1)) !important;
+
+  margin-bottom: calc(var(--sp-base-height) * (var(--sp-scale) - 1) + 14px) !important;
 }
 
 figure iframe.spotify_audio_player {
@@ -691,71 +692,64 @@ body { overflow-y: scroll; }
 
 /* ---------------- PERMALINK DO POST (INFERIOR) ---------------- */
 {block:IndexPage}
-
-/* Structural container - forced to clear and layout correctly */
 .post-footer {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important;
   margin-top: 0px !important;
-  padding: 12px 0 0 0 !important;
+  padding: 6px 0 !important;
   background: transparent !important;
   clear: both !important;
   box-sizing: border-box !important;
-  
-  /* Premium, clean typographic stack */
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 11px !important;
-  letter-spacing: 0.04em !important;
-  text-transform: lowercase !important;
+  font-family: "Urbanist", sans-serif;
+  font-size: 10px !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
 }
 
 .pf-left,
 .pf-right {
   display: flex !important;
   align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
-/* 15px spacing between the action text links */
 .pf-right {
-  gap: 15px !important; 
+  gap: 12px !important;
 }
 
-/* Native typographic links replacing the heavy shapes */
-.pf-notes,
+.pf-notes {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: #111111 !important;
+  font-weight: 700 !important;
+  padding-bottom: 1px !important;
+  border-bottom: 2px solid #111111 !important;
+}
+
+.pf-num {
+  margin-right: 5px !important;
+}
+
 .pf-btn {
   display: inline-flex !important;
   align-items: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: none !important;
   text-decoration: none !important;
-  color: #777777 !important; /* Elegant muted gray by default */
-  font-weight: 500 !important;
-  transition: color 0.15s ease !important;
-}
-
-/* Note count number highlighted slightly */
-.pf-num {
+  color: #999999 !important;
   font-weight: 600 !important;
-  color: #111111 !important;
-  margin-right: 4px !important;
+  transition: all 0.2s ease !important;
 }
 
-/* Hover State: Smooth transition to a sharp, minimalist black */
-.pf-notes:hover,
 .pf-btn:hover {
   color: #111111 !important;
+  letter-spacing: 0.22em !important;
 }
 
-/* Subtle physical feedback on click */
-.pf-notes:active,
-.pf-btn:active {
-  opacity: 0.6 !important;
+.pf-dot {
+  color: #e0e0e0 !important;
+  font-size: 8px !important;
+  user-select: none !important;
 }
 
 .post-footer *,
@@ -763,7 +757,6 @@ body { overflow-y: scroll; }
 .post-footer *::after {
   box-sizing: border-box !important;
 }
-
 {/block:IndexPage}
 
 /* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
@@ -1842,18 +1835,20 @@ data-notes="{NoteCountWithLabel}">
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
@@ -1879,18 +1874,20 @@ data-notes="{NoteCountWithLabel}">
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
@@ -1926,18 +1923,20 @@ data-notes="{NoteCountWithLabel}">
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
@@ -1959,24 +1958,26 @@ data-notes="{NoteCountWithLabel}">
       {block:Host}<div class="host"><a href="{URL}" {Target} target="_blank">{Host}</a></div>{/block:Host}
       {block:Description}<div class="link-dsc">{Description}</div>{/block:Description}
 
-   {block:IndexPage}
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
@@ -1995,18 +1996,20 @@ data-notes="{NoteCountWithLabel}">
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
@@ -2023,18 +2026,20 @@ data-notes="{NoteCountWithLabel}">
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes">
-      <span class="pf-num">{NoteCount}</span><span class="pf-lab">N</span>
+      <span class="pf-num">{NoteCount}</span><span class="pf-lab">Notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn" href="{ReblogParentURL}" title="Via">src</a>
+    <a class="pf-btn" href="{ReblogParentURL}" title="Via">Via</a>
+    <span class="pf-dot">•</span>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn" href="{ReblogURL}" title="Reblog">rbg</a>
-    <a class="pf-btn" href="{Permalink}" title="Permalink">pml</a>
+    <a class="pf-btn" href="{ReblogURL}" title="Reblog">Rblg</a>
+    <span class="pf-dot">•</span>
+    <a class="pf-btn" href="{Permalink}" title="Permalink">Entry</a>
   </div>
 
 </div>
