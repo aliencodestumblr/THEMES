@@ -32,7 +32,6 @@
 <meta name="color:Background" content="#ffffff"/>
 <meta name="color:Accent" content="#444444"/>
 <meta name="color:Details" content="#ffffff"/>
-<meta name="color:Shadows" content="#000000"/>
 <meta name="color:Borders" content="#eeeeee"/>
 <meta name="color:Text" content="#444444" />
 <meta name="color:Links" content="#444444" />
@@ -49,6 +48,7 @@
 <meta name="if:Dark Tumblr Control" content="">
 <meta name="if:Show caption" content=""/>
 <meta name="if:2 Columns" content="1">
+<meta name="if:Blog Title" content="1">
 <meta name="if:Pagination" content=""/>
 
 <meta name="text:Home Link Title" content="reload"/>
@@ -1493,9 +1493,11 @@ a.tumblr_blog{ display:none !important; }
   </div>
 
   <header class="sidebar-header">
+  {block:ifShowBlogTitle}
     <h1 class="blog-title">
       <a href="/">{Title}</a>
     </h1>
+    {/block:ifShowBlogTitle}
 
     <div class="sidebar-avatar">
       <a href="/"><img src="{image:icon}" alt="{Title}"></a>
