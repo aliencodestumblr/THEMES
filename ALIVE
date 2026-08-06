@@ -1439,7 +1439,6 @@ a.tumblr_blog{ display:none !important; }
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: grayscale(100%);
   opacity: 0.85;
   transition: opacity 0.3s ease;
 }
