@@ -724,123 +724,102 @@ body {
 
 /* ---------------- PERMALINK DO POST (INFERIOR) ---------------- */
 {block:IndexPage}
-
-.post-footer,
-.post-footer *,
-.post-footer *::before,
-.post-footer *::after {
-  box-sizing: border-box !important;
-  margin-left: 0;
-  padding-left: 0;
-}
-
 .post-footer {
-  width: 100%;
-  margin-top: 0px;
-  margin-bottom: 0 !important;
-  padding: 0px 0 0 0 !important; 
-  
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-
-  background: transparent !important; 
-  border: 0 !important; 
-  box-shadow: none !important;
+  margin-top: 18px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 0.6px;
 }
 
-.pf-left {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  min-width: 0;
-}
-
+.pf-left,
 .pf-right {
-  display: flex !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
+/* Whisper Note Counter */
 .pf-notes {
-  display: inline-flex !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important; 
-  border: 0 !important;
-
-  text-decoration: none !important;
-  font-family: "Rajdhani", -apple-system, sans-serif;
-  font-size: 11px;
-  line-height: 1 !important;
+  text-decoration: none;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  color: {color:text};
   text-transform: lowercase;
-  color:{color:links};
-  
-  font-variant-numeric: tabular-nums;
-  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.pf-num {
-  font-weight: 700;
-  color:{color:links};
-  margin-right: 4px !important;
-  transition: color 0.2s ease;
-}
-
-.pf-lab {
-  color:{color:links};
-  transition: color 0.2s ease;
-}
-
-.pf-btn {
-  width: auto !important;
-  height: auto !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important; 
-  border: 0 !important;
-  color:{color:links};
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.pf-btn svg {
-  width: 14px !important;
-  height: 14px !important;
-  display: block !important;
-  stroke: currentColor !important;
-  stroke-width: 1.6;
-  fill: none;
+.pf-notes .pf-num {
+  color: {color:text};
 }
 
 .pf-notes:hover,
-.pf-notes:hover .pf-num,
-.pf-notes:hover .pf-lab,
-.pf-btn:hover {
-  color:color:{color:links hover}; !important;
-  background: transparent !important;
+.pf-notes:hover .pf-num {
+  color: {color:links hover};
+}
+
+/* Minimal Text & Thin SVG Links */
+.pf-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: {color:links};
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: lowercase;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pf-btn svg {
+  width: 11px;
+  height: 11px;
+  stroke-width: 1.25;
+  stroke: currentColor;
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .pf-btn:hover {
-  transform: scale(1.08);
+  color:{color:links hover};
 }
 
-.pf-btn:active,
-.pf-notes:active {
-  transform: scale(0.95);
+.pf-btn:hover svg {
+  opacity: 1;
+  transform: translateY(-0.5px);
 }
 
+/* Native Tumblr Like Hook */
+.pf-btn.pf-like {
+  overflow: hidden;
+}
+
+.pf-btn.pf-like .like_button {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.0001;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pf-btn.pf-like .like_button.liked + svg {
+  fill: #e28787;
+  stroke: #e28787;
+  opacity: 1;
+}
+
+.pf-btn.pf-like .like_button.liked ~ .pf-label {
+  color: #e28787;
+}
 {/block:IndexPage}
 
 /* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
@@ -1527,49 +1506,51 @@ nav a:hover::after {
       {block:ContentSource}<a href="{SourceURL}"></a>{/block:ContentSource}
     </div>
 
-    {block:IndexPage}
-    <!-- // UNIFIED BLACK POST FOOTER FOR ALL POST TYPES // -->
-    <div class="post-footer">
-      <div class="pf-left">
-        {block:NoteCount}
-        <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
-          <span class="pf-num">{NoteCount}</span>
-          <span class="pf-lab">notes</span>
-        </a>
-        {/block:NoteCount}
-      </div>
+{block:IndexPage}
+<div class="post-footer">
+  <div class="pf-left">
+    {block:NoteCount}
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span> <span class="pf-lab">notes</span>
+    </a>
+    {/block:NoteCount}
+  </div>
 
-      <div class="pf-right">
-        {block:RebloggedFrom}
-        <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </a>
-        {/block:RebloggedFrom}
+  <div class="pf-right">
+    {block:RebloggedFrom}
+    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via">
+      <span class="pf-label">via</span>
+    </a>
+    {/block:RebloggedFrom}
 
-        <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </a>
+    <a class="pf-btn pf-rb" href="{ReblogURL}" target="_blank" title="reblog" aria-label="Reblog">
+      <span class="pf-label">reblog</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17 1l4 4-4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 5H9a5 5 0 0 0-5 5v1" fill="none" stroke="currentColor" stroke-linecap="round"/>
+        <path d="M7 23l-4-4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 19h12a5 5 0 0 0 5-5v-1" fill="none" stroke="currentColor" stroke-linecap="round"/>
+      </svg>
+    </a>
 
-        <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
+    <div class="pf-btn pf-like" title="like">
+      {LikeButton size="16"}
+      <span class="pf-label">like</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
-    {/block:IndexPage}
+
+    <a class="pf-btn pf-link" href="{Permalink}" title="{TimeAgo}" aria-label="Permalink">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-linecap="round"/>
+        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+{/block:IndexPage}
       
     <!-- // INFORMAÇÕES + NOTAS DA PÁGINA DE PERMALINK DO POST // -->
     {block:PermalinkPage}
