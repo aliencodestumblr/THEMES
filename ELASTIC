@@ -121,52 +121,17 @@ figure iframe.spotify_audio_player {
 html, body, a, a:hover{cursor:crosshair;}
 
 /* ---------------- CONTROLES ---------------- */
-.cc {
-    z-index: 100;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 1s;
-    padding: 0;
-}
-
-.cc svg {
-    display: block;
-    width: 11px;
-    height: 11px;
-    overflow: visible;
-    color: {color:accent};
-}
-
-.cc svg path,
-.cc svg circle,
-.cc svg line {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.55;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-     
 iframe.tmblr-iframe {
     z-index: 999;
-    right: 22px;
-    top: 27px;
-    opacity: 0;
     position: fixed;
+    top: 15px;
 
-    width: 0;
+    right: 0px;
 
-    {block:IfDarkTumblrControl}
-    filter: invert(1);
-    {/block:IfDarkTumblrControl}
+    opacity: 0.45;
 
-    padding-right: 90px; 
+    width: auto;
+    padding-right: 30px;
 
     transform: scale(0.38);
     -webkit-transform: scale(0.38);
@@ -174,13 +139,17 @@ iframe.tmblr-iframe {
     transform-origin: 100% 0;
     -webkit-transform-origin: 100% 0;
 
-    transition: opacity 0.35s ease;
-    -webkit-transition: opacity 0.35s ease;
+    transition: opacity 0.4s ease;
+
+    {block:IfDarkTumblrControl}
+    filter: invert(1);
+    {/block:IfDarkTumblrControl}
 }
 
-.tmblr-iframe:hover {
-    opacity: 0.5 !important;
+iframe.tmblr-iframe:hover {
+    opacity: 0.8;
 }
+
 /* ---------------- IMAGENS EXPANDIDAS ---------------- */
 .vignette, #vignette { opacity:0; }
 
@@ -1727,14 +1696,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-
-<!-- // ÍCONE SVG DOS CONTROLES // -->
-<div class="cc">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-    <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
-    <path d="M7.6 6.8a7 7 0 1 0 8.8 0"></path>
-  </svg>
-</div>
 
 <!-- // HTML DO CONTAINER DE DESIGN DOS POSTS // -->
   <div id="posts">
