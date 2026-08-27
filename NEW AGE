@@ -48,6 +48,7 @@ INFINITE SCROLL       ──  @aliencodes
 <meta name="if:Show caption" content=""/>
 <meta name="if:Pagination" content=""/>
 <meta name="if:3 Columns" content="0">
+<meta name="if:Show sidebar image" content="1">
 <meta name="if:Show music player" content="1">
 
 <meta name="text:Link 1" content="/"/>
@@ -470,185 +471,133 @@ body {
 /* ---------------- HOVER DO PERMALINK EM FOTO/VÍDEO ---------------- */
 {block:IndexPage}
 
-.notsi{
-  position:absolute;
-  inset:0;
+.notsi {
+  position: absolute;
+  inset: 0;
+  display: flex;
 
-  display:flex;
+  /* BOTTOM LEFT */
+  align-items: flex-end;
+  justify-content: flex-start;
 
-  /* TOP LEFT */
-  align-items:flex-start;
-  justify-content:flex-start;
+  padding-bottom: 12px;
+  padding-left: 14px;
 
-  padding-top:10px;
-  padding-left:10px;
-
-  overflow:hidden!important;
-  pointer-events:none;
-
-  z-index:999;
+  overflow: hidden !important;
+  pointer-events: none;
+  z-index: 999;
 }
 
-/* softer corner atmosphere */
-
-.notsi::before{
-  content:"";
-  position:absolute;
-  inset:0;
+/* Blur background overlay */
+.notsi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
   background:
     radial-gradient(
-      circle at top left,
-      rgba(255,255,255,.05),
+      circle at bottom left,
+      rgba(255, 255, 255, 0.05),
       transparent 34%
     ),
     linear-gradient(
-      135deg,
-      rgba(0,0,0,.22),
-      rgba(0,0,0,.03) 38%,
-      transparent 72%
+      45deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.05) 40%,
+      transparent 75%
     );
 
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
-  opacity:0;
-
-  transition:opacity .48s cubic-bezier(.22,1,.36,1);
+  opacity: 0;
+  transition: opacity 0.48s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.notsi .npf-box{
-  position:relative;
-  z-index:3;
-
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
-
-  pointer-events:none;
-
-  opacity:1;
+.notsi .npf-box {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  pointer-events: none;
+  opacity: 1;
 }
 
-.notsi .inf2{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
-
-  pointer-events:auto;
+.notsi .inf2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
 }
 
-.notsi .inf2 a{
-  position:relative;
+.notsi .inf2 a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
 
-  width:22px;
-  height:22px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.85);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
-
-  background:rgba(0,0,0,.84);
-
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:2px;
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,.2),
-    inset 0 1px 0 rgba(255,255,255,.04);
-
-  color:rgba(255,255,255,.68);
-
-  opacity:0;
-
-  transform:
-    translateX(-10px)
-    translateY(-3px)
-    scale(.94);
+  opacity: 0;
+  transform: translateY(6px);
 
   transition:
-    opacity .48s cubic-bezier(.22,1,.36,1),
-    transform .52s cubic-bezier(.22,1,.36,1),
-    background .22s ease,
-    color .22s ease,
-    border-color .22s ease;
+    opacity 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.48s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.2s ease;
 }
 
-.notsi .inf2 a::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
+/* Underline hover effect */
+.notsi .inf2 a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
 
-  width:100%;
-  height:1px;
+  background-color: #fff;
 
-  background:rgba(255,255,255,.08);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.notsi .inf2 a:hover{
-  background:rgba(255,255,255,.96);
-  color:#000;
-
-  border-color:rgba(0,0,0,.14);
-
-  transform:
-    translateX(0)
-    translateY(-1px)
-    scale(1);
+.notsi .inf2 a:hover {
+  color: #fff;
 }
 
-.notsi .inf2 i{
-  font-size:9px;
-  line-height:1;
+.notsi .inf2 a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-.notsi .inf2 .rb-icon{
-  width:9px;
-  height:9px;
-  display:block;
+/* Staggered entrance animation delays */
+.notsi .inf2 a:nth-child(1) {
+  transition-delay: 0.04s;
 }
 
-.notsi .inf2 .rb-icon path{
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.4;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+.notsi .inf2 a:nth-child(2) {
+  transition-delay: 0.08s;
 }
 
-.notsi .inf2 a:nth-child(1){
-  transition-delay:.04s;
+.notsi .inf2 a:nth-child(3) {
+  transition-delay: 0.12s;
 }
 
-.notsi .inf2 a:nth-child(2){
-  transition-delay:.1s;
-}
-
-.notsi .inf2 a:nth-child(3){
-  transition-delay:.16s;
-}
-
+/* Show on post hover */
 .post:hover .notsi::before,
-.ac-hover-on .notsi::before{
-  opacity:1;
+.ac-hover-on .notsi::before {
+  opacity: 1;
 }
 
 .post:hover .notsi .inf2 a,
-.ac-hover-on .notsi .inf2 a{
-  opacity:1;
-
-  transform:
-    translateX(0)
-    translateY(0)
-    scale(1);
+.ac-hover-on .notsi .inf2 a {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 {/block:IndexPage}
@@ -775,104 +724,105 @@ body {
 
 /* ---------------- PERMALINK DO POST (INFERIOR) ---------------- */
 {block:IndexPage}
-.post-footer{
-  margin-top:6px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:6px;
 
-  padding:3px 6px;
+.post-footer {
+  margin-top: 10px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 4px 0 0 0 !important;
 
-  background:rgba(255,255,255,.75);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  width: 100% !important;
+  box-sizing: border-box !important;
 
-  border:1px solid rgba(0,0,0,.06);
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.9),
-    0 2px 8px rgba(0,0,0,.05);
+  font-size: 11px;
+  line-height: 1 !important;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .pf-left,
-.pf-right{
-  display:flex;
-  align-items:center;
-  gap:5px;
+.pf-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.pf-notes{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  height:17px;
-  padding:0 5px;
+/* Base link styling */
+.pf-notes,
+.pf-link {
+  position: relative !important;
+  display: inline-block !important;
+  padding: 0 0 2px 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
 
-  text-decoration:none;
-  color:rgba(0,0,0,.65);
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 400;
+  line-height: 1 !important;
 
-  background:rgba(0,0,0,.025);
-  border:1px solid rgba(0,0,0,.06);
-
-  font-family:"Rajdhani", sans-serif;
-  font-size:8.5px;
-  font-weight:600;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  line-height:1;
-
-  transition:.15s ease;
+  transition: color 0.2s ease;
 }
 
-.pf-notes .pf-num{
-  font-size:9.5px;
-  font-weight:700;
-  color:#000;
+/* Force strict left/right edge alignment */
+.pf-notes {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
-.pf-notes .pf-lab{
-  opacity:.4;
+.pf-right .pf-link:last-child {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
 
-.pf-btn{
-  width:17px;
-  height:17px;
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  text-decoration:none;
-  color:rgba(0,0,0,.55);
-
-  background:rgba(0,0,0,.02);
-  border:1px solid rgba(0,0,0,.06);
-
-  transition:.15s ease;
+.pf-notes .pf-num {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.75);
 }
 
-.pf-btn svg{
-  width:9px;
-  height:9px;
+.pf-notes .pf-lab {
+  color: inherit;
 }
 
-.pf-notes:hover{
-  color:#000;
-  background:rgba(0,0,0,.045);
-  border-color:rgba(0,0,0,.12);
+/* Sliding underline pseudo-element */
+.pf-notes::after,
+.pf-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+
+  background-color: rgba(0, 0, 0, 0.85);
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.pf-btn:hover{
-  color:{color:Accent};
-  background:rgba(0,0,0,.04);
-  border-color:rgba(0,0,0,.12);
+/* Hover state */
+.pf-notes:hover,
+.pf-link:hover {
+  color: rgba(0, 0, 0, 0.85);
 }
 
-.pf-btn:active,
-.pf-notes:active{
-  transform:scale(.94);
+.pf-notes:hover .pf-num {
+  color: #000;
 }
+
+.pf-notes:hover::after,
+.pf-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 {/block:IndexPage}
 
 /* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
@@ -1865,75 +1815,6 @@ a.tumblr_blog{ display:none !important; }
 #floating-mini-player audio{
   display:none !important;
 }
-
-/* ALIENCODES CREDIT */
-
-.alien-credit,
-.alien-credit:link,
-.alien-credit:visited,
-.alien-credit:hover{
-    position:fixed;
-    right:30px;
-    bottom:30px;
-    z-index:999999;
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    text-decoration:none!important;
-    background:none!important;
-    border:none!important;
-    box-shadow:none!important;
-
-    font-family:'Orbitron',sans-serif;
-}
-
-.alien-a{
-    position:relative;
-
-    font-size:24px;
-    font-weight:700;
-    line-height:1;
-
-    color:{color:Links}!important;
-
-    opacity:.85;
-
-    transition:
-        opacity .35s ease,
-        transform .35s ease;
-}
-
-.alien-name{
-    max-width:0;
-    overflow:hidden;
-    white-space:nowrap;
-
-    opacity:0;
-
-    font-size:8px;
-    font-weight:500;
-
-    letter-spacing:.32em;
-    text-transform:uppercase;
-
-    color:{color:Links}!important;
-
-    transition:
-        max-width .55s cubic-bezier(.22,1,.36,1),
-        opacity .35s ease;
-}
-
-.alien-credit:hover .alien-name{
-    max-width:140px;
-    opacity:.75;
-}
-
-.alien-credit:hover .alien-a{
-    opacity:1;
-    transform:translateY(-1px);
-}
 </style>
 
 <!-- // PHOTOSETS + DESIGN DE GRID // -->
@@ -1966,6 +1847,7 @@ a.tumblr_blog{ display:none !important; }
   <aside id="sharp-sidebar">
     <div class="sb-shell">
 
+{block:ifshowsidebarimage}
       <a class="sb-hero" href="/">
         <div class="sb-hero-img-wrap">
           <img src="{image:Icon}" alt="icon">
@@ -1983,6 +1865,7 @@ a.tumblr_blog{ display:none !important; }
           </span>
         </div>
       </a>
+{/block:ifshowsidebarimage}      
 
       <div class="sb-blog-pill" title="{Title}">
         <span class="sb-blog-name">{title}</span>
@@ -2007,11 +1890,6 @@ a.tumblr_blog{ display:none !important; }
             <a href="{text:Link 3}">
               <span class="sb-nav-no">03</span>
               <span class="sb-nav-text">{text:Link 3 Title}</span>
-            </a>
-
-            <a href="{text:Link 4}">
-              <span class="sb-nav-no">04</span>
-              <span class="sb-nav-text">{text:Link 4 Title}</span>
             </a>
 
           </nav>
@@ -2068,29 +1946,6 @@ a.tumblr_blog{ display:none !important; }
 </div>
 {/block:ifshowmusicplayer}
 
-<script>
-(function(){
-  function updateSBClock(){
-    var clock = document.getElementById("sbClock");
-    if(!clock) return;
-
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var ampm = hours >= 12 ? "PM" : "AM";
-
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-
-    clock.textContent = hours + ":" + minutes + " " + ampm;
-  }
-
-  updateSBClock();
-  setInterval(updateSBClock, 1000);
-})();
-</script>
-
 <!-- // HTML DO CONTAINER DE DESIGN DOS POSTS // -->
   <div id="posts">
 {block:Posts}
@@ -2121,47 +1976,25 @@ data-notes="{NoteCountWithLabel}">
 
 <div class="caption">{Body}</div>
 
-      {block:IndexPage}
-
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -2181,47 +2014,25 @@ data-notes="{NoteCountWithLabel}">
       
       <div class="quote">{Quote}</div>
       {block:Source}<div class="sourceqt">{Source}</div>{/block:Source}
-      {block:IndexPage}
-
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -2251,47 +2062,25 @@ data-notes="{NoteCountWithLabel}">
         </ul>
       </div>
 
-      {block:IndexPage}
-
+   {block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -2313,47 +2102,25 @@ data-notes="{NoteCountWithLabel}">
       {block:Host}<div class="host"><a href="{URL}" {Target} target="_blank">{Host}</a></div>{/block:Host}
       {block:Description}<div class="link-dsc">{Description}</div>{/block:Description}
 
-     {block:IndexPage}
-
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -2366,47 +2133,25 @@ data-notes="{NoteCountWithLabel}">
         <div class="bubble ask">{Question}</div>
         <div class="answer"><div class="bubble">{Answer}</div></div>
       </div>
-      {block:IndexPage}
-
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -2417,46 +2162,25 @@ data-notes="{NoteCountWithLabel}">
       <div class="album">
         {block:AudioPlayer}<div class="player">{AudioPlayerBlack}</div>{/block:AudioPlayer}
       </div>
-      {block:IndexPage}
+{block:IndexPage}
 <div class="post-footer">
 
   <div class="pf-left">
     {block:NoteCount}
     <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
       <span class="pf-num">{NoteCount}</span>
-      <span class="pf-lab">notes</span>
+      <span class="pf-lab"> notes</span>
     </a>
     {/block:NoteCount}
   </div>
 
   <div class="pf-right">
     {block:RebloggedFrom}
-    <a class="pf-btn pf-via" href="{ReblogParentURL}" title="via" aria-label="Via / Reblog source">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13.5 8.5L17 12l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11 5H8a3 3 0 0 0-3 3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M13 19h3a3 3 0 0 0 3-3v0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogParentURL}" title="via">via</a>
     {/block:RebloggedFrom}
 
-    <a class="pf-btn pf-rb" href="{ReblogURL}" title="reblog" aria-label="Reblog">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M16 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 8H9a4 4 0 0 0-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8 20l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M4 16h11a4 4 0 0 0 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
-    </a>
-
-    <a class="pf-btn pf-link" href="{Permalink}" title="permalink" aria-label="Permalink">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M10 14l4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M8.5 17.5l-2 2a3 3 0 1 1-4.2-4.2l2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 6.5l2-2a3 3 0 1 1 4.2 4.2l-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <a class="pf-link" href="{ReblogURL}" title="reblog">reblog</a>
+    <a class="pf-link" href="{Permalink}" title="permalink">info</a>
   </div>
 
 </div>
@@ -3769,26 +3493,13 @@ data-notes="{NoteCountWithLabel}">
 {block:IndexPage}
 <template id="npf-hover-template">
   <div class="notsi" data-ac-hover-root>
-
     <div class="npf-box">
-
       <div class="inf2">
-        <a class="npf-reblog" data-ac-reblog href="#" aria-label="Reblog">
-          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="rb-icon">
-            <path d="M3 5h6l-2-2M13 11H7l2 2"></path>
-          </svg>
-        </a>
-
-        <a class="npf-permalink" data-ac-permalink href="#" aria-label="Permalink">
-          <i class="ph ph-link-simple-horizontal"></i>
-        </a>
-
-        <a class="npf-lightbox" data-ac-lightbox href="#" aria-label="Lightbox">
-          <i class="ph ph-arrows-out"></i>
-        </a>
+        <a class="npf-reblog" data-ac-reblog href="#">reblog</a>
+        <a class="npf-permalink" data-ac-permalink href="#">info</a>
+        <a class="npf-lightbox" data-ac-lightbox href="#">view</a>
       </div>
     </div>
-
   </div>
 </template>
 {/block:IndexPage}
@@ -3881,11 +3592,6 @@ data-notes="{NoteCountWithLabel}">
   });
 })();
 </script>
-
-<a href="https://aliencodes.tumblr.com" class="alien-credit" target="_blank" title="theme by ALIENCODES">
-  <span class="alien-a">A</span>
-  <span class="alien-name">ALIENCODES</span>
-</a>
 
 <!-- // VISIBLE PAGINATION // -->
 {block:IndexPage}
