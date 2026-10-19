@@ -3999,5 +3999,36 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 <div id="infscr-loading" style="display:none!important;"></div>
 {/block:IndexPage}
+
+{block:PermalinkPage}
+<script>
+(function($){
+  $(document).ready(function(){
+    if (!$.fn.pxuPhotoset) return;
+
+    $('.photo-slideshow').each(function(){
+      if (this._acPXUInited) return;
+      this._acPXUInited = true;
+
+      $(this).pxuPhotoset({
+        lightbox: true,
+        rounded: false,
+        gutter: '1px',
+        photoset: '.photo-slideshow',
+        photoWrap: '.photo-data',
+        photo: '.pxu-photo'
+      });
+    });
+
+    // Recalculate container height after photos load
+    $(window).on('load', function(){
+      $('.photo-slideshow').each(function(){
+        $(this).css('height', 'auto');
+      });
+    });
+  });
+})(window.jQuery);
+</script>
+{/block:PermalinkPage}
 </body>
 </html>
