@@ -1,0 +1,4270 @@
+<!--
+
+       @ALIENCODES // @RAIVYS
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+
+<!-- // TOOLTIP + jQUERY // -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+(function($){
+  $(document).ready(function(){
+    $("[title]").style_my_tooltips({
+      tip_follows_cursor: true,
+      tip_delay_time: 20,
+      tip_fade_speed: 0, 
+      attribute: "title"
+    });
+  });
+})(jQuery);
+</script>
+
+<meta name="image:Icon" content=""/>
+
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Accent" content="#000000"/>
+<meta name="color:Borders" content="#eeeeee"/>
+<meta name="color:Text" content="#000000" />
+<meta name="color:Links" content="#000000" />
+<meta name="color:Links Hover" content="#000000" />
+<meta name="color:Ask Background" content="#ffffff"/>
+<meta name="color:Ask Text" content="#000000"/>
+<meta name="color:Ask Border" content="#ffffff"/>
+<meta name="color:Answer Background" content="#444444"/>
+<meta name="color:Answer Text" content="#ffffff"/>
+<meta name="color:Answer Border" content="#444444"/>
+
+<meta name="if:Dark Tumblr Control" content="">
+<meta name="if:Show caption" content=""/>
+<meta name="if:Pagination" content=""/>
+<meta name="if:Show music player" content="1">
+<meta name="if:Show user time" content="1">
+
+<meta name="text:Link 1" content="/"/>
+<meta name="text:Link 1 Title" content="uploads"/>
+<meta name="text:Link 2" content="/"/>
+<meta name="text:Link 2 Title" content="tags"/>
+<meta name="text:Link 3" content="/"/>
+<meta name="text:Link 3 Title" content="spotify"/>
+<meta name="text:Link 4" content="/"/>
+<meta name="text:Link 4 Title" content="text posts"/>
+<meta name="text:Link 5" content="/"/>
+<meta name="text:Link 5 Title" content="dashboard"/>
+
+<meta name="text:Ask Information" content="send me anonymous messages!"/>
+
+<meta name="text:Track 1 Title" content="300 Dreams">
+<meta name="text:Track 1 Artist" content="After">
+<meta name="text:Track 1 Audio" content="https://od.lk/s/MzlfMTAxOTM1MzQ2Xw/300%20dreams.mp3">
+
+<meta name="text:Track 2 Title" content="I Do You">
+<meta name="text:Track 2 Artist" content="Anna of the North">
+<meta name="text:Track 2 Audio" content="https://od.lk/s/MzlfMTAxOTcxNDg4Xw/I%20Do%20You%20-%20Anna%20of%20the%20North.mp3">
+
+<meta name="text:Track 3 Title" content="A Million Miles Away">
+<meta name="text:Track 3 Artist" content="FM Attack">
+<meta name="text:Track 3 Audio" content="https://od.lk/s/MzlfMTAxOTcxNDUwXw/A%20Million%20Miles%20Away%20-%20FM%20Attack.mp3">
+
+<meta name="text:Track 4 Title" content="Superglue">
+<meta name="text:Track 4 Artist" content="PONY">
+<meta name="text:Track 4 Audio" content="https://od.lk/s/MzlfMTAxNTQ0NDg2Xw/Superglue%20-%20PONY.mp3">
+
+<meta name="text:Track 5 Title" content="Teeth">
+<meta name="text:Track 5 Artist" content="Mallrat">
+<meta name="text:Track 5 Audio" content="https://od.lk/s/MzlfMTAwOTAwMjcyXw/Teeth%20-%20Mallrat.mp3">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Jacquard+12+Charted&family=Jersey+10&family=Micro+5&family=Montez&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sixtyfour&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Tiny5&display=swap" rel="stylesheet">
+
+<script src="https://use.fontawesome.com/92822ad00c.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://static.tumblr.com/i5s2zks/6kOohwlux/pe-icon-7-stroke.css">
+<link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+<script src="https://static.tumblr.com/kjtbii3/44Nmyhtju/slidetoggle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+<style type="text/css">
+/* ---------------- PLAYER DO SPOTIFY ---------------- */
+:root {
+  --sp-scale: 0.80;
+  --sp-base-height: 80px;
+}
+
+/* Base styling for scaled Spotify iFrames */
+article iframe[src*="spotify.com"],
+iframe.spotify_audio_player {
+  aspect-ratio: auto !important;
+  width: 100% !important;
+  height: var(--sp-base-height) !important;
+  transform: none !important;
+  display: block;
+  border: 0;
+  margin: 0 !important;
+}
+
+/* Target container wrappers for Spotify embeds */
+figure.tmblr-embed.spotify_audio_player,
+.npf_link {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@keyframes fadein {from {opacity:0;} to {opacity:1;}}
+@-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}}
+@-webkit-keyframes fadein {from {opacity:0;} to {opacity:1;}}
+@-o-keyframes fadein {from {opacity:0;} to {opacity:1;}}
+
+html, body, a, a:hover{cursor:crosshair;}
+
+/* ---------------- CONTROLES ---------------- */
+.cc {
+    z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    padding: 0;
+}
+
+.cc svg {
+    display: block;
+    width: 11px;
+    height: 11px;
+    overflow: visible;
+    color: {color:accent};
+}
+
+.cc svg path,
+.cc svg circle,
+.cc svg line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+     
+iframe.tmblr-iframe {
+    z-index: 999;
+    right: 22px;
+    top: 27px;
+    opacity: 0;
+    position: fixed;
+
+    width: 0;
+
+    {block:IfDarkTumblrControl}
+    filter: invert(1);
+    {/block:IfDarkTumblrControl}
+
+    padding-right: 90px; 
+
+    transform: scale(0.38);
+    -webkit-transform: scale(0.38);
+
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+
+    transition: opacity 0.35s ease;
+    -webkit-transition: opacity 0.35s ease;
+}
+
+.tmblr-iframe:hover {
+    opacity: 0.5 !important;
+}
+
+/* ---------------- IMAGENS EXPANDIDAS ---------------- */
+.vignette, #vignette { opacity:0; }
+
+.lightbox-image, #tumblr_lightbox img {
+  z-index: 999999999;
+  box-shadow:none !important;
+  border-radius:2px !important;
+  max-width:none;
+}
+
+.tmblr-lightbox, #tumblr_lightbox {
+    z-index: 999999999;
+  background-color:rgba({RGBcolor:background},.7) !important;
+}
+
+.lightbox-image, #tumblr_lightbox img {
+  z-index: 999999999; 
+  border:5px solid {color:background}; !important;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+/* ---------------- ESTILO DE LINKS + MÍDIA ---------------- */
+pre, code {
+  overflow-x:auto;
+  user-select:all;
+  font-family:monospace;
+  padding:4px 6px;
+  line-height:14px;
+  background:rgba(0,0,0,.04);
+  margin:10px 0;
+}
+
+li {margin-left:-32px;}
+ul {margin-left:6px;}
+
+a, a:link, a:active, a:visited {
+  cursor:crosshair; 
+  color:{color:links};
+  text-decoration:none;
+  transition:.5s;
+}
+
+a:hover {
+  cursor:crosshair;
+  color:{color:links hover};
+  text-decoration:none;
+  transition:.5s;
+}
+
+a.read_more{
+  visibility:visible;
+  font-size:9px;
+  text-transform:uppercase;
+  font-weight:bold;
+  padding-bottom:3px;
+}
+
+p a {font-weight:700;}
+p {margin-top:0px;}
+
+
+/* --------- BLOCKQUOTE + MÍDIA NPF (FOTO/VÍDEO) --------- */
+blockquote { display:block; margin:0px; }
+
+
+blockquote img {
+   cursor:crosshair; 
+  width:calc(100% - 0);
+  height:auto;
+}
+blockquote video {
+  cursor:crosshair; 
+  width:100%;
+}
+
+img {
+  cursor:crosshair; 
+  border:0;
+  width:calc(100% - 0);
+  height:auto;
+  display:block;
+}
+
+video {
+  display:block;
+  margin:0 auto !important;
+  padding:0 !important;
+}
+
+.npf_video,
+.npf_video_container,
+.tmblr-full,
+figure.tmblr-full,
+figure,
+.npf_inst{
+  margin:0 !important;
+  padding:0 !important;
+  line-height:1 !important;
+}
+
+.npf_video::after,
+.npf_video_container::after,
+figure::after,
+.tmblr-full::after{
+  content:none !important;
+  display:none !important;
+  height:0 !important;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  color:{color:text};
+  background-color:{color:background};
+  font:400 10px "Rajdhani", sans-serif;
+  transition:1.3s;
+  letter-spacing:0.5px;
+  text-align:justify;
+  line-height:15px;
+  word-wrap:break-word;
+  -webkit-animation-name:fadeIn; animation-name:fadeIn;
+}
+
+body { overflow-y: scroll; }
+
+
+/* ------------ TÍTULOS DE CABEÇALHO DE POSTS DE TEXTO ------------ */
+.caption h1,
+.caption h2,
+.caption h3,
+.caption h4,
+.caption h5,
+.caption h6{
+  margin:0 0 10px 0!important;
+
+  font-family:'Work Sans', sans-serif!important;
+  font-weight:700!important;
+
+  color:{color:text}!important;
+
+  text-align:left!important;
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+  line-height:1.05!important;
+}
+
+.caption h1{
+  font-size:20px!important;
+}
+
+.caption h2{
+  font-size:18px!important;
+}
+
+.caption h3{
+  font-size:16px!important;
+}
+
+.caption h4{
+  font-size:14px!important;
+}
+
+.caption h5{
+  font-size:13px!important;
+}
+
+.caption h6{
+  font-size:12px!important;
+}
+
+.caption h1 + p,
+.caption h2 + p,
+.caption h3 + p,
+.caption h4 + p,
+.caption h5 + p,
+.caption h6 + p{
+  margin-top:6px!important;
+}
+
+/* ---------------- POST CONTAINER ---------------- */
+
+.entry {
+  width: 340px;
+  height: auto;
+  margin: 0 auto !important;
+
+  {block:PermalinkPage}
+  width: 340px;
+  border-radius: 12px;
+  margin: 0 auto !important;
+  {/block:PermalinkPage}
+}
+
+#posts {
+  width: 340px;
+  margin: 20px auto 50px auto !important;
+  transform: translateX(30px);
+
+  transition: opacity 0s, filter 0s;
+
+  {block:PermalinkPage}
+  width: 340px;
+  margin: 47px auto 0 auto !important;
+  transform: translateX(45px);
+  border: 0;
+  {/block:PermalinkPage}
+}
+
+/* ---------------- POST CARDS ---------------- */
+
+.posts {
+  box-sizing: border-box;
+  width: 340px;
+  margin: 15px;
+  margin-bottom: 35px;
+  padding: 11px;
+
+  overflow: hidden;
+  opacity: 1;
+
+  background: #fff;
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease,
+    box-shadow .28s ease;
+
+  {block:PermalinkPage}
+  width: 340px;
+  margin: 15px auto 0 auto;
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  {/block:PermalinkPage}
+}
+
+/* ---------------- POST MEDIA ---------------- */
+
+.posts img,
+.posts video,
+.posts iframe {
+  max-width: 100%;
+}
+
+{block:PermalinkPage}
+#posts .posts img {
+  border-radius: 0;
+}
+{/block:PermalinkPage}
+
+/* ---------------- LINHA DO USUÁRIO NO TOPO DO POST ---------------- */
+.post-top{
+  margin: 2px 0 10px 0;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0;
+
+  font-family:"Rajdhani",sans-serif;
+  font-size:9px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+
+  opacity:.68;
+}
+.post-top a{
+  color:{color:text};
+  text-decoration:none;
+  font-weight:800;
+}
+
+.post-top a:hover{
+  opacity:.6;
+}
+
+/* --------- TAMANHOS DE IMAGEM + VÍDEO / NÃO ALTERAR --------- */
+.posts img{
+  width:100%;
+  {block:permalinkpage}
+  width:100%;
+  {/block:permalinkpage}
+  transition:1s;
+}
+
+.video{
+  width:100%;
+  {block:permalinkpage}
+  width:100%;
+  {/block:permalinkpage}
+}
+
+.vsanna{ display:none; }
+
+
+/* ---------------- ROLAGEM INFINITA ---------------- */
+#infscr-loading{
+  position:absolute;
+  bottom:0;
+  margin-left:50%;
+  left:0px;
+  text-align:center;
+}
+
+#infscr-loading img{
+  display:none;
+  width:20px;
+  height:20px;
+}
+
+
+/* EFEITO DE CARREGAMENTO SUAVE */
+{block:IndexPage}
+.posts{
+  transition: opacity .75s ease, transform .75s ease;
+}
+
+.posts.is-ready{
+  opacity:1;
+  transform: translateY(0);
+}
+{/block:IndexPage}
+/* FIM DO EFEITO DE CARREGAMENTO SUAVE */
+
+
+/* ---------------- BARRA DE ROLAGEM ---------------- */
+::-webkit-scrollbar{ width:8px; } ::-webkit-scrollbar-track{ background: transparent; } ::-webkit-scrollbar-thumb{ background: transparent; border-radius: 3px; } .is-scrolling ::-webkit-scrollbar-thumb{ background: {color:Accent}; } .is-scrolling ::-webkit-scrollbar-thumb:hover{ box-shadow: 0 0 6px rgba({RGBcolor:Accent}, .45); } *{ scrollbar-width: thin; scrollbar-color: transparent transparent; } .is-scrolling{ scrollbar-color: {color:Accent} transparent; }
+
+
+/* ---------------- PAGINAÇÃO ---------------- */
+.page-nav{
+  width:min(700px, calc(100% - 40px));
+  margin:50px auto 80px!important;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+
+  font-family:"Rajdhani",sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+.page-nav a,
+.page-nav span{
+  min-width:31px;
+  height:30px;
+  padding:0 10px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.04);
+  border:1px solid {color:Borders};
+  border-radius:2px;
+
+  color:{color:Links};
+  text-decoration:none!important;
+
+  box-sizing:border-box;
+
+  transition:.22s ease;
+}
+
+.page-nav a:hover{
+  background:{color:Links};
+  border-color:{color:Links};
+  color:#000;
+  transform:translateY(-2px);
+}
+
+.page-nav .current_page{
+  background:{color:Links};
+  border-color:{color:Links};
+  color:#000;
+}
+
+.page-nav .prev,
+.page-nav .next{
+  min-width:68px;
+}
+
+.page-nav .disabled{
+  opacity:.25;
+  pointer-events:none;
+}
+
+
+/* ---------------- PERMALINK DO POST (INFERIOR) ---------------- */
+{block:IndexPage}
+.post-footer {
+  width: 100%;
+  margin: 0 !important;
+  margin-top: 0px !important;
+  padding: 12px 0 3px !important;
+
+  border-top: 0px solid #ededed !important;
+  background: transparent !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.post-footer *,
+.post-footer *::before,
+.post-footer *::after {
+  box-sizing: border-box;
+}
+
+.pf-left {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pf-notes {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-left:-3px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1;
+
+  color: {color:text} !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.pf-lab {
+  font-family: "Syne", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  opacity: 0.5;
+}
+
+.pf-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+
+  flex: 0 0 auto;
+}
+
+.pf-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 13px;
+  height: 14px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: {color:text} !important;
+  text-decoration: none !important;
+
+  opacity: 0.4;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.pf-btn > i,
+.pf-like-text > i {
+  display: block;
+  font-size: 11px;
+  line-height: 1;
+  font-style: normal;
+}
+
+.pf-btn:hover {
+  opacity: 0.9;
+}
+
+.pf-like-wrapper {
+  overflow: hidden;
+}
+
+.pf-like-wrapper .like_button {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.pf-like-wrapper .like_button iframe {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 1;
+}
+
+.pf-like-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pf-like-wrapper .like_button,
+.pf-like-wrapper .like_button iframe {
+  cursor: pointer;
+}
+
+.vsanna {
+  display: none;
+}
+{/block:IndexPage}
+
+/* ------- INFORMAÇÕES DA PÁGINA DE PERMALINK ------- */
+{block:PermalinkPage}
+
+.perma{
+   width:540px;
+  margin:18px auto 100px auto;
+  font-family:"Rajdhani", sans-serif;
+  text-align:left;
+  text-transform:uppercase;
+  letter-spacing:1px;
+
+  background:transparent !important;
+  box-shadow:none !important;
+  border:0 !important;
+}
+
+.perma-info{
+   width:540px;
+  margin:20px auto 22px auto;
+  padding:0;
+  font-size:9px;
+  line-height:1.7;
+  opacity:.75;
+  box-sizing:border-box;
+}
+
+.perma-info a{
+  text-decoration:none;
+  font-weight:700;
+  color:{color:Text};
+  transition:opacity .12s linear;
+}
+
+.perma-info a:hover{ 
+  opacity:.55; 
+}
+
+.perma-info .note-total{
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.6px;
+  opacity:1;
+}
+
+ol.notes{
+   width:540px;
+  margin:0 auto !important;
+  padding:0 !important;
+  list-style:none;
+  font-size:9.5px;
+  letter-spacing:1px;
+  line-height:16px;
+  box-sizing:border-box;
+
+  background:#ffffff;
+}
+
+ol.notes li.note{
+  width:100%;
+  margin:0 !important;
+  padding:7px 15px;
+  border-bottom:1px solid rgba(0,0,0,.05);
+  display:block;
+  box-sizing:border-box;
+  transition:opacity .12s linear;
+}
+
+ol.notes li:last-child{ 
+  border-bottom:none; 
+}
+
+ol.notes li.note:hover{ 
+  opacity:.6; 
+}
+
+ol.notes li.note img.avatar{ 
+  display:none; 
+}
+
+ol.notes li a{
+  font-weight:700;
+  text-decoration:none;
+  color:{color:Text};
+}
+
+ol.notes li a:hover{ 
+  opacity:.6; 
+}
+
+ol.notes li.note:before,
+ol.notes li.like:before,
+ol.notes li.reblog:before,
+ol.notes li.original_post:before,
+ol.notes li.reply:before{
+  content:none !important;
+  display:none !important;
+}
+
+.more_notes_link,
+.notes .more_notes_link,
+ol.notes .more_notes_link{
+  display:block !important;
+  width:100%;
+  padding:10px 15px !important;
+  box-sizing:border-box;
+  text-align:center;
+  font-family:"Rajdhani", sans-serif;
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  color:{color:Text} !important;
+  background:rgba(0,0,0,.025);
+  text-decoration:none !important;
+}
+
+.more_notes_link:hover{
+  opacity:.65;
+}
+
+.posts{
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+
+.posts > .post,
+.posts > article,
+.posts > .entry-content,
+.posts > .post-content{
+  padding:15px !important;
+
+  box-sizing:border-box !important;
+}
+
+.perma,
+ol.notes{
+  width:540px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+{/block:PermalinkPage}
+
+
+/* ÁUDIOS */
+.album{ margin-left: 20px; }
+.player{ opacity:1; pointer-events:auto; margin:0; }
+.art, .track{ display:none; }
+
+/* DESIGN DO POST DE ASK */
+.ask-wrap{ margin-bottom:14px; }
+
+.asker{
+  font-family:"Rajdhani", sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:0 0 6px 0;
+  color:{color:text};
+  opacity:.75;
+}
+
+.asker a{
+  color:{color:links};
+  font-weight:700;
+  text-decoration:none;
+  transition:color .12s linear, opacity .12s linear;
+}
+
+.asker a:hover{
+  color:{color:links hover};
+  opacity:.9;
+}
+
+.bubble{
+  position:relative;
+  display:inline-block;
+  max-width:92%;
+  padding:10px 12px;
+  border-radius:12px;
+  line-height:1.45;
+  font-size:11px;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.08);
+}
+
+.ask{
+  background:{color:Ask background};
+  color:{color:Ask Text};
+  border-color:{color:Ask Border};
+}
+
+.answer{ margin-top:8px; text-align:right; }
+
+.answer .bubble{
+  background:{color:Answer Background};
+  color:{color:Answer Text};
+  border-color:{color:Answer Border};
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.answer img{
+  width:100%;
+  border-radius:8px;
+  margin-top:10px;
+  display:block;
+}
+
+.bubble a{
+  color:inherit;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+  opacity:.95;
+}
+
+.bubble a:hover{ opacity:1; }
+
+/* CITAÇÃO */
+.quote{
+  text-align:justify;
+  line-height:15px;
+  margin-bottom:-5px;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  padding:20px;
+}
+.quote:first-letter{ text-transform:uppercase; }
+.sourceqt{
+  margin-top:0px;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
+  color:{color:links};
+  width:auto;
+  text-align:justify;
+  text-transform:normal;
+  font-weight:bold;
+}
+.sourceqt:before{
+  float:left;
+  margin-top:0px;
+  margin-left:2px;
+  margin-right:5px;
+  color:{color:accent};
+  content:"━";
+}
+
+
+/* CHAT */
+.chatitle{
+  margin-top:20px;
+  margin-bottom:-11px;
+  margin-left:20px;
+  margin-right:20px;
+  width:auto;
+  color:{color:accent};
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  text-align:center;
+  font-weight:bold;
+  border-bottom:1px solid #eee;
+  z-index:9999999999;
+}
+.chat ul{
+  margin-top:-1px;
+  margin-bottom:10px;
+  margin-left:41px;
+  margin-right:10px;
+  padding:10px;
+}
+.chat li{
+  padding:10px;
+  list-style-type:none;
+}
+span.chats{
+  color:{color:text};
+  font-size:9px;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+.chat li:nth-child(odd){
+  border-left:1px solid #eee;
+  border-bottom:1px solid #eee;
+}
+.chat li:nth-child(even){
+  border-right:1px solid #eee;
+  border-bottom:1px solid #eee;
+}
+
+
+/* LINKS */
+.host{ margin-top:5px; margin-bottom:20px; }
+.host a{
+  background:#fff;
+  margin-top:20px;
+  text-transform:uppercase;
+  font-size:8px;
+  text-align:left;
+  padding:3px 10px 3px 10px;
+  border-bottom-right-radius:5px;
+  border-top-right-radius:5px;
+  border:1px solid #eee;
+}
+.host:before{
+  float:left;
+  margin-top:-1px;
+  margin-left:20px;
+  margin-right:-1px;
+  margin-bottom:15px;
+  background:#fff;
+  font-family:'FontAwesome';
+  content:"\f1d8";
+  color:{color:accent};
+  font-size:9px;
+  padding:0px 5px 1px 5px;
+  border-bottom-left-radius:5px;
+  border-top-left-radius:5px;
+  border:1px solid #eee;
+}
+.link-dsc{
+  margin-top:5px;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:15px;
+  padding-top:10px;
+  border-top:1px solid #eee;
+}
+
+
+/* ---------------- DETALHES NPF — IMPORTANTE! ---------------- */
+.caption,
+.caption p{
+  margin-top:0px !important;
+  line-height:1.3 !important;
+}
+
+p > a.tumblr_blog{ display:none !important; }
+p > a.tumblr_blog::after{ content:none !important; }
+p:has(> a.tumblr_blog){ display:none !important; }
+a.tumblr_blog{ display:none !important; }
+
+
+.caption p:has(> a[href^="https://64.media.tumblr.com/"]),
+.caption p:has(> a[href^="https://va.media.tumblr.com/"]),
+.caption p:has(> a[href*="media.tumblr.com/"]) {
+  display:none !important;
+}
+
+.caption a[href^="https://64.media.tumblr.com/"],
+.caption a[href^="https://va.media.tumblr.com/"],
+.caption a[href*="media.tumblr.com/"]{
+  font-size:0 !important;
+  line-height:0 !important;
+  opacity:0 !important;
+  display:block !important;
+  height:0 !important;
+  overflow:hidden !important;
+  pointer-events:none !important;
+}
+
+.posts.has-npf-media .reblog-header,
+.posts.has-npf-media .reblog-list-header,
+.posts.has-npf-media .tmblr-attribution,
+.posts.has-npf-media .npf_username,
+.posts.has-npf-media .npf_blog,
+.posts.has-npf-media header,
+.posts.has-npf-media .reblogger,
+.posts.has-npf-media .reblog-from,
+.posts.has-npf-media .reblog_from{
+  display:none !important;
+}
+
+.posts a:not(.pf-btn)::before,
+.posts a:not(.pf-btn)::after,
+.caption a:not(.pf-btn)::before,
+.caption a:not(.pf-btn)::after{
+  content:"" !important;
+}
+
+/* ---------------- TOOLTIP + VOLTAR AO TOPO ---------------- */
+#s-m-t-tooltip {
+  position: absolute;
+  max-width: 220px;
+  padding: 4px 8px;
+  margin-top: 15px; 
+  border-radius: 2px;
+  background: rgba(10, 10, 10, 0.96);
+  font-family: "Rajdhani", sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  line-height: 1.2;
+  z-index: 9999999999;
+  pointer-events: none;
+  
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+#s-m-t-tooltip[style*="display: block"],
+#s-m-t-tooltip:not([style*="display: none"]) {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 8px 18px rgba(0, 0, 0, 0.45);
+}
+
+#ltop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    opacity .3s ease,
+    transform .3s cubic-bezier(0.25,1,0.5,1),
+    background .3s ease,
+    color .3s ease;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+}
+
+#ltop.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#ltop:hover {
+  background: #000000;
+  transform: translateY(-4px);
+}
+
+#ltop svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+    --sb-width: 190px;
+    --sb-gap: 35px;
+    --sb-avatar: 70px;
+    --sb-ink: {color:text};
+    --sb-muted: #999;
+}
+
+.princess-sidebar {
+    position: fixed;
+    z-index: 9990;
+
+    right: calc(50% + 200px);
+    top: 30%;
+    transform: translateY(-50%);
+
+    width: var(--sb-width);
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+
+    box-sizing: border-box;
+    overflow: visible;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    color: var(--sb-ink);
+    font-family: 'Rajdhani', sans-serif;
+    text-align: right;
+}
+
+.princess-avatar-wrap {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0 0 17px;
+}
+
+.princess-avatar {
+    position: relative;
+    isolation: isolate;
+
+    display: block;
+    width: var(--sb-avatar);
+    height: var(--sb-avatar);
+    flex: 0 0 var(--sb-avatar);
+
+    border-radius: 50%;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.princess-avatar img {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border: none;
+    border-radius: 50%;
+
+    transition: filter .35s ease;
+}
+
+.princess-avatar-ring {
+    position: absolute;
+    inset: -5px;
+    z-index: 1;
+
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    background:
+        linear-gradient(transparent, transparent) padding-box,
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            rgba(0,0,0,.08) 35deg,
+            rgba(0,0,0,.78) 105deg,
+            rgba(150,150,150,.3) 155deg,
+            transparent 215deg,
+            rgba(0,0,0,.6) 290deg,
+            transparent 360deg
+        ) border-box;
+
+    animation: sb-orbit 9s linear infinite;
+    opacity: .8;
+    pointer-events: none;
+}
+
+.princess-avatar-ring::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+
+    border: 1px dashed rgba(0,0,0,.15);
+    border-radius: 50%;
+}
+
+.princess-avatar:hover img {
+    filter: grayscale(100%) contrast(1.08);
+}
+
+.princess-avatar:hover .princess-avatar-ring {
+    opacity: 1;
+}
+
+@keyframes sb-orbit {
+    to { transform: rotate(360deg); }
+}
+
+.desc-nexus-header {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    text-align: right;
+}
+
+.desc-nexus-title {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+
+    margin: 0 0 10px;
+    padding: 0;
+
+    color: var(--sb-ink);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+
+    isolation: isolate;
+    animation: sb-flicker 5s infinite steps(1, end);
+}
+
+.desc-nexus-title::before,
+.desc-nexus-title::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    color: var(--sb-ink);
+    background: transparent;
+    pointer-events: none;
+}
+
+.desc-nexus-title::before {
+    animation: sb-glitch-one 4s infinite;
+}
+
+.desc-nexus-title::after {
+    animation: sb-glitch-two 3.7s infinite;
+}
+
+@keyframes sb-glitch-one {
+    0%, 91%, 94%, 100% {
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+    }
+    92% {
+        clip-path: inset(12% 0 70% 0);
+        transform: translateX(-2px);
+    }
+    93% {
+        clip-path: inset(55% 0 20% 0);
+        transform: translateX(2px);
+    }
+}
+
+@keyframes sb-glitch-two {
+    0%, 84%, 88%, 100% {
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+    }
+    85% {
+        clip-path: inset(65% 0 10% 0);
+        transform: translateX(2px);
+    }
+    86% {
+        clip-path: inset(25% 0 45% 0);
+        transform: translateX(-1px);
+    }
+}
+
+@keyframes sb-flicker {
+    0%, 96%, 98%, 100% { opacity: 1; }
+    97% { opacity: .8; }
+}
+
+.desc-nexus-bubble {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    color: var(--sb-ink);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .55px;
+    line-height: 1.8;
+    text-align: right;
+
+    overflow: visible;
+}
+
+.desc-nexus-bubble::before {
+    display: none !important;
+}
+
+.desc-nexus-body {
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.desc-nexus-body p {
+    margin: 0 0 7px;
+    padding: 0;
+
+    color: var(--sb-ink);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .55px;
+    line-height: 1.8;
+    text-align: right;
+    text-transform: lowercase;
+}
+
+.desc-nexus-body p:last-child {
+    margin-bottom: 0;
+}
+
+.princess-menu {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 8px -1px 0;
+    padding: 0;
+    text-align: right;
+}
+
+.princess-menu-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+
+    width: auto;
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+
+    color: var(--sb-ink);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: opacity .25s ease;
+}
+
+.princess-menu-toggle::before {
+    content: "+";
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.9;
+    transition: transform .3s ease;
+}
+
+.princess-menu-toggle:hover {
+    opacity: .55;
+}
+
+.princess-menu.is-open .princess-menu-toggle::before {
+    transform: rotate(45deg);
+}
+
+.princess-menu-panel {
+    position: absolute;
+    z-index: 99999;
+
+    top: calc(100% + 9px);
+    right: 0;
+    left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+
+    width: max-content;
+    min-width: 100%;
+    max-width: 220px;
+    max-height: 0;
+
+    margin: 0 !important;
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-7px);
+
+    transition:
+        max-height .45s cubic-bezier(.22, 1, .36, 1),
+        opacity .25s ease,
+        transform .4s cubic-bezier(.22, 1, .36, 1),
+        clip-path .4s ease,
+        visibility .4s ease;
+}
+
+.princess-menu:hover .princess-menu-panel,
+.princess-menu:focus-within .princess-menu-panel,
+.princess-menu.is-open .princess-menu-panel {
+    max-height: 260px;
+
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+}
+
+.princess-menu-panel a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+
+    min-height: 27px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: var(--sb-ink) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 1.5;
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition:
+        opacity .2s ease,
+        letter-spacing .25s ease,
+        transform .25s ease;
+}
+
+.princess-menu-panel a span {
+    order: 1;
+}
+
+.princess-menu-panel a i {
+    order: 2;
+    color: var(--sb-muted);
+    font-size: 12px;
+}
+
+.princess-menu-panel a:hover {
+    opacity: .55;
+    letter-spacing: 1.7px;
+    transform: translateX(-2px);
+}
+
+.princess-menu {
+    position: relative;
+}
+
+.princess-menu::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: 100%;
+    height: 14px;
+
+    background: transparent;
+}
+
+.princess-menu-panel {
+    top: 100%;
+    right: 0;
+    padding-top: 5px;
+    margin-top: 0 !important;
+
+    box-sizing: content-box;
+}
+
+.princess-menu:hover .princess-menu-panel,
+.princess-menu:focus-within .princess-menu-panel,
+.princess-menu.is-open .princess-menu-panel {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+    max-height: 260px;
+}
+
+.princess-menu-panel a {
+    position: relative;
+    z-index: 1;
+}
+
+#fade-ask {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+
+    background: rgba(15, 15, 15, .42);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+#popup-ask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100001;
+
+    width: 540px;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 40px);
+    overflow: hidden;
+    box-sizing: border-box;
+
+    color: #242424;
+    background: rgba(255, 255, 255, .97);
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .16),
+        inset 0 0 0 1px rgba(255, 255, 255, .7);
+
+    font-family: "Rajdhani", sans-serif;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, -47%) scale(.98);
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+#fade-ask.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#popup-ask.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#popup-ask .popup-header {
+    padding: 20px 22px 16px;
+
+    background: linear-gradient(to bottom, #fff, #fafafa);
+    border-bottom: 1px solid rgba(0, 0, 0, .09);
+}
+
+#popup-ask .popup-title {
+    margin: 0 28px 8px 0;
+
+    color: #242424;
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+#popup-ask .popup-info {
+    color: #777;
+    font-size: 11px;
+    letter-spacing: .5px;
+    line-height: 1.7;
+}
+
+#popup-ask .popup-body {
+    padding: 10px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+#popup-ask #ask_form {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: 0;
+    background: transparent;
+}
+
+#popup-ask .ask-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+    padding: 0;
+
+    color: #555;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+#popup-ask .ask-close:hover {
+    color: #111;
+    background: rgba(0, 0, 0, .045);
+    border-color: rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 480px) {
+    #popup-ask {
+        width: calc(100vw - 24px);
+        max-width: none;
+        border-radius: 14px;
+    }
+
+    #popup-ask .popup-header {
+        padding: 18px 18px 14px;
+    }
+
+    #popup-ask .popup-body {
+        padding: 8px;
+    }
+
+    #popup-ask #ask_form {
+        height: min(380px, 55vh);
+    }
+}
+
+/* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
+
+.posts.has-npf-media .post-top{
+  display:none !important;
+}
+
+.posts .media-wrap{
+  position:relative;
+  overflow:hidden;
+}
+
+{block:IndexPage}
+.posts { opacity: 1; z-index: 1; }
+{/block:IndexPage}
+
+.posts.has-npf-media .reblog-header::after,
+.posts.has-npf-media .reblog-header a::after,
+.posts.has-npf-media a.tumblr_blog::after{
+  content:none !important;
+  display:none !important;
+}
+
+.post-footer{
+  line-height:1 !important;
+}
+
+.post-footer svg,
+.post-footer a svg,
+.post-footer .pf-btn svg{
+  width:12px !important;
+  height:12px !important;
+  min-width:12px !important;
+  min-height:12px !important;
+  max-width:12px !important;
+  max-height:12px !important;
+  display:block !important;
+  flex:0 0 12px !important;
+}
+
+.posts > svg,
+.posts .post-footer + svg{
+  width:12px !important;
+  height:12px !important;
+  max-width:12px !important;
+  max-height:12px !important;
+}
+
+.posts img{ display:block; width:100%; height:auto; }
+/* DIVERSOS / IMPORTANTE! NÃO APAGAR! */
+
+
+{block:IndexPage}
+#posts{
+  position:relative;
+}
+
+.posts{
+  box-sizing:border-box;
+}
+
+.posts:not(.is-ready){
+  opacity:0;
+  pointer-events:none;
+}
+{/block:IndexPage}
+
+.post-footer .pf-rb:hover::after{
+  content:"repost"!important;
+}
+
+.post-footer .pf-link:hover::after{
+  content:"info"!important;
+}
+
+.post-footer .pf-via:hover::after{
+  content:"via"!important;
+}
+
+.pf-via[href=""],
+.pf-via:not([href]){
+  display:none!important;
+}
+
+.top-full-width-bar {
+    width: 100%;
+    height: 15px; 
+    background-color: #ffffff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.control-btn:hover {
+  opacity: 0.7; 
+}
+
+#sbMusicPlayer.sb-music {
+    position: fixed !important;
+    top: 55px;
+    right: 33px;
+    left: auto;
+    z-index: 99999;
+
+    display: block;
+    width: 160px;
+    min-width: 0;
+    margin: 0;
+    padding: 5px 9px;
+
+    box-sizing: border-box;
+    border: 1px solid {color:borders};
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75),
+        0 4px 18px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+}
+
+#sbMusicPlayer .sb-music-top {
+    display: none !important;
+}
+
+#sbMusicPlayer .sb-music-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+#sbMusicPlayer .player-visualizer-bars {
+    display: flex;
+    flex: 0 0 11px;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+
+    width: 11px;
+    height: 10px;
+    margin: 0;
+}
+
+#sbMusicPlayer .player-visualizer-bars span {
+    display: block;
+    width: 2px;
+    height: 100%;
+
+    background: #777;
+    transform-origin: bottom center;
+    animation: audioWaveMotion .75s ease-in-out infinite alternate;
+}
+
+#sbMusicPlayer .player-visualizer-bars span:nth-child(even) {
+    animation-duration: .4s;
+    background: #aaa;
+}
+
+#sbMusicPlayer .player-visualizer-bars span:nth-child(3n) {
+    animation-delay: .15s;
+    animation-duration: .6s;
+}
+
+@keyframes audioWaveMotion {
+    0% { transform: scaleY(.2); }
+    100% { transform: scaleY(1); }
+}
+
+#sbMusicPlayer .player-metadata {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: baseline;
+    gap: 3px;
+
+    width: auto;
+    min-width: 0;
+    margin: 0;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 7px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+#sbMusicPlayer .track-name {
+    flex: 0 1 auto;
+    max-width: 60%;
+    min-width: 0;
+    overflow: hidden;
+
+    color: #303030;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#sbMusicPlayer .track-sep {
+    flex: 0 0 auto;
+    color: #aaa;
+}
+
+#sbMusicPlayer .track-artist {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+
+    color: #777;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#sbMusicPlayer .player-controls-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1px;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#sbMusicPlayer .play-pause-btn-rect,
+#sbMusicPlayer .skip-btn {
+    display: inline-flex;
+    flex: 0 0 17px;
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 20px;
+    min-width: 0;
+    padding: 0;
+
+    color: #777;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: color .2s ease, background .2s ease;
+}
+
+#sbMusicPlayer .play-pause-btn-rect {
+    font-size: 10px;
+    line-height: 1;
+}
+
+#sbMusicPlayer .skip-btn i {
+    font-size: 10px;
+    line-height: 1;
+}
+
+#sbMusicPlayer .play-pause-btn-rect:hover,
+#sbMusicPlayer .skip-btn:hover {
+    color: #111;
+    background: rgba(0, 0, 0, .06);
+}
+
+#sbMusicPlayer .play-pause-btn-rect:focus-visible,
+#sbMusicPlayer .skip-btn:focus-visible {
+    outline: 1px solid rgba(0, 0, 0, .35);
+    outline-offset: 1px;
+}
+
+#sbMusicPlayer .sb-hidden-playlist,
+#sbMusicPlayer #acMiniAudio {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    #sbMusicPlayer.sb-music {
+        top: 12px;
+        right: 12px;
+        width: 175px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #sbMusicPlayer .player-visualizer-bars span {
+        animation: none;
+    }
+}
+
+#acStatusPill.ac-status-pill {
+    position: fixed !important;
+
+    top: 91px;
+    right: 33px;
+    left: auto;
+
+    z-index: 99998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 110px;
+    min-width: 0;
+    height: 25px;
+    margin: 0;
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    border: 1px solid {color:borders};
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75),
+        0 4px 18px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 7px;
+    line-height: 1;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
+
+    color: #555;
+
+    isolation: isolate;
+}
+
+#acStatusPill .ac-status-view {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    white-space: nowrap;
+
+    transition:
+        opacity .65s ease,
+        transform .65s ease;
+
+    will-change: opacity, transform;
+}
+
+#acStatusPill .ac-status-online {
+    opacity: 1;
+    transform: translateY(0);
+
+    visibility: visible;
+}
+
+#acStatusPill .ac-status-clock {
+    opacity: 0;
+    transform: translateY(5px);
+
+    visibility: hidden;
+}
+
+#acStatusPill.ac-show-clock .ac-status-online {
+    opacity: 0;
+    transform: translateY(-5px);
+
+    visibility: hidden;
+}
+
+#acStatusPill.ac-show-clock .ac-status-clock {
+    opacity: 1;
+    transform: translateY(0);
+
+    visibility: visible;
+}
+
+#acStatusPill .ac-status-dot {
+    display: block;
+    flex: 0 0 5px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #888;
+
+    animation: acStatusPulse 2s ease-in-out infinite;
+}
+
+@keyframes acStatusPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: .55;
+        box-shadow: 0 0 0 0 rgba(120, 120, 120, 0);
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+        box-shadow: 0 0 7px 2px rgba(120, 120, 120, .18);
+    }
+}
+
+#acStatusPill #acOnlineCount {
+    font-size: 7px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #444;
+
+    font-variant-numeric: tabular-nums;
+}
+
+#acStatusPill .ac-status-label {
+    color: #777;
+    opacity: .7;
+}
+
+#acStatusPill .ac-clock-label {
+    color: #888;
+    opacity: .7;
+
+    font-size: 6px;
+    letter-spacing: 1.5px;
+}
+
+#acStatusPill #acLocalClock {
+    min-width: 0;
+
+    color: #444;
+
+    font-size: 7px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+    #acStatusPill.ac-status-pill {
+        top: 48px;
+        right: 12px;
+        width: 175px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #acStatusPill .ac-status-view {
+        transition: none;
+    }
+
+    #acStatusPill .ac-status-dot {
+        animation: none;
+    }
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::before {
+  left: calc(50% - 160px);
+}
+
+body::after {
+  left: calc(50% + 250px);
+}
+
+</style>
+
+<!-- // PHOTOSETS + DESIGN DE GRID // -->
+<link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+
+<div class="entry">
+
+<aside class="princess-sidebar" id="princessSidebar">
+
+    <div class="princess-avatar-wrap">
+        <a href="/" class="princess-avatar" title="{Name}">
+            <span class="princess-avatar-ring"></span>
+            <img src="{image:Icon}" alt="{Name}">
+        </a>
+    </div>
+
+    <div class="desc-nexus-header">
+        <span
+            class="desc-nexus-title"
+            data-text="{Title}"
+        >{Title}</span>
+    </div>
+
+    <div
+        class="desc-nexus-bubble"
+        id="descNexusBubble"
+        role="complementary"
+        aria-label="Blog description"
+    >
+        <div class="desc-nexus-body">
+            {Description}
+        </div>
+    </div>
+
+    <div class="princess-menu" id="princessMenu">
+
+        <button
+            class="princess-menu-toggle"
+            id="princessMenuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="princessMenuPanel"
+        >navigation</button>
+
+        <nav
+            class="princess-menu-panel"
+            id="princessMenuPanel"
+            aria-label="Main navigation"
+        >
+
+            <a href="/" title="Homepage">
+                <span>homepage</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a
+                href="#?w=auto"
+                rel="box1"
+                class="poplight"
+                title="Questions"
+            >
+                <span>message</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a href="{text:Link 1}" title="{text:Link 1 Title}">
+                <span>{text:Link 1 Title}</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a href="{text:Link 2}" title="{text:Link 2 Title}">
+                <span>{text:Link 2 Title}</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a href="{text:Link 3}" title="{text:Link 3 Title}">
+                <span>{text:Link 3 Title}</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a href="{text:Link 4}" title="{text:Link 4 Title}">
+                <span>{text:Link 4 Title}</span>
+                <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+        </nav>
+    </div>
+
+</aside>
+
+<script>
+(function () {
+    var menu = document.getElementById('princessMenu');
+    var toggle = document.getElementById('princessMenuToggle');
+
+    if (!menu || !toggle || menu.dataset.ready === 'true') return;
+
+    menu.dataset.ready = 'true';
+
+    toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    menu.addEventListener('mouseenter', function () {
+        toggle.setAttribute('aria-expanded', 'true');
+    });
+
+    menu.addEventListener('mouseleave', function () {
+        if (!menu.classList.contains('is-open')) {
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    menu.addEventListener('focusout', function (event) {
+        if (!menu.contains(event.relatedTarget)) {
+            if (!menu.classList.contains('is-open')) {
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+})();
+</script>
+
+<!-- ASK POPUP OVERLAY -->
+<div id="fade-ask" aria-hidden="true"></div>
+
+<!-- ASK POPUP -->
+<div
+    id="popup-ask"
+    class="popup-ask"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ask-popup-title"
+    aria-hidden="true"
+>
+    <button
+        type="button"
+        class="ask-close"
+        aria-label="Close ask popup"
+    >&times;</button>
+
+    <div class="popup-header">
+        <div class="popup-title" id="ask-popup-title">
+           establish a connection.
+        </div>
+
+        <div class="popup-info">
+            {text:Ask Information}
+        </div>
+    </div>
+
+    <div class="popup-body">
+        <iframe
+            src="https://www.tumblr.com/ask_form/{name}.tumblr.com"
+            id="ask_form"
+            name="ask_form"
+            title="Send an ask to raivys"
+            frameborder="0"
+            scrolling="yes"
+            width="100%"
+            height="380"
+        ></iframe>
+    </div>
+</div>
+
+<!-- MINIMAL ONE-ROW MUSIC PLAYER --> {block:ifshowmusicplayer} <section class="sb-panel sb-music" id="sbMusicPlayer" > <!-- Retained for compatibility; hidden by CSS --> <div class="sb-music-top"> <div class="sb-music-label">Now playing</div> <div class="player-visualizer-bars" aria-hidden="true" > <span></span> <span></span> <span></span> <span></span> <span></span> </div> </div> <div class="sb-music-bottom"> <div class="player-visualizer-bars" aria-hidden="true" > <span></span> <span></span> <span></span> <span></span> <span></span> </div> <div class="player-metadata"> <div class="track-name" id="acMiniTitle"> Select a track </div> <span class="track-sep">/</span> <div class="track-artist" id="acMiniArtist"> Music player </div> </div> <div class="player-controls-group"> <button class="play-pause-btn-rect" id="acMiniToggle" type="button" aria-label="Play or pause music" title="Play / Pause" > <i class="ph ph-play" aria-hidden="true"></i> </button> <button class="skip-btn" id="sbNext" type="button" aria-label="Next track" title="Next track" > <i class="ph ph-skip-forward" aria-hidden="true" ></i> </button> </div> </div> <!-- AUDIO ELEMENT --> <audio id="acMiniAudio" preload="none"></audio> <!-- HIDDEN PLAYLIST --> <div class="sb-hidden-playlist" id="sbPlaylist" hidden > {block:ifTrack1Audio} <div class="sb-track" data-src="{text:Track 1 Audio}" data-title="{text:Track 1 Title}" data-artist="{text:Track 1 Artist}" ></div> {/block:ifTrack1Audio} {block:ifTrack2Audio} <div class="sb-track" data-src="{text:Track 2 Audio}" data-title="{text:Track 2 Title}" data-artist="{text:Track 2 Artist}" ></div> {/block:ifTrack2Audio} {block:ifTrack3Audio} <div class="sb-track" data-src="{text:Track 3 Audio}" data-title="{text:Track 3 Title}" data-artist="{text:Track 3 Artist}" ></div> {/block:ifTrack3Audio} {block:ifTrack4Audio} <div class="sb-track" data-src="{text:Track 4 Audio}" data-title="{text:Track 4 Title}" data-artist="{text:Track 4 Artist}" ></div> {/block:ifTrack4Audio} {block:ifTrack5Audio} <div class="sb-track" data-src="{text:Track 5 Audio}" data-title="{text:Track 5 Title}" data-artist="{text:Track 5 Artist}" ></div> {/block:ifTrack5Audio} </div> </section> {/block:ifshowmusicplayer}
+
+{block:ifshowusertime}
+<div id="acStatusPill" class="ac-status-pill" aria-label="Simulated online visitors and local time">
+
+    <div class="ac-status-view ac-status-online">
+        <span class="ac-status-dot" aria-hidden="true"></span>
+        <span id="acOnlineCount">12</span>
+        <span class="ac-status-label">online</span>
+    </div>
+
+    <div class="ac-status-view ac-status-clock" aria-hidden="true">
+        <span class="ac-clock-label">local</span>
+        <span id="acLocalClock">12:00 AM</span>
+    </div>
+
+</div>
+{/block:ifshowusertime}
+
+<!-- // ÍCONE SVG DOS CONTROLES // -->
+<div class="cc">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+    <line x1="12" y1="3.5" x2="12" y2="11.2"></line>
+    <path d="M7.6 6.8a7 7 0 1 0 8.8 0"></path>
+  </svg>
+</div>
+
+<a href="#" id="ltop" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    <path d="M6 15l6-6 6 6"></path>
+  </svg>
+</a>
+
+<script>
+(function () {
+    "use strict";
+
+    function initAlienStatusPill() {
+        const pill = document.getElementById("acStatusPill");
+        const countElement = document.getElementById("acOnlineCount");
+        const clockElement = document.getElementById("acLocalClock");
+
+        if (!pill || !countElement || !clockElement) return;
+
+        /* Prevent duplicate initialization */
+        if (pill.dataset.acInitialized === "true") return;
+        pill.dataset.acInitialized = "true";
+
+        /* SETTINGS */
+        const MIN_ONLINE = 8;
+        const MAX_ONLINE = 24;
+        const COUNT_CHANGE_MIN = 7000;
+        const COUNT_CHANGE_MAX = 16000;
+        const VIEW_DURATION = 4500;
+
+        let onlineCount = Math.floor(
+            Math.random() * (MAX_ONLINE - MIN_ONLINE + 1)
+        ) + MIN_ONLINE;
+
+        let showingClock = false;
+        let transitionTimer = null;
+        let countTimer = null;
+
+        /* Update the simulated online count */
+        function updateOnlineCount() {
+            const change = Math.floor(Math.random() * 5) - 2;
+
+            onlineCount = Math.max(
+                MIN_ONLINE,
+                Math.min(MAX_ONLINE, onlineCount + change)
+            );
+
+            countElement.textContent = onlineCount;
+
+            scheduleCountChange();
+        }
+
+        /* Random interval between count changes */
+        function scheduleCountChange() {
+            clearTimeout(countTimer);
+
+            const delay = COUNT_CHANGE_MIN +
+                Math.random() *
+                (COUNT_CHANGE_MAX - COUNT_CHANGE_MIN);
+
+            countTimer = setTimeout(updateOnlineCount, delay);
+        }
+
+        /* Update the visitor's local time */
+        function updateLocalClock() {
+            const now = new Date();
+
+            clockElement.textContent = now.toLocaleTimeString([], {
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true
+            });
+        }
+
+        /* Alternate between online status and clock */
+        function cycleViews() {
+            showingClock = !showingClock;
+
+            pill.classList.toggle("ac-show-clock", showingClock);
+
+            const onlineView = pill.querySelector(".ac-status-online");
+            const clockView = pill.querySelector(".ac-status-clock");
+
+            if (onlineView && clockView) {
+                onlineView.setAttribute(
+                    "aria-hidden",
+                    String(showingClock)
+                );
+
+                clockView.setAttribute(
+                    "aria-hidden",
+                    String(!showingClock)
+                );
+            }
+
+            transitionTimer = setTimeout(cycleViews, VIEW_DURATION);
+        }
+
+        /* Initialize */
+        updateLocalClock();
+
+        countElement.textContent = onlineCount;
+
+        scheduleCountChange();
+
+        /* Keep the clock accurate */
+        setInterval(updateLocalClock, 1000);
+
+        /* Begin with online status, then transition */
+        transitionTimer = setTimeout(cycleViews, VIEW_DURATION);
+
+        /* Clean up if the theme removes the pill */
+        window.addEventListener("pagehide", function () {
+            clearTimeout(transitionTimer);
+            clearTimeout(countTimer);
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            initAlienStatusPill,
+            { once: true }
+        );
+    } else {
+        initAlienStatusPill();
+    }
+})();
+</script>
+
+<script>
+(function () {
+    function initAskPopup() {
+        const popup = document.getElementById("popup-ask");
+        const overlay = document.getElementById("fade-ask");
+
+        if (!popup || !overlay) {
+            console.error("Ask popup: popup or overlay HTML not found.");
+            return;
+        }
+
+        if (popup.dataset.askReady === "true") return;
+        popup.dataset.askReady = "true";
+
+        const closeButton = popup.querySelector(".ask-close");
+
+        function openAsk(event) {
+            event.preventDefault();
+
+            popup.classList.add("is-visible");
+            overlay.classList.add("is-visible");
+
+            popup.setAttribute("aria-hidden", "false");
+            overlay.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeAsk() {
+            popup.classList.remove("is-visible");
+            overlay.classList.remove("is-visible");
+
+            popup.setAttribute("aria-hidden", "true");
+            overlay.setAttribute("aria-hidden", "true");
+
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("click", function (event) {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+
+            const askLink = target.closest(
+                ".snake-menu-panel a.poplight, " +
+                ".snake-menu-panel a[href*='ask'], " +
+                "a.poplight, " +
+                "[data-open-ask]"
+            );
+
+            if (askLink) {
+                openAsk(event);
+            }
+        });
+
+        if (closeButton) {
+            closeButton.addEventListener("click", closeAsk);
+        }
+
+        overlay.addEventListener("click", closeAsk);
+
+        document.addEventListener("keydown", function (event) {
+            if (
+                event.key === "Escape" &&
+                popup.classList.contains("is-visible")
+            ) {
+                closeAsk();
+            }
+        });
+
+        console.log("Ask popup script loaded.");
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initAskPopup);
+    } else {
+        initAskPopup();
+    }
+})();
+</script>
+
+<script>
+(function () {
+    function initPrincessSidebar() {
+        const sidebar = document.getElementById("princessSidebar");
+
+        if (!sidebar || sidebar.dataset.initialized === "true") {
+            return;
+        }
+
+        sidebar.dataset.initialized = "true";
+
+        const menu = sidebar.querySelector(".princess-menu");
+        const menuButton = document.getElementById("princessMenuToggle");
+
+        if (!menu || !menuButton) return;
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = menu.classList.toggle("is-open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Fechar menu" : "Abrir menu"
+            );
+
+            const icon = menuButton.querySelector("i");
+
+            if (icon) {
+                icon.className = isOpen ? "ph ph-x" : "ph ph-list";
+            }
+        });
+
+        /* Close the menu when clicking outside the sidebar */
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target)) {
+                menu.classList.remove("is-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Abrir menu");
+
+                const icon = menuButton.querySelector("i");
+
+                if (icon) {
+                    icon.className = "ph ph-list";
+                }
+            }
+        });
+
+        /* Close the menu after selecting a navigation link */
+        menu.querySelectorAll(".princess-menu-panel a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                menu.classList.remove("is-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Abrir menu");
+
+                const icon = menuButton.querySelector("i");
+
+                if (icon) {
+                    icon.className = "ph ph-list";
+                }
+            });
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initPrincessSidebar);
+    } else {
+        initPrincessSidebar();
+    }
+})();
+</script>
+
+<script>
+(function () {
+    function startMusicPlayer() {
+        const audio = document.getElementById("acMiniAudio");
+        const playButton = document.getElementById("acMiniToggle");
+        const nextButton = document.getElementById("sbNext");
+        const titleElement = document.getElementById("acMiniTitle");
+        const artistElement = document.getElementById("acMiniArtist");
+        const playlist = document.getElementById("sbPlaylist");
+
+        if (!audio || !playButton || !nextButton ||
+            !titleElement || !artistElement || !playlist) {
+            console.error("Music player: One or more required HTML elements are missing.");
+            return;
+        }
+
+        const tracks = Array.from(playlist.querySelectorAll(".sb-track"))
+            .map(function (item) {
+                return {
+                    src: (item.getAttribute("data-src") || "").trim(),
+                    title: (item.getAttribute("data-title") || "").trim(),
+                    artist: (item.getAttribute("data-artist") || "").trim()
+                };
+            })
+            .filter(function (track) {
+                return track.src.length > 0;
+            });
+
+        let currentIndex = 0;
+
+        function setButton(playing) {
+            playButton.innerHTML = playing
+                ? '<i class="ph ph-pause" aria-hidden="true"></i>'
+                : '<i class="ph ph-play" aria-hidden="true"></i>';
+
+            playButton.setAttribute(
+                "aria-label",
+                playing ? "Pause music" : "Play music"
+            );
+        }
+
+        function loadTrack(index, autoplay) {
+            if (tracks.length === 0) {
+                titleElement.textContent = "No tracks found";
+                artistElement.textContent = "Check your playlist settings";
+                setButton(false);
+                console.error(
+                    "Music player: No tracks with audio URLs found. Check #sbPlaylist and the Track Audio settings."
+                );
+                return;
+            }
+
+            currentIndex = (index + tracks.length) % tracks.length;
+            const track = tracks[currentIndex];
+
+            titleElement.textContent = track.title || "Untitled";
+            artistElement.textContent = track.artist || "Unknown artist";
+
+            audio.pause();
+            audio.src = track.src;
+            audio.load();
+            setButton(false);
+
+            if (autoplay) {
+                audio.play().catch(function (error) {
+                    console.error("Music playback failed:", error);
+                });
+            }
+        }
+
+        playButton.addEventListener("click", function () {
+            if (!tracks.length) {
+                loadTrack(0, false);
+                return;
+            }
+
+            if (audio.paused) {
+                if (!audio.getAttribute("src")) {
+                    loadTrack(currentIndex, true);
+                } else {
+                    audio.play().catch(function (error) {
+                        console.error("Music playback failed:", error);
+                    });
+                }
+            } else {
+                audio.pause();
+            }
+        });
+
+        nextButton.addEventListener("click", function () {
+            loadTrack(currentIndex + 1, true);
+        });
+
+        audio.addEventListener("play", function () {
+            setButton(true);
+        });
+
+        audio.addEventListener("pause", function () {
+            setButton(false);
+        });
+
+        audio.addEventListener("ended", function () {
+            loadTrack(currentIndex + 1, true);
+        });
+
+        audio.addEventListener("error", function () {
+            console.error("Music player: The audio file could not be loaded:", audio.src);
+        });
+
+        if (tracks.length) {
+            loadTrack(0, false);
+            console.log("Music player loaded", tracks.length, "track(s).");
+        } else {
+            titleElement.textContent = "No tracks found";
+            artistElement.textContent = "Check your playlist settings";
+            console.error(
+                "Music player: No usable audio URLs were found in #sbPlaylist."
+            );
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", startMusicPlayer);
+    } else {
+        startMusicPlayer();
+    }
+})();
+</script>
+
+<!-- // HTML DO CONTAINER DE DESIGN DOS POSTS // -->
+  <div id="posts">
+{block:Posts}
+<div class="posts"
+data-permalink="{Permalink}"
+data-reblogurl="{ReblogURL}"
+data-via="{ReblogParentURL}"
+data-root="{ReblogRootURL}"
+data-time="{DayOfWeek} {12Hour}:{Minutes} {AmPm}"
+data-notes="{NoteCountWithLabel}">
+
+      {block:Text}  
+  {block:IndexPage}
+ <div class="post-top">
+  {block:RebloggedFrom}
+    <a href="{ReblogRootURL}">{ReblogRootName}:</a>
+  {/block:RebloggedFrom}
+
+  {block:NotReblog}
+    <a href="{BlogURL}">{Name}:</a>
+  {/block:NotReblog}
+</div>
+  {/block:IndexPage}
+
+  {block:Title}
+<h1 class="post-title">{Title}</h1>
+{/block:Title}
+
+<div class="caption">{Body}</div>
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+      {/block:Text}
+
+      {block:Quote}
+   <div class="post-top">
+  {block:RebloggedFrom}
+    <a href="{ReblogRootURL}">{ReblogRootName}</a>
+  {/block:RebloggedFrom}
+
+  {block:NotReblog}
+    <a href="{BlogURL}">{Name}</a>
+  {/block:NotReblog}
+</div>
+      
+      <div class="quote">{Quote}</div>
+      {block:Source}<div class="sourceqt">{Source}</div>{/block:Source}
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+      {/block:Quote}
+
+      {block:Chat}
+     <div class="post-top">
+  {block:RebloggedFrom}
+    <a href="{ReblogRootURL}">{ReblogRootName}</a>
+  {/block:RebloggedFrom}
+
+  {block:NotReblog}
+    <a href="{BlogURL}">{Name}</a>
+  {/block:NotReblog}
+</div>
+      
+      <div class="chatitle">{Title}</div>
+      <div class="chat">
+        <ul>
+          {block:Lines}
+          <li class="{Alt} {UserNumber}">
+            {block:Label}<span class="chats">{Label}</span>{/block:Label}
+            <span class="ph-line">{Line}</span>
+          </li>
+          {/block:Lines}
+        </ul>
+      </div>
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+      {/block:Chat}
+
+      {block:Link}
+      <div class="post-top">
+  {block:RebloggedFrom}
+    <a href="{ReblogRootURL}">{ReblogRootName}</a>
+  {/block:RebloggedFrom}
+
+  {block:NotReblog}
+    <a href="{BlogURL}">{Name}</a>
+  {/block:NotReblog}
+</div>
+      
+      <div class="links"><a href="{URL}" style="font-weight:bold" {Target} target="_blank">{Name}</a></div>
+      {block:Host}<div class="host"><a href="{URL}" {Target} target="_blank">{Host}</a></div>{/block:Host}
+      {block:Description}<div class="link-dsc">{Description}</div>{/block:Description}
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+{/block:Link}
+
+{block:Answer}
+      <div class="ask-wrap">
+        <div class="asker">sent by <b><a href="{AskerURL}">{Asker}</a></b></div>
+        <div class="bubble ask">{Question}</div>
+        <div class="answer"><div class="bubble">{Answer}</div></div>
+      </div>
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+{/block:Answer}
+
+      {block:Audio}
+      <div class="album">
+        {block:AudioPlayer}<div class="player">{AudioPlayerBlack}</div>{/block:AudioPlayer}
+      </div>
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+      {/block:Audio}
+
+      {block:Photo}
+<div class="media-wrap">
+  <a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-HighRes}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+    <img src="{PhotoURL-HighRes}">
+  </a>
+</div>
+{block:ifshowcaption}
+{block:caption}
+<div class="caption">{caption}</div>
+{/block:caption}
+{/block:ifshowcaption}
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+{/block:Photo}
+
+      {block:Photoset}
+      <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+        {block:Photos}
+        <div class="photo-data">
+          <div class="pxu-photo">
+            <img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}">
+          </div>
+          <a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a>
+        </div>
+        {/block:Photos}
+      </div>
+      {block:ifshowcaption}{block:caption}<div class="caption">{caption}</div>{/block:caption}{/block:ifshowcaption}
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+{/block:Photoset}
+      
+      
+      {block:Video}
+<div class="media-wrap">
+  <div class="video">{Video-250}</div>
+</div>
+
+{block:ifshowcaption}
+{block:caption}
+<div class="caption">{caption}</div>
+{/block:caption}
+{/block:ifshowcaption}
+
+{block:IndexPage}
+<div class="post-footer">
+
+  <div class="pf-left">
+    <a class="pf-notes" href="{Permalink}#notes" title="{TimeAgo}">
+      <span class="pf-num">{NoteCount}</span>
+      <span class="pf-lab">n.</span>
+    </a>
+  </div>
+
+  <div class="pf-right">
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog source">
+      <i class="ph ph-eye" aria-hidden="true"></i>
+    </a>
+
+    <a class="pf-btn"
+       href="{ReblogURL}"
+       aria-label="Reblog">
+      <i class="ph ph-arrows-left-right" aria-hidden="true"></i>
+    </a>
+
+    <div class="pf-btn pf-like-wrapper" aria-label="Like">
+      <div class="like_button" data-post-id="{PostID}" data-blog-name="{Name}">
+        {LikeButton}
+      </div>
+      <span class="pf-like-text">
+        <i class="ph ph-thumbs-up" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <a class="pf-btn"
+       href="{Permalink}"
+       aria-label="Permalink">
+      <i class="ph ph-link-simple-horizontal" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+{/block:IndexPage}
+{/block:Video}
+
+
+      <div class="vsanna">
+        {block:RebloggedFrom}<a href="{ReblogParentURL}"></a>{/block:RebloggedFrom}
+        {block:ContentSource}<a href="{SourceURL}"></a>{/block:ContentSource}
+      </div>
+      
+<!-- // INFORMAÇÕES + NOTAS DA PÁGINA DE PERMALINK DO POST // -->
+      {block:PermalinkPage}
+      {block:PostNotes}
+      <div class="perma">
+        <div class="perma-info">
+          Posted on {DayOfMonth}{DayOfMonthSuffix} {Month} {Year}.<br>
+          {block:RebloggedFrom}
+          reblogged: <a href="{ReblogParentURL}"><b>{ReblogParentName}</b></a> | originally: <a href="{ReblogRootURL}"><b>{ReblogRootName}</b></a>
+          {/block:RebloggedFrom}
+          {block:NotReblog}
+          <span class="th th-placeholder-o" style="color:{color:accent}"></span>
+          originally: <a href="{BlogURL}"><b>{Name}</b></a>
+          {/block:NotReblog}
+          <br>
+          <span class="note-total">{NoteCountWithLabel}</span>
+        </div>
+        {PostNotes-64}
+      </div>
+      {/block:PostNotes}
+      {/block:PermalinkPage}
+    </div>
+    {/block:Posts}
+  </div>
+</div>
+
+<!-- // SCRIPTS DE ROLAGEM INFINITA — IMPORTANTE! // -->
+{block:IndexPage}
+<script src="https://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
+<script src="https://static.tumblr.com/h7yjwkn/fcjorg4n8/jquery.infinitescroll.min.js"></script>
+{/block:IndexPage}
+<script src="https://static.tumblr.com/wgg6svp/OoTofxa0c/unnest.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<!-- // PHOTOSETS + DESIGN DE GRID // -->
+<link href="https://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://static.tumblr.com/yxfeliq/hHwojmt8m/bctphotoset.min.js"></script>
+
+{block:IndexPage}
+<script>
+(function($){
+  if(!window.jQuery) return;
+
+  var $win = $(window);
+  var $container = $('#posts');
+  if(!$container.length) return;
+
+  if($container.data('acInitDone') === 1) return;
+  $container.data('acInitDone', 1);
+
+  var layoutTimer = null;
+  var scanTimer = null;
+  var mutationObserver = null;
+
+  // Clear legacy styles and inject structural positioning + the media post header hide rule
+  $('#ac-hover-script-safety, #ac-single-script-safety, #ac-clean-top-permalink-style, #ac-final-single-style, #ac-final-masonry-style, #ac-masonry-structural-style').remove();
+
+  $('<style id="ac-masonry-structural-style">' +
+    '#posts { position: relative !important; }' +
+    '#posts > .posts { position: absolute; z-index: 1; box-sizing: border-box; }' +
+    '.posts.ac-prep { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; z-index: -1 !important; }' +
+    '.posts.is-ready { visibility: visible; opacity: 1; pointer-events: auto; }' +
+    '.ac-media-post .post-top { display: none !important; }' + 
+  '</style>').appendTo('head');
+
+  function safe(fn){ try{ fn(); }catch(e){} }
+
+  function throttle(fn, wait){
+    var t = null;
+    return function(){
+      if(t) return;
+      t = setTimeout(function(){
+        t = null;
+        fn();
+      }, wait);
+    };
+  }
+
+  function scopePosts($scope){
+    $scope = ($scope && $scope.length) ? $scope : $(document);
+    return $scope.filter('.posts').add($scope.find('.posts'));
+  }
+
+  // Detects if a post contains photo/video elements to separate text from media
+  function hasMedia($post){
+    if(!$post || !$post.length) return false;
+
+    if($post.find('.photo-slideshow,.media-wrap,.npf_photoset,.npf_grid,.npf_container,.npf_group,.npf_row,.npf_col,.npf_image,.tmblr-full,figure.tmblr-full,.npf_video_container,.npf_video,video').length){
+      return true;
+    }
+
+    return $post.find('img,iframe').filter(function(){
+      var $el = $(this);
+      if($el.closest('#sidebar,#topbar,.cc,#ltop,.sb-card,.brand-icon').length) return false;
+
+      var src = (
+        $el.attr('src') ||
+        $el.attr('srcset') ||
+        $el.attr('data-src') ||
+        ''
+      ).toLowerCase();
+
+      return (
+        src.indexOf('media.tumblr.com') !== -1 ||
+        src.indexOf('64.media.tumblr.com') !== -1 ||
+        src.indexOf('va.media.tumblr.com') !== -1 ||
+        src.indexOf('tumblr.com/video') !== -1 ||
+        src.indexOf('youtube.com') !== -1 ||
+        src.indexOf('vimeo.com') !== -1
+      );
+    }).length > 0;
+  }
+
+  function initPhotosets($scope){
+    $scope = ($scope && $scope.length) ? $scope : $(document);
+    if(!$.fn.pxuPhotoset) return;
+
+    $scope.find('.photo-slideshow').each(function(){
+      if(this._acPXUInited) return;
+      this._acPXUInited = true;
+
+      $(this).pxuPhotoset({
+        lightbox:true,
+        rounded:false,
+        gutter:'1px',
+        photoset:'.photo-slideshow',
+        photoWrap:'.photo-data',
+        photo:'.pxu-photo'
+      });
+    });
+  }
+
+  function initUnnest($scope){
+    if(!$.fn.unnest) return;
+
+    var $posts = scopePosts($scope);
+    if(!$posts.length) return;
+
+    $posts.each(function(){
+      var $post = $(this);
+      if($post.data('acUnnestDone') === 1) return;
+
+      $post.data('acUnnestDone', 1);
+
+      $post.unnest({
+        yourCaption:".caption",
+        wrapName:".tumblr_parent",
+        newCaptionUsername:false,
+        originalPostCaptionUsername:false,
+        tumblrAvatars:false,
+        tumblrAvatarsName:".tumblr_avatar",
+        usernameColon:false
+      });
+    });
+  }
+
+  function cleanupNPFMediaUrls($scope){
+    $scope = ($scope && $scope.length) ? $scope : $(document);
+    $scope.find('a[href]').each(function(){
+      var $a = $(this);
+      var hrefRaw = $a.attr('href') || '';
+      var href = hrefRaw.toLowerCase();
+      var txt = $.trim($a.text() || '');
+
+      var isMedia =
+        href.indexOf('64.media.tumblr.com/') !== -1 ||
+        href.indexOf('va.media.tumblr.com/') !== -1 ||
+        href.indexOf('media.tumblr.com/') !== -1;
+
+      if(!isMedia) return;
+
+      if(txt && ($.trim(hrefRaw) === txt || $.trim(href) === txt.toLowerCase()) && $a.children().length === 0){
+        var $p = $a.closest('p');
+        if($p.length && $.trim($p.text()) === txt) $p.remove();
+        else $a.remove();
+      }
+    });
+  }
+
+  // Tags posts appropriately based on media content and moves footers structural placement
+  function classifyAndMoveFooter($scope) {
+    scopePosts($scope).each(function(){
+      var $post = $(this);
+      var isMediaPost = hasMedia($post);
+
+      $post.toggleClass('ac-media-post', isMediaPost)
+           .toggleClass('ac-text-post', !isMediaPost);
+
+      var $footer = $post.find('.post-footer').first();
+      if($footer.length) {
+        $footer.appendTo($post);
+      }
+    });
+  }
+
+  function forceEager($scope){
+    $scope = $scope && $scope.length ? $scope : $(document);
+    $scope.find('img[loading="lazy"]').each(function(){
+      try{ this.loading = 'eager'; }catch(e){}
+      $(this).attr('loading','eager');
+    });
+    $scope.find('iframe[loading="lazy"]').each(function(){
+      $(this).attr('loading','eager');
+    });
+  }
+
+  function processPosts($scope){
+    var $posts = scopePosts($scope);
+    if(!$posts.length) return;
+
+    forceEager($posts);
+
+    safe(function(){ initPhotosets($posts); });
+    safe(function(){ initUnnest($posts); });
+    safe(function(){ cleanupNPFMediaUrls($posts); });
+    safe(function(){ classifyAndMoveFooter($posts); });
+
+    watchMediaLoads($posts);
+  }
+
+  function scanForNewPosts(){
+    if(scanTimer) clearTimeout(scanTimer);
+
+    scanTimer = setTimeout(function(){
+      scanTimer = null;
+
+      var $new = $container.children('.posts').filter(function(){
+        return !$(this).data('acScanned');
+      });
+
+      if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
+
+      hidePosts($new);
+      processPosts($new);
+
+      if($.fn.imagesLoaded){
+        $new.imagesLoaded(function(){
+          showPosts($new);
+          layoutPosts();
+          runSettledLayouts();
+        });
+      } else {
+        showPosts($new);
+        layoutPosts();
+        runSettledLayouts();
+      }
+    }, 90);
+  }
+
+  function getPostWidth(){
+    var w = 0;
+    $container.children('.posts').each(function(){
+      var $p = $(this);
+      if($p.hasClass('ac-prep')) return;
+
+      var ow = Math.ceil($p.outerWidth(true) || 0);
+      if(ow > w) w = ow;
+    });
+    if(w <= 0){
+      $container.children('.posts').each(function(){
+        var ow = Math.ceil($(this).outerWidth(true) || 0);
+        if(ow > w) w = ow;
+      });
+    }
+
+    if(w <= 0) w = 400; // Updated fallback default from 340 to your 400px width
+    return w;
+  }
+
+  function getColumnCount(containerWidth, itemWidth){
+    var cols = Math.max(1, Math.floor(containerWidth / itemWidth));
+    if(cols > 3) cols = 3; // Updated ceiling from 2 to 3 columns
+    return cols;
+  }
+
+  function layoutPosts(){
+    var $items = $container.children('.posts');
+    if(!$items.length) return;
+
+    var containerWidth =
+      Math.round($container.width()) ||
+      Math.round($container.parent().width()) ||
+      Math.round($win.width());
+
+    var itemWidth = getPostWidth();
+    var cols = getColumnCount(containerWidth, itemWidth);
+
+    var usedWidth = cols * itemWidth;
+    var leftOffset = Math.max(0, Math.floor((containerWidth - usedWidth) / 2));
+    var heights = [];
+
+    for(var i=0;i<cols;i++) heights[i] = 0;
+
+    $container.css({
+      position:'relative',
+      height:''
+    });
+
+    $items.each(function(){
+      var $item = $(this);
+
+      $item.css({
+        position:'absolute',
+        display:'block'
+      });
+
+      var shortest = 0;
+      for(var c=1;c<cols;c++){
+        if(heights[c] < heights[shortest]) shortest = c;
+      }
+
+      var itemHeight =
+        Math.ceil($item.outerHeight(true)) ||
+        Math.ceil(this.getBoundingClientRect().height) ||
+        1;
+
+      var left = leftOffset + shortest * itemWidth;
+      var top = heights[shortest];
+
+      $item.css({
+        left:left + 'px',
+        top:top + 'px',
+        zIndex:1
+      });
+
+      heights[shortest] += itemHeight;
+    });
+
+    var maxHeight = 0;
+    for(var j=0;j<heights.length;j++){
+      if(heights[j] > maxHeight) maxHeight = heights[j];
+    }
+
+    $container.css('height', Math.ceil(maxHeight) + 'px');
+  }
+
+  function requestLayout(){
+    if(layoutTimer) clearTimeout(layoutTimer);
+    layoutTimer = setTimeout(function(){
+      layoutTimer = null;
+      layoutPosts();
+    }, 90);
+  }
+
+  function hidePosts($posts){
+    if(!$posts || !$posts.length) return;
+    $posts
+      .removeClass('is-ready')
+      .addClass('ac-prep')
+      .css({
+        visibility:'hidden',
+        opacity:0,
+        pointerEvents:'none',
+        zIndex:-1
+      });
+  }
+
+  function showPosts($posts){
+    if(!$posts || !$posts.length) return;
+    $posts
+      .removeClass('ac-prep')
+      .addClass('is-ready')
+      .css({
+        visibility:'',
+        opacity:'',
+        pointerEvents:'',
+        zIndex:1
+      });
+  }
+
+  function layoutAndReveal($posts){
+    processPosts($posts);
+
+    function reveal(){
+      showPosts($posts);
+      layoutPosts();
+      setTimeout(function(){ layoutPosts(); }, 180);
+      setTimeout(function(){ layoutPosts(); }, 700);
+      setTimeout(function(){ layoutPosts(); }, 1400);
+    }
+
+    if($.fn.imagesLoaded){
+      $posts.imagesLoaded(function(){
+        reveal();
+      });
+    } else {
+      reveal();
+    }
+  }
+
+  function watchMediaLoads($items){
+    if(!$items || !$items.length) return;
+    $items.find('img').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
+
+      this.addEventListener('load', requestLayout, false);
+      this.addEventListener('error', requestLayout, false);
+    });
+    $items.find('iframe').each(function(){
+      if(this._acHoverWatchBound) return;
+      this._acHoverWatchBound = true;
+
+      this.addEventListener('load', requestLayout, false);
+    });
+  }
+
+  function runSettledLayouts(){
+    var delays = [180, 500, 1000, 1800];
+    for(var i=0;i<delays.length;i++){
+      setTimeout(function(){
+        layoutPosts();
+      }, delays[i]);
+    }
+  }
+
+  function bindLayoutEvents(){
+    $win.off('.acMasonryWin');
+    $win.on('scroll.acMasonryWin', throttle(function(){
+      scanForNewPosts();
+    }, 160));
+    $win.on('resize.acMasonryWin', throttle(function(){
+      requestLayout();
+    }, 220));
+  }
+
+  function initMutationObserver(){
+    if(!window.MutationObserver) return;
+
+    if(mutationObserver){
+      try{ mutationObserver.disconnect(); }catch(e){}
+    }
+
+    mutationObserver = new MutationObserver(function(mutations){
+      var found = false;
+      for(var i=0;i<mutations.length;i++){
+        if(mutations[i].addedNodes && mutations[i].addedNodes.length){
+          found = true;
+          break;
+        }
+      }
+      if(found) scanForNewPosts();
+    });
+
+    try{
+      mutationObserver.observe($container[0], {
+        childList:true,
+        subtree:false
+      });
+    }catch(e){}
+  }
+
+  function initInfiniteScrollIfPresent(){
+    if(!$.fn.infinitescroll) return;
+    if(!document.getElementById('next')) return;
+    if(!document.getElementById('pagination')) return;
+
+    $container.infinitescroll({
+      navSelector:'#pagination',
+      nextSelector:'#next',
+      itemSelector:'.posts',
+      loading:{
+        selector:'#infscr-loading',
+        img:'',
+        msgText:'',
+        finishedMsg:''
+      },
+      bufferPx:1200,
+      appendCallback:false
+    }, function(newElements){
+      var $new = $(newElements).filter('.posts');
+
+      if(!$new.length){
+        $new = $(newElements).find('.posts');
+      }
+
+      if(!$new.length) return;
+
+      $new.each(function(){
+        $(this).data('acScanned', 1);
+      });
+
+      $new
+        .removeClass('is-ready')
+        .addClass('ac-prep')
+        .css({
+          visibility:'hidden',
+          opacity:0,
+          pointerEvents:'none',
+          display:'block',
+          position:'absolute',
+          left:'-99999px',
+          top:'0',
+          zIndex:-1
+        });
+
+      $container.append($new);
+
+      forceEager($new);
+      layoutAndReveal($new);
+      runSettledLayouts();
+    });
+  }
+
+  $(document).ready(function(){
+    $container.css('position','relative');
+
+    var $initial = $container.children('.posts');
+
+    $initial.each(function(){
+      $(this).data('acScanned', 1);
+    });
+
+    hidePosts($initial);
+
+    bindLayoutEvents();
+    initMutationObserver();
+
+    forceEager($initial);
+    layoutAndReveal($initial);
+    initInfiniteScrollIfPresent();
+    runSettledLayouts();
+
+    setTimeout(function(){
+      showPosts($initial);
+      layoutPosts();
+    }, 800);
+
+    setTimeout(function(){
+      showPosts($initial);
+      layoutPosts();
+    }, 1800);
+
+    setTimeout(function(){
+      showPosts($initial);
+      layoutPosts();
+    }, 3000);
+  });
+
+})(window.jQuery);
+</script>
+{/block:IndexPage}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Dropdown Toggle Matrix
+  var trigger = document.getElementById('exploreDropdownBtn');
+  var drawer = document.getElementById('exploreDrawer');
+  
+  if (trigger && drawer) {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      var isOpen = drawer.classList.contains('is-open');
+      if (isOpen) {
+        drawer.classList.remove('is-open');
+        trigger.classList.remove('is-active');
+      } else {
+        drawer.classList.add('is-open');
+        trigger.classList.add('is-active');
+      }
+    });
+  }
+
+  // 2. Solidified Music Engine
+  var audio = document.getElementById('acMiniAudio');
+  var toggleBtn = document.getElementById('acMiniToggle');
+  var nextBtn = document.getElementById('sbNext');
+  var trackName = document.getElementById('sbTrackName');
+  var trackArtist = document.getElementById('sbTrackArtist');
+  var songs = document.querySelectorAll('#sbPlaylist .sb-song');
+  
+  if (!audio || !toggleBtn || !songs.length) return;
+  
+  var currentIdx = 0;
+  var isInitialLoad = true;
+
+  function loadTrack(index) {
+    if (index >= songs.length || index < 0) return;
+    
+    songs.forEach(function(s) { s.classList.remove('is-active'); });
+    
+    var currentSong = songs[index];
+    currentSong.classList.add('is-active');
+    
+    var targetSrc = currentSong.getAttribute('data-src');
+    var targetTitle = currentSong.getAttribute('data-title') || "Unknown Track";
+    var targetArtist = currentSong.getAttribute('data-artist') || "Unknown Artist";
+    
+    audio.src = targetSrc;
+    trackName.textContent = targetTitle;
+    trackArtist.textContent = targetArtist;
+    
+    // Do not trigger playback or modify text if it is the very first page load
+    if (!isInitialLoad) {
+      audio.load();
+      audio.play().catch(function(e) { console.log("Playback engine paused/prevented."); });
+    }
+  }
+
+  // Initialize track 01 natively
+  loadTrack(currentIdx);
+  // Set initial load to false safely AFTER initialization
+  isInitialLoad = false;
+
+  // Direct Button Toggle Control
+  toggleBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (audio.paused || audio.ended) {
+      audio.play().catch(function(err) {
+        console.warn("Audio play blocked: ", err);
+      });
+    } else {
+      audio.pause();
+    }
+  });
+
+  // Skip Control
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      currentIdx = (currentIdx + 1) % songs.length;
+      loadTrack(currentIdx);
+    });
+  }
+
+  // Primary Global Event Listeners (Handles ALL play/pause text switches smoothly)
+  audio.addEventListener('play', function() { 
+    toggleBtn.textContent = 'pause'; 
+  });
+  
+  audio.addEventListener('pause', function() { 
+    toggleBtn.textContent = 'play'; 
+  });
+  
+  audio.addEventListener('ended', function() {
+    // When song ends, seamlessly advance to next index
+    currentIdx = (currentIdx + 1) % songs.length;
+    loadTrack(currentIdx);
+  });
+});
+</script>
+
+<script src="https://static.tumblr.com/2pnwama/DLppehqvd/feathericons.js"></script>
+<script>feather.replace()</script>
+
+<!-- // SCROLLBAR SCRIPT // -->
+<script>
+(function(){
+  var t;
+  window.addEventListener('scroll', function(){
+    document.documentElement.classList.add('is-scrolling');
+    clearTimeout(t);
+    t = setTimeout(function(){
+      document.documentElement.classList.remove('is-scrolling');
+    }, 500);
+  }, {passive:true});
+})();
+</script>
+
+
+<!-- // VISIBLE PAGINATION // -->
+{block:IndexPage}
+{block:IfPagination}
+{block:Pagination}
+
+<nav class="page-nav" aria-label="Pagination">
+
+  {block:PreviousPage}
+  <a class="prev" href="{PreviousPage}" title="Previous Page">prev</a>
+  {/block:PreviousPage}
+
+  {block:JumpPagination length="5"}
+    {block:CurrentPage}
+      <span class="current_page">{PageNumber}</span>
+    {/block:CurrentPage}
+
+    {block:JumpPage}
+      <a href="{URL}" title="Page {PageNumber}">{PageNumber}</a>
+    {/block:JumpPage}
+  {/block:JumpPagination}
+
+  {block:NextPage}
+  <a class="next" href="{NextPage}" title="Next Page">next</a>
+  {/block:NextPage}
+
+</nav>
+
+{/block:Pagination}
+{/block:IfPagination}
+{/block:IndexPage}
+
+
+<!-- // KEEP THIS FOR INFINITE SCROLL ONLY // -->
+{block:IndexPage}
+<div id="pagination" style="display:none!important;">
+  {block:NextPage}<a id="next" href="{NextPage}">next</a>{/block:NextPage}
+</div>
+<div id="infscr-loading" style="display:none!important;"></div>
+{/block:IndexPage}
+
+
+<!-- BACK TO TOP — SCROLL VISIBILITY + SMOOTH SCROLL -->
+<script>
+(function () {
+    var button = document.getElementById('ltop');
+
+    if (!button) return;
+
+    var threshold = 300;
+    var ticking = false;
+
+    function updateButton() {
+        var scrollPosition =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            0;
+
+        button.classList.toggle(
+            'show',
+            scrollPosition > threshold
+        );
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking) {
+            window.requestAnimationFrame(updateButton);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Set the correct state immediately on page load.
+    updateButton();
+})();
+</script>
+
+{block:PermalinkPage}
+<script>
+(function($){
+  $(document).ready(function(){
+    if (!$.fn.pxuPhotoset) return;
+
+    $('.photo-slideshow').each(function(){
+      if (this._acPXUInited) return;
+      this._acPXUInited = true;
+
+      $(this).pxuPhotoset({
+        lightbox: true,
+        rounded: false,
+        gutter: '1px',
+        photoset: '.photo-slideshow',
+        photoWrap: '.photo-data',
+        photo: '.pxu-photo'
+      });
+    });
+
+    // Recalculate container height after photos load
+    $(window).on('load', function(){
+      $('.photo-slideshow').each(function(){
+        $(this).css('height', 'auto');
+      });
+    });
+  });
+})(window.jQuery);
+</script>
+{/block:PermalinkPage}
+</body>
+</html>
+</body>
+</html>
